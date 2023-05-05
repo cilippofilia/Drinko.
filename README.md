@@ -1,4 +1,4 @@
-![Logo](./Drinko/Assets.xcassets/thumbnail-red.imageset/thumbnail-red.png)
+![Logo](./Drinko/Assets.xcassets/thumbnail-red.png)
 
 # Professional cocktails at home
 
