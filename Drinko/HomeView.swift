@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
-// SceneStorage is used to keep track of what tab bar was last used before closing the app
+// SceneStorage is used to keep track of what tab
+// was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
 
     var body: some View {
@@ -49,6 +50,8 @@ struct HomeView: View {
                 }
         }
     }
+
+    #warning("👨‍💻 Add 'ask for review' and 'check for updates'")
 }
 
 struct HomeView_Previews: PreviewProvider {

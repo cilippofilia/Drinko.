@@ -17,6 +17,13 @@
 		185592AC29FA8D7B00A51A20 /* LearnRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185592AB29FA8D7B00A51A20 /* LearnRowView.swift */; };
 		185592AE29FA905B00A51A20 /* LearnDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185592AD29FA905B00A51A20 /* LearnDetailView.swift */; };
 		185CE16A29F6BC70003CAF4E /* String-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185CE16929F6BC70003CAF4E /* String-Ext.swift */; };
+		186CAC012A050CDF00827F5D /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 186CABFF2A050CDF00827F5D /* Main.xcdatamodeld */; };
+		186CAC042A050E2200827F5D /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CAC032A050E2200827F5D /* DataController.swift */; };
+		186CAC062A0512CC00827F5D /* Item-CDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CAC052A0512CC00827F5D /* Item-CDHelpers.swift */; };
+		186CAC082A0513D800827F5D /* Family-CDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CAC072A0513D800827F5D /* Family-CDHelpers.swift */; };
+		186CAC0A2A0513F900827F5D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186CAC092A0513F900827F5D /* Colors.xcassets */; };
+		186CAC0C2A06533800827F5D /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CAC0B2A06533800827F5D /* Sequence-Sorting.swift */; };
+		186CAC122A06567D00827F5D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186CAC112A06567D00827F5D /* SplashScreenView.swift */; };
 		187455BF2A01728A006F8C9C /* Spirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187455BE2A01728A006F8C9C /* Spirit.swift */; };
 		187455C32A017408006F8C9C /* SpiritRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187455C22A017408006F8C9C /* SpiritRowView.swift */; };
 		187455C52A01743C006F8C9C /* SpiritDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187455C42A01743C006F8C9C /* SpiritDetailView.swift */; };
@@ -52,6 +59,13 @@
 		185592AB29FA8D7B00A51A20 /* LearnRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnRowView.swift; sourceTree = "<group>"; };
 		185592AD29FA905B00A51A20 /* LearnDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDetailView.swift; sourceTree = "<group>"; };
 		185CE16929F6BC70003CAF4E /* String-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Ext.swift"; sourceTree = "<group>"; };
+		186CAC002A050CDF00827F5D /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
+		186CAC032A050E2200827F5D /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		186CAC052A0512CC00827F5D /* Item-CDHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item-CDHelpers.swift"; sourceTree = "<group>"; };
+		186CAC072A0513D800827F5D /* Family-CDHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Family-CDHelpers.swift"; sourceTree = "<group>"; };
+		186CAC092A0513F900827F5D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		186CAC0B2A06533800827F5D /* Sequence-Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence-Sorting.swift"; sourceTree = "<group>"; };
+		186CAC112A06567D00827F5D /* SplashScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		187455BE2A01728A006F8C9C /* Spirit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spirit.swift; sourceTree = "<group>"; };
 		187455C22A017408006F8C9C /* SpiritRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritRowView.swift; sourceTree = "<group>"; };
 		187455C42A01743C006F8C9C /* SpiritDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritDetailView.swift; sourceTree = "<group>"; };
@@ -91,11 +105,24 @@
 		185CE16829F6BC5C003CAF4E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				18CD437029F52B8600182031 /* Bundle-Decodable.swift */,
+				186CAC0B2A06533800827F5D /* Sequence-Sorting.swift */,
 				18CD437529F5354300182031 /* Margins.swift */,
 				185CE16929F6BC70003CAF4E /* String-Ext.swift */,
 				1843BEF529FC75910033E737 /* Color-Ext.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		186CAC022A050CE500827F5D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				186CABFF2A050CDF00827F5D /* Main.xcdatamodeld */,
+				186CAC032A050E2200827F5D /* DataController.swift */,
+				186CAC052A0512CC00827F5D /* Item-CDHelpers.swift */,
+				186CAC072A0513D800827F5D /* Family-CDHelpers.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		188B751029F48CB000407705 = {
@@ -122,6 +149,7 @@
 				188B753629F4920500407705 /* Views */,
 				18CD437229F52BFC00182031 /* Utilities */,
 				188B752029F48CB100407705 /* Assets.xcassets */,
+				186CAC092A0513F900827F5D /* Colors.xcassets */,
 				188B752229F48CB100407705 /* Preview Content */,
 			);
 			path = Drinko;
@@ -212,10 +240,11 @@
 			isa = PBXGroup;
 			children = (
 				18CD437929F5366800182031 /* Localizable */,
-				18CD437029F52B8600182031 /* Bundle-Decodable.swift */,
+				186CAC022A050CE500827F5D /* CoreData */,
 				1843BEF329FC6E7E0033E737 /* DrinkoButtonStyle.swift */,
 				1843BEF729FC75AD0033E737 /* Favorites.swift */,
 				1843BEFB29FC7BD20033E737 /* FavoritesButton.swift */,
+				186CAC112A06567D00827F5D /* SplashScreenView.swift */,
 				185CE16829F6BC5C003CAF4E /* Extensions */,
 			);
 			path = Utilities;
@@ -296,6 +325,7 @@
 				188B752429F48CB100407705 /* Preview Assets.xcassets in Resources */,
 				188B752129F48CB100407705 /* Assets.xcassets in Resources */,
 				18CD437B29F5369800182031 /* cocktails.json in Resources */,
+				186CAC0A2A0513F900827F5D /* Colors.xcassets in Resources */,
 				189D53DE2A02CC3E00B88087 /* history.json in Resources */,
 				185592A829FA633000A51A20 /* lessons.json in Resources */,
 			);
@@ -321,18 +351,24 @@
 				187C7D5929F5722C00996969 /* CocktailDetailView.swift in Sources */,
 				187455BF2A01728A006F8C9C /* Spirit.swift in Sources */,
 				1843BEFC29FC7BD20033E737 /* FavoritesButton.swift in Sources */,
+				186CAC082A0513D800827F5D /* Family-CDHelpers.swift in Sources */,
+				186CAC042A050E2200827F5D /* DataController.swift in Sources */,
 				188B753329F4914200407705 /* SettingsView.swift in Sources */,
 				18CD437129F52B8600182031 /* Bundle-Decodable.swift in Sources */,
 				185592A629FA5E0E00A51A20 /* CocktailDetailSectionView.swift in Sources */,
 				187C7D5729F571DA00996969 /* CocktailRowView.swift in Sources */,
 				18BF3E6729F4976E0093340F /* SettingsRowView.swift in Sources */,
+				186CAC012A050CDF00827F5D /* Main.xcdatamodeld in Sources */,
 				18CD437D29F536C300182031 /* Cocktail.swift in Sources */,
 				188B753529F4915F00407705 /* CabinetView.swift in Sources */,
 				18BF3E6F29F49C520093340F /* CreditsView.swift in Sources */,
+				186CAC062A0512CC00827F5D /* Item-CDHelpers.swift in Sources */,
 				187455C32A017408006F8C9C /* SpiritRowView.swift in Sources */,
+				186CAC122A06567D00827F5D /* SplashScreenView.swift in Sources */,
 				185592AA29FA87DA00A51A20 /* Lesson.swift in Sources */,
 				188B753129F4913700407705 /* NewsView.swift in Sources */,
 				18CD437629F5354300182031 /* Margins.swift in Sources */,
+				186CAC0C2A06533800827F5D /* Sequence-Sorting.swift in Sources */,
 				189D53E12A03B12D00B88087 /* MailView.swift in Sources */,
 				188B751D29F48CB000407705 /* DrinkoApp.swift in Sources */,
 			);
@@ -471,6 +507,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,6 +540,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,6 +579,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		186CABFF2A050CDF00827F5D /* Main.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				186CAC002A050CDF00827F5D /* Main.xcdatamodel */,
+			);
+			currentVersion = 186CAC002A050CDF00827F5D /* Main.xcdatamodel */;
+			path = Main.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 188B751129F48CB000407705 /* Project object */;
 }
