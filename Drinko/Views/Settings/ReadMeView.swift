@@ -26,8 +26,8 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
             VStack {
                 Text(text)
                     .multilineTextAlignment(.leading)
-                    .padding()
             }
+            .frame(width: screenWidthPlusMargins)
         }
         .navigationBarTitle("Drinko")
     }

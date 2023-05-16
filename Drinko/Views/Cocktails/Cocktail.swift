@@ -21,6 +21,7 @@ struct Cocktail: Codable, Equatable, Identifiable {
     let garnish: String
     let ice: String
     let extra: String
+    let history: Bool
     let ingredients: [Ingredient]
 
     var image: String {
@@ -38,13 +39,14 @@ struct Cocktail: Codable, Equatable, Identifiable {
 
     #if DEBUG
     static let example = Cocktail(
-        id: "corpse-reviver-2",
+        id: "mai-tai",
         name: "Corpse Reviver No.2",
         method: "shake & fine strain",
         glass: "coffee mug",
         garnish: "-",
         ice: "-",
         extra: "absinthe-rinsed coupe",
+        history: true,
         ingredients: [
             Ingredient(
                 name: "london dry gin",

@@ -53,6 +53,6 @@ struct CocktailDetailView: View {
 
 struct CocktailDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailDetailView(cocktail: .example, history: .example)
+        CocktailDetailView(cocktail: .example)
     }
 }
