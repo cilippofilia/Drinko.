@@ -2,8 +2,7 @@
 
 # Professional cocktails at home
 
-Whether you want to start making cocktails, you are a beginner bartender or simply a cocktail aficionado, this app will guide you through the basics of bartending, teach you some tips and tricks and tell you more abou the most known cocktails.
-
+Whether you're a newbie cocktail enthusiast, aspiring bartender or simply looking to up your mixology game, this app is your ultimate guide to the world of bartending. From the basics to advanced techniques, you'll learn insider tips and tricks to craft delicious, Instagram-worthy cocktails. Our app is your one-stop-shop for everything you need to know about the most famous cocktails, their history, and how to make them like a pro. Let's shake things up and get started on your cocktail-making journey!
 
 ## Table of contents
 * [Features](#features)
@@ -12,23 +11,25 @@ Whether you want to start making cocktails, you are a beginner bartender or simp
 
 ## Features
 
-Key Features:
-- Learn the basics and more advanced techniques in the 'Learn' section;
+Discover the ultimate bartending experience with our app's key features:
 
-- Discover more than 35 classic cocktails divided by category in the 'Cocktails' section and mark your favorites so you will easily see them;
+- Get started on your mixology journey with our 'Learn' section, where you'll master the basics and learn advanced techniques to impress your guests.
 
-- Keep track of your ingredients and label the ones you want to buy, by using the 'Cabinet' section;
+- Indulge in over 200 cocktails divided by category in our 'Cocktails' section. Mark your favorites and never miss a beat when mixing your go-to drinks.
 
-- Two languages supported, report bugs and get in touch with the dev, in the 'Settings' app;
+- Keep track of your ingredients and easily label the ones you need to buy with our 'Cabinet' section. No more scrambling to find the right ingredients when it's time to mix. (COMING SOON...)
+
+- Our app is designed for global users with two supported languages. (COMING SOON...)
+You can report bugs and get in touch with the developer in the 'Settings' section.
+
+Whether you're a beginner or an experienced mixologist, our app has everything you need to take your bartending skills to the next level. Download it now and start crafting cocktails like a pro!
 
 Additional Features:
 - All the techniques have video examples;
 
-- All the text has been localized to automatically switch between English and Italian
+- All the text has been localized to automatically switch between English and Italian (COMING SOON + additional languages too)
 
 - In-app mail view to report bugs and feedbacks;
-
-- Pick your favorite app icon;
 
 
 ## Tech Stack
