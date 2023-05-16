@@ -11,26 +11,34 @@ struct HistoryView: View {
     @Environment(\.dismiss) var dismiss
 
     var cocktail: Cocktail
-    var history: History
 
     var body: some View {
         VStack {
-            if cocktail.id == history.id {
-                Text(history.id.capitalized.replacingOccurrences(of: "-", with: " "))
+            HStack(alignment: .center) {
+                Text(cocktail.name.capitalized)
                     .font(.title)
                     .bold()
-                    .padding(.bottom)
-
-                Text(history.text)
                     .multilineTextAlignment(.leading)
+
+                Spacer()
 
                 Button(action: {
                     dismiss()
                 }) {
-                    Text("Dismiss")
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+//                        .foregroundColor(.secondary)
+                        .foregroundColor(.secondary)
+                        .frame(width: 30, height: 30)
                 }
-                .padding()
             }
+            .padding(.vertical)
+
+            Text(cocktail.history)
+                .multilineTextAlignment(.leading)
+
+            // spacer used to push view to the top
+            Spacer()
         }
         .frame(width: screenWidthPlusMargins)
     }
@@ -38,6 +46,7 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(cocktail: .example, history: .example)
+        HistoryView(cocktail: .example)
+            .preferredColorScheme(.dark)
     }
 }

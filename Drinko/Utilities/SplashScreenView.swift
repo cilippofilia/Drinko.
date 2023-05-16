@@ -47,6 +47,19 @@ struct SplashScreenView: View {
                             .offset(y: txtOffset)
                             .scaleEffect(scale)
                             .opacity(opacity)
+
+                        Text("It's good to be back!")
+                            .font(.system(size: 24,
+                                          weight: .bold,
+                                          design: .rounded))
+                            .rotation3DEffect(.degrees(angle),
+                                              axis: (x: 0.5, y: 0.0, z: 0.0))
+                            .foregroundColor(.white)
+                            .offset(y: txtOffset)
+                            .scaleEffect(scale)
+                            .opacity(opacity)
+
+
                     }
                 }
                 .onAppear {

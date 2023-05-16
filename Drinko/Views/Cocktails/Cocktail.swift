@@ -21,7 +21,7 @@ struct Cocktail: Codable, Equatable, Identifiable {
     let garnish: String
     let ice: String
     let extra: String
-    let history: Bool
+    var history: String
     let ingredients: [Ingredient]
 
     var image: String {
@@ -39,14 +39,14 @@ struct Cocktail: Codable, Equatable, Identifiable {
 
     #if DEBUG
     static let example = Cocktail(
-        id: "mai-tai",
+        id: "corpse-reviver",
         name: "Corpse Reviver No.2",
         method: "shake & fine strain",
         glass: "coffee mug",
         garnish: "-",
         ice: "-",
         extra: "absinthe-rinsed coupe",
-        history: true,
+        history: "TEST: As with many classic cocktails, the origin story of the Manhattan is shrouded in mystery. The most popular theory suggests that the recipe was invented by Dr. Iain Marshall in the early 1880s for a party hosted by Lady Randolph Churchill, the mother of Winston Churchill, at the Manhattan Club in New York. However, this theory has been debunked because Lady Randolph Churchill was pregnant and in England at the time. A more plausible story comes from the 1923 book \"Valentine's Manual of New York\", which recounts that William F. Mulhall, a bartender at New York's Hoffman House in the 1880s, claimed the Manhattan cocktail was invented by a man named Black who owned a place ten doors below Houston Street on Broadway.",
         ingredients: [
             Ingredient(
                 name: "london dry gin",

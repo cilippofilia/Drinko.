@@ -38,9 +38,7 @@
 		188B753129F4913700407705 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B753029F4913700407705 /* NewsView.swift */; };
 		188B753329F4914200407705 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B753229F4914100407705 /* SettingsView.swift */; };
 		188B753529F4915F00407705 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B753429F4915F00407705 /* CabinetView.swift */; };
-		188E3F3D2A1377A0004024B6 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E3F3C2A1377A0004024B6 /* History.swift */; };
 		188E3F3F2A13780D004024B6 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E3F3E2A13780D004024B6 /* HistoryView.swift */; };
-		189D53DE2A02CC3E00B88087 /* history.json in Resources */ = {isa = PBXBuildFile; fileRef = 18ACE2BE2A027C440007F726 /* history.json */; };
 		189D53E12A03B12D00B88087 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D53E02A03B12D00B88087 /* MailView.swift */; };
 		18BF3E6729F4976E0093340F /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF3E6629F4976E0093340F /* SettingsRowView.swift */; };
 		18BF3E6F29F49C520093340F /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF3E6E29F49C520093340F /* ReadMeView.swift */; };
@@ -84,10 +82,8 @@
 		188B753229F4914100407705 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		188B753429F4915F00407705 /* CabinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
 		188E3F382A13502A004024B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		188E3F3C2A1377A0004024B6 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		188E3F3E2A13780D004024B6 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		189D53E02A03B12D00B88087 /* MailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
-		18ACE2BE2A027C440007F726 /* history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = history.json; sourceTree = "<group>"; };
 		18BF3E6629F4976E0093340F /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		18BF3E6E29F49C520093340F /* ReadMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeView.swift; sourceTree = "<group>"; };
 		18CD437029F52B8600182031 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
@@ -226,7 +222,6 @@
 				187C7D5629F571DA00996969 /* CocktailRowView.swift */,
 				187C7D5829F5722C00996969 /* CocktailDetailView.swift */,
 				185592A529FA5E0E00A51A20 /* CocktailDetailSectionView.swift */,
-				188E3F3C2A1377A0004024B6 /* History.swift */,
 				188E3F3E2A13780D004024B6 /* HistoryView.swift */,
 			);
 			path = Cocktails;
@@ -262,7 +257,6 @@
 			isa = PBXGroup;
 			children = (
 				18CD437A29F5369800182031 /* cocktails.json */,
-				18ACE2BE2A027C440007F726 /* history.json */,
 				185592A729FA633000A51A20 /* lessons.json */,
 			);
 			path = Localizable;
@@ -334,7 +328,6 @@
 				188B752129F48CB100407705 /* Assets.xcassets in Resources */,
 				18CD437B29F5369800182031 /* cocktails.json in Resources */,
 				186CAC0A2A0513F900827F5D /* Colors.xcassets in Resources */,
-				189D53DE2A02CC3E00B88087 /* history.json in Resources */,
 				185592A829FA633000A51A20 /* lessons.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188E3F3D2A1377A0004024B6 /* History.swift in Sources */,
 				1843BEF629FC75910033E737 /* Color-Ext.swift in Sources */,
 				188B752B29F48CFF00407705 /* HomeView.swift in Sources */,
 				187455C52A01743C006F8C9C /* SpiritDetailView.swift in Sources */,
