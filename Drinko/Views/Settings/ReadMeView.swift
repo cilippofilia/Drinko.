@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CreditsView: View {
+struct ReadMeView: View {
     @State private var text: LocalizedStringKey =
 """
 Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.
@@ -30,5 +30,11 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
             }
         }
         .navigationBarTitle("Drinko")
+    }
+}
+
+struct ReadMeView_Previews: PreviewProvider {
+    static var previews: some View {
+        ReadMeView()
     }
 }

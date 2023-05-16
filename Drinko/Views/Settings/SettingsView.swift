@@ -5,11 +5,14 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
-import SwiftUI
 import MessageUI
+import StoreKit
+import SwiftUI
 
 struct SettingsView: View {
     static let settingsTag: String? = "Settings"
+
+    @Environment(\.requestReview) var requestReview
 
     @State private var result: Result<MFMailComposeResult, Error>? = nil
     @State private var isShowingMail = false
@@ -38,7 +41,7 @@ struct SettingsView: View {
 
                     }) {
                         SettingsRowView(icon: "wand.and.rays",
-                                        color: .secondary,
+                                        color: .blue,
                                         itemName: "Request feature")
                     }
                     .disabled(!MFMailComposeViewController.canSendMail())
@@ -59,12 +62,31 @@ struct SettingsView: View {
                     }
                 }
 
+                Section(header: Text("Support")) {
+                    SettingsRowView(icon: "star",
+                                    color: .yellow,
+                                    itemName: "Rate the app")
+                    .onTapGesture {
+                        requestReview()
+                    }
+
+                    SettingsRowView(icon: "square.and.arrow.up",
+                                    color: .secondary,
+                                    itemName: "Share the app")
+                }
+
                 Section(header: Text("Info"), footer: Text("Product of Italy 🇮🇹")) {
-                    NavigationLink(destination: CreditsView()) {
+                    NavigationLink(destination: ReadMeView()) {
                         SettingsRowView(icon: "r.circle",
                                         color: .secondary,
                                         itemName: "Read me")
                     }
+
+//                    NavigationLink(destination: EmptyView()) {
+//                        SettingsRowView(icon: "heart",
+//                                        color: .red,
+//                                        itemName: "Credits")
+//                    }
 
                     HStack {
                         SettingsRowView(icon: "v.circle",

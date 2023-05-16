@@ -5,9 +5,9 @@
 //  Created by Filippo Cilia on 02/05/2023.
 //
 
+import MessageUI
 import SwiftUI
 import UIKit
-import MessageUI
 
 struct MailView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentation

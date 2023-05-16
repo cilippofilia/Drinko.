@@ -38,10 +38,11 @@
 		188B753129F4913700407705 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B753029F4913700407705 /* NewsView.swift */; };
 		188B753329F4914200407705 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B753229F4914100407705 /* SettingsView.swift */; };
 		188B753529F4915F00407705 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188B753429F4915F00407705 /* CabinetView.swift */; };
+		188E3F3B2A135CEB004024B6 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E3F3A2A135CEB004024B6 /* History.swift */; };
 		189D53DE2A02CC3E00B88087 /* history.json in Resources */ = {isa = PBXBuildFile; fileRef = 18ACE2BE2A027C440007F726 /* history.json */; };
 		189D53E12A03B12D00B88087 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189D53E02A03B12D00B88087 /* MailView.swift */; };
 		18BF3E6729F4976E0093340F /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF3E6629F4976E0093340F /* SettingsRowView.swift */; };
-		18BF3E6F29F49C520093340F /* CreditsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF3E6E29F49C520093340F /* CreditsView.swift */; };
+		18BF3E6F29F49C520093340F /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BF3E6E29F49C520093340F /* ReadMeView.swift */; };
 		18CD437129F52B8600182031 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD437029F52B8600182031 /* Bundle-Decodable.swift */; };
 		18CD437629F5354300182031 /* Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD437529F5354300182031 /* Margins.swift */; };
 		18CD437B29F5369800182031 /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 18CD437A29F5369800182031 /* cocktails.json */; };
@@ -81,10 +82,12 @@
 		188B753029F4913700407705 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		188B753229F4914100407705 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		188B753429F4915F00407705 /* CabinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
+		188E3F382A13502A004024B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		188E3F3A2A135CEB004024B6 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 		189D53E02A03B12D00B88087 /* MailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		18ACE2BE2A027C440007F726 /* history.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = history.json; sourceTree = "<group>"; };
 		18BF3E6629F4976E0093340F /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
-		18BF3E6E29F49C520093340F /* CreditsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsView.swift; sourceTree = "<group>"; };
+		18BF3E6E29F49C520093340F /* ReadMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMeView.swift; sourceTree = "<group>"; };
 		18CD437029F52B8600182031 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		18CD437529F5354300182031 /* Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
 		18CD437A29F5369800182031 /* cocktails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cocktails.json; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 		188B751B29F48CB000407705 /* Drinko */ = {
 			isa = PBXGroup;
 			children = (
+				188E3F382A13502A004024B6 /* Info.plist */,
 				188B751C29F48CB000407705 /* DrinkoApp.swift */,
 				188B752A29F48CFF00407705 /* HomeView.swift */,
 				188B753629F4920500407705 /* Views */,
@@ -190,7 +194,7 @@
 			children = (
 				188B753229F4914100407705 /* SettingsView.swift */,
 				18BF3E6629F4976E0093340F /* SettingsRowView.swift */,
-				18BF3E6E29F49C520093340F /* CreditsView.swift */,
+				18BF3E6E29F49C520093340F /* ReadMeView.swift */,
 				189D53E02A03B12D00B88087 /* MailView.swift */,
 			);
 			path = Settings;
@@ -220,6 +224,7 @@
 				187C7D5829F5722C00996969 /* CocktailDetailView.swift */,
 				185592A529FA5E0E00A51A20 /* CocktailDetailSectionView.swift */,
 				18CD437C29F536C300182031 /* Cocktail.swift */,
+				188E3F3A2A135CEB004024B6 /* History.swift */,
 			);
 			path = Cocktails;
 			sourceTree = "<group>";
@@ -338,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188E3F3B2A135CEB004024B6 /* History.swift in Sources */,
 				1843BEF629FC75910033E737 /* Color-Ext.swift in Sources */,
 				188B752B29F48CFF00407705 /* HomeView.swift in Sources */,
 				187455C52A01743C006F8C9C /* SpiritDetailView.swift in Sources */,
@@ -361,7 +367,7 @@
 				186CAC012A050CDF00827F5D /* Main.xcdatamodeld in Sources */,
 				18CD437D29F536C300182031 /* Cocktail.swift in Sources */,
 				188B753529F4915F00407705 /* CabinetView.swift in Sources */,
-				18BF3E6F29F49C520093340F /* CreditsView.swift in Sources */,
+				18BF3E6F29F49C520093340F /* ReadMeView.swift in Sources */,
 				186CAC062A0512CC00827F5D /* Item-CDHelpers.swift in Sources */,
 				187455C32A017408006F8C9C /* SpiritRowView.swift in Sources */,
 				186CAC122A06567D00827F5D /* SplashScreenView.swift in Sources */,
@@ -502,10 +508,10 @@
 				DEVELOPMENT_TEAM = 3K3GFX53DY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Drinko/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -535,10 +541,10 @@
 				DEVELOPMENT_TEAM = 3K3GFX53DY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Drinko/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -11,6 +11,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"absinthe-rinsed coupe",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -42,6 +43,7 @@
                 "garnish":"cucumber mint",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -78,6 +80,7 @@
                 "garnish":"lemon twist expressed and discarded",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -120,6 +123,7 @@
                 "garnish":"orange twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -146,6 +150,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -177,6 +182,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"absinth-rinsed coupe",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -214,6 +220,7 @@
                 "garnish":"apple slices",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -250,6 +257,7 @@
                 "garnish":"flamed orange twist",
                 "ice":"-",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -281,6 +289,7 @@
                 "garnish":"3 coffee beans",
                 "ice":"-",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -318,6 +327,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -344,6 +354,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -375,6 +386,7 @@
                 "garnish":"lemon twist or olives",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -402,6 +414,7 @@
                 "garnish":"lime wedge",
                 "ice":"cubed",
                 "extra":"top with ginger beer",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blanco tequila",
@@ -433,6 +446,7 @@
                 "garnish":"mint",
                 "ice":"crushed ice/pebble ice",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blanco tequila",
@@ -464,6 +478,7 @@
                 "garnish":"-",
                 "ice":"cubed",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"blanco tequila",
@@ -496,6 +511,7 @@
                 "garnish":"cherry on a pick",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"reposado tequila",
@@ -522,6 +538,7 @@
                 "garnish":"flamed orange twist",
                 "ice":"crushed ice/pebble ice",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"reposado tequila",
@@ -553,6 +570,7 @@
                 "garnish":"orange twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"reposado tequila",
@@ -595,6 +613,7 @@
                 "garnish":"-",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"bourbon whiskey",
@@ -621,6 +640,7 @@
                 "garnish":"lemon wheel",
                 "ice":"cubed",
                 "extra":"top with ginger beer",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"bourbon whiskey",
@@ -657,6 +677,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"bourbon whiskey",
@@ -694,6 +715,7 @@
                 "garnish":"orange twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"bourbon whiskey",
@@ -725,6 +747,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"bourbon whiskey",
@@ -761,6 +784,7 @@
                 "garnish":"orange twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"overproof bourbon whiskey",
@@ -798,6 +822,7 @@
                 "garnish":"-",
                 "ice":"cubed",
                 "extra":"float of red wine",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"rye whiskey",
@@ -834,6 +859,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"rye whiskey",
@@ -865,6 +891,7 @@
                 "garnish":"mint",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"rye whiskey",
@@ -907,6 +934,7 @@
                 "garnish":"orange & lemon twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"rye whiskey",
@@ -938,6 +966,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"rye whiskey",
@@ -964,6 +993,7 @@
                 "garnish":"lime wheel",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"rye whiskey",
@@ -996,6 +1026,7 @@
                 "garnish":"basil sprig",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"irish whiskey",
@@ -1027,6 +1058,7 @@
                 "garnish":"orange twist",
                 "ice":"-",
                 "extra":"stir marmalade until dissolved",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"irish whiskey",
@@ -1058,6 +1090,7 @@
                 "garnish":"lime wheel",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"irish whiskey",
@@ -1095,6 +1128,7 @@
                 "garnish":"lemon twist expressed and discarded",
                 "ice":"cubed",
                 "extra":"absinthe-rinsed glass",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"irish whiskey",
@@ -1126,6 +1160,7 @@
                 "garnish":"lemon & orange twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"irish whiskey",
@@ -1162,6 +1197,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"irish whiskey",
@@ -1209,6 +1245,7 @@
                 "garnish":"lime wedge",
                 "ice":"cubed",
                 "extra":"top ginger beer & 4 dashes of angostura",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended scotch whiskey",
@@ -1235,6 +1272,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"absinthe-rinsed glass & splash soda water",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended scotch whiskey",
@@ -1266,6 +1304,7 @@
                 "garnish":"-",
                 "ice":"cubed",
                 "extra":"float of peated scotch whiskey",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended scotch whiskey",
@@ -1303,6 +1342,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended malt whiskey",
@@ -1329,6 +1369,7 @@
                 "garnish":"orange twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended malt whiskey",
@@ -1360,6 +1401,7 @@
                 "garnish":"lemon & orange twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"highland scotch whiskey",
@@ -1397,6 +1439,7 @@
                 "garnish":"orange twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged rum",
@@ -1428,6 +1471,7 @@
                 "garnish":"grated cinnamon",
                 "ice":"-",
                 "extra":"hand-whipped cream float",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged rum",
@@ -1449,6 +1493,7 @@
                 "garnish":"orange twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"white rum",
@@ -1486,6 +1531,7 @@
                 "garnish":"lime wheel",
                 "ice":"-",
                 "extra":"top with champagne",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"white rum",
@@ -1512,6 +1558,7 @@
                 "garnish":"mint",
                 "ice":"crushed",
                 "extra":"float of yellow chartreuse",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"white rum",
@@ -1538,6 +1585,7 @@
                 "garnish":"lime wheel",
                 "ice":"1 cube",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"white rum",
@@ -1580,6 +1628,7 @@
                 "garnish":"lime wheel",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged jamaican rum",
@@ -1611,6 +1660,7 @@
                 "garnish":"pineapple fronds",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blackstrap rum",
@@ -1652,6 +1702,7 @@
                 "garnish":"grated nutmeg",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged rum",
@@ -1689,6 +1740,7 @@
                 "garnish":"orange slice & cherry skewer flag",
                 "ice":"crushed ice",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged rum",
@@ -1730,6 +1782,7 @@
                 "garnish":"lemon wheel",
                 "ice":"cubed",
                 "extra":"float of sherry - Moscatel if possible",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"funky white rum (eg: Banks 5 Island, Wray & Nephew, agricole rums)",
@@ -1771,6 +1824,7 @@
                 "garnish":"fruits & fire",
                 "ice":"crushed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"overproof jamaican rum",
@@ -1827,6 +1881,7 @@
                 "garnish":"grated nutmeg, orange slice & cherry",
                 "ice":"crushed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged 151 rum",
@@ -1868,6 +1923,7 @@
                 "garnish":"grated nutmeg, orange & lime wheel, orchid",
                 "ice":"crushed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"overproof jamaican rum",
@@ -1909,6 +1965,7 @@
                 "garnish":"pineapple wedge & 3 cherries",
                 "ice":"crushed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"dry, aged agricole rum",
@@ -1960,6 +2017,7 @@
                 "garnish":"flaming half lime, cinnamon stick, whatever other cool stuff on top",
                 "ice":"crushed",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"aged jamaican rum",
@@ -2027,6 +2085,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -2063,6 +2122,7 @@
                 "garnish":"grated nutmeg",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"port",
@@ -2094,6 +2154,7 @@
                 "garnish":"mint sprigs",
                 "ice":"crushed",
                 "extra":"slap the mint to release the oils",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -2131,6 +2192,7 @@
                 "garnish":"lemon twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -2167,6 +2229,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -2193,6 +2256,7 @@
                 "garnish":"lemon twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -2240,6 +2304,7 @@
                 "garnish":"mint plouche",
                 "ice":"crushed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"pisco",
@@ -2271,6 +2336,7 @@
                 "garnish":"orange twist, pineapple wedge & mint",
                 "ice":"crushed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"pisco",
@@ -2307,6 +2373,7 @@
                 "garnish":"6 drops Chuncho bitters",
                 "ice":"-",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"pisco",
@@ -2349,6 +2416,7 @@
                 "garnish":"orange & lemon twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"rye whiskey",
@@ -2380,6 +2448,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"bourbon whiskey",
@@ -2416,6 +2485,7 @@
                 "garnish":"-",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"apple brandy",
@@ -2453,6 +2523,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"apple brandy",
@@ -2484,6 +2555,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"american apple brandy",
@@ -2520,6 +2592,7 @@
                 "garnish":"lemon wheel & grated cinnamon",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"calvados",
@@ -2572,6 +2645,7 @@
                 "garnish":"orange twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"amontillado sherry",
@@ -2598,6 +2672,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"amontillado sherry",
@@ -2634,6 +2709,7 @@
                 "garnish":"mint, lemon and orange wheel",
                 "ice":"crushed",
                 "extra":"float of Pedro Ximenez sherry",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"fino sherry",
@@ -2661,6 +2737,7 @@
                 "garnish":"lime wheel",
                 "ice":"-",
                 "extra":"top with champagne",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"white rum",
@@ -2687,6 +2764,7 @@
                 "garnish":"lemon twist & cherry",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"disaronno",
@@ -2723,6 +2801,7 @@
                 "garnish":"orange slice",
                 "ice":"crushed",
                 "extra":"top with soda water",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"sweet red vermouth",
@@ -2744,6 +2823,7 @@
                 "garnish":"orange slice",
                 "ice":"cubed",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"soda water",
@@ -2770,6 +2850,7 @@
                 "garnish":"orange twist",
                 "ice":"-",
                 "extra":"absinthe-rinsed coupe",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -2796,6 +2877,7 @@
                 "garnish":"cherry inside the coupe",
                 "ice":"-",
                 "extra":"creme de violette rinsed coupe",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"plymouth gin",
@@ -2827,6 +2909,7 @@
                 "garnish":"lemon wheel",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -2853,6 +2936,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"to make it extra cold, stir the peach puree with a splash of prosecco over ice & strain inside the flute - then top with more prosecco",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"creme de peche or peach puree",
@@ -2874,6 +2958,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"plymouth gin",
@@ -2905,6 +2990,7 @@
                 "garnish":"-",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -2926,6 +3012,7 @@
                 "garnish":"olives or gerkins, lemon wedge & celery stick",
                 "ice":"cubed",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -2972,6 +3059,7 @@
                 "garnish":"orange twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"bourbon",
@@ -2998,6 +3086,7 @@
                 "garnish":"lemon twist",
                 "ice":"crushed",
                 "extra":"5 blackberries crushed in the glass",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"overproof gin",
@@ -3024,6 +3113,7 @@
                 "garnish":"nutmeg",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -3050,6 +3140,7 @@
                 "garnish":"lime wheel",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged jamaican rum",
@@ -3075,12 +3166,13 @@
             },
             {
                 "id":"caipirina",
-                "name":"Caipirina",
+                "name":"Caipiriña",
                 "method":"swizzle/churn",
                 "glass":"rock",
                 "garnish":"lime wedge",
                 "ice":"crushed",
                 "extra":"muddle lime wedges",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"cachaca",
@@ -3112,6 +3204,7 @@
                 "garnish":"spiraling lemon twist",
                 "ice":"-",
                 "extra":"gently crush cognac, sugar & bitters together - top with champagne",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -3143,6 +3236,7 @@
                 "garnish":"grated nutmeg & mint sprig",
                 "ice":"crushed",
                 "extra":"float of angostura bitters",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"green chartreuse",
@@ -3174,6 +3268,7 @@
                 "garnish":"orange twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"dry vermouth",
@@ -3200,6 +3295,7 @@
                 "garnish":"3 skewered raspberries & lemon twist",
                 "ice":"-",
                 "extra":"muddle raspberries inside the shaker",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -3236,6 +3332,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blackstrap rum",
@@ -3260,6 +3357,33 @@
                 ]
             },
             {
+                "id":"daiquiri",
+                "name":"Daiquiri",
+                "method":"shake & fine strain",
+                "glass":"coupe",
+                "garnish":"-",
+                "ice":"-",
+                "extra":"-",
+                "history":true,
+                "ingredients":[
+                    {
+                        "name":"white rum",
+                        "quantity":1.0,
+                        "unit":"oz."
+                    },
+                    {
+                        "name":"lime juice",
+                        "quantity":0.75,
+                        "unit":"oz."
+                    },
+                    {
+                        "name":"simple syrup",
+                        "quantity":0.5,
+                        "unit":"oz."
+                    }
+                ]
+            },
+            {
                 "id":"east-side",
                 "name":"East Side",
                 "method":"whip shake & strain",
@@ -3267,6 +3391,7 @@
                 "garnish":"mint sprig & cucumber slice",
                 "ice":"crushed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -3303,6 +3428,7 @@
                 "garnish":"spiraling lemon twist",
                 "ice":"-",
                 "extra":"top with champagne",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -3329,6 +3455,7 @@
                 "garnish":"lime wedge",
                 "ice":"cubed if served in rock glass",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -3355,6 +3482,7 @@
                 "garnish":"lime wedge",
                 "ice":"cubed",
                 "extra":"soda water top",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -3381,6 +3509,7 @@
                 "garnish":"orange twist",
                 "ice":"cubed",
                 "extra":"scotch for the Godfather - vodka for the Godmother",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended scotch / vodka",
@@ -3402,6 +3531,7 @@
                 "garnish":"mint leaf",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"white creme de cacao",
@@ -3433,6 +3563,7 @@
                 "garnish":"orange twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -3459,6 +3590,7 @@
                 "garnish":"lime wheel",
                 "ice":"-",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"white rum",
@@ -3495,6 +3627,7 @@
                 "garnish":"cinnamon stick & clove-studded lemon wedge",
                 "ice":"-",
                 "extra":"serve hot",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"bourbon",
@@ -3531,6 +3664,7 @@
                 "garnish":"1 coffee beans or grated cinnamon",
                 "ice":"-",
                 "extra":"serve hot - hand whipped heavy cream float",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"hot water",
@@ -3562,6 +3696,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -3588,6 +3723,7 @@
                 "garnish":"raspberry and lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"creme de mure/framboise",
@@ -3609,6 +3745,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -3640,6 +3777,7 @@
                 "garnish":"lemon wedge",
                 "ice":"cubed",
                 "extra":"top with coca cola",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -3681,6 +3819,7 @@
                 "garnish":"mint sprig, lime wedge & orange slice",
                 "ice":"cubed + crushed top",
                 "extra":"MUST: be house-made orgeat or premium brand - bottled almond syrup as the wrong viscosity",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"aged jamaican rum",
@@ -3717,6 +3856,7 @@
                 "garnish":"cherry",
                 "ice":"-",
                 "extra":"MUST: offer coupe or rock glass & choice of bourbon or rye whiskey",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"bourbon or rye whiskey",
@@ -3743,6 +3883,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"MUST: offer salt rim, coupe or rock glass - ALWAYS: salt rim half glass & add straw if on the rocks",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"blanco tequila",
@@ -3774,6 +3915,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"MUST: offer salt rim, coupe or rock glass - ALWAYS: salt rim half glass & add straw if on the rocks",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"blanco tequila",
@@ -3805,6 +3947,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"old tom gin",
@@ -3841,6 +3984,7 @@
                 "garnish":"spiraling orange twist",
                 "ice":"-",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"champagne",
@@ -3862,6 +4006,7 @@
                 "garnish":"mint sprig",
                 "ice":"crushed",
                 "extra":"slap the mint to release the oils",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"bourbon",
@@ -3888,6 +4033,7 @@
                 "garnish":"mint sprig & lime wedge",
                 "ice":"crushed",
                 "extra":"slap the mint to release the oils",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"white rum",
@@ -3919,6 +4065,7 @@
                 "garnish":"lime wedge",
                 "ice":"cubed + crush top",
                 "extra":"REPLACE: base spirit with other spirit for different mules",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"vodka",
@@ -3950,6 +4097,7 @@
                 "garnish":"lime wedge & mint sprig",
                 "ice":"cubed + crush top",
                 "extra":"float dark rum on top",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blackstrap rum",
@@ -3981,6 +4129,7 @@
                 "garnish":"orange wedge",
                 "ice":"cubed",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -4007,6 +4156,7 @@
                 "garnish":"mint leaf",
                 "ice":"-",
                 "extra":"top champagne",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged rum",
@@ -4043,6 +4193,7 @@
                 "garnish":"lemon & orange twist",
                 "ice":"cubed",
                 "extra":"MUST: offer choice of whiskey",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"bourbon or rye whiskey",
@@ -4074,6 +4225,7 @@
                 "garnish":"mint & cucumber slice",
                 "ice":"cubed",
                 "extra":"TIP: this recipe works with any white spirit",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -4110,6 +4262,7 @@
                 "garnish":"half salted rim glass & lime wedge",
                 "ice":"cubed",
                 "extra":"-",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"blanco tequila",
@@ -4146,6 +4299,7 @@
                 "garnish":"-",
                 "ice":"cubed",
                 "extra":"float of peated scotch whiskey",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended scotch whiskey",
@@ -4177,6 +4331,7 @@
                 "garnish":"TOP: orange slice & mint sprig. INSIDE: orange slice, 6 mint leaves, cucumber slice & a quartered strawberry",
                 "ice":"cubed",
                 "extra":"top with ginger ale OR lemonade",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"Pimm's No. 1",
@@ -4213,6 +4368,7 @@
                 "garnish":"pineapple wedge & pineapple fronds",
                 "ice":"cubed + crushed top",
                 "extra":"TIP: KokoKanu or Aluna are great coconut rums to use in alternativly make your own coconut rum - avoid Malibu, please",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"coconut rum (ABV 37.5% or above)",
@@ -4249,6 +4405,7 @@
                 "garnish":"stripe of angostura bitter on top",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"white rum",
@@ -4285,6 +4442,7 @@
                 "garnish":"1/2 passion fruit",
                 "ice":"-",
                 "extra":"shot of champagne on the side",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"vanilla vodka",
@@ -4316,6 +4474,7 @@
                 "garnish":"mint sprig",
                 "ice":"crushed",
                 "extra":"create a float of angostura after churning & add fresh crushed ice on top of it",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"aged rum",
@@ -4342,6 +4501,7 @@
                 "garnish":"-",
                 "ice":"-",
                 "extra":"put the collins inside a freezer before starting to make the drink - add soda water at the bottom of the glass before straining the cocktail inside - pop the cocktail in the freezer to solidify the foam - after a couple of minutes slowly top it up with soda water to create an attractive head",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"old tom gin",
@@ -4383,6 +4543,7 @@
                 "garnish":"cherry on cocktail pick",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended scotch whiskey",
@@ -4409,6 +4570,7 @@
                 "garnish":"lime wedge",
                 "ice":"cubed",
                 "extra":"top the cocktail with soda water",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"dry vermouth",
@@ -4440,6 +4602,7 @@
                 "garnish":"cinnamon stick",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"blended scotch whiskey",
@@ -4461,6 +4624,7 @@
                 "garnish":"lemon twist",
                 "ice":"-",
                 "extra":"absinthe-rinsed CHILLED glass",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"rye whiskey",
@@ -4497,6 +4661,7 @@
                 "garnish":"sugar the rim of half the glass",
                 "ice":"-",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -4528,6 +4693,7 @@
                 "garnish":"orange slice, cherry & pineapple fronds",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -4579,6 +4745,7 @@
                 "garnish":"mint sprig",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -4610,6 +4777,7 @@
                 "garnish":"lemon wheel & mint sprig",
                 "ice":"cubed",
                 "extra":"top with club soda",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -4641,6 +4809,7 @@
                 "garnish":"mint sprig",
                 "ice":"crushed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognaac",
@@ -4667,6 +4836,7 @@
                 "garnish":"-",
                 "ice":"1/2 cubed + 1/2 crushed",
                 "extra":"Lime heels are discs sliced deep from the side of the lime, mostly peel but with a thin layer of juice sacs still attached",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"agricole rum",
@@ -4693,6 +4863,7 @@
                 "garnish":"lemon wedge",
                 "ice":"cubed",
                 "extra":"top with club soda or any flavoured soda",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"london dry gin",
@@ -4719,6 +4890,7 @@
                 "garnish":"lemon twist",
                 "ice":"cubed",
                 "extra":"-",
+                "history":false,
                 "ingredients":[
                     {
                         "name":"cognac",
@@ -4753,6 +4925,38 @@
                 ]
             },
             {
+                "id":"whiskey-sour",
+                "name":"Whiskey Sour",
+                "method":"shake & fine strain",
+                "glass":"rock",
+                "garnish":"lemon wheel",
+                "ice":"cubed",
+                "extra":"Vegan foamer or pasteurised egg white",
+                "history":true,
+                "ingredients":[
+                    {
+                        "name":"whiskey",
+                        "quantity":2.0,
+                        "unit":"oz."
+                    },
+                    {
+                        "name":"sugar syrup",
+                        "quantity":0.75,
+                        "unit":"oz."
+                    },
+                    {
+                        "name":"lemon juice",
+                        "quantity":0.75,
+                        "unit":"oz."
+                    },
+                    {
+                        "name":"angostura bitters",
+                        "quantity":2.0,
+                        "unit":"dashes"
+                    }
+                ]
+            },
+            {
                 "id":"white-russian",
                 "name":"White Russian",
                 "method":"build + quick stir",
@@ -4760,6 +4964,7 @@
                 "garnish":"-",
                 "ice":"cubed",
                 "extra":"hand-whipped cream float",
+                "history":true,
                 "ingredients":[
                     {
                         "name":"vodka",

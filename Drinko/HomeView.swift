@@ -50,8 +50,6 @@ struct HomeView: View {
                 }
         }
     }
-
-    #warning("👨‍💻 Add 'ask for review' and 'check for updates'")
 }
 
 struct HomeView_Previews: PreviewProvider {
