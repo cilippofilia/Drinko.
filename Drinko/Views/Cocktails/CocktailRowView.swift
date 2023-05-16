@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CocktailRowView: View {
-    @ObservedObject var favorites = Favorites()
+    @StateObject var favorites: Favorites
 
     var cocktail: Cocktail
 
@@ -38,10 +38,12 @@ struct CocktailRowView: View {
 
                 Spacer()
 
-                withAnimation(.easeInOut(duration: 0.5)) {
-                    Image(systemName: favorites.contains(cocktail) ? "heart.fill" : "heart")
-                        .foregroundColor(.red)
-                        .opacity(favorites.contains(cocktail) ? 1 : 0)
+                if favorites.contains(cocktail) {
+                    withAnimation(.easeInOut(duration: 0.5)) {
+                        Image(systemName: favorites.contains(cocktail) ? "heart.fill" : "heart")
+                            .foregroundColor(.red)
+                            .opacity(favorites.contains(cocktail) ? 1 : 0)
+                    }
                 }
             }
             .frame(height: 45)
@@ -52,6 +54,6 @@ struct CocktailRowView: View {
 
 struct CocktailRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailRowView(cocktail: .example)
+        CocktailRowView(favorites: Favorites(), cocktail: .example)
     }
 }
