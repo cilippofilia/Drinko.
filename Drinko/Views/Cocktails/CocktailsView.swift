@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CocktailsView: View {
-    @ObservedObject var favorites = Favorites()
+    @StateObject var favorites = Favorites()
     static let cocktailsTag: String? = "Cocktails"
 
     let categories = Bundle.main.decode([Category].self, from: "cocktails.json")
@@ -18,7 +18,7 @@ struct CocktailsView: View {
             List(categories) { category in
                 Section(header: Text(category.name)) {
                     ForEach(category.cocktails) { cocktail in
-                        CocktailRowView(cocktail: cocktail)
+                        CocktailRowView(favorites: favorites, cocktail: cocktail)
                             .contextMenu {
                                 Button(action: {
                                     if favorites.contains(cocktail) {

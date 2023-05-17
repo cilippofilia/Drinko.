@@ -13,7 +13,7 @@ struct CocktailRowView: View {
     var cocktail: Cocktail
 
     var body: some View {
-        NavigationLink(destination: CocktailDetailView(cocktail: cocktail)) {
+        NavigationLink(destination: CocktailDetailView(favorites: favorites, cocktail: cocktail)) {
             HStack(spacing: 10) {
                 if cocktail.glass == "wine" {
                     Image(systemName: "wineglass")

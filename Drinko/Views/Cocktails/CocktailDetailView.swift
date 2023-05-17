@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CocktailDetailView: View {
-    @ObservedObject var favorites = Favorites()
+    @ObservedObject var favorites: Favorites
 
     @State private var showHistory = false
 
@@ -70,7 +70,7 @@ struct CocktailDetailView: View {
 
 struct CocktailDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailDetailView(cocktail: .example)
+        CocktailDetailView(favorites: Favorites(), cocktail: .example)
             .preferredColorScheme(.dark)
     }
 }
