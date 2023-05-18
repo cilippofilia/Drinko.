@@ -10,7 +10,6 @@
 		1843BEF429FC6E7E0033E737 /* DrinkoButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843BEF329FC6E7E0033E737 /* DrinkoButtonStyle.swift */; };
 		1843BEF629FC75910033E737 /* Color-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843BEF529FC75910033E737 /* Color-Ext.swift */; };
 		1843BEF829FC75AD0033E737 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843BEF729FC75AD0033E737 /* Favorites.swift */; };
-		1843BEFC29FC7BD20033E737 /* FavoritesButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843BEFB29FC7BD20033E737 /* FavoritesButton.swift */; };
 		185592A629FA5E0E00A51A20 /* CocktailDetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185592A529FA5E0E00A51A20 /* CocktailDetailSectionView.swift */; };
 		185592A829FA633000A51A20 /* lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 185592A729FA633000A51A20 /* lessons.json */; };
 		185592AA29FA87DA00A51A20 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185592A929FA87DA00A51A20 /* Lesson.swift */; };
@@ -52,7 +51,6 @@
 		1843BEF329FC6E7E0033E737 /* DrinkoButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoButtonStyle.swift; sourceTree = "<group>"; };
 		1843BEF529FC75910033E737 /* Color-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Ext.swift"; sourceTree = "<group>"; };
 		1843BEF729FC75AD0033E737 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
-		1843BEFB29FC7BD20033E737 /* FavoritesButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesButton.swift; sourceTree = "<group>"; };
 		185592A529FA5E0E00A51A20 /* CocktailDetailSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailDetailSectionView.swift; sourceTree = "<group>"; };
 		185592A729FA633000A51A20 /* lessons.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lessons.json; sourceTree = "<group>"; };
 		185592A929FA87DA00A51A20 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
@@ -246,7 +244,6 @@
 				186CAC022A050CE500827F5D /* CoreData */,
 				1843BEF329FC6E7E0033E737 /* DrinkoButtonStyle.swift */,
 				1843BEF729FC75AD0033E737 /* Favorites.swift */,
-				1843BEFB29FC7BD20033E737 /* FavoritesButton.swift */,
 				186CAC112A06567D00827F5D /* SplashScreenView.swift */,
 				185CE16829F6BC5C003CAF4E /* Extensions */,
 			);
@@ -352,7 +349,6 @@
 				185592AC29FA8D7B00A51A20 /* LearnRowView.swift in Sources */,
 				187C7D5929F5722C00996969 /* CocktailDetailView.swift in Sources */,
 				187455BF2A01728A006F8C9C /* Spirit.swift in Sources */,
-				1843BEFC29FC7BD20033E737 /* FavoritesButton.swift in Sources */,
 				186CAC082A0513D800827F5D /* Family-CDHelpers.swift in Sources */,
 				186CAC042A050E2200827F5D /* DataController.swift in Sources */,
 				188B753329F4914200407705 /* SettingsView.swift in Sources */,

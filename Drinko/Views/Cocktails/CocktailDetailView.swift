@@ -8,69 +8,90 @@
 import SwiftUI
 
 struct CocktailDetailView: View {
-    @ObservedObject var favorites: Favorites
-
+    @ObservedObject var favorites = Favorites()
     @State private var showHistory = false
 
     var cocktail: Cocktail
 
     var body: some View {
-        ScrollView(.vertical) {
-            VStack(alignment: .leading) {
-                CocktailDetailSectionView(cocktail: cocktail, text: "Ingredients")
+        NavigationStack {
+            ScrollView(.vertical) {
+                VStack(alignment: .leading) {
+                    CocktailDetailSectionView(cocktail: cocktail, text: "Ingredients")
 
-                ForEach(cocktail.ingredients) { ingredient in
-                    HStack {
-                        // "%2g" reduces the decimal points to 2 digits
-                        Text("\(ingredient.quantity, specifier: "%2g")")
-                        Text(ingredient.unit)
-                        Text(ingredient.name.capitalized)
+                    ForEach(cocktail.ingredients) { ingredient in
+                        HStack {
+                            // "%2g" reduces the decimal points to 2 digits
+                            Text("\(ingredient.quantity, specifier: "%2g")")
+                            Text(ingredient.unit)
+                            Text(ingredient.name.capitalized)
+                            Spacer()
+                        }
+                        .multilineTextAlignment(.leading)
                     }
-                }
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Method")
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Method")
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Glass")
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Glass")
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Garnish")
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Garnish")
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Ice")
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Ice")
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Extra")
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Extra")
 
 
-                VStack {
-                    if cocktail.history != "" {
+                    VStack {
+                        // HISTORY BUTTON
+                        if cocktail.history != "" {
+                            Button(action: {
+                                showHistory.toggle()
+                            }) {
+                                DrinkoButtonStyle(symbolName: "book.fill",
+                                                  text: "History",
+                                                  color: .white,
+                                                  background: .blue)
+                            }
+                            .sheet(isPresented: $showHistory) {
+                                HistoryView(cocktail: cocktail)
+                            }
+                        }
+                        // ADD TO FAV BUTTON
                         Button(action: {
-                            showHistory.toggle()
+                            if favorites.contains(cocktail) {
+                                favorites.remove(cocktail)
+                            } else {
+                                favorites.add(cocktail)
+                                // haptic feedback
+                                UINotificationFeedbackGenerator()
+                                    .notificationOccurred(.success)
+                            }
                         }) {
-                            DrinkoButtonStyle(symbolName: "book.fill",
-                                              text: "History",
+                            DrinkoButtonStyle(symbolName: "heart.fill",
+                                              text: favorites.contains(cocktail) ? "Remove from favorites" : "Add to favorites",
                                               color: .white,
-                                              background: .blue)
+                                              background: favorites.contains(cocktail) ? .red : .blue)
                         }
-                        .sheet(isPresented: $showHistory) {
-                            HistoryView(cocktail: cocktail)
-                        }
+
                     }
-                    FavoritesButton(cocktail: cocktail)
+                    .padding(.vertical)
                 }
-                .padding(.vertical)
+                .frame(width: screenWidthPlusMargins)
             }
-            .frame(width: screenWidthPlusMargins)
+            .navigationTitle(cocktail.name)
         }
-        .navigationTitle(cocktail.name)
     }
 }
 
 struct CocktailDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailDetailView(favorites: Favorites(), cocktail: .example)
+        CocktailDetailView(cocktail: .example)
             .preferredColorScheme(.dark)
+            .environmentObject(Favorites())
     }
 }

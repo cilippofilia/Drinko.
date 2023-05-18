@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct CocktailRowView: View {
-    @StateObject var favorites: Favorites
+    @ObservedObject var favorites = Favorites()
 
     var cocktail: Cocktail
 
     var body: some View {
-        NavigationLink(destination: CocktailDetailView(favorites: favorites, cocktail: cocktail)) {
+        NavigationLink(destination: CocktailDetailView(favorites: favorites,
+                                                       cocktail: cocktail)) {
             HStack(spacing: 10) {
                 if cocktail.glass == "wine" {
                     Image(systemName: "wineglass")
@@ -48,12 +49,12 @@ struct CocktailRowView: View {
             }
             .frame(height: 45)
         }
-        .environmentObject(favorites)
     }
 }
 
 struct CocktailRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailRowView(favorites: Favorites(), cocktail: .example)
+        CocktailRowView(cocktail: .example)
+            .environmentObject(Favorites())
     }
 }
