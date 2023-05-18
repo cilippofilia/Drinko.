@@ -22,7 +22,7 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
 """
 
     var body: some View {
-        ScrollView {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 Text(text)
                     .multilineTextAlignment(.leading)
