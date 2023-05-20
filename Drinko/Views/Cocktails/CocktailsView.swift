@@ -18,7 +18,7 @@ struct CocktailsView: View {
             List(categories) { category in
                 Section(header: Text(category.name)) {
                     ForEach(category.cocktails) { cocktail in
-// When dealing with favorites, it is important to pass the favorite through although is not required from swift and would actually still compile
+                        // When dealing with favorites, it is important to pass the favorite through although is not required from swift and would actually still compile
                         CocktailRowView(favorites: favorites, cocktail: cocktail)
                             .contextMenu {
                                 Button(action: {

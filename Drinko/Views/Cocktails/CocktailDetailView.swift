@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CocktailDetailView: View {
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var favorites = Favorites()
     @State private var showHistory = false
 
@@ -84,6 +85,8 @@ struct CocktailDetailView: View {
                 .frame(width: screenWidthPlusMargins)
             }
             .navigationTitle(cocktail.name)
+            // forcing displayMode .inline to avoid cropping the back bar button - this way will be standardized between 'Cocktails' and 'Back' if the Navigation Title is too long
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

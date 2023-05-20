@@ -21,6 +21,8 @@ struct SettingsView: View {
     @State private var setFeatureSubject = "I have a featuristic idea for you!"
     @State private var setEmailSubject = ""
 
+    @State private var drinkoLink = "https://www.google.com"
+
     var body: some View {
         NavigationStack {
             Form {
@@ -36,9 +38,10 @@ struct SettingsView: View {
                     .sheet(isPresented: $isShowingMail) {
                         MailView(result: $result, setSubject: $setBugSubject)
                     }
+                    .buttonStyle(.plain)
 
                     Button(action: {
-
+                        isShowingMail.toggle()
                     }) {
                         SettingsRowView(icon: "wand.and.rays",
                                         color: .blue,
@@ -48,9 +51,10 @@ struct SettingsView: View {
                     .sheet(isPresented: $isShowingMail) {
                         MailView(result: $result, setSubject: $setFeatureSubject)
                     }
+                    .buttonStyle(.plain)
 
                     Button(action: {
-
+                        isShowingMail.toggle()
                     }) {
                         SettingsRowView(icon: "envelope",
                                         color: .secondary,
@@ -60,6 +64,8 @@ struct SettingsView: View {
                     .sheet(isPresented: $isShowingMail) {
                         MailView(result: $result, setSubject: $setEmailSubject)
                     }
+                    .buttonStyle(.plain)
+
                 }
 
                 Section(header: Text("Support")) {
@@ -70,9 +76,12 @@ struct SettingsView: View {
                         requestReview()
                     }
 
-                    SettingsRowView(icon: "square.and.arrow.up",
-                                    color: .secondary,
-                                    itemName: "Share the app")
+                    ShareLink(item: drinkoLink) {
+                        SettingsRowView(icon: "square.and.arrow.up",
+                                        color: .secondary,
+                                        itemName: "Share the app")
+                    }
+                    .buttonStyle(.plain)
                 }
 
                 Section(header: Text("Info"), footer: Text("Product of Italy 🇮🇹")) {

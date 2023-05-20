@@ -16,7 +16,6 @@ struct DrinkoButtonStyle: View {
     var body: some View {
         HStack(spacing: 10) {
             Image(systemName: symbolName)
-                .imageScale(.large)
 
             Text(text)
         }
