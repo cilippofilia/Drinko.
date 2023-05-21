@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 02/05/2023.
 //
 
+import AVFoundation
 import MessageUI
 import SwiftUI
 import UIKit
@@ -12,8 +13,6 @@ import UIKit
 struct MailView: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentation
     @Binding var result: Result<MFMailComposeResult, Error>?
-    
-    @Binding var setSubject: String
 
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
         @Binding var presentation: PresentationMode
@@ -36,6 +35,10 @@ struct MailView: UIViewControllerRepresentable {
                 return
             }
             self.result = .success(result)
+
+            if result == .sent {
+                AudioServicesPlayAlertSound(SystemSoundID(1001))
+            }
         }
     }
 
@@ -47,7 +50,6 @@ struct MailView: UIViewControllerRepresentable {
     func makeUIViewController(context: UIViewControllerRepresentableContext<MailView>) -> MFMailComposeViewController {
         let vc = MFMailComposeViewController()
         vc.mailComposeDelegate = context.coordinator
-        vc.setSubject(setSubject)
         vc.setToRecipients(["cilia.filippo.dev@gmail.com"])
         
         return vc

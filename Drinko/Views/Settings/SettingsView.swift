@@ -17,10 +17,6 @@ struct SettingsView: View {
     @State private var result: Result<MFMailComposeResult, Error>? = nil
     @State private var isShowingMail = false
 
-    @State private var setBugSubject = "I have found this bug in your app!"
-    @State private var setFeatureSubject = "I have a featuristic idea for you!"
-    @State private var setEmailSubject = ""
-
     @State private var drinkoLink = "https://www.google.com"
 
     var body: some View {
@@ -36,7 +32,7 @@ struct SettingsView: View {
                     }
                     .disabled(!MFMailComposeViewController.canSendMail())
                     .sheet(isPresented: $isShowingMail) {
-                        MailView(result: $result, setSubject: $setBugSubject)
+                        MailView(result: $result)
                     }
                     .buttonStyle(.plain)
 
@@ -49,7 +45,7 @@ struct SettingsView: View {
                     }
                     .disabled(!MFMailComposeViewController.canSendMail())
                     .sheet(isPresented: $isShowingMail) {
-                        MailView(result: $result, setSubject: $setFeatureSubject)
+                        MailView(result: $result)
                     }
                     .buttonStyle(.plain)
 
@@ -62,7 +58,7 @@ struct SettingsView: View {
                     }
                     .disabled(!MFMailComposeViewController.canSendMail())
                     .sheet(isPresented: $isShowingMail) {
-                        MailView(result: $result, setSubject: $setEmailSubject)
+                        MailView(result: $result)
                     }
                     .buttonStyle(.plain)
 
