@@ -14,12 +14,17 @@ struct SettingsView: View {
 
     @Environment(\.requestReview) var requestReview
 
-    @State private var result: Result<MFMailComposeResult, Error>? = nil
-
     @State private var email = "cilia.filippo.dev@gmail.com"
+
     @State private var reportBugSubject = "Bug Report"
+    @State private var reportBugBody = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
+
     @State private var requestFeatureSubject = "Featuristic idea"
+    @State private var requesteFeatureBody = ""
+
     @State private var contactDevSubject = ""
+    @State private var contactDevBody = ""
+
 
     @State private var drinkoLink = "https://www.google.com"
 
@@ -28,10 +33,7 @@ struct SettingsView: View {
             Form {
                 Section(header: Text("Contacts")) {
                     Button(action: {
-                        let email = email
-                        let subject = reportBugSubject
-                        let body = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
-                        guard let url = URL(string: "mailto:\(email)?subject=\(subject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(body.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
+                        guard let url = URL(string: "mailto:\(email)?subject=\(reportBugSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(reportBugBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
 
                         UIApplication.shared.open(url)
                     }) {
@@ -43,10 +45,7 @@ struct SettingsView: View {
                     .buttonStyle(.plain)
 
                     Button(action: {
-                        let email = email
-                        let subject = requestFeatureSubject
-                        let body = ""
-                        guard let url = URL(string: "mailto:\(email)?subject=\(subject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(body.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
+                        guard let url = URL(string: "mailto:\(email)?subject=\(requestFeatureSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(requesteFeatureBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
 
                         UIApplication.shared.open(url)
                     }) {
@@ -58,10 +57,7 @@ struct SettingsView: View {
                     .buttonStyle(.plain)
 
                     Button(action: {
-                        let email = email
-                        let subject = contactDevSubject
-                        let body = ""
-                        guard let url = URL(string: "mailto:\(email)?subject=\(subject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(body.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
+                        guard let url = URL(string: "mailto:\(email)?subject=\(contactDevSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(contactDevBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
 
                         UIApplication.shared.open(url)
                     }) {
