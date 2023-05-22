@@ -27,6 +27,8 @@ struct SettingsView: View {
 
 
     @State private var drinkoLink = "https://www.google.com"
+    @State private var twitterDevURL = URL(string: "https://twitter.com/fcilia_dev/")
+    @State private var instagramDevURL = URL(string: "https://instagram.com/cilippofilia/")
 
     var body: some View {
         NavigationStack {
@@ -70,7 +72,70 @@ struct SettingsView: View {
 
                 }
 
+                Section(header: Text("Socials")) {
+                    Button(action: {
+                        if UIApplication.shared.canOpenURL(twitterDevURL!) {
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(twitterDevURL!, options: [:], completionHandler: nil)
+                            } else {
+                                UIApplication.shared.openURL(twitterDevURL!)
+                            }
+                        } else {
+                            //redirect to safari because the user doesn't have Instagram
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(twitterDevURL!, options: [:], completionHandler: nil)
+                            } else {
+                                UIApplication.shared.openURL(twitterDevURL!)
+                            }
+                        }
+                    }) {
+                        SettingsRowView(icon: "bird",
+                                        color: .blue,
+                                        itemName: "Twitter")
+                    }
+                    .buttonStyle(.plain)
+
+
+                    Button(action: {
+                        if UIApplication.shared.canOpenURL(instagramDevURL!) {
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(instagramDevURL!, options: [:], completionHandler: nil)
+                            } else {
+                                UIApplication.shared.openURL(instagramDevURL!)
+                            }
+                        } else {
+                            //redirect to safari because the user doesn't have Instagram
+                            if #available(iOS 10.0, *) {
+                                UIApplication.shared.open(instagramDevURL!, options: [:], completionHandler: nil)
+                            } else {
+                                UIApplication.shared.openURL(instagramDevURL!)
+                            }
+                        }
+                    }) {
+                        SettingsRowView(icon: "camera",
+                                        color: .orange,
+                                        itemName: "Instagram")
+                    }
+                    .buttonStyle(.plain)
+
+                }
+
                 Section(header: Text("Support")) {
+                    HStack {
+                        SettingsRowView(icon: "text.bubble",
+                                        color: .secondary,
+                                        itemName: "Language")
+                        Spacer()
+
+                        Text(Bundle.main.preferredLocalizations.first!.uppercased())
+                            .foregroundColor(.secondary)
+                    }
+                    .onTapGesture {
+                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                    }
+
+
+
                     SettingsRowView(icon: "star",
                                     color: .yellow,
                                     itemName: "Rate the app")
