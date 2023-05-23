@@ -32,6 +32,7 @@ struct LearnRowView: View {
                 }
             }
         }
+        .frame(height: 45)
     }
 }
 
