@@ -11,15 +11,17 @@ struct CocktailsView: View {
     @StateObject var favorites = Favorites()
     static let cocktailsTag: String? = "Cocktails"
 
+    @State private var searchText = ""
+
     let categories = Bundle.main.decode([Category].self, from: "cocktails.json")
 
     var body: some View {
         NavigationStack {
             List(categories) { category in
-                Section(header: Text(category.name)) {
-                    ForEach(category.cocktails) { cocktail in
-                        // When dealing with favorites, it is important to pass the favorite through although is not required from swift and would actually still compile
-                        CocktailRowView(favorites: favorites, cocktail: cocktail)
+                ForEach(category.cocktails) { cocktail in
+                    // When dealing with favorites, it is important to pass the favorite through although is not required from swift and would actually still compile
+                    if searchText.isEmpty || cocktail.contains(searchText) {
+                        CocktailRowView(favorites: favorites, category: category, cocktail: cocktail)
                             .contextMenu {
                                 Button(action: {
                                     if favorites.contains(cocktail) {
@@ -41,6 +43,7 @@ struct CocktailsView: View {
                     }
                 }
             }
+            .searchable(text: $searchText)
             .navigationTitle("Cocktails")
         }
         .environmentObject(favorites)

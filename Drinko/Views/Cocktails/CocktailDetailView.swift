@@ -12,12 +12,20 @@ struct CocktailDetailView: View {
     @ObservedObject var favorites = Favorites()
     @State private var showHistory = false
 
+    var category: Category
     var cocktail: Cocktail
 
     var body: some View {
         NavigationStack {
             ScrollView(.vertical) {
                 VStack(alignment: .leading) {
+                    Text(cocktail.name)
+                        .font(.title)
+                        .bold()
+
+                    Text(category.name)
+                        .font(.subheadline)
+
                     CocktailDetailSectionView(cocktail: cocktail, text: "Ingredients")
 
                     ForEach(cocktail.ingredients) { ingredient in
@@ -93,7 +101,7 @@ struct CocktailDetailView: View {
 
 struct CocktailDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailDetailView(cocktail: .example)
+        CocktailDetailView(category: .example, cocktail: .example)
             .preferredColorScheme(.dark)
             .environmentObject(Favorites())
     }

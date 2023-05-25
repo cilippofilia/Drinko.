@@ -10,10 +10,12 @@ import SwiftUI
 struct CocktailRowView: View {
     @ObservedObject var favorites = Favorites()
 
+    var category: Category
     var cocktail: Cocktail
 
     var body: some View {
         NavigationLink(destination: CocktailDetailView(favorites: favorites,
+                                                       category: category,
                                                        cocktail: cocktail)) {
             HStack(spacing: 10) {
                 if cocktail.glass == "wine" {
@@ -54,7 +56,7 @@ struct CocktailRowView: View {
 
 struct CocktailRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailRowView(cocktail: .example)
+        CocktailRowView(category: .example, cocktail: .example)
             .environmentObject(Favorites())
     }
 }
