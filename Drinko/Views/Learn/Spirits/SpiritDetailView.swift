@@ -11,7 +11,7 @@ struct SpiritDetailView: View {
     var spirit: Spirit
 
     var body: some View {
-        ScrollView(.vertical) {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 10) {
                 Image(spirit.image)
                     .resizable()

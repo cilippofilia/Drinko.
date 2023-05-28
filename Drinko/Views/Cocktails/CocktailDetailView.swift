@@ -17,7 +17,7 @@ struct CocktailDetailView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 VStack(alignment: .leading) {
                     Text(cocktail.name)
                         .font(.title)

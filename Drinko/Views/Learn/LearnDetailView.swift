@@ -11,7 +11,7 @@ struct LearnDetailView: View {
     var lesson: Lesson
 
     var body: some View {
-        ScrollView(.vertical) {
+        ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 10) {
                 Image(lesson.img)
                     .resizable()
