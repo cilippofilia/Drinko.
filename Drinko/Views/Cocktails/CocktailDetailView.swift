@@ -12,7 +12,6 @@ struct CocktailDetailView: View {
     @ObservedObject var favorites = Favorites()
     @State private var showHistory = false
 
-    var category: Category
     var cocktail: Cocktail
 
     var body: some View {
@@ -22,9 +21,6 @@ struct CocktailDetailView: View {
                     Text(cocktail.name)
                         .font(.title)
                         .bold()
-
-                    Text(category.name)
-                        .font(.subheadline)
 
                     CocktailDetailSectionView(cocktail: cocktail, text: "Ingredients")
 
@@ -101,8 +97,7 @@ struct CocktailDetailView: View {
 
 struct CocktailDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailDetailView(category: .example, cocktail: .example)
-            .preferredColorScheme(.dark)
+        CocktailDetailView(cocktail: .example)
             .environmentObject(Favorites())
     }
 }

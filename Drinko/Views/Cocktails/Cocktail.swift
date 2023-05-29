@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-struct Category: Codable, Equatable, Identifiable {
-    var id: String
-    let name: String
-    let cocktails: [Cocktail]
-
-    func contains(_ string: String) -> Bool {
-        let properties = name.map { $0.lowercased() }
-        let query = string.lowercased()
-        let matches = properties.filter { $0.contains(query) }
-        return !matches.isEmpty
-    }
-
-    #if DEBUG
-    static let example = Category(id: "gin-shaken",
-                                  name: "Gin Shaken",
-                                  cocktails: [])
-    #endif
-}
+//struct Category: Codable, Equatable, Identifiable {
+//    var id: String
+//    let name: String
+//    let cocktails: [Cocktail]
+//
+//    func contains(_ string: String) -> Bool {
+//        let properties = name.map { $0.lowercased() }
+//        let query = string.lowercased()
+//        let matches = properties.filter { $0.contains(query) }
+//        return !matches.isEmpty
+//    }
+//
+//    #if DEBUG
+//    static let example = Category(id: "gin-shaken",
+//                                  name: "Gin Shaken",
+//                                  cocktails: [])
+//    #endif
+//}
 
 struct Cocktail: Codable, Equatable, Identifiable {
     let id: String
@@ -51,7 +51,7 @@ struct Cocktail: Codable, Equatable, Identifiable {
     }
 
     func contains(_ string: String) -> Bool {
-        let properties = [name, method, glass, ice].map { $0.lowercased() }
+        let properties = [id, name, method, glass, ice].map { $0.lowercased() }
         let query = string.lowercased()
         let matches = properties.filter { $0.contains(query) }
         return !matches.isEmpty
