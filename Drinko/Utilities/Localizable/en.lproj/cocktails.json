@@ -281,7 +281,7 @@
                 "unit":"oz."
             },
             {
-                "name":"fresh espresso",
+                "name":"espresso",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -291,7 +291,7 @@
                 "unit":"oz."
             },
             {
-                "name":"creme de cacao",
+                "name":"simple syrup",
                 "quantity":0.15,
                 "unit":"oz."
             }
@@ -814,7 +814,7 @@
     {
         "id":"new-york-sour",
         "name":"New York Sour",
-        "method":"dry shake, shake & fine strain (everything but wine)",
+        "method":"dry shake, shake & fine strain",
         "glass":"rock",
         "garnish":"-",
         "ice":"cubed",
@@ -1443,6 +1443,11 @@
                 "name":"kahlua",
                 "quantity":1.5,
                 "unit":"oz."
+            },
+            {
+                "name":"double cream",
+                "quantity":1.5,
+                "unit":"oz."
             }
         ]
     },
@@ -1728,7 +1733,7 @@
         "history":"",
         "ingredients":[
             {
-                "name":"funky white rum (eg: Banks 5 Island, Wray & Nephew, agricole rums)",
+                "name":"funky white rum",
                 "quantity":1.5,
                 "unit":"oz."
             },
@@ -4841,7 +4846,7 @@
                 "unit":"oz."
             },
             {
-                "name":"sugar syrup",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
