@@ -31,13 +31,6 @@ struct Cocktail: Codable, Equatable, Identifiable {
         let unit: String
     }
 
-    func contains(_ string: String) -> Bool {
-        let properties = [id, name, method, glass, ice].map { $0.lowercased() }
-        let query = string.lowercased()
-        let matches = properties.filter { $0.contains(query) }
-        return !matches.isEmpty
-    }
-
     #if DEBUG
     static let example = Cocktail(
         id: "corpse-reviver",
