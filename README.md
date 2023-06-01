@@ -15,19 +15,19 @@ Discover the ultimate bartending experience with our app's key features:
 
 - Get started on your mixology journey with our 'Learn' section, where you'll master the basics and learn advanced techniques to impress your guests.
 
-- Indulge in over 200 cocktails divided by category in our 'Cocktails' section. Mark your favorites and never miss a beat when mixing your go-to drinks.
+- Indulge in over 200 cocktails in our 'Cocktails' section. Mark your favorites and never miss a beat when mixing your go-to drinks.
 
 - Keep track of your ingredients and easily label the ones you need to buy with our 'Cabinet' section. No more scrambling to find the right ingredients when it's time to mix. (COMING SOON...)
 
-- Our app is designed for global users with two supported languages. (COMING SOON...)
-You can report bugs and get in touch with the developer in the 'Settings' section.
+- Our app is designed for global users with two supported languages - 🇬🇧 🇮🇹 - get in touch if you'd like to help translating it into more languages 🙌
+(You can report bugs and get in touch with the developer in the 'Settings' section)
 
 Whether you're a beginner or an experienced mixologist, our app has everything you need to take your bartending skills to the next level. Download it now and start crafting cocktails like a pro!
 
 Additional Features:
 - All the techniques have video examples;
 
-- All the text has been localized to automatically switch between English and Italian (COMING SOON + additional languages too)
+- All the text has been localized to automatically switch between English and Italian 
 
 - In-app mail view to report bugs and feedbacks;
 
