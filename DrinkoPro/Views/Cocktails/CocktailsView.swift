@@ -17,30 +17,12 @@ struct CocktailsView: View {
 
     var body: some View {
         NavigationStack {
-            List(cocktails) { cocktail in
-                if searchText.isEmpty || cocktail.contains(searchText) {
-                    CocktailRowView(favorites: favorites, cocktail: cocktail)
-                        .contextMenu {
-                            Button(action: {
-                                if favorites.contains(cocktail) {
-                                    favorites.remove(cocktail)
-
-                                } else {
-                                    favorites.add(cocktail)
-
-                                    // haptic feedback
-                                    UINotificationFeedbackGenerator()
-                                        .notificationOccurred(.success)
-                                }
-                            }) {
-                                Image(systemName: "heart")
-                                // Deep press-Context button text
-                                Text(favorites.contains(cocktail) ? "Remove from favorites" : "Add to favorites")
-                            }
-                        }
-                }
+            List(cocktails, id:\.id) { cocktail in
+                CocktailRowView(favorites: favorites, cocktail: cocktail)
+                    .contextMenu {
+                        FavoriteButtonView(favorites: favorites, cocktail: cocktail)
+                    }
             }
-            .searchable(text: $searchText)
             .navigationTitle("Cocktails")
         }
         .environmentObject(favorites)

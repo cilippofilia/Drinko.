@@ -9,19 +9,14 @@ import SwiftUI
 
 struct LearnView: View {
     static let learnTag: String? = "Learn"
-    
     let subjects = Bundle.main.decode([Subject].self, from: "lessons.json")
 
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    ForEach(subjects) { subject in
-                        Section(header: Text(subject.name)) {
-                            ForEach(subject.lessons) { lesson in
-                                LearnRowView(lesson: lesson)
-                            }
-                        }
+            List(subjects, id:\.id) { subject in
+                Section(header: Text(subject.name)) {
+                    ForEach(subject.lessons) { lesson in
+                        LearnRowView(lesson: lesson)
                     }
                 }
             }
