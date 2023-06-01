@@ -23,7 +23,7 @@
 		18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E872A286D2A00862CE3 /* Margins.swift */; };
 		18F49E9D2A286D2A00862CE3 /* String-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E882A286D2A00862CE3 /* String-Ext.swift */; };
 		18F49E9E2A286D2A00862CE3 /* Color-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E892A286D2A00862CE3 /* Color-Ext.swift */; };
-		18F49E9F2A286D2A00862CE3 /* DrinkoButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoButtonStyle.swift */; };
+		18F49E9F2A286D2A00862CE3 /* DrinkoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoLabel.swift */; };
 		18F49EA02A286D2A00862CE3 /* lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E8C2A286D2A00862CE3 /* lessons.json */; };
 		18F49EA12A286D2A00862CE3 /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E8E2A286D2A00862CE3 /* cocktails.json */; };
 		18F49EA22A286D2A00862CE3 /* drinkoGenerics.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E922A286D2A00862CE3 /* drinkoGenerics.strings */; };
@@ -65,7 +65,7 @@
 		18F49E872A286D2A00862CE3 /* Margins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
 		18F49E882A286D2A00862CE3 /* String-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Ext.swift"; sourceTree = "<group>"; };
 		18F49E892A286D2A00862CE3 /* Color-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color-Ext.swift"; sourceTree = "<group>"; };
-		18F49E8A2A286D2A00862CE3 /* DrinkoButtonStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkoButtonStyle.swift; sourceTree = "<group>"; };
+		18F49E8A2A286D2A00862CE3 /* DrinkoLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkoLabel.swift; sourceTree = "<group>"; };
 		18F49E8D2A286D2A00862CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/lessons.json; sourceTree = "<group>"; };
 		18F49E8F2A286D2A00862CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/cocktails.json; sourceTree = "<group>"; };
 		18F49E902A286D2A00862CE3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/lessons.json; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 				18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */,
 				18F49E7E2A286D2A00862CE3 /* CoreData */,
 				18F49E842A286D2A00862CE3 /* Extensions */,
-				18F49E8A2A286D2A00862CE3 /* DrinkoButtonStyle.swift */,
+				18F49E8A2A286D2A00862CE3 /* DrinkoLabel.swift */,
 				18F49E8B2A286D2A00862CE3 /* Localizable */,
 			);
 			path = Utilities;
@@ -360,7 +360,7 @@
 				18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */,
 				18F49EC12A286D2E00862CE3 /* Spirit.swift in Sources */,
 				18F49ECB2A286D2E00862CE3 /* Cocktail.swift in Sources */,
-				18F49E9F2A286D2A00862CE3 /* DrinkoButtonStyle.swift in Sources */,
+				18F49E9F2A286D2A00862CE3 /* DrinkoLabel.swift in Sources */,
 				18F49EC02A286D2E00862CE3 /* SpiritDetailView.swift in Sources */,
 				18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */,
 				18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */,

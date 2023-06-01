@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DrinkoButtonStyle: View {
+struct DrinkoLabel: View {
     var symbolName: String
     var text: LocalizedStringKey
     var color: Color
@@ -30,6 +30,6 @@ struct DrinkoButtonStyle: View {
 
 struct DrinkoButtonStyle_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkoButtonStyle(symbolName: "video", text: "Go to video", color: .white, background: .blue)
+        DrinkoLabel(symbolName: "video", text: "Go to video", color: .white, background: .blue)
     }
 }

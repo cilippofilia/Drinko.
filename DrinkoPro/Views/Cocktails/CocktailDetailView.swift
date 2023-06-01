@@ -57,7 +57,7 @@ struct CocktailDetailView: View {
                             Button(action: {
                                 showHistory.toggle()
                             }) {
-                                DrinkoButtonStyle(symbolName: "book.fill",
+                                DrinkoLabel(symbolName: "book.fill",
                                                   text: "History",
                                                   color: .white,
                                                   background: .blue)
@@ -77,7 +77,7 @@ struct CocktailDetailView: View {
                                     .notificationOccurred(.success)
                             }
                         }) {
-                            DrinkoButtonStyle(symbolName: "heart.fill",
+                            DrinkoLabel(symbolName: "heart.fill",
                                               text: favorites.contains(cocktail) ? "Remove from favorites" : "Add to favorites",
                                               color: .white,
                                               background: favorites.contains(cocktail) ? .red : .blue)
