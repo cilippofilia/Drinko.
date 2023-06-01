@@ -35,12 +35,12 @@ struct HomeView: View {
 //                    Text("News")
 //                }
 
-//            CabinetView()
-//                .tag(CabinetView.cabinetTag)
-//                .tabItem {
-//                    Image(systemName: "cabinet")
-//                    Text("Cabinet")
-//                }
+            CabinetView()
+                .tag(CabinetView.cabinetTag)
+                .tabItem {
+                    Image(systemName: "cabinet")
+                    Text("Cabinet")
+                }
 
             SettingsView()
                 .tag(SettingsView.settingsTag)
