@@ -1,6 +1,6 @@
 //
 //  DrinkoButton.swift
-//  Drinko
+//  DrinkoPro
 //
 //  Created by Filippo Cilia on 28/04/2023.
 //

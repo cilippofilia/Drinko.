@@ -1,6 +1,6 @@
 //
 //  StringExtension.swift
-//  Drinko
+//  DrinkoPro
 //
 //  Created by Filippo Cilia on 24/04/2023.
 //

@@ -1,6 +1,6 @@
 //
 //  Cocktail.swift
-//  Drinko
+//  DrinkoPro
 //
 //  Created by Filippo Cilia on 23/04/2023.
 //

@@ -1,6 +1,6 @@
 //
 //  HomeView.swift
-//  Drinko
+//  DrinkoPro
 //
 //  Created by Filippo Cilia on 22/04/2023.
 //
@@ -35,12 +35,12 @@ struct HomeView: View {
 //                    Text("News")
 //                }
 
-            CabinetView()
-                .tag(CabinetView.cabinetTag)
-                .tabItem {
-                    Image(systemName: "cabinet")
-                    Text("Cabinet")
-                }
+//            CabinetView()
+//                .tag(CabinetView.cabinetTag)
+//                .tabItem {
+//                    Image(systemName: "cabinet")
+//                    Text("Cabinet")
+//                }
 
             SettingsView()
                 .tag(SettingsView.settingsTag)

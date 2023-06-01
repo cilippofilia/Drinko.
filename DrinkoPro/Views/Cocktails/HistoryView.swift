@@ -1,6 +1,6 @@
 //
 //  HistoryView.swift
-//  Drinko
+//  DrinkoPro
 //
 //  Created by Filippo Cilia on 16/05/2023.
 //

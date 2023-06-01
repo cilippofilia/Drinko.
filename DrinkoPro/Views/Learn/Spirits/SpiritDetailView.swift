@@ -1,6 +1,6 @@
 //
 //  SpiritDetailView.swift
-//  Drinko
+//  DrinkoPro
 //
 //  Created by Filippo Cilia on 02/05/2023.
 //

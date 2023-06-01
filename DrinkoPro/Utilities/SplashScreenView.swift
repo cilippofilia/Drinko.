@@ -1,6 +1,6 @@
 //
 //  SplashScreenView.swift
-//  Drinko
+//  DrinkoPro
 //
 //  Created by Filippo Cilia on 02/01/2021.
 //

@@ -1,6 +1,6 @@
 //
 //  LearnRowView.swift
-//  Drinko
+//  DrinkoPro
 //
 //  Created by Filippo Cilia on 27/04/2023.
 //

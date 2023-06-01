@@ -189,11 +189,11 @@
 		18F49EA32A286D2E00862CE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18F49EA42A286D2E00862CE3 /* Settings */,
 				18F49EA82A286D2E00862CE3 /* Learn */,
-				18F49EB12A286D2E00862CE3 /* Cabinet */,
-				18F49EB32A286D2E00862CE3 /* News */,
 				18F49EB52A286D2E00862CE3 /* Cocktails */,
+				18F49EB32A286D2E00862CE3 /* News */,
+				18F49EB12A286D2E00862CE3 /* Cabinet */,
+				18F49EA42A286D2E00862CE3 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -249,12 +249,12 @@
 		18F49EB52A286D2E00862CE3 /* Cocktails */ = {
 			isa = PBXGroup;
 			children = (
-				18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */,
-				18F49EB72A286D2E00862CE3 /* CocktailsView.swift */,
-				18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */,
 				18F49EB92A286D2E00862CE3 /* Cocktail.swift */,
-				18F49EBA2A286D2E00862CE3 /* HistoryView.swift */,
+				18F49EB72A286D2E00862CE3 /* CocktailsView.swift */,
+				18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */,
 				18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */,
+				18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */,
+				18F49EBA2A286D2E00862CE3 /* HistoryView.swift */,
 			);
 			path = Cocktails;
 			sourceTree = "<group>";
