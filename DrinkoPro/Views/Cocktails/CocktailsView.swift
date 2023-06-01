@@ -8,22 +8,27 @@
 import SwiftUI
 
 struct CocktailsView: View {
-    @StateObject var favorites = Favorites()
     static let cocktailsTag: String? = "Cocktails"
 
+    @StateObject var favorites = Favorites()
+    @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var searchText = ""
 
-    let cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
+    var filteredCocktails: [Cocktail] {
+        guard !searchText.isEmpty else { return cocktails }
+        return cocktails.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+    }
 
     var body: some View {
         NavigationStack {
-            List(cocktails, id:\.id) { cocktail in
+            List(filteredCocktails, id:\.id) { cocktail in
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
                     .contextMenu {
                         FavoriteButtonView(favorites: favorites, cocktail: cocktail)
                     }
             }
             .navigationTitle("Cocktails")
+            .searchable(text: $searchText, prompt: "Search Cocktails")
         }
         .environmentObject(favorites)
     }
