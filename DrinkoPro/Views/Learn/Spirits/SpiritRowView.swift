@@ -25,6 +25,7 @@ struct SpiritRowView: View {
                 }
             }
         }
+        .frame(height: 45)
     }
 }
 

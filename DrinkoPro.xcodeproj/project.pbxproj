@@ -50,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		1818D2992A288C6A00C4A25D /* FavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonView.swift; sourceTree = "<group>"; };
+		181F59462A28F7510035D897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/drinkoGenerics.strings; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -215,10 +216,10 @@
 			isa = PBXGroup;
 			children = (
 				18F49EA92A286D2E00862CE3 /* Lesson.swift */,
-				18F49EAA2A286D2E00862CE3 /* Spirits */,
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
 				18F49EAF2A286D2E00862CE3 /* LearnRowView.swift */,
 				18F49EB02A286D2E00862CE3 /* LearnDetailView.swift */,
+				18F49EAA2A286D2E00862CE3 /* Spirits */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -226,9 +227,9 @@
 		18F49EAA2A286D2E00862CE3 /* Spirits */ = {
 			isa = PBXGroup;
 			children = (
-				18F49EAB2A286D2E00862CE3 /* SpiritDetailView.swift */,
 				18F49EAC2A286D2E00862CE3 /* Spirit.swift */,
 				18F49EAD2A286D2E00862CE3 /* SpiritRowView.swift */,
+				18F49EAB2A286D2E00862CE3 /* SpiritDetailView.swift */,
 			);
 			path = Spirits;
 			sourceTree = "<group>";
@@ -303,7 +304,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				it,
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
@@ -398,6 +398,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				18F49E932A286D2A00862CE3 /* it */,
+				181F59462A28F7510035D897 /* en */,
 			);
 			name = drinkoGenerics.strings;
 			sourceTree = "<group>";
@@ -455,7 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -509,7 +510,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -530,11 +531,12 @@
 				DEVELOPMENT_TEAM = 3K3GFX53DY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DrinkoPro/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Drinko;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = D;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -565,11 +567,12 @@
 				DEVELOPMENT_TEAM = 3K3GFX53DY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DrinkoPro/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Drinko;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = D;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
