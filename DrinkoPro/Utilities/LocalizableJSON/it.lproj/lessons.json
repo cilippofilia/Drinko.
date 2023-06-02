@@ -78,7 +78,7 @@
 
     {
         "id": "spirits",
-        "name": "Spirits",
+        "name": "Distillati",
         "lessons":
         [
             {
@@ -148,7 +148,7 @@
 
     {
         "id": "syrups",
-        "name": "Syrups",
+        "name": "Sciroppi",
         "lessons":
         [
             {

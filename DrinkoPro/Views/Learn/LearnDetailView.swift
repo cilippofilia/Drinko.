@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LearnDetailView: View {
+    @Environment(\.openURL) var openURL
     var lesson: Lesson
 
     var body: some View {
@@ -34,6 +35,17 @@ struct LearnDetailView: View {
                 }
                 .frame(maxWidth: screenWidthPlusMargins)
                 .padding(.bottom)
+
+                if lesson.hasVideo {
+                    Button(action: {
+                        openURL(URL(string: lesson.videoURL!)!)
+                    }) {
+                        DrinkoLabel(symbolName: "video.fill",
+                                    text: "Go to Video",
+                                    color: .white,
+                                    background: .blue)
+                    }
+                }
             }
         }
         .navigationTitle(lesson.title)

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1818D29A2A288C6A00C4A25D /* FavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818D2992A288C6A00C4A25D /* FavoriteButtonView.swift */; };
+		185659B72A29BE9B007A3965 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 185659B52A29BE9B007A3965 /* Localizable.strings */; };
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */; };
 		18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
@@ -27,7 +28,6 @@
 		18F49E9F2A286D2A00862CE3 /* DrinkoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoLabel.swift */; };
 		18F49EA02A286D2A00862CE3 /* lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E8C2A286D2A00862CE3 /* lessons.json */; };
 		18F49EA12A286D2A00862CE3 /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E8E2A286D2A00862CE3 /* cocktails.json */; };
-		18F49EA22A286D2A00862CE3 /* drinkoGenerics.strings in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E922A286D2A00862CE3 /* drinkoGenerics.strings */; };
 		18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA52A286D2E00862CE3 /* SettingsView.swift */; };
 		18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */; };
 		18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA72A286D2E00862CE3 /* ReadMeView.swift */; };
@@ -50,7 +50,7 @@
 
 /* Begin PBXFileReference section */
 		1818D2992A288C6A00C4A25D /* FavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonView.swift; sourceTree = "<group>"; };
-		181F59462A28F7510035D897 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/drinkoGenerics.strings; sourceTree = "<group>"; };
+		185659B62A29BE9B007A3965 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -73,7 +73,6 @@
 		18F49E8F2A286D2A00862CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/cocktails.json; sourceTree = "<group>"; };
 		18F49E902A286D2A00862CE3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/lessons.json; sourceTree = "<group>"; };
 		18F49E912A286D2A00862CE3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/cocktails.json; sourceTree = "<group>"; };
-		18F49E932A286D2A00862CE3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/drinkoGenerics.strings; sourceTree = "<group>"; };
 		18F49EA52A286D2E00862CE3 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		18F49EA72A286D2E00862CE3 /* ReadMeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeView.swift; sourceTree = "<group>"; };
@@ -108,6 +107,7 @@
 		18F49E572A27B28D00862CE3 = {
 			isa = PBXGroup;
 			children = (
+				185659B52A29BE9B007A3965 /* Localizable.strings */,
 				18F49E622A27B28D00862CE3 /* DrinkoPro */,
 				18F49E612A27B28D00862CE3 /* Products */,
 			);
@@ -152,7 +152,7 @@
 				18F49E7E2A286D2A00862CE3 /* CoreData */,
 				18F49E842A286D2A00862CE3 /* Extensions */,
 				18F49E8A2A286D2A00862CE3 /* DrinkoLabel.swift */,
-				18F49E8B2A286D2A00862CE3 /* Localizable */,
+				18F49E8B2A286D2A00862CE3 /* LocalizableJSON */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -180,14 +180,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		18F49E8B2A286D2A00862CE3 /* Localizable */ = {
+		18F49E8B2A286D2A00862CE3 /* LocalizableJSON */ = {
 			isa = PBXGroup;
 			children = (
 				18F49E8C2A286D2A00862CE3 /* lessons.json */,
 				18F49E8E2A286D2A00862CE3 /* cocktails.json */,
-				18F49E922A286D2A00862CE3 /* drinkoGenerics.strings */,
 			);
-			path = Localizable;
+			path = LocalizableJSON;
 			sourceTree = "<group>";
 		};
 		18F49EA32A286D2E00862CE3 /* Views */ = {
@@ -322,8 +321,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */,
-				18F49EA22A286D2A00862CE3 /* drinkoGenerics.strings in Resources */,
 				18F49E782A286D0D00862CE3 /* Colors.xcassets in Resources */,
+				185659B72A29BE9B007A3965 /* Localizable.strings in Resources */,
 				18F49EA02A286D2A00862CE3 /* lessons.json in Resources */,
 				18F49E7A2A286D1900862CE3 /* Assets.xcassets in Resources */,
 				18F49EA12A286D2A00862CE3 /* cocktails.json in Resources */,
@@ -376,6 +375,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		185659B52A29BE9B007A3965 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				185659B62A29BE9B007A3965 /* it */,
+			);
+			name = Localizable.strings;
+			path = DrinkoPro;
+			sourceTree = "<group>";
+		};
 		18F49E8C2A286D2A00862CE3 /* lessons.json */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -392,15 +400,6 @@
 				18F49E912A286D2A00862CE3 /* it */,
 			);
 			name = cocktails.json;
-			sourceTree = "<group>";
-		};
-		18F49E922A286D2A00862CE3 /* drinkoGenerics.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18F49E932A286D2A00862CE3 /* it */,
-				181F59462A28F7510035D897 /* en */,
-			);
-			name = drinkoGenerics.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
