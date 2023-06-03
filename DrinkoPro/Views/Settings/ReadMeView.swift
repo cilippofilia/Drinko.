@@ -23,11 +23,33 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
+            VStack(spacing: 10) {
                 Text(text)
                     .multilineTextAlignment(.leading)
+                    .padding(.vertical)
+
+                VStack(spacing: 10) {
+                    Text("Special thanks to:")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                    CreditsCardView(image: "heart.fill",
+                                    name: "Danil Nevsky",
+                                    brief: "Instagram: @cocktailman",
+                                    url: "https://instagram.com/cocktailman")
+
+                    CreditsCardView(image: "heart.fill",
+                                    name: "Christopher Lowder",
+                                    brief: "Instagram: @getlowdernow",
+                                    url: "https://instagram.com/getlowdernow")
+
+                    CreditsCardView(image: "heart.fill",
+                                    name: "Filippo Cilia",
+                                    brief: "Instagram: @cilippofilia",
+                                    url: "https://instagram.com/cilippofilia")
+                }
             }
             .frame(width: screenWidthPlusMargins)
+            .padding(.bottom)
         }
         .navigationBarTitle("Drinko")
     }

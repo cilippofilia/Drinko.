@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1818D29A2A288C6A00C4A25D /* FavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818D2992A288C6A00C4A25D /* FavoriteButtonView.swift */; };
+		182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
 		185659B72A29BE9B007A3965 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 185659B52A29BE9B007A3965 /* Localizable.strings */; };
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		1818D2992A288C6A00C4A25D /* FavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonView.swift; sourceTree = "<group>"; };
+		182E43362A2B1221001675FD /* CreditsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCardView.swift; sourceTree = "<group>"; };
 		185659B62A29BE9B007A3965 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				18F49EA52A286D2E00862CE3 /* SettingsView.swift */,
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
+				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
 				18F49EC22A286D2E00862CE3 /* SpiritRowView.swift in Sources */,
 				18F49E9E2A286D2A00862CE3 /* Color-Ext.swift in Sources */,
+				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
 				18F49EC72A286D2E00862CE3 /* NewsView.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,

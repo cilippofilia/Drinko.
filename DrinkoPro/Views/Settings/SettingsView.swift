@@ -35,6 +35,7 @@ struct SettingsView: View {
         NavigationStack {
             Form {
                 Section(header: Text("Support")) {
+                    // MARK: LANGUAGE
                     HStack {
                         SettingsRowView(icon: "text.bubble",
                                         color: .secondary,
@@ -48,6 +49,7 @@ struct SettingsView: View {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }
 
+                    // MARK: CONTACT THE DEV OPTIONS
                     Button(action: {
                         showOptions = true
                     }) {
@@ -60,6 +62,7 @@ struct SettingsView: View {
                     .confirmationDialog("Select an option",
                                         isPresented: $showOptions,
                                         titleVisibility: .visible) {
+
                         Button("Report a bug") {
                             guard let url = URL(string: "mailto:\(email)?subject=\(reportBugSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(reportBugBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
 
@@ -79,17 +82,22 @@ struct SettingsView: View {
                         }
                     }
 
+                    // MARK: FOLLOW ON TWITTER
                     Button(action: {
                         if UIApplication.shared.canOpenURL(twitterDevURL!) {
                             if #available(iOS 10.0, *) {
-                                UIApplication.shared.open(twitterDevURL!, options: [:], completionHandler: nil)
+                                UIApplication.shared.open(twitterDevURL!,
+                                                          options: [:],
+                                                          completionHandler: nil)
                             } else {
                                 UIApplication.shared.openURL(twitterDevURL!)
                             }
                         } else {
                             //redirect to safari because the user doesn't have Instagram
                             if #available(iOS 10.0, *) {
-                                UIApplication.shared.open(twitterDevURL!, options: [:], completionHandler: nil)
+                                UIApplication.shared.open(twitterDevURL!,
+                                                          options: [:],
+                                                          completionHandler: nil)
                             } else {
                                 UIApplication.shared.openURL(twitterDevURL!)
                             }
@@ -101,7 +109,7 @@ struct SettingsView: View {
                     }
                     .buttonStyle(.plain)
 
-
+                    // MARK: RATE THE APP
                     SettingsRowView(icon: "star",
                                     color: .yellow,
                                     itemName: "Rate the app")
@@ -111,18 +119,14 @@ struct SettingsView: View {
                 }
 
                 Section(header: Text("Info"), footer: Text("Product of Italy 🇮🇹")) {
+                    // MARK: READ ME
                     NavigationLink(destination: ReadMeView()) {
                         SettingsRowView(icon: "r.circle",
                                         color: .secondary,
                                         itemName: "Read me")
                     }
 
-//                    NavigationLink(destination: EmptyView()) {
-//                        SettingsRowView(icon: "heart",
-//                                        color: .red,
-//                                        itemName: "Credits")
-//                    }
-
+                    // MARK: SHARE APP
                     ShareLink(item: drinkoLink) {
                         SettingsRowView(icon: "square.and.arrow.up",
                                         color: .secondary,
@@ -130,6 +134,7 @@ struct SettingsView: View {
                     }
                     .buttonStyle(.plain)
 
+                    // MARK: APP VERSION
                     HStack {
                         SettingsRowView(icon: "v.circle",
                                         color: .secondary,
@@ -157,6 +162,5 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
-            .preferredColorScheme(.dark)
     }
 }

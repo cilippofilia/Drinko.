@@ -17,7 +17,7 @@ struct SpiritRowView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width: 45, height: 45)
-                    .cornerRadius(8)
+                    .cornerRadius(10)
 
                 VStack(alignment: .leading) {
                     Text(spirit.title)
