@@ -41,7 +41,7 @@ struct LearnDetailView: View {
                         openURL(URL(string: lesson.videoURL!)!)
                     }) {
                         DrinkoLabel(symbolName: "video.fill",
-                                    text: "Go to Video",
+                                    text: "Go to video",
                                     color: .white,
                                     background: .blue)
                     }
