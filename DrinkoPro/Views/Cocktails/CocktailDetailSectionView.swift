@@ -61,8 +61,8 @@ struct CocktailDetailSectionView: View {
     }
 }
 
-struct CocktailDetailSectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        CocktailDetailSectionView(cocktail: .example, text: "Extra")
-    }
-}
+//struct CocktailDetailSectionView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CocktailDetailSectionView(cocktail: .example, text: "Extra")
+//    }
+//}

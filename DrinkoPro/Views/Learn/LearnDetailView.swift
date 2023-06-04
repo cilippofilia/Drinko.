@@ -53,8 +53,8 @@ struct LearnDetailView: View {
     }
 }
 
-struct LearnDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        LearnDetailView(lesson: .example)
-    }
-}
+//struct LearnDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LearnDetailView(lesson: .example)
+//    }
+//}
