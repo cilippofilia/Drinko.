@@ -28,7 +28,7 @@ struct SettingsView: View {
     @State private var contactDevBody = ""
 
     // Check if this link works once the app is live
-    @State private var drinkoLink = "https://apps.apple.com/us/app/drinko/id1525136516"
+    @State private var drinkoLink = "https://apps.apple.com/us/app/drinko-cocktail-recipes-app/id6449748284"
     @State private var twitterDevURL = URL(string: "https://twitter.com/fcilia_dev/")
 
     var body: some View {
