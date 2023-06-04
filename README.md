@@ -29,7 +29,7 @@ Additional Features:
 
 - All the text has been localized to automatically switch between English and Italian 
 
-- In-app mail view to report bugs and feedbacks;
+- Quickly write an email to report bugs and feedbacks;
 
 
 ## Tech Stack
