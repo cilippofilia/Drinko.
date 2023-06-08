@@ -12,11 +12,10 @@ import SwiftUI
 struct SettingsView: View {
     static let settingsTag: String? = "Settings"
 
-    @Environment(\.requestReview) var requestReview
-
     @State private var email = "cilia.filippo.dev@gmail.com"
 
     @State private var showOptions = false
+    @State private var showMl = false
 
     @State private var reportBugSubject = "Bug Report"
     @State private var reportBugBody = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
@@ -28,13 +27,13 @@ struct SettingsView: View {
     @State private var contactDevBody = ""
 
     // Check if this link works once the app is live
-    @State private var drinkoLink = "https://apps.apple.com/us/app/drinko-cocktail-recipes-app/id6449748284"
+    @State private var drinkoLink = "https://apps.apple.com/us/app/drinko-cocktail-recipes-app/id6449893371"
     @State private var twitterDevURL = URL(string: "https://twitter.com/fcilia_dev/")
 
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("Support")) {
+                Section(header: Text("App Settings")) {
                     // MARK: LANGUAGE
                     HStack {
                         SettingsRowView(icon: "text.bubble",
@@ -49,6 +48,24 @@ struct SettingsView: View {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }
 
+                    // MARK: MEASUREMENTS FOR COCKTAILS OZ/ML
+                    HStack {
+                        Button(action: {
+                            showMl.toggle()
+                        }) {
+                            SettingsRowView(icon: "shuffle",
+                                            color: .secondary,
+                                            itemName: "Unit in")
+                        }
+
+                        #warning("👨‍💻 Works but need tu fine tune the cocktail part of it")
+                        Toggle(showMl ? "ml" : "oz.", isOn: $showMl)
+                    }
+                    .buttonStyle(.plain)
+                }
+
+                // find right term to use
+                Section(header: Text("Contacts")) {
                     // MARK: CONTACT THE DEV OPTIONS
                     Button(action: {
                         showOptions = true
@@ -114,7 +131,14 @@ struct SettingsView: View {
                                     color: .yellow,
                                     itemName: "Rate the app")
                     .onTapGesture {
-                        requestReview()
+                        // try getting current scene
+                        guard let currentScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+                            print("UNABLE TO GET CURRENT SCENE")
+                            return
+                        }
+
+                        // show review dialog
+                        SKStoreReviewController.requestReview(in: currentScene)
                     }
                 }
 

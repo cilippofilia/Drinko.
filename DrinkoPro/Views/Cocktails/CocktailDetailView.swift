@@ -95,9 +95,9 @@ struct CocktailDetailView: View {
     }
 }
 
-//struct CocktailDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CocktailDetailView(cocktail: .example)
-//            .environmentObject(Favorites())
-//    }
-//}
+struct CocktailDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        CocktailDetailView(cocktail: .example)
+            .environmentObject(Favorites())
+    }
+}
