@@ -13,34 +13,38 @@ struct HistoryView: View {
     var cocktail: Cocktail
 
     var body: some View {
-        VStack {
-            HStack(alignment: .center) {
-                Text(cocktail.name.capitalized)
-                    .font(.title)
-                    .bold()
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                HStack(alignment: .center) {
+                    Text(cocktail.name.capitalized)
+                        .font(.title)
+                        .bold()
+                        .padding(.vertical)
+                        .multilineTextAlignment(.leading)
+
+                    Spacer()
+
+                    Button(action: {
+                        dismiss()
+                    }) {
+                        Image(systemName: "xmark.circle.fill")
+                            .resizable()
+    //                        .foregroundColor(.secondary)
+                            .foregroundColor(.secondary)
+                            .frame(width: 30, height: 30)
+                            .padding(.vertical)
+                    }
+                }
+                .padding(.vertical)
+
+                Text(cocktail.history)
                     .multilineTextAlignment(.leading)
 
+                // spacer used to push view to the top
                 Spacer()
-
-                Button(action: {
-                    dismiss()
-                }) {
-                    Image(systemName: "xmark.circle.fill")
-                        .resizable()
-//                        .foregroundColor(.secondary)
-                        .foregroundColor(.secondary)
-                        .frame(width: 30, height: 30)
-                }
             }
-            .padding(.vertical)
-
-            Text(cocktail.history)
-                .multilineTextAlignment(.leading)
-
-            // spacer used to push view to the top
-            Spacer()
+            .frame(width: screenWidthPlusMargins)
         }
-        .frame(width: screenWidthPlusMargins)
     }
 }
 

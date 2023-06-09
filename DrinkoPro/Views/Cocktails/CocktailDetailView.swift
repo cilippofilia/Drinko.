@@ -13,8 +13,8 @@ struct CocktailDetailView: View {
 
     @State private var showHistory = false
     @State private var selectedUnit = "oz."
-
     var units = ["oz.", "ml"]
+    
     var cocktail: Cocktail
 
     var body: some View {
@@ -71,7 +71,7 @@ struct CocktailDetailView: View {
                                               text: "Extra")
 
 
-                    VStack {
+                    HStack {
                         // HISTORY BUTTON
                         if cocktail.history != "" {
                             Button(action: {
@@ -84,6 +84,7 @@ struct CocktailDetailView: View {
                             }
                             .sheet(isPresented: $showHistory) {
                                 HistoryView(cocktail: cocktail)
+                                    .presentationDetents([.large,.fraction(0.75)])
                             }
                         }
                         // ADD TO FAV BUTTON
@@ -98,11 +99,10 @@ struct CocktailDetailView: View {
                             }
                         }) {
                             DrinkoLabel(symbolName: "heart.fill",
-                                              text: favorites.contains(cocktail) ? "Remove from favorites" : "Add to favorites",
+                                              text: "Like",
                                               color: .white,
                                               background: favorites.contains(cocktail) ? .red : .blue)
                         }
-
                     }
                     .padding(.vertical)
                 }
