@@ -8,9 +8,6 @@
 "%2g" = "%2g";
 
 /* No comment provided by engineer. */
-"Add to favorites" = "Aggiungi ai favoriti";
-
-/* No comment provided by engineer. */
 "Cocktails" = "Cocktail";
 
 /* No comment provided by engineer. */
@@ -74,7 +71,10 @@
 "Special thanks to:" = "Ringraziamento speciale:";
 
 /* No comment provided by engineer. */
-"Support" = "Supporto";
+"App Preferences" = "Preferenze";
+
+/* No comment provided by engineer. */
+"Contacts" = "Contatti";
 
 /* No comment provided by engineer. */
 "Twitter" = "Twitter";

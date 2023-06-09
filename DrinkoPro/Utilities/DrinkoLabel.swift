@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DrinkoLabel: View {
+struct DrinkoLabelWithText: View {
     var symbolName: String
     var text: LocalizedStringKey
     var color: Color
@@ -28,8 +28,27 @@ struct DrinkoLabel: View {
     }
 }
 
-struct DrinkoButtonStyle_Previews: PreviewProvider {
+struct DrinkoLabel: View {
+    var symbolName: String
+    var color: Color
+    var background: Color
+
+    var body: some View {
+        Image(systemName: symbolName)
+            .font(.headline.bold())
+            .frame(height: 50)
+            .frame(maxWidth: screenWidthPlusMargins)
+            .foregroundColor(color)
+            .background(background)
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+    }
+}
+
+
+struct DrinkoLabel_Previews: PreviewProvider {
     static var previews: some View {
-        DrinkoLabel(symbolName: "video", text: "Go to video", color: .white, background: .blue)
+        DrinkoLabelWithText(symbolName: "video", text: "Go to video", color: .white, background: .blue)
+
+        DrinkoLabel(symbolName: "video", color: .white, background: .blue)
     }
 }

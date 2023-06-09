@@ -17,10 +17,6 @@
 		18F49E7A2A286D1900862CE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E792A286D1900862CE3 /* Assets.xcassets */; };
 		18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E7C2A286D2A00862CE3 /* Favorites.swift */; };
 		18F49E952A286D2A00862CE3 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */; };
-		18F49E962A286D2A00862CE3 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E7F2A286D2A00862CE3 /* DataController.swift */; };
-		18F49E972A286D2A00862CE3 /* Main.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E802A286D2A00862CE3 /* Main.xcdatamodeld */; };
-		18F49E982A286D2A00862CE3 /* Item-CDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E822A286D2A00862CE3 /* Item-CDHelpers.swift */; };
-		18F49E992A286D2A00862CE3 /* Family-CDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E832A286D2A00862CE3 /* Family-CDHelpers.swift */; };
 		18F49E9A2A286D2A00862CE3 /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E852A286D2A00862CE3 /* Sequence-Sorting.swift */; };
 		18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E862A286D2A00862CE3 /* Bundle-Decodable.swift */; };
 		18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E872A286D2A00862CE3 /* Margins.swift */; };
@@ -39,8 +35,6 @@
 		18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAE2A286D2E00862CE3 /* LearnView.swift */; };
 		18F49EC42A286D2E00862CE3 /* LearnRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LearnRowView.swift */; };
 		18F49EC52A286D2E00862CE3 /* LearnDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LearnDetailView.swift */; };
-		18F49EC62A286D2E00862CE3 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB22A286D2E00862CE3 /* CabinetView.swift */; };
-		18F49EC72A286D2E00862CE3 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB42A286D2E00862CE3 /* NewsView.swift */; };
 		18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */; };
 		18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
 		18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */; };
@@ -62,10 +56,6 @@
 		18F49E792A286D1900862CE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F49E7C2A286D2A00862CE3 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		18F49E7F2A286D2A00862CE3 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		18F49E812A286D2A00862CE3 /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
-		18F49E822A286D2A00862CE3 /* Item-CDHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Item-CDHelpers.swift"; sourceTree = "<group>"; };
-		18F49E832A286D2A00862CE3 /* Family-CDHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Family-CDHelpers.swift"; sourceTree = "<group>"; };
 		18F49E852A286D2A00862CE3 /* Sequence-Sorting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence-Sorting.swift"; sourceTree = "<group>"; };
 		18F49E862A286D2A00862CE3 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		18F49E872A286D2A00862CE3 /* Margins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
@@ -86,8 +76,6 @@
 		18F49EAE2A286D2E00862CE3 /* LearnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		18F49EAF2A286D2E00862CE3 /* LearnRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnRowView.swift; sourceTree = "<group>"; };
 		18F49EB02A286D2E00862CE3 /* LearnDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnDetailView.swift; sourceTree = "<group>"; };
-		18F49EB22A286D2E00862CE3 /* CabinetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
-		18F49EB42A286D2E00862CE3 /* NewsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
 		18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailRowView.swift; sourceTree = "<group>"; };
 		18F49EB72A286D2E00862CE3 /* CocktailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailsView.swift; sourceTree = "<group>"; };
 		18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailSectionView.swift; sourceTree = "<group>"; };
@@ -153,23 +141,11 @@
 				18F49E7C2A286D2A00862CE3 /* Favorites.swift */,
 				1818D2992A288C6A00C4A25D /* FavoriteButtonView.swift */,
 				18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */,
-				18F49E7E2A286D2A00862CE3 /* CoreData */,
 				18F49E842A286D2A00862CE3 /* Extensions */,
 				18F49E8A2A286D2A00862CE3 /* DrinkoLabel.swift */,
 				18F49E8B2A286D2A00862CE3 /* LocalizableJSON */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		18F49E7E2A286D2A00862CE3 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				18F49E7F2A286D2A00862CE3 /* DataController.swift */,
-				18F49E802A286D2A00862CE3 /* Main.xcdatamodeld */,
-				18F49E822A286D2A00862CE3 /* Item-CDHelpers.swift */,
-				18F49E832A286D2A00862CE3 /* Family-CDHelpers.swift */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		18F49E842A286D2A00862CE3 /* Extensions */ = {
@@ -198,8 +174,6 @@
 			children = (
 				18F49EA82A286D2E00862CE3 /* Learn */,
 				18F49EB52A286D2E00862CE3 /* Cocktails */,
-				18F49EB32A286D2E00862CE3 /* News */,
-				18F49EB12A286D2E00862CE3 /* Cabinet */,
 				18F49EA42A286D2E00862CE3 /* Settings */,
 			);
 			path = Views;
@@ -236,22 +210,6 @@
 				18F49EAB2A286D2E00862CE3 /* SpiritDetailView.swift */,
 			);
 			path = Spirits;
-			sourceTree = "<group>";
-		};
-		18F49EB12A286D2E00862CE3 /* Cabinet */ = {
-			isa = PBXGroup;
-			children = (
-				18F49EB22A286D2E00862CE3 /* CabinetView.swift */,
-			);
-			path = Cabinet;
-			sourceTree = "<group>";
-		};
-		18F49EB32A286D2E00862CE3 /* News */ = {
-			isa = PBXGroup;
-			children = (
-				18F49EB42A286D2E00862CE3 /* NewsView.swift */,
-			);
-			path = News;
 			sourceTree = "<group>";
 		};
 		18F49EB52A286D2E00862CE3 /* Cocktails */ = {
@@ -344,26 +302,20 @@
 				18F49EC52A286D2E00862CE3 /* LearnDetailView.swift in Sources */,
 				18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */,
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
-				18F49E982A286D2A00862CE3 /* Item-CDHelpers.swift in Sources */,
 				18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */,
-				18F49E972A286D2A00862CE3 /* Main.xcdatamodeld in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
 				18F49EC22A286D2E00862CE3 /* SpiritRowView.swift in Sources */,
 				18F49E9E2A286D2A00862CE3 /* Color-Ext.swift in Sources */,
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
-				18F49EC72A286D2E00862CE3 /* NewsView.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				1818D29A2A288C6A00C4A25D /* FavoriteButtonView.swift in Sources */,
 				18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */,
-				18F49EC62A286D2E00862CE3 /* CabinetView.swift in Sources */,
-				18F49E992A286D2A00862CE3 /* Family-CDHelpers.swift in Sources */,
 				18F49E9D2A286D2A00862CE3 /* String-Ext.swift in Sources */,
 				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
 				18F49E9A2A286D2A00862CE3 /* Sequence-Sorting.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
-				18F49E962A286D2A00862CE3 /* DataController.swift in Sources */,
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
 				18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */,
 				18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */,
@@ -621,19 +573,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		18F49E802A286D2A00862CE3 /* Main.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				18F49E812A286D2A00862CE3 /* Main.xcdatamodel */,
-			);
-			currentVersion = 18F49E812A286D2A00862CE3 /* Main.xcdatamodel */;
-			path = Main.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 18F49E582A27B28D00862CE3 /* Project object */;
 }

@@ -28,20 +28,6 @@ struct HomeView: View {
                     Text("Cocktails")
                 }
 
-//            NewsView()
-//                .tag(NewsView.newsTag)
-//                .tabItem {
-//                    Image(systemName: "newspaper")
-//                    Text("News")
-//                }
-
-//            CabinetView()
-//                .tag(CabinetView.cabinetTag)
-//                .tabItem {
-//                    Image(systemName: "cabinet")
-//                    Text("Cabinet")
-//                }
-
             SettingsView()
                 .tag(SettingsView.settingsTag)
                 .tabItem {

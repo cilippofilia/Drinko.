@@ -32,7 +32,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("App Settings")) {
+                Section(header: Text("App Preferences")) {
                     // MARK: LANGUAGE
                     HStack {
                         SettingsRowView(icon: "text.bubble",
