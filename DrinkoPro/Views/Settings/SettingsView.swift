@@ -15,7 +15,6 @@ struct SettingsView: View {
     @State private var email = "cilia.filippo.dev@gmail.com"
 
     @State private var showOptions = false
-    @State private var showMl = false
 
     @State private var reportBugSubject = "Bug Report"
     @State private var reportBugBody = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
@@ -47,21 +46,6 @@ struct SettingsView: View {
                     .onTapGesture {
                         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
                     }
-
-                    // MARK: MEASUREMENTS FOR COCKTAILS OZ/ML
-                    HStack {
-                        Button(action: {
-                            showMl.toggle()
-                        }) {
-                            SettingsRowView(icon: "shuffle",
-                                            color: .secondary,
-                                            itemName: "Unit in")
-                        }
-
-                        #warning("👨‍💻 Works but need tu fine tune the cocktail part of it")
-                        Toggle(showMl ? "ml" : "oz.", isOn: $showMl)
-                    }
-                    .buttonStyle(.plain)
                 }
 
                 // find right term to use

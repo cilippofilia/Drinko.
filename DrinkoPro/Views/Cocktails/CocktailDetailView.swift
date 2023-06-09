@@ -10,8 +10,11 @@ import SwiftUI
 struct CocktailDetailView: View {
     @Environment(\.dismiss) var dismiss
     @ObservedObject var favorites = Favorites()
-    @State private var showHistory = false
 
+    @State private var showHistory = false
+    @State private var selectedUnit = "oz."
+
+    var units = ["oz.", "ml"]
     var cocktail: Cocktail
 
     var body: some View {
@@ -22,13 +25,30 @@ struct CocktailDetailView: View {
                         .font(.title)
                         .bold()
 
-                    CocktailDetailSectionView(cocktail: cocktail, text: "Ingredients")
+                    Picker("Select unit", selection: $selectedUnit) {
+                        ForEach(units, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(maxWidth: screenWidthPlusMargins / 2)
+                    .frame(maxWidth: .infinity, alignment: .center)
+
+
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Ingredients")
 
                     ForEach(cocktail.ingredients) { ingredient in
                         HStack {
                             // "%2g" reduces the decimal points to 2 digits
-                            Text("\(ingredient.quantity, specifier: "%2g")")
-                            Text(ingredient.unit)
+                            Text(selectedUnit == "oz." ?
+                                 "\(ingredient.quantity, specifier: "%2g")" :
+                                 "\(ingredient.mlQuantity, specifier: "%2g")")
+
+                            Text(selectedUnit == "oz." ?
+                                 ingredient.unit :
+                                 ingredient.mlUnit)
+
                             Text(ingredient.name.capitalized)
                             Spacer()
                         }

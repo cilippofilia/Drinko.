@@ -29,6 +29,22 @@ struct Cocktail: Codable, Equatable, Identifiable {
         let name: String
         let quantity: Double
         let unit: String
+
+        var mlQuantity: Double {
+            if unit == "oz." {
+                if quantity == 1.75 { return 50.0 }
+                if quantity == 1.25 { return 40.0 }
+                if quantity == 0.75 { return 25.0 }
+                if quantity == 0.15 { return 5.00 }
+
+                return quantity * 30.0
+            }
+            return quantity
+        }
+
+        var mlUnit: String {
+            unit == "oz." ? "ml" : unit
+        }
     }
 
     #if DEBUG
@@ -44,7 +60,7 @@ struct Cocktail: Codable, Equatable, Identifiable {
         ingredients: [
             Ingredient(
                 name: "london dry gin",
-                quantity: 1.75,
+                quantity: 2.0,
                 unit: "oz."),
             Ingredient(
                 name: "cointreau",
