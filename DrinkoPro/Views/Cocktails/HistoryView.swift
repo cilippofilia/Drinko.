@@ -48,9 +48,11 @@ struct HistoryView: View {
     }
 }
 
+#if DEBUG
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
         HistoryView(cocktail: .example)
             .preferredColorScheme(.dark)
     }
 }
+#endif

@@ -52,9 +52,11 @@ struct CocktailRowView: View {
     }
 }
 
+#if DEBUG
 struct CocktailRowView_Previews: PreviewProvider {
     static var previews: some View {
         CocktailRowView(cocktail: .example)
             .environmentObject(Favorites())
     }
 }
+#endif

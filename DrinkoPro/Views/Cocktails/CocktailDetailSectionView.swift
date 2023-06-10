@@ -61,8 +61,10 @@ struct CocktailDetailSectionView: View {
     }
 }
 
+#if DEBUG
 struct CocktailDetailSectionView_Previews: PreviewProvider {
     static var previews: some View {
         CocktailDetailSectionView(cocktail: .example, text: "Extra")
     }
 }
+#endif
