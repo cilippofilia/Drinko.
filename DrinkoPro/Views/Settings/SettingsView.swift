@@ -111,18 +111,11 @@ struct SettingsView: View {
                     .buttonStyle(.plain)
 
                     // MARK: RATE THE APP
-                    SettingsRowView(icon: "star",
-                                    color: .yellow,
-                                    itemName: "Rate the app")
-                    .onTapGesture {
-                        // try getting current scene
-                        guard let currentScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
-                            print("UNABLE TO GET CURRENT SCENE")
-                            return
-                        }
-
-                        // show review dialog
-                        SKStoreReviewController.requestReview(in: currentScene)
+                    Link(destination: URL(string: drinkoLink)!) {
+                        SettingsRowView(icon: "star",
+                                        color: .yellow,
+                                        itemName: "Rate the app")
+                        .foregroundColor(.primary)
                     }
                 }
 

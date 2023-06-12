@@ -103,7 +103,7 @@ struct CocktailDetailView: View {
                                         color: .white,
                                         background: favorites.contains(cocktail) ?
                                         .red : .blue)
-                                .frame(width: 60)
+                            .frame(width: cocktail.history.isEmpty ? .infinity : 60)
                         }
                     }
                     .padding(.vertical)
