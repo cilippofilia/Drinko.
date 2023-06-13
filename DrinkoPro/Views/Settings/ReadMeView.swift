@@ -55,8 +55,10 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
     }
 }
 
+#if DEBUG
 struct ReadMeView_Previews: PreviewProvider {
     static var previews: some View {
         ReadMeView()
     }
 }
+#endif

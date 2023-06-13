@@ -29,8 +29,10 @@ struct SpiritRowView: View {
     }
 }
 
-//struct SpiritRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SpiritRowView(spirit: .example)
-//    }
-//}
+#if DEBUG
+struct SpiritRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        SpiritRowView(spirit: .example)
+    }
+}
+#endif

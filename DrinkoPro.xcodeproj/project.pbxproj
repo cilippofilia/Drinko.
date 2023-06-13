@@ -10,6 +10,7 @@
 		1818D29A2A288C6A00C4A25D /* FavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1818D2992A288C6A00C4A25D /* FavoriteButtonView.swift */; };
 		182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
 		185659B72A29BE9B007A3965 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 185659B52A29BE9B007A3965 /* Localizable.strings */; };
+		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */; };
 		18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
@@ -48,6 +49,7 @@
 		182E43362A2B1221001675FD /* CreditsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCardView.swift; sourceTree = "<group>"; };
 		185659B62A29BE9B007A3965 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
 				18F49EAF2A286D2E00862CE3 /* LearnRowView.swift */,
 				18F49EB02A286D2E00862CE3 /* LearnDetailView.swift */,
+				188BCF402A3875D500FBEF20 /* VideoView.swift */,
 				18F49EAA2A286D2E00862CE3 /* Spirits */,
 			);
 			path = Learn;
@@ -301,6 +304,7 @@
 			files = (
 				18F49EC52A286D2E00862CE3 /* LearnDetailView.swift in Sources */,
 				18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */,
+				188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */,
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
 				18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,

@@ -31,8 +31,10 @@ struct FavoriteButtonView: View {
     }
 }
 
-//struct FavoriteButtonView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FavoriteButtonView(favorites: Favorites(), cocktail: .example)
-//    }
-//}
+#if DEBUG
+struct FavoriteButtonView_Previews: PreviewProvider {
+    static var previews: some View {
+        FavoriteButtonView(favorites: Favorites(), cocktail: .example)
+    }
+}
+#endif

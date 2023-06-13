@@ -36,8 +36,10 @@ struct SpiritDetailView: View {
     }
 }
 
-//struct SpiritDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SpiritDetailView(spirit: .example)
-//    }
-//}
+#if DEBUG
+struct SpiritDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        SpiritDetailView(spirit: .example)
+    }
+}
+#endif

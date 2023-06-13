@@ -98,12 +98,22 @@ struct CocktailDetailView: View {
                                     .notificationOccurred(.success)
                             }
                         }) {
-                            DrinkoLabel(symbolName: favorites.contains(cocktail) ?
-                                        "heart.slash.fill" : "heart.fill",
-                                        color: .white,
-                                        background: favorites.contains(cocktail) ?
-                                        .red : .blue)
-                            .frame(width: cocktail.history.isEmpty ? .infinity : 60)
+                            if cocktail.history.isEmpty {
+                                DrinkoLabelWithText(symbolName: favorites.contains(cocktail) ?
+                                                    "heart.slash.fill" : "heart.fill",
+                                                    text: "Like",
+                                                    color: .white,
+                                                    background: favorites.contains(cocktail) ?
+                                    .red : .blue)
+                                .frame(width: .infinity)
+                            } else {
+                                DrinkoLabel(symbolName: favorites.contains(cocktail) ?
+                                            "heart.slash.fill" : "heart.fill",
+                                            color: .white,
+                                            background: favorites.contains(cocktail) ?
+                                    .red : .blue)
+                                .frame(width: 60)
+                            }
                         }
                     }
                     .padding(.vertical)

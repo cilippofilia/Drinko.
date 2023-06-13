@@ -14,11 +14,21 @@ struct LearnDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(spacing: 10) {
-                Image(lesson.img)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 280)
-                    .clipped()
+                if lesson.hasVideo {
+                    VideoView(videoID: lesson.videoID)
+                        .frame(width: screenWidthPlusMargins,
+                               height: screenHeight * 0.3)
+                        .clipShape(
+                            RoundedRectangle(cornerRadius: 10,
+                                             style: .continuous)
+                        )
+                } else {
+                    Image(lesson.img)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(height: 280)
+                        .clipped()
+                }
 
                 VStack {
                     Text(lesson.title)
@@ -35,17 +45,6 @@ struct LearnDetailView: View {
                 }
                 .frame(maxWidth: screenWidthPlusMargins)
                 .padding(.bottom)
-
-                if lesson.hasVideo {
-                    Button(action: {
-                        openURL(URL(string: lesson.videoURL!)!)
-                    }) {
-                        DrinkoLabelWithText(symbolName: "video.fill",
-                                    text: "Go to video",
-                                    color: .white,
-                                    background: .blue)
-                    }
-                }
             }
         }
         .navigationTitle(lesson.title)
@@ -53,8 +52,10 @@ struct LearnDetailView: View {
     }
 }
 
-//struct LearnDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LearnDetailView(lesson: .example)
-//    }
-//}
+#if DEBUG
+struct LearnDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        LearnDetailView(lesson: .example)
+    }
+}
+#endif

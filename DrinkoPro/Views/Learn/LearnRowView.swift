@@ -36,8 +36,10 @@ struct LearnRowView: View {
     }
 }
 
-//struct LearnRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LearnRowView(lesson: .example)
-//    }
-//}
+#if DEBUG
+struct LearnRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        LearnRowView(lesson: .example)
+    }
+}
+#endif

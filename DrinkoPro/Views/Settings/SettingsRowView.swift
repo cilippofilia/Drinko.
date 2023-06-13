@@ -23,8 +23,10 @@ struct SettingsRowView: View {
     }
 }
 
+#if DEBUG
 struct SettingsRowView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsRowView(icon: "gear", color: .secondary, itemName: "Settings")
     }
 }
+#endif
