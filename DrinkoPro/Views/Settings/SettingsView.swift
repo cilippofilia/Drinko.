@@ -13,18 +13,13 @@ struct SettingsView: View {
     static let settingsTag: String? = "Settings"
 
     @State private var email = "cilia.filippo.dev@gmail.com"
-
     @State private var showOptions = false
-
     @State private var reportBugSubject = "Bug Report"
     @State private var reportBugBody = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
-
     @State private var requestFeatureSubject = "Featuristic idea"
     @State private var requestFeatureBody = ""
-
     @State private var contactDevSubject = ""
     @State private var contactDevBody = ""
-
     // Check if this link works once the app is live
     @State private var drinkoLink = "https://apps.apple.com/us/app/drinko-cocktail-recipes-app/id6449893371"
     @State private var twitterDevURL = URL(string: "https://twitter.com/fcilia_dev/")

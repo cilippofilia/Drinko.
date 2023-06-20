@@ -34,6 +34,25 @@ struct CocktailsView: View {
     }
 }
 
+struct FavoriteButtonView: View {
+    let favorites: Favorites
+    let cocktail: Cocktail
+
+    var body: some View {
+        Button(action: {
+            if favorites.contains(cocktail) {
+                favorites.remove(cocktail)
+            } else {
+                favorites.add(cocktail)
+            }
+        }) {
+            Image(systemName: favorites.contains(cocktail) ?
+                  "heart.slash" : "heart")
+            Text("Like")
+        }
+    }
+}
+
 #if DEBUG
 struct CocktailsView_Previews: PreviewProvider {
     static var previews: some View {

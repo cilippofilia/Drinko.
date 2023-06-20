@@ -43,11 +43,11 @@ struct CocktailDetailView: View {
                             // "%2g" reduces the decimal points to 2 digits
                             Text(selectedUnit == "oz." ?
                                  "\(ingredient.quantity, specifier: "%2g")" :
-                                 "\(ingredient.mlQuantity, specifier: "%2g")")
+                                    "\(ingredient.mlQuantity, specifier: "%2g")")
 
                             Text(selectedUnit == "oz." ?
                                  ingredient.unit :
-                                 ingredient.mlUnit)
+                                    ingredient.mlUnit)
 
                             Text(ingredient.name.capitalized)
                             Spacer()
@@ -74,13 +74,11 @@ struct CocktailDetailView: View {
                     HStack {
                         // HISTORY BUTTON
                         if cocktail.history != "" {
-                            Button(action: {
+                            DrinkoButtonView(title: "History",
+                                             icon: "book.fill",
+                                             background: .blue,
+                                             foreground: .white) {
                                 showHistory.toggle()
-                            }) {
-                                DrinkoLabelWithText(symbolName: "book.fill",
-                                                  text: "History",
-                                                  color: .white,
-                                                  background: .blue)
                             }
                             .sheet(isPresented: $showHistory) {
                                 HistoryView(cocktail: cocktail)
@@ -88,32 +86,38 @@ struct CocktailDetailView: View {
                             }
                         }
                         // ADD TO FAV BUTTON
-                        Button(action: {
-                            if favorites.contains(cocktail) {
-                                favorites.remove(cocktail)
-                            } else {
-                                favorites.add(cocktail)
-                                // haptic feedback
-                                UINotificationFeedbackGenerator()
-                                    .notificationOccurred(.success)
-                            }
-                        }) {
-                            if cocktail.history.isEmpty {
-                                DrinkoLabelWithText(symbolName: favorites.contains(cocktail) ?
-                                                    "heart.slash.fill" : "heart.fill",
-                                                    text: "Like",
-                                                    color: .white,
-                                                    background: favorites.contains(cocktail) ?
-                                    .red : .blue)
-                                .frame(width: .infinity)
-                            } else {
-                                DrinkoLabel(symbolName: favorites.contains(cocktail) ?
-                                            "heart.slash.fill" : "heart.fill",
-                                            color: .white,
-                                            background: favorites.contains(cocktail) ?
-                                    .red : .blue)
-                                .frame(width: 60)
-                            }
+                        if cocktail.history.isEmpty {
+                            DrinkoButtonView(title: "Like",
+                                             icon: favorites.contains(cocktail) ? "heart.slash.fill" : "heart.fill",
+                                             background: favorites.contains(cocktail) ? .red : .blue,
+                                             foreground: .white,
+                                             handler: {
+                                if favorites.contains(cocktail) {
+                                    favorites.remove(cocktail)
+                                } else {
+                                    favorites.add(cocktail)
+                                    // haptic feedback
+                                    UINotificationFeedbackGenerator()
+                                        .notificationOccurred(.success)
+                                }
+                            })
+                            .frame(maxWidth: .infinity)
+                        } else {
+                            DrinkoButtonView(title: "Like",
+                                             icon: favorites.contains(cocktail) ? "heart.slash.fill" : "heart.fill",
+                                             background: favorites.contains(cocktail) ? .red : .blue,
+                                             foreground: .white,
+                                             handler: {
+                                if favorites.contains(cocktail) {
+                                    favorites.remove(cocktail)
+                                } else {
+                                    favorites.add(cocktail)
+                                    // haptic feedback
+                                    UINotificationFeedbackGenerator()
+                                        .notificationOccurred(.success)
+                                }
+                            })
+                            .frame(maxWidth: 120)
                         }
                     }
                     .padding(.vertical)
