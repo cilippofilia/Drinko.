@@ -13,7 +13,7 @@ struct LearnDetailView: View {
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 10) {
+            VStack {
                 if lesson.hasVideo {
                     VideoView(videoID: lesson.videoID)
                         .frame(width: screenWidthPlusMargins,
@@ -30,18 +30,16 @@ struct LearnDetailView: View {
                         .clipped()
                 }
 
-                VStack {
+                VStack(spacing: 10) {
                     Text(lesson.title)
                         .font(.title)
                         .bold()
-                        .padding(.vertical)
 
                     Text(lesson.description)
                         .font(.headline)
                         .foregroundColor(.secondary)
 
                     Text(lesson.body)
-                        .padding(.vertical)
                 }
                 .frame(maxWidth: screenWidthPlusMargins)
                 .padding(.bottom)

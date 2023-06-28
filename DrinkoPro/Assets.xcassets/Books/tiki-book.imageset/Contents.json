@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "tiki.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -1,48 +1,46 @@
 //
-//  SpiritDetailView.swift
+//  BookDetailView.swift
 //  DrinkoPro
 //
-//  Created by Filippo Cilia on 02/05/2023.
+//  Created by Filippo Cilia on 28/06/2023.
 //
 
 import SwiftUI
 
-struct SpiritDetailView: View {
-    var spirit: Spirit
+struct BookDetailView: View {
+    var book: Book
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
-                Image(spirit.image)
+                Image(book.image)
                     .resizable()
                     .scaledToFill()
-                    .frame(height: 280)
                     .clipped()
 
                 VStack(spacing: 10) {
-                    Text(spirit.title)
+                    Text(book.title)
                         .font(.title)
                         .bold()
+                        .padding(.vertical)
 
-                    Text(spirit.description)
+                    Text(book.description)
                         .font(.headline)
                         .foregroundColor(.secondary)
 
-                    Text(spirit.body)
+                    Text(book.summary)
                 }
                 .frame(maxWidth: screenWidthPlusMargins)
                 .padding(.bottom)
             }
         }
-        .navigationBarTitle(spirit.title)
+        .navigationBarTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
 
-#if DEBUG
-struct SpiritDetailView_Previews: PreviewProvider {
+struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SpiritDetailView(spirit: .example)
+        BookDetailView(book: .example)
     }
 }
-#endif

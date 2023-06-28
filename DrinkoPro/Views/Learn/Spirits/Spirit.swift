@@ -10,7 +10,8 @@ import SwiftUI
 struct Spirit: Codable, Equatable, Identifiable {
     let id: String
     var title: String
-    var text: String
+    var description: String
+    var body: String
 
     var image: String {
         id
@@ -19,6 +20,7 @@ struct Spirit: Codable, Equatable, Identifiable {
 #if DEBUG
     static let example = Spirit(id: "vodka",
                                 title: "Vodka",
-                                text: "Vodka can be made from literally anything.")
+                                description: "Vodka can be made from literally anything.",
+                                body: "Testing how this will look.")
 #endif
 }

@@ -23,7 +23,7 @@ struct LearnRowView: View {
                     Text(lesson.title)
                         .font(.headline)
 
-                    Text(lesson.description.isEmpty ? "N.A." : lesson.description)
+                    Text(lesson.description)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                         .multilineTextAlignment(.leading)

@@ -21,7 +21,14 @@ struct SpiritRowView: View {
 
                 VStack(alignment: .leading) {
                     Text(spirit.title)
-                        .font(.headline)  
+                        .font(.headline)
+                    
+                    Text(spirit.description)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(2)
+                        .truncationMode(.tail)
                 }
             }
         }
