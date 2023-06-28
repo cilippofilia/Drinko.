@@ -16,7 +16,6 @@ struct SplashScreenView: View {
     @State private var imgOffset: CGFloat = -800
     @State private var txtOffset: CGFloat = 0
 
-
     var body: some View {
         Group {
             if showHomeView {

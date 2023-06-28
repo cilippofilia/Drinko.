@@ -1,8 +1,8 @@
 //
-//  StringExtension.swift
+//  String-Ext.swift
 //  DrinkoPro
 //
-//  Created by Filippo Cilia on 24/04/2023.
+//  Created by Filippo Cilia on 28/06/2023.
 //
 
 import SwiftUI

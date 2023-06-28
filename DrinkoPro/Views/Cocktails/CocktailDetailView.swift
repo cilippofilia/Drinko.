@@ -13,8 +13,8 @@ struct CocktailDetailView: View {
 
     @State private var showHistory = false
     @State private var selectedUnit = "oz."
+
     var units = ["oz.", "ml"]
-    
     var cocktail: Cocktail
 
     var body: some View {

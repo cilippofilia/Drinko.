@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct HomeView: View {
-// SceneStorage is used to keep track of what tab
-// was last used before closing the app
+    // SceneStorage is used to keep track of what tab
+    // was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
-
+    
     var body: some View {
         TabView(selection: $selectedView) {
             LearnView()

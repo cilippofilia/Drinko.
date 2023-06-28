@@ -1,11 +1,11 @@
 /* No comment provided by engineer. */
-"%@" = "%@";
+"%@" = "";
 
 /* No comment provided by engineer. */
-"%@:" = "%@:";
+"App Preferences" = "Preferenze";
 
 /* No comment provided by engineer. */
-"%2g" = "%2g";
+"Books" = "Libri";
 
 /* No comment provided by engineer. */
 "Cocktails" = "Cocktail";
@@ -14,19 +14,22 @@
 "Contact the developer" = "Contatta lo sviluppatore";
 
 /* No comment provided by engineer. */
+"Contacts" = "Contatti";
+
+/* No comment provided by engineer. */
 "Drinko" = "Drinko";
 
 /* No comment provided by engineer. */
-"Go to video" = "Vai al video";
-
-/* No comment provided by engineer. */
-"History" = "Storia";
+"English" = "Inglese";
 
 /* No comment provided by engineer. */
 "Info" = "Informazioni";
 
 /* No comment provided by engineer. */
-"It's good to be back!" = "É bello essere tornati";
+"It's good to be back!" = "È bello essere tornati";
+
+/* No comment provided by engineer. */
+"Italian" = "Italiano";
 
 /* No comment provided by engineer. */
 "Language" = "Lingua";
@@ -35,10 +38,10 @@
 "Learn" = "Impara";
 
 /* No comment provided by engineer. */
-"Other Enquiry" = "Altre richieste";
+"Like" = "Piace";
 
 /* No comment provided by engineer. */
-"Product of Italy 🇮🇹" = "Prodotto in Italia 🇮🇹";
+"Other Enquiry" = "Altre richieste";
 
 /* No comment provided by engineer. */
 "Rate the app" = "Valuta l'app";
@@ -47,19 +50,19 @@
 "Read me" = "Leggimi";
 
 /* No comment provided by engineer. */
-"Remove from favorites" = "Rimuovi dai preferiti";
+"Report a bug" = "Informa di un bug";
 
 /* No comment provided by engineer. */
-"Report a bug" = "Riferisci un bug";
+"Request a Feature" = "Richiedi una feature";
 
 /* No comment provided by engineer. */
-"Request a Feature" = "Richiedi una Funzionalità";
+"Search Cocktails" = "Cerca i cocktail";
 
 /* No comment provided by engineer. */
-"Search Cocktails" = "Cerca i Cocktail";
+"Select an option" = "Selezione un'opzione";
 
 /* No comment provided by engineer. */
-"Select an option" = "Scegli un'opzione";
+"Select unit" = "Seleziona l'unità";
 
 /* No comment provided by engineer. */
 "Settings" = "Impostazioni";
@@ -68,13 +71,13 @@
 "Share the app" = "Condividi l'app";
 
 /* No comment provided by engineer. */
-"Special thanks to:" = "Ringraziamento speciale:";
+"Special thanks to:" = "Un ringraziamento speciale a:";
 
 /* No comment provided by engineer. */
-"App Preferences" = "Preferenze";
+"Spirits" = "Distillati";
 
 /* No comment provided by engineer. */
-"Contacts" = "Contatti";
+"This app was made with ❤️ by Filippo Cilia 🇮🇹,\na solo iOS app developer." = "Questa app è stata fatta con ❤️ da Filippo Cilia 🇮🇹,\nsviluppatore iOS indipendente.";
 
 /* No comment provided by engineer. */
 "Twitter" = "Twitter";
@@ -83,5 +86,5 @@
 "Version" = "Versione";
 
 /* No comment provided by engineer. */
-"Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.\n\nBut, let's face it, taste is subjective, and there's no one-size-fits-all approach to making cocktails. However, this app will be your trusty companion to help you discover new recipes, perfect your favorites, and even create your signature cocktail.\n\nFrom refreshing tropical blends to sophisticated sips, we've got you covered. You'll find everything from classic cocktails to modern twists, so get ready to impress your guests with your newfound mixology skills.\n\nBut, at the end of the day, the most important thing is that you enjoy the cocktail sitting in front of you. So, use this app as a guideline, experiment with different ingredients and techniques, and most importantly, have fun! Who knows, you might even uncover some professional bartending tips and tricks along the way.\n\nSo, are you ready to shake things up and craft some delicious drinks? Let's raise a glass and cheers to endless possibilities!" = "Benvenuto nel mondo emozionante dei cocktail! Questa app è la tua guida definitiva per creare la bevanda perfetta, che tu sia un barman esperto o un appassionato principiante che inizia a casa. È un perfetto mix della mia esperienza personale dietro al bancone, degli spunti di amici e colleghi, nonché delle informazioni raccolte da fonti affidabili su Internet e da vari libri.\n\nMa ammettiamolo, il gusto è soggettivo e non esiste un approccio universale per la preparazione dei cocktail. Tuttavia, questa app sarà il tuo fidato compagno per scoprire nuove ricette, perfezionare i tuoi preferiti e persino creare il tuo cocktail signature.\n\nDai mix tropicali rinfrescanti ai sorso sofisticati, siamo pronti a soddisfare ogni tua esigenza. Troverai tutto, dai cocktail classici a varianti moderne, quindi preparati a impressionare i tuoi ospiti con le tue nuove abilità di mixology.\n\nMa, alla fine della giornata, la cosa più importante è che tu possa gustarti il cocktail che hai davanti. Quindi, usa questa app come linea guida, sperimenta con ingredienti e tecniche diverse e, soprattutto, divertiti! Chissà, potresti persino scoprire alcuni consigli e trucchi professionali da barman lungo il percorso.\n\nQuindi, sei pronto a mescolare le carte e preparare deliziosi drink? Alziamo il bicchiere e brindiamo a infinite possibilità!";
+"Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.\n\nBut, let's face it, taste is subjective, and there's no one-size-fits-all approach to making cocktails. However, this app will be your trusty companion to help you discover new recipes, perfect your favorites, and even create your signature cocktail.\n\nFrom refreshing tropical blends to sophisticated sips, we've got you covered. You'll find everything from classic cocktails to modern twists, so get ready to impress your guests with your newfound mixology skills.\n\nBut, at the end of the day, the most important thing is that you enjoy the cocktail sitting in front of you. So, use this app as a guideline, experiment with different ingredients and techniques, and most importantly, have fun! Who knows, you might even uncover some professional bartending tips and tricks along the way.\n\nSo, are you ready to shake things up and craft some delicious drinks? Let's raise a glass and cheers to endless possibilities!" = "Benvenuti nel mondo emozionante dei cocktail! Questa app è la vostra guida definitiva per creare la bevanda perfetta, che siate barman esperti o semplicemente appassionati di cocktail casalinghi. È un perfetto mix della mia esperienza personale dietro al bancone, dei consigli di amici e colleghi, e delle informazioni raccolte da fonti affidabili su Internet e vari libri.\n\nMa ammettiamolo, il gusto è soggettivo e non esiste un approccio universale per la preparazione dei cocktail. Tuttavia, questa app sarà la vostra fedele compagna per scoprire nuove ricette, perfezionare i vostri preferiti e persino creare il vostro cocktail personalizzato.\n\nDai freschi mix tropicali agli sorsi sofisticati, siamo pronti a soddisfare ogni vostra esigenza. Troverete tutto, dai cocktail classici alle reinterpretazioni moderne, quindi preparatevi a stupire i vostri ospiti con le vostre nuove abilità da barman.\n\nMa, alla fine della giornata, la cosa più importante è che voi apprezziate il cocktail davanti a voi. Quindi, utilizzate questa app come linea guida, sperimentate con ingredienti e tecniche diverse e, soprattutto, divertitevi! Chissà, potreste persino scoprire alcuni trucchi e consigli professionali di bartending lungo il cammino.\n\nQuindi, siete pronti a mescolare le carte e preparare deliziosi drink? Alziamo il bicchiere e brindiamo alle infinite possibilità!";
 

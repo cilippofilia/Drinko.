@@ -11,6 +11,7 @@ struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
 
     @StateObject var favorites = Favorites()
+
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var searchText = ""
 

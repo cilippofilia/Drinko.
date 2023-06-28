@@ -30,7 +30,7 @@ struct SettingsView: View {
                 Section(header: Text("App Preferences")) {
                     // MARK: LANGUAGE
                     HStack {
-                        SettingsRowView(icon: "text.bubble",
+                        SettingsRowView(icon: "character.bubble",
                                         color: .secondary,
                                         itemName: "Language")
                         Spacer()
@@ -114,7 +114,7 @@ struct SettingsView: View {
                     }
                 }
 
-                Section(header: Text("Info"), footer: Text("Product of Italy 🇮🇹")) {
+                Section(header: Text("Info"), footer: Text("This app was made with ❤️ by Filippo Cilia 🇮🇹,\na solo iOS app developer.")) {
                     // MARK: READ ME
                     NavigationLink(destination: ReadMeView()) {
                         SettingsRowView(icon: "r.circle",
