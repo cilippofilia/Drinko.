@@ -918,38 +918,6 @@
         ]
     },
     {
-        "id":"american-trilogy",
-        "name":"American Trilogy",
-        "method":"stir & strain",
-        "glass":"rock",
-        "garnish":"orange & lemon twist",
-        "ice":"cubed",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"rye whiskey",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"apple brandy",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"demerara syrup (1:1)",
-                "quantity":2.0,
-                "unit":"dashes"
-            },
-            {
-                "name":"orange bitters",
-                "quantity":2.0,
-                "unit":"dashes"
-            }
-        ]
-    },
-    {
         "id":"old-pal",
         "name":"Old Pal",
         "method":"stir & strain",
@@ -1270,38 +1238,6 @@
         ]
     },
     {
-        "id":"penicillin",
-        "name":"Penicillin",
-        "method":"shake & fine strain",
-        "glass":"collins",
-        "garnish":"-",
-        "ice":"cubed",
-        "extra":"float of peated scotch whiskey",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"blended scotch whiskey",
-                "quantity":2.0,
-                "unit":"oz."
-            },
-            {
-                "name":"lemon juice",
-                "quantity":0.75,
-                "unit":"oz."
-            },
-            {
-                "name":"ginger syrup",
-                "quantity":0.35,
-                "unit":"oz."
-            },
-            {
-                "name":"honey syrup (2:1)",
-                "quantity":0.35,
-                "unit":"oz."
-            }
-        ]
-    },
-    {
         "id":"bobby-burns",
         "name":"Bobby Burns",
         "method":"stir & strain",
@@ -1571,38 +1507,6 @@
                 "name":"grenadine",
                 "quantity":0.25,
                 "unit":"oz."
-            }
-        ]
-    },
-    {
-        "id":"brooklynite",
-        "name":"Brooklynite",
-        "method":"shake & fine strain",
-        "glass":"coupe",
-        "garnish":"lime wheel",
-        "ice":"-",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"aged jamaican rum",
-                "quantity":2.0,
-                "unit":"oz."
-            },
-            {
-                "name":"lime juice",
-                "quantity":0.75,
-                "unit":"oz."
-            },
-            {
-                "name":"honey syrup (2:1)",
-                "quantity":0.75,
-                "unit":"oz."
-            },
-            {
-                "name":"angostura bitters",
-                "quantity":2.0,
-                "unit":"dashes"
             }
         ]
     },
@@ -2158,75 +2062,6 @@
         ]
     },
     {
-        "id":"japanese-cocktail",
-        "name":"Japanese Cocktail",
-        "method":"stir & strain",
-        "glass":"nick-nora",
-        "garnish":"lemon twist",
-        "ice":"-",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"cognac",
-                "quantity":2.5,
-                "unit":"oz."
-            },
-            {
-                "name":"orgeat (almond syrup)",
-                "quantity":0.5,
-                "unit":"oz."
-            },
-            {
-                "name":"angostura bitters",
-                "quantity":3.0,
-                "unit":"dashes"
-            }
-        ]
-    },
-    {
-        "id":"vieux-carre",
-        "name":"Vieux Carre",
-        "method":"stir & strain",
-        "glass":"rock",
-        "garnish":"lemon twist",
-        "ice":"cubed",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"cognac",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"rye whiskey",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"sweet red vermouth",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"dom benedictine",
-                "quantity":0.15,
-                "unit":"oz."
-            },
-            {
-                "name":"angostura bitters",
-                "quantity":2.0,
-                "unit":"dashes"
-            },
-            {
-                "name":"peychaud's bitters",
-                "quantity":2.0,
-                "unit":"dashes"
-            }
-        ]
-    },
-    {
         "id":"frantic-atlantic",
         "name":"Frantic Atlantic",
         "method":"whip shake",
@@ -2359,43 +2194,6 @@
             },
             {
                 "name":"orange bitters",
-                "quantity":2.0,
-                "unit":"dashes"
-            }
-        ]
-    },
-    {
-        "id":"grandfather",
-        "name":"Grandfather",
-        "method":"stir & strain",
-        "glass":"coupe",
-        "garnish":"-",
-        "ice":"-",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"bourbon whiskey",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"apple brandy",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"sweet red vermouth",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"peychaud's bitters",
-                "quantity":2.0,
-                "unit":"dashes"
-            },
-            {
-                "name":"angostura bitters",
                 "quantity":2.0,
                 "unit":"dashes"
             }
@@ -2630,33 +2428,6 @@
             },
             {
                 "name":"pineapple gomme syrup",
-                "quantity":0.5,
-                "unit":"oz."
-            }
-        ]
-    },
-    {
-        "id":"airmail",
-        "name":"Air Mail",
-        "method":"shake & fine strain",
-        "glass":"coupe",
-        "garnish":"lime wheel",
-        "ice":"-",
-        "extra":"top with champagne",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"white rum",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"lime juice",
-                "quantity":0.5,
-                "unit":"oz."
-            },
-            {
-                "name":"honey syrup (2:1)",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3458,33 +3229,6 @@
                 "name":"mint",
                 "quantity":8.0,
                 "unit":"leaves"
-            }
-        ]
-    },
-    {
-        "id":"hanky-panky",
-        "name":"Hanky Panky",
-        "method":"stir & strain",
-        "glass":"coupe",
-        "garnish":"orange twist",
-        "ice":"-",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"london dry gin",
-                "quantity":1.5,
-                "unit":"oz."
-            },
-            {
-                "name":"sweet red vermouth",
-                "quantity":1.5,
-                "unit":"oz."
-            },
-            {
-                "name":"fernet",
-                "quantity":0.25,
-                "unit":"oz."
             }
         ]
     },

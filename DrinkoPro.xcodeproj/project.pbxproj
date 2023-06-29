@@ -292,7 +292,6 @@
 			knownRegions = (
 				en,
 				it,
-				Base,
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			productRefGroup = 18F49E612A27B28D00862CE3 /* Products */;

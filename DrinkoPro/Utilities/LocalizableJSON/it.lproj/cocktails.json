@@ -918,38 +918,6 @@
         ]
     },
     {
-        "id":"american-trilogy",
-        "name":"American Trilogy",
-        "method":"stir & strain",
-        "glass":"rock",
-        "garnish":"buccia d'arancia e di limone",
-        "ice":"cubetti",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"rye whiskey",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"brandy a base di mele",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"sciroppo di demerara (1:1)",
-                "quantity":2.0,
-                "unit":"spruzzi"
-            },
-            {
-                "name":"bitter all'arancia",
-                "quantity":2.0,
-                "unit":"spruzzi"
-            }
-        ]
-    },
-    {
         "id":"old-pal",
         "name":"Old Pal",
         "method":"stir & strain",
@@ -1270,38 +1238,6 @@
         ]
     },
     {
-        "id":"penicillin",
-        "name":"Penicillin",
-        "method":"shake & fine strain",
-        "glass":"collins",
-        "garnish":"-",
-        "ice":"cubetti",
-        "extra":"float di scotch whiskey affumicato",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"blended scotch whiskey",
-                "quantity":2.0,
-                "unit":"oz."
-            },
-            {
-                "name":"succo di limone",
-                "quantity":0.75,
-                "unit":"oz."
-            },
-            {
-                "name":"sciroppo allo zenzero",
-                "quantity":0.35,
-                "unit":"oz."
-            },
-            {
-                "name":"sciroppo di miele (2:1)",
-                "quantity":0.35,
-                "unit":"oz."
-            }
-        ]
-    },
-    {
         "id":"bobby-burns",
         "name":"Bobby Burns",
         "method":"stir & strain",
@@ -1484,33 +1420,6 @@
         ]
     },
     {
-        "id":"airmail",
-        "name":"Air Mail",
-        "method":"shake & fine strain",
-        "glass":"coupe",
-        "garnish":"fetta di lime",
-        "ice":"-",
-        "extra":"riempi con champagne",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"rum chiaro",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"succo di lime",
-                "quantity":0.5,
-                "unit":"oz."
-            },
-            {
-                "name":"sciroppo di miele (2:1)",
-                "quantity":0.5,
-                "unit":"oz."
-            }
-        ]
-    },
-    {
         "id":"daisy-de-santiago",
         "name":"Daisy de Santiago",
         "method":"shake & fine strain",
@@ -1571,38 +1480,6 @@
                 "name":"sciroppo al melograno",
                 "quantity":0.25,
                 "unit":"oz."
-            }
-        ]
-    },
-    {
-        "id":"brooklynite",
-        "name":"Brooklynite",
-        "method":"shake & fine strain",
-        "glass":"coupe",
-        "garnish":"fetta di lime",
-        "ice":"-",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"rum jamaicano invecchiato",
-                "quantity":2.0,
-                "unit":"oz."
-            },
-            {
-                "name":"succo di lime",
-                "quantity":0.75,
-                "unit":"oz."
-            },
-            {
-                "name":"sciroppo di miele (2:1)",
-                "quantity":0.75,
-                "unit":"oz."
-            },
-            {
-                "name":"angostura bitters",
-                "quantity":2.0,
-                "unit":"spruzzi"
             }
         ]
     },
@@ -2158,75 +2035,6 @@
         ]
     },
     {
-        "id":"japanese-cocktail",
-        "name":"Japanese Cocktail",
-        "method":"stir & strain",
-        "glass":"nick-nora",
-        "garnish":"buccia di limone",
-        "ice":"-",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"cognac",
-                "quantity":2.5,
-                "unit":"oz."
-            },
-            {
-                "name":"orgeat (sciroppo alle mandorle)",
-                "quantity":0.5,
-                "unit":"oz."
-            },
-            {
-                "name":"angostura bitters",
-                "quantity":3.0,
-                "unit":"spruzzi"
-            }
-        ]
-    },
-    {
-        "id":"vieux-carre",
-        "name":"Vieux Carre",
-        "method":"stir & strain",
-        "glass":"rock",
-        "garnish":"buccia di limone",
-        "ice":"cubetti",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"cognac",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"rye whiskey",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"vermouth dolce rosso",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"dom benedictine",
-                "quantity":0.15,
-                "unit":"oz."
-            },
-            {
-                "name":"angostura bitters",
-                "quantity":2.0,
-                "unit":"spruzzi"
-            },
-            {
-                "name":"peychaud's bitters",
-                "quantity":2.0,
-                "unit":"spruzzi"
-            }
-        ]
-    },
-    {
         "id":"frantic-atlantic",
         "name":"Frantic Atlantic",
         "method":"whip shake",
@@ -2359,43 +2167,6 @@
             },
             {
                 "name":"bitter all'arancia",
-                "quantity":2.0,
-                "unit":"spruzzi"
-            }
-        ]
-    },
-    {
-        "id":"grandfather",
-        "name":"Grandfather",
-        "method":"stir & strain",
-        "glass":"coupe",
-        "garnish":"-",
-        "ice":"-",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"bourbon whiskey",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"brandy a base di mele",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"vermouth dolce rosso",
-                "quantity":1.0,
-                "unit":"oz."
-            },
-            {
-                "name":"peychaud's bitters",
-                "quantity":2.0,
-                "unit":"spruzzi"
-            },
-            {
-                "name":"angostura bitters",
                 "quantity":2.0,
                 "unit":"spruzzi"
             }
@@ -3458,33 +3229,6 @@
                 "name":"menta",
                 "quantity":8.0,
                 "unit":"foglie"
-            }
-        ]
-    },
-    {
-        "id":"hanky-panky",
-        "name":"Hanky Panky",
-        "method":"stir & strain",
-        "glass":"coupe",
-        "garnish":"buccia d'arancia",
-        "ice":"-",
-        "extra":"-",
-        "history":"",
-        "ingredients":[
-            {
-                "name":"london dry gin",
-                "quantity":1.5,
-                "unit":"oz."
-            },
-            {
-                "name":"vermouth dolce rosso",
-                "quantity":1.5,
-                "unit":"oz."
-            },
-            {
-                "name":"fernet",
-                "quantity":0.25,
-                "unit":"oz."
             }
         ]
     },

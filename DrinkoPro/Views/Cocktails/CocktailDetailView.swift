@@ -20,6 +20,26 @@ struct CocktailDetailView: View {
     var body: some View {
         NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
+                VStack {
+                    AsyncImage(url: URL(string: cocktail.pic)) { phase in
+                        switch phase {
+                        case .failure:
+                            failure
+                            
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+
+                        default:
+                            ProgressView()
+                        }
+                    }
+                    .frame(width: screenWidthPlusMargins,
+                           height: 280)
+                    .cornerRadius(10)
+                }
+
                 VStack(alignment: .leading) {
                     Text(cocktail.name)
                         .font(.title)
@@ -128,6 +148,18 @@ struct CocktailDetailView: View {
             // forcing displayMode .inline to avoid cropping the back bar button - this way will be standardized between 'Cocktails' and 'Back' if the Navigation Title is too long
             .navigationBarTitleDisplayMode(.inline)
         }
+    }
+}
+
+// MARK: computed variable to store views for AsyncImage
+var failure: some View {
+    VStack(spacing: 10) {
+        Image(systemName: "icloud.slash.fill")
+            .font(.largeTitle)
+            .foregroundColor(.secondary)
+        Text("Couldn't load image")
+            .font(.headline)
+            .foregroundColor(.secondary)
     }
 }
 
