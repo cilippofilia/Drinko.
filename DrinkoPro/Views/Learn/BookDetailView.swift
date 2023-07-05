@@ -39,8 +39,10 @@ struct BookDetailView: View {
     }
 }
 
+#if DEBUG
 struct BookDetailView_Previews: PreviewProvider {
     static var previews: some View {
         BookDetailView(book: .example)
     }
 }
+#endif

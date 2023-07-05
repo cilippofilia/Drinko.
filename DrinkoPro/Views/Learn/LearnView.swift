@@ -43,8 +43,10 @@ struct LearnView: View {
     }
 }
 
+#if DEBUG
 struct LearnView_Previews: PreviewProvider {
     static var previews: some View {
         LearnView()
     }
 }
+#endif

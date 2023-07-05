@@ -54,8 +54,10 @@ struct DrinkoButtonView: View {
     }
 }
 
+#if DEBUG
 struct DrinkoButtonView_Previews: PreviewProvider {
     static var previews: some View {
         DrinkoButtonView(title: "Test button", icon: nil, handler: { })
     }
 }
+#endif

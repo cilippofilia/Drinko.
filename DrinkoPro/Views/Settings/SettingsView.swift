@@ -21,7 +21,9 @@ struct SettingsView: View {
     @State private var contactDevSubject = ""
     @State private var contactDevBody = ""
     // Check if this link works once the app is live
-    @State private var drinkoLink = "https://apps.apple.com/us/app/drinko-cocktail-recipes-app/id6449893371"
+    @State private var drinkoURL = URL(string: "https://apps.apple.com/gb/app/drinko-cocktail-recipes-app/id6449893371")
+    @State private var rateURL = URL(string: "itms-apps://apps.apple.com/gb/app/drinko-cocktail-recipes-app/id6449893371?action=write-review")
+
     @State private var twitterDevURL = URL(string: "https://twitter.com/fcilia_dev/")
 
     var body: some View {
@@ -106,12 +108,16 @@ struct SettingsView: View {
                     .buttonStyle(.plain)
 
                     // MARK: RATE THE APP
-                    Link(destination: URL(string: drinkoLink)!) {
+                    Button(action: {
+                        UIApplication.shared.open(rateURL!,
+                                                  options: [:],
+                                                  completionHandler: nil)
+                    }) {
                         SettingsRowView(icon: "star",
                                         color: .yellow,
                                         itemName: "Rate the app")
-                        .foregroundColor(.primary)
                     }
+                    .buttonStyle(.plain)
                 }
 
                 Section(header: Text("Info"), footer: Text("This app was made with ❤️ by Filippo Cilia 🇮🇹,\na solo iOS app developer.")) {
@@ -123,7 +129,7 @@ struct SettingsView: View {
                     }
 
                     // MARK: SHARE APP
-                    ShareLink(item: drinkoLink) {
+                    ShareLink(item: drinkoURL!) {
                         SettingsRowView(icon: "square.and.arrow.up",
                                         color: .secondary,
                                         itemName: "Share the app")
