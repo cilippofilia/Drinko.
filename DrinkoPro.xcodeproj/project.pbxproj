@@ -23,7 +23,6 @@
 		18F49E7A2A286D1900862CE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E792A286D1900862CE3 /* Assets.xcassets */; };
 		18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E7C2A286D2A00862CE3 /* Favorites.swift */; };
 		18F49E952A286D2A00862CE3 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */; };
-		18F49E9A2A286D2A00862CE3 /* Sequence-Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E852A286D2A00862CE3 /* Sequence-Sorting.swift */; };
 		18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E862A286D2A00862CE3 /* Bundle-Decodable.swift */; };
 		18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E872A286D2A00862CE3 /* Margins.swift */; };
 		18F49E9E2A286D2A00862CE3 /* Color-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E892A286D2A00862CE3 /* Color-Ext.swift */; };
@@ -69,7 +68,6 @@
 		18F49E792A286D1900862CE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18F49E7C2A286D2A00862CE3 /* Favorites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
 		18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		18F49E852A286D2A00862CE3 /* Sequence-Sorting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sequence-Sorting.swift"; sourceTree = "<group>"; };
 		18F49E862A286D2A00862CE3 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		18F49E872A286D2A00862CE3 /* Margins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
 		18F49E892A286D2A00862CE3 /* Color-Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color-Ext.swift"; sourceTree = "<group>"; };
@@ -162,6 +160,7 @@
 			children = (
 				18F49E7C2A286D2A00862CE3 /* Favorites.swift */,
 				18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */,
+				18F49E872A286D2A00862CE3 /* Margins.swift */,
 				18F49E842A286D2A00862CE3 /* Extensions */,
 				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
 				18F49E8B2A286D2A00862CE3 /* LocalizableJSON */,
@@ -172,9 +171,7 @@
 		18F49E842A286D2A00862CE3 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				18F49E852A286D2A00862CE3 /* Sequence-Sorting.swift */,
 				18F49E862A286D2A00862CE3 /* Bundle-Decodable.swift */,
-				18F49E872A286D2A00862CE3 /* Margins.swift */,
 				188E93E42A4C9D57001691E6 /* String-Ext.swift */,
 				18F49E892A286D2A00862CE3 /* Color-Ext.swift */,
 			);
@@ -340,7 +337,6 @@
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */,
 				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
-				18F49E9A2A286D2A00862CE3 /* Sequence-Sorting.swift in Sources */,
 				188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */,
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
@@ -543,13 +539,14 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -580,13 +577,14 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.2.2;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -20,11 +20,6 @@ struct SettingsView: View {
     @State private var requestFeatureBody = ""
     @State private var contactDevSubject = ""
     @State private var contactDevBody = ""
-    // Check if this link works once the app is live
-    @State private var drinkoURL = URL(string: "https://apps.apple.com/gb/app/drinko-cocktail-recipes-app/id6449893371")
-    @State private var rateURL = URL(string: "itms-apps://apps.apple.com/gb/app/drinko-cocktail-recipes-app/id6449893371?action=write-review")
-
-    @State private var twitterDevURL = URL(string: "https://twitter.com/fcilia_dev/")
 
     var body: some View {
         NavigationStack {
@@ -91,7 +86,7 @@ struct SettingsView: View {
                                 UIApplication.shared.openURL(twitterDevURL!)
                             }
                         } else {
-                            //redirect to safari because the user doesn't have Instagram
+                            //redirect to safari because the user doesn't have Twitter
                             if #available(iOS 10.0, *) {
                                 UIApplication.shared.open(twitterDevURL!,
                                                           options: [:],

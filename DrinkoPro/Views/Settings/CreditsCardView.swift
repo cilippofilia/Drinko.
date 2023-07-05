@@ -62,7 +62,10 @@ struct CreditsCardView: View {
 #if DEBUG
 struct CreditsCardView_Previews: PreviewProvider {
     static var previews: some View {
-        CreditsCardView(image: "heart", name: "Test", brief: "@thisisatest", url: "disTest??")
+        CreditsCardView(image: "heart",
+                        name: "Test",
+                        brief: "@thisisatest",
+                        url: "disTest??")
     }
 }
 #endif

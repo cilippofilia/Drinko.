@@ -14,10 +14,50 @@ struct CocktailsView: View {
 
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var searchText = ""
+    @State private var sortOption: SortOption = .none
+
+    enum SortOption {
+        case none
+        case fromAtoZ
+        case fromZtoA
+        case byGlass
+        case byIce
+    }
+
+    var sortSymbol: String {
+        switch sortOption {
+        case .none:
+            return "arrow.up.arrow.down"
+        case .fromAtoZ:
+            return "arrow.up.arrow.down"
+        case .fromZtoA:
+            return "arrow.up.arrow.down"
+        case .byGlass:
+            return "arrow.up.arrow.down"
+        case .byIce:
+            return "arrow.up.arrow.down"
+        }
+    }
+
+
+    var sortedCocktails: [Cocktail] {
+        switch sortOption {
+        case .none:
+            return cocktails
+        case .fromAtoZ:
+            return cocktails.sorted { $0.name < $1.name }
+        case .fromZtoA:
+            return cocktails.sorted { $1.name < $0.name }
+        case .byGlass:
+            return cocktails.sorted { $0.glass < $1.glass }
+        case .byIce:
+            return cocktails.sorted { $0.ice < $1.ice }
+        }
+    }
 
     var filteredCocktails: [Cocktail] {
-        guard !searchText.isEmpty else { return cocktails }
-        return cocktails.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        guard !searchText.isEmpty else { return sortedCocktails }
+        return sortedCocktails.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
     }
 
     var body: some View {
@@ -30,6 +70,34 @@ struct CocktailsView: View {
             }
             .navigationTitle("Cocktails")
             .searchable(text: $searchText, prompt: "Search Cocktails")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        Button("None") {
+                            sortOption = .none
+                        }
+
+                        Button("A->Z") {
+                            sortOption = .fromAtoZ
+                        }
+
+                        Button("Z->A") {
+                            sortOption = .fromZtoA
+                        }
+
+                        Button("By Glass") {
+                            sortOption = .byGlass
+                        }
+
+                        Button("By Ice") {
+                            sortOption = .byIce
+                        }
+
+                    } label: {
+                        Label("Sort", systemImage: "arrow.up.arrow.down")
+                    }
+                }
+            }
         }
         .environmentObject(favorites)
     }
