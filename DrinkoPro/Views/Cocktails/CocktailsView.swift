@@ -14,10 +14,9 @@ struct CocktailsView: View {
 
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var searchText = ""
-    @State private var sortOption: SortOption = .none
+    @State private var sortOption: SortOption = .fromAtoZ
 
     enum SortOption {
-        case none
         case fromAtoZ
         case fromZtoA
         case byGlass
@@ -26,8 +25,6 @@ struct CocktailsView: View {
 
     var sortSymbol: String {
         switch sortOption {
-        case .none:
-            return "arrow.up.arrow.down"
         case .fromAtoZ:
             return "arrow.up.arrow.down"
         case .fromZtoA:
@@ -39,11 +36,8 @@ struct CocktailsView: View {
         }
     }
 
-
     var sortedCocktails: [Cocktail] {
         switch sortOption {
-        case .none:
-            return cocktails
         case .fromAtoZ:
             return cocktails.sorted { $0.name < $1.name }
         case .fromZtoA:
@@ -73,15 +67,11 @@ struct CocktailsView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu {
-                        Button("None") {
-                            sortOption = .none
-                        }
-
-                        Button("A->Z") {
+                        Button("A -> Z") {
                             sortOption = .fromAtoZ
                         }
 
-                        Button("Z->A") {
+                        Button("Z -> A") {
                             sortOption = .fromZtoA
                         }
 
