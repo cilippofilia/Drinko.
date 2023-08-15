@@ -40,10 +40,12 @@ struct PostsList: View {
                 case let .loaded(posts):
                     List(posts) { post in
                         if searchText.isEmpty || post.contains(searchText) {
-                            PostRow(post: post)
+                            PostRow(viewModel: viewModel.makePostRowViewModel(for: post))
                         }
                     }
+                    .animation(.default, value: posts)
                     .searchable(text: $searchText)
+
                 }
             }
             .navigationTitle("Posts")

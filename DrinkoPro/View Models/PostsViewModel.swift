@@ -34,5 +34,18 @@ class PostsViewModel: ObservableObject {
             self?.posts.value?.insert(post, at: 0)
         }
     }
-}
 
+    func makePostRowViewModel(for post: Post) -> PostRowViewModel {
+        return PostRowViewModel(post: post,
+                                deleteAction: { [weak self] in
+            try await self?.postsRepository.delete(post)
+            self?.posts.value?.removeAll { $0 == post }
+        },
+                                likeAction: { [weak self] in
+            let newValue = !post.isLiked
+            try await newValue ? self?.postsRepository.like(post) : self?.postsRepository.unlike(post)
+            guard let i = self?.posts.value?.firstIndex(of: post) else { return }
+            self?.posts.value?[i].isLiked = newValue
+        })
+    }
+}
