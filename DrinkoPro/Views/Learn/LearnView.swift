@@ -15,7 +15,7 @@ struct LearnView: View {
     let books = Bundle.main.decode([Book].self, from: "books.json")
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List {
                 ForEach(subjects) { subject in
                     Section(header: Text(subject.name)) {

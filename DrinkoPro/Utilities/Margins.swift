@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// MARK:
+// MARK: SCREEN SIZES
 let screenWidth = UIScreen.main.bounds.size.width
 let screenWidthPlusMargins = screenWidth / 1.1
 

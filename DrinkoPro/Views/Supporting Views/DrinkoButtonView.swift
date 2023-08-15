@@ -35,11 +35,10 @@ struct DrinkoButtonView: View {
             HStack {
                 if icon != nil {
                     Image(systemName: icon!)
-                        .fontWeight(.semibold)
                 }
                 if title != nil {
                     Text(title!)
-                        .fontWeight(.semibold)
+                        .bold()
                 }
             }
         }

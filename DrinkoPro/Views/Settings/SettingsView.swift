@@ -22,7 +22,7 @@ struct SettingsView: View {
     @State private var contactDevBody = ""
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             Form {
                 Section(header: Text("App Preferences")) {
                     // MARK: LANGUAGE
@@ -124,7 +124,9 @@ struct SettingsView: View {
                     }
 
                     // MARK: SHARE APP
-                    ShareLink(item: drinkoURL!) {
+                    Button(action: {
+                        shareSheet(url: drinkoURL!)
+                    }) {
                         SettingsRowView(icon: "square.and.arrow.up",
                                         color: .secondary,
                                         itemName: "Share the app")
@@ -153,6 +155,17 @@ struct SettingsView: View {
         let version = (appVersion as! String)
 
         return version
+    }
+
+    func shareSheet(url: URL) {
+        let activityView = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+
+        let allScenes = UIApplication.shared.connectedScenes
+        let scene = allScenes.first { $0.activationState == .foregroundActive }
+
+        if let windowScene = scene as? UIWindowScene {
+            windowScene.keyWindow?.rootViewController?.present(activityView, animated: true, completion: nil)
+        }
     }
 }
 

@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    // SceneStorage is used to keep track of what tab
-    // was last used before closing the app
+    // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
     
     var body: some View {
@@ -17,22 +16,25 @@ struct HomeView: View {
             LearnView()
                 .tag(LearnView.learnTag)
                 .tabItem {
-                    Image(systemName: "books.vertical")
-                    Text("Learn")
+                    Label("Learn", systemImage: "books.vertical")
                 }
 
             CocktailsView()
                 .tag(CocktailsView.cocktailsTag)
                 .tabItem {
-                    Image(systemName: "wineglass")
-                    Text("Cocktails")
+                    Label("Cocktails", systemImage: "wineglass")
+                }
+
+            PostsList()
+                .tag(PostsList.postsTag)
+                .tabItem {
+                    Label("Social", systemImage: "person.2")
                 }
 
             SettingsView()
                 .tag(SettingsView.settingsTag)
                 .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
+                    Label("Settings", systemImage: "gear")
                 }
         }
     }

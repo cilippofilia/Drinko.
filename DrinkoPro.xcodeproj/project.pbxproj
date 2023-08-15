@@ -16,6 +16,22 @@
 		188E93CD2A4C29FA001691E6 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 188E93CF2A4C29FA001691E6 /* books.json */; };
 		188E93E32A4C3BE4001691E6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 188E93E12A4C3BE4001691E6 /* Localizable.strings */; };
 		188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93E42A4C9D57001691E6 /* String-Ext.swift */; };
+		18B449BE2A87645200F52B1B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 18B449BD2A87645200F52B1B /* FirebaseAnalytics */; };
+		18B449C02A87645200F52B1B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18B449BF2A87645200F52B1B /* FirebaseAnalyticsSwift */; };
+		18B449C22A87645200F52B1B /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 18B449C12A87645200F52B1B /* FirebaseAuth */; };
+		18B449C42A87645200F52B1B /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 18B449C32A87645200F52B1B /* FirebaseDatabase */; };
+		18B449C62A87645200F52B1B /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18B449C52A87645200F52B1B /* FirebaseDatabaseSwift */; };
+		18B449C82A87645200F52B1B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 18B449C72A87645200F52B1B /* FirebaseFirestore */; };
+		18B449CA2A87645200F52B1B /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18B449C92A87645200F52B1B /* FirebaseFirestoreSwift */; };
+		18B449CC2A87647000F52B1B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18B449CB2A87647000F52B1B /* GoogleService-Info.plist */; };
+		18B449D02A87655F00F52B1B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449CF2A87655F00F52B1B /* Post.swift */; };
+		18B449D32A8765D800F52B1B /* PostsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449D22A8765D800F52B1B /* PostsList.swift */; };
+		18B449D52A87667B00F52B1B /* PostRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449D42A87667B00F52B1B /* PostRow.swift */; };
+		18B449D72A8A016C00F52B1B /* NewPostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449D62A8A016C00F52B1B /* NewPostForm.swift */; };
+		18B449DA2A8A047100F52B1B /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449D92A8A047100F52B1B /* PostsViewModel.swift */; };
+		18B449DD2A8A059F00F52B1B /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449DC2A8A059F00F52B1B /* PostsRepository.swift */; };
+		18B449DF2A8B541400F52B1B /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449DE2A8B541400F52B1B /* EmptyListView.swift */; };
+		18B449E12A8B543F00F52B1B /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449E02A8B543F00F52B1B /* Loadable.swift */; };
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */; };
 		18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
@@ -60,6 +76,15 @@
 		188E93D02A4C29FF001691E6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/books.json; sourceTree = "<group>"; };
 		188E93E22A4C3BE4001691E6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		188E93E42A4C9D57001691E6 /* String-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Ext.swift"; sourceTree = "<group>"; };
+		18B449CB2A87647000F52B1B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18B449CF2A87655F00F52B1B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		18B449D22A8765D800F52B1B /* PostsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsList.swift; sourceTree = "<group>"; };
+		18B449D42A87667B00F52B1B /* PostRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRow.swift; sourceTree = "<group>"; };
+		18B449D62A8A016C00F52B1B /* NewPostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostForm.swift; sourceTree = "<group>"; };
+		18B449D92A8A047100F52B1B /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		18B449DC2A8A059F00F52B1B /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
+		18B449DE2A8B541400F52B1B /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
+		18B449E02A8B543F00F52B1B /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -99,6 +124,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B449C62A87645200F52B1B /* FirebaseDatabaseSwift in Frameworks */,
+				18B449C02A87645200F52B1B /* FirebaseAnalyticsSwift in Frameworks */,
+				18B449C22A87645200F52B1B /* FirebaseAuth in Frameworks */,
+				18B449CA2A87645200F52B1B /* FirebaseFirestoreSwift in Frameworks */,
+				18B449C42A87645200F52B1B /* FirebaseDatabase in Frameworks */,
+				18B449BE2A87645200F52B1B /* FirebaseAnalytics in Frameworks */,
+				18B449C82A87645200F52B1B /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,11 +140,58 @@
 		188E93BC2A4C1DF6001691E6 /* Books */ = {
 			isa = PBXGroup;
 			children = (
-				188E93BD2A4C1E04001691E6 /* Book.swift */,
 				188E93BF2A4C1E0E001691E6 /* BookRowView.swift */,
 				188E93CB2A4C260E001691E6 /* BookDetailView.swift */,
 			);
 			name = Books;
+			sourceTree = "<group>";
+		};
+		18B449CD2A8764C300F52B1B /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */,
+				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
+				18B449DE2A8B541400F52B1B /* EmptyListView.swift */,
+			);
+			path = "Supporting Views";
+			sourceTree = "<group>";
+		};
+		18B449CE2A87655000F52B1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18B449CF2A87655F00F52B1B /* Post.swift */,
+				18F49EB92A286D2E00862CE3 /* Cocktail.swift */,
+				18F49EA92A286D2E00862CE3 /* Lesson.swift */,
+				188E93BD2A4C1E04001691E6 /* Book.swift */,
+				18F49EAC2A286D2E00862CE3 /* Spirit.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		18B449D12A8765BF00F52B1B /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				18B449D22A8765D800F52B1B /* PostsList.swift */,
+				18B449D42A87667B00F52B1B /* PostRow.swift */,
+				18B449D62A8A016C00F52B1B /* NewPostForm.swift */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		18B449D82A8A045100F52B1B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				18B449D92A8A047100F52B1B /* PostsViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		18B449DB2A8A058900F52B1B /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				18B449DC2A8A059F00F52B1B /* PostsRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		18F49E572A27B28D00862CE3 = {
@@ -136,12 +215,15 @@
 			children = (
 				18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */,
 				18F49E712A286CDD00862CE3 /* HomeView.swift */,
+				18B449CE2A87655000F52B1B /* Models */,
 				18F49EA32A286D2E00862CE3 /* Views */,
+				18B449D82A8A045100F52B1B /* View Models */,
+				18B449DB2A8A058900F52B1B /* Repositories */,
 				18F49E7B2A286D2A00862CE3 /* Utilities */,
 				18F49E792A286D1900862CE3 /* Assets.xcassets */,
 				18F49E772A286D0D00862CE3 /* Colors.xcassets */,
 				185672E42A2C71820001813D /* Info.plist */,
-				188E93E12A4C3BE4001691E6 /* Localizable.strings */,
+				18B449CB2A87647000F52B1B /* GoogleService-Info.plist */,
 				18F49E692A27B28F00862CE3 /* Preview Content */,
 			);
 			path = DrinkoPro;
@@ -159,10 +241,9 @@
 			isa = PBXGroup;
 			children = (
 				18F49E7C2A286D2A00862CE3 /* Favorites.swift */,
-				18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */,
 				18F49E872A286D2A00862CE3 /* Margins.swift */,
+				18B449E02A8B543F00F52B1B /* Loadable.swift */,
 				18F49E842A286D2A00862CE3 /* Extensions */,
-				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
 				18F49E8B2A286D2A00862CE3 /* LocalizableJSON */,
 			);
 			path = Utilities;
@@ -181,6 +262,7 @@
 		18F49E8B2A286D2A00862CE3 /* LocalizableJSON */ = {
 			isa = PBXGroup;
 			children = (
+				188E93E12A4C3BE4001691E6 /* Localizable.strings */,
 				188E93CF2A4C29FA001691E6 /* books.json */,
 				18F49E8E2A286D2A00862CE3 /* cocktails.json */,
 				18F49E8C2A286D2A00862CE3 /* lessons.json */,
@@ -194,7 +276,9 @@
 			children = (
 				18F49EA82A286D2E00862CE3 /* Learn */,
 				18F49EB52A286D2E00862CE3 /* Cocktails */,
+				18B449D12A8765BF00F52B1B /* Social */,
 				18F49EA42A286D2E00862CE3 /* Settings */,
+				18B449CD2A8764C300F52B1B /* Supporting Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,7 +297,6 @@
 		18F49EA82A286D2E00862CE3 /* Learn */ = {
 			isa = PBXGroup;
 			children = (
-				18F49EA92A286D2E00862CE3 /* Lesson.swift */,
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
 				18F49EAF2A286D2E00862CE3 /* LearnRowView.swift */,
 				18F49EB02A286D2E00862CE3 /* LearnDetailView.swift */,
@@ -227,7 +310,6 @@
 		18F49EAA2A286D2E00862CE3 /* Spirits */ = {
 			isa = PBXGroup;
 			children = (
-				18F49EAC2A286D2E00862CE3 /* Spirit.swift */,
 				18F49EAD2A286D2E00862CE3 /* SpiritRowView.swift */,
 				18F49EAB2A286D2E00862CE3 /* SpiritDetailView.swift */,
 			);
@@ -237,7 +319,6 @@
 		18F49EB52A286D2E00862CE3 /* Cocktails */ = {
 			isa = PBXGroup;
 			children = (
-				18F49EB92A286D2E00862CE3 /* Cocktail.swift */,
 				18F49EB72A286D2E00862CE3 /* CocktailsView.swift */,
 				18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */,
 				18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */,
@@ -263,6 +344,15 @@
 			dependencies = (
 			);
 			name = DrinkoPro;
+			packageProductDependencies = (
+				18B449BD2A87645200F52B1B /* FirebaseAnalytics */,
+				18B449BF2A87645200F52B1B /* FirebaseAnalyticsSwift */,
+				18B449C12A87645200F52B1B /* FirebaseAuth */,
+				18B449C32A87645200F52B1B /* FirebaseDatabase */,
+				18B449C52A87645200F52B1B /* FirebaseDatabaseSwift */,
+				18B449C72A87645200F52B1B /* FirebaseFirestore */,
+				18B449C92A87645200F52B1B /* FirebaseFirestoreSwift */,
+			);
 			productName = DrinkoPro;
 			productReference = 18F49E602A27B28D00862CE3 /* DrinkoPro.app */;
 			productType = "com.apple.product-type.application";
@@ -291,6 +381,9 @@
 				it,
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
+			packageReferences = (
+				18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 18F49E612A27B28D00862CE3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -307,6 +400,7 @@
 			files = (
 				188E93CD2A4C29FA001691E6 /* books.json in Resources */,
 				18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */,
+				18B449CC2A87647000F52B1B /* GoogleService-Info.plist in Resources */,
 				18F49E782A286D0D00862CE3 /* Colors.xcassets in Resources */,
 				188E93C72A4C1F03001691E6 /* spirits.json in Resources */,
 				18F49EA02A286D2A00862CE3 /* lessons.json in Resources */,
@@ -329,9 +423,12 @@
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
 				18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
+				18B449DA2A8A047100F52B1B /* PostsViewModel.swift in Sources */,
 				18F49EC22A286D2E00862CE3 /* SpiritRowView.swift in Sources */,
 				18F49E9E2A286D2A00862CE3 /* Color-Ext.swift in Sources */,
+				18B449D72A8A016C00F52B1B /* NewPostForm.swift in Sources */,
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
+				18B449E12A8B543F00F52B1B /* Loadable.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
@@ -341,8 +438,10 @@
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
+				18B449D52A87667B00F52B1B /* PostRow.swift in Sources */,
 				188E93BE2A4C1E04001691E6 /* Book.swift in Sources */,
 				18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */,
+				18B449D02A87655F00F52B1B /* Post.swift in Sources */,
 				18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */,
 				18F49EC12A286D2E00862CE3 /* Spirit.swift in Sources */,
 				188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */,
@@ -352,7 +451,10 @@
 				18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */,
 				18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */,
 				18F49E952A286D2A00862CE3 /* SplashScreenView.swift in Sources */,
+				18B449DD2A8A059F00F52B1B /* PostsRepository.swift in Sources */,
+				18B449DF2A8B541400F52B1B /* EmptyListView.swift in Sources */,
 				18F49EC42A286D2E00862CE3 /* LearnRowView.swift in Sources */,
+				18B449D32A8765D800F52B1B /* PostsList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,12 +643,12 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -579,12 +681,12 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.2;
+				MARKETING_VERSION = 1.3;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -618,6 +720,55 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18B449BD2A87645200F52B1B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		18B449BF2A87645200F52B1B /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		18B449C12A87645200F52B1B /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		18B449C32A87645200F52B1B /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		18B449C52A87645200F52B1B /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		18B449C72A87645200F52B1B /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		18B449C92A87645200F52B1B /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18F49E582A27B28D00862CE3 /* Project object */;
 }

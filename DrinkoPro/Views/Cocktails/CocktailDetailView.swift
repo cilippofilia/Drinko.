@@ -18,14 +18,14 @@ struct CocktailDetailView: View {
     var cocktail: Cocktail
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     AsyncImage(url: URL(string: cocktail.pic)) { phase in
                         switch phase {
                         case .failure:
                             failure
-                            
+
                         case .success(let image):
                             image
                                 .resizable()
@@ -102,7 +102,8 @@ struct CocktailDetailView: View {
                             }
                             .sheet(isPresented: $showHistory) {
                                 HistoryView(cocktail: cocktail)
-                                    .presentationDetents([.large,.fraction(0.75)])
+                                // available on iOS 16 and newer
+                                // .presentationDetents([.large,.fraction(0.75)])
                             }
                         }
                         // ADD TO FAV BUTTON

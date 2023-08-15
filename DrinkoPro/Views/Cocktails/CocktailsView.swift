@@ -55,7 +55,7 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        NavigationStack {
+        NavigationView {
             List(filteredCocktails, id:\.id) { cocktail in
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
                     .contextMenu {
