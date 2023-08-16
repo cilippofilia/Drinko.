@@ -19,7 +19,7 @@ struct SplashScreenView: View {
     var body: some View {
         Group {
             if showHomeView {
-                HomeView()
+                AuthView()
             } else {
                 ZStack {
                     Color("Drinko Blue")

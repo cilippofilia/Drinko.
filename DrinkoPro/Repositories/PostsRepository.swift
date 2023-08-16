@@ -12,7 +12,8 @@ import Foundation
 // MARK: - PostsRepositoryProtocol
 
 protocol PostsRepositoryProtocol {
-    func fetchPosts() async throws -> [Post]
+    func fetchAllPosts() async throws -> [Post]
+    func fetchLikedPosts() async throws -> [Post]
     func create(_ post: Post) async throws
     func delete(_ post: Post) async throws
     func like(_ post: Post) async throws
@@ -26,7 +27,10 @@ protocol PostsRepositoryProtocol {
 struct PostsRepositoryStub: PostsRepositoryProtocol {
     let state: Loadable<[Post]>
 
-    func fetchPosts() async throws -> [Post] {
+    func fetchAllPosts() async throws -> [Post] {
+        return try await state.simulate()
+    }
+    func fetchLikedPosts() async throws -> [Post] {
         return try await state.simulate()
     }
 
@@ -42,14 +46,23 @@ struct PostsRepositoryStub: PostsRepositoryProtocol {
 struct PostsRepository: PostsRepositoryProtocol {
     let postsReference = Firestore.firestore().collection("posts_v1")
 
-    func fetchPosts() async throws -> [Post] {
-        let snapshot = try await postsReference
+    private func fetchPosts(from query: Query) async throws -> [Post] {
+        let snapshot = try await query
             .order(by: "timestamp", descending: true)
             .getDocuments()
         return snapshot.documents.compactMap { document in
             try! document.data(as: Post.self)
         }
     }
+
+    func fetchAllPosts() async throws -> [Post] {
+        return try await fetchPosts(from: postsReference)
+    }
+
+    func fetchLikedPosts() async throws -> [Post] {
+        return try await fetchPosts(from: postsReference.whereField("isLiked", isEqualTo: true))
+    }
+
 
     func create(_ post: Post) async throws {
         let document = postsReference.document(post.id.uuidString)

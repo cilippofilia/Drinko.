@@ -63,6 +63,11 @@
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 		18F9608D2A8BBAB60004D1D8 /* Alert+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9608C2A8BBAB60004D1D8 /* Alert+Error.swift */; };
 		18F9608F2A8BF1A40004D1D8 /* PostRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9608E2A8BF1A40004D1D8 /* PostRowViewModel.swift */; };
+		18F960952A8C20980004D1D8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F960942A8C20980004D1D8 /* AuthService.swift */; };
+		18F960972A8C219A0004D1D8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F960962A8C219A0004D1D8 /* AuthViewModel.swift */; };
+		18F9609B2A8C231A0004D1D8 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9609A2A8C231A0004D1D8 /* AuthView.swift */; };
+		18F9609D2A8C23D10004D1D8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9609C2A8C23D00004D1D8 /* ProfileView.swift */; };
+		18F9609F2A8C27760004D1D8 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9609E2A8C27760004D1D8 /* FormViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +126,11 @@
 		18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
 		18F9608C2A8BBAB60004D1D8 /* Alert+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Error.swift"; sourceTree = "<group>"; };
 		18F9608E2A8BF1A40004D1D8 /* PostRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowViewModel.swift; sourceTree = "<group>"; };
+		18F960942A8C20980004D1D8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		18F960962A8C219A0004D1D8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		18F9609A2A8C231A0004D1D8 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		18F9609C2A8C23D00004D1D8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		18F9609E2A8C27760004D1D8 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,10 +163,11 @@
 		18B449CD2A8764C300F52B1B /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
-				18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */,
+				18F9608C2A8BBAB60004D1D8 /* Alert+Error.swift */,
+				18F9609A2A8C231A0004D1D8 /* AuthView.swift */,
 				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
 				18B449DE2A8B541400F52B1B /* EmptyListView.swift */,
-				18F9608C2A8BBAB60004D1D8 /* Alert+Error.swift */,
+				18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -186,8 +197,10 @@
 		18B449D82A8A045100F52B1B /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				18F960962A8C219A0004D1D8 /* AuthViewModel.swift */,
 				18B449D92A8A047100F52B1B /* PostsViewModel.swift */,
 				18F9608E2A8BF1A40004D1D8 /* PostRowViewModel.swift */,
+				18F9609E2A8C27760004D1D8 /* FormViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -225,6 +238,7 @@
 				18F49EA32A286D2E00862CE3 /* Views */,
 				18B449D82A8A045100F52B1B /* View Models */,
 				18B449DB2A8A058900F52B1B /* Repositories */,
+				18F960932A8C20810004D1D8 /* Services */,
 				18F49E7B2A286D2A00862CE3 /* Utilities */,
 				18F49E792A286D1900862CE3 /* Assets.xcassets */,
 				18F49E772A286D0D00862CE3 /* Colors.xcassets */,
@@ -296,6 +310,7 @@
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
 				182E43362A2B1221001675FD /* CreditsCardView.swift */,
+				18F9609C2A8C23D00004D1D8 /* ProfileView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -332,6 +347,14 @@
 				18F49EBA2A286D2E00862CE3 /* HistoryView.swift */,
 			);
 			path = Cocktails;
+			sourceTree = "<group>";
+		};
+		18F960932A8C20810004D1D8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				18F960942A8C20980004D1D8 /* AuthService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,6 +466,8 @@
 				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
 				188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */,
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,
+				18F9609D2A8C23D10004D1D8 /* ProfileView.swift in Sources */,
+				18F9609B2A8C231A0004D1D8 /* AuthView.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
 				18B449D52A87667B00F52B1B /* PostRow.swift in Sources */,
@@ -451,6 +476,7 @@
 				18B449D02A87655F00F52B1B /* Post.swift in Sources */,
 				18F9608D2A8BBAB60004D1D8 /* Alert+Error.swift in Sources */,
 				18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */,
+				18F9609F2A8C27760004D1D8 /* FormViewModel.swift in Sources */,
 				18F49EC12A286D2E00862CE3 /* Spirit.swift in Sources */,
 				188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */,
 				18F49ECB2A286D2E00862CE3 /* Cocktail.swift in Sources */,
@@ -459,7 +485,9 @@
 				18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */,
 				18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */,
 				18F49E952A286D2A00862CE3 /* SplashScreenView.swift in Sources */,
+				18F960952A8C20980004D1D8 /* AuthService.swift in Sources */,
 				18B449DD2A8A059F00F52B1B /* PostsRepository.swift in Sources */,
+				18F960972A8C219A0004D1D8 /* AuthViewModel.swift in Sources */,
 				18B449DF2A8B541400F52B1B /* EmptyListView.swift in Sources */,
 				18F49EC42A286D2E00862CE3 /* LearnRowView.swift in Sources */,
 				18B449D32A8765D800F52B1B /* PostsList.swift in Sources */,

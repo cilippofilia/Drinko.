@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
+import FirebaseAuth
 import MessageUI
 import StoreKit
 import SwiftUI
@@ -20,12 +21,18 @@ struct SettingsView: View {
     @State private var requestFeatureBody = ""
     @State private var contactDevSubject = ""
     @State private var contactDevBody = ""
+    @State private var lovelyText = "This app was made with ❤️ by Filippo Cilia 🇮🇹"
 
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("App Preferences")) {
-                    // MARK: LANGUAGE
+                Section(header: Text("Preferences")) {
+                    NavigationLink(destination: ProfileView()) {
+                        SettingsRowView(icon: "person.fill",
+                                        color: .blue,
+                                        itemName: "Profile")
+                    }
+                    
                     HStack {
                         SettingsRowView(icon: "character.bubble",
                                         color: .secondary,
@@ -42,12 +49,11 @@ struct SettingsView: View {
 
                 // find right term to use
                 Section(header: Text("Contacts")) {
-                    // MARK: CONTACT THE DEV OPTIONS
                     Button(action: {
                         showOptions = true
                     }) {
                         SettingsRowView(icon: "envelope",
-                                        color: .secondary,
+                                        color: .blue,
                                         itemName: "Contact the developer")
                     }
                     .disabled(!MFMailComposeViewController.canSendMail())
@@ -75,7 +81,17 @@ struct SettingsView: View {
                         }
                     }
 
-                    // MARK: FOLLOW ON TWITTER
+                    Button(action: {
+                        UIApplication.shared.open(rateURL!,
+                                                  options: [:],
+                                                  completionHandler: nil)
+                    }) {
+                        SettingsRowView(icon: "star.fill",
+                                        color: .yellow,
+                                        itemName: "Rate the app")
+                    }
+                    .buttonStyle(.plain)
+
                     Button(action: {
                         if UIApplication.shared.canOpenURL(twitterDevURL!) {
                             if #available(iOS 10.0, *) {
@@ -96,34 +112,20 @@ struct SettingsView: View {
                             }
                         }
                     }) {
-                        SettingsRowView(icon: "bird",
+                        SettingsRowView(icon: "bird.fill",
                                         color: .blue,
                                         itemName: "Twitter")
                     }
                     .buttonStyle(.plain)
-
-                    // MARK: RATE THE APP
-                    Button(action: {
-                        UIApplication.shared.open(rateURL!,
-                                                  options: [:],
-                                                  completionHandler: nil)
-                    }) {
-                        SettingsRowView(icon: "star",
-                                        color: .yellow,
-                                        itemName: "Rate the app")
-                    }
-                    .buttonStyle(.plain)
                 }
 
-                Section(header: Text("Info"), footer: Text("This app was made with ❤️ by Filippo Cilia 🇮🇹,\na solo iOS app developer.")) {
-                    // MARK: READ ME
+                Section(header: Text("Info"), footer: Text(lovelyText)) {
                     NavigationLink(destination: ReadMeView()) {
                         SettingsRowView(icon: "r.circle",
                                         color: .secondary,
                                         itemName: "Read me")
                     }
 
-                    // MARK: SHARE APP
                     Button(action: {
                         shareSheet(url: drinkoURL!)
                     }) {
@@ -133,7 +135,6 @@ struct SettingsView: View {
                     }
                     .buttonStyle(.plain)
 
-                    // MARK: APP VERSION
                     HStack {
                         SettingsRowView(icon: "v.circle",
                                         color: .secondary,
@@ -143,6 +144,13 @@ struct SettingsView: View {
                         Text("\(getCurrentAppVersion())")
                             .foregroundColor(.secondary)
                     }
+                }
+
+                Section {
+                    Button("Sign Out", action: {
+                        try! Auth.auth().signOut()
+                    })
+                    .foregroundColor(.red)
                 }
             }
             .navigationBarTitle("Settings")

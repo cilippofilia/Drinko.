@@ -31,6 +31,12 @@ struct HomeView: View {
                     Label("Social", systemImage: "person.2")
                 }
 
+            PostsList(viewModel: PostsViewModel(filter: .liked))
+//                .tag(PostsList.postsTag)
+                .tabItem {
+                    Label("Liked", systemImage: "heart.circle")
+                }
+
             SettingsView()
                 .tag(SettingsView.settingsTag)
                 .tabItem {
