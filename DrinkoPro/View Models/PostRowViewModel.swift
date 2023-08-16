@@ -11,29 +11,34 @@ import Foundation
 @dynamicMemberLookup
 class PostRowViewModel: ObservableObject {
     typealias Action = () async throws -> Void
-    
-    subscript<T>(dynamicMember keyPath: KeyPath<Post, T>) -> T {
-        post[keyPath: keyPath]
-    }
 
     @Published var post: Post
     @Published var error: Error?
 
-    private let deleteAction: Action
-    private let likeAction: Action
+    var canDeletePost: Bool { deleteAction != nil }
 
-    init(post: Post, deleteAction: @escaping Action, likeAction: @escaping Action) {
+    subscript<T>(dynamicMember keyPath: KeyPath<Post, T>) -> T {
+        post[keyPath: keyPath]
+    }
+
+    private let deleteAction: Action?
+    private let favoriteAction: Action
+
+    init(post: Post, deleteAction: Action?, favoriteAction: @escaping Action) {
         self.post = post
         self.deleteAction = deleteAction
-        self.likeAction = likeAction
+        self.favoriteAction = favoriteAction
     }
 
     func deletePost() {
+        guard let deleteAction = deleteAction else {
+            preconditionFailure("Cannot delete post: no delete action provided")
+        }
         withErrorHandlingTask(perform: deleteAction)
     }
 
-    func likePost() {
-        withErrorHandlingTask(perform: likeAction)
+    func favoritePost() {
+        withErrorHandlingTask(perform: favoriteAction)
     }
 
     private func withErrorHandlingTask(perform action: @escaping Action) {

@@ -5,20 +5,27 @@
 //  Created by Filippo Cilia on 14/08/2023.
 //
 
+import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
-import Foundation
 
 // MARK: - PostsRepositoryProtocol
 
 protocol PostsRepositoryProtocol {
+    var user: User { get }
     func fetchAllPosts() async throws -> [Post]
-    func fetchLikedPosts() async throws -> [Post]
+    func fetchPosts(by author: User) async throws -> [Post]
+    func fetchFavoritePosts() async throws -> [Post]
     func create(_ post: Post) async throws
     func delete(_ post: Post) async throws
-    func like(_ post: Post) async throws
-    func unlike(_ post: Post) async throws
+    func favorite(_ post: Post) async throws
+    func unfavorite(_ post: Post) async throws
+}
 
+extension PostsRepositoryProtocol {
+    func canDelete(_ post: Post) -> Bool {
+        post.author.id == user.id
+    }
 }
 
 // MARK: - PostsRepositoryStub
@@ -26,43 +33,56 @@ protocol PostsRepositoryProtocol {
 #if DEBUG
 struct PostsRepositoryStub: PostsRepositoryProtocol {
     let state: Loadable<[Post]>
+    let user = User.testUser
 
     func fetchAllPosts() async throws -> [Post] {
         return try await state.simulate()
     }
-    func fetchLikedPosts() async throws -> [Post] {
+
+    func fetchPosts(by author: User) async throws -> [Post] {
         return try await state.simulate()
     }
 
-    func create(_ post: Post) async throws { }
-    func delete(_ post: Post) async throws { }
-    func like(_ post: Post) async throws { }
-    func unlike(_ post: Post) async throws { }
+    func fetchFavoritePosts() async throws -> [Post] {
+        return try await state.simulate()
+    }
+
+    func create(_ post: Post) async throws {}
+
+    func delete(_ post: Post) async throws {}
+
+    func favorite(_ post: Post) async throws {}
+
+    func unfavorite(_ post: Post) async throws {}
 }
 #endif
 
 // MARK: - PostsRepository
 
 struct PostsRepository: PostsRepositoryProtocol {
-    let postsReference = Firestore.firestore().collection("posts_v1")
-
-    private func fetchPosts(from query: Query) async throws -> [Post] {
-        let snapshot = try await query
-            .order(by: "timestamp", descending: true)
-            .getDocuments()
-        return snapshot.documents.compactMap { document in
-            try! document.data(as: Post.self)
-        }
-    }
+    let user: User
+    let postsReference = Firestore.firestore().collection("posts_v2")
+    let favoritesReference = Firestore.firestore().collection("favorites")
 
     func fetchAllPosts() async throws -> [Post] {
         return try await fetchPosts(from: postsReference)
     }
 
-    func fetchLikedPosts() async throws -> [Post] {
-        return try await fetchPosts(from: postsReference.whereField("isLiked", isEqualTo: true))
+    func fetchPosts(by author: User) async throws -> [Post] {
+        return try await fetchPosts(from: postsReference.whereField("author.id", isEqualTo: author.id))
     }
 
+    func fetchFavoritePosts() async throws -> [Post] {
+        let favorites = try await fetchFavorites()
+        guard !favorites.isEmpty else { return [] }
+        return try await postsReference
+            .whereField("id", in: favorites.map(\.uuidString))
+            .order(by: "timestamp", descending: true)
+            .getDocuments(as: Post.self)
+            .map { post in
+                post.setting(\.isFavorite, to: true)
+            }
+    }
 
     func create(_ post: Post) async throws {
         let document = postsReference.document(post.id.uuidString)
@@ -70,20 +90,57 @@ struct PostsRepository: PostsRepositoryProtocol {
     }
 
     func delete(_ post: Post) async throws {
+        precondition(canDelete(post))
         let document = postsReference.document(post.id.uuidString)
         try await document.delete()
     }
 
-    func like(_ post: Post) async throws {
-        let document = postsReference.document(post.id.uuidString)
-        try await document.setData(["isLiked": true], merge: true)
+    func favorite(_ post: Post) async throws {
+        let favorite = Favorite(postID: post.id, userID: user.id)
+        let document = favoritesReference.document(favorite.id)
+        try await document.setData(from: favorite)
     }
 
-    func unlike(_ post: Post) async throws {
-        let document = postsReference.document(post.id.uuidString)
-        try await document.setData(["isLiked": false], merge: true)
+    func unfavorite(_ post: Post) async throws {
+        let favorite = Favorite(postID: post.id, userID: user.id)
+        let document = favoritesReference.document(favorite.id)
+        try await document.delete()
+    }
+}
+
+private extension PostsRepository {
+    func fetchPosts(from query: Query) async throws -> [Post] {
+        let (posts, favorites) = try await (
+            query.order(by: "timestamp", descending: true).getDocuments(as: Post.self),
+            fetchFavorites()
+        )
+        return posts.map { post in
+            post.setting(\.isFavorite, to: favorites.contains(post.id))
+        }
     }
 
+    func fetchFavorites() async throws -> [Post.ID] {
+        return try await favoritesReference
+            .whereField("userID", isEqualTo: user.id)
+            .getDocuments(as: Favorite.self)
+            .map(\.postID)
+    }
+
+    struct Favorite: Identifiable, Codable {
+        var id: String {
+            postID.uuidString + "-" + userID
+        }
+        let postID: Post.ID
+        let userID: User.ID
+    }
+}
+
+private extension Post {
+    func setting<T>(_ property: WritableKeyPath<Post, T>, to newValue: T) -> Post {
+        var post = self
+        post[keyPath: property] = newValue
+        return post
+    }
 }
 
 private extension DocumentReference {
@@ -98,6 +155,15 @@ private extension DocumentReference {
                 }
                 continuation.resume()
             }
+        }
+    }
+}
+
+private extension Query {
+    func getDocuments<T: Decodable>(as type: T.Type) async throws -> [T] {
+        let snapshot = try await getDocuments()
+        return snapshot.documents.compactMap { document in
+            try! document.data(as: type)
         }
     }
 }

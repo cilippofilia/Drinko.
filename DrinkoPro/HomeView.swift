@@ -10,38 +10,48 @@ import SwiftUI
 struct HomeView: View {
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
-    
+    @EnvironmentObject private var factory: ViewModelFactory
+
     var body: some View {
         TabView(selection: $selectedView) {
-            LearnView()
-                .tag(LearnView.learnTag)
-                .tabItem {
-                    Label("Learn", systemImage: "books.vertical")
-                }
+            NavigationView {
+                LearnView()
+            }
+            .tag(LearnView.learnTag)
+            .tabItem {
+                Label("Learn", systemImage: "books.vertical")
+            }
 
-            CocktailsView()
-                .tag(CocktailsView.cocktailsTag)
-                .tabItem {
-                    Label("Cocktails", systemImage: "wineglass")
-                }
+            NavigationView {
+                CocktailsView()
+            }
+            .tag(CocktailsView.cocktailsTag)
+            .tabItem {
+                Label("Cocktails", systemImage: "wineglass")
+            }
 
-            PostsList()
-                .tag(PostsList.postsTag)
-                .tabItem {
-                    Label("Social", systemImage: "person.2")
-                }
+            NavigationView {
+                PostsList(viewModel: factory.makePostsViewModel())
+            }
+            .tag(PostsList.postsTag)
+            .tabItem {
+                Label("Social", systemImage: "person.2")
+            }
 
-            PostsList(viewModel: PostsViewModel(filter: .liked))
-//                .tag(PostsList.postsTag)
-                .tabItem {
-                    Label("Liked", systemImage: "heart.circle")
-                }
+            NavigationView {
+                PostsList(viewModel: factory.makePostsViewModel(filter: .favorites))
+            }
+            .tabItem {
+                Label("Liked", systemImage: "heart.circle")
+            }
 
-            SettingsView()
-                .tag(SettingsView.settingsTag)
-                .tabItem {
-                    Label("Settings", systemImage: "gear")
-                }
+            NavigationView {
+                SettingsView()
+            }
+            .tag(SettingsView.settingsTag)
+            .tabItem {
+                Label("Settings", systemImage: "gear")
+            }
         }
     }
 }
@@ -50,6 +60,7 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
+            .environmentObject(ViewModelFactory.preview)
     }
 }
 #endif

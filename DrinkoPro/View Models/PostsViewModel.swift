@@ -10,26 +10,28 @@ import Foundation
 @MainActor
 class PostsViewModel: ObservableObject {
     enum Filter {
-        case all, liked
+        case all, author(User), favorites
     }
 
     @Published var posts: Loadable<[Post]> = .loading
 
-    private let postsRepository: PostsRepositoryProtocol
     private let filter: Filter
+    private let postsRepository: PostsRepositoryProtocol
+
+    init(filter: Filter = .all, postsRepository: PostsRepositoryProtocol) {
+        self.filter = filter
+        self.postsRepository = postsRepository
+    }
 
     var title: String {
         switch filter {
         case .all:
             return "Posts"
-        case .liked:
-            return "Liked"
+        case let .author(author):
+            return "\(author.name)’s Posts"
+        case .favorites:
+            return "Favorites"
         }
-    }
-
-    init(filter: Filter = .all, postsRepository: PostsRepositoryProtocol = PostsRepository()) {
-        self.filter = filter
-        self.postsRepository = postsRepository
     }
 
     func fetchPosts() {
@@ -43,25 +45,32 @@ class PostsViewModel: ObservableObject {
         }
     }
 
-    func makeCreateAction() -> NewPostForm.CreateAction {
-        return { [weak self] post in
-            try await self?.postsRepository.create(post)
-            self?.posts.value?.insert(post, at: 0)
-        }
+    func makeNewPostViewModel() -> FormViewModel<Post> {
+        return FormViewModel(
+            initialValue: Post(title: "", content: "", author: postsRepository.user),
+            action: { [weak self] post in
+                try await self?.postsRepository.create(post)
+                self?.posts.value?.insert(post, at: 0)
+            }
+        )
     }
 
     func makePostRowViewModel(for post: Post) -> PostRowViewModel {
-        return PostRowViewModel(post: post,
-                                deleteAction: { [weak self] in
+        let deleteAction = { [weak self] in
             try await self?.postsRepository.delete(post)
             self?.posts.value?.removeAll { $0 == post }
-        },
-                                likeAction: { [weak self] in
-            let newValue = !post.isLiked
-            try await newValue ? self?.postsRepository.like(post) : self?.postsRepository.unlike(post)
+        }
+        let favoriteAction = { [weak self] in
+            let newValue = !post.isFavorite
+            try await newValue ? self?.postsRepository.favorite(post) : self?.postsRepository.unfavorite(post)
             guard let i = self?.posts.value?.firstIndex(of: post) else { return }
-            self?.posts.value?[i].isLiked = newValue
-        })
+            self?.posts.value?[i].isFavorite = newValue
+        }
+        return PostRowViewModel(
+            post: post,
+            deleteAction: postsRepository.canDelete(post) ? deleteAction : nil,
+            favoriteAction: favoriteAction
+        )
     }
 }
 
@@ -70,8 +79,10 @@ private extension PostsRepositoryProtocol {
         switch filter {
         case .all:
             return try await fetchAllPosts()
-        case .liked:
-            return try await fetchLikedPosts()
+        case let .author(author):
+            return try await fetchPosts(by: author)
+        case .favorites:
+            return try await fetchFavoritePosts()
         }
     }
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
+		18413B122A8D3EC1001BB0CB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18413B112A8D3EC1001BB0CB /* User.swift */; };
+		18413B142A8D40C7001BB0CB /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18413B132A8D40C7001BB0CB /* ViewModelFactory.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
 		188E93BE2A4C1E04001691E6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BD2A4C1E04001691E6 /* Book.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		182E43362A2B1221001675FD /* CreditsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCardView.swift; sourceTree = "<group>"; };
+		18413B112A8D3EC1001BB0CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18413B132A8D40C7001BB0CB /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		188E93BD2A4C1E04001691E6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -151,6 +155,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18413B0F2A8D3EAC001BB0CB /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				18F49EA92A286D2E00862CE3 /* Lesson.swift */,
+				188E93BD2A4C1E04001691E6 /* Book.swift */,
+				18F49EAC2A286D2E00862CE3 /* Spirit.swift */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		18413B102A8D3EB7001BB0CB /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				18B449CF2A87655F00F52B1B /* Post.swift */,
+				18413B112A8D3EC1001BB0CB /* User.swift */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
 		188E93BC2A4C1DF6001691E6 /* Books */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,7 +186,6 @@
 		18B449CD2A8764C300F52B1B /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
-				18F9608C2A8BBAB60004D1D8 /* Alert+Error.swift */,
 				18F9609A2A8C231A0004D1D8 /* AuthView.swift */,
 				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
 				18B449DE2A8B541400F52B1B /* EmptyListView.swift */,
@@ -175,11 +197,9 @@
 		18B449CE2A87655000F52B1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				18B449CF2A87655F00F52B1B /* Post.swift */,
+				18413B0F2A8D3EAC001BB0CB /* Learn */,
 				18F49EB92A286D2E00862CE3 /* Cocktail.swift */,
-				18F49EA92A286D2E00862CE3 /* Lesson.swift */,
-				188E93BD2A4C1E04001691E6 /* Book.swift */,
-				18F49EAC2A286D2E00862CE3 /* Spirit.swift */,
+				18413B102A8D3EB7001BB0CB /* Social */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,9 +218,10 @@
 			isa = PBXGroup;
 			children = (
 				18F960962A8C219A0004D1D8 /* AuthViewModel.swift */,
+				18F9609E2A8C27760004D1D8 /* FormViewModel.swift */,
 				18B449D92A8A047100F52B1B /* PostsViewModel.swift */,
 				18F9608E2A8BF1A40004D1D8 /* PostRowViewModel.swift */,
-				18F9609E2A8C27760004D1D8 /* FormViewModel.swift */,
+				18413B132A8D40C7001BB0CB /* ViewModelFactory.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -260,6 +281,7 @@
 		18F49E7B2A286D2A00862CE3 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				18F9608C2A8BBAB60004D1D8 /* Alert+Error.swift */,
 				18F49E7C2A286D2A00862CE3 /* Favorites.swift */,
 				18F49E872A286D2A00862CE3 /* Margins.swift */,
 				18B449E02A8B543F00F52B1B /* Loadable.swift */,
@@ -446,6 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18413B142A8D40C7001BB0CB /* ViewModelFactory.swift in Sources */,
 				18F49EC52A286D2E00862CE3 /* LearnDetailView.swift in Sources */,
 				18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */,
 				188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */,
@@ -468,6 +491,7 @@
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,
 				18F9609D2A8C23D10004D1D8 /* ProfileView.swift in Sources */,
 				18F9609B2A8C231A0004D1D8 /* AuthView.swift in Sources */,
+				18413B122A8D3EC1001BB0CB /* User.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
 				18B449D52A87667B00F52B1B /* PostRow.swift in Sources */,

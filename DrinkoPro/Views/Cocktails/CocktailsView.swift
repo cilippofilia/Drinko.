@@ -55,37 +55,35 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        NavigationView {
-            List(filteredCocktails, id:\.id) { cocktail in
-                CocktailRowView(favorites: favorites, cocktail: cocktail)
-                    .contextMenu {
-                        FavoriteButtonView(favorites: favorites, cocktail: cocktail)
+        List(filteredCocktails, id:\.id) { cocktail in
+            CocktailRowView(favorites: favorites, cocktail: cocktail)
+                .contextMenu {
+                    FavoriteButtonView(favorites: favorites, cocktail: cocktail)
+                }
+        }
+        .navigationTitle("Cocktails")
+        .searchable(text: $searchText, prompt: "Search Cocktails")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu {
+                    Button("A -> Z") {
+                        sortOption = .fromAtoZ
                     }
-            }
-            .navigationTitle("Cocktails")
-            .searchable(text: $searchText, prompt: "Search Cocktails")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Menu {
-                        Button("A -> Z") {
-                            sortOption = .fromAtoZ
-                        }
-
-                        Button("Z -> A") {
-                            sortOption = .fromZtoA
-                        }
-
-                        Button("By Glass") {
-                            sortOption = .byGlass
-                        }
-
-                        Button("By Ice") {
-                            sortOption = .byIce
-                        }
-
-                    } label: {
-                        Label("Sort", systemImage: "arrow.up.arrow.down")
+                    
+                    Button("Z -> A") {
+                        sortOption = .fromZtoA
                     }
+                    
+                    Button("By Glass") {
+                        sortOption = .byGlass
+                    }
+                    
+                    Button("By Ice") {
+                        sortOption = .byIce
+                    }
+                    
+                } label: {
+                    Label("Sort", systemImage: "arrow.up.arrow.down")
                 }
             }
         }

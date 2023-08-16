@@ -15,31 +15,30 @@ struct LearnView: View {
     let books = Bundle.main.decode([Book].self, from: "books.json")
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(subjects) { subject in
-                    Section(header: Text(subject.name)) {
-                        ForEach(subject.lessons) { lesson in
-                            LearnRowView(lesson: lesson)
-                        }
+        List {
+            ForEach(subjects) { subject in
+                Section(header: Text(subject.name)) {
+                    ForEach(subject.lessons) { lesson in
+                        LearnRowView(lesson: lesson)
                     }
                 }
-
-                Section(header: Text("Spirits")) {
-                    ForEach(spirits) { spirit in
-                        SpiritRowView(spirit: spirit)
-                    }
-                }
-
-                Section(header: Text("Books")) {
-                    ForEach(books) { book in
-                        BookRowView(book: book)
-                    }
-                }
-
             }
-            .navigationTitle("Learn")
+
+            Section(header: Text("Spirits")) {
+                ForEach(spirits) { spirit in
+                    SpiritRowView(spirit: spirit)
+                }
+            }
+
+            Section(header: Text("Books")) {
+                ForEach(books) { book in
+                    BookRowView(book: book)
+                }
+            }
+
         }
+        .navigationTitle("Learn")
+        
     }
 }
 
