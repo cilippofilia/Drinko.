@@ -68,7 +68,6 @@
 		18F960952A8C20980004D1D8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F960942A8C20980004D1D8 /* AuthService.swift */; };
 		18F960972A8C219A0004D1D8 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F960962A8C219A0004D1D8 /* AuthViewModel.swift */; };
 		18F9609B2A8C231A0004D1D8 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9609A2A8C231A0004D1D8 /* AuthView.swift */; };
-		18F9609D2A8C23D10004D1D8 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9609C2A8C23D00004D1D8 /* ProfileView.swift */; };
 		18F9609F2A8C27760004D1D8 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F9609E2A8C27760004D1D8 /* FormViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -133,7 +132,6 @@
 		18F960942A8C20980004D1D8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		18F960962A8C219A0004D1D8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		18F9609A2A8C231A0004D1D8 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
-		18F9609C2A8C23D00004D1D8 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		18F9609E2A8C27760004D1D8 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -332,7 +330,6 @@
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
 				182E43362A2B1221001675FD /* CreditsCardView.swift */,
-				18F9609C2A8C23D00004D1D8 /* ProfileView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -489,7 +486,6 @@
 				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
 				188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */,
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,
-				18F9609D2A8C23D10004D1D8 /* ProfileView.swift in Sources */,
 				18F9609B2A8C231A0004D1D8 /* AuthView.swift in Sources */,
 				18413B122A8D3EC1001BB0CB /* User.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,

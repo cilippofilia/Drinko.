@@ -39,13 +39,6 @@ struct HomeView: View {
             }
 
             NavigationView {
-                PostsList(viewModel: factory.makePostsViewModel(filter: .favorites))
-            }
-            .tabItem {
-                Label("Liked", systemImage: "heart.circle")
-            }
-
-            NavigationView {
                 SettingsView()
             }
             .tag(SettingsView.settingsTag)

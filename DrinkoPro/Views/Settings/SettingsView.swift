@@ -13,6 +13,8 @@ import SwiftUI
 struct SettingsView: View {
     static let settingsTag: String? = "Settings"
 
+    @EnvironmentObject private var factory: ViewModelFactory
+
     @State private var email = "cilia.filippo.dev@gmail.com"
     @State private var showOptions = false
     @State private var reportBugSubject = "Bug Report"
@@ -26,12 +28,6 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("Preferences")) {
-                NavigationLink(destination: ProfileView()) {
-                    SettingsRowView(icon: "person.fill",
-                                    color: .blue,
-                                    itemName: "Profile")
-                }
-
                 HStack {
                     SettingsRowView(icon: "character.bubble",
                                     color: .secondary,
@@ -43,6 +39,10 @@ struct SettingsView: View {
                 }
                 .onTapGesture {
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                }
+
+                NavigationLink(destination: PostsList(viewModel: factory.makePostsViewModel(filter: .favorites))) {
+                    SettingsRowView(icon: "heart.fill", color: .red, itemName: "Liked Posts")
                 }
             }
 
