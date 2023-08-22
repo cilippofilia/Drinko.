@@ -82,3 +82,44 @@
 /* No comment provided by engineer. */
 "Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.\n\nBut, let's face it, taste is subjective, and there's no one-size-fits-all approach to making cocktails. However, this app will be your trusty companion to help you discover new recipes, perfect your favorites, and even create your signature cocktail.\n\nFrom refreshing tropical blends to sophisticated sips, we've got you covered. You'll find everything from classic cocktails to modern twists, so get ready to impress your guests with your newfound mixology skills.\n\nBut, at the end of the day, the most important thing is that you enjoy the cocktail sitting in front of you. So, use this app as a guideline, experiment with different ingredients and techniques, and most importantly, have fun! Who knows, you might even uncover some professional bartending tips and tricks along the way.\n\nSo, are you ready to shake things up and craft some delicious drinks? Let's raise a glass and cheers to endless possibilities!" = "Benvenuto nel mondo emozionante dei cocktail! Questa app è la tua guida definitiva per creare la bevanda perfetta, che tu sia un barman esperto o un appassionato principiante che inizia a casa. È un perfetto mix della mia esperienza personale dietro al bancone, degli spunti di amici e colleghi, nonché delle informazioni raccolte da fonti affidabili su Internet e da vari libri.\n\nMa ammettiamolo, il gusto è soggettivo e non esiste un approccio universale per la preparazione dei cocktail. Tuttavia, questa app sarà il tuo fidato compagno per scoprire nuove ricette, perfezionare i tuoi preferiti e persino creare il tuo cocktail signature.\n\nDai mix tropicali rinfrescanti ai sorso sofisticati, siamo pronti a soddisfare ogni tua esigenza. Troverai tutto, dai cocktail classici a varianti moderne, quindi preparati a impressionare i tuoi ospiti con le tue nuove abilità di mixology.\n\nMa, alla fine della giornata, la cosa più importante è che tu possa gustarti il cocktail che hai davanti. Quindi, usa questa app come linea guida, sperimenta con ingredienti e tecniche diverse e, soprattutto, divertiti! Chissà, potresti persino scoprire alcuni consigli e trucchi professionali da barman lungo il percorso.\n\nQuindi, sei pronto a mescolare le carte e preparare deliziosi drink? Alziamo il bicchiere e brindiamo a infinite possibilità!";
 
+/* FROM CABINET TAB */
+"Add New Product" = "Aggiungi Nuovo Prodotto";
+"Start adding categories and products\nby pressing the + above." = "Aggiungi categorie e prodotti\npremendo + qua sopra.";
+
+"Sort products" = "Sort products";
+"Optimized" = "Optimized";
+"Creation Date" = "Creation Date";
+"Name" = "Name";
+
+/* FROM CABINET TAB - EDIT HEADER */
+"Info" = "Info";
+"Colors" = "Colori";
+"Save Changes" = "Salva";
+"Delete Category" = "Elimina Categoria";
+"Delete Product" = "Elimina Prodotto";
+"Edit Category" = "Modifica Categoria";
+"Category name" = "Nome Categoria";
+"Category detail" = "Dettagli Categoria";
+
+"Delete category?" = "Eliminare categoria?";
+"Are you sure you want to delete this category? You will also delete all the products it contains." = "Sei sicuro di voler eliminare questa categoria? Facendo ciò eliminerai anche tutti i prodotti che contiene.";
+
+"Delete" = "Elimina";
+
+"By deleting the category you will be deleting every product inside it." = "Eliminando la categoria eliminerai anche tutti i prodotti al suo interno.";
+
+/* FROM CABINET TAB - ITEM ROW VIEW */
+"% ABV" = "% ABV";
+"N.A." = "N.A.";
+
+/* FROM CABINET TAB - EDIT ITEM */
+"Product" = "Prodotto";
+"Product name" = "Nome del prodotto";
+"% ABV" = "% ABV";
+"Made in" = "Made in";
+"Rating" = "Rating";
+"Have you tried it yet?" = "Lo hai mai provato?";
+"Notes" = "Note";
+"By deleting the product you will be deleting every informations added to it." = "Eliminando questo prodotto eliminerai tutte le informazioni aggiunte.";
+"Delete product?" = "Eliminare Prodotto?";
+"Are you sure you want to delete this product? You will delete all the informations added to it." = "Sei sicuro di voler eliminare questo prodotto? Facendo ciò eliminerai anche tutte le informazioni aggiunte.";

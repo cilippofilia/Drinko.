@@ -16,4 +16,8 @@ extension String {
     mutating func capitalizeFirstLetter() {
         self = self.capitalizingFirstLetter()
     }
+
+    var numberOfLines: Int {
+        return self.components(separatedBy: "\n").count
+    }
 }

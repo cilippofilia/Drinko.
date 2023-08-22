@@ -55,6 +55,47 @@ class Favorites: ObservableObject {
     }
 }
 
+class FavoriteProduct: ObservableObject {
+    private var products: Set<String>
+
+    private let saveProductKey = "FavProduct"
+
+    init() {
+        if let encodedData = UserDefaults.standard.data(forKey: saveProductKey) {
+            if let data = try? JSONDecoder().decode(Set<String>.self, from: encodedData) {
+                products = data
+                return
+            }
+        }
+
+        self.products = []
+    }
+
+    func contains(_ product: Item) -> Bool {
+        products.contains(product.itemName)
+    }
+
+    func add(_ product: Item) {
+        objectWillChange.send()
+        products.insert(product.itemName)
+        save()
+    }
+
+    func remove(_ product: Item) {
+        objectWillChange.send()
+        products.remove(product.itemName)
+        save()
+    }
+
+    private func save() {
+        if let data = try? JSONEncoder().encode(products) {
+            UserDefaults.standard.set(data, forKey: saveProductKey)
+        } else {
+            fatalError("Unable to save")
+        }
+    }
+}
+
 extension FileManager {
     func getDocumentsDirectory() -> URL {
         // find all possible documents directories for this user

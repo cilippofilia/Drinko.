@@ -37,12 +37,15 @@ struct PostRow: View {
 
             Text(viewModel.content)
                 .lineLimit(isCollapsed ? nil : lineLimit)
-                .animation(.easeOut, value: isCollapsed)
+                .animation(.default, value: isCollapsed)
 
-            Button(isCollapsed ? "hide" : "more") {
-                isCollapsed.toggle()
+            if viewModel.content.numberOfLines > lineLimit || viewModel.content.count > 150 {
+                Button(isCollapsed ? "show less" : "show more") {
+                    isCollapsed.toggle()
+                }
+                .font(.caption)
+                .foregroundColor(.secondary)
             }
-            .font(.caption)
 
             HStack {
                 LikeButton(isLiked: viewModel.isFavorite, action: {

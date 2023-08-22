@@ -33,6 +33,6 @@ extension Post {
 
 extension Post {
     static let testPost = Post(title: "Lorem ipsum",
-                               content: "1- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n2- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n3- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                               content: "line 1 \nline 2 \nline 3\nline 4",
                                author: User.testUser)
 }

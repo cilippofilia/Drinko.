@@ -1,0 +1,33 @@
+{
+  "identifier" : "A8042852",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : true,
+      "internalID" : "4005B035",
+      "localizations" : [
+        {
+          "description" : "Unlimited Categories and Items",
+          "displayName" : "Cabinet+",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "CabinetPlus",
+      "referenceName" : "Cabinet +",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 2,
+    "minor" : 0
+  }
+}

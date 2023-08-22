@@ -16,6 +16,7 @@ struct EmptyListView: View {
         VStack(alignment: .center, spacing: 10) {
             Text(title)
                 .font(.title2)
+                .italic()
                 .fontWeight(.semibold)
                 .foregroundColor(.primary)
 
@@ -24,6 +25,7 @@ struct EmptyListView: View {
             if let retryAction = retryAction {
                 Button(action: retryAction) {
                     Text("Try Again")
+                        .italic()
                         .padding(10)
                         .background(RoundedRectangle(cornerRadius: 5).stroke(Color.secondary))
                 }
