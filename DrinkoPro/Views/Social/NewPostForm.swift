@@ -12,17 +12,42 @@ import SwiftUI
 struct NewPostForm: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel: FormViewModel<Post>
+    @FocusState var isInputActive: Bool
 
     var body: some View {
         NavigationView {
             Form {
-                Section {
+                Section("Title") {
                     TextField("Title", text: $viewModel.title)
+                }
+
+                Section("Image") {
+                    AsyncImage(url: viewModel.imageURL) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                    } placeholder: { }
+
+                    ImagePickerButton(imageURL: $viewModel.imageURL) {
+                        Label("Choose Image", systemImage: "photo.fill")
+                    }
                 }
 
                 Section("Content") {
                     TextEditor(text: $viewModel.content)
                         .multilineTextAlignment(.leading)
+                        .keyboardType(.default)
+                        .focused($isInputActive)
+                        .toolbar {
+                            ToolbarItemGroup(placement: .keyboard) {
+                                Spacer()
+
+                                Button("Done") {
+                                    isInputActive = false
+                                }
+                            }
+                        }
                 }
 
                 Button(action: viewModel.submit) {
@@ -35,7 +60,7 @@ struct NewPostForm: View {
                 .font(.headline)
                 .frame(maxWidth: .infinity)
                 .foregroundColor(.white)
-                .padding()
+                .padding(8)
                 .listRowBackground(Color.accentColor)
             }
             .onSubmit(viewModel.submit)
@@ -46,7 +71,8 @@ struct NewPostForm: View {
         .onChange(of: viewModel.isWorking) { isWorking in
             guard !isWorking, viewModel.error == nil else { return }
             dismiss()
-        }    }
+        }
+    }
 }
 
 // MARK: - Preview

@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct Post: Identifiable, Equatable {
+struct Post: Identifiable, Equatable, Codable {
     var title: String
     var content: String
     var author: User
+    var imageURL: URL?
     var isFavorite = false
     var timestamp = Date()
     var id = UUID()
@@ -24,16 +25,14 @@ struct Post: Identifiable, Equatable {
     }
 }
 
-extension Post: Codable {
+extension Post {
     enum CodingKeys: CodingKey {
-        case title, content, author, timestamp, id
+        case title, content, author, imageURL, timestamp, id
     }
 }
 
 extension Post {
-    static let testPost = Post(
-        title: "Lorem ipsum",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        author: User.testUser
-    )
+    static let testPost = Post(title: "Lorem ipsum",
+                               content: "1- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n2- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n3- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                               author: User.testUser)
 }

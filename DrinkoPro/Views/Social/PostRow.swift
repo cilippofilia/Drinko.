@@ -12,6 +12,9 @@ struct PostRow: View {
 
     @State private var showConfirmationDialog = false
 
+    @State private var isCollapsed = false
+    @State private var lineLimit = 3
+
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack {
@@ -24,11 +27,22 @@ struct PostRow: View {
             }
             .foregroundColor(.gray)
 
+            if let imageURL = viewModel.imageURL {
+                PostImage(url: imageURL)
+            }
+
             Text(viewModel.title)
                 .font(.title3)
                 .fontWeight(.semibold)
 
             Text(viewModel.content)
+                .lineLimit(isCollapsed ? nil : lineLimit)
+                .animation(.easeOut, value: isCollapsed)
+
+            Button(isCollapsed ? "hide" : "more") {
+                isCollapsed.toggle()
+            }
+            .font(.caption)
 
             HStack {
                 LikeButton(isLiked: viewModel.isFavorite, action: {
@@ -68,17 +82,19 @@ private extension PostRow {
         let action: () -> Void
 
         var body: some View {
-            Button(action: action) {
-                if isLiked {
-                    Label("Remove like from post", systemImage: "heart.fill")
-                } else {
-                    Label("Like the post", systemImage: "heart")
+            HStack {
+                Button(action: action) {
+                    if isLiked {
+                        Label("Remove like from post", systemImage: "heart.fill")
+                    } else {
+                        Label("Like the post", systemImage: "heart")
+                    }
                 }
+                .foregroundColor(isLiked ? .red : .gray)
+                .animation(.default, value: isLiked)
+                .labelStyle(.iconOnly)
+                .buttonStyle(.borderless)
             }
-            .foregroundColor(isLiked ? .red : .gray)
-            .animation(.default, value: isLiked)
-            .labelStyle(.iconOnly)
-            .buttonStyle(.borderless)
         }
     }
 }
@@ -96,6 +112,23 @@ private extension PostRow {
                 Text(author.name)
                     .font(.subheadline)
                     .fontWeight(.medium)
+            }
+        }
+    }
+}
+
+private extension PostRow {
+    struct PostImage: View {
+        let url: URL
+
+        var body: some View {
+            AsyncImage(url: url) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+            } placeholder: {
+                Color.clear
             }
         }
     }

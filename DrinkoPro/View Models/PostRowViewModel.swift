@@ -5,6 +5,8 @@
 //  Created by Filippo Cilia on 15/08/2023.
 //
 
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 import Foundation
 
 @MainActor

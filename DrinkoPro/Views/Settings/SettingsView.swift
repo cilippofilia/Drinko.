@@ -28,6 +28,12 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("Preferences")) {
+//                NavigationLink(destination: ProfileView(viewModel: factory.makeProfileViewModel())) {
+//                    SettingsRowView(icon: "person.fill",
+//                                    color: .blue,
+//                                    itemName: "Profile")
+//                }
+
                 HStack {
                     SettingsRowView(icon: "character.bubble",
                                     color: .secondary,

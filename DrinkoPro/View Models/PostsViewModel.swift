@@ -30,7 +30,7 @@ class PostsViewModel: ObservableObject {
         case let .author(author):
             return "\(author.name)’s Posts"
         case .favorites:
-            return "Favorites"
+            return "Liked Posts"
         }
     }
 
