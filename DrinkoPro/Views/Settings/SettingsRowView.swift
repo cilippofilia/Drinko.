@@ -10,7 +10,7 @@ import SwiftUI
 struct SettingsRowView: View {
     var icon: String
     var color: Color
-    var itemName: String
+    var itemName: LocalizedStringKey
 
     var body: some View {
         HStack(alignment: .center, spacing: 10) {

@@ -59,8 +59,8 @@ struct HomeView: View {
             .tabItem {
                 Label("Settings", systemImage: "gear")
             }
-            .onAppear(perform: checkForReview)
         }
+        .onAppear(perform: checkForReview)
     }
 
     // Get current Version of the App
@@ -93,6 +93,7 @@ struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
             .environmentObject(ViewModelFactory.preview)
+            .environmentObject(DataController())
     }
 }
 #endif

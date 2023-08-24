@@ -28,12 +28,6 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("Preferences")) {
-//                NavigationLink(destination: ProfileView(viewModel: factory.makeProfileViewModel())) {
-//                    SettingsRowView(icon: "person.fill",
-//                                    color: .blue,
-//                                    itemName: "Profile")
-//                }
-
                 HStack {
                     SettingsRowView(icon: "character.bubble",
                                     color: .secondary,
@@ -48,7 +42,7 @@ struct SettingsView: View {
                 }
 
                 NavigationLink(destination: PostsList(viewModel: factory.makePostsViewModel(filter: .favorites))) {
-                    SettingsRowView(icon: "heart.fill", color: .red, itemName: "Liked Posts")
+                    SettingsRowView(icon: "heart.fill", color: .red, itemName: "Liked posts")
                 }
             }
 

@@ -1,8 +1,8 @@
 //
-//  CabinetView.swift
-//  Drinko
+//  CabinetVieww.swift
+//  DrinkoPro
 //
-//  Created by Filippo Cilia on 04/02/2021.
+//  Created by Filippo Cilia on 23/08/2023.
 //
 
 import SwiftUI
@@ -30,16 +30,13 @@ struct CabinetView: View {
                                 Button(action: {
                                     if favoriteProducts.contains(item) {
                                         favoriteProducts.remove(item)
-
                                     } else {
                                         favoriteProducts.add(item)
-
                                         UINotificationFeedbackGenerator()
                                             .notificationOccurred(.success)
                                     }
                                 }) {
                                     Image(systemName: "cart")
-
                                     Text(favoriteProducts.contains(item) ? "Remove from cart" : "Add to cart")
                                 }
                             }
@@ -119,3 +116,14 @@ struct CabinetView: View {
         .environmentObject(favoriteProducts)
     }
 }
+
+#if DEBUG
+struct CabinetView_Previews: PreviewProvider {
+    let dataController = DataController()
+    static var previews: some View {
+        NavigationView {
+            CabinetView(dataController: DataController())
+        }
+    }
+}
+#endif

@@ -1,21 +1,21 @@
 //
 //  FamilyHeaderView.swift
-//  Drinko
+//  DrinkoPro
 //
-//  Created by Filippo Cilia on 04/02/2021.
+//  Created by Filippo Cilia on 23/08/2023.
 //
 
 import SwiftUI
 
 struct FamilyHeaderView: View {
     @ObservedObject var family: Family
-    
+
     var body: some View {
         HStack {
             Text(family.familyName)
                 .foregroundColor(Color(family.familyColor))
                 .bold()
-            
+
             Text(family.familyDetail)
                 .foregroundColor(Color.secondary)
 
@@ -30,3 +30,10 @@ struct FamilyHeaderView: View {
         .padding(.bottom, 10)
     }
 }
+
+// THIS PREVIEW IS NOT WORKING
+//struct FamilyHeaderView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FamilyHeaderView(family: family)
+//    }
+//}

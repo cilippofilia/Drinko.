@@ -30,7 +30,7 @@ struct ItemRowView: View {
                         .font(.caption)
                         .bold()
                         .foregroundColor(Color.secondary)
-                    + Text(" % ABV")
+                    + Text("% ABV")
                         .font(.caption)
                         .foregroundColor(Color.secondary)
                 }
@@ -51,8 +51,17 @@ struct ItemRowView: View {
                             .foregroundColor(Color.yellow)
                     }
                 }
-                
             }
         }
     }
 }
+
+// THIS PREVIEW IS NOT WORKING
+//#if DEBUG
+//struct ItemRowView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ItemRowView(item: Item.example)
+//            .environmentObject()
+//    }
+//}
+//#endif

@@ -13,7 +13,7 @@ extension Item {
     }
 
     var itemName: String {
-        name ?? "Insert Product Name"
+        "Insert Product Name"
     }
     
     var itemDetail: String {

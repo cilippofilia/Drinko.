@@ -16,17 +16,14 @@ struct CocktailDetailSectionView: View {
             Text("\(text):")
                 .font(.headline)
 
-//      MARK: METHOD LINE
             if text.lowercased() == "method" {
                 Text(cocktail.method.capitalizingFirstLetter())
             }
 
-//      MARK: GLASS LINE
             if text.lowercased() == "glass" {
                 Text(cocktail.glass.capitalizingFirstLetter())
             }
 
-//      MARK: GARNISH LINE
             if text.lowercased() == "garnish" {
                 if cocktail.garnish == "-" {
                     Text(cocktail.garnish.capitalized.replacingOccurrences(of: "-", with: "None").capitalizingFirstLetter())
@@ -36,7 +33,6 @@ struct CocktailDetailSectionView: View {
                 }
             }
 
-//      MARK: ICE LINE & EXTRA
             if text.lowercased() == "ice" {
                 if cocktail.ice == "-" {
                     Text(cocktail.ice.replacingOccurrences(of: "-", with: "None"))
@@ -46,7 +42,6 @@ struct CocktailDetailSectionView: View {
                 }
             }
 
-//      MARK: EXTRA LINE
             if text.lowercased() == "extra" {
                 if cocktail.extra == "-" {
                     Text(cocktail.extra.replacingOccurrences(of: "-", with: "None"))
