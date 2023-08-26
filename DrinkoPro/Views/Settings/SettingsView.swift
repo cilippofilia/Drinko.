@@ -44,6 +44,12 @@ struct SettingsView: View {
                 NavigationLink(destination: PostsList(viewModel: factory.makePostsViewModel(filter: .favorites))) {
                     SettingsRowView(icon: "heart.fill", color: .red, itemName: "Liked posts")
                 }
+
+                NavigationLink(destination: TipJarView()) {
+                    SettingsRowView(icon: "giftcard.fill",
+                                    color: .green,
+                                    itemName: "Tip Jar")
+                }
             }
 
             // find right term to use

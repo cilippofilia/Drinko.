@@ -63,6 +63,8 @@
 		18B449DD2A8A059F00F52B1B /* PostsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449DC2A8A059F00F52B1B /* PostsRepository.swift */; };
 		18B449DF2A8B541400F52B1B /* EmptyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449DE2A8B541400F52B1B /* EmptyListView.swift */; };
 		18B449E12A8B543F00F52B1B /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449E02A8B543F00F52B1B /* Loadable.swift */; };
+		18B951A02A99D052006119DC /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B9519F2A99D052006119DC /* TipJarView.swift */; };
+		18B951A32A99DE81006119DC /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B951A22A99DE81006119DC /* PurchaseManager.swift */; };
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */; };
 		18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
@@ -158,6 +160,8 @@
 		18B449DC2A8A059F00F52B1B /* PostsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsRepository.swift; sourceTree = "<group>"; };
 		18B449DE2A8B541400F52B1B /* EmptyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListView.swift; sourceTree = "<group>"; };
 		18B449E02A8B543F00F52B1B /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		18B9519F2A99D052006119DC /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		18B951A22A99DE81006119DC /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -277,11 +281,8 @@
 		183AE9802A94B19E00AC156F /* Unlock */ = {
 			isa = PBXGroup;
 			children = (
-				183AE9832A94B19E00AC156F /* ProductView.swift */,
-				183AE9842A94B19E00AC156F /* PurchaseButton.swift */,
-				183AE9812A94B19E00AC156F /* SKProduct-LocalizedPrice.swift */,
-				183AE9822A94B19E00AC156F /* UnlockManager.swift */,
-				183AE9852A94B19E00AC156F /* UnlockView.swift */,
+				18B9519E2A99D008006119DC /* Cabinet+ */,
+				18B951A12A99D057006119DC /* TipJar */,
 			);
 			path = Unlock;
 			sourceTree = "<group>";
@@ -363,6 +364,27 @@
 				18B449DC2A8A059F00F52B1B /* PostsRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		18B9519E2A99D008006119DC /* Cabinet+ */ = {
+			isa = PBXGroup;
+			children = (
+				183AE9832A94B19E00AC156F /* ProductView.swift */,
+				183AE9842A94B19E00AC156F /* PurchaseButton.swift */,
+				183AE9812A94B19E00AC156F /* SKProduct-LocalizedPrice.swift */,
+				183AE9822A94B19E00AC156F /* UnlockManager.swift */,
+				183AE9852A94B19E00AC156F /* UnlockView.swift */,
+			);
+			path = "Cabinet+";
+			sourceTree = "<group>";
+		};
+		18B951A12A99D057006119DC /* TipJar */ = {
+			isa = PBXGroup;
+			children = (
+				18B9519F2A99D052006119DC /* TipJarView.swift */,
+				18B951A22A99DE81006119DC /* PurchaseManager.swift */,
+			);
+			path = TipJar;
 			sourceTree = "<group>";
 		};
 		18F49E572A27B28D00862CE3 = {
@@ -659,6 +681,7 @@
 				183AE9732A94B0CF00AC156F /* Binding-OnChange.swift in Sources */,
 				18F9609F2A8C27760004D1D8 /* FormViewModel.swift in Sources */,
 				18F49EC12A286D2E00862CE3 /* Spirit.swift in Sources */,
+				18B951A02A99D052006119DC /* TipJarView.swift in Sources */,
 				183AE9872A94B19E00AC156F /* UnlockManager.swift in Sources */,
 				188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */,
 				18F49ECB2A286D2E00862CE3 /* Cocktail.swift in Sources */,
@@ -678,6 +701,7 @@
 				18F960972A8C219A0004D1D8 /* AuthViewModel.swift in Sources */,
 				18B449DF2A8B541400F52B1B /* EmptyListView.swift in Sources */,
 				18F49EC42A286D2E00862CE3 /* LearnRowView.swift in Sources */,
+				18B951A32A99DE81006119DC /* PurchaseManager.swift in Sources */,
 				183723C72A909A2100DBCD5D /* StorageFile.swift in Sources */,
 				180E3E722A9642D10005381F /* CabinetView.swift in Sources */,
 				18B449D32A8765D800F52B1B /* PostsList.swift in Sources */,

@@ -13,11 +13,121 @@
           "description" : "Unlimited Categories and Items",
           "displayName" : "Cabinet+",
           "locale" : "en_US"
+        },
+        {
+          "description" : "Categorie e Prodotti illimitati",
+          "displayName" : "Mobiletto+",
+          "locale" : "it"
+        },
+        {
+          "description" : "Catégories et produits illimités",
+          "displayName" : "Meuble+",
+          "locale" : "fr"
         }
       ],
       "productID" : "CabinetPlus",
       "referenceName" : "Cabinet +",
       "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "AA6030DF",
+      "localizations" : [
+        {
+          "description" : "Get a lollipop for the penny-pinching dev",
+          "displayName" : "Small Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Compra un espresso allo sviluppatore",
+          "displayName" : "Piccola Mancia",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "SmallTip",
+      "referenceName" : "Small Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "E7A7C72F",
+      "localizations" : [
+        {
+          "description" : "Get a donut for the dev with a sweet tooth",
+          "displayName" : "Medium Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Regala cappuccio e brioche allo sviluppatore",
+          "displayName" : "Mancia Media",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "MediumTip",
+      "referenceName" : "Medium Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "40B07931",
+      "localizations" : [
+        {
+          "description" : "Get a pizza slice for the hungry dev",
+          "displayName" : "Big Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Regala una pizza allo sviluppatore goloso",
+          "displayName" : "Grossa Mancia",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "BigTip",
+      "referenceName" : "Big Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "ACDA398F",
+      "localizations" : [
+        {
+          "description" : "Get a superhero cape for the mighty dev",
+          "displayName" : "Generous Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Regala un Gin Tonic allo sviluppatore",
+          "displayName" : "Mancia Generosa",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "GenerousTip",
+      "referenceName" : "Generous Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "B586AC49",
+      "localizations" : [
+        {
+          "description" : "Get a crown for the dev who reigns supreme",
+          "displayName" : "Extremely Generous Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Regala un pacchetto di siga allo sviluppatore",
+          "displayName" : "Mancia Molto Generosa",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "ExtremelyGenerousTip",
+      "referenceName" : "Extremely Generous Tip",
+      "type" : "Consumable"
     }
   ],
   "settings" : {
