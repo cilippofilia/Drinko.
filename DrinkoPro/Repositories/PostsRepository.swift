@@ -9,8 +9,6 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-// MARK: - PostsRepositoryProtocol
-
 protocol PostsRepositoryProtocol {
     var user: User { get }
     func fetchAllPosts() async throws -> [Post]
@@ -27,8 +25,6 @@ extension PostsRepositoryProtocol {
         post.author.id == user.id
     }
 }
-
-// MARK: - PostsRepositoryStub
 
 #if DEBUG
 struct PostsRepositoryStub: PostsRepositoryProtocol {
@@ -56,8 +52,6 @@ struct PostsRepositoryStub: PostsRepositoryProtocol {
     func unfavorite(_ post: Post) async throws {}
 }
 #endif
-
-// MARK: - PostsRepository
 
 struct PostsRepository: PostsRepositoryProtocol {
     let user: User

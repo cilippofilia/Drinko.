@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct EditItemView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var dataController: DataController
     @ObservedObject var favoriteProducts = FavoriteProduct()
 
@@ -87,23 +86,16 @@ struct EditItemView: View {
             Section(footer: Text("By deleting the product you will be deleting every informations added to it.")) {
                 Button(action: {
                     update()
-                    presentationMode.wrappedValue.dismiss()
+                    dismiss()
                 }) {
-                    HStack {
-                        Image(systemName: "checkmark.circle")
+                    Label("Save Changes", systemImage: "checkmark.circle")
 
-                        Text("Save Changes")
-                    }
                 }
                 
                 Button(action: {
                     showingDeleteConfirm = true
                 }) {
-                    HStack {
-                        Image(systemName: "trash")
-                            
-                        Text("Delete Product")
-                    }
+                    Label("Delete Product", systemImage: "trash")
                 }
                 .accentColor(.red)
             }
@@ -134,7 +126,7 @@ struct EditItemView: View {
     
     func delete() {
         dataController.delete(item)
-        presentationMode.wrappedValue.dismiss()
+        dismiss()
     }
 
     func image(for n: Int) -> Image {

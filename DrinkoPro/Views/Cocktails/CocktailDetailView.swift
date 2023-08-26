@@ -150,7 +150,6 @@ struct CocktailDetailView: View {
     }
 }
 
-// MARK: computed variable to store views for AsyncImage
 var failure: some View {
     VStack(spacing: 10) {
         Image(systemName: "icloud.slash.fill")

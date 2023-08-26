@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+#warning("👨‍💻 This View will barely work. Need to improve a bit before making it available.")
 struct ProfileView: View {
     @StateObject var viewModel: ProfileViewModel
 
@@ -16,23 +17,21 @@ struct ProfileView: View {
                 ProfileImage(url: viewModel.imageURL)
                     .frame(width: 200, height: 200)
                     .padding(.top)
+                ImagePickerButton(imageURL: $viewModel.imageURL) {
+                    Label("Choose Image", systemImage: "photo.fill")
+                }
+                .padding(.vertical)
 
                 Text(viewModel.name)
                     .font(.title2)
                     .bold()
                     .padding()
 
-                ImagePickerButton(imageURL: $viewModel.imageURL) {
-                    Label("Choose Image", systemImage: "photo.fill")
-                }
-                .padding(.bottom)
-
                 DrinkoButtonView(title: "Sign Out",
                                  icon: "figure.walk",
                                  background: .red,
                                  foreground: .white) {
                     viewModel.signOut()
-
                 }
                 .padding(.vertical)
                 .frame(width: screenWidthPlusMargins)
@@ -47,7 +46,8 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
-            ProfileView(viewModel: ProfileViewModel(user: User.testUser, authService: AuthService()))
+            ProfileView(viewModel: ProfileViewModel(user: User.testUser,
+                                                    authService: AuthService()))
         }
     }
 }

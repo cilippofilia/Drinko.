@@ -75,7 +75,7 @@ struct CabinetView: View {
     }
 
     var sortOrderToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarLeading) {
+        ToolbarItem(placement: .navigationBarTrailing) {
             Button {
                 showingSortOrder.toggle()
             } label: {

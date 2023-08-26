@@ -51,7 +51,6 @@ struct HomeView: View {
                 Label("Cabinet", systemImage: "cabinet")
             }
 
-
             NavigationView {
                 SettingsView()
             }
@@ -92,7 +91,6 @@ extension UIApplication {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
-            .environmentObject(ViewModelFactory.preview)
             .environmentObject(DataController())
     }
 }

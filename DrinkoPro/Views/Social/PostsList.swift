@@ -56,10 +56,20 @@ struct PostsList: View {
             NewPostForm(viewModel: viewModel.makeNewPostViewModel())
         }
         .toolbar {
-            Button {
-                showNewPostForm = true
-            } label: {
-                Label("New Post", systemImage: "square.and.pencil")
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    showNewPostForm = true
+                } label: {
+                    Label("New Post", systemImage: "plus")
+                }
+            }
+
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Menu {
+                    #warning("👨‍💻 sort posts by author, a to z, z to a, favorites")
+                } label: {
+                    Label("Sort", systemImage: "arrow.up.arrow.down")
+                }
             }
         }
     }

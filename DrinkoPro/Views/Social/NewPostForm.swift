@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// MARK: - NewPostForm
-
 struct NewPostForm: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject var viewModel: FormViewModel<Post>
@@ -37,17 +35,7 @@ struct NewPostForm: View {
                 Section("Content") {
                     TextEditor(text: $viewModel.content)
                         .multilineTextAlignment(.leading)
-                        .keyboardType(.default)
-                        .focused($isInputActive)
-                        .toolbar {
-                            ToolbarItemGroup(placement: .keyboard) {
-                                Spacer()
-
-                                Button("Done") {
-                                    isInputActive = false
-                                }
-                            }
-                        }
+                        .frame(minHeight: 200, maxHeight: 400)
                 }
 
                 Button(action: viewModel.submit) {
@@ -74,8 +62,6 @@ struct NewPostForm: View {
         }
     }
 }
-
-// MARK: - Preview
 
 struct NewPostForm_Previews: PreviewProvider {
     static var previews: some View {

@@ -9,7 +9,7 @@ import StoreKit
 import SwiftUI
 
 struct UnlockView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var unlockManager: UnlockManager
 
     var body: some View {
@@ -27,8 +27,10 @@ struct UnlockView: View {
                 Text("Thank you! Your request is pending approval, but you can carry on using the app in the meantime.")
             }
 
-            Button("Dismiss", action: dismiss)
-                .padding()
+            Button("Dismiss") {
+                dismiss()
+            }
+            .padding()
         }
         .padding()
         .onReceive(unlockManager.$requestState) { value in
@@ -36,9 +38,5 @@ struct UnlockView: View {
                 dismiss()
             }
         }
-    }
-
-    func dismiss() {
-        presentationMode.wrappedValue.dismiss()
     }
 }

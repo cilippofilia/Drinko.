@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// MARK: - ImagePickerButton
-
 struct ImagePickerButton<Label: View>: View {
     @Binding var imageURL: URL?
     @ViewBuilder let label: () -> Label
@@ -48,8 +46,6 @@ extension UIImagePickerController.SourceType: Identifiable {
     public var id: String { "\(self)" }
 }
 
-// MARK: - ImagePickerView
-
 private extension ImagePickerButton {
     struct ImagePickerView: UIViewControllerRepresentable {
         let sourceType: UIImagePickerController.SourceType
@@ -73,8 +69,6 @@ private extension ImagePickerButton {
     }
 }
 
-// MARK: - ImagePickerCoordinator
-
 private extension ImagePickerButton {
     class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
         let view: ImagePickerView
@@ -90,8 +84,6 @@ private extension ImagePickerButton {
         }
     }
 }
-
-// MARK: - Preview
 
 struct ImagePickerButton_Previews: PreviewProvider {
     static var previews: some View {

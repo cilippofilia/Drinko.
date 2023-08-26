@@ -19,7 +19,7 @@ struct SplashScreenView: View {
     var body: some View {
         Group {
             if showHomeView {
-                AuthView()
+                HomeView()
             } else {
                 ZStack {
                     Color("Drinko Blue")
@@ -67,18 +67,15 @@ struct SplashScreenView: View {
                                                      blendDuration: 0.7)) {
                         imgOffset = 0
                     }
-                    
                     withAnimation(Animation.interactiveSpring(response: 0.5,
                                                               dampingFraction: 0.6,
                                                               blendDuration: 0.7)
                         .delay(0.4)) {
                             angle = 0
                         }
-                    
                     withAnimation(Animation.linear.delay(1.8)) {
                         opacity = 0
                     }
-                    
                     withAnimation(Animation.linear.delay(2.2)) {
                         showHomeView = true
                     }

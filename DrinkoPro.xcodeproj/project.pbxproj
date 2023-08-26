@@ -128,6 +128,11 @@
 		183AE9842A94B19E00AC156F /* PurchaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		183AE9852A94B19E00AC156F /* UnlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		183AE98B2A94B26B00AC156F /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		183C72FE2A97F49C00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/books.json; sourceTree = "<group>"; };
+		183C72FF2A97F49C00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/cocktails.json; sourceTree = "<group>"; };
+		183C73002A97F49D00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/lessons.json; sourceTree = "<group>"; };
+		183C73012A97F49D00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/spirits.json; sourceTree = "<group>"; };
+		183C73032A97F4AD00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18413B112A8D3EC1001BB0CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		18413B132A8D40C7001BB0CB /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		1856149F2A92A4AA002051ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -566,6 +571,7 @@
 			knownRegions = (
 				en,
 				it,
+				fr,
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
@@ -686,6 +692,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1814111F2A9733B4004FE3DC /* it */,
+				183C73032A97F4AD00CBEFAA /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -695,6 +702,7 @@
 			children = (
 				188E93C82A4C1F03001691E6 /* it */,
 				188E93CA2A4C1F07001691E6 /* en */,
+				183C73012A97F49D00CBEFAA /* fr */,
 			);
 			name = spirits.json;
 			sourceTree = "<group>";
@@ -704,6 +712,7 @@
 			children = (
 				188E93CE2A4C29FA001691E6 /* en */,
 				188E93D02A4C29FF001691E6 /* it */,
+				183C72FE2A97F49C00CBEFAA /* fr */,
 			);
 			name = books.json;
 			sourceTree = "<group>";
@@ -713,6 +722,7 @@
 			children = (
 				18F49E8D2A286D2A00862CE3 /* en */,
 				18F49E902A286D2A00862CE3 /* it */,
+				183C73002A97F49D00CBEFAA /* fr */,
 			);
 			name = lessons.json;
 			sourceTree = "<group>";
@@ -722,6 +732,7 @@
 			children = (
 				18F49E8F2A286D2A00862CE3 /* en */,
 				18F49E912A286D2A00862CE3 /* it */,
+				183C72FF2A97F49C00CBEFAA /* fr */,
 			);
 			name = cocktails.json;
 			sourceTree = "<group>";
