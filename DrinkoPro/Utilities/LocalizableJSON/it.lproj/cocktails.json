@@ -4017,7 +4017,7 @@
         "glass":"collins",
         "garnish":"fetta e foglie di ananas",
         "ice":"cubetti + tritato in cima",
-        "extra":"SUGGERIMENTO: KokoKanu o Aluna sono ottime alternative al rum infuso al cocco fatto in casa - avoid Malibu, please",
+        "extra":"SUGGERIMENTO: KokoKanu o Aluna sono ottime alternative, altrimenti usa un rum infuso al cocco fatto in casa - non usare Malibu, per favore.",
         "history":"La Piña Colada ha origine da San Juan, Porto Rico, dove fu creata da Ramón 'Monchito' Marrero presso il Caribe Hilton nel 1954. Questo rinfrescante cocktail viene preparato mescolando rum, crema di cocco e succo d'ananas, ottenendo così una bevanda estiva fruttata e deliziosa.\n\nNel 1978, la Piña Colada fu ufficialmente dichiarata la bevanda nazionale di Porto Rico. Oggi, rimane uno dei migliori cocktail ad essere nati dal marchio Hilton Hotel.",
         "ingredients":[
             {
@@ -4462,7 +4462,7 @@
         "history":"",
         "ingredients":[
             {
-                "name":"cognaac",
+                "name":"cognac",
                 "quantity":2.0,
                 "unit":"oz."
             },

@@ -8,7 +8,7 @@
 "Are you sure you want to delete this category? You will also delete all the products it contains." = "Sei sicuro di voler eliminare questa categoria? Facendo ciò tutti i prodotti all'interno della categoria verranno eliminati.";
 "Are you sure you want to delete this post?" = "Sei sicuro di voler eliminare questo post?";
 "Are you sure you want to delete this product? You will delete all the informations added to it." = "Sei sicuro di voler eliminare questo prodotto? Facendo ciò tutte le informazioni inerenti ad esso verranno eliminate.";
-"Start adding categories and products\nby pressing the + above." = "Inizia aggiungendo categorie e prodotti premendo + in alto";
+"Start adding categories and products\nby pressing the + above." = "Inizia aggiungendo categorie e prodotti premendo + in alto.";
 "By deleting the category you will be deleting every product inside it." = "Eliminando la categoria eliminerai tutti i prodotti contenuti all'interno.";
 "By deleting the product you will be deleting every informations added to it." = "Eliminando il prodotto eliminerai tutte le informazioni raccolte.";
 "Category name" = "Nome Categoria";
@@ -39,6 +39,7 @@
 "Search Cocktails" = "Cerca i cocktail";
 
 /* Cocktails Tab - Sort */
+"Sort Cocktails" = "Organizza i Cocktail";
 "A -> Z" = "A -> Z";
 "Z -> A" = "Z -> A";
 "By Glass" = "Per bicchiere";
@@ -106,6 +107,7 @@
 
 "Language" = "Lingua";
 "Liked posts" = "Post piaciuti";
+"Tip Jar" = "Lascia la mancia";
 
 "Contacts" = "Contatti";
 "Contact the developer" = "Contatta lo sviluppatore";
@@ -115,7 +117,7 @@
 
 "Preferences" = "Preferenze";
 "Rate the app" = "Valuta l'app";
-"Twitter" = "Twitter";
+"X (Twitter)" = "X (Twitter)";
 "Read me" = "Leggimi";
 "Share the app" = "Condividi l'app";
 "Version" = "Versione";
@@ -144,6 +146,7 @@
 "Select an option" = "Selezione un'opzione";
 "Profile" = "Profilo";
 "Name" = "Nome";
+"Sign Out" = "Disconnetti";
 
 /* Drinko Splashscreen */
 "Drinko" = "Drinko";

@@ -35,10 +35,8 @@ struct LearnView: View {
                     BookRowView(book: book)
                 }
             }
-
         }
         .navigationTitle("Learn")
-        
     }
 }
 

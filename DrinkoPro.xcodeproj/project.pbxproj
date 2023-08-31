@@ -38,7 +38,6 @@
 		18413B142A8D40C7001BB0CB /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18413B132A8D40C7001BB0CB /* ViewModelFactory.swift */; };
 		185614A02A92A4AA002051ED /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1856149F2A92A4AA002051ED /* ProfileViewModel.swift */; };
 		185614A22A92A6F9002051ED /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185614A12A92A6F9002051ED /* ErrorHandler.swift */; };
-		18736EF82A92A98A00D1EF5E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18736EF72A92A98A00D1EF5E /* ProfileView.swift */; };
 		18736EFA2A92AA6A00D1EF5E /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18736EF92A92AA6A00D1EF5E /* ProfileImage.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
 		188E93BE2A4C1E04001691E6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BD2A4C1E04001691E6 /* Book.swift */; };
@@ -140,7 +139,6 @@
 		1856149F2A92A4AA002051ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		185614A12A92A6F9002051ED /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18736EF72A92A98A00D1EF5E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		18736EF92A92AA6A00D1EF5E /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		188E93BD2A4C1E04001691E6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -162,6 +160,11 @@
 		18B449E02A8B543F00F52B1B /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		18B9519F2A99D052006119DC /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		18B951A22A99DE81006119DC /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		18C03F612AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		18C03F622AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/books.json; sourceTree = "<group>"; };
+		18C03F632AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/cocktails.json; sourceTree = "<group>"; };
+		18C03F642AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/lessons.json; sourceTree = "<group>"; };
+		18C03F652AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/spirits.json; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -200,6 +203,7 @@
 		18F960962A8C219A0004D1D8 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		18F9609A2A8C231A0004D1D8 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		18F9609E2A8C27760004D1D8 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		18FB88B22A9F28D200052B96 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,13 +322,12 @@
 		18B449CD2A8764C300F52B1B /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
+				18D578762A9B22590049F9B9 /* Profile */,
 				183AE9802A94B19E00AC156F /* Unlock */,
 				18F9609A2A8C231A0004D1D8 /* AuthView.swift */,
 				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
 				18B449DE2A8B541400F52B1B /* EmptyListView.swift */,
 				18F49E7D2A286D2A00862CE3 /* SplashScreenView.swift */,
-				183723CB2A909AFC00DBCD5D /* ImagePickerButton.swift */,
-				18736EF92A92AA6A00D1EF5E /* ProfileImage.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -385,6 +388,15 @@
 				18B951A22A99DE81006119DC /* PurchaseManager.swift */,
 			);
 			path = TipJar;
+			sourceTree = "<group>";
+		};
+		18D578762A9B22590049F9B9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				183723CB2A909AFC00DBCD5D /* ImagePickerButton.swift */,
+				18736EF92A92AA6A00D1EF5E /* ProfileImage.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		18F49E572A27B28D00862CE3 = {
@@ -493,7 +505,6 @@
 				18F49EA52A286D2E00862CE3 /* SettingsView.swift */,
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
 				182E43362A2B1221001675FD /* CreditsCardView.swift */,
-				18736EF72A92A98A00D1EF5E /* ProfileView.swift */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
 			);
 			path = Settings;
@@ -594,6 +605,7 @@
 				en,
 				it,
 				fr,
+				de,
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
@@ -695,7 +707,6 @@
 				18F960952A8C20980004D1D8 /* AuthService.swift in Sources */,
 				185614A02A92A4AA002051ED /* ProfileViewModel.swift in Sources */,
 				183AE97F2A94B13200AC156F /* Family-CDHelpers.swift in Sources */,
-				18736EF82A92A98A00D1EF5E /* ProfileView.swift in Sources */,
 				18B449DD2A8A059F00F52B1B /* PostsRepository.swift in Sources */,
 				183AE9682A94B02700AC156F /* ItemRowViewModel.swift in Sources */,
 				18F960972A8C219A0004D1D8 /* AuthViewModel.swift in Sources */,
@@ -717,6 +728,8 @@
 			children = (
 				1814111F2A9733B4004FE3DC /* it */,
 				183C73032A97F4AD00CBEFAA /* fr */,
+				18FB88B22A9F28D200052B96 /* en */,
+				18C03F612AA0BB8C008CF4ED /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -727,6 +740,7 @@
 				188E93C82A4C1F03001691E6 /* it */,
 				188E93CA2A4C1F07001691E6 /* en */,
 				183C73012A97F49D00CBEFAA /* fr */,
+				18C03F652AA0BB8C008CF4ED /* de */,
 			);
 			name = spirits.json;
 			sourceTree = "<group>";
@@ -737,6 +751,7 @@
 				188E93CE2A4C29FA001691E6 /* en */,
 				188E93D02A4C29FF001691E6 /* it */,
 				183C72FE2A97F49C00CBEFAA /* fr */,
+				18C03F622AA0BB8C008CF4ED /* de */,
 			);
 			name = books.json;
 			sourceTree = "<group>";
@@ -747,6 +762,7 @@
 				18F49E8D2A286D2A00862CE3 /* en */,
 				18F49E902A286D2A00862CE3 /* it */,
 				183C73002A97F49D00CBEFAA /* fr */,
+				18C03F642AA0BB8C008CF4ED /* de */,
 			);
 			name = lessons.json;
 			sourceTree = "<group>";
@@ -757,6 +773,7 @@
 				18F49E8F2A286D2A00862CE3 /* en */,
 				18F49E912A286D2A00862CE3 /* it */,
 				183C72FF2A97F49C00CBEFAA /* fr */,
+				18C03F632AA0BB8C008CF4ED /* de */,
 			);
 			name = cocktails.json;
 			sourceTree = "<group>";

@@ -21,65 +21,101 @@ struct SplashScreenView: View {
             if showHomeView {
                 AuthView()
             } else {
-                ZStack {
-                    Color("Drinko Blue")
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    VStack(spacing: 0) {
-                        Image("logo")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 200,
-                                   height: 200,
-                                   alignment: .center)
-                            .offset(y: imgOffset)
-                            .scaleEffect(scale)
-                            .opacity(opacity)
-                        
-                        Text("Drinko")
-                            .font(.system(size: 66,
-                                          weight: .bold,
-                                          design: .rounded))
-                            .rotation3DEffect(.degrees(angle),
-                                              axis: (x: 0.5, y: 0.0, z: 0.0))
-                            .foregroundColor(.white)
-                            .offset(y: txtOffset)
-                            .scaleEffect(scale)
-                            .opacity(opacity)
+                staticLogo
+//                animatedLogo
+            }
+        }
+    }
 
-                        Text("It's good to be back!")
-                            .font(.system(size: 24,
-                                          weight: .bold,
-                                          design: .rounded))
-                            .rotation3DEffect(.degrees(angle),
-                                              axis: (x: 0.5, y: 0.0, z: 0.0))
-                            .foregroundColor(.white)
-                            .offset(y: txtOffset)
-                            .scaleEffect(scale)
-                            .opacity(opacity)
+    var staticLogo: some View {
+        ZStack {
+            Color("Drinko Blue")
+                .edgesIgnoringSafeArea(.all)
 
+            VStack {
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200,
+                           height: 200,
+                           alignment: .center)
 
-                    }
+                Text("Drinko")
+                    .font(.system(size: 66,
+                                  weight: .bold,
+                                  design: .rounded))
+                    .foregroundColor(.white)
+
+                Text("It's good to be back!")
+                    .font(.system(size: 24,
+                                  weight: .bold,
+                                  design: .rounded))
+                    .foregroundColor(.white)
+            }
+            .onAppear {
+                withAnimation(.default.delay(5)) {
+                    showHomeView = true
                 }
-                .onAppear {
-                    withAnimation(.interactiveSpring(response: 0.5,
-                                                     dampingFraction: 0.6,
-                                                     blendDuration: 0.7)) {
-                        imgOffset = 0
-                    }
-                    withAnimation(Animation.interactiveSpring(response: 0.5,
-                                                              dampingFraction: 0.6,
-                                                              blendDuration: 0.7)
-                        .delay(0.4)) {
-                            angle = 0
-                        }
-                    withAnimation(Animation.linear.delay(1.8)) {
-                        opacity = 0
-                    }
-                    withAnimation(Animation.linear.delay(2.2)) {
-                        showHomeView = true
-                    }
+            }
+        }
+    }
+
+    var animatedLogo: some View {
+        ZStack {
+            Color("Drinko Blue")
+                .edgesIgnoringSafeArea(.all)
+
+            VStack {
+                Image("logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200,
+                           height: 200,
+                           alignment: .center)
+                    .offset(y: imgOffset)
+                    .scaleEffect(scale)
+                    .opacity(opacity)
+
+                Text("Drinko")
+                    .font(.system(size: 66,
+                                  weight: .bold,
+                                  design: .rounded))
+                    .rotation3DEffect(.degrees(angle),
+                                      axis: (x: 0.5, y: 0.0, z: 0.0))
+                    .foregroundColor(.white)
+                    .offset(y: txtOffset)
+                    .scaleEffect(scale)
+                    .opacity(opacity)
+
+                Text("It's good to be back!")
+                    .font(.system(size: 24,
+                                  weight: .bold,
+                                  design: .rounded))
+                    .rotation3DEffect(.degrees(angle),
+                                      axis: (x: 0.5, y: 0.0, z: 0.0))
+                    .foregroundColor(.white)
+                    .offset(y: txtOffset)
+                    .scaleEffect(scale)
+                    .opacity(opacity)
+            }
+        }
+        .onAppear {
+            withAnimation(.interactiveSpring(response: 0.5,
+                                             dampingFraction: 0.6,
+                                             blendDuration: 0.7)) {
+                imgOffset = 0
+            }
+            withAnimation(Animation.interactiveSpring(response: 0.5,
+                                                      dampingFraction: 0.6,
+                                                      blendDuration: 0.7)
+                .delay(0.4)) {
+                    angle = 0
                 }
+            withAnimation(Animation.linear.delay(1.8)) {
+                opacity = 0
+            }
+            withAnimation(Animation.linear.delay(2.2)) {
+                showHomeView = true
             }
         }
     }

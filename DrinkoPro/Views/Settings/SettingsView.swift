@@ -117,9 +117,14 @@ struct SettingsView: View {
                         }
                     }
                 }) {
-                    SettingsRowView(icon: "bird.fill",
-                                    color: .blue,
-                                    itemName: "Twitter")
+                    HStack {
+                        Image("x")
+                            .resizable()
+                            .frame(width: 16, height: 16)
+                            .padding(.horizontal, 8)
+
+                        Text("X - Twitter")
+                    }
                 }
                 .buttonStyle(.plain)
             }

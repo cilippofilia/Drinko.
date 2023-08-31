@@ -39,7 +39,7 @@ class PurchaseManager: ObservableObject {
 
         switch result {
         case let .success(.verified(transaction)):
-            // Successful purhcase
+            // Successful purchase
             await transaction.finish()
             await self.updatePurchasedProducts()
         case let .success(.unverified(_, error)):

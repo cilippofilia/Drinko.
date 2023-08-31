@@ -89,15 +89,14 @@ struct EditItemView: View {
                     dismiss()
                 }) {
                     Label("Save Changes", systemImage: "checkmark.circle")
-
                 }
-                
-                Button(action: {
+
+                Button(role: .destructive, action: {
                     showingDeleteConfirm = true
                 }) {
                     Label("Delete Product", systemImage: "trash")
+                        .foregroundColor(.red)
                 }
-                .accentColor(.red)
             }
         }
         .navigationBarTitle(Text(item.itemName), displayMode: .inline)
@@ -106,7 +105,7 @@ struct EditItemView: View {
             Alert(
                 title: Text("Delete product?"),
                 message: Text("Are you sure you want to delete this product? You will delete all the informations added to it."),
-                primaryButton: .default(Text("Delete"), action: delete),
+                primaryButton: .destructive(Text("Delete"), action: delete),
                 secondaryButton: .cancel()
             )
         }
@@ -115,7 +114,7 @@ struct EditItemView: View {
     
     func update() {
         item.family?.objectWillChange.send()
-        
+
         item.name = name
         item.detail = detail
         item.abv = abv

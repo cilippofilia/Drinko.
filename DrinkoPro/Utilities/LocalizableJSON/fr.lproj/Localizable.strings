@@ -39,6 +39,7 @@
 "Search Cocktails" = "Chercher des cocktails";
 
 /* Cocktails Tab - Sort */
+"Sort Cocktails" = "Trier les Cocktails";
 "A -> Z" = "A -> Z";
 "Z -> A" = "Z -> A";
 "By Glass" = "Par verre";
@@ -105,6 +106,7 @@
 
 "Language" = "Langue";
 "Liked posts" = "Posts likés";
+"Tip Jar" = "Pot à pointe";
 
 "Contacts" = "Contacts";
 "Contact the developer" = "Contacter le développeur";
@@ -114,7 +116,7 @@
 
 "Preferences" = "Préférences";
 "Rate the app" = "Évaluer l'app";
-"Twitter" = "Twitter";
+"X (Twitter)" = "X (Twitter)";
 "Read me" = "Lisez-moi";
 "Share the app" = "Partager l'app";
 "Version" = "Version";
@@ -143,6 +145,7 @@
 "Select an option" = "Choisir une option";
 "Profile" = "Profil";
 "Name" = "Nom";
+"Sign Out" = "Déconnecter";
 
 /* Drinko Splashscreen */
 "Drinko" = "Drinko";

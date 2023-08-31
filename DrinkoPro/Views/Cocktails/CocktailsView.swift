@@ -14,6 +14,7 @@ struct CocktailsView: View {
 
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var searchText = ""
+    @State private var showingSortOrder = false
     @State private var sortOption: SortOption = .fromAtoZ
 
     enum SortOption {
@@ -21,19 +22,6 @@ struct CocktailsView: View {
         case fromZtoA
         case byGlass
         case byIce
-    }
-
-    var sortSymbol: String {
-        switch sortOption {
-        case .fromAtoZ:
-            return "arrow.up.arrow.down"
-        case .fromZtoA:
-            return "arrow.up.arrow.down"
-        case .byGlass:
-            return "arrow.up.arrow.down"
-        case .byIce:
-            return "arrow.up.arrow.down"
-        }
     }
 
     var sortedCocktails: [Cocktail] {
@@ -55,7 +43,7 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        List(filteredCocktails, id:\.id) { cocktail in
+        List(filteredCocktails) { cocktail in
             CocktailRowView(favorites: favorites, cocktail: cocktail)
                 .contextMenu {
                     FavoriteButtonView(favorites: favorites, cocktail: cocktail)
@@ -65,28 +53,32 @@ struct CocktailsView: View {
         .searchable(text: $searchText, prompt: "Search Cocktails")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
-                Menu {
-                    Button("A -> Z") {
-                        sortOption = .fromAtoZ
-                    }
-                    
-                    Button("Z -> A") {
-                        sortOption = .fromZtoA
-                    }
-                    
-                    Button("By Glass") {
-                        sortOption = .byGlass
-                    }
-                    
-                    Button("By Ice") {
-                        sortOption = .byIce
-                    }
-                    
+                Button {
+                    showingSortOrder.toggle()
                 } label: {
                     Label("Sort", systemImage: "arrow.up.arrow.down")
                 }
             }
         }
+        .actionSheet(isPresented: $showingSortOrder, content: {
+            ActionSheet(title: Text("Sort cocktails"),
+                        message: nil,
+                        buttons: [
+                            .default(Text("A -> Z")) {
+                                sortOption = .fromAtoZ
+                            },
+                            .default(Text("Z -> A")) {
+                                sortOption = .fromZtoA
+                            },
+                            .default(Text("By Glass")) {
+                                sortOption = .byGlass
+                            },
+                            .default(Text("By Ice")) {
+                                sortOption = .byIce
+                            },
+                            .cancel()
+                        ])
+        })
         .environmentObject(favorites)
     }
 }

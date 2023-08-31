@@ -47,6 +47,12 @@ struct CreditsCardView: View {
                         .font(.subheadline)
                         .foregroundColor(.gray)
                 }
+
+                Spacer()
+
+                Image(systemName: "arrow.up.forward.app")
+                    .foregroundColor(.blue)
+                    .imageScale(.large)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()

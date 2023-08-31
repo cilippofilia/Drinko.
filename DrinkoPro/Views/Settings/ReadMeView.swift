@@ -46,6 +46,11 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                                     name: "Filippo Cilia",
                                     brief: "Instagram: @cilippofilia",
                                     url: "https://instagram.com/cilippofilia")
+
+                    CreditsCardView(image: "heart.fill",
+                                    name: "Arthur",
+                                    brief: "X (Twitter): @AriOS_app",
+                                    url: "https://x.com/arios_app?s=21&t=GH4SWEVHVFi_peVsOSu5vA")
                 }
             }
             .frame(width: screenWidthPlusMargins)

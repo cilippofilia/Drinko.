@@ -726,7 +726,7 @@
                 "unit":"oz."
             },
             {
-                "name":"maraschino liqueur",
+                "name":"maraschino",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -933,7 +933,7 @@
                 "unit":"oz."
             },
             {
-                "name":"dry vermouth",
+                "name":"dry vemrouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -965,7 +965,7 @@
                 "unit":"oz."
             },
             {
-                "name":"maraschino liqueur",
+                "name":"maraschino",
                 "quantity":0.25,
                 "unit":"oz."
             }
@@ -1120,7 +1120,7 @@
                 "unit":"oz."
             },
             {
-                "name":"maraschino liqueur",
+                "name":"maraschino",
                 "quantity":0.15,
                 "unit":"oz."
             },

@@ -11,7 +11,6 @@ struct PostsList: View {
     static let postsTag: String? = "Posts"
     
     @StateObject var viewModel: PostsViewModel
-
     @State private var searchText = ""
     @State private var showNewPostForm = false
 
@@ -61,14 +60,6 @@ struct PostsList: View {
                     showNewPostForm = true
                 } label: {
                     Label("New Post", systemImage: "plus")
-                }
-            }
-
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Menu {
-                    #warning("👨‍💻 sort posts by author, a to z, z to a, favorites")
-                } label: {
-                    Label("Sort", systemImage: "arrow.up.arrow.down")
                 }
             }
         }
