@@ -129,11 +129,6 @@
 		183AE9842A94B19E00AC156F /* PurchaseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseButton.swift; sourceTree = "<group>"; };
 		183AE9852A94B19E00AC156F /* UnlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		183AE98B2A94B26B00AC156F /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
-		183C72FE2A97F49C00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/books.json; sourceTree = "<group>"; };
-		183C72FF2A97F49C00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/cocktails.json; sourceTree = "<group>"; };
-		183C73002A97F49D00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/lessons.json; sourceTree = "<group>"; };
-		183C73012A97F49D00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/spirits.json; sourceTree = "<group>"; };
-		183C73032A97F4AD00CBEFAA /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		18413B112A8D3EC1001BB0CB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		18413B132A8D40C7001BB0CB /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		1856149F2A92A4AA002051ED /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -160,11 +155,6 @@
 		18B449E02A8B543F00F52B1B /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		18B9519F2A99D052006119DC /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		18B951A22A99DE81006119DC /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
-		18C03F612AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		18C03F622AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/books.json; sourceTree = "<group>"; };
-		18C03F632AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/cocktails.json; sourceTree = "<group>"; };
-		18C03F642AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/lessons.json; sourceTree = "<group>"; };
-		18C03F652AA0BB8C008CF4ED /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/spirits.json; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -604,8 +594,6 @@
 			knownRegions = (
 				en,
 				it,
-				fr,
-				de,
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
@@ -727,9 +715,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1814111F2A9733B4004FE3DC /* it */,
-				183C73032A97F4AD00CBEFAA /* fr */,
 				18FB88B22A9F28D200052B96 /* en */,
-				18C03F612AA0BB8C008CF4ED /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -739,8 +725,6 @@
 			children = (
 				188E93C82A4C1F03001691E6 /* it */,
 				188E93CA2A4C1F07001691E6 /* en */,
-				183C73012A97F49D00CBEFAA /* fr */,
-				18C03F652AA0BB8C008CF4ED /* de */,
 			);
 			name = spirits.json;
 			sourceTree = "<group>";
@@ -750,8 +734,6 @@
 			children = (
 				188E93CE2A4C29FA001691E6 /* en */,
 				188E93D02A4C29FF001691E6 /* it */,
-				183C72FE2A97F49C00CBEFAA /* fr */,
-				18C03F622AA0BB8C008CF4ED /* de */,
 			);
 			name = books.json;
 			sourceTree = "<group>";
@@ -761,8 +743,6 @@
 			children = (
 				18F49E8D2A286D2A00862CE3 /* en */,
 				18F49E902A286D2A00862CE3 /* it */,
-				183C73002A97F49D00CBEFAA /* fr */,
-				18C03F642AA0BB8C008CF4ED /* de */,
 			);
 			name = lessons.json;
 			sourceTree = "<group>";
@@ -772,8 +752,6 @@
 			children = (
 				18F49E8F2A286D2A00862CE3 /* en */,
 				18F49E912A286D2A00862CE3 /* it */,
-				183C72FF2A97F49C00CBEFAA /* fr */,
-				18C03F632AA0BB8C008CF4ED /* de */,
 			);
 			name = cocktails.json;
 			sourceTree = "<group>";
