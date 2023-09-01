@@ -37,7 +37,7 @@ struct CabinetView: View {
                                     }
                                 }) {
                                     Image(systemName: "cart")
-                                    Text(favoriteProducts.contains(item) ? "Remove from cart" : "Add to cart")
+                                    Text(favoriteProducts.contains(item) ? "Remove from Cart" : "Add to Cart")
                                 }
                             }
                     }

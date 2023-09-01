@@ -25,11 +25,12 @@
 "Product" = "Prodotto";
 "Notes" = "Note";
 "Optimized" = "Ottimizzato";
-"Made in" = "Fatto in";
+"Made in" = "Prodotto in";
 "Info" = "Informazioni";
 "Have you tried it yet?" = "Hai già provato questo prodotto?";
 "Rating" = "Valutazione";
-
+"Add to Cart" = "Aggiungi al Carrello";
+"Remove from Cart" = "Rimuovi dal Carrello";
 
 
 /* Cocktails Tab */

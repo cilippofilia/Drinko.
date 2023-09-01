@@ -56,7 +56,7 @@ struct PostsRepositoryStub: PostsRepositoryProtocol {
 struct PostsRepository: PostsRepositoryProtocol {
     let user: User
     #warning("👨‍💻 Change these collections before release and empty the old collections from Firebase")
-    let postsReference = Firestore.firestore().collection("alpha")
+    let postsReference = Firestore.firestore().collection("screenshots")
     let favoritesReference = Firestore.firestore().collection("favorites")
 
     func fetchAllPosts() async throws -> [Post] {
@@ -113,6 +113,7 @@ struct PostsRepository: PostsRepositoryProtocol {
     }
 }
 
+#warning("👨‍💻 switch this to descending true before shipping it")
 private extension PostsRepository {
     func fetchPosts(from query: Query) async throws -> [Post] {
         let (posts, favorites) = try await (
