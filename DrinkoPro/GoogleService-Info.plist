@@ -6,8 +6,6 @@
 	<string>462912394206-fnbljd7ur5smm2l8mmqrfmhc0e53ao1s.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.462912394206-fnbljd7ur5smm2l8mmqrfmhc0e53ao1s</string>
-	<key>API_KEY</key>
-	<string>AIzaSyBEIsjk_pBZNta5yTvX6kglPJZak-JZqZQ</string>
 	<key>GCM_SENDER_ID</key>
 	<string>462912394206</string>
 	<key>PLIST_VERSION</key>
@@ -19,16 +17,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>drinko-6987b.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:462912394206:ios:890533dd4355753b0ec34f</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBEIsjk_pBZNta5yTvX6kglPJZak-JZqZQ</string>
 </dict>
 </plist>

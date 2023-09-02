@@ -1,133 +1,132 @@
 /* Cabinet Tab */
-"Cabinet" = "Cabinet";
+"Cabinet" = "Meuble";
 
 "% ABV" = "% ABV";
 "ABV" = "ABV";
-"Add Family" = "Add Family";
-"Add New Product" = "Add New Product";
-"Are you sure you want to delete this category? You will also delete all the products it contains." = "Are you sure you want to delete this category? You will also delete all the products it contains.";
-"Are you sure you want to delete this post?" = "Are you sure you want to delete this post?";
-"Are you sure you want to delete this product? You will delete all the informations added to it." = "Are you sure you want to delete this product? You will delete all the informations added to it.";
-"Start adding categories and products\nby pressing the + above." = "Start adding categories and products\nby pressing the + above.";
-"By deleting the category you will be deleting every product inside it." = "By deleting the category you will be deleting every product inside it.";
-"By deleting the product you will be deleting every informations added to it." = "By deleting the product you will be deleting every informations added to it.";
-"Category name" = "Category name";
-"Category detail" = "Category detail";
-"Colors" = "Colors";
-"Sort products" = "Sort products";
-"Delete Category" = "Delete Category";
-"Delete category?" = "Delete category?";
-"Edit Category" = "Edit Category";
-"Delete Product" = "Delete Product";
-"Delete product?" = "Delete product?";
-"Product name" = "Product name";
-"Save Changes" = "Save Changes";
-"Product" = "Product";
+"Add Family" = "Ajouter une famille";
+"Add New Product" = "Ajouter un nouveau produit";
+"Are you sure you want to delete this category? You will also delete all the products it contains." = "Es-tu sûr de vouloir supprimer cette catégorie ? Tu supprimeras également tous les produits qu'elle contient.";
+"Are you sure you want to delete this post?" = "Es-tu sûr de vouloir supprimer ce post ?";
+"Are you sure you want to delete this product? You will delete all the informations added to it." = "Es-tu sûr de vouloir supprimer ce produit ? Tu supprimeras également toutes les informations liées.";
+"Start adding categories and products\nby pressing the + above." = "Commences par ajouter des catégories et des produits\nen appuyant sur le + au-dessus.";
+"By deleting the category you will be deleting every product inside it." = "En supprimant cette catégorie, tu supprimeras tous les produits compris dedans.";
+"By deleting the product you will be deleting every informations added to it." = "En supprimant ce produit, tu supprimeras toutes les informations liées.";
+"Category name" = "Nom de la catégorie";
+"Category detail" = "Détail de la catégorie";
+"Colors" = "Couleurs";
+"Sort products" = "Trier les produits";
+"Delete Category" = "Supprimer la catégorie";
+"Delete category?" = "Supprimer la catégorie ?";
+"Edit Category" = "Modifier la catégorie";
+"Delete Product" = "Supprimer le produit";
+"Delete product?" = "Supprimer le produit ?";
+"Product name" = "Nom du produit";
+"Save Changes" = "Sauvegarder les changements";
+"Product" = "Produit";
 "Notes" = "Notes";
-"Optimized" = "Optimized";
-"Made in" = "Made in";
-"Info" = "Info";
-"Have you tried it yet?" = "Have you tried it yet?";
-"Rating" = "Rating";
-"Add to Cart" = "Add to Cart";
-"Remove from Cart" = "Remove from Cart";
+"Optimized" = "Optimisé";
+"Made in" = "Fabriqué en";
+"Info" = "Informations";
+"Have you tried it yet?" = "As-tu déjà essayer ?";
+"Rating" = "Évaluer";
+"Add to Cart" = "Ajouter au panier";
+"Remove from Cart" = "Retirer du panier";
 
 
 
 /* Cocktails Tab */
 "Cocktails" = "Cocktails";
-"Sort" = "Sort";
-"Couldn't load image" = "Couldn't load image";
-"Search Cocktails" = "Search Cocktails";
+"Sort" = "Trier";
+"Couldn't load image" = "Impossible de charger l'image";
+"Search Cocktails" = "Chercher des cocktails";
 
 /* Cocktails Tab - Sort */
-"Sort Cocktails" = "Sort Cocktails";
+"Sort Cocktails" = "Trier les Cocktails";
 "A -> Z" = "A -> Z";
 "Z -> A" = "Z -> A";
-"By Glass" = "By Glass";
-"By Ice" = "By Ice";
+"By Glass" = "Par verre";
+"By Ice" = "Par glace";
 
-"Select unit" = "Select unit";
+"Select unit" = "Sélectionner l'unité";
 
 
 
 /* Learn Tab */
-"Learn" = "Learn";
+"Learn" = "Apprendre";
 
-"Spirits" = "Spirits";
-"Books" = "Books";
+"Spirits" = "Spiritueux";
+"Books" = "Livres";
 
 
 
 /* AuthView */
-"Create Account" = "Create Account";
+"Create Account" = "Créer un compte";
 "Email" = "Email";
-"Password" = "Password";
+"Password" = "Mot de passe";
 
-"Sign In" = "Sign In";
-"Sign Out" = "Sign Out";
+"Sign In" = "S'inscrire";
+"Sign Out" = "Se déconnecter";
 
 
 
 /* Social Tab - New Post */
 "Social" = "Social";
 
-"New Post" = "New Post";
-"Title" = "Title";
-"Content" = "Content";
+"New Post" = "Nouveau post";
+"Title" = "Titre";
+"Content" = "Contenu";
 "Image" = "Image";
 
-"Take Photo" = "Take Photo";
-"Choose Image" = "Choose Image";
-"Choose from Library" = "Choose from Library";
+"Take Photo" = "Prendre une photo";
+"Choose Image" = "Choisir une image";
+"Choose from Library" = "Choisir depuis la gallerie";
 
-"Create Post" = "Create Post";
-"show less" = "show less";
-"show more" = "show more";
-"Remove Photo" = "Remove Photo";
-"Remove like from post" = "Remove like from post.";
-"Like the post" = "Like the post";
-"Like" = "Like";
+"Create Post" = "Créer un post";
+"show less" = "Moins";
+"show more" = "Plus";
+"Remove Photo" = "Enlever la photo";
+"Remove like from post" = "Enlever le like du post";
+"Like the post" = "'Liker' le post";
+"Like" = "'Liker'";
 
 
 
 /* StoreKit - Paywall */
-"You can add up to 3 product categories and 9 items in total, or pay %@ to add as many as you want." = "You can add up to 3 product categories and 9 items in total, or pay %@ to add as many as you want.";
-"Buy: %@" = "Buy: %@";
-"Thank you! Your request is pending approval, but you can carry on using the app in the meantime." = "Thank you! Your request is pending approval, but you can carry on using the app in the meantime.";
-"Thank you!" = "Thank you!";
-"Sorry, there was an error loading the store. Please try again later." = "Sorry, there was an error loading the store. Please try again later.";
-"Get Unlimited Products" = "Get Unlimited Products";
-"Restore Purchases" = "Restore Purchases";
-"If you already have bought the Cabinet+ version on another device, press 'Restore Purchases'." = "If you already have bought the Cabinet+ version on another device, press 'Restore Purchases'";
-"Loading..." = "Loading...";
+"You can add up to 3 product categories and 9 items in total, or pay %@ to add as many as you want." = "Tu peux ajouter jusqu'à 3 catégories de produits et 9 items au total, ou payer %@ pour en ajouter autant que tu veux.";
+"Buy: %@" = "Acheter: %@";
+"Thank you! Your request is pending approval, but you can carry on using the app in the meantime." = "Merci ! Ta demande est en vérification, mais tu peux continuer à utiliser l'application en attendant.";
+"Sorry, there was an error loading the store. Please try again later." = "Désolé, une erreur est survenue pendant le chargement du store. Merci de réessayer plus tard.";
+"Get Unlimited Products" = "Obtenir des produits illimités";
+"Restore Purchases" = "Restaurer les achats";
+"If you already have bought the Cabinet+ version on another device, press 'Restore Purchases'." = "Si tu as déjà acheté la version Cabinet+ sur un autre device, clique sur 'Restaurer les achats'.";
+"Loading..." = "Chargement...";
 
 
 
 /* Settings Tab */
-"Settings" = "Settings";
+"Settings" = "Réglages";
 
-"Language" = "Language";
-"Liked posts" = "Liked posts";
-"Tip Jar" = "Tip Jar";
+"Language" = "Langue";
+"Liked posts" = "Posts likés";
+"Tip Jar" = "Pot à pointe";
 
 "Contacts" = "Contacts";
-"Contact the developer" = "Contact the developer";
-"Request a Feature" = "Request a Feature";
-"Report a bug" = "Report a bug";
-"Other Enquiry" = "Other Enquiry";
+"Contact the developer" = "Contacter le développeur";
+"Request a Feature" = "Demander une fonctionnalité";
+"Report a bug" = "Reporter un bug";
+"Other Enquiry" = "Autre demande";
 
-"Preferences" = "Preferences";
-"Rate the app" = "Rate the app";
+"Preferences" = "Préférences";
+"Rate the app" = "Évaluer l'app";
 "X (Twitter)" = "X (Twitter)";
-"Read me" = "Read me";
-"Share the app" = "Share the app";
+"Read me" = "Lisez-moi";
+"Share the app" = "Partager l'app";
 "Version" = "Version";
-"This app was made with ❤️ by Filippo Cilia 🇮🇹" = "This app was made with ❤️ by Filippo Cilia 🇮🇹";
-"Special thanks to:" = "Special thanks to:";
+"This app was made with ❤️ by Filippo Cilia 🇮🇹" = "Cette app a été faite avec ❤️ par Filippo Cilia 🇮🇹";
+"Special thanks to:" = "Remerciements particuliers à :";
 
 /* Settings Tab - Read me */
-"Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.\n\nBut, let's face it, taste is subjective, and there's no one-size-fits-all approach to making cocktails. However, this app will be your trusty companion to help you discover new recipes, perfect your favorites, and even create your signature cocktail.\n\nFrom refreshing tropical blends to sophisticated sips, we've got you covered. You'll find everything from classic cocktails to modern twists, so get ready to impress your guests with your newfound mixology skills.\n\nBut, at the end of the day, the most important thing is that you enjoy the cocktail sitting in front of you. So, use this app as a guideline, experiment with different ingredients and techniques, and most importantly, have fun! Who knows, you might even uncover some professional bartending tips and tricks along the way.\n\nSo, are you ready to shake things up and craft some delicious drinks? Let's raise a glass and cheers to endless possibilities!" = "Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.\n\nBut, let's face it, taste is subjective, and there's no one-size-fits-all approach to making cocktails. However, this app will be your trusty companion to help you discover new recipes, perfect your favorites, and even create your signature cocktail.\n\nFrom refreshing tropical blends to sophisticated sips, we've got you covered. You'll find everything from classic cocktails to modern twists, so get ready to impress your guests with your newfound mixology skills.\n\nBut, at the end of the day, the most important thing is that you enjoy the cocktail sitting in front of you. So, use this app as a guideline, experiment with different ingredients and techniques, and most importantly, have fun! Who knows, you might even uncover some professional bartending tips and tricks along the way.\n\nSo, are you ready to shake things up and craft some delicious drinks? Let's raise a glass and cheers to endless possibilities!";
+"Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.\n\nBut, let's face it, taste is subjective, and there's no one-size-fits-all approach to making cocktails. However, this app will be your trusty companion to help you discover new recipes, perfect your favorites, and even create your signature cocktail.\n\nFrom refreshing tropical blends to sophisticated sips, we've got you covered. You'll find everything from classic cocktails to modern twists, so get ready to impress your guests with your newfound mixology skills.\n\nBut, at the end of the day, the most important thing is that you enjoy the cocktail sitting in front of you. So, use this app as a guideline, experiment with different ingredients and techniques, and most importantly, have fun! Who knows, you might even uncover some professional bartending tips and tricks along the way.\n\nSo, are you ready to shake things up and craft some delicious drinks? Let's raise a glass and cheers to endless possibilities!" = "Bienvenue dans le monde passionnant des cocktails ! Cette application est ton guide ultime pour créer la boisson parfaite, que tu sois un barman chevronné ou un amateur débutant. C'est un mélange parfait de mon expérience personnelle derrière le bar, des idées de mes amis et collègues, et des informations recueillies auprès de sources fiables sur Internet et dans divers livres.\nMais, avouons-le, le goût est subjectif, et il n'y a pas d'approche unique pour la préparation des cocktails. Cependant, cette application sera ton fidèle compagnon pour t'aider à découvrir de nouvelles recettes, à perfectionner vos préférées et même à créer ton cocktail signature.\n- Des mélanges tropicaux rafraîchissants aux boissons sophistiquées, nous avons tout ce qu'il te faut. Tu trouveras de tout, des cocktails classiques aux versions modernes, alors prépares-toi à impressionner vos invités avec vos nouvelles compétences en mixologie.\nMais, à la fin de la journée, la chose la plus importante est que tu apprécies le cocktail qui se trouve devant toi. Utilisez donc cette application comme un guide, expérimentez avec différents ingrédients et techniques, et surtout, amuses-toi ! Qui sait, tu découvriras peut-être des astuces de barman professionnel en cours de route. Alors, es-tu prêt à faire bouger les choses et à concocter de délicieuses boissons ? Levons nos verres et trinquons aux possibilités infinies qui s'offrent à nous !";
 
 
 
@@ -140,16 +139,16 @@
 "© %@" = "© %@";
 
 "N.A." = "N.A.";
-"Try Again" = "Try Again";
-"Creation Date" = "Creation Date";
-"Dismiss" = "Dismiss";
-"Done" = "Done";
-"Delete" = "Delete";
-"Select an option" = "Select an option";
-"Profile" = "Profile";
-"Name" = "Name";
-"Sign Out" = "Sign Out";
+"Try Again" = "Essayez encore";
+"Creation Date" = "Date de création";
+"Dismiss" = "Fermer";
+"Done" = "Terminé";
+"Delete" = "Supprimer";
+"Select an option" = "Choisir une option";
+"Profile" = "Profil";
+"Name" = "Nom";
+"Sign Out" = "Déconnecter";
 
 /* Drinko Splashscreen */
 "Drinko" = "Drinko";
-"It's good to be back!" = "It's good to be back";
+"It's good to be back!" = "C'est bon d'être de retour !";
