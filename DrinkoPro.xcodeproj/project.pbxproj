@@ -135,6 +135,16 @@
 		185614A12A92A6F9002051ED /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18736EF92A92AA6A00D1EF5E /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		188694542AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		188694552AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/books.json; sourceTree = "<group>"; };
+		188694562AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/cocktails.json; sourceTree = "<group>"; };
+		188694572AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/lessons.json; sourceTree = "<group>"; };
+		188694582AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/spirits.json; sourceTree = "<group>"; };
+		188694592AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1886945A2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/books.json; sourceTree = "<group>"; };
+		1886945B2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/cocktails.json; sourceTree = "<group>"; };
+		1886945C2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/lessons.json; sourceTree = "<group>"; };
+		1886945D2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/spirits.json; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		188E93BD2A4C1E04001691E6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
@@ -594,6 +604,8 @@
 			knownRegions = (
 				en,
 				it,
+				de,
+				fr,
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
@@ -716,6 +728,8 @@
 			children = (
 				1814111F2A9733B4004FE3DC /* it */,
 				18FB88B22A9F28D200052B96 /* en */,
+				188694542AA352B70071D402 /* de */,
+				188694592AA352BC0071D402 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -725,6 +739,8 @@
 			children = (
 				188E93C82A4C1F03001691E6 /* it */,
 				188E93CA2A4C1F07001691E6 /* en */,
+				188694582AA352B70071D402 /* de */,
+				1886945D2AA352BC0071D402 /* fr */,
 			);
 			name = spirits.json;
 			sourceTree = "<group>";
@@ -734,6 +750,8 @@
 			children = (
 				188E93CE2A4C29FA001691E6 /* en */,
 				188E93D02A4C29FF001691E6 /* it */,
+				188694552AA352B70071D402 /* de */,
+				1886945A2AA352BC0071D402 /* fr */,
 			);
 			name = books.json;
 			sourceTree = "<group>";
@@ -743,6 +761,8 @@
 			children = (
 				18F49E8D2A286D2A00862CE3 /* en */,
 				18F49E902A286D2A00862CE3 /* it */,
+				188694572AA352B70071D402 /* de */,
+				1886945C2AA352BC0071D402 /* fr */,
 			);
 			name = lessons.json;
 			sourceTree = "<group>";
@@ -752,6 +772,8 @@
 			children = (
 				18F49E8F2A286D2A00862CE3 /* en */,
 				18F49E912A286D2A00862CE3 /* it */,
+				188694562AA352B70071D402 /* de */,
+				1886945B2AA352BC0071D402 /* fr */,
 			);
 			name = cocktails.json;
 			sourceTree = "<group>";
