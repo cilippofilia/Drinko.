@@ -3,7 +3,7 @@
         "id": "liquid-intelligence",
         "title": "Liquid Intelligence",
         "description": "The art & science of the perfect cocktail",
-        "summary": "\"Liquid Intelligence\" de Dave Arnold est une exploration captivante de la science des cocktails et de la mixologie. Arnold dévoile les secrets derrière des boissons exceptionnelles, incorporant les principes de la physique et de la chimie dans ses recettes et techniques innovantes. Ce livre est incontournable pour les mixologistes en herbe, offrant une perspective unique sur l'art de créer des libations extraordinaires.",
+        "summary": "\"Liquid Intelligence\" de Dave Arnold est une exploration captivante de la science des cocktails et de la mixologie. Arnold dévoile les secrets derrière des boissons exceptionnelles, incorporant les principes de la physique et de la chimie dans ses recettes et techniques innovantes. Ce livre est incontournable pour les mixologistes en herbe, offrant une perspective unique sur l'art de créer des boissons extraordinaires.",
         "author": "Dave Arnold"
     },
     
@@ -27,7 +27,7 @@
         "id": "smugglers-cove",
         "title": "Smuggler's Cove",
         "description": "Exotic cocktails, Rum, and the cult of tiki",
-        "summary": "\"Smuggler's Cove\" par Martin Cate avec Rebecca Cate est un livre captivant qui explore l'histoire et le charme de la culture tiki. Les auteurs partagent des recettes de cocktails, révèlent des secrets cachés et emmènent les lecteurs dans un voyage au sein du monde envoûtant des bars tiki, offrant une évasion rafraîchissante vers un royaume de délices tropicaux.",
+        "summary": "\"Smuggler's Cove\" par Martin Cate et Rebecca Cate est un livre captivant qui explore l'histoire et le charme de la culture tiki. Les auteurs partagent des recettes de cocktails, révèlent des secrets cachés et emmènent les lecteurs dans un voyage au sein du monde envoûtant des bars tiki, offrant une évasion rafraîchissante vers un royaume de délices tropicaux.",
         "author": "Martin Cate avec Rebecca Cate"
     },
     
@@ -35,7 +35,7 @@
         "id": "shrubs",
         "title": "Shrubs",
         "description": "An old fashioned drink for modern times",
-        "summary": "\"Shrubs\" de Michael Dietsch est un guide complet qui plonge dans le monde fascinant des arbustes, explorant leur histoire, leurs saveurs et leurs utilisations diverses. Mettant l'accent sur l'art de la mixologie, ce livre dévoile les secrets pour créer des boissons à base d'arbustes alléchantes et rafraîchissantes. Michael Dietsch, un expert dans l'art des cocktails, présente une collection de recettes innovantes et de techniques pour élaborer des concoctions d'arbustes uniques. Les lecteurs sont emmenés dans un voyage pour découvrir le processus complexe de conservation des fruits, des herbes et des épices dans des sirops infusés de vinaigre, résultant en des saveurs acidulées et complexes. Des combinaisons d'arbustes classiques aux mélanges expérimentaux, le livre offre une gamme d'options pour titiller les papilles gustatives.",
+        "summary": "\"Shrubs\" de Michael Dietsch est un guide complet qui plonge dans le monde fascinant des shrubs, explorant leur histoire, leurs saveurs et leurs utilisations diverses. Mettant l'accent sur l'art de la mixologie, ce livre dévoile les secrets pour créer des boissons à base de shrubs alléchantes et rafraîchissantes. Michael Dietsch, un expert dans l'art des cocktails, présente une collection de recettes innovantes et de techniques pour élaborer des concoctions de shrubs uniques. Les lecteurs sont emmenés dans un voyage pour découvrir le processus complexe de conservation des fruits, des herbes et des épices dans des sirops infusés de vinaigre, résultant en des saveurs acidulées et complexes. Des combinaisons de shrubs classiques aux mélanges expérimentaux, le livre offre une gamme d'options pour titiller les papilles gustatives.",
         "author": "Michael Dietsch"
     },
     
@@ -43,7 +43,7 @@
         "id": "tiki-book",
         "title": "Tiki",
         "description": "Modern tropical cocktails",
-        "summary": "\"Tiki\" par Shannon Mustipher est une exploration captivante du monde des cocktails tropicaux, plongeant dans l'histoire, les saveurs et la signification culturelle des boissons Tiki. Des origines de la culture Tiki aux techniques expertes de mixologie, ce livre inspire les lecteurs à embrasser la créativité et la convivialité qui se cachent derrière ces libations vibrantes. C'est un incontournable pour les amateurs de cocktails qui recherchent un voyage immersif dans l'art du Tiki.",
+        "summary": "\"Tiki\" par Shannon Mustipher est une exploration captivante du monde des cocktails tropicaux, plongeant dans l'histoire, les saveurs et la signification culturelle des boissons Tiki. Des origines de la culture Tiki aux techniques expertes de mixologie, ce livre inspire les lecteurs à embrasser la créativité et la convivialité qui se cachent derrière ces boissons vibrantes. C'est un incontournable pour les amateurs de cocktails qui recherchent un voyage immersif dans l'art du Tiki.",
         "author": "Shannon Mustipher"
     }
 ]
