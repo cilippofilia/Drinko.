@@ -64,6 +64,7 @@
 		18B449E12A8B543F00F52B1B /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B449E02A8B543F00F52B1B /* Loadable.swift */; };
 		18B951A02A99D052006119DC /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B9519F2A99D052006119DC /* TipJarView.swift */; };
 		18B951A32A99DE81006119DC /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B951A22A99DE81006119DC /* PurchaseManager.swift */; };
+		18BC67A02AA857D600E70F95 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BC679F2AA857D600E70F95 /* AccountView.swift */; };
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */; };
 		18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
@@ -165,6 +166,7 @@
 		18B449E02A8B543F00F52B1B /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		18B9519F2A99D052006119DC /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		18B951A22A99DE81006119DC /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		18BC679F2AA857D600E70F95 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 			children = (
 				18F49EA52A286D2E00862CE3 /* SettingsView.swift */,
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
+				18BC679F2AA857D600E70F95 /* AccountView.swift */,
 				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
 			);
@@ -689,6 +692,7 @@
 				18736EFA2A92AA6A00D1EF5E /* ProfileImage.swift in Sources */,
 				18B449D02A87655F00F52B1B /* Post.swift in Sources */,
 				18F9608D2A8BBAB60004D1D8 /* Alert+Error.swift in Sources */,
+				18BC67A02AA857D600E70F95 /* AccountView.swift in Sources */,
 				18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */,
 				183AE9732A94B0CF00AC156F /* Binding-OnChange.swift in Sources */,
 				18F9609F2A8C27760004D1D8 /* FormViewModel.swift in Sources */,

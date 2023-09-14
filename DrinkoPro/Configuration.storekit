@@ -5,31 +5,6 @@
   ],
   "products" : [
     {
-      "displayPrice" : "3.99",
-      "familyShareable" : true,
-      "internalID" : "4005B035",
-      "localizations" : [
-        {
-          "description" : "Unlimited Categories and Items",
-          "displayName" : "Cabinet+",
-          "locale" : "en_US"
-        },
-        {
-          "description" : "Categorie e Prodotti illimitati",
-          "displayName" : "Mobiletto+",
-          "locale" : "it"
-        },
-        {
-          "description" : "Catégories et produits illimités",
-          "displayName" : "Meuble+",
-          "locale" : "fr"
-        }
-      ],
-      "productID" : "CabinetPlus",
-      "referenceName" : "Cabinet +",
-      "type" : "NonConsumable"
-    },
-    {
       "displayPrice" : "1.99",
       "familyShareable" : false,
       "internalID" : "AA6030DF",

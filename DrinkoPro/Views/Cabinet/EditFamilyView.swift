@@ -73,7 +73,7 @@ struct EditFamilyView: View {
             Alert(
                 title: Text("Delete category?"),
                 message: Text("Are you sure you want to delete this category? You will also delete all the products it contains."),
-                primaryButton: .default(Text("Delete"), action: delete),
+                primaryButton: .destructive(Text("Delete"), action: delete),
                 secondaryButton: .cancel()
             )
         }

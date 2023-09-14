@@ -28,6 +28,12 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("Preferences")) {
+                NavigationLink(destination: AccountView(viewModel: factory.makeProfileViewModel())) {
+                    SettingsRowView(icon: "person.fill",
+                                    color: .blue,
+                                    itemName: "Account")
+                }
+
                 HStack {
                     SettingsRowView(icon: "character.bubble",
                                     color: .secondary,
@@ -154,13 +160,6 @@ struct SettingsView: View {
                     Text("\(getCurrentAppVersion())")
                         .foregroundColor(.secondary)
                 }
-            }
-
-            Section {
-                Button("Sign Out", action: {
-                    try! Auth.auth().signOut()
-                })
-                .foregroundColor(.red)
             }
         }
         .navigationBarTitle("Settings")

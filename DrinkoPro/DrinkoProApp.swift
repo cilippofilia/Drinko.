@@ -11,18 +11,18 @@ import SwiftUI
 @main
 struct DrinkoProApp: App {
     @StateObject var dataController: DataController
-    @StateObject var unlockManager: UnlockManager
+//    @StateObject var unlockManager: UnlockManager
     @StateObject var purchaseManager: PurchaseManager
 
     init() {
         FirebaseApp.configure()
 
         let dataController = DataController()
-        let unlockManager = UnlockManager(dataController: dataController)
+//        let unlockManager = UnlockManager(dataController: dataController)
         let purchaseManager = PurchaseManager()
 
         _dataController = StateObject(wrappedValue: dataController)
-        _unlockManager = StateObject(wrappedValue: unlockManager)
+//        _unlockManager = StateObject(wrappedValue: unlockManager)
         _purchaseManager = StateObject(wrappedValue: purchaseManager)
     }
     
@@ -31,7 +31,7 @@ struct DrinkoProApp: App {
             SplashScreenView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(dataController)
-                .environmentObject(unlockManager)
+//                .environmentObject(unlockManager)
                 .environmentObject(purchaseManager)
                 .task {
                     await purchaseManager.updatePurchasedProducts()

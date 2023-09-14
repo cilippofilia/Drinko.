@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct AuthView: View {
     @StateObject var viewModel = AuthViewModel()
@@ -56,7 +57,6 @@ private extension AuthView {
             .onSubmit(viewModel.submit)
             .alert("Cannot Create Account", error: $viewModel.error)
             .disabled(viewModel.isWorking)
-
         }
     }
 }
@@ -114,11 +114,5 @@ private extension AuthView {
             .padding()
             
         }
-    }
-}
-
-struct AuthView_Previews: PreviewProvider {
-    static var previews: some View {
-        AuthView()
     }
 }

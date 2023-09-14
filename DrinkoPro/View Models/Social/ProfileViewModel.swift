@@ -10,19 +10,15 @@ import Foundation
 @MainActor
 class ProfileViewModel: ObservableObject, StateManager {
     @Published var name: String
-    @Published var imageURL: URL? {
-        didSet {
-            imageURLDidChange(from: oldValue)
-        }
-    }
     @Published var error: Error?
     @Published var isWorking = false
+    @Published var email: String
 
     private let authService: AuthService
 
     init(user: User, authService: AuthService) {
         self.name = user.name
-        self.imageURL = user.imageURL
+        self.email = user.email
         self.authService = authService
     }
 
@@ -30,10 +26,7 @@ class ProfileViewModel: ObservableObject, StateManager {
         withStateManagingTask(perform: authService.signOut)
     }
 
-    private func imageURLDidChange(from oldValue: URL?) {
-        guard imageURL != oldValue else { return }
-        withStateManagingTask { [self] in
-            try await authService.updateProfileImage(to: imageURL)
-        }
+    func deleteAccount() async throws {
+        try await withStateManagingTask(perform: authService.delete)
     }
 }

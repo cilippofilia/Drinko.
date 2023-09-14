@@ -11,8 +11,8 @@ import SwiftUI
 extension CabinetView {
     class ViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
         let dataController: DataController
-        let maxFamilies = 3
-        let maxItems = 9
+//        let maxFamilies = 3
+//        let maxItems = 9
         var sortOrder = Item.SortOrder.optimized
 
         private let familiesController: NSFetchedResultsController<Family>
@@ -44,28 +44,28 @@ extension CabinetView {
         }
 
         func addFamily() {
-            let canAddCategories = dataController.plusVersionUnlocked || dataController.count(for: Family.fetchRequest()) < maxFamilies
-
-            if canAddCategories {
-                let family = Family(context: dataController.container.viewContext)
-                family.creationDate = Date()
-                dataController.save()
-            } else {
-                showingUnlockView.toggle()
-            }
+//            let canAddCategories = dataController.plusVersionUnlocked || dataController.count(for: Family.fetchRequest()) < maxFamilies
+//
+//            if canAddCategories {
+            let family = Family(context: dataController.container.viewContext)
+            family.creationDate = Date()
+            dataController.save()
+//            } else {
+//                showingUnlockView.toggle()
+//            }
         }
 
         func addItem(to family: Family) {
-            let canAddItem = dataController.plusVersionUnlocked || dataController.count(for: Item.fetchRequest()) < maxItems
-
-            if canAddItem {
-                let item = Item(context: dataController.container.viewContext)
-                item.family = family
-                item.creationDate = Date()
-                dataController.save()
-            } else {
-                showingUnlockView.toggle()
-            }
+//            let canAddItem = dataController.plusVersionUnlocked || dataController.count(for: Item.fetchRequest()) < maxItems
+//
+//            if canAddItem {
+            let item = Item(context: dataController.container.viewContext)
+            item.family = family
+            item.creationDate = Date()
+            dataController.save()
+//            } else {
+//                showingUnlockView.toggle()
+//            }
         }
 
         func delete(_ offsets: IndexSet, from family: Family) {
