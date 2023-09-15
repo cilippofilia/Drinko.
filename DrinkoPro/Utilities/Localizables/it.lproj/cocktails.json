@@ -428,7 +428,7 @@
         ]
     },
     {
-        "id":"el-diable",
+        "id":"el-diablo",
         "name":"El Diablo",
         "method":"shake & fine strain",
         "glass":"collins",
@@ -1069,7 +1069,7 @@
     },
     {
         "id":"blackthorn",
-        "name":"Blackthorne",
+        "name":"Blackthorn",
         "method":"stir & strain",
         "glass":"rock",
         "garnish":"buccia di limone espressa e scartata",
@@ -2410,7 +2410,7 @@
         "id":"airmail",
         "name":"Air Mail",
         "method":"shake & fine strain",
-        "glass":"coupe",
+        "glass":"collins",
         "garnish":"fetta di lime",
         "ice":"-",
         "extra":"riempi con champagne",
@@ -2842,7 +2842,7 @@
         ]
     },
     {
-        "id":"caipirina",
+        "id":"caipirinha",
         "name":"Caipiriña",
         "method":"swizzle/churn",
         "glass":"rock",
@@ -3179,7 +3179,7 @@
         ]
     },
     {
-        "id":"god-father-&-god-mother",
+        "id":"godfather",
         "name":"Godfather / Godmother",
         "method":"build + short stir",
         "glass":"rock",
@@ -3868,8 +3868,8 @@
         ]
     },
     {
-        "id":"old-maid-london-maid",
-        "name":"Old Maid aka London Maid",
+        "id":"london-maid",
+        "name":"Old Maid",
         "method":"whip shake & fine strain",
         "glass":"rock",
         "garnish":"bouquet di menta & fetta di cetriolo",
