@@ -13,7 +13,6 @@ struct HomeView: View {
     // AppStorage is used to keep track of how many times the app has been opened
     @AppStorage("appUsageCounter") var appUsageCounter: Int = 0
     @EnvironmentObject var dataController: DataController
-    @EnvironmentObject private var factory: ViewModelFactory
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
 
@@ -33,14 +32,6 @@ struct HomeView: View {
             .tag(CocktailsView.cocktailsTag)
             .tabItem {
                 Label("Cocktails", systemImage: "wineglass")
-            }
-
-            NavigationView {
-                PostsList(viewModel: factory.makePostsViewModel())
-            }
-            .tag(PostsList.postsTag)
-            .tabItem {
-                Label("Social", systemImage: "person.2")
             }
 
             NavigationView {

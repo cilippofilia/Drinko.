@@ -19,43 +19,10 @@ struct SplashScreenView: View {
     var body: some View {
         Group {
             if showHomeView {
-                AuthView()
+                HomeView()
+
             } else {
-                staticLogo
-//                animatedLogo
-            }
-        }
-    }
-
-    var staticLogo: some View {
-        ZStack {
-            Color("Drinko Blue")
-                .edgesIgnoringSafeArea(.all)
-
-            VStack {
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200,
-                           height: 200,
-                           alignment: .center)
-
-                Text("Drinko")
-                    .font(.system(size: 66,
-                                  weight: .bold,
-                                  design: .rounded))
-                    .foregroundColor(.white)
-
-                Text("It's good to be back!")
-                    .font(.system(size: 24,
-                                  weight: .bold,
-                                  design: .rounded))
-                    .foregroundColor(.white)
-            }
-            .onAppear {
-                withAnimation(.default.delay(5)) {
-                    showHomeView = true
-                }
+                animatedLogo
             }
         }
     }

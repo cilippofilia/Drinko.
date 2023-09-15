@@ -5,15 +5,12 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
-import FirebaseAuth
 import MessageUI
 import StoreKit
 import SwiftUI
 
 struct SettingsView: View {
     static let settingsTag: String? = "Settings"
-
-    @EnvironmentObject private var factory: ViewModelFactory
 
     @State private var email = "cilia.filippo.dev@gmail.com"
     @State private var showOptions = false
@@ -28,12 +25,6 @@ struct SettingsView: View {
     var body: some View {
         Form {
             Section(header: Text("Preferences")) {
-                NavigationLink(destination: AccountView(viewModel: factory.makeProfileViewModel())) {
-                    SettingsRowView(icon: "person.fill",
-                                    color: .blue,
-                                    itemName: "Account")
-                }
-
                 HStack {
                     SettingsRowView(icon: "character.bubble",
                                     color: .secondary,
@@ -45,10 +36,6 @@ struct SettingsView: View {
                 }
                 .onTapGesture {
                     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
-                }
-
-                NavigationLink(destination: PostsList(viewModel: factory.makePostsViewModel(filter: .favorites))) {
-                    SettingsRowView(icon: "heart.fill", color: .red, itemName: "Liked posts")
                 }
 
                 NavigationLink(destination: TipJarView()) {

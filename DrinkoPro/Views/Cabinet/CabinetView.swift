@@ -110,9 +110,6 @@ struct CabinetView: View {
                             .cancel()
                         ])
         }
-        .sheet(isPresented: $viewModel.showingUnlockView) {
-            UnlockView()
-        }
         .environmentObject(favoriteProducts)
     }
 }
