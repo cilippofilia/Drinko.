@@ -2,11 +2,11 @@
     {
         "id":"corpse-reviver-2",
         "name":"Corpse Reviver No.2",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
-        "extra":"coupé rincé à l'absinthe",
+        "extra":"absinthe-rinsed coupe",
         "history":"",
         "ingredients":[
             {
@@ -20,12 +20,12 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -34,10 +34,10 @@
     {
         "id":"london-maid",
         "name":"London Maid",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"menthe concombre",
-        "ice":"en cubes",
+        "garnish":"cucumber mint",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -47,33 +47,33 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"menthe",
+                "name":"mint",
                 "quantity":6.0,
-                "unit":"feuilles"
+                "unit":"leaves"
             },
             {
-                "name":"concombre",
+                "name":"cucumber",
                 "quantity":2.0,
-                "unit":"tranches"
+                "unit":"slices"
             }
         ]
     },
     {
         "id":"white-lady",
         "name":"White Lady",
-        "method":"secouer à sec, secouer et filtrer finement",
+        "method":"dry shake, shake & fine strain",
         "glass":"coupe",
-        "garnish":"zeste de citron pressé",
+        "garnish":"lemon twist expressed and discarded",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -89,17 +89,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"blanc d'oeuf",
+                "name":"egg white",
                 "quantity":1.0,
                 "unit":"oz."
             }
@@ -108,9 +108,9 @@
     {
         "id":"hanky-panky",
         "name":"Hanky Panky",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"zeste d'orange",
+        "garnish":"orange twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -121,7 +121,7 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.5,
                 "unit":"oz."
             },
@@ -135,9 +135,9 @@
     {
         "id":"rolls-royce",
         "name":"Rolls Royce",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -148,12 +148,12 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -167,11 +167,11 @@
     {
         "id":"tuxedo-2",
         "name":"Tuxedo No.2",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
-        "extra":"coupé rincé à l'absinthe",
+        "extra":"absinth-rinsed coupe",
         "history":"",
         "ingredients":[
             {
@@ -180,28 +180,28 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino liqueur",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"apple-martini",
         "name":"Apple Martini",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"tranches de pommes",
+        "garnish":"apple slices",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -212,22 +212,22 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de pomme fraîchement pressé",
+                "name":"freshly pressed apple juice",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"cannelle",
+                "name":"cinnamon",
                 "quantity":0.15,
                 "unit":"oz."
             }
@@ -236,12 +236,12 @@
     {
         "id":"cosmopolitan",
         "name":"Cosmopolitan",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"zeste d'orange flambé",
+        "garnish":"flamed orange twist",
         "ice":"-",
         "extra":"-",
-        "history":"La légende du barman Dale \"King Cocktail\" DeGroff a découvert le Cosmopolitan au Fog City Diner à San Francisco au milieu des années 1990. Il a ensuite perfectionné sa propre recette pour le cocktail, y compris son zeste d'orange flambé comme garniture, alors qu'il travaillait aux Rainbow Rooms à Manhattan.\n\nDeGroff n'a jamais prétendu avoir inventé le Cosmopolitan. Dans son livre de 2002 \"The Craft of Cocktail\", il explique qu'il a popularisé une recette définitive qui est devenue largement acceptée comme la norme.\n\nLe Cosmopolitan a acquis une immense popularité après avoir été fréquemment diffusé dans l'émission de télévision \"Sex and the City\", les personnages sirotant souvent du Cosmos et se demandant pourquoi ils ont arrêté d'en boire. L'influence de l'émission a aidé le cocktail à devenir un nom connu.",
+        "history":"Barkeeper-Legende Dale „King Cocktail“ DeGroff entdeckte den Cosmopolitan Mitte der 1990er Jahre im Fog City Diner in San Francisco. Anschließend perfektionierte er während seiner Arbeit in den Rainbow Rooms in Manhattan sein eigenes Rezept für den Cocktail, einschließlich seiner charakteristischen geflammten Orangenschale als Beilage.\n\nDeGroff hat nie behauptet, den Cosmopolitan erfunden zu haben. In seinem 2002 erschienenen Buch „The Craft of Cocktail“ erklärt er, dass er ein definitives Rezept populär gemacht hat, das weithin als Standard akzeptiert wurde.\n\nDer Cosmopolitan erlangte immense Popularität, nachdem er häufig in der Fernsehsendung „Sex and“ gezeigt wurde die Stadt“, wobei die Charaktere oft an Cosmos nippen und sich fragen, warum sie jemals aufgehört haben, es zu trinken. Der Einfluss der Show trug dazu bei, dass der Cocktail zu einem bekannten Namen wurde.",
         "ingredients":[
             {
                 "name":"vodka",
@@ -254,12 +254,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de cranberry",
+                "name":"cranberry juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -268,12 +268,12 @@
     {
         "id":"espresso-martini",
         "name":"Espresso Martini",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"3 grains de café",
+        "garnish":"3 coffee beans",
         "ice":"-",
         "extra":"-",
-        "history":"Ce cocktail a été inventé par Dick Bradsell en 1983 à la Brasserie Soho. Son nom d'origine était \"Vodka Espresso\", puis appelé \"Stimulant Pharmaceutique\", et enfin \"Espresso Martini\". On attribue à Dick Bradsell révolutionnant la scène des cocktails à Londres à cette époque, grâce à son travail dans des bars tels que The Player, 6 Degrees et Match, et à l'invention du cocktail Bramble. L'histoire raconte que Bradsell a créé la boisson lorsqu'un jeune mannequin a demandé quelque chose à \"Réveille-moi et baise-moi\". Sa solution était une combinaison de vodka, d'espresso frais, de liqueur de café et de sucre, mélangés dans un mélange mousseux de dépendance douce-amère.",
+        "history":"Dieser Cocktail wurde 1983 von Dick Bradsell in der Soho Brasserie erfunden. Sein ursprünglicher Name war „Vodka Espresso“, dann „Pharmazeutisches Stimulans“ und schließlich „Espresso Martini“. Dick Bradsell wird zugeschrieben, dass er in dieser Zeit durch seine Arbeit in Bars wie The Player, 6 Degrees und Match sowie durch die Erfindung des Bramble-Cocktails die Cocktailszene in London revolutioniert hat. Die Geschichte besagt, dass Bradsell das Getränk kreierte, als ein junges Model nach etwas fragte, „das mich aufweckt und mich fertig macht“. Seine Lösung war eine Kombination aus Wodka, frischem Espresso, Kaffeelikör und Zucker, geschüttelt zu einer schaumigen Mischung bittersüßer Sucht.",
         "ingredients":[
             {
                 "name":"vodka",
@@ -281,7 +281,7 @@
                 "unit":"oz."
             },
             {
-                "name":"expresso",
+                "name":"espresso",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -291,7 +291,7 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.15,
                 "unit":"oz."
             }
@@ -300,9 +300,9 @@
     {
         "id":"poets-dream",
         "name":"Poet's Dream",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -313,12 +313,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de pomme fraîchement pressé",
+                "name":"freshly pressed apple juice",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -327,9 +327,9 @@
     {
         "id":"vesper-martini",
         "name":"Vesper Martini",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -345,23 +345,23 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"vodka-martini",
         "name":"Vodka Martini",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé or olives",
+        "garnish":"lemon twist or olives",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -372,7 +372,7 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -381,9 +381,9 @@
     {
         "id":"gin-martini",
         "name":"Gin Martini",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé or olives",
+        "garnish":"lemon twist or olives",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -394,7 +394,7 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -403,9 +403,9 @@
     {
         "id":"gibson",
         "name":"Gibson",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"oignons marinés sur un bâton de cocktail",
+        "garnish":"pickled onion",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -416,12 +416,12 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"saumure d'oignon",
+                "name":"onion brine",
                 "quantity":0.15,
                 "unit":"oz."
             }
@@ -430,30 +430,30 @@
     {
         "id":"el-diable",
         "name":"El Diablo",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"rondelle de citron vert",
-        "ice":"en cubes",
-        "extra":"garnir de bière au gingembre",
+        "garnish":"lime wedge",
+        "ice":"cubed",
+        "extra":"top with ginger beer",
         "history":"",
         "ingredients":[
             {
-                "name":"tequila blanche",
+                "name":"blanco tequila",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop de gingembre",
+                "name":"ginger syrup",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"crème de cassis",
+                "name":"creme de cassis",
                 "quantity":0.25,
                 "unit":"oz."
             }
@@ -462,57 +462,57 @@
     {
         "id":"infante",
         "name":"Infante",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"menthe",
-        "ice":"glace pilée/glace en galets",
+        "garnish":"mint",
+        "ice":"crushed ice/pebble ice",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"tequila blanche",
+                "name":"blanco tequila",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"orgeat (sirop d'amande)",
+                "name":"orgeat (almond syrup)",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"l'eau de fleur d'oranger",
+                "name":"orange blossom water",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"tommys-margarita",
         "name":"Tommy's Margarita",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
         "garnish":"-",
-        "ice":"en cubes",
+        "ice":"cubed",
         "extra":"-",
-        "history":"Ce cocktail a été créé en 1988 par Julio Bermejo et doit son nom au restaurant-bar mexicain de sa famille à San Francisco, Tommy's. Le restaurant a été fondé par Tomas et Elmy Bermejo en 1965 et est toujours aujourd'hui un établissement familial, leurs cinq enfants participent activement à son fonctionnement.\n\nGrâce à sa connaissance approfondie de la tequila et à ses compétences exceptionnelles de barman, Julio est devenu une figure renommée de l'industrie des boissons et une légende parmi ses pairs.",
+        "history":"Dieser Cocktail wurde 1988 von Julio Bermejo kreiert und nach dem mexikanischen Restaurant und der Bar seiner Familie in San Francisco, Tommy's, benannt. Das Restaurant wurde 1965 von Tomas und Elmy Bermejo gegründet und ist auch heute noch ein familiengeführtes Restaurant, an dessen Betrieb alle fünf Kinder aktiv beteiligt sind.\n\nDank seiner umfassenden Tequila-Kenntnisse und außergewöhnlichen Barkeeper-Fähigkeiten hat Julio dies getan wurde zu einer bekannten Persönlichkeit in der Getränkeindustrie und zu einer Legende unter seinen Kollegen.",
         "ingredients":[
             {
-                "name":"tequila blanche",
+                "name":"blanco tequila",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop d'agave",
+                "name":"agave syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -521,20 +521,20 @@
     {
         "id":"augie-march",
         "name":"Augie March",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"cerise sur la pioche",
-        "ice":"en cubes",
+        "garnish":"cherry on a pick",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"tequila reposée",
+                "name":"reposado tequila",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -548,15 +548,15 @@
     {
         "id":"oaxacan-old-fashioned",
         "name":"Oaxacan Old Fashioned",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"zestes flambés d'orange",
-        "ice":"glace pilée/glace en galets",
+        "garnish":"flamed orange twist",
+        "ice":"crushed ice/pebble ice",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"tequila reposée",
+                "name":"reposado tequila",
                 "quantity":2.0,
                 "unit":"oz."
             },
@@ -566,39 +566,39 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop d'agave",
+                "name":"agave syrup",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"rosita",
         "name":"Rosita",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"zestes d'orange",
+        "garnish":"orange twist",
         "ice":"-",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"tequila reposée",
+                "name":"reposado tequila",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -608,19 +608,19 @@
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"gold-rush",
         "name":"Gold Rush",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
         "garnish":"-",
-        "ice":"en cubes",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -630,12 +630,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -644,11 +644,11 @@
     {
         "id":"kentucky-buck",
         "name":"Kentucky Buck",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"tranche de citron",
-        "ice":"en cubes",
-        "extra":"garnir de bière au gingembre",
+        "garnish":"lemon wheel",
+        "ice":"cubed",
+        "extra":"top with ginger beer",
         "history":"",
         "ingredients":[
             {
@@ -657,31 +657,31 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"fraise",
+                "name":"strawberry",
                 "quantity":1.0,
-                "unit":"embrouillée"
+                "unit":"muddled"
             }
         ]
     },
     {
         "id":"paper-plane",
         "name":"Paper Plane",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
@@ -699,7 +699,7 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -713,10 +713,10 @@
     {
         "id":"fancy-free",
         "name":"Fancy Free",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"zestes d'orange",
-        "ice":"en cubes",
+        "garnish":"orange twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -726,26 +726,26 @@
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"grandfather",
         "name":"Grandfather",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
@@ -758,44 +758,44 @@
                 "unit":"oz."
             },
             {
-                "name":"eau-de-vie à la pomme",
+                "name":"apple brandy",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"les bitters de Peychaud",
+                "name":"peychaud's bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"preakness-cocktail",
         "name":"Preakness Cocktail",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"zestes d'orange",
+        "garnish":"orange twist",
         "ice":"-",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"whisky bourbon trop résistant",
+                "name":"overproof bourbon whiskey",
                 "quantity":1.75,
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -805,20 +805,20 @@
                 "unit":"oz."
             },
             {
-                "name":"amers aromatiques",
+                "name":"aromatic bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"new-york-sour",
         "name":"New York Sour",
-        "method":"secouer à sec, secouer et filtrer finement",
+        "method":"dry shake, shake & fine strain",
         "glass":"rock",
         "garnish":"-",
-        "ice":"en cubes",
-        "extra":"dépôt de vin rouge au sommet",
+        "ice":"cubed",
+        "extra":"float of red wine",
         "history":"",
         "ingredients":[
             {
@@ -827,22 +827,22 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"blanc d'oeuf",
+                "name":"egg white",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"pinot noir ou similaire",
+                "name":"pinot noir or similar",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -851,7 +851,7 @@
     {
         "id":"ward-eight",
         "name":"Ward Eight",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
@@ -864,12 +864,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"du jus d'orange",
+                "name":"orange juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -883,10 +883,10 @@
     {
         "id":"whiskey-smash",
         "name":"Whiskey Smash",
-        "method":"remuer légèrement, secouer et filtrer finement",
+        "method":"lightly muddle, shake & fine strain",
         "glass":"rock",
-        "garnish":"menthe",
-        "ice":"en cubes",
+        "garnish":"mint",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -896,31 +896,31 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"citron",
+                "name":"lemon",
                 "quantity":3.0,
-                "unit":"coins"
+                "unit":"wedges"
             },
             {
-                "name":"menthe",
+                "name":"mint",
                 "quantity":8.0,
-                "unit":"feuilles"
+                "unit":"leaves"
             }
         ]
     },
     {
         "id":"old-pal",
         "name":"Old Pal",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
@@ -933,7 +933,7 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vemrouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -947,9 +947,9 @@
     {
         "id":"red-hook",
         "name":"Red Hook",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"tranche de citron vert",
+        "garnish":"lime wheel",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -960,12 +960,12 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino",
                 "quantity":0.25,
                 "unit":"oz."
             }
@@ -974,10 +974,10 @@
     {
         "id":"castle-to-castle",
         "name":"Castle to Castle",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"brin de basilic",
-        "ice":"en cubes",
+        "garnish":"basil sprig",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -987,30 +987,30 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de pomme fraîchement pressé",
+                "name":"freshly pressed apple juice",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"irish-breakfast",
         "name":"Irish Breakfast",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"zestes d'orange",
+        "garnish":"orange twist",
         "ice":"-",
-        "extra":"remuer la marmelade jusqu'à dissolution",
+        "extra":"stir marmalade until dissolved",
         "history":"",
         "ingredients":[
             {
@@ -1019,7 +1019,7 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -1031,16 +1031,16 @@
             {
                 "name":"marmelade",
                 "quantity":1.0,
-                "unit":"cuillère à café"
+                "unit":"barspoon"
             }
         ]
     },
     {
         "id":"wild-eyed-rose",
         "name":"Wild Eyed Rose",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"tranche de citron vert",
+        "garnish":"lime wheel",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -1056,12 +1056,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -1070,11 +1070,11 @@
     {
         "id":"blackthorn",
         "name":"Blackthorne",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"zeste de citron pressé",
-        "ice":"en cubes",
-        "extra":"verre rincé à l'absinthe",
+        "garnish":"lemon twist expressed and discarded",
+        "ice":"cubed",
+        "extra":"absinthe-rinsed glass",
         "history":"",
         "ingredients":[
             {
@@ -1083,29 +1083,29 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara (1:1)",
+                "name":"demerara syrup (1:1)",
                 "quantity":0.25,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"improved-whiskey-cocktail",
         "name":"Improved Whiskey Cocktail",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"citron & zestes d'orange",
-        "ice":"en cubes",
+        "garnish":"lemon & orange twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -1115,33 +1115,33 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara (1:1)",
+                "name":"demerara syrup (1:1)",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
                 "name":"absinthe",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"tipperary-cocktail",
         "name":"Tipperary Cocktail",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -1152,40 +1152,40 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"chartreuse verte",
+                "name":"green chartreuse",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers aromatiques",
+                "name":"aromatic bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
                 "name":"absinthe",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"mamie-taylor",
         "name":"Mamie Taylor",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"rondelle de citron vert",
-        "ice":"en cubes",
-        "extra":"bière de gingembre au sommet et 4 gouttes d'angostura",
+        "garnish":"lime wedge",
+        "ice":"cubed",
+        "extra":"top ginger beer & 4 dashes of angostura",
         "history":"",
         "ingredients":[
             {
@@ -1194,12 +1194,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop de gingembre",
+                "name":"ginger syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -1208,11 +1208,11 @@
     {
         "id":"morning-glory-fizz",
         "name":"Morning Glory Fizz",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"flute",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
-        "extra":"verre rincé à l'absinthe et un peu d'eau gazeuse",
+        "extra":"absinthe-rinsed glass & splash soda water",
         "history":"",
         "ingredients":[
             {
@@ -1221,17 +1221,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"blanc d'oeuf",
+                "name":"egg white",
                 "quantity":1.0,
                 "unit":"oz."
             }
@@ -1240,9 +1240,9 @@
     {
         "id":"bobby-burns",
         "name":"Bobby Burns",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -1253,7 +1253,7 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -1267,9 +1267,9 @@
     {
         "id":"prince-edward",
         "name":"Prince Edward",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"zestes d'orange",
+        "garnish":"orange twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -1290,19 +1290,19 @@
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"tattletale",
         "name":"Tattletale",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"citron & zestes d'orange",
-        "ice":"en cubes",
+        "garnish":"lemon & orange twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -1317,61 +1317,61 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"chet-baker",
         "name":"Chet Baker",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"zestes d'orange",
-        "ice":"en cubes",
+        "garnish":"orange twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"vieux rhum",
+                "name":"aged rum",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"dominicana",
         "name":"Dominicana",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"nick-nora",
-        "garnish":"cannelle râpée",
+        "garnish":"grated cinnamon",
         "ice":"-",
-        "extra":"dépôt de crème fouettée à la main au sommet",
+        "extra":"hand-whipped cream float",
         "history":"",
         "ingredients":[
             {
-                "name":"vieux rhum",
+                "name":"aged rum",
                 "quantity":1.5,
                 "unit":"oz."
             },
@@ -1381,7 +1381,7 @@
                 "unit":"oz."
             },
             {
-                "name":"double crème",
+                "name":"double cream",
                 "quantity":1.5,
                 "unit":"oz."
             }
@@ -1390,25 +1390,25 @@
     {
         "id":"el-presidente",
         "name":"El Presidente",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"zestes d'orange",
-        "ice":"en cubes",
+        "garnish":"orange twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"vermouth blanc",
+                "name":"white vermouth",
                 "quantity":1.25,
                 "unit":"oz."
             },
             {
-                "name":"curaçao orange",
+                "name":"orange curacao",
                 "quantity":0.15,
                 "unit":"oz."
             },
@@ -1422,25 +1422,25 @@
     {
         "id":"airmail",
         "name":"Air Mail",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"tranche de citron vert",
+        "garnish":"lime wheel",
         "ice":"-",
-        "extra":"garnir de champagne",
+        "extra":"top with champagne",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -1449,25 +1449,25 @@
     {
         "id":"daisy-de-santiago",
         "name":"Daisy de Santiago",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"wine",
-        "garnish":"menthe",
-        "ice":"écrasé",
-        "extra":"dépôt de chartreuse jaune au sommet",
+        "garnish":"mint",
+        "ice":"crushed",
+        "extra":"float of yellow chartreuse",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -1476,30 +1476,30 @@
     {
         "id":"mary-pickford",
         "name":"Mary Pickford",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"tranche de citron vert",
-        "ice":"un glaçon",
+        "garnish":"lime wheel",
+        "ice":"1 cube",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"jus d'ananas",
+                "name":"pineapple juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino liqueur",
                 "quantity":0.25,
                 "unit":"oz."
             },
@@ -1513,10 +1513,10 @@
     {
         "id":"jungle-bird",
         "name":"Jungle Bird",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"feuilles d'ananas",
-        "ice":"en cubes",
+        "garnish":"pineapple fronds",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -1526,12 +1526,12 @@
                 "unit":"oz."
             },
             {
-                "name":"vieux rhum",
+                "name":"aged rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus d'ananas",
+                "name":"pineapple juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
@@ -1541,12 +1541,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -1555,20 +1555,20 @@
     {
         "id":"royal-bermuda-yacht-club",
         "name":"Royal Bermuda Yacht Club",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"noix de muscade râpée",
+        "garnish":"grated nutmeg",
         "ice":"-",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"vieux rhum",
+                "name":"aged rum",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
@@ -1587,40 +1587,40 @@
     {
         "id":"beachbum",
         "name":"Beachbum",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"tranche d'orange et cerise sur un bâton de cocktail",
-        "ice":"écrasé ice",
+        "garnish":"orange slice & cherry skewer flag",
+        "ice":"crushed ice",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"vieux rhum",
+                "name":"aged rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"liqueur d'abricot",
+                "name":"apricot liqueur",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"orgeat (sirop d'amande)",
+                "name":"orgeat (almond syrup)",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus d'ananas",
+                "name":"pineapple juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -1629,15 +1629,15 @@
     {
         "id":"fog-cutter",
         "name":"Fog Cutter",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"tranche de citron",
-        "ice":"en cubes",
-        "extra":"dépôt de cerise au sommet - Moscatel si possible",
+        "garnish":"lemon wheel",
+        "ice":"cubed",
+        "extra":"float of sherry - Moscatel if possible",
         "history":"",
         "ingredients":[
             {
-                "name":"funky rhum blanc",
+                "name":"funky white rum",
                 "quantity":1.5,
                 "unit":"oz."
             },
@@ -1652,17 +1652,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus d'orange",
+                "name":"orange juice",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"orgeat (sirop d'amande)",
+                "name":"orgeat (almond syrup)",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -1671,25 +1671,25 @@
     {
         "id":"jet-pilot",
         "name":"Jet Pilot",
-        "method":"tourbillonner/baratter",
+        "method":"swizzle/churn",
         "glass":"tiki",
-        "garnish":"fruits et feu",
-        "ice":"écrasé",
+        "garnish":"fruits & fire",
+        "ice":"crushed",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum jamaïcain overproof",
+                "name":"overproof jamaican rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"rhum vieilli 151 proof",
+                "name":"aged 151 rum",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"vieux rhum",
+                "name":"aged rum",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -1699,17 +1699,17 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de cannelle",
+                "name":"cinnamon syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de pamplemousse",
+                "name":"grapefruit juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -1719,49 +1719,49 @@
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"painkiller",
         "name":"Painkiller",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"muscade râpée, tranche d'orange et cerise",
-        "ice":"écrasé",
+        "garnish":"grated nutmeg, orange slice & cherry",
+        "ice":"crushed",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum vieilli 151 proof",
+                "name":"aged 151 rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"rhum jamaïcain vieilli overproof",
+                "name":"overproof aged jamaican rum",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"rhum jamaïcain vieilli",
+                "name":"aged jamaican rum",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de noix de coco",
+                "name":"coconut syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus d'ananas",
+                "name":"pinapple juice",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"jus d'orange",
+                "name":"orange juice",
                 "quantity":0.25,
                 "unit":"oz."
             }
@@ -1770,15 +1770,15 @@
     {
         "id":"scorpion",
         "name":"Scorpion",
-        "method":"tourbillonner/baratter",
+        "method":"swizzle/churn",
         "glass":"tiki",
-        "garnish":"muscade râpée, rondelle d'orange et de citron vert, orchidée",
-        "ice":"écrasé",
+        "garnish":"grated nutmeg, orange & lime wheel, orchid",
+        "ice":"crushed",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum jamaïcain overproof",
+                "name":"overproof jamaican rum",
                 "quantity":1.5,
                 "unit":"oz."
             },
@@ -1788,59 +1788,59 @@
                 "unit":"oz."
             },
             {
-                "name":"orgeat (sirop d'amande)",
+                "name":"orgeat (almond syrup)",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus d'orange",
+                "name":"orange juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"amer de peychaud",
+                "name":"peychaud's bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"three-dots-and-a-dash",
         "name":"Three Dots & A Dash",
-        "method":"tourbillonner/baratter",
+        "method":"swizzle/churn",
         "glass":"tiki",
-        "garnish":"quartier d'ananas et 3 cerises",
-        "ice":"écrasé",
+        "garnish":"pineapple wedge & 3 cherries",
+        "ice":"crushed",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum agricole sec et vieilli",
+                "name":"dry, aged agricole rum",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"rhum guyanais vieilli",
+                "name":"aged guyanese rum",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus d'orange",
+                "name":"orange juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -1850,49 +1850,49 @@
                 "unit":"oz."
             },
             {
-                "name":"Dram au piment de la Jamaïque",
+                "name":"allspice dram",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"zombie",
         "name":"Zombie (1934)",
-        "method":"tourbillonner/baratter",
+        "method":"swizzle/churn",
         "glass":"tiki",
-        "garnish":"un demi citron vert flamboyant, un bâton de cannelle, ou tout autre truc sympa sur le dessus",
-        "ice":"écrasé",
+        "garnish":"flaming half lime, cinnamon stick, whatever other cool stuff on top",
+        "ice":"crushed",
         "extra":"-",
-        "history":"Ce cocktail, connu sous le nom de Zombie, a été créé pour la première fois en 1934 par Ernest Raymond Beaumont Gantt, mieux connu sous le nom de Donn the Beachcomber. Bien qu'il existe de nombreuses histoires sur les origines du Zombie, il est probable que Donn lui-même en soit responsable de la plupart. d'entre eux.\n\nUne histoire amusante mais improbable est que la boisson a été inventée pour un homme d'affaires qui avait besoin d'aide pour lutter contre sa gueule de bois et pour traverser une réunion difficile. Le client a ensuite rapporté à Donn qu'il se sentait comme un mort-vivant, et a dit \"ça a fait de moi un zombie\".\n\nPendant de nombreuses années, la recette du zombie est restée un mystère en raison du système minutieux de Donn pour garder les ingrédients secrets. Cependant, grâce aux efforts du revivaliste tiki Jeff \" BeachBum\"Berry, nous pouvons désormais préparer le cocktail Zombie dans le confort et la sécurité de notre foyer.",
+        "history":"Dieser als Zombie bekannte Cocktail wurde erstmals 1934 von Ernest Raymond Beaumont Gantt, besser bekannt als Donn the Beachcomber, kreiert. Obwohl es viele Geschichten über die Ursprünge des Zombies gibt, ist es wahrscheinlich, dass Donn selbst für die meisten davon verantwortlich war.\n\nEine amüsante, aber unwahrscheinliche Geschichte ist, dass das Getränk für einen Geschäftsmann erfunden wurde, der Hilfe bei seinem Kater brauchte ihn durch ein schwieriges Meeting. Der Kunde berichtete Donn später, dass er sich wie ein lebender Toter fühlte und sagte: „Es hat aus mir einen Zombie gemacht“.\n\nViele Jahre lang blieb das Rezept für den Zombie aufgrund von Donns sorgfältigem System ein Rätsel Geheimhaltung der Inhaltsstoffe. Dank der Bemühungen des Tiki-Revivalisten Jeff „BeachBum“ Berry können wir den Zombie-Cocktail nun bequem und sicher zu Hause zubereiten.",
         "ingredients":[
             {
-                "name":"rhum jamaïcain vieilli",
+                "name":"aged jamaican rum",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"rhum trinidadien vieilli",
+                "name":"aged trinidadian rum",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"rhum vieilli overproof",
+                "name":"aged overproof rum",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de pamplemousse",
+                "name":"grapefruit juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -1902,7 +1902,7 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de cannelle",
+                "name":"cinnamon syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -1914,19 +1914,19 @@
             {
                 "name":"absinthe",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"champs-elysees",
         "name":"Champ-Elysees",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
@@ -1939,33 +1939,33 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"chartreuse jaune",
+                "name":"yellow chartreuse",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"coffee-cocktail",
         "name":"Coffee Cocktail",
-        "method":"secouer à sec, secouer et filtrer finement",
+        "method":"dry shake, shake & fine strain",
         "glass":"rock",
-        "garnish":"noix de muscade râpée",
+        "garnish":"grated nutmeg",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -1981,12 +1981,12 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara",
+                "name":"demerara syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"oeuf entier",
+                "name":"whole egg",
                 "quantity":1.0,
                 "unit":"-"
             }
@@ -1995,11 +1995,11 @@
     {
         "id":"georgia-julep",
         "name":"Georgia Julep",
-        "method":"fouetter",
+        "method":"whip shake",
         "glass":"julep cup",
-        "garnish":"brins de menthe",
-        "ice":"écrasé",
-        "extra":"frapper la menthe pour libérer les huiles",
+        "garnish":"mint sprigs",
+        "ice":"crushed",
+        "extra":"slap the mint to release the oils",
         "history":"",
         "ingredients":[
             {
@@ -2008,17 +2008,17 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de pêche",
+                "name":"peach liqueur",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"menthe",
+                "name":"mint",
                 "quantity":1.0,
                 "unit":"handful"
             }
@@ -2027,10 +2027,10 @@
     {
         "id":"de-la-louisiane",
         "name":"De La Louisiane",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"citron pressé",
-        "ice":"en cubes",
+        "garnish":"lemon twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -2050,24 +2050,24 @@
                 "unit":"oz."
             },
             {
-                "name":"amers de peychaud",
+                "name":"peychaud's bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"frantic-atlantic",
         "name":"Frantic Atlantic",
-        "method":"fouetter",
+        "method":"whip shake",
         "glass":"rock",
-        "garnish":"feuilles de menthe",
-        "ice":"écrasé",
+        "garnish":"mint plouche",
+        "ice":"crushed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -2082,24 +2082,24 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de pamplemousse",
+                "name":"grapefruit juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"pisco-punch",
         "name":"Pisco Punch",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"zestes d'orange, quartier d'ananas & menthe",
-        "ice":"écrasé",
+        "garnish":"orange twist, pineapple wedge & mint",
+        "ice":"crushed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -2109,12 +2109,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop de gomme d'ananas",
+                "name":"pineapple gomme syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -2124,21 +2124,21 @@
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"pisco-sour",
         "name":"Pisco Sour",
-        "method":"secouer à sec, secouer et filtrer finement",
+        "method":"dry shake, shake & fine strain",
         "glass":"coupe",
-        "garnish":"6 gouttes de amer de Chuncho",
+        "garnish":"6 drops Chuncho bitters",
         "ice":"-",
         "extra":"-",
-        "history":"L’origine de ce merveilleux cocktail sud-américain est quelque peu floue, car plusieurs personnes prétendent l’avoir inventé. Cependant, l’histoire la plus largement acceptée est qu'il est né au début des années 1920 au Morris Bar de Lima, au Pérou. Le bar appartenait à Victor Vaughen Morris, un Américain qui s'était installé au Pérou pour le commerce minier en 1903. Le cocktail a d'abord été créé comme alternative au Whiskey Sour, une boisson populaire à l'époque.\n\nLa version moderne de le cocktail a été créé à la fin des années 1920, lorsque le barman Mario Bruige a ajouté du bitter Angostura et du blanc d'œuf à la recette. Cette nouvelle version du cocktail a rapidement gagné en popularité et est désormais appréciée partout dans le monde.",
+        "history":"Der Ursprung dieses wunderbaren südamerikanischen Cocktails ist etwas unklar, da mehrere Leute behaupten, ihn erfunden zu haben. Die am weitesten verbreitete Geschichte besagt jedoch, dass es in den frühen 1920er Jahren in der Morris Bar in Lima, Peru, entstand. Die Bar gehörte Victor Vaughen Morris, einem Amerikaner, der 1903 für den Bergbau nach Peru gezogen war. Der Cocktail wurde ursprünglich als Alternative zum damals beliebten Whiskey Sour kreiert.\n\nDie moderne Version von Der Cocktail wurde Ende der 1920er Jahre kreiert, als Barkeeper Mario Bruige dem Rezept Angosturabitter und Eiweiß hinzufügte. Diese neue Version des Cocktails erfreute sich schnell großer Beliebtheit und wird mittlerweile auf der ganzen Welt genossen.",
         "ingredients":[
             {
                 "name":"pisco",
@@ -2146,22 +2146,22 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"blanc d'oeuf",
+                "name":"egg white",
                 "quantity":1.0,
                 "unit":"oz."
             }
@@ -2170,10 +2170,10 @@
     {
         "id":"american-trilogy",
         "name":"American Trilogy",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"orange & citron pressé",
-        "ice":"en cubes",
+        "garnish":"orange & lemon twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -2188,24 +2188,24 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara (1:1)",
+                "name":"demerara syrup (1:1)",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"widows-kiss",
         "name":"Widow's Kiss",
-        "method":"construit + agitation courte",
+        "method":"built + short stir",
         "glass":"rock",
         "garnish":"-",
-        "ice":"en cubes",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -2215,7 +2215,7 @@
                 "unit":"oz."
             },
             {
-                "name":"chartreuse jaune",
+                "name":"yellow chartreuse",
                 "quantity":0.25,
                 "unit":"oz."
             },
@@ -2225,16 +2225,16 @@
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"applejack-rabbit",
         "name":"Applejack Rabbit",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
@@ -2247,17 +2247,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus d'orange",
+                "name":"orange juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop d'érable",
+                "name":"maple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -2266,7 +2266,7 @@
     {
         "id":"jack-rose",
         "name":"Jack Rose",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
@@ -2289,12 +2289,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -2303,10 +2303,10 @@
     {
         "id":"philadelphia-fish-house-punch",
         "name":"Philadelphia Fish House Punch",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"tranche de citron & cannelle râpée",
-        "ice":"en cubes",
+        "garnish":"lemon wheel & grated cinnamon",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -2316,43 +2316,43 @@
                 "unit":"oz."
             },
             {
-                "name":"rhum jamaïcain vieilli",
+                "name":"aged jamaican rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de pêche",
+                "name":"peach liqueur",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara",
+                "name":"demerara syrup",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"sirop de gingembre",
+                "name":"ginger syrup",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"adonis",
         "name":"Adonis",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"zestes d'orange",
+        "garnish":"orange twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -2363,23 +2363,23 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"bamboo",
         "name":"Bamboo",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -2390,35 +2390,35 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":1.25,
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara",
+                "name":"demerara syrup",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"sherry-cobbler",
         "name":"Sherry Cobbler",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"menthe, tranche de citron et d'orange",
-        "ice":"écrasé",
-        "extra":"dépôt de cerise Pedro Ximenez au sommet",
+        "garnish":"mint, lemon and orange wheel",
+        "ice":"crushed",
+        "extra":"float of Pedro Ximenez sherry",
         "history":"",
         "ingredients":[
             {
@@ -2427,7 +2427,7 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de gomme d'ananas",
+                "name":"pineapple gomme syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -2436,10 +2436,10 @@
     {
         "id":"amaretto-sour",
         "name":"Amaretto Sour",
-        "method":"secouer à sec, secouer et filtrer finement",
+        "method":"dry shake, shake & fine strain",
         "glass":"rock",
-        "garnish":"citron pressé & cerise",
-        "ice":"en cubes",
+        "garnish":"lemon twist & cherry",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -2454,17 +2454,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"blanc d'oeuf",
+                "name":"egg white",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -2473,15 +2473,15 @@
     {
         "id":"americano-cocktail",
         "name":"Americano (cocktail)",
-        "method":"construire + courte agitation",
+        "method":"build + short stir",
         "glass":"collins",
-        "garnish":"tranche d'orange",
-        "ice":"écrasé",
-        "extra":"compléter avec de l'eau gazeuse",
-        "history":"Bien qu'il soit très probable qu'il soit à l'origine une variante du Milan-Turin, il existe plusieurs hypothèses quant à sa création. Une de ces hypothèses remonte à 1933, suggérant que la boisson aurait été créée en hommage au boxeur Primo Carnera, surnommé « l'Americano » en raison de ses succès aux États-Unis. Selon certaines sources, même la propagande politique de l'époque promouvait cette association entre le boxeur italien et les ingrédients de la boisson, tous d'origine italienne.\n\nUne autre hypothèse suggère que sa création était une stratégie marketing de la société Martini & Rossi pour exporter son vermouth aux États-Unis.",
+        "garnish":"orange slice",
+        "ice":"crushed",
+        "extra":"top with soda water",
+        "history":"Obwohl es sehr wahrscheinlich ist, dass er als Variation des Milano-Torino entstand, gibt es mehrere Hypothesen zu seiner Entstehung. Eine solche Hypothese stammt aus dem Jahr 1933 und besagt, dass das Getränk zu Ehren des Boxers Primo Carnera kreiert wurde, der aufgrund seiner Erfolge in den USA den Spitznamen „The Americano“ erhielt. Einigen Quellen zufolge förderte sogar die damalige politische Propaganda diese Verbindung zwischen dem italienischen Boxer und den Zutaten des Getränks, die alle italienischen Ursprungs waren.\n\nEine andere Hypothese besagt, dass seine Entstehung eine Marketingstrategie von Martini & Rossi war Marke, um ihren Wermut in die Vereinigten Staaten zu exportieren.",
         "ingredients":[
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.5,
                 "unit":"oz."
             },
@@ -2495,15 +2495,15 @@
     {
         "id":"aperol-spritz",
         "name":"Aperol Spritz",
-        "method":"construire + courte agitation",
+        "method":"build + short stir",
         "glass":"wine",
-        "garnish":"tranche d'orange",
-        "ice":"en cubes",
+        "garnish":"orange slice",
+        "ice":"cubed",
         "extra":"-",
-        "history":"L'origine du spritz remonte à la coutume des troupes de l'Empire autrichien stationnées dans le royaume lombard-vénitien de mélanger des vins locaux, à forte teneur en alcool, avec de l'eau de Seltz ou de l'eau gazeuse. Le nom de la boisson vient du verbe germano-autrichien \"spritzer\", qui signifie \"saupoudrer\".\n\nEn tant que cocktail, le spritz serait originaire des années 1920 et 1930 dans les environs. Venise et Padoue, où l'on combinait cette coutume avec l'Aperol ou le Select pour créer le cocktail classique que nous connaissons aujourd'hui.",
+        "history":"Der Ursprung des Spritz geht auf den Brauch der im Königreich Lombardo-Venetien stationierten Truppen des Kaiserreichs Österreich zurück, lokale Weine mit hohem Alkoholgehalt mit Selters oder Mineralwasser zu mischen. Der Name des Getränks leitet sich vom deutsch-österreichischen Verb „spritzer“ ab, was „streuen“ bedeutet.\n\nAls Cocktail entstand der Spritz vermutlich zwischen den 1920er und 1930er Jahren in der Umgebung Venedig und Padua, wo man diesen Brauch mit Aperol oder Select kombinierte, um den klassischen Cocktail zu kreieren, den wir heute kennen.",
         "ingredients":[
             {
-                "name":"eau gazifiée",
+                "name":"soda water",
                 "quantity":1.0,
                 "unit":"oz."
             },
@@ -2522,11 +2522,11 @@
     {
         "id":"arsenic-and-old-lace",
         "name":"Arsenic & Old Lace",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"zestes d'orange",
+        "garnish":"orange twist",
         "ice":"-",
-        "extra":"coupé rincé à l'absinthe",
+        "extra":"absinthe-rinsed coupe",
         "history":"",
         "ingredients":[
             {
@@ -2535,12 +2535,12 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"crème de violette",
+                "name":"creme de violette",
                 "quantity":0.25,
                 "unit":"oz."
             }
@@ -2549,11 +2549,11 @@
     {
         "id":"aviation",
         "name":"Aviation",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"cerise à l'intérieur de la coupe",
+        "garnish":"cherry inside the coupe",
         "ice":"-",
-        "extra":"coupe rincée à la crème de violette",
+        "extra":"creme de violette rinsed coupe",
         "history":"",
         "ingredients":[
             {
@@ -2562,17 +2562,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino liqueur",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.25,
                 "unit":"oz."
             }
@@ -2581,9 +2581,9 @@
     {
         "id":"bees-knees",
         "name":"Bee's Knees",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"tranche de citron",
+        "garnish":"lemon wheel",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -2594,12 +2594,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -2608,15 +2608,15 @@
     {
         "id":"bellini",
         "name":"Bellini",
-        "method":"construire + remuer rapidement",
+        "method":"build + quick stir",
         "glass":"flute",
         "garnish":"-",
         "ice":"-",
-        "extra":"pour la rendre très froide, mélangez la purée de pêches avec un peu de prosecco sur de la glace et filtrez à l'intérieur de la flûte - puis complétez avec plus de prosecco",
-        "history":"Le Bellini a été créé en 1948 par Giuseppe Cipriani, le chef barman du Harry's Bar à Venise. Cipriani a donné à ce cocktail le nom du peintre vénitien Giovanni \"il Giambellino\" Bellini, en raison de sa couleur rose qui lui rappelait la couleur de la toge d'un tailleur dans l'un des tableaux de Bellini.\n\nÀ l'origine une spécialité saisonnière du Harry's Bar, le Bellini est rapidement devenu un favori de nombreuses célébrités, dont Ernest Hemingway, Gianni Agnelli, Sinclair Lewis et Orson Welles.\n\nAprès qu'un entrepreneur français ait établi une route commerciale pour transporter la pulpe de pêche vers les États-Unis, le Bellini a également gagné en popularité au Harry's Bar à New York. En peu de temps, il est devenu un cocktail classique et est désormais apprécié dans les bars du monde entier.",
+        "extra":"to make it extra cold, stir the peach puree with a splash of prosecco over ice & strain inside the flute - then top with more prosecco",
+        "history":"Der Bellini wurde erstmals 1948 von Giuseppe Cipriani, dem Chefbarkeeper von Harry's Bar in Venedig, kreiert. Cipriani benannte den Cocktail nach dem venezianischen Maler Giovanni „il Giambellino“ Bellini, weil seine rosa Farbe ihn an die Farbe einer Schneidertoga in einem von Bellinis Gemälden erinnerte.\n\nUrsprünglich eine saisonale Spezialität von Harry's Bar, der Bellini wurde schnell zum Favoriten vieler Berühmtheiten, darunter Ernest Hemingway, Gianni Agnelli, Sinclair Lewis und Orson Welles.\n\nNachdem ein französischer Unternehmer eine Handelsroute für den Transport von Pfirsichmark in die USA eingerichtet hatte, gewann der Bellini auch in Harry's Bar an Popularität New York. In kurzer Zeit wurde er zu einem klassischen Cocktail und wird heute in Bars auf der ganzen Welt genossen.",
         "ingredients":[
             {
-                "name":"crème de pêche ou purée de pêche",
+                "name":"creme de peche or peach puree",
                 "quantity":1.0,
                 "unit":"oz."
             },
@@ -2630,9 +2630,9 @@
     {
         "id":"bijou",
         "name":"Bijou",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -2643,29 +2643,29 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"chartreuse verte",
+                "name":"green chartreuse",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"amers à l'orange",
+                "name":"orange bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"black-russian",
         "name":"Black Russian",
-        "method":"construire + remuer rapidement",
+        "method":"build + quick stir",
         "glass":"rock",
         "garnish":"-",
-        "ice":"en cubes",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -2684,12 +2684,12 @@
     {
         "id":"bloody mary",
         "name":"Bloody Mary",
-        "method":"lancer",
+        "method":"throw",
         "glass":"collins",
-        "garnish":"olives ou germons, quartier de citron et branche de céleri",
-        "ice":"en cubes",
+        "garnish":"olives or gerkins, lemon wedge & celery stick",
+        "ice":"cubed",
         "extra":"-",
-        "history":"Le cocktail Bloody Mary a été inventé entre les années 1920 et 1930, et il existe diverses théories sur son origine et son nom.\n\nUne théorie veut que le barman français Fernand Petiot ait créé la boisson en 1921 alors qu'il travaillait au Harry's New York Bar à Paris. Une autre théorie suggère qu'il a été inventé en 1930 par Henry Zbikiwicz au \"21 Club\" de New York, tandis que d'autres attribuent son invention au comédien George Jessel, qui fréquentait fréquemment le même bar.\n\nIl y a différentes histoires derrière le nom, mais ma préférée est tirée de l'autobiographie de George Jessel, \"Le monde dans lequel je vis\". Jessel se souvient d'une nuit particulièrement longue à Palm Beach en 1927, où il mélangeait de la vodka avec du jus de tomate et des épices pour lui et ses amis vers 8 heures du matin. Lorsqu'il tendit un verre à la mondaine Mary Brown Warburton, qui portait toujours sa robe blanche de la veille, elle le renversa aussitôt sur le devant de sa robe et s'exclama: \"Maintenant, tu peux m'appeler Bloody Mary, George!\".",
+        "history":"Der Bloody-Mary-Cocktail wurde zwischen den 1920er und 1930er Jahren erfunden und es gibt verschiedene Theorien über seinen Ursprung und Namen.\n\nEine Theorie besagt, dass der französische Barkeeper Fernand Petiot den Drink 1921 kreierte, als er in Harry's New York Bar in Paris arbeitete. Eine andere Theorie besagt, dass es 1930 von Henry Zbikiwicz im New Yorker „21 Club“ erfunden wurde, während andere seine Erfindung dem Komiker George Jessel zuschreiben, der ein häufiger Gast derselben Bar war.\n\nDahinter verbergen sich verschiedene Geschichten der Name, aber mein Favorit stammt aus George Jessels Autobiografie „The World I Live In“. Jessel erinnert sich an eine besonders lange Nacht in Palm Beach im Jahr 1927, in der er um 8 Uhr morgens für sich und seine Freunde Wodka mit Tomatensaft und Gewürzen mixte. Als er der Prominenten Mary Brown Warburton, die immer noch ihr weißes Kleid vom Vorabend trug, ein Glas reichte, schüttete sie es sofort über die Vorderseite ihres Kleides und rief: \"Jetzt kannst du mich Bloody Mary nennen, George!\".",
         "ingredients":[
             {
                 "name":"vodka",
@@ -2697,32 +2697,32 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sel fumé",
+                "name":"smoked salt",
                 "quantity":1.0,
-                "unit":"forte pincée"
+                "unit":"heavy pinch"
             },
             {
-                "name":"poivre noir moulu",
+                "name":"ground black pepper",
                 "quantity":1.0,
-                "unit":"forte pincée"
+                "unit":"heavy pinch"
             },
             {
-                "name":"sauce piquante",
+                "name":"hot sauce",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"sauce worcestershire",
+                "name":"worchestershire sauce",
                 "quantity":5.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"jus de tomate",
+                "name":"tomato juice",
                 "quantity":4.0,
                 "unit":"oz."
             }
@@ -2731,12 +2731,12 @@
     {
         "id":"boulevardier",
         "name":"Boulevardier",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"zestes d'orange",
-        "ice":"en cubes",
+        "garnish":"orange twist",
+        "ice":"cubed",
         "extra":"-",
-        "history":"Le cocktail Boulevardier a été créé par Harry McElhone, barman au New York Bar à Paris, pour Erskine Gwynne, un expatrié américain qui se trouvait également être rédacteur en chef d'un magazine mensuel intitulé \"The Boulevardier\". C'est ainsi que le La boisson tire son nom. La recette du cocktail a été publiée pour la première fois dans le livre de Gwynne de 1927 \"Barflies and Cocktails\".\n\nEssentiellement, le Boulevardier est une variante du Negroni, mais au lieu d'utiliser du gin, il est fait avec du bourbon. Il convient de noter que la recette du Negroni n'a été publiée que 20 ans après le Boulevardier et qu'en 1927, de nombreux Américains ne connaissaient pas encore le Campari, un ingrédient clé des deux boissons.",
+        "history":"Der Boulevardier-Cocktail wurde von Harry McElhone, einem Barkeeper in der New York Bar in Paris, für Erskine Gwynne kreiert, eine im Ausland lebende Amerikanerin, die zufällig auch Herausgeberin einer Monatszeitschrift namens „The Boulevardier“ war. Daher erhielt das Getränk seinen Namen. Das Rezept für den Cocktail wurde erstmals 1927 in Gwynnes Buch „Barflies and Cocktails“ veröffentlicht.\n\nIm Wesentlichen ist der Boulevardier eine Variation des Negroni, aber anstelle von Gin wird er mit Bourbon hergestellt. Es ist erwähnenswert, dass das Negroni-Rezept erst 20 Jahre nach dem Boulevardier veröffentlicht wurde und 1927 viele Amerikaner Campari, eine Hauptzutat in beiden Getränken, noch nicht kannten.",
         "ingredients":[
             {
                 "name":"bourbon",
@@ -2744,7 +2744,7 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":0.75,
                 "unit":"oz."
             },
@@ -2758,11 +2758,11 @@
     {
         "id":"bramble",
         "name":"Bramble",
-        "method":"fouetter, secouer et égoutter",
+        "method":"whip shake & strain",
         "glass":"rock",
-        "garnish":"citron pressé",
-        "ice":"écrasé",
-        "extra":"5 mûres écrasées dans le verre",
+        "garnish":"lemon twist",
+        "ice":"crushed",
+        "extra":"5 blackberries crushed in the glass",
         "history":"",
         "ingredients":[
             {
@@ -2771,12 +2771,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -2785,9 +2785,9 @@
     {
         "id":"brandy-alexander",
         "name":"Brandy Alexander",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"noix de muscade",
+        "garnish":"nutmeg",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -2798,12 +2798,12 @@
                 "unit":"oz."
             },
             {
-                "name":"crème de cacao noire",
+                "name":"dark creme de cacao",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"crème épaisse",
+                "name":"heavy cream",
                 "quantity":1.0,
                 "unit":"oz."
             }
@@ -2812,44 +2812,44 @@
     {
         "id":"brooklynite",
         "name":"Brooklynite",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"tranche de citron vert",
+        "garnish":"lime wheel",
         "ice":"-",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum jamaïcain vieilli",
+                "name":"aged jamaican rum",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"caipirina",
         "name":"Caipiriña",
-        "method":"tourbillonner/baratter",
+        "method":"swizzle/churn",
         "glass":"rock",
-        "garnish":"rondelle de citron vert",
-        "ice":"écrasé",
-        "extra":"écraser les quartiers de citron vert",
-        "history":"Bien que l'origine de la boisson soit inconnue, la Caipiriña a été inventée par des agriculteurs propriétaires de la région de Piracicaba, à São Paulo, au Brésil, au cours du 19ème siècle comme boisson locale pour les événements et les fêtes de \"haut niveau\".\nLa Caipirinha est la boisson nationale la plus forte. cocktail du Brésil, et est consommé dans les bars, les restaurants et dans de nombreux foyers à travers le pays.\nSon nom est le diminutif du mot \"caipira\" qui fait référence à quelqu'un de la campagne.",
+        "garnish":"lime wedge",
+        "ice":"crushed",
+        "extra":"muddle lime wedges",
+        "history":"Obwohl der Ursprung des Getränks unbekannt ist, wurde der Caipiriña im 19. Jahrhundert von Landbesitzern in der Region Piracicaba, São Paulo, Brasilien, als lokales Getränk für Veranstaltungen und Partys mit „gehobenem Standard“ erfunden.\nCaipirinha ist der stärkste nationale Cocktail aus Brasilien und wird in Bars, Restaurants und vielen Haushalten im ganzen Land getrunken.\nSein Name ist die Verkleinerungsform des Wortes „caipira“, das sich auf jemanden vom Land bezieht.",
         "ingredients":[
             {
                 "name":"cachaca",
@@ -2857,17 +2857,17 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.15,
                 "unit":"oz."
             },
             {
-                "name":"quartiers de citron vert",
+                "name":"lime wedges",
                 "quantity":3.0,
                 "unit":"-"
             }
@@ -2876,12 +2876,12 @@
     {
         "id":"champagne-cocktail",
         "name":"Champagne Cocktail",
-        "method":"construire",
+        "method":"build",
         "glass":"flute",
-        "garnish":"spirale citron pressé",
+        "garnish":"spiraling lemon twist",
         "ice":"-",
-        "extra":"écraser délicatement le cognac, le sucre et l'amer ensemble - garnir de champagne",
-        "history":"L'origine de cette boisson est entourée de mystère, remontant à ce que l'on appelle parfois l'âge du fer de la mixologie américaine - une période entre l'invention des cocktails et la publication du premier livre de cocktails en 1862.\n\nFait intéressant, la première mention écrite du cocktail au champagne apparaît dans le livre \"Panama en 1855\" de Robert Tomes, où il décrit comment le préparer en détail. Cela prouve non seulement que les cocktails au champagne étaient préparés avant 1855, mais aussi qu'ils ont été préparés dans un verre sur de la glace pilée et sans cognac ni brandy.\n\nC'est fascinant de découvrir les origines de ce cocktail classique, et le fait qu'il soit apprécié depuis si longtemps témoigne de son attrait durable.",
+        "extra":"gently crush cognac, sugar & bitters together - top with champagne",
+        "history":"Der Ursprung dieses Getränks ist rätselhaft und geht auf die sogenannte Eisenzeit der amerikanischen Mixologie zurück – eine Zeit zwischen der Erfindung der Cocktails und der Veröffentlichung des ersten Cocktailbuchs im Jahr 1862.\n\nInteressanterweise ist die Die erste schriftliche Erwähnung des Champagner-Cocktails findet sich im Buch „Panama im Jahr 1855“ von Robert Tomes, in dem er ausführlich beschreibt, wie man ihn zubereitet. Dies beweist nicht nur, dass Champagner-Cocktails vor 1855 hergestellt wurden, sondern auch, dass sie in einem Tumbler auf zerstoßenem Eis und ohne Cognac oder Brandy hergestellt wurden.\n\nEs ist faszinierend, die Ursprünge dieses klassischen Cocktails zu entdecken und die Tatsache, dass Es ist ein Beweis für seine anhaltende Anziehungskraft, die man schon so lange genießt.",
         "ingredients":[
             {
                 "name":"cognac",
@@ -2889,14 +2889,14 @@
                 "unit":"oz."
             },
             {
-                "name":"un carré de sucre",
+                "name":"sugar cube",
                 "quantity":1.0,
                 "unit":"-"
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
                 "name":"champagne",
@@ -2908,15 +2908,15 @@
     {
         "id":"chartreuse-swizzle",
         "name":"Chartreuse Swizzle",
-        "method":"tourbillonner/baratter",
+        "method":"swizzle/churn",
         "glass":"collins",
-        "garnish":"noix de muscade râpée & brin de menthe",
-        "ice":"écrasé",
-        "extra":"dépôt de amers d'angostura au sommet",
+        "garnish":"grated nutmeg & mint sprig",
+        "ice":"crushed",
+        "extra":"float of angostura bitters",
         "history":"",
         "ingredients":[
             {
-                "name":"chartreuse verte",
+                "name":"green chartreuse",
                 "quantity":1.25,
                 "unit":"oz."
             },
@@ -2926,12 +2926,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus d'ananas",
+                "name":"pineapple juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -2940,15 +2940,15 @@
     {
         "id":"chrysanthemum",
         "name":"Chrysanthemum",
-        "method":"construire",
+        "method":"build",
         "glass":"rock",
-        "garnish":"zestes d'orange",
-        "ice":"en cubes",
+        "garnish":"orange twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":2.0,
                 "unit":"oz."
             },
@@ -2967,12 +2967,12 @@
     {
         "id":"clover-club",
         "name":"Clover Club",
-        "method":"secouer à sec, secouer et filtrer finement",
+        "method":"dry shake, shake & fine strain",
         "glass":"coupe",
-        "garnish":"3 framboises & citron pressé sur un bâton de cocktail",
+        "garnish":"3 skewered raspberries & lemon twist",
         "ice":"-",
-        "extra":"écraser les framboises dans le shaker",
-        "history":"Le Clover Club Cocktail est une boisson créée avant la Prohibition aux États-Unis et tire son nom du club masculin de Philadelphie du même nom. Le club s'est réuni à l'hôtel Bellevue-Stratford, à l'angle de South Broad et Walnut. Rues du centre-ville. Le Clover Club a été créé en 1896, comme détaillé dans le livre de 1897 \"The Clover Club of Philadelphia\" de Mary R. Deacon.\n\nLes recettes du cocktail Clover Club ont été publiées dès 1917 dans le livre \"Le barman idéal\" de Thomas Bullock.",
+        "extra":"muddle raspberries inside the shaker",
+        "history":"Der Clover Club Cocktail ist ein Getränk, das vor der Prohibition in den Vereinigten Staaten kreiert wurde und seinen Namen vom gleichnamigen Männerclub in Philadelphia hat. Der Club traf sich im Bellevue-Stratford Hotel an der Ecke South Broad Street und Walnut Street in Center City. Der Clover Club wurde 1896 gegründet, wie im Buch „The Clover Club of Philadelphia“ von Mary R. Deacon aus dem Jahr 1897 beschrieben.\n\nRezepte für den Clover Club Cocktail wurden bereits 1917 im Buch „The „Idealer Barkeeper“ von Thomas Bullock.",
         "ingredients":[
             {
                 "name":"london dry gin",
@@ -2980,22 +2980,22 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"blanc d'oeuf",
+                "name":"egg white",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3004,7 +3004,7 @@
     {
         "id":"corn-and-oil",
         "name":"Corn & Oil",
-        "method":"secouer et vider",
+        "method":"shake & dump",
         "glass":"rock",
         "garnish":"-",
         "ice":"-",
@@ -3022,39 +3022,39 @@
                 "unit":"oz."
             },
             {
-                "name":"quartiers de lime",
+                "name":"lime wedges",
                 "quantity":3.0,
                 "unit":"-"
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"daiquiri",
         "name":"Daiquiri",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
         "extra":"-",
-        "history":"Bien que de nombreuses boissons vintage manquent de documentation pour prouver leur point précis de création, l'origine du daiquiri est étayée par une véritable fiche de recette de cocktail signée par \"Jennings Cox\" en 1896. Cox, un ingénieur américain qui a vécu et travaillé à Cuba après l'arrivée des Espagnols. -American War, aurait inventé le daiquiri après avoir manqué de gin alors qu'il organisait un cocktail. Comme le rhum est abondant dans le pays, il s'est avéré être un substitut pratique dans un punch qu'il servait. Contrairement à ce qui est indiqué sur sa fiche de recette, la boisson était faite avec des citrons verts et de la cassonade. Elle s'est avérée être un énorme succès, et Cox l'a baptisée \"Daiquiri\", en nommant la boisson d'après une ville portuaire voisine, qui se trouvait également être le lieu où les États-Unis ont envahi pour la première fois. Cuba pendant la guerre hispano-américaine.\n\nCependant, compte tenu de l'abondance de citron vert, de sucre et de rhum sur l'île, il est probable que Cox ait simplement été le premier à rédiger la recette d'un cocktail qui existait déjà à Cuba. qu'un prototype de daiquiri avait sauvé la Royal Navy britannique du scorbut depuis des siècles.",
+        "history":"Während es bei vielen Vintage-Getränken an Dokumentationen mangelt, die den genauen Herstellungsort belegen, wird der Ursprung des Daiquiri durch eine tatsächliche Cocktail-Rezeptkarte belegt, die 1896 von „Jennings Cox“ unterzeichnet wurde. Cox, ein amerikanischer Ingenieur, der nach der spanischen Herrschaft in Kuba lebte und arbeitete, Es wird angenommen, dass der amerikanische Krieg den Daiquiri erfunden hat, nachdem ihm bei einer Cocktailparty der Gin ausgegangen war. Da es im Land reichlich Rum gibt, erwies er sich als praktischer Ersatz für einen Punsch, den er servierte. Anders als auf seiner Rezeptkarte angegeben, wurde das Getränk aus Limetten und braunem Zucker zubereitet. Es erwies sich als großer Erfolg und Cox taufte es „Daiquiri“ und benannte das Getränk nach einer nahegelegenen Hafenstadt, in der zufällig auch die USA während des Spanisch-Amerikanischen Krieges erstmals in Kuba einmarschierten.\n\nAllerdings Angesichts des Reichtums an Limetten, Zucker und Rum auf der Insel ist es wahrscheinlich, dass Cox lediglich der Erste war, der das Rezept für einen Cocktail verfasste, den es in Kuba bereits gab. Ganz zu schweigen davon, dass ein Prototyp des Daiquiri die britische Royal Navy schon vor Jahrhunderten vor Skorbut bewahrt hatte.",
         "ingredients":[
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3063,10 +3063,10 @@
     {
         "id":"east-side",
         "name":"East Side",
-        "method":"fouetter, secouer et égoutter",
+        "method":"whip shake & strain",
         "glass":"rock",
-        "garnish":"brin de menthe & concombre tranche",
-        "ice":"écrasé",
+        "garnish":"mint sprig & cucumber slice",
+        "ice":"crushed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -3076,36 +3076,36 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"feuilles de menthe",
+                "name":"mint leaves",
                 "quantity":1.0,
-                "unit":"poignée"
+                "unit":"handful"
             },
             {
-                "name":"concombre",
+                "name":"cucumber",
                 "quantity":2.0,
-                "unit":"tranches"
+                "unit":"slices"
             }
         ]
     },
     {
         "id":"french-75",
         "name":"French 75",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"flute",
-        "garnish":"spirale citron pressé",
+        "garnish":"spiraling lemon twist",
         "ice":"-",
-        "extra":"garnir de champagne",
-        "history":"L'une des premières recettes enregistrées pour le French 75 vient du Savoy Cocktail Book en 1930, mais la véritable nature de son origine est légèrement confuse. Une école de pensée estime que l'écossais Harry MacElhone, propriétaire du Harry's American Bar à Paris, a nommé la boisson en 1926. L'inspiration pour le titre était apparemment un canon de campagne obusier de 75 mm utilisé par les Français et les Américains pendant la Première Guerre mondiale. Le canon était connu pour sa précision et sa vitesse, et le 75 français aurait un tel coup de pied qu'on avait l'impression d'être frappé par une telle arme. Cependant, l'histoire de ce cocktail remonte plus loin que les années 1920. Charles Dickens était connu pour servir à ses prédécesseurs des coupes de gin et de champagne Tom dès 1867, et il existe de nombreuses histoires de l'époque du XIXe siècle de nobles messieurs, comme le prince de Galles, appréciant des concoctions similaires.",
+        "extra":"top with champagne",
+        "history":"Eines der ersten aufgezeichneten Rezepte für den French 75 stammt aus dem Savoy Cocktail Book aus dem Jahr 1930, die wahre Natur seines Ursprungs ist jedoch etwas unklar. Eine Denkrichtung geht davon aus, dass der Schotte Harry MacElhone, Besitzer von Harry's American Bar in Paris, dem Getränk 1926 seinen Namen gegeben hat. Die Inspiration für den Namen war offenbar eine 75-mm-Haubitze-Feldkanone, die von den Franzosen und Amerikanern im Ersten Weltkrieg eingesetzt wurde. Die Waffe war für seine Genauigkeit und Geschwindigkeit bekannt, und der French 75 soll einen solchen Kick haben, dass es sich anfühlte, als würde man von einer solchen Waffe getroffen. Die Geschichte des Cocktails reicht jedoch weiter zurück als bis in die 1920er Jahre. Es ist bekannt, dass Charles Dickens seinen Besuchern bereits 1867 Gin- und Champagnerbecher servierte, und aus dem 19. Jahrhundert gibt es viele Geschichten über adlige Herren wie den Prinzen von Wales, die ähnliche Kreationen genossen.",
         "ingredients":[
             {
                 "name":"london dry gin",
@@ -3113,12 +3113,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3127,12 +3127,12 @@
     {
         "id":"gimlet",
         "name":"Gimlet",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"rondelle de citron vert",
-        "ice":"en cubes si servi dans un verre à whisky",
+        "garnish":"lime wedge",
+        "ice":"cubed if served in rock glass",
         "extra":"-",
-        "history":"Ce cocktail est devenu populaire après avoir été mentionné dans le roman de Raymond Chandler \"The Long Goodbye\" de 1953, dans lequel le personnage principal, Philip Marlowe, a déclaré: \"Un vrai Gimlet est moitié gin et moitié jus de citron vert Rose et rien d'autre. Il bat le Martini\".\nCependant, l'histoire de cette boisson remonte plus loin, car on pense qu'il était servi aux marins de la Royal Navy britannique pour lutter contre le scorbut. Le jus de citron vert Rose a été créé en 1867 pour conserver le jus de citron vert sans de l'alcool, et en mélangeant le jus avec du Navy Strength Gin, le Gimlet est né. Au milieu du 20e siècle, le Gimlet était un cocktail populaire parmi les officiers de marine et dans la société britannique.",
+        "history":"Dieser Cocktail erlangte Popularität, nachdem er 1953 im Roman „The Long Goodbye“ von Raymond Chandler erwähnt wurde, in dem die Hauptfigur, Philip Marlowe, sagte: „Ein echter Gimlet besteht zur Hälfte aus Gin und zur Hälfte aus Rose’s Lime Juice und sonst nichts.“ Es schlägt Martinis Hollow.“\nDie Geschichte dieses Getränks reicht jedoch noch weiter zurück, da angenommen wird, dass es Matrosen der britischen Royal Navy als Mittel zur Bekämpfung von Skorbut serviert wurde. Rose’s Lime Juice wurde 1867 kreiert, um Limettensaft ohne Alkohol zu konservieren, und durch die Mischung des Safts mit Navy Strength Gin war der Gimlet geboren. Mitte des 20. Jahrhunderts war der Gimlet ein beliebter Cocktail unter Marineoffizieren und in der britischen Gesellschaft.",
         "ingredients":[
             {
                 "name":"london dry gin",
@@ -3140,12 +3140,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3154,11 +3154,11 @@
     {
         "id":"gin-rickey",
         "name":"Gin Rickey",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"rondelle de citron vert",
-        "ice":"en cubes",
-        "extra":"dessus d'eau gazeuse",
+        "garnish":"lime wedge",
+        "ice":"cubed",
+        "extra":"soda water top",
         "history":"",
         "ingredients":[
             {
@@ -3167,12 +3167,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3181,11 +3181,11 @@
     {
         "id":"god-father-&-god-mother",
         "name":"Godfather / Godmother",
-        "method":"construire + remuer brièvement",
+        "method":"build + short stir",
         "glass":"rock",
-        "garnish":"zestes d'orange",
-        "ice":"en cubes",
-        "extra":"scotch pour le Godfather - vodka pour la Godmother",
+        "garnish":"orange twist",
+        "ice":"cubed",
+        "extra":"scotch for the Godfather - vodka for the Godmother",
         "history":"",
         "ingredients":[
             {
@@ -3203,67 +3203,67 @@
     {
         "id":"grasshopper",
         "name":"Grasshopper",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"menthe feuille",
+        "garnish":"mint leaf",
         "ice":"-",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"crème de cacao blanche",
+                "name":"white creme de cacao",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"crème de menthe verte",
+                "name":"green creme de menthe",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"crème épaisse",
+                "name":"heavy cream",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"menthe",
+                "name":"mint",
                 "quantity":8.0,
-                "unit":"feuilles"
+                "unit":"leaves"
             }
         ]
     },
     {
         "id":"hemingway-daiquiri",
         "name":"Hemingway Daiquiri",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"tranche de citron vert",
+        "garnish":"lime wheel",
         "ice":"-",
         "extra":"-",
-        "history":"Le Hemingway Daiquiri est né lorsqu'Ernest Hemingway est entré dans un bar nommé \"El Floridita\" à La Havane, Cuba, et a remarqué une rangée de Daiquiri glacés sur le comptoir. Curieux, il a demandé au barman s'il pouvait en essayer un, et le barman a accepté. Hemingway a apprécié la boisson mais a fait remarquer qu'il la préférait sans sucre et avec le double de la quantité de rhum. Le barman a rapidement mélangé une nouvelle version de la boisson selon les préférences d'Hemingway, et elle est devenue connue sous le nom de Papa Doble, ou Double Frozen Daiquiri.\n\nHemingway a développé une forte affinité pour cette boisson et la consommait souvent en grande quantité. On raconte qu'il a bu une fois 17 Papa Dobles en une seule journée, et il a affirmé dans une lettre à l'écrivain Harvey Breit qu'il n'avait pas bu 17 Papa Dobles en une seule journée. Je n'ai même pas eu la gueule de bois le lendemain. Il a attribué cela à la préparation sans sucre du cocktail et au pain de viande qu'il avait mangé.\n\nDans l'ensemble, l'Hemingway Daiquiri témoigne de l'amour d'Hemingway pour le rhum et de sa préférence pour les cocktails forts et simples.",
+        "history":"Der Hemingway Daiquiri entstand, als Ernest Hemingway eine Bar namens „El Floridita“ in Havanna, Kuba, betrat und eine Reihe frostiger Daiquiris auf der Theke bemerkte. Neugierig fragte er den Barkeeper, ob er eines probieren könne, und der Barkeeper kam ihm nach. Hemingway genoss das Getränk, bemerkte jedoch, dass er es ohne Zucker und mit der doppelten Menge Rum bevorzuge. Der Barkeeper mixte umgehend eine neue Version des Getränks nach Hemingways Vorlieben und sie wurde als Papa Doble oder Double Frozen Daiquiri bekannt.\n\nHemingway entwickelte eine starke Affinität zu dem Getränk und konsumierte es oft in großen Mengen. Es heißt, er habe einmal an einem einzigen Tag 17 Papa Dobles getrunken, und in einem Brief an den Schriftsteller Harvey Breit behauptete er, dass er am nächsten Tag nicht einmal einen Kater erlitten habe. Er führte dies auf die zuckerfreie Zubereitung des Cocktails und ein Steak-Sandwich zurück, das er aß.\n\nInsgesamt ist der Hemingway Daiquiri ein Beweis für Hemingways Liebe zu Rum und seine Vorliebe für starke, unkomplizierte Cocktails.",
         "ingredients":[
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de pamplemousse",
+                "name":"grapefruit juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino liqueur",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de canne (2:1)",
+                "name":"cane syrup (2:1)",
                 "quantity":0.25,
                 "unit":"oz."
             }
@@ -3272,11 +3272,11 @@
     {
         "id":"hot-toddy",
         "name":"Hot Toddy",
-        "method":"construire",
+        "method":"build",
         "glass":"coffee mug",
-        "garnish":"bâton de cannelle et quartier de citron parsemé de clous de girofle",
+        "garnish":"cinnamon stick & clove-studded lemon wedge",
         "ice":"-",
-        "extra":"Servir chaud",
+        "extra":"serve hot",
         "history":"",
         "ingredients":[
             {
@@ -3285,12 +3285,12 @@
                 "unit":"oz."
             },
             {
-                "name":"thé noir chaud (English Breakfast ou Assam)",
+                "name":"hot black tea (english breakfast or assam)",
                 "quantity":3.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -3300,24 +3300,24 @@
                 "unit":"oz."
             },
             {
-                "name":"amer de peychaud",
+                "name":"peychaud's bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"irish-coffee",
         "name":"Irish Coffee",
-        "method":"construire",
+        "method":"build",
         "glass":"coffee mug",
-        "garnish":"1 grains de café ou cannelle râpée",
+        "garnish":"1 coffee beans or grated cinnamon",
         "ice":"-",
-        "extra":"servir chaud - dépôt de crème épaisse fouettée à la main au sommet",
+        "extra":"serve hot - hand whipped heavy cream float",
         "history":"",
         "ingredients":[
             {
-                "name":"eau chaude",
+                "name":"hot water",
                 "quantity":2.0,
                 "unit":"oz."
             },
@@ -3327,12 +3327,12 @@
                 "unit":"oz."
             },
             {
-                "name":"expresso",
+                "name":"espresso",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara",
+                "name":"demerara syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3341,9 +3341,9 @@
     {
         "id":"japanese-cocktail",
         "name":"Japanese Cocktail",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"nick-nora",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -3354,23 +3354,23 @@
                 "unit":"oz."
             },
             {
-                "name":"orgeat (sirop d'amande)",
+                "name":"orgeat (almond syrup)",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"kir-royale",
         "name":"Kir Royale",
-        "method":"construire",
+        "method":"build",
         "glass":"flute",
-        "garnish":"framboise et citron pressé",
+        "garnish":"raspberry and lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -3390,7 +3390,7 @@
     {
         "id":"last-word",
         "name":"Last Word",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"nick-nora",
         "garnish":"-",
         "ice":"-",
@@ -3403,17 +3403,17 @@
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino liqueur",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"chartreuse verte",
+                "name":"green chartreuse",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -3422,11 +3422,11 @@
     {
         "id":"long-island-iced-tea",
         "name":"Long Island Iced Tea",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"quartier de citron",
-        "ice":"en cubes",
-        "extra":"garnir de coca cola",
+        "garnish":"lemon wedge",
+        "ice":"cubed",
+        "extra":"top with coca cola",
         "history":"",
         "ingredients":[
             {
@@ -3440,12 +3440,12 @@
                 "unit":"oz."
             },
             {
-                "name":"tequila blanche",
+                "name":"blanco tequila",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -3455,7 +3455,7 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3464,35 +3464,35 @@
     {
         "id":"mai-tai",
         "name":"Mai Tai",
-        "method":"secouer et filtrer",
+        "method":"shake & strain",
         "glass":"rock",
-        "garnish":"brin de menthe, rondelle de citron vert & tranche d'orange",
-        "ice":"en cubes + dessus écrasé",
-        "extra":"OBLIGATOIRE: l'orgeat doit être fait maison ou de marque premium au risque d'une mauvaise viscosité",
-        "history":"Le Mai Tai est l'un des cocktails par excellence de la culture Tiki. Cette histoire a commencé en 1944, selon Victor J. Bergeron, plus connu sous le nom de Trader Vic. Il raconte l'histoire de la journée où il servait deux amis, Eastham et Carrie. Guilde de Tahiti, dans son restaurant \"Trader Vic\", à Oakland, en Californie. Après avoir servi la boisson à ses amis, Carrie en but une gorgée et s'exclama \"Mai Tai-Roa Aé\", ce qui signifie \"Dehors de ce monde - le meilleur\".",
+        "garnish":"mint sprig, lime wedge & orange slice",
+        "ice":"cubed + crushed top",
+        "extra":"MUST: be house-made orgeat or premium brand - bottled almond syrup as the wrong viscosity",
+        "history":"Der Mai Tai ist einer der Inbegriffscocktails der Tiki-Kultur. Laut Victor J. Bergeron, besser bekannt als Trader Vic, begann diese Geschichte im Jahr 1944. Er erzählt die Geschichte des Tages, als er zwei Freunde, Eastham und Carrie Guild aus Tahiti, in seinem Restaurant „Trader Vic“ in Oakland, Kalifornien, bediente. Nachdem er seinen Freunden das Getränk serviert hatte, nahm Carrie einen Schluck und rief: „Mai Tai-Roa Aé“, was „Nicht von dieser Welt – das Beste“ bedeutet.",
         "ingredients":[
             {
-                "name":"rhum jamaïcain vieilli",
+                "name":"aged jamaican rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"rhum agricole blanc",
+                "name":"white agricole rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"curaçao orange (l'arbuste créole est le meilleur)",
+                "name":"orange curacao (creole shrub is best)",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"orgeat (sirop d'amande)",
+                "name":"orgeat (almond syrup)",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -3501,42 +3501,42 @@
     {
         "id":"manhattan",
         "name":"Manhattan",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"cerise",
+        "garnish":"cherry",
         "ice":"-",
-        "extra":"OBLIGATOIRE : servir dans une coupe ou un verre à roche, et laissez le choix entre whisky bourbon ou whisky de seigle",
-        "history":"Comme pour de nombreux cocktails classiques, l'histoire d'origine du Manhattan est entourée de mystère. La théorie la plus populaire suggère que la recette a été inventée par le Dr Iain Marshall au début des années 1880 pour une fête organisée par Lady Randolph Churchill, la mère de Winston. Churchill, au Manhattan Club de New York. Cependant, cette théorie a été réfutée parce que Lady Randolph Churchill était enceinte et se trouvait en Angleterre à l'époque. Une histoire plus plausible vient du livre de 1923 \"Valentine's Manual of New York\", qui raconte que William F. Mulhall, barman à la Hoffman House de New York dans les années 1880, affirmait que le cocktail Manhattan avait été inventé par un homme nommé Black qui possédait un endroit à dix pas en dessous de Houston Street à Broadway.",
+        "extra":"MUST: offer coupe or rock glass & choice of bourbon or rye whiskey",
+        "history":"Wie bei vielen klassischen Cocktails ist die Entstehungsgeschichte des Manhattan rätselhaft. Die populärste Theorie besagt, dass das Rezept in den frühen 1880er Jahren von Dr. Iain Marshall für eine Party erfunden wurde, die Lady Randolph Churchill, die Mutter von Winston Churchill, im Manhattan Club in New York veranstaltete. Diese Theorie wurde jedoch widerlegt, da Lady Randolph Churchill zu dieser Zeit schwanger und in England war. Eine plausiblere Geschichte stammt aus dem Buch „Valentine's Manual of New York“ aus dem Jahr 1923, in dem es heißt, dass William F. Mulhall, ein Barkeeper im New Yorker Hoffman House in den 1880er Jahren, behauptete, der Manhattan-Cocktail sei von einem Mann namens Black erfunden worden besaß ein Lokal zehn Türen unterhalb der Houston Street am Broadway.",
         "ingredients":[
             {
-                "name":"bourbon ou rye whiskey",
+                "name":"bourbon or rye whiskey",
                 "quantity":2.5,
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"margarita",
         "name":"Margarita",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
-        "extra":"OBLIGATOIRE: servir dans un verre à bord salé, une coupe ou un verre à roche",
-        "history":"On pense que la Margarita est une version à base de tequila de la Daisy, un style de boisson qui remonte à l'époque victorienne, car \"Margarita\" signifie \"marguerite\" en espagnol.\n\nIl y a plusieurs affirmations au sujet de l'invention et du nom de la Margarita. Une histoire suggère que Daniele Negrete a créé la boisson comme cadeau pour sa petite amie Margarita en 1936, alors qu'il était directeur de l'hôtel Graci Crespo à Puebla, au Mexique. En 1944, Negrete a déménagé à Tijuana, au Mexique et est devenu barman à l'hippodrome Agua Caliente, qui prétend être le lieu de naissance de la Margarita au début des années 1930.\n\nUne autre histoire attribue la création de la Margarita à Johnny Durlesser, barman en chef du Tail O' The Clock à Los Angeles, à qui Vernon Underwood, président de Young's Market Company, a demandé de créer une boisson à base de Cuervo Tequila, que la société avait récemment commencé à distribuer dans les années 1930. Underwood a donné à cette boisson le nom de sa femme, Margaret (Margarita).",
+        "extra":"MUST: offer salt rim, coupe or rock glass - ALWAYS: salt rim half glass & add straw if on the rocks",
+        "history":"Es wird angenommen, dass die Margarita eine auf Tequila basierende Version des Daisy ist, einer Getränkeart, die bis in die viktorianische Zeit zurückreicht, da „Margarita“ spanisch für „Gänseblümchen“ ist.\n\nEs gibt mehrere Behauptungen darüber Erfindung und Namensgebung der Margarita. Einer Geschichte zufolge kreierte Daniele Negrete das Getränk 1936 als Geschenk für seine Freundin Margarita, als er Manager des Graci Crespo Hotels in Puebla, Mexiko, war. Im Jahr 1944 zog Negrete nach Tijuana, Mexiko, und wurde Barkeeper auf der Rennstrecke Agua Caliente, die angeblich der Geburtsort der Margarita in den frühen 1930er Jahren war.\n\nEine andere Geschichte schreibt die Kreation der Margarita Johnny Durlesser, dem Chef, zu Barkeeper des Tail O' The Clock in Los Angeles, der von Vernon Underwood, Präsident der Young's Market Company, gebeten wurde, ein Getränk aus Cuervo Tequila zu kreieren, dessen Vertrieb das Unternehmen in den 1930er Jahren erst kürzlich begonnen hatte. Underwood benannte das Getränk nach seiner Frau Margaret (Margarita).",
         "ingredients":[
             {
-                "name":"tequila blanche",
+                "name":"blanco tequila",
                 "quantity":2.0,
                 "unit":"oz."
             },
@@ -3546,12 +3546,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.15,
                 "unit":"oz."
             }
@@ -3560,15 +3560,15 @@
     {
         "id":"cadillac-margarita",
         "name":"Cadillac Margarita",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
         "garnish":"-",
         "ice":"-",
-        "extra":"OBLIGATOIRE: servir dans un verre à bord salé, une coupe ou un verre à roche",
+        "extra":"MUST: offer salt rim, coupe or rock glass - ALWAYS: salt rim half glass & add straw if on the rocks",
         "history":"",
         "ingredients":[
             {
-                "name":"tequila blanche",
+                "name":"blanco tequila",
                 "quantity":2.0,
                 "unit":"oz."
             },
@@ -3578,12 +3578,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.15,
                 "unit":"oz."
             }
@@ -3592,9 +3592,9 @@
     {
         "id":"martinez",
         "name":"Martinez",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -3605,36 +3605,36 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"liqueur de marasquin",
+                "name":"maraschino liqueur",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers aromatiques",
+                "name":"aromatic bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"mimosa",
         "name":"Mimosa",
-        "method":"construire",
+        "method":"build",
         "glass":"flute",
-        "garnish":"spirale zestes d'orange",
+        "garnish":"spiraling orange twist",
         "ice":"-",
         "extra":"-",
-        "history":"Brunch et mimosas vont de pair, et de nombreux brunchs proposent généralement des mimosas à volonté. Comme la plupart des cocktails classiques, il existe de nombreuses légendes concernant les véritables origines du mimosa. Le Buck's Fizz, également à base de champagne et de jus d'orange (mais avec une plus grande quantité de vin), a été inventé au Buck's Club de Londres en 1921. Bien que ces deux cocktails aient beaucoup en commun, on pense que quatre ans plus tard, en 1925, Frank Meier, barman au Ritz Un hôtel à Paris a inventé le mimosa, qui utilise à parts égales du vin mousseux et du jus.",
+        "history":"Brunch und Mimosen gehen einfach Hand in Hand, und viele Brunch-Lokale bieten normalerweise grenzenlose Mimosen an. Wie bei den meisten klassischen Cocktails gibt es viele Legenden über den wahren Ursprung der Mimose. Der Buck’s Fizz, ebenfalls aus Champagner und Orangensaft (jedoch mit einer größeren Menge Wein), wurde 1921 im Buck’s Club in London erfunden. Obwohl diese beiden Cocktails viele Gemeinsamkeiten haben, wird angenommen, dass Frank Meier, ein Barkeeper im Ritz Hotel in Paris, vier Jahre später, im Jahr 1925, den Mimosa erfand, der zu gleichen Teilen Sekt und Saft verwendet.",
         "ingredients":[
             {
                 "name":"champagne",
@@ -3642,21 +3642,21 @@
                 "unit":"oz."
             },
             {
-                "name":"jus d'orange",
+                "name":"orange juice",
                 "quantity":2.0,
                 "unit":"oz."
             }
         ]
     },
     {
-        "id":"menthe-julep",
-        "name":"menthe Julep",
-        "method":"fouetter + filtrer",
+        "id":"mint-julep",
+        "name":"Mint Julep",
+        "method":"whip shake + strain",
         "glass":"julep cup",
-        "garnish":"brin de menthe",
-        "ice":"écrasé",
-        "extra":"frapper la menthe pour libérer les huiles",
-        "history":"Le julep servait à l'origine comme tonique médicinal pour apaiser les maux d'estomac. Cependant, en tant que cocktail, il a gagné en popularité à la fin des années 1700 dans le sud des États-Unis et était considéré comme une boisson réservée à l'élite. En effet, la glace et la coupe d'argent, dans lesquels la boisson est généralement servie, n'étaient pas facilement accessibles à tout le monde.\n\nEn 1938, le menthe Julep a été désigné comme boisson officielle du Kentucky Derby, et depuis lors, environ 120 000 de ces cocktails ont été vendus lors de la course. chaque année.",
+        "garnish":"mint sprig",
+        "ice":"crushed",
+        "extra":"slap the mint to release the oils",
+        "history":"Der Julep diente ursprünglich als medizinisches Tonikum zur Linderung von Magenbeschwerden. Als Cocktail erlangte er jedoch Ende des 18. Jahrhunderts im amerikanischen Süden große Popularität und galt als Getränk der Elite. Dies lag daran, dass Eis und der Silberbecher, in dem das Getränk normalerweise serviert wird, nicht für jedermann leicht zugänglich waren.\n\nIm Jahr 1938 wurde der Mint Julep zum offiziellen Getränk des Kentucky Derby erklärt, und seitdem sind es etwa 120.000 dieser Cocktails wurden jedes Jahr beim Rennen verkauft.",
         "ingredients":[
             {
                 "name":"bourbon",
@@ -3664,57 +3664,57 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara",
+                "name":"demerara syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"menthe",
+                "name":"mint",
                 "quantity":1.0,
-                "unit":"poignée"
+                "unit":"handful"
             }
         ]
     },
     {
         "id":"mojito",
         "name":"Mojito",
-        "method":"tourbillonner/baratter",
+        "method":"swizzle/churn",
         "glass":"collins",
-        "garnish":"brin de menthe & rondelle de citron vert",
-        "ice":"écrasé",
-        "extra":"frapper la menthe pour libérer les huiles",
-        "history":"La Havane, à Cuba, est largement considérée comme le berceau du mojito, bien qu'il y ait un débat sur son origine exacte. La popularité de la boisson a commencé à monter en flèche pendant le séjour d'Ernest Hemingway à Cuba.\n\nSelon une théorie, le mojito original a été créé comme boisson médicinale pour lutter contre les maladies sur l'île, et son alcool principal était un type de rhum clair de lune. Cependant, lorsque les pirates ont envahi Cuba, la boisson a été présentée à Sir Francis Drake, qui a rapidement remplacé le clair de lune par du rhum. La boisson était initialement appelé \"El Draque\" d'après Drake, mais il est finalement devenu connu sous le nom de mojito que nous connaissons aujourd'hui.",
+        "garnish":"mint sprig & lime wedge",
+        "ice":"crushed",
+        "extra":"slap the mint to release the oils",
+        "history":"Havanna, Kuba, gilt allgemein als Geburtsort des Mojito, obwohl es einige Debatten über seinen genauen Ursprung gibt. Die Popularität des Getränks begann während der Zeit von Ernest Hemingway in Kuba rasant zu steigen.\n\nEine Theorie besagt, dass der ursprüngliche Mojito als medizinisches Getränk zur Bekämpfung von Krankheiten auf der Insel geschaffen wurde und seine Hauptspirituose eine Art Mondschein-Rum war. Als jedoch Piraten in Kuba einmarschierten, wurde das Getränk Sir Francis Drake vorgestellt, der den Mondschein umgehend durch Rum ersetzte. Ursprünglich wurde das Getränk nach Drake „El Draque“ genannt, aber schließlich wurde es als der Mojito bekannt, den wir heute kennen.",
         "ingredients":[
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"menthe",
+                "name":"mint",
                 "quantity":1.0,
-                "unit":"grosse poignée"
+                "unit":"large handful"
             }
         ]
     },
     {
         "id":"moscow-mule",
         "name":"Moscow-mule (and all mules)",
-        "method":"construire",
+        "method":"build",
         "glass":"collins",
-        "garnish":"rondelle de citron vert",
-        "ice":"en cubes + dessus de glace pilée",
-        "extra":"REMPLACER: spiritueux de base par un autre spiritueux pour différentes mules",
+        "garnish":"lime wedge",
+        "ice":"cubed + crush top",
+        "extra":"REPLACE: base spirit with other spirit for different mules",
         "history":"",
         "ingredients":[
             {
@@ -3723,17 +3723,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple/sirop de gingembre",
+                "name":"simple syrup/ginger syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"bière de gingembre",
+                "name":"ginger beer",
                 "quantity":6.0,
                 "unit":"oz."
             }
@@ -3742,11 +3742,11 @@
     {
         "id":"dark-and-stormy",
         "name":"Dark & Stormy",
-        "method":"construire",
+        "method":"build",
         "glass":"collins",
-        "garnish":"rondelle de citron vert & brin de menthe",
-        "ice":"en cubes + dessus de glace pilée",
-        "extra":"faire flotter du rhum brun dessus",
+        "garnish":"lime wedge & mint sprig",
+        "ice":"cubed + crush top",
+        "extra":"float dark rum on top",
         "history":"",
         "ingredients":[
             {
@@ -3755,17 +3755,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple/sirop de gingembre",
+                "name":"simple syrup/ginger syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"bière de gingembre",
+                "name":"ginger beer",
                 "quantity":6.0,
                 "unit":"oz."
             }
@@ -3774,12 +3774,12 @@
     {
         "id":"negroni",
         "name":"Negroni",
-        "method":"construire + remuer brièvement",
+        "method":"build + short stir",
         "glass":"rock",
-        "garnish":"quartier d'orange",
-        "ice":"en cubes",
+        "garnish":"orange wedge",
+        "ice":"cubed",
         "extra":"-",
-        "history":"L'histoire de ce cocktail remonte à 1919, lorsque le comte Camillo Negroni, playboy bien connu et habitué du Casoni Bar de Florence, en Italie, demanda une version plus forte de son cocktail Americano habituel. Fosco Scarselli, le barman en service, a remplacé l'eau gazeuse de la recette par du gin, et c'est ainsi que le Negroni est né.\n\nAnecdote: grâce à Gaz Regan, la manière emblématique de préparer un Negroni est de le remuer avec le doigt, et il devrait être toujours garni d'un quartier ou d'un zeste d'orange. Il convient de noter que l'utilisation d'un citron comme garniture est considérée comme une infraction grave et que la punition est d'être forcé de sucer le doigt remuant Negroni de Gaz Regan.",
+        "history":"Die Geschichte dieses Cocktails reicht bis ins Jahr 1919 zurück, als Graf Camillo Negroni, ein bekannter Playboy und Stammgast der Casoni Bar in Florenz, Italien, nach einer stärkeren Version seines üblichen Americano-Cocktails fragte. Fosco Scarselli, der diensthabende Barkeeper, ersetzte das Sodawasser im Rezept durch Gin, und so war der Negroni geboren.\n\nUnterhaltsame Tatsache: Dank Gaz Regan besteht die ikonische Art, einen Negroni zuzubereiten, darin, ihn mit dem Wasser umzurühren Finger, und es sollte immer mit einer Orangenspalte oder -spirale garniert werden. Es ist erwähnenswert, dass die Verwendung einer Zitrone als Beilage als schweres Vergehen gilt und die Strafe darin besteht, Gaz Regans Negroni-Rührfinger zu lutschen.",
         "ingredients":[
             {
                 "name":"london dry gin",
@@ -3787,7 +3787,7 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.0,
                 "unit":"oz."
             },
@@ -3801,49 +3801,49 @@
     {
         "id":"old-cuban",
         "name":"Old Cuban",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"feuille de menthe",
+        "garnish":"mint leaf",
         "ice":"-",
-        "extra":"excellent champagne",
+        "extra":"top champagne",
         "history":"",
         "ingredients":[
             {
-                "name":"vieux rhum",
+                "name":"aged rum",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara",
+                "name":"demerara syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"menthe",
+                "name":"mint",
                 "quantity":6.0,
-                "unit":"feuilles"
+                "unit":"leaves"
             }
         ]
     },
     {
         "id":"old-fashioned",
         "name":"Old Fashioned",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"citron & zestes d'orange",
-        "ice":"en cubes",
-        "extra":"OBLIGATOIRE: proposer un choix de whisky",
-        "history":"Le Old Fashioned est l'une des versions les plus anciennes et les plus simples de cocktails, antérieure au développement de techniques et de recettes avancées de barman qui ont émergé à la fin du 19e siècle.\n\nDans les années 1860, il est devenu courant d'ajouter du curaçao à l'orange, l'absinthe et d'autres liqueurs au cocktail, le rendant plus complexe. En conséquence, les clients qui préféraient des cocktails plus simples ont commencé à demander des boissons similaires à celles préparées avant les années 1850, les qualifiant de \"à l'ancienne\".",
+        "garnish":"lemon & orange twist",
+        "ice":"cubed",
+        "extra":"MUST: offer choice of whiskey",
+        "history":"Der Old Fashioned ist eine der frühesten und einfacheren Versionen von Cocktails und stammt aus der Zeit vor der Entwicklung fortschrittlicher Barkeeper-Techniken und -Rezepte, die in der zweiten Hälfte des 19. Jahrhunderts aufkamen.\n\nIn den 1860er Jahren wurde es üblich, Orangen-Curaçao und Absinth hinzuzufügen , und andere Liköre zum Cocktail, was ihn komplexer macht. Infolgedessen begannen Gäste, die einfachere Cocktails bevorzugten, nach Getränken zu fragen, die denen ähnelten, die vor den 1850er Jahren hergestellt wurden, und bezeichneten sie als „altmodisch“.",
         "ingredients":[
             {
                 "name":"bourbon or rye whiskey",
@@ -3851,30 +3851,30 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara",
+                "name":"demerara syrup",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers aromatiques",
+                "name":"aromatic bitters",
                 "quantity":1.0,
-                "unit":"tiret"
+                "unit":"dash"
             }
         ]
     },
     {
         "id":"old-maid-london-maid",
         "name":"Old Maid aka London Maid",
-        "method":"fouetter et filtrer finement",
+        "method":"whip shake & fine strain",
         "glass":"rock",
-        "garnish":"menthe & concombre tranche",
-        "ice":"en cubes",
-        "extra":"CONSEIL: cette recette fonctionne avec n’importe quel spiritueux blanc",
+        "garnish":"mint & cucumber slice",
+        "ice":"cubed",
+        "extra":"TIP: this recipe works with any white spirit",
         "history":"",
         "ingredients":[
             {
@@ -3883,39 +3883,39 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"feuilles de menthe",
+                "name":"mint leaves",
                 "quantity":1.0,
-                "unit":"poignée"
+                "unit":"handful"
             },
             {
-                "name":"concombre",
+                "name":"cucumber",
                 "quantity":2.0,
-                "unit":"tranches"
+                "unit":"slices"
             }
         ]
     },
     {
         "id":"paloma",
         "name":"Paloma",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"verre à bord demi-salé & rondelle de citron vert",
-        "ice":"en cubes",
+        "garnish":"half salted rim glass & lime wedge",
+        "ice":"cubed",
         "extra":"-",
-        "history":"L'origine du cocktail Paloma est entourée de mystère, et personne ne sait avec certitude qui l'a inventé. Certains attribuent le crédit au légendaire Don Javier Delgado Corona, propriétaire du bar \"La Capilla\" dans la ville de Tequila, Jalisco, Mexique, avec sa création. Don Javier est également l'inventeur d'un autre cocktail à base de tequila appelé Batanga, qui est un mélange de tequila, de jus de citron vert et de Coca-Cola.",
+        "history":"Der Ursprung des Paloma-Cocktails ist rätselhaft und niemand weiß genau, wer ihn erfunden hat. Einige schreiben die Kreation dem legendären Don Javier Delgado Corona zu, dem Besitzer der Bar „La Capilla“ in der Stadt Tequila, Jalisco, Mexiko. Don Javier ist auch der Erfinder eines anderen Cocktails auf Tequila-Basis namens Batanga, einer Mischung aus Tequila, Limettensaft und Coca-Cola.",
         "ingredients":[
             {
-                "name":"tequila blanche",
+                "name":"blanco tequila",
                 "quantity":1.5,
                 "unit":"oz."
             },
@@ -3925,17 +3925,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de pamplemousse",
+                "name":"grapefruit juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop d'agave",
+                "name":"agave syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -3944,11 +3944,11 @@
     {
         "id":"penicillin",
         "name":"Penicillin",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
         "garnish":"-",
-        "ice":"en cubes",
-        "extra":"dépôt de whisky écossais tourbé au sommet",
+        "ice":"cubed",
+        "extra":"float of peated scotch whiskey",
         "history":"",
         "ingredients":[
             {
@@ -3957,17 +3957,17 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop de gingembre",
+                "name":"ginger syrup",
                 "quantity":0.35,
                 "unit":"oz."
             },
             {
-                "name":"sirop de miel (2:1)",
+                "name":"honey syrup (2:1)",
                 "quantity":0.35,
                 "unit":"oz."
             }
@@ -3976,11 +3976,11 @@
     {
         "id":"pimms-cup",
         "name":"Pimm's Cup",
-        "method":"construire + remuer brièvement",
+        "method":"build + short stir",
         "glass":"collins",
-        "garnish":"TOP : tranche d'orange et brin de menthe. À L'INTÉRIEUR : une tranche d'orange, 6 feuilles de menthe, une tranche de concombre et un quartier de fraise",
-        "ice":"en cubes",
-        "extra":"garnir de soda au gingembre OU de limonade",
+        "garnish":"TOP: orange slice & mint sprig. INSIDE: orange slice, 6 mint leaves, cucumber slice & a quartered strawberry",
+        "ice":"cubed",
+        "extra":"top with ginger ale OR lemonade",
         "history":"",
         "ingredients":[
             {
@@ -3989,22 +3989,22 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop de gingembre",
+                "name":"ginger syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop d'agave",
+                "name":"agave syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -4013,72 +4013,72 @@
     {
         "id":"pina-colada",
         "name":"Piña Colada",
-        "method":"fouetter + vider",
+        "method":"whip shake + dump",
         "glass":"collins",
-        "garnish":"quartier d'ananas et feuilles d'ananas",
-        "ice":"en cubes + dessus écrasé",
-        "extra":"CONSEIL : Koko Kanu ou Aluna sont d'excellents rhums à la noix de coco à utiliser ou à préparer votre propre rhum à la noix de coco - évitez le Malibu, s'il vous plaît.",
-        "history":"La Piña Colada est originaire de San Juan, à Porto Rico, où elle a été créée par Ramón \"Monchito\" Marrero au Caribe Hilton en 1954. Ce cocktail rafraîchissant est préparé en mélangeant du rhum, de la crème de coco et du jus d'ananas, ce qui donne un goût fruité et délicieuse boisson estivale.\n\nEn 1978, la Piña Colada a été officiellement déclarée boisson nationale de Porto Rico. Aujourd'hui, elle reste l'un des meilleurs cocktails de la marque de l'hôtel Hilton.",
+        "garnish":"pineapple wedge & pineapple fronds",
+        "ice":"cubed + crushed top",
+        "extra":"TIP: KokoKanu or Aluna are great coconut rums to use or alternativly make your own coconut rum - avoid Malibu, please",
+        "history":"Piña Colada stammt aus San Juan, Puerto Rico, wo er 1954 von Ramón „Monchito“ Marrero im Caribe Hilton kreiert wurde. Dieser erfrischende Cocktail wird durch die Mischung von Rum, Kokosnusscreme und Ananassaft hergestellt, was zu einem fruchtigen und köstlichen Cocktail führt Sommergetränk.\n\nIm Jahr 1978 wurde Piña Colada offiziell zum Nationalgetränk von Puerto Rico erklärt. Auch heute noch ist er einer der besten Cocktails der Marke Hilton Hotel.",
         "ingredients":[
             {
-                "name":"rhum de noix de coco (ABV 37,5% ou plus)",
+                "name":"coconut rum (ABV 37.5% or above)",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus d'ananas",
+                "name":"pineapple juice",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"crème de coco/crème de coco",
+                "name":"cream of coconut/coconut cream",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura ou bitter au chocolat",
+                "name":"angostura bitters or chocolate bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"pineapple-daiquiri",
         "name":"Pineapple Daiquiri",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"bande d'angostura bitter sur le dessus",
+        "garnish":"stripe of angostura bitter on top",
         "ice":"-",
         "extra":"-",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum blanc",
+                "name":"white rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"rhum agricole vieilli",
+                "name":"aged agricole rum",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus d'ananas",
+                "name":"pineapple juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -4087,30 +4087,30 @@
     {
         "id":"pornstar-martini",
         "name":"Pornstar Martini",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"1/2 fruit de la passion",
+        "garnish":"1/2 passion fruit",
         "ice":"-",
-        "extra":"un verre de champagne à côté",
-        "history":"Le créateur de ce cocktail provocateur et ludique est Douglas Ankrah, qui l'a réalisé au LAB Bar dans le quartier de Soho à Londres. La boisson s'appelle \"ironique\" et est composée de vodka à la vanille, de fruit de la passion et de champagne, créant un équilibre délicieux et exotique de saveurs faciles à consommer.\n\nCe qui était vraiment inattendu, c'était la popularité durable de ce cocktail, qui est resté un favori pendant près de deux décennies. En fait, en 2019, il a été signalé comme le le cocktail le plus commandé de tout le Royaume-Uni.",
+        "extra":"shot of champagne on the side",
+        "history":"Der Schöpfer dieses provokanten und verspielten Cocktails ist Douglas Ankrah, der ihn in der LAB Bar im Londoner Stadtteil Soho kreierte. Das Getränk heißt „augenzwinkernd“ und besteht aus Vanille-Wodka, Passionsfrucht und Champagner, wodurch eine köstliche und exotische Geschmacksbalance entsteht, die leicht zu konsumieren ist.\n\nWas wirklich unerwartet war, war die Beständigkeit Popularität dieses Cocktails, der seit fast zwei Jahrzehnten ein beliebter Cocktail ist. Tatsächlich galt er 2019 als der meistbestellte Cocktail im gesamten Vereinigten Königreich.",
         "ingredients":[
             {
-                "name":"vodka à la vanille",
+                "name":"vanilla vodka",
                 "quantity":1.15,
                 "unit":"oz."
             },
             {
-                "name":"sirop de vanille",
+                "name":"vanilla syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de fruits de la passion",
+                "name":"passionfruit juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"purée de fruit de la passion",
+                "name":"passionfruit puree",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -4119,25 +4119,25 @@
     {
         "id":"queens-park-swizzle",
         "name":"Queen's Park Swizzle",
-        "method":"tourbillonner/baratter",
+        "method":"swizzle/churn",
         "glass":"collins",
-        "garnish":"brin de menthe",
-        "ice":"écrasé",
-        "extra":"créez un dépôt d'angostura après le barattage et ajoutez de la glace fraîchement pilée dessus",
+        "garnish":"mint sprig",
+        "ice":"crushed",
+        "extra":"create a float of angostura after churning & add fresh crushed ice on top of it",
         "history":"",
         "ingredients":[
             {
-                "name":"vieux rhum",
+                "name":"aged rum",
                 "quantity":2.25,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -4146,11 +4146,11 @@
     {
         "id":"ramos-gin-fizz",
         "name":"Ramos Gin Fizz",
-        "method":"secouer à sec, secouer et filtrer finement",
+        "method":"dry shake, shake & fine strain",
         "glass":"collins",
         "garnish":"-",
         "ice":"-",
-        "extra":"mettez les Collins au congélateur avant de commencer à préparer la boisson - ajoutez de l'eau gazeuse au fond du verre avant de filtrer le cocktail à l'intérieur - mettez le cocktail au congélateur pour solidifier la mousse - après quelques minutes complétez-le lentement avec du soda de l'eau pour créer une tête attrayante",
+        "extra":"put the collins inside a freezer before starting to make the drink - add soda water at the bottom of the glass before straining the cocktail inside - pop the cocktail in the freezer to solidify the foam - after a couple of minutes slowly top it up with soda water to create an attractive head",
         "history":"",
         "ingredients":[
             {
@@ -4159,27 +4159,27 @@
                 "unit":"oz."
             },
             {
-                "name":"crème épaisse",
+                "name":"heavy cream",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"eau de fleur d'oranger",
+                "name":"orange flower water",
                 "quantity":5.0,
                 "unit":"drops"
             }
@@ -4188,9 +4188,9 @@
     {
         "id":"rob-roy",
         "name":"Rob Roy",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"coupe",
-        "garnish":"cerise sur un bâton de cocktail",
+        "garnish":"cherry on cocktail pick",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -4201,29 +4201,29 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"rome-with-a-view",
         "name":"Rome with a view",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"rondelle de citron vert",
-        "ice":"en cubes",
-        "extra":"garnir le cocktail avec de l'eau gazeuse",
+        "garnish":"lime wedge",
+        "ice":"cubed",
+        "extra":"top the cocktail with soda water",
         "history":"",
         "ingredients":[
             {
-                "name":"vermouth sec",
+                "name":"dry vermouth",
                 "quantity":1.0,
                 "unit":"oz."
             },
@@ -4233,12 +4233,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":1.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             }
@@ -4247,10 +4247,10 @@
     {
         "id":"rusty-nail",
         "name":"Rusty Nail",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"le bâton de cannelle",
-        "ice":"en cubes",
+        "garnish":"cinnamon stick",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -4269,11 +4269,11 @@
     {
         "id":"sazerac",
         "name":"Sazerac",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"citron pressé",
+        "garnish":"lemon twist",
         "ice":"-",
-        "extra":"verre RÉFRIGÉRÉ rincé à l'absinthe",
+        "extra":"absinthe-rinsed CHILLED glass",
         "history":"",
         "ingredients":[
             {
@@ -4287,28 +4287,28 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop de démérara",
+                "name":"demerara syrup",
                 "quantity":0.25,
                 "unit":"oz."
             },
             {
-                "name":"amer de Peychaud",
+                "name":"peychaud's bitters",
                 "quantity":3.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":1.0,
-                "unit":"tiret"
+                "unit":"dash"
             }
         ]
     },
     {
         "id":"sidecar",
         "name":"Sidecar",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"coupe",
-        "garnish":"sucrer la moitié du bord du verre",
+        "garnish":"sugar the rim of half the glass",
         "ice":"-",
         "extra":"-",
         "history":"",
@@ -4324,12 +4324,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.15,
                 "unit":"oz."
             }
@@ -4338,10 +4338,10 @@
     {
         "id":"singapore-sling",
         "name":"Singapore Sling",
-        "method":"fouetter, secouer et égoutter",
+        "method":"whip shake & strain",
         "glass":"collins",
-        "garnish":"tranche d'orange, cerise, feuilles d'ananas",
-        "ice":"en cubes",
+        "garnish":"orange slice, cherry & pineapple fronds",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -4366,12 +4366,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus d'ananas",
+                "name":"pineapple juice",
                 "quantity":1.5,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron vert",
+                "name":"lime juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
@@ -4381,19 +4381,19 @@
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"southside",
         "name":"Southside",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"brin de menthe",
-        "ice":"en cubes",
+        "garnish":"mint sprig",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -4403,30 +4403,30 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"feuilles de menthe",
+                "name":"mint leaves",
                 "quantity":1.0,
-                "unit":"poignée"
+                "unit":"handful"
             }
         ]
     },
     {
         "id":"southside-fizz",
         "name":"Southside Fizz",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"tranche de citron & brin de menthe",
-        "ice":"en cubes",
-        "extra":"garnir de club soda",
+        "garnish":"lemon wheel & mint sprig",
+        "ice":"cubed",
+        "extra":"top with club soda",
         "history":"",
         "ingredients":[
             {
@@ -4435,29 +4435,29 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"feuilles de menthe",
+                "name":"mint leaves",
                 "quantity":1.0,
-                "unit":"poignée"
+                "unit":"handful"
             }
         ]
     },
     {
         "id":"stinger",
         "name":"Stinger",
-        "method":"fouetter, secouer et égoutter",
+        "method":"whip shake & strain",
         "glass":"rock",
-        "garnish":"brin de menthe",
-        "ice":"remuer et mélanger/baratter",
+        "garnish":"mint sprig",
+        "ice":"crushed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -4472,7 +4472,7 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.15,
                 "unit":"oz."
             }
@@ -4481,38 +4481,38 @@
     {
         "id":"ti-punch",
         "name":"Ti' Punch",
-        "method":"remuer et mélanger/baratter",
+        "method":"muddle & swizzle/churn",
         "glass":"rock",
         "garnish":"-",
-        "ice":"1/2 cubes + 1/2 écrasé",
-        "extra":"Un quart de citron vert écartelé pour conserver la pulpe sur la tranche",
+        "ice":"1/2 cubed + 1/2 crushed",
+        "extra":"Lime heels are discs sliced deep from the side of the lime, mostly peel but with a thin layer of juice sacs still attached",
         "history":"",
         "ingredients":[
             {
-                "name":"rhum agricole",
+                "name":"agricole rum",
                 "quantity":2.0,
                 "unit":"oz."
             },
             {
-                "name":"sirop de canne",
+                "name":"cane syrup",
                 "quantity":0.3,
                 "unit":"oz."
             },
             {
-                "name":"citron vert",
+                "name":"lime",
                 "quantity":2.0,
-                "unit":"talons"
+                "unit":"heels"
             }
         ]
     },
     {
         "id":"tom-collins",
         "name":"Tom Collins",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"collins",
-        "garnish":"quartier de citron",
-        "ice":"en cubes",
-        "extra":"garnir de soda club ou de tout autre soda aromatisé",
+        "garnish":"lemon wedge",
+        "ice":"cubed",
+        "extra":"top with club soda or any flavoured soda",
         "history":"",
         "ingredients":[
             {
@@ -4521,12 +4521,12 @@
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -4535,10 +4535,10 @@
     {
         "id":"vieux-carre",
         "name":"Vieux Carre",
-        "method":"remuer et filtrer",
+        "method":"stir & strain",
         "glass":"rock",
-        "garnish":"citron pressé",
-        "ice":"en cubes",
+        "garnish":"lemon twist",
+        "ice":"cubed",
         "extra":"-",
         "history":"",
         "ingredients":[
@@ -4553,7 +4553,7 @@
                 "unit":"oz."
             },
             {
-                "name":"vermouth rouge doux",
+                "name":"sweet red vermouth",
                 "quantity":1.0,
                 "unit":"oz."
             },
@@ -4563,26 +4563,26 @@
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"amers de Peychaud",
+                "name":"peychaud's bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"whiskey-sour",
         "name":"Whiskey Sour",
-        "method":"secouer et filtrer finement",
+        "method":"shake & fine strain",
         "glass":"rock",
-        "garnish":"tranche de citron",
-        "ice":"en cubes",
+        "garnish":"lemon wheel",
+        "ice":"cubed",
         "extra":"-",
-        "history":"La première recette écrite de cette boisson est apparue en 1862 dans \"The Bartender's Guide\" de Jerry Thomas. Cependant, il est fort probable que les sours existaient depuis plusieurs décennies auparavant, car ils étaient très populaires parmi les marins. Passer de longs mois à La mer expose les marins à un risque de malnutrition et de scorbut. Les agrumes sont un moyen efficace de lutter contre le scorbut, c'est pourquoi les navires partent souvent avec de grandes quantités de citrons, de citron vert et d'oranges à consommer pour les marins. Comme la réfrigération n'était pas disponible, les marins prenaient des boissons alcoolisées comme du rhum, du whisky et du gin à bord pour avoir quelque chose à boire en toute sécurité pendant les longs voyages. Au fil du temps, le citron vert et le citron ont été mélangés à de l'alcool et de l'eau pour créer une boisson qui étancherait la soif et préviendrait le scorbut.",
+        "history":"Das erste schriftliche Rezept für dieses Getränk erschien 1862 in Jerry Thomas‘ „The Bartender’s Guide“. Es ist jedoch sehr wahrscheinlich, dass Sours schon viele Jahrzehnte zuvor existierten, da sie bei Seeleuten sehr beliebt waren. Lange Monate auf See zu verbringen, birgt für Seeleute die Gefahr von Unterernährung und Skorbut. Zitrusfrüchte sind ein wirksames Mittel zur Bekämpfung von Skorbut, daher stechen Schiffe oft mit reichlich Zitronen, Limetten und Orangen in See, die die Seeleute verzehren können. Da es keine Kühlung gab, nahmen die Seeleute Spirituosen wie Rum, Whiskey und Gin mit an Bord, um auf langen Reisen etwas Sicheres zum Trinken zu haben. Im Laufe der Zeit wurden Limette und Zitrone mit Alkohol und Wasser gemischt, um ein Getränk zu kreieren, das den Durst löschte und Skorbut vorbeugte.",
         "ingredients":[
             {
                 "name":"whiskey",
@@ -4590,36 +4590,36 @@
                 "unit":"oz."
             },
             {
-                "name":"sirop simple",
+                "name":"simple syrup",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"jus de citron",
+                "name":"lemon juice",
                 "quantity":0.75,
                 "unit":"oz."
             },
             {
-                "name":"amers d'angostura",
+                "name":"angostura bitters",
                 "quantity":2.0,
-                "unit":"tirets"
+                "unit":"dashes"
             },
             {
-                "name":"blanc d'oeuf",
+                "name":"egg white",
                 "quantity":0.5,
-                "unit":"tirets"
+                "unit":"dashes"
             }
         ]
     },
     {
         "id":"white-russian",
         "name":"White Russian",
-        "method":"construire + remuer rapidement",
+        "method":"build + quick stir",
         "glass":"rock",
         "garnish":"-",
-        "ice":"en cubes",
-        "extra":"dépôt de crème fouettée à la main au sommet",
-        "history":"Le Black Russian est un cocktail traditionnel qui a été introduit pour la première fois en 1949, mais il se transforme en White Russian avec l'ajout de crème. Bien qu'aucune des deux boissons ne soit originaire de Russie, elles portent toutes deux le nom de l'ingrédient principal, qui est la vodka. \n\nAprès la sortie du film \"The Big Lebowski\" en 1998, la popularité de ce cocktail est montée en flèche. Le personnage principal du film, Jeffrey \"The Dude\" Lebowski, semble préférer ce cocktail et fait référence à le qualifiant de \"Caucasien\" à plusieurs reprises tout au long du film.",
+        "ice":"cubed",
+        "extra":"hand-whipped cream float",
+        "history":"Der Black Russian ist ein traditioneller Cocktail, der erstmals 1949 eingeführt wurde, sich jedoch durch die Zugabe von Sahne in einen White Russian verwandelt. Obwohl keines der beiden Getränke seinen Ursprung in Russland hat, sind beide nach der Hauptzutat Wodka benannt.\n\nNach der Veröffentlichung des Films „The Big Lebowski“ im Jahr 1998 schoss die Popularität dieses Cocktails sprunghaft in die Höhe. Die Hauptfigur des Films, Jeffrey „The Dude“ Lebowski, scheint diesen Cocktail zu bevorzugen und bezeichnet ihn im Laufe des Films mehrmals als „Kaukasier“.",
         "ingredients":[
             {
                 "name":"vodka",
@@ -4632,7 +4632,7 @@
                 "unit":"oz."
             },
             {
-                "name":"double crème",
+                "name":"double cream",
                 "quantity":0.75,
                 "unit":"oz."
             }

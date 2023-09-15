@@ -452,7 +452,7 @@
 			isa = PBXGroup;
 			children = (
 				18F49E842A286D2A00862CE3 /* Extensions */,
-				18F49E8B2A286D2A00862CE3 /* LocalizableJSON */,
+				18F49E8B2A286D2A00862CE3 /* Localizables */,
 				18F960932A8C20810004D1D8 /* Services */,
 			);
 			path = Utilities;
@@ -476,7 +476,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		18F49E8B2A286D2A00862CE3 /* LocalizableJSON */ = {
+		18F49E8B2A286D2A00862CE3 /* Localizables */ = {
 			isa = PBXGroup;
 			children = (
 				1814111E2A9733B4004FE3DC /* Localizable.strings */,
@@ -485,7 +485,7 @@
 				18F49E8C2A286D2A00862CE3 /* lessons.json */,
 				188E93C92A4C1F03001691E6 /* spirits.json */,
 			);
-			path = LocalizableJSON;
+			path = Localizables;
 			sourceTree = "<group>";
 		};
 		18F49EA32A286D2E00862CE3 /* Views */ = {

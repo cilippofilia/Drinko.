@@ -1,0 +1,49 @@
+[
+    {
+        "id": "liquid-intelligence",
+        "title": "Liquid Intelligence",
+        "description": "Die Kunst und Wissenschaft des perfekten Cocktails",
+        "summary": "\"Liquid Intelligence\" von Dave Arnold ist eine fesselnde Erkundung der Cocktailwissenschaft und Mixologie. Arnold enthüllt die Geheimnisse außergewöhnlicher Getränke und integriert physikalische und chemische Prinzipien in seine innovativen Rezepte und Techniken. Dieses Buch ist eine Pflichtlektüre für angehende Mixologen und bietet einen einzigartigen Einblick in die Kunst, außergewöhnliche Getränke zuzubereiten.",
+        "author": "Dave Arnold"
+    },
+    
+    {
+        "id": "the-curious-bartender-volume-1",
+        "title": "The Curious Bartender v1",
+        "description": "Die Kunst und Alchemie, den perfekten Cocktail zu kreieren",
+        "summary": "\"The Curious Bartender v1\" von Tristan Stephenson ist ein umfassender Leitfaden, der die Welt der Mixologie erkundet und eine umfassende Einführung in Spirituosen, Techniken und Cocktailrezepte bietet. Mit historischen Einblicken und Expertentipps ist dieses Buch eine wertvolle Ressource sowohl für angehende Barkeeper als auch für Cocktail-Enthusiasten, die ihre Fähigkeiten und Kenntnisse erweitern möchten.",
+        "author": "Tristan Stephenson"
+    },
+    
+    {
+        "id": "the-curious-bartender-volume-2",
+        "title": "The Curious Bartender v2",
+        "description": "Das neue Testament der Cocktails",
+        "summary": "\"The Curious Bartender v2\" von Tristan Stephenson ist eine fesselnde und informative Auseinandersetzung mit der Mixologie. Dieses Buch bietet einen umfassenden Leitfaden zur Herstellung außergewöhnlicher Cocktails und befasst sich mit der Geschichte, den Techniken und der Kunstfertigkeit des Handwerks. Mit fesselnden Beschreibungen, innovativen Rezepten und praktischen Tipps ist es ein Muss für Cocktail-Enthusiasten und angehende Mixologen gleichermaßen.",
+        "author": "Tristan Stephenson"
+    },
+    
+    {
+        "id": "smugglers-cove",
+        "title": "Smuggler's Cove",
+        "description": "Exotische Cocktails, Rum und der Tiki-Kult",
+        "summary": "\"Smuggler's Cove\" von Martin Cate mit Rebecca Cate ist ein fesselndes Buch, das die Geschichte und den Reiz der Tiki-Kultur erforscht. Die Autoren teilen Cocktailrezepte, decken verborgene Geheimnisse auf und nehmen die Leser mit auf eine Reise in die bezaubernde Welt der Tiki-Bars und bieten einen erfrischenden Ausflug in das Reich tropischer Köstlichkeiten.",
+        "author": "Martin Cate w/Rebecca Cate"
+    },
+    
+    {
+        "id": "shrubs",
+        "title": "Shrubs",
+        "description": "Ein altmodisches Getränk für die moderne Zeit",
+        "summary": "\"Shrubs\" von Michael Dietsch ist ein umfassender Leitfaden, der in die faszinierende Welt der Sträucher eintaucht und ihre Geschichte, Aromen und vielfältigen Verwendungsmöglichkeiten erforscht. Mit einem Schwerpunkt auf der Kunst des Mixens enthüllt dieses Buch die Geheimnisse hinter der Herstellung verführerischer und erfrischender Getränke auf Strauchbasis. Michael Dietsch, ein Experte für die Herstellung von Cocktails, präsentiert eine Sammlung innovativer Rezepte und Techniken zur Herstellung einzigartiger Strauchmischungen. Die Leser werden auf eine Reise mitgenommen, um den komplizierten Prozess der Konservierung von Früchten, Kräutern und Gewürzen in mit Essig angereicherten Sirupen zu entdecken, der zu würzigen und komplexen Aromen führt. Von klassischen Strauchkombinationen bis hin zu experimentellen Mischungen bietet das Buch eine Reihe von Möglichkeiten, die Geschmacksknospen zu verwöhnen.",
+        "author": "Michael Dietsch"
+    },
+    
+    {
+        "id": "tiki-book",
+        "title": "Tiki",
+        "description": "Moderne tropische Cocktails",
+        "summary": "\"Tiki\" von Shannon Mustipher ist eine fesselnde Erkundung der Welt der tropischen Cocktails und befasst sich mit der Geschichte, den Aromen und der kulturellen Bedeutung von Tiki-Getränken. Von den Ursprüngen der Tiki-Kultur bis hin zu professionellen Mixologie-Techniken inspiriert dieses Buch die Leser dazu, die Kreativität und Gemeinschaft hinter diesen lebendigen Trankopfern zu entdecken. Es ist eine Pflichtlektüre für Cocktail-Enthusiasten, die eine umfassende Reise in die Tiki-Kunst suchen.",
+        "author": "Shannon Mustipher"
+    }
+]
