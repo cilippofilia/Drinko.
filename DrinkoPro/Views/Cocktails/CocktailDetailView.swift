@@ -28,7 +28,7 @@ struct CocktailDetailView: View {
                     case .success(let image):
                         image
                             .resizable()
-                            .scaledToFill()
+                            .scaledToFit()
 
                     default:
                         ProgressView()
@@ -36,7 +36,9 @@ struct CocktailDetailView: View {
                 }
                 .frame(width: screenWidthPlusMargins,
                        height: 280)
+                .background(Color.white)
                 .cornerRadius(10)
+
             }
 
             VStack(alignment: .leading) {
@@ -154,11 +156,10 @@ var failure: some View {
     VStack(spacing: 10) {
         Image(systemName: "icloud.slash.fill")
             .font(.largeTitle)
-            .foregroundColor(.secondary)
         Text("Couldn't load image")
             .font(.headline)
-            .foregroundColor(.secondary)
     }
+    .foregroundColor(.gray)
 }
 
 #if DEBUG
@@ -166,6 +167,7 @@ struct CocktailDetailView_Previews: PreviewProvider {
     static var previews: some View {
         CocktailDetailView(cocktail: .example)
             .environmentObject(Favorites())
+            .preferredColorScheme(.dark)
     }
 }
 #endif
