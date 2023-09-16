@@ -33,29 +33,35 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                         .frame(maxWidth: .infinity, alignment: .leading)
 
                     CreditsCardView(image: "heart.fill",
-                                    name: "Danil Nevsky",
+                                    name: "Danil Nevsky 🍸",
                                     brief: "Instagram: @cocktailman",
                                     url: "https://instagram.com/cocktailman")
 
                     CreditsCardView(image: "heart.fill",
-                                    name: "Christopher Lowder",
+                                    name: "Christopher Lowder 🍸",
                                     brief: "Instagram: @getlowdernow",
                                     url: "https://instagram.com/getlowdernow")
 
                     CreditsCardView(image: "heart.fill",
-                                    name: "Filippo Cilia",
+                                    name: "Filippo Cilia 🇮🇹 / 🍸",
                                     brief: "Instagram: @cilippofilia",
                                     url: "https://instagram.com/cilippofilia")
 
                     CreditsCardView(image: "heart.fill",
-                                    name: "Arthur",
+                                    name: "Arthur 🇫🇷",
                                     brief: "X (Twitter): @AriOS_app",
                                     url: "https://x.com/arios_app?s=21&t=GH4SWEVHVFi_peVsOSu5vA")
 
                     CreditsCardView(image: "heart.fill",
-                                    name: "Nicolas",
+                                    name: "Nicolas 🇩🇪",
                                     brief: "X (Twitter): @theduodev",
                                     url: "https://x.com/theduodev?s=21&t=GH4SWEVHVFi_peVsOSu5vA")
+
+                    CreditsCardView(image: "heart.fill",
+                                    name: "Difford's Guide 🍸",
+                                    brief: "For discerning drinkers.",
+                                    url: "https://www.diffordsguide.com")
+
                 }
             }
             .frame(width: screenWidthPlusMargins)

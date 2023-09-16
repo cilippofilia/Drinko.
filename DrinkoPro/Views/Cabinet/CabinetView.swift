@@ -21,41 +21,44 @@ struct CabinetView: View {
     }
 
     var familyList: some View {
-        List {
-            ForEach(viewModel.families) { family in
-                Section(header: FamilyHeaderView(family: family)) {
-                    ForEach(family.familyItems(using: viewModel.sortOrder)) { item in
-                        ItemRowView(family: family, item: item)
-                            .contextMenu {
-                                Button(action: {
-                                    if favoriteProducts.contains(item) {
-                                        favoriteProducts.remove(item)
-                                    } else {
-                                        favoriteProducts.add(item)
-                                        UINotificationFeedbackGenerator()
-                                            .notificationOccurred(.success)
+        NavigationView {
+            List {
+                ForEach(viewModel.families) { family in
+                    Section(header: FamilyHeaderView(family: family)) {
+                        ForEach(family.familyItems(using: viewModel.sortOrder)) { item in
+                            ItemRowView(family: family, item: item)
+                                .contextMenu {
+                                    Button(action: {
+                                        if favoriteProducts.contains(item) {
+                                            favoriteProducts.remove(item)
+                                        } else {
+                                            favoriteProducts.add(item)
+                                            UINotificationFeedbackGenerator()
+                                                .notificationOccurred(.success)
+                                        }
+                                    }) {
+                                        Image(systemName: "cart")
+                                        Text(favoriteProducts.contains(item) ? "Remove from Cart" : "Add to Cart")
                                     }
-                                }) {
-                                    Image(systemName: "cart")
-                                    Text(favoriteProducts.contains(item) ? "Remove from Cart" : "Add to Cart")
                                 }
-                            }
-                    }
-                    .onDelete { offsets in
-                        viewModel.delete(offsets, from: family)
-                    }
-
-                    Button {
-                        withAnimation {
-                            viewModel.addItem(to: family)
                         }
-                    } label: {
-                        Label("Add New Product", systemImage: "plus")
+                        .onDelete { offsets in
+                            viewModel.delete(offsets, from: family)
+                        }
+
+                        Button {
+                            withAnimation {
+                                viewModel.addItem(to: family)
+                            }
+                        } label: {
+                            Label("Add New Product", systemImage: "plus")
+                        }
                     }
                 }
             }
+            .listStyle(InsetGroupedListStyle())
+            .navigationTitle("Cabinet")
         }
-        .listStyle(InsetGroupedListStyle())
     }
 
     var addFamilyToolbarItem: some ToolbarContent {

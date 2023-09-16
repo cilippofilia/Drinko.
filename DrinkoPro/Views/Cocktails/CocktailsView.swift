@@ -43,42 +43,44 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        List(filteredCocktails) { cocktail in
-            CocktailRowView(favorites: favorites, cocktail: cocktail)
-                .contextMenu {
-                    FavoriteButtonView(favorites: favorites, cocktail: cocktail)
-                }
-        }
-        .navigationTitle("Cocktails")
-        .searchable(text: $searchText, prompt: "Search Cocktails")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    showingSortOrder.toggle()
-                } label: {
-                    Label("Sort", systemImage: "arrow.up.arrow.down")
+        NavigationView {
+            List(filteredCocktails) { cocktail in
+                CocktailRowView(favorites: favorites, cocktail: cocktail)
+                    .contextMenu {
+                        FavoriteButtonView(favorites: favorites, cocktail: cocktail)
+                    }
+            }
+            .navigationTitle("Cocktails")
+            .searchable(text: $searchText, prompt: "Search Cocktails")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showingSortOrder.toggle()
+                    } label: {
+                        Label("Sort", systemImage: "arrow.up.arrow.down")
+                    }
                 }
             }
+            .actionSheet(isPresented: $showingSortOrder, content: {
+                ActionSheet(title: Text("Sort cocktails"),
+                            message: nil,
+                            buttons: [
+                                .default(Text("A -> Z")) {
+                                    sortOption = .fromAtoZ
+                                },
+                                .default(Text("Z -> A")) {
+                                    sortOption = .fromZtoA
+                                },
+                                .default(Text("By Glass")) {
+                                    sortOption = .byGlass
+                                },
+                                .default(Text("By Ice")) {
+                                    sortOption = .byIce
+                                },
+                                .cancel()
+                            ])
+            })
         }
-        .actionSheet(isPresented: $showingSortOrder, content: {
-            ActionSheet(title: Text("Sort cocktails"),
-                        message: nil,
-                        buttons: [
-                            .default(Text("A -> Z")) {
-                                sortOption = .fromAtoZ
-                            },
-                            .default(Text("Z -> A")) {
-                                sortOption = .fromZtoA
-                            },
-                            .default(Text("By Glass")) {
-                                sortOption = .byGlass
-                            },
-                            .default(Text("By Ice")) {
-                                sortOption = .byIce
-                            },
-                            .cancel()
-                        ])
-        })
         .environmentObject(favorites)
     }
 }

@@ -20,7 +20,6 @@ struct SplashScreenView: View {
         Group {
             if showHomeView {
                 HomeView()
-
             } else {
                 animatedLogo
             }

@@ -52,7 +52,7 @@ struct CocktailDetailView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-                .frame(maxWidth: screenWidthPlusMargins)
+                .frame(maxWidth: screenWidthPlusMargins / 2)
                 .frame(maxWidth: .infinity, alignment: .center)
 
 

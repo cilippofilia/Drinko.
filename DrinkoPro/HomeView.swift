@@ -18,37 +18,29 @@ struct HomeView: View {
 
     var body: some View {
         TabView(selection: $selectedView) {
-            NavigationView {
-                LearnView()
-            }
-            .tag(LearnView.learnTag)
-            .tabItem {
-                Label("Learn", systemImage: "books.vertical")
-            }
+            LearnView()
+                .tag(LearnView.learnTag)
+                .tabItem {
+                    Label("Learn", systemImage: "books.vertical")
+                }
 
-            NavigationView {
-                CocktailsView()
-            }
-            .tag(CocktailsView.cocktailsTag)
-            .tabItem {
-                Label("Cocktails", systemImage: "wineglass")
-            }
+            CocktailsView()
+                .tag(CocktailsView.cocktailsTag)
+                .tabItem {
+                    Label("Cocktails", systemImage: "wineglass")
+                }
 
-            NavigationView {
-                CabinetView(dataController: dataController)
-            }
-            .tag(CabinetView.cabinetViewTag)
-            .tabItem {
-                Label("Cabinet", systemImage: "cabinet")
-            }
+            CabinetView(dataController: dataController)
+                .tag(CabinetView.cabinetViewTag)
+                .tabItem {
+                    Label("Cabinet", systemImage: "cabinet")
+                }
 
-            NavigationView {
-                SettingsView()
-            }
-            .tag(SettingsView.settingsTag)
-            .tabItem {
-                Label("Settings", systemImage: "gear")
-            }
+            SettingsView()
+                .tag(SettingsView.settingsTag)
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
         }
         .onAppear(perform: checkForReview)
     }
