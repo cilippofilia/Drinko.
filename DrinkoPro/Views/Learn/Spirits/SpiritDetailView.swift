@@ -8,41 +8,73 @@
 import SwiftUI
 
 struct SpiritDetailView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
+    @State private var frameHeight: CGFloat = 280
+    @State private var corners: CGFloat = 10
+
     var spirit: Spirit
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
-                Image(spirit.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 280)
-                    .clipped()
-
-                VStack(spacing: 10) {
-                    Text(spirit.title)
-                        .font(.title)
-                        .bold()
-
-                    Text(spirit.description)
-                        .font(.headline)
-                        .foregroundColor(.secondary)
-
-                    Text(spirit.body)
-                }
-                .frame(maxWidth: screenWidthPlusMargins)
-                .padding(.bottom)
+            if sizeClass == .compact {
+                compactSpiritView
+            } else {
+                regularSpiritView
             }
         }
         .navigationBarTitle(spirit.title)
         .navigationBarTitleDisplayMode(.inline)
     }
-}
 
-#if DEBUG
-struct SpiritDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        SpiritDetailView(spirit: .example)
+    var compactSpiritView: some View {
+        VStack {
+            Image(spirit.image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: compactScreenWidth,
+                       height: frameHeight)
+                .clipped()
+
+            VStack(spacing: 10) {
+                Text(spirit.title)
+                    .font(.title.bold())
+
+                Text(spirit.description)
+                    .font(.headline)
+                    .foregroundColor(.secondary)
+
+                Text(spirit.body)
+            }
+            .frame(maxWidth: compactScreenWidth)
+            .padding(.bottom)
+        }
+    }
+
+    var regularSpiritView: some View {
+        VStack(spacing: 20) {
+            Image(spirit.image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: compactScreenWidth,
+                       height: frameHeight * 1.75)
+                .clipped()
+
+            VStack(spacing: 20) {
+                Text(spirit.title)
+                    .font(.title.bold())
+
+                Text(spirit.description)
+                    .font(.headline)
+                    .foregroundColor(.secondary)
+
+                Text(spirit.body)
+            }
+            .frame(maxWidth: regularScreenWidth)
+            .padding(.bottom)
+        }
     }
 }
-#endif
+
+#Preview {
+    SpiritDetailView(spirit: .example)
+}

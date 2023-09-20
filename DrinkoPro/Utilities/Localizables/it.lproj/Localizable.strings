@@ -173,9 +173,6 @@
 "Learn" = "Impara";
 
 /* (No Comment) */
-"Like" = "Piace";
-
-/* (No Comment) */
 "Like the post" = "'Mi piace' il post";
 
 /* (No Comment) */
@@ -349,3 +346,13 @@
 /* (No Comment) */
 "Z -> A" = "Z -> A";
 
+/* Cocktails Tab - CocktailView */
+"Ingredients" = "Ingredienti";
+"Method" = "Metodo";
+"Glass" = "Bicchiere";
+"Garnish" = "Guarnizione";
+"Ice" = "Ghiaccio";
+"Extra" = "Extra";
+"Like" = "Piace";
+"History" = "Storia";
+"History of the cocktail:" = "Storia del cocktail:";

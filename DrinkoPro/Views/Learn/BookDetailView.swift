@@ -8,41 +8,74 @@
 import SwiftUI
 
 struct BookDetailView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
+    @State private var frameHeight: CGFloat = 280
+    @State private var corners: CGFloat = 10
+
     var book: Book
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
-                Image(book.image)
-                    .resizable()
-                    .scaledToFill()
-                    .clipped()
-
-                VStack(spacing: 10) {
-                    Text(book.title)
-                        .font(.title)
-                        .bold()
-                        .padding(.vertical)
-
-                    Text(book.description)
-                        .font(.headline)
-                        .foregroundColor(.secondary)
-
-                    Text(book.summary)
-                }
-                .frame(maxWidth: screenWidthPlusMargins)
-                .padding(.bottom)
+            if sizeClass == .compact {
+                compactBookView
+            } else {
+                regularBookView
             }
         }
         .navigationBarTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
     }
-}
 
-#if DEBUG
-struct BookDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        BookDetailView(book: .example)
+    var compactBookView: some View {
+        VStack {
+            Image(book.image)
+                .resizable()
+                .scaledToFill()
+                .frame(width: compactScreenWidth)
+                .clipped()
+
+            VStack(spacing: 10) {
+                Text(book.title)
+                    .font(.title.bold())
+
+                Text(book.description)
+                    .font(.headline)
+                    .foregroundColor(.secondary)
+
+                Text(book.summary)
+            }
+            .frame(maxWidth: compactScreenWidth)
+            .padding(.bottom)
+        }
+    }
+
+    var regularBookView: some View {
+        VStack(spacing: 20) {
+            Image(book.image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: compactScreenWidth,
+                       height: frameHeight * 1.75)
+                .clipped()
+
+            VStack(spacing: 20) {
+                Text(book.title)
+                    .font(.title.bold())
+                    .padding(.vertical)
+
+                Text(book.description)
+                    .font(.headline)
+                    .foregroundColor(.secondary)
+
+                Text(book.summary)
+            }
+            .frame(maxWidth: compactScreenWidth)
+            .padding(.bottom)
+        }
     }
 }
-#endif
+
+#Preview {
+    BookDetailView(book: .example)
+}
+

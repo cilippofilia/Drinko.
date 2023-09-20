@@ -5,6 +5,8 @@
 //  Created by Filippo Cilia on 26/08/2023.
 //
 
+#warning("👨‍💻 Update paywall by using RevenueCats newest issue.")
+
 import StoreKit
 import SwiftUI
 
@@ -21,7 +23,7 @@ struct TipJarView: View {
                     .font(.headline)
                     .padding(.top, 10)
 
-                ForEach(purchaseManager.products) { (tip) in
+                ForEach(purchaseManager.products, id: \.self) { tip in
                     DrinkoButtonView(title: "\(tip.displayPrice) - \(tip.displayName)",
                                      icon: nil) {
                         Task {
@@ -47,11 +49,7 @@ struct TipJarView: View {
     }
 }
 
-struct TipJarView_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView {
-            TipJarView()
-                .environmentObject(UnlockManager(dataController: DataController()))
-        }
-    }
+#Preview {
+    TipJarView()
+        .environmentObject(PurchaseManager())
 }

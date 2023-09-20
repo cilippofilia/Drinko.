@@ -9,50 +9,68 @@ import SwiftUI
 
 struct HistoryView: View {
     @Environment(\.dismiss) var dismiss
+    @Environment(\.verticalSizeClass) var sizeClass
 
     var cocktail: Cocktail
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
-                HStack(alignment: .center) {
-                    Text(cocktail.name.capitalized)
-                        .font(.title)
-                        .bold()
-                        .padding(.vertical)
-                        .multilineTextAlignment(.leading)
-
-                    Spacer()
-
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .resizable()
-    //                        .foregroundColor(.secondary)
-                            .foregroundColor(.secondary)
-                            .frame(width: 30, height: 30)
-                            .padding(.vertical)
-                    }
-                }
-                .padding(.vertical)
-
-                Text(cocktail.history)
-                    .multilineTextAlignment(.leading)
-
-                // spacer used to push view to the top
-                Spacer()
+            if sizeClass == .compact {
+                compactHistoryView
+            } else {
+                regularHistoryView
             }
-            .frame(width: screenWidthPlusMargins)
         }
     }
-}
 
-#if DEBUG
-struct HistoryView_Previews: PreviewProvider {
-    static var previews: some View {
-        HistoryView(cocktail: .example)
-            .preferredColorScheme(.dark)
+    var compactHistoryView: some View {
+        VStack {
+            HStack(alignment: .center) {
+                Text(cocktail.name.capitalized)
+                    .font(.title.bold())
+                    .padding(.vertical)
+                    .multilineTextAlignment(.leading)
+
+                Spacer()
+
+                Button(action: {
+                    dismiss()
+                }) {
+                    Image(systemName: "xmark.circle.fill")
+                        .resizable()
+                        .foregroundColor(.secondary)
+                        .frame(width: 30, height: 30)
+                        .padding(.vertical)
+                }
+            }
+            .padding(.vertical)
+
+            Text(cocktail.history)
+                .multilineTextAlignment(.leading)
+
+            Spacer() // spacer used to push view to the top
+        }
+        .frame(width: compactScreenWidth)
+    }
+
+    var regularHistoryView: some View {
+        VStack(spacing: 20) {
+            HStack(alignment: .center) {
+                Text("History of the cocktail:")
+                    .font(.title.bold())
+                    .padding(.vertical)
+                    .multilineTextAlignment(.leading)
+            }
+            .padding(.vertical)
+
+            Text(cocktail.history)
+                .multilineTextAlignment(.leading)
+        }
+        .frame(width: regularScreenWidth)
     }
 }
-#endif
+
+#Preview {
+    HistoryView(cocktail: .example)
+        .preferredColorScheme(.dark)
+}

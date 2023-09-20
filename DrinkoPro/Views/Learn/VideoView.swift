@@ -22,10 +22,6 @@ struct VideoView: UIViewRepresentable {
     }
 }
 
-#if DEBUG
-struct VideView_Preview: PreviewProvider {
-    static var previews: some View {
-        VideoView(videoID: "5QQ0cDGohA0")
-    }
+#Preview {
+    VideoView(videoID: "5QQ0cDGohA0")
 }
-#endif

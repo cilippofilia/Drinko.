@@ -9,22 +9,22 @@ import SwiftUI
 
 struct CocktailDetailSectionView: View {
     var cocktail: Cocktail
-    var text: String
+    var text: LocalizedStringKey
 
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text("\(text):")
+            Text(text)
                 .font(.headline)
 
-            if text.lowercased() == "method" {
+            if text == "Method" {
                 Text(cocktail.method.capitalizingFirstLetter())
             }
 
-            if text.lowercased() == "glass" {
+            if text == "Glass" {
                 Text(cocktail.glass.capitalizingFirstLetter())
             }
 
-            if text.lowercased() == "garnish" {
+            if text == "Garnish" {
                 if cocktail.garnish == "-" {
                     Text(cocktail.garnish.capitalized.replacingOccurrences(of: "-", with: "None").capitalizingFirstLetter())
                         .foregroundColor(.secondary)
@@ -33,7 +33,7 @@ struct CocktailDetailSectionView: View {
                 }
             }
 
-            if text.lowercased() == "ice" {
+            if text == "Ice" {
                 if cocktail.ice == "-" {
                     Text(cocktail.ice.replacingOccurrences(of: "-", with: "None"))
                         .foregroundColor(.secondary)
@@ -42,7 +42,7 @@ struct CocktailDetailSectionView: View {
                 }
             }
 
-            if text.lowercased() == "extra" {
+            if text == "Extra" {
                 if cocktail.extra == "-" {
                     Text(cocktail.extra.replacingOccurrences(of: "-", with: "None"))
                         .foregroundColor(.secondary)
@@ -50,16 +50,11 @@ struct CocktailDetailSectionView: View {
                     Text(cocktail.extra.capitalizingFirstLetter())
                 }
             }
-            Spacer()
+            Spacer() // spacer pushes the text on the trailing part of the view
         }
-        .padding(.vertical, 5)
     }
 }
 
-#if DEBUG
-struct CocktailDetailSectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        CocktailDetailSectionView(cocktail: .example, text: "Extra")
-    }
+#Preview {
+    CocktailDetailSectionView(cocktail: .example, text: "Extra")
 }
-#endif

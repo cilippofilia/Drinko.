@@ -173,10 +173,7 @@
 "Learn" = "Apprendre";
 
 /* (No Comment) */
-"Like" = "'Liker'";
-
-/* (No Comment) */
-"Like the post" = "'Liker' le post";
+"Like the post" = "Liker le post";
 
 /* (No Comment) */
 "Liked posts" = "Posts likés";
@@ -349,3 +346,13 @@
 /* (No Comment) */
 "Z -> A" = "Z -> A";
 
+/* Cocktails Tab - CocktailView */
+"Ingredients" = "Ingrédients";
+"Method" = "Méthode";
+"Glass" = "Verre";
+"Garnish" = "Garnir";
+"Ice" = "Glace";
+"Extra" = "Supplémentaire";
+"Like" = "Liker";
+"History" = "Histoire";
+"History of the cocktail:" = "Histoire du cocktail:";

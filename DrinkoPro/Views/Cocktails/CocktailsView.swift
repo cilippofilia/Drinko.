@@ -43,7 +43,7 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(filteredCocktails) { cocktail in
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
                     .contextMenu {
@@ -82,6 +82,7 @@ struct CocktailsView: View {
             })
         }
         .environmentObject(favorites)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -104,10 +105,6 @@ struct FavoriteButtonView: View {
     }
 }
 
-#if DEBUG
-struct CocktailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CocktailsView()
-    }
+#Preview {
+    CocktailsView()
 }
-#endif

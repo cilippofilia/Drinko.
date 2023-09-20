@@ -15,7 +15,7 @@ struct LearnView: View {
     let books = Bundle.main.decode([Book].self, from: "books.json")
 
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(subjects) { subject in
                     Section(header: Text(subject.name)) {
@@ -39,13 +39,10 @@ struct LearnView: View {
             }
             .navigationTitle("Learn")
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
-#if DEBUG
-struct LearnView_Previews: PreviewProvider {
-    static var previews: some View {
-        LearnView()
-    }
+#Preview {
+    LearnView()
 }
-#endif

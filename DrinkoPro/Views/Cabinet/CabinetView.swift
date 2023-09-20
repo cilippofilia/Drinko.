@@ -4,7 +4,7 @@
 //
 //  Created by Filippo Cilia on 23/08/2023.
 //
-
+#warning("👨‍💻 REFACTOR VIEW AND MAKE IT AVAILABLE FOR IPAD")
 import SwiftUI
 
 struct CabinetView: View {
@@ -20,8 +20,37 @@ struct CabinetView: View {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
+    var body: some View {
+        Group {
+            if viewModel.families.isEmpty {
+                Text("Start adding categories and products\nby pressing the + above.")
+                    .italic()
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+            } else {
+                familyList
+            }
+        }
+        .navigationTitle("Cabinet")
+        .toolbar {
+            addFamilyToolbarItem
+            sortOrderToolbarItem
+        }
+        .actionSheet(isPresented: $showingSortOrder) {
+            ActionSheet(title: Text("Sort products"),
+                        message: nil,
+                        buttons: [
+                            .default(Text("Optimized")) { viewModel.sortOrder = .optimized },
+                            .default(Text("Creation Date")) { viewModel.sortOrder = .creationDate },
+                            .default(Text("Name")) { viewModel.sortOrder = .title },
+                            .cancel()
+                        ])
+        }
+        .environmentObject(favoriteProducts)
+    }
+
     var familyList: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(viewModel.families) { family in
                     Section(header: FamilyHeaderView(family: family)) {
@@ -58,6 +87,7 @@ struct CabinetView: View {
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("Cabinet")
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
 
@@ -86,44 +116,10 @@ struct CabinetView: View {
             }
         }
     }
-
-    var body: some View {
-        Group {
-            if viewModel.families.isEmpty {
-                Text("Start adding categories and products\nby pressing the + above.")
-                    .italic()
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-            } else {
-                familyList
-            }
-        }
-        .navigationTitle("Cabinet")
-        .toolbar {
-            addFamilyToolbarItem
-            sortOrderToolbarItem
-        }
-        .actionSheet(isPresented: $showingSortOrder) {
-            ActionSheet(title: Text("Sort products"),
-                        message: nil,
-                        buttons: [
-                            .default(Text("Optimized")) { viewModel.sortOrder = .optimized },
-                            .default(Text("Creation Date")) { viewModel.sortOrder = .creationDate },
-                            .default(Text("Name")) { viewModel.sortOrder = .title },
-                            .cancel()
-                        ])
-        }
-        .environmentObject(favoriteProducts)
-    }
 }
 
-#if DEBUG
-struct CabinetView_Previews: PreviewProvider {
-    let dataController = DataController()
-    static var previews: some View {
-        NavigationView {
-            CabinetView(dataController: DataController())
-        }
+#Preview {
+    NavigationStack {
+        CabinetView(dataController: DataController())
     }
 }
-#endif

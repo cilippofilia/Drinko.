@@ -2,19 +2,23 @@
 //  SplashScreenView.swift
 //  DrinkoPro
 //
-//  Created by Filippo Cilia on 02/01/2021.
+//  Created by Filippo Cilia on 19/09/2023.
 //
 
 import SwiftUI
 
 struct SplashScreenView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
+
     @State private var showHomeView = false
-    
     @State private var angle: Double = -90
     @State private var opacity: Double = 1
     @State private var scale: CGFloat = 1
     @State private var imgOffset: CGFloat = -800
     @State private var txtOffset: CGFloat = 0
+    @State private var frameSize: CGFloat = 200
+    @State private var titleFontSize: CGFloat = 66
+    @State private var subtitleFontSize: CGFloat = 24
 
     var body: some View {
         Group {
@@ -26,24 +30,24 @@ struct SplashScreenView: View {
         }
     }
 
-    var animatedLogo: some View {
+    private var animatedLogo: some View {
         ZStack {
-            Color("Drinko Blue")
+            Color("Dr. Blue")
                 .edgesIgnoringSafeArea(.all)
 
             VStack {
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 200,
-                           height: 200,
+                    .frame(width: sizeClass == .compact ? frameSize : frameSize * 1.75,
+                           height: sizeClass == .compact ? frameSize : frameSize * 1.75,
                            alignment: .center)
                     .offset(y: imgOffset)
                     .scaleEffect(scale)
                     .opacity(opacity)
 
                 Text("Drinko")
-                    .font(.system(size: 66,
+                    .font(.system(size: sizeClass == .compact ? titleFontSize : titleFontSize * 1.75,
                                   weight: .bold,
                                   design: .rounded))
                     .rotation3DEffect(.degrees(angle),
@@ -54,7 +58,7 @@ struct SplashScreenView: View {
                     .opacity(opacity)
 
                 Text("It's good to be back!")
-                    .font(.system(size: 24,
+                    .font(.system(size: sizeClass == .compact ? subtitleFontSize : subtitleFontSize * 1.75,
                                   weight: .bold,
                                   design: .rounded))
                     .rotation3DEffect(.degrees(angle),
@@ -80,17 +84,13 @@ struct SplashScreenView: View {
             withAnimation(Animation.linear.delay(1.8)) {
                 opacity = 0
             }
-            withAnimation(Animation.linear.delay(2.2)) {
+            withAnimation(Animation.linear.delay(1.8)) {
                 showHomeView = true
             }
         }
     }
 }
 
-#if DEBUG
-struct SplashScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        SplashScreenView()
-    }
+#Preview {
+    SplashScreenView()
 }
-#endif

@@ -10,7 +10,7 @@ import SwiftUI
 struct DrinkoButtonView: View {
     typealias ActionHandler = () -> Void
 
-    let title: String?
+    let title: LocalizedStringKey?
     let icon: String?
     let background: Color
     let foreground: Color
@@ -18,7 +18,7 @@ struct DrinkoButtonView: View {
 
     private let cornerRadius: CGFloat = 10
 
-    internal init(title: String?,
+    internal init(title: LocalizedStringKey?,
                   icon: String?,
                   background: Color = .blue,
                   foreground: Color = .white,

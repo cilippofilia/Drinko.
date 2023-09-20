@@ -8,5 +8,13 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UILaunchScreen</key>
+		<dict>
+			<key>BackgroundColor</key>
+			<string>Dr. Blue</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

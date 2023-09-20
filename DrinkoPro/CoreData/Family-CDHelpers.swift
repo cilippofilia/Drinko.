@@ -9,18 +9,18 @@ import Foundation
 
 extension Family {
     static let colors = [
-        "Pink",
-        "Purple",
-        "Red",
-        "Orange",
-        "Gold",
-        "Green",
-        "Teal",
-        "Drinko Blue",
-        "Dark Blue",
-        "Midnight",
-        "Dark Gray",
-        "Gray"
+        "Dr. Pink",
+        "Dr. Purple",
+        "Dr. Red",
+        "Dr. Orange",
+        "Dr. Gold",
+        "Dr. Green",
+        "Dr. Teal",
+        "Dr. Blue",
+        "Dr. Dark Blue",
+        "Dr. Midnight",
+        "Dr. Dark Gray",
+        "Dr. Gray"
     ]
 
     var familyName: String {
@@ -32,7 +32,7 @@ extension Family {
     }
     
     var familyColor: String {
-        color ?? "Drinko Blue"
+        color ?? "Dr. Blue"
     }
     
     var familyCreationDate: Date {
@@ -73,7 +73,7 @@ extension Family {
         let family = Family(context: viewContext)
         family.name = "Example item"
         family.detail = ""
-        family.color = "Dark Gray"
+        family.color = "Dr. Dark Gray"
         family.creationDate = Date()
         
         return family

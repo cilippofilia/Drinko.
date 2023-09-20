@@ -49,7 +49,14 @@
 
 "Select unit" = "Select unit";
 
-
+/* Cocktails Tab - CocktailView */
+"Ingredients" = "Ingredients";
+"Method" = "Method";
+"Glass" = "Glass";
+"Garnish" = "Garnish";
+"Ice" = "Ice";
+"Extra" = "Extra";
+"History of the cocktail:" = "History of the cocktail:";
 
 /* Learn Tab */
 "Learn" = "Learn";
@@ -88,6 +95,7 @@
 "Remove like from post" = "Remove like from post.";
 "Like the post" = "Like the post";
 "Like" = "Like";
+"History" = "History";
 
 
 

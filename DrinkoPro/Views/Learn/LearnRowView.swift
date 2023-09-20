@@ -8,38 +8,70 @@
 import SwiftUI
 
 struct LearnRowView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
+    @State private var rowHeight: CGFloat = 45
+    @State private var corners: CGFloat = 10
+
     var lesson: Lesson
 
     var body: some View {
         NavigationLink(destination: LearnDetailView(lesson: lesson)) {
-            HStack {
-                Image(lesson.img)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 45, height: 45)
-                    .cornerRadius(10)
-                
-                VStack(alignment: .leading) {
-                    Text(lesson.title)
-                        .font(.headline)
-
-                    Text(lesson.description)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(2)
-                        .truncationMode(.tail)
-                }
+            if sizeClass == .compact {
+                compactRowView
+            } else {
+                regularRowView
             }
         }
-        .frame(height: 45)
+        .frame(height: sizeClass == .compact ? rowHeight : rowHeight * 1.75)
+    }
+
+    var compactRowView: some View {
+        HStack {
+            Image(lesson.img)
+                .resizable()
+                .scaledToFill()
+                .frame(width: rowHeight, height: rowHeight)
+                .cornerRadius(corners)
+
+            VStack(alignment: .leading) {
+                Text(lesson.title)
+                    .font(.headline)
+
+                Text(lesson.description)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+                    .truncationMode(.tail)
+            }
+        }
+    }
+
+    var regularRowView: some View {
+        HStack(spacing: 20) {
+            Image(lesson.img)
+                .resizable()
+                .scaledToFill()
+                .frame(width: rowHeight * 1.75, height: rowHeight * 1.75)
+                .cornerRadius(corners * 1.75)
+
+            VStack(alignment: .leading) {
+                Text(lesson.title)
+                    .font(.title.bold())
+
+                Text(lesson.description)
+                    .font(.system(.headline,
+                                  design: .default,
+                                  weight: .semibold))
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+                    .truncationMode(.tail)
+            }
+        }
     }
 }
 
-#if DEBUG
-struct LearnRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        LearnRowView(lesson: .example)
-    }
+#Preview {
+    LearnRowView(lesson: .example)
 }
-#endif

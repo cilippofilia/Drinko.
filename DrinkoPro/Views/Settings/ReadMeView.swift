@@ -64,7 +64,7 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
 
                 }
             }
-            .frame(width: screenWidthPlusMargins)
+            .frame(width: compactScreenWidth)
             .padding(.bottom)
         }
         .navigationBarTitle("Drinko")
