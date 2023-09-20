@@ -16,53 +16,22 @@ struct BookRowView: View {
 
     var body: some View {
         NavigationLink(destination: BookDetailView(book: book)) {
-            if sizeClass == .compact {
-                compactBookRow
-            } else {
-                regularBookRow
-            }
-        }
-        .frame(height: sizeClass == .compact ? rowHeight : rowHeight * 2)
-    }
+            HStack(spacing: sizeClass == .compact ? 10 : 20) {
+                Image(book.image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: rowHeight, 
+                           height: rowHeight)
+                    .cornerRadius(corners)
 
-    var compactBookRow: some View {
-        HStack {
-            Image(book.image)
-                .resizable()
-                .scaledToFill()
-                .frame(width: rowHeight, height: rowHeight)
-                .cornerRadius(corners)
+                VStack(alignment: .leading) {
+                    Text(book.title)
+                        .font(.headline)
 
-            VStack(alignment: .leading) {
-                Text(book.title)
-                    .font(.headline)
-
-                Text("© \(book.author)")
-                    .font(.subheadline)
-                    .bold()
-                    .foregroundColor(.secondary)
-            }
-        }
-        .frame(height: rowHeight)
-    }
-
-    var regularBookRow: some View {
-        HStack(spacing: 20) {
-            Image(book.image)
-                .resizable()
-                .scaledToFill()
-                .frame(width: rowHeight * 1.75, height: rowHeight * 1.75)
-                .cornerRadius(corners * 1.75)
-
-            VStack(alignment: .leading) {
-                Text(book.title)
-                    .font(.title.bold())
-
-                Text("© \(book.author)")
-                    .font(.system(.headline,
-                                  design: .default,
-                                  weight: .semibold))
-                    .foregroundColor(.secondary)
+                    Text("© \(book.author)")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
             }
         }
         .frame(height: rowHeight)

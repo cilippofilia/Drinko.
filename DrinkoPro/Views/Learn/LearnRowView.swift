@@ -16,59 +16,28 @@ struct LearnRowView: View {
 
     var body: some View {
         NavigationLink(destination: LearnDetailView(lesson: lesson)) {
-            if sizeClass == .compact {
-                compactRowView
-            } else {
-                regularRowView
+            HStack(spacing: sizeClass == .compact ? 10 : 20) {
+                Image(lesson.img)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: rowHeight, 
+                           height: rowHeight)
+                    .cornerRadius(corners)
+
+                VStack(alignment: .leading) {
+                    Text(lesson.title)
+                        .font(.headline)
+
+                    Text(lesson.description)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(2)
+                        .truncationMode(.tail)
+                }
             }
         }
-        .frame(height: sizeClass == .compact ? rowHeight : rowHeight * 1.75)
-    }
-
-    var compactRowView: some View {
-        HStack {
-            Image(lesson.img)
-                .resizable()
-                .scaledToFill()
-                .frame(width: rowHeight, height: rowHeight)
-                .cornerRadius(corners)
-
-            VStack(alignment: .leading) {
-                Text(lesson.title)
-                    .font(.headline)
-
-                Text(lesson.description)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-                    .truncationMode(.tail)
-            }
-        }
-    }
-
-    var regularRowView: some View {
-        HStack(spacing: 20) {
-            Image(lesson.img)
-                .resizable()
-                .scaledToFill()
-                .frame(width: rowHeight * 1.75, height: rowHeight * 1.75)
-                .cornerRadius(corners * 1.75)
-
-            VStack(alignment: .leading) {
-                Text(lesson.title)
-                    .font(.title.bold())
-
-                Text(lesson.description)
-                    .font(.system(.headline,
-                                  design: .default,
-                                  weight: .semibold))
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.leading)
-                    .lineLimit(2)
-                    .truncationMode(.tail)
-            }
-        }
+        .frame(height: rowHeight)
     }
 }
 

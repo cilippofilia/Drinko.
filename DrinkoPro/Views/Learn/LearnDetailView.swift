@@ -10,6 +10,7 @@ import SwiftUI
 struct LearnDetailView: View {
     @Environment(\.openURL) var openURL
     @Environment(\.horizontalSizeClass) var sizeClass
+    
     @State private var frameHeight: CGFloat = 280
     @State private var corners: CGFloat = 10
 

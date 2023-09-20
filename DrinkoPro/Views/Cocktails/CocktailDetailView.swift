@@ -15,7 +15,7 @@ struct CocktailDetailView: View {
 
     @State private var showHistory = false
     @State private var selectedUnit = "oz."
-    @State private var frameHeight: CGFloat = 280
+    @State private var frameSize: CGFloat = 280
     @State private var corners: CGFloat = 10
 
     var units = ["oz.", "ml"]
@@ -51,7 +51,7 @@ struct CocktailDetailView: View {
                 }
             }
             .frame(width: compactScreenWidth,
-                   height: frameHeight)
+                   height: frameSize)
             .background(Color.white)
             .cornerRadius(corners)
 
@@ -152,7 +152,7 @@ struct CocktailDetailView: View {
                                     .notificationOccurred(.success)
                             }
                         })
-                        .frame(maxWidth: 120)
+                        .frame(maxWidth: frameSize / 2)
                     }
                 }
                 .padding(.vertical)
@@ -178,11 +178,11 @@ struct CocktailDetailView: View {
                 }
             }
             .frame(width: regularScreenWidth,
-                   height: frameHeight * 1.75)
+                   height: frameSize * 1.75)
             .background(Color.white)
             .cornerRadius(corners * 1.75)
 
-            VStack(spacing: 10) {
+            VStack(spacing: 20) {
                 HStack {
                     Text(cocktail.name)
                         .font(.title.bold())
@@ -203,7 +203,7 @@ struct CocktailDetailView: View {
                                 .notificationOccurred(.success)
                         }
                     })
-                    .frame(maxWidth: frameHeight)
+                    .frame(maxWidth: frameSize / 1.75 )
                 }
                 .padding(.vertical)
 
