@@ -17,9 +17,9 @@ Discover the ultimate bartending experience with our app's key features:
 
 - Indulge in over 200 cocktails in our 'Cocktails' section. Mark your favorites and never miss a beat when mixing your go-to drinks.
 
-- Keep track of your ingredients and easily label the ones you need to buy with our 'Cabinet' section. No more scrambling to find the right ingredients when it's time to mix. (COMING SOON...)
+- Keep track of your ingredients and easily label the ones you need to buy with our 'Cabinet' section. No more scrambling to find the right ingredients when it's time to mix.
 
-- Our app is designed for global users with two supported languages - 🇬🇧 🇮🇹 - get in touch if you'd like to help translating it into more languages 🙌
+- Our app is designed for global users with 4 supported languages - 🇬🇧 🇮🇹 🇫🇷 🇩🇪 - get in touch if you'd like to help translating it into more languages 🙌
 (You can report bugs and get in touch with the developer in the 'Settings' section)
 
 Whether you're a beginner or an experienced mixologist, our app has everything you need to take your bartending skills to the next level. Download it now and start crafting cocktails like a pro!
@@ -27,14 +27,14 @@ Whether you're a beginner or an experienced mixologist, our app has everything y
 Additional Features:
 - All the techniques have video examples;
 
-- All the text has been localized to automatically switch between English and Italian 
+- Most of the text has been localized to automatically switch between English, Italian, French and German.
 
 - Quickly write an email to report bugs and feedbacks;
 
 
 ## Tech Stack
 
-**Swift: UIKit (only used inside MailView) & SwiftUI**
+**Swift: framework SwiftUI**
 
 Core and fundation of the whole app developed and shipped entirly using SwiftUI. 
 The whole app is taylored to perfection for every iPhone and 
@@ -55,9 +55,9 @@ in order to achive the best user experience possible, and that native look and f
 - **StoreKit**:
     To support in-app purchases mainly used to learn how to implement and use the framework it in the app.
 
-- **Figma**:
+- **Figma & Shots.so**:
     Main tool to sketch, design, wireframe and style app icons, logos, AppStore Connect previews.
 
-- **GitHub**:
+- **Git & GitHub**:
     Used to work on updates and future release of the app.
 
