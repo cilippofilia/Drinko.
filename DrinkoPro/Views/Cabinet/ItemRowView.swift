@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ItemRowView: View {
+struct CompactItemRowView: View {
     @ObservedObject var favoriteProducts = FavoriteProduct()
 
     @ObservedObject var family: Family

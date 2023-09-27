@@ -35,5 +35,7 @@ struct SettingsPreferenceView: View {
 }
 
 #Preview {
-    SettingsPreferenceView()
+    Form {
+        SettingsPreferenceView()
+    }
 }

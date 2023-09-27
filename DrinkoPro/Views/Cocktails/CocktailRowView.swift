@@ -49,8 +49,8 @@ struct CocktailRowView: View {
                     }
                 }
             }
-            .frame(height: frameSize)
         }
+        .frame(height: frameSize)
     }
 }
 

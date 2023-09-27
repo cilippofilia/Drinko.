@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CreditsCardView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
+
     var image: String
     var name: String
     var brief: String
@@ -34,12 +36,12 @@ struct CreditsCardView: View {
                 }
             }
         }) {
-            HStack {
+            HStack(spacing: sizeClass == .compact ? 10 : 20) {
                 Image(systemName: image)
                     .foregroundColor(.red)
                     .imageScale(.large)
 
-                VStack(alignment: .leading, spacing: 5) {
+                VStack(alignment: .leading) {
                     Text(name)
                         .bold()
 
@@ -60,18 +62,22 @@ struct CreditsCardView: View {
         .buttonStyle(.plain)
         .background(.secondary.opacity(0.2))
         .clipShape(
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
+            RoundedRectangle(cornerRadius: sizeClass == .compact ? 10 : 20,
+                             style: .continuous)
         )
     }
 }
 
-#if DEBUG
-struct CreditsCardView_Previews: PreviewProvider {
-    static var previews: some View {
+#Preview {
+    VStack {
         CreditsCardView(image: "heart",
                         name: "Test",
                         brief: "@thisisatest",
                         url: "disTest??")
+        CreditsCardView(image: "heart",
+                        name: "Test",
+                        brief: "@thisisatest",
+                        url: "disTest??")
+
     }
 }
-#endif

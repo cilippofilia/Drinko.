@@ -4,11 +4,13 @@
 //
 //  Created by Filippo Cilia on 23/08/2023.
 //
-#warning("👨‍💻 REFACTOR VIEW AND MAKE IT AVAILABLE FOR IPAD")
+
 import SwiftUI
 
 struct CabinetView: View {
     static let cabinetViewTag: String? = "Cabinet"
+
+    @Environment(\.horizontalSizeClass) var sizeClass
 
     @ObservedObject var favoriteProducts = FavoriteProduct()
 
@@ -36,19 +38,10 @@ struct CabinetView: View {
             addFamilyToolbarItem
             sortOrderToolbarItem
         }
-        .actionSheet(isPresented: $showingSortOrder) {
-            ActionSheet(title: Text("Sort products"),
-                        message: nil,
-                        buttons: [
-                            .default(Text("Optimized")) { viewModel.sortOrder = .optimized },
-                            .default(Text("Creation Date")) { viewModel.sortOrder = .creationDate },
-                            .default(Text("Name")) { viewModel.sortOrder = .title },
-                            .cancel()
-                        ])
-        }
-        .environmentObject(favoriteProducts)
     }
+}
 
+private extension CabinetView {
     var familyList: some View {
         NavigationStack {
             List {
@@ -114,10 +107,23 @@ struct CabinetView: View {
             } label: {
                 Label("Sort", systemImage: "arrow.up.arrow.down")
             }
+            .confirmationDialog("Sort products",
+                                isPresented: $showingSortOrder) {
+                Button("Optimized") {
+                    viewModel.sortOrder = .optimized
+                }
+                Button("Creation Date") {
+                    viewModel.sortOrder = .creationDate
+                }
+
+                Button("Name") {
+                    viewModel.sortOrder = .title
+                }
+            }
+                                .environmentObject(favoriteProducts)
         }
     }
 }
-
 #Preview {
     NavigationStack {
         CabinetView(dataController: DataController())
