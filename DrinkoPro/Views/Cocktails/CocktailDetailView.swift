@@ -252,7 +252,11 @@ struct CocktailDetailView: View {
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Extra")
 
-                HistoryView(cocktail: cocktail)
+                if !cocktail.history.isEmpty {
+                    HistoryView(cocktail: cocktail)
+                }
+                
+                Spacer(minLength: 50)
             }
             .frame(width: regularScreenWidth)
         }
@@ -270,11 +274,11 @@ struct CocktailDetailView: View {
 }
 
 #Preview {
-//    TabView {
+    TabView {
         NavigationStack {
             CocktailDetailView(cocktail: .example)
                 .environmentObject(Favorites())
                 .preferredColorScheme(.dark)
         }
-//    }
+    }
 }

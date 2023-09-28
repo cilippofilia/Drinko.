@@ -19,7 +19,7 @@ struct TipJarView: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 20) {
-                Text("Support the developer by giving him a tip! Just like you would do to a bartender when you got get some drinks at a night out. 😉")
+                Text("Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉")
                     .font(.headline)
                     .padding(.top, 10)
 
@@ -37,6 +37,7 @@ struct TipJarView: View {
                     .padding(.horizontal)
                 }
             }
+            .frame(width: compactScreenWidth)
             .navigationTitle("Tip Jar")
             .task {
                 do {

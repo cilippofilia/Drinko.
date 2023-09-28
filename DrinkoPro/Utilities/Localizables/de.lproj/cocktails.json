@@ -3181,6 +3181,7 @@
     {
         "id":"godfather",
         "name":"Godfather / Godmother",
+        "name":"Godfather / Godmother",
         "method":"build + short stir",
         "glass":"rock",
         "garnish":"orange twist",
@@ -3868,7 +3869,7 @@
         ]
     },
     {
-        "id":"london-maid",
+        "id":"old-maid",
         "name":"Old Maid",
         "method":"whip shake & fine strain",
         "glass":"rock",

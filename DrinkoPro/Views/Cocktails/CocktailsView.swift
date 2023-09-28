@@ -63,58 +63,6 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        if sizeClass == .compact {
-            compactCocktails
-        } else {
-            regularCocktails
-        }
-    }
-}
-
-struct FavoriteButtonView: View {
-    let favorites: Favorites
-    let cocktail: Cocktail
-
-    var body: some View {
-        Button(action: {
-            if favorites.contains(cocktail) {
-                favorites.remove(cocktail)
-            } else {
-                favorites.add(cocktail)
-            }
-        }) {
-            Image(systemName: favorites.contains(cocktail) ?
-                  "heart.slash" : "heart")
-            Text("Like")
-        }
-    }
-}
-
-private extension CocktailsView {
-    var regularCocktails: some View {
-        NavigationStack {
-            ScrollView {
-                LazyVGrid(columns: regularColumns) {
-                    ForEach(cocktails, id:\.id) { cocktail in
-                        CocktailRowView(favorites: favorites, cocktail: cocktail)
-                            .contextMenu {
-                                FavoriteButtonView(favorites: favorites, cocktail: cocktail)
-                            }
-                            .buttonStyle(.plain)
-                    }
-                }
-            }
-            .navigationTitle("Cocktails")
-            .searchable(text: $searchText, prompt: "Search Cocktails")
-            .toolbar {
-                sortButtonToolbarItem
-            }
-        }
-        .environmentObject(favorites)
-        .navigationViewStyle(StackNavigationViewStyle())
-    }
-
-    var compactCocktails: some View {
         NavigationStack {
             List(filteredCocktails) { cocktail in
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
@@ -130,6 +78,27 @@ private extension CocktailsView {
         }
         .environmentObject(favorites)
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+struct FavoriteButtonView: View {
+    let favorites: Favorites
+    let cocktail: Cocktail
+
+    var body: some View {
+        Button(action: {
+            if favorites.contains(cocktail) {
+                favorites.remove(cocktail)
+            } else {
+                favorites.add(cocktail)
+                UINotificationFeedbackGenerator()
+                    .notificationOccurred(.success)
+            }
+        }) {
+            Image(systemName: favorites.contains(cocktail) ?
+                  "heart.slash" : "heart")
+            Text("Like")
+        }
     }
 }
 

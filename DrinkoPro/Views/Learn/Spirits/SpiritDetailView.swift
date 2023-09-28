@@ -55,8 +55,7 @@ struct SpiritDetailView: View {
             Image(spirit.image)
                 .resizable()
                 .scaledToFill()
-                .frame(width: compactScreenWidth,
-                       height: frameHeight * 1.75)
+                .frame(height: frameHeight * 1.75)
                 .clipped()
 
             VStack(spacing: 20) {

@@ -5,12 +5,11 @@
 //  Created by Filippo Cilia on 23/08/2023.
 //
 
+#warning("👨‍💻 Toolbar wont appear. Might be a bug. Might be my fault.")
 import SwiftUI
 
 struct CabinetView: View {
     static let cabinetViewTag: String? = "Cabinet"
-
-    @Environment(\.horizontalSizeClass) var sizeClass
 
     @ObservedObject var favoriteProducts = FavoriteProduct()
 
@@ -23,67 +22,68 @@ struct CabinetView: View {
     }
 
     var body: some View {
-        Group {
-            if viewModel.families.isEmpty {
-                Text("Start adding categories and products\nby pressing the + above.")
-                    .italic()
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-            } else {
-                familyList
+        NavigationStack {
+            Group {
+                if viewModel.families.isEmpty {
+                    Text("Start adding categories and products\nby pressing the + above.")
+                        .italic()
+                        .foregroundColor(.secondary)
+                        .multilineTextAlignment(.center)
+                } else {
+                    cabinetList
+                }
             }
-        }
-        .navigationTitle("Cabinet")
-        .toolbar {
-            addFamilyToolbarItem
-            sortOrderToolbarItem
+            .navigationTitle("Cabinet")
+            .navigationSplitViewStyle(AutomaticNavigationSplitViewStyle())
+            .toolbar {
+                addFamilyToolbarItem
+                sortOrderToolbarItem
+            }
         }
     }
 }
 
 private extension CabinetView {
-    var familyList: some View {
-        NavigationStack {
-            List {
-                ForEach(viewModel.families) { family in
-                    Section(header: FamilyHeaderView(family: family)) {
-                        ForEach(family.familyItems(using: viewModel.sortOrder)) { item in
-                            ItemRowView(family: family, item: item)
-                                .contextMenu {
-                                    Button(action: {
-                                        if favoriteProducts.contains(item) {
-                                            favoriteProducts.remove(item)
-                                        } else {
-                                            favoriteProducts.add(item)
-                                            UINotificationFeedbackGenerator()
-                                                .notificationOccurred(.success)
-                                        }
-                                    }) {
-                                        Image(systemName: "cart")
-                                        Text(favoriteProducts.contains(item) ? "Remove from Cart" : "Add to Cart")
+    var cabinetList: some View {
+        List {
+            ForEach(viewModel.families) { family in
+                Section(header: FamilyHeaderView(family: family)) {
+                    ForEach(family.familyItems(using: viewModel.sortOrder)) { item in
+                        ItemRowView(family: family, item: item)
+                            .contextMenu {
+                                Button(action: {
+                                    if favoriteProducts.contains(item) {
+                                        favoriteProducts.remove(item)
+                                    } else {
+                                        favoriteProducts.add(item)
+                                        UINotificationFeedbackGenerator()
+                                            .notificationOccurred(.success)
                                     }
+                                }) {
+                                    Image(systemName: "cart")
+                                    Text(favoriteProducts.contains(item) ? "Remove from Cart" : "Add to Cart")
                                 }
-                        }
-                        .onDelete { offsets in
-                            viewModel.delete(offsets, from: family)
-                        }
-
-                        Button {
-                            withAnimation {
-                                viewModel.addItem(to: family)
                             }
-                        } label: {
-                            Label("Add New Product", systemImage: "plus")
+                    }
+                    .onDelete { offsets in
+                        viewModel.delete(offsets, from: family)
+                    }
+
+                    Button {
+                        withAnimation {
+                            viewModel.addItem(to: family)
                         }
+                    } label: {
+                        Label("Add New Product", systemImage: "plus")
                     }
                 }
             }
-            .listStyle(InsetGroupedListStyle())
-            .navigationTitle("Cabinet")
-            .navigationViewStyle(StackNavigationViewStyle())
         }
+        .listStyle(InsetGroupedListStyle())
     }
+}
 
+private extension CabinetView {
     var addFamilyToolbarItem: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             Button {
@@ -115,15 +115,15 @@ private extension CabinetView {
                 Button("Creation Date") {
                     viewModel.sortOrder = .creationDate
                 }
-
                 Button("Name") {
                     viewModel.sortOrder = .title
                 }
             }
-                                .environmentObject(favoriteProducts)
+            .environmentObject(favoriteProducts)
         }
     }
 }
+
 #Preview {
     NavigationStack {
         CabinetView(dataController: DataController())
