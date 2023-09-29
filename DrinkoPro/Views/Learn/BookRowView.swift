@@ -38,6 +38,8 @@ struct BookRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     BookRowView(book: .example)
 }
+#endif

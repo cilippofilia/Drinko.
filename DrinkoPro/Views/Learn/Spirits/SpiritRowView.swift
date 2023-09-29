@@ -42,6 +42,8 @@ struct SpiritRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     SpiritRowView(spirit: .example)
 }
+#endif

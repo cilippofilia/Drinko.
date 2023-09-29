@@ -92,6 +92,8 @@ struct LearnDetailView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LearnDetailView(lesson: .example)
 }
+#endif

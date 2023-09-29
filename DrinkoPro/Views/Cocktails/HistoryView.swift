@@ -70,7 +70,9 @@ struct HistoryView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     HistoryView(cocktail: .example)
         .preferredColorScheme(.dark)
 }
+#endif

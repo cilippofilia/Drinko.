@@ -54,7 +54,9 @@ struct CocktailRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     CocktailRowView(cocktail: .example)
         .environmentObject(Favorites())
 }
+#endif

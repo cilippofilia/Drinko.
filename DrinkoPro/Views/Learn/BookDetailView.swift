@@ -75,7 +75,8 @@ struct BookDetailView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     BookDetailView(book: .example)
 }
-
+#endif

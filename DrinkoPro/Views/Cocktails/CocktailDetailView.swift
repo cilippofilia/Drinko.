@@ -273,6 +273,7 @@ struct CocktailDetailView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     TabView {
         NavigationStack {
@@ -282,3 +283,4 @@ struct CocktailDetailView: View {
         }
     }
 }
+#endif

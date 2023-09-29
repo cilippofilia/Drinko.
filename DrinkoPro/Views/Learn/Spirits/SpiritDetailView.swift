@@ -73,7 +73,8 @@ struct SpiritDetailView: View {
         }
     }
 }
-
+#if DEBUG
 #Preview {
     SpiritDetailView(spirit: .example)
 }
+#endif

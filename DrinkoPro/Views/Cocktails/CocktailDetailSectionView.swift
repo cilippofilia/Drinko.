@@ -55,6 +55,8 @@ struct CocktailDetailSectionView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     CocktailDetailSectionView(cocktail: .example, text: "Extra")
 }
+#endif

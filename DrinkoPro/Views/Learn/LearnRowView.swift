@@ -41,6 +41,8 @@ struct LearnRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LearnRowView(lesson: .example)
 }
+#endif
