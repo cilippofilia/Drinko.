@@ -15,7 +15,7 @@ Discover the ultimate bartending experience with our app's key features:
 
 - Get started on your mixology journey with our 'Learn' section, where you'll master the basics and learn advanced techniques to impress your guests.
 
-- Indulge in over 200 cocktails in our 'Cocktails' section. Mark your favorites and never miss a beat when mixing your go-to drinks.
+- Indulge in over 130 cocktails in our 'Cocktails' section. Mark your favorites and never miss a beat when mixing your go-to drinks.
 
 - Keep track of your ingredients and easily label the ones you need to buy with our 'Cabinet' section. No more scrambling to find the right ingredients when it's time to mix.
 
