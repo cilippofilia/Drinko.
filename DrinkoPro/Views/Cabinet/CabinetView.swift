@@ -5,7 +5,6 @@
 //  Created by Filippo Cilia on 23/08/2023.
 //
 
-#warning("👨‍💻 Toolbar wont appear. Might be a bug. Might be my fault.")
 import SwiftUI
 
 struct CabinetView: View {

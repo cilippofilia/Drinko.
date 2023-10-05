@@ -9,18 +9,24 @@ import Foundation
 
 extension Family {
     static let colors = [
-        "Dr. Pink",
+        "Dr. Indigo",
+        "Dr. Magenta",
         "Dr. Purple",
+        "Dr. Bubblegum",
+        "Dr. Poppy",
         "Dr. Red",
         "Dr. Orange",
         "Dr. Gold",
         "Dr. Green",
         "Dr. Teal",
+        "Dr. Sky",
         "Dr. Blue",
         "Dr. Dark Blue",
         "Dr. Midnight",
         "Dr. Dark Gray",
-        "Dr. Gray"
+        "Dr. Gray",
+        "Dr. Lavender",
+        "Dr. Periwinkle",
     ]
 
     var familyName: String {

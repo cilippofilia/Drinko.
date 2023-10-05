@@ -5,8 +5,6 @@
 //  Created by Filippo Cilia on 26/08/2023.
 //
 
-#warning("👨‍💻 Update paywall by using RevenueCats newest issue.")
-
 import StoreKit
 import SwiftUI
 
@@ -20,7 +18,7 @@ struct TipJarView: View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 20) {
                 Text("Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉")
-                    .font(.headline)
+                    .font(.body)
                     .padding(.top, 10)
 
                 ForEach(purchaseManager.products, id: \.self) { tip in

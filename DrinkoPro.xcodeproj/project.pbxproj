@@ -29,6 +29,7 @@
 		183AE98C2A94B26B00AC156F /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 183AE98B2A94B26B00AC156F /* Configuration.storekit */; };
 		185614A22A92A6F9002051ED /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185614A12A92A6F9002051ED /* ErrorHandler.swift */; };
 		186BC7422AB51BCA00DE38C1 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC7412AB51BCA00DE38C1 /* UnlockManager.swift */; };
+		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
 		188E93BE2A4C1E04001691E6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BD2A4C1E04001691E6 /* Book.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
@@ -62,8 +63,8 @@
 		18F49EC12A286D2E00862CE3 /* Spirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAC2A286D2E00862CE3 /* Spirit.swift */; };
 		18F49EC22A286D2E00862CE3 /* SpiritRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAD2A286D2E00862CE3 /* SpiritRowView.swift */; };
 		18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAE2A286D2E00862CE3 /* LearnView.swift */; };
-		18F49EC42A286D2E00862CE3 /* LearnRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LearnRowView.swift */; };
-		18F49EC52A286D2E00862CE3 /* LearnDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LearnDetailView.swift */; };
+		18F49EC42A286D2E00862CE3 /* LessonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */; };
+		18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */; };
 		18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */; };
 		18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
 		18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */; };
@@ -108,6 +109,7 @@
 		1886945B2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/cocktails.json; sourceTree = "<group>"; };
 		1886945C2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/lessons.json; sourceTree = "<group>"; };
 		1886945D2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/spirits.json; sourceTree = "<group>"; };
+		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		188E93BD2A4C1E04001691E6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
@@ -146,8 +148,8 @@
 		18F49EAC2A286D2E00862CE3 /* Spirit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spirit.swift; sourceTree = "<group>"; };
 		18F49EAD2A286D2E00862CE3 /* SpiritRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpiritRowView.swift; sourceTree = "<group>"; };
 		18F49EAE2A286D2E00862CE3 /* LearnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
-		18F49EAF2A286D2E00862CE3 /* LearnRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnRowView.swift; sourceTree = "<group>"; };
-		18F49EB02A286D2E00862CE3 /* LearnDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnDetailView.swift; sourceTree = "<group>"; };
+		18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonRowView.swift; sourceTree = "<group>"; };
+		18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
 		18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailRowView.swift; sourceTree = "<group>"; };
 		18F49EB72A286D2E00862CE3 /* CocktailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailsView.swift; sourceTree = "<group>"; };
 		18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailSectionView.swift; sourceTree = "<group>"; };
@@ -221,6 +223,24 @@
 				18F49EAC2A286D2E00862CE3 /* Spirit.swift */,
 			);
 			path = Learn;
+			sourceTree = "<group>";
+		};
+		18883A832ACC70C400FC78C7 /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+				18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */,
+				18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */,
+				188BCF402A3875D500FBEF20 /* VideoView.swift */,
+			);
+			path = Lessons;
+			sourceTree = "<group>";
+		};
+		18883A842ACC718200FC78C7 /* SuperJuice */ = {
+			isa = PBXGroup;
+			children = (
+				18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */,
+			);
+			name = SuperJuice;
 			sourceTree = "<group>";
 		};
 		188E93BC2A4C1DF6001691E6 /* Books */ = {
@@ -390,11 +410,10 @@
 			isa = PBXGroup;
 			children = (
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
-				18F49EAF2A286D2E00862CE3 /* LearnRowView.swift */,
-				18F49EB02A286D2E00862CE3 /* LearnDetailView.swift */,
-				188BCF402A3875D500FBEF20 /* VideoView.swift */,
+				18883A832ACC70C400FC78C7 /* Lessons */,
 				18F49EAA2A286D2E00862CE3 /* Spirits */,
 				188E93BC2A4C1DF6001691E6 /* Books */,
+				18883A842ACC718200FC78C7 /* SuperJuice */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -470,7 +489,6 @@
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
-				18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 18F49E612A27B28D00862CE3 /* Products */;
 			projectDirPath = "";
@@ -505,7 +523,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18F49EC52A286D2E00862CE3 /* LearnDetailView.swift in Sources */,
+				18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */,
 				183AE97E2A94B13200AC156F /* Item-CDHelpers.swift in Sources */,
 				18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */,
 				188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */,
@@ -555,7 +573,8 @@
 				183AE97C2A94B13200AC156F /* DataController.swift in Sources */,
 				183AE97F2A94B13200AC156F /* Family-CDHelpers.swift in Sources */,
 				183AE9682A94B02700AC156F /* ItemRowViewModel.swift in Sources */,
-				18F49EC42A286D2E00862CE3 /* LearnRowView.swift in Sources */,
+				18F49EC42A286D2E00862CE3 /* LessonRowView.swift in Sources */,
+				18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */,
 				18B951A32A99DE81006119DC /* PurchaseManager.swift in Sources */,
 				180E3E722A9642D10005381F /* CabinetView.swift in Sources */,
 			);
@@ -838,17 +857,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		18B449BC2A87645200F52B1B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCVersionGroup section */
 		183AE9782A94B13200AC156F /* Main.xcdatamodeld */ = {

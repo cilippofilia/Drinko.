@@ -1,5 +1,5 @@
 //
-//  LearnDetailView.swift
+//  LessonDetailView.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 27/04/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LearnDetailView: View {
+struct LessonDetailView: View {
     @Environment(\.openURL) var openURL
     @Environment(\.horizontalSizeClass) var sizeClass
     
@@ -19,16 +19,16 @@ struct LearnDetailView: View {
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             if sizeClass == .compact {
-                compactLearnView
+                compactLessonView
             } else {
-                regularLearnView
+                regularLessonView
             }
         }
         .navigationTitle(lesson.title)
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    var compactLearnView: some View {
+    var compactLessonView: some View {
         VStack {
             if lesson.hasVideo {
                 VideoView(videoID: lesson.videoID)
@@ -60,7 +60,7 @@ struct LearnDetailView: View {
         }
     }
 
-    var regularLearnView: some View {
+    var regularLessonView: some View {
         VStack(spacing: 20) {
             if lesson.hasVideo {
                 VideoView(videoID: lesson.videoID)
@@ -94,6 +94,6 @@ struct LearnDetailView: View {
 
 #if DEBUG
 #Preview {
-    LearnDetailView(lesson: .example)
+    LessonDetailView(lesson: .example)
 }
 #endif

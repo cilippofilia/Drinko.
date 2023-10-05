@@ -1,5 +1,5 @@
 //
-//  LearnRowView.swift
+//  LessonRowView.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 27/04/2023.
@@ -7,15 +7,16 @@
 
 import SwiftUI
 
-struct LearnRowView: View {
+struct LessonRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+
     @State private var rowHeight: CGFloat = 45
     @State private var corners: CGFloat = 10
 
     var lesson: Lesson
 
     var body: some View {
-        NavigationLink(destination: LearnDetailView(lesson: lesson)) {
+        NavigationLink(destination: LessonDetailView(lesson: lesson)) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
                 Image(lesson.img)
                     .resizable()
@@ -43,6 +44,6 @@ struct LearnRowView: View {
 
 #if DEBUG
 #Preview {
-    LearnRowView(lesson: .example)
+    LessonRowView(lesson: .example)
 }
 #endif

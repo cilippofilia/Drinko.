@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SpiritRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    
+
     @State private var rowHeight: CGFloat = 45
     @State private var corners: CGFloat = 10
 
