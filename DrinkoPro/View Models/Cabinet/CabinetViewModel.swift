@@ -11,8 +11,6 @@ import SwiftUI
 extension CabinetView {
     class ViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
         let dataController: DataController
-//        let maxFamilies = 3
-//        let maxItems = 9
         var sortOrder = Item.SortOrder.optimized
 
         private let familiesController: NSFetchedResultsController<Family>
