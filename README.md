@@ -37,11 +37,11 @@ Additional Features:
 **Swift: framework SwiftUI**
 
 Core and fundation of the whole app developed and shipped entirly using SwiftUI. 
-The whole app is taylored to perfection for every iPhone and 
+The whole app is taylored to perfection for every iPhone and iPad
 in order to achive the best user experience possible, and that native look and feel, I have implemented the following frameworks:
 
 - **CloudKit**:
-    Used for storing user settings and share it across multiple devices, like preferred settings and language.
+    Used for storing user ingredients added to the Cabinet section and share it across multiple devices.
 
 - **Combine**:
     To handle asyc events in case of in-app purchases.
@@ -50,13 +50,13 @@ in order to achive the best user experience possible, and that native look and f
     Used to keep track and store the items created by the user inside the 'Cabinet' section.
 
 - **MessageUI**:
-    Used to recive feedback and bugs directly from the testers, and users, without leaving the app.
+    Used to recive feedback and bugs directly from the testers and users.
    
 - **StoreKit**:
-    To support in-app purchases mainly used to learn how to implement and use the framework it in the app.
+    To support in-app purchases mainly (used to learn how to implement and use the framework it in the app).
 
 - **Figma & Shots.so**:
-    Main tool to sketch, design, wireframe and style app icons, logos, AppStore Connect previews.
+    Main tool to sketch, design, style app icons, logos, AppStore Connect previews.
 
 - **Git & GitHub**:
     Used to work on updates and future release of the app.
