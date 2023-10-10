@@ -62,19 +62,19 @@ struct LessonDetailView: View {
 
     var regularLessonView: some View {
         VStack(spacing: 20) {
-            if lesson.hasVideo {
-                VideoView(videoID: lesson.videoID)
-                    .frame(width: regularScreenWidth)
-                    .clipShape(
-                        RoundedRectangle(cornerRadius: corners * 1.75,
-                                         style: .continuous))
-            } else {
-                Image(lesson.img)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: frameHeight * 1.75)
-                    .clipped()
-            }
+//            if lesson.hasVideo {
+//                VideoView(videoID: lesson.videoID)
+//                    .frame(width: regularScreenWidth)
+//                    .clipShape(
+//                        RoundedRectangle(cornerRadius: corners * 1.75,
+//                                         style: .continuous))
+//            } else {
+            Image(lesson.img)
+                .resizable()
+                .scaledToFill()
+                .frame(height: frameHeight * 1.75)
+                .clipped()
+//            }
 
             VStack(spacing: 20) {
                 Text(lesson.title)

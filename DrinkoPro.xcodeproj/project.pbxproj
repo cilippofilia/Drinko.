@@ -388,8 +388,8 @@
 				18F49EA52A286D2E00862CE3 /* SettingsView.swift */,
 				189EEA1F2ABBA59900D67806 /* SettingsSections */,
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
-				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
+				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";

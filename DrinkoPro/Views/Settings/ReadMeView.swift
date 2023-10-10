@@ -71,7 +71,7 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
 
                         CreditsCardView(image: "heart.fill",
                                         name: "The Beer Corner 🍺",
-                                        brief: "Instagram: @simonkol_",
+                                        brief: "Instagram: @thebeercornercantu",
                                         url: "https://instagram.com/thebeercornercantu?igshid=MzRlODBiNWFlZA==")
 
                         CreditsCardView(image: "heart.fill",
@@ -96,8 +96,8 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                     }
                 }
             }
-            .frame(width: sizeClass == .compact ? compactScreenWidth : regularScreenWidth)
-            .padding(.bottom)
+//            .frame(width: sizeClass == .compact ? compactScreenWidth : regularScreenWidth)
+            .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
         }
         .navigationBarTitle("Drinko")
     }

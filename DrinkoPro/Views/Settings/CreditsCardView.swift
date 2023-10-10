@@ -56,7 +56,7 @@ struct CreditsCardView: View {
                     .foregroundColor(.blue)
                     .imageScale(.large)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
             .padding()
         }
         .buttonStyle(.plain)
@@ -69,7 +69,22 @@ struct CreditsCardView: View {
 }
 
 #Preview {
-    VStack {
+    LazyVGrid(columns: [GridItem(.flexible(minimum: 240,
+                                           maximum: 480),
+                                 spacing: 20,
+                                 alignment: .leading),
+                        GridItem(.flexible(minimum: 240,
+                                           maximum: 480),
+                                 spacing: 20,
+                                 alignment: .leading)]) {
+        CreditsCardView(image: "heart",
+                        name: "Test",
+                        brief: "@thisisatest",
+                        url: "disTest??")
+        CreditsCardView(image: "heart",
+                        name: "Test",
+                        brief: "@thisisatest",
+                        url: "disTest??")
         CreditsCardView(image: "heart",
                         name: "Test",
                         brief: "@thisisatest",
