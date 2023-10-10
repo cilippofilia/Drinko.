@@ -7,11 +7,9 @@
 
 import SwiftUI
 
-#warning("👨‍💻 Finish this View before starting to refactor code")
-
 enum CalculationMode: String, CaseIterable {
-    case peels = "By Peels"
-    case water = "By Water"
+    case peels = "Peels amount"
+    case water = "Water amount"
 }
 
 struct SuperJuiceView: View {
@@ -23,61 +21,101 @@ struct SuperJuiceView: View {
     @State private var malicAcid: Double = 0
     @State private var waterAmount: Double = 0
 
+    let typeOfJuice: String
+
     var body: some View {
-        NavigationView {
-            VStack {
-                Picker("Calculation Mode", selection: $selectedMode) {
-                    ForEach(CalculationMode.allCases, id: \.self) { mode in
-                        Text(mode.rawValue)
+        VStack {
+            Picker("Calculation Mode", selection: $selectedMode) {
+                ForEach(CalculationMode.allCases, id: \.self) { mode in
+                    Text(mode.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
+
+            Form {
+                Section(header: Text(selectedMode == .peels ? "\(typeOfJuice) peels (gr)" : "Water (ml)")) {
+                    Group {
+                        if selectedMode == .peels {
+                            TextField("\(typeOfJuice) peels in grams", text: $peels)
+                        } else {
+                            TextField("Water amount in millilitres", text: $water)
+                        }
+                    }
+                    .keyboardType(.decimalPad)
+                }
+
+                Section {
+                    if typeOfJuice == "Lime" {
+                        limeButton
+                    } else {
+                        lemonButton
                     }
                 }
-                .pickerStyle(SegmentedPickerStyle())
 
-                Form {
-                    Section(header: Text(selectedMode == .peels ? "Lime peels (gr)" : "Water (ml)")) {
-                        Group {
-                            if selectedMode == .peels {
-                                TextField("Lime Peels in grams", text: $peels)
-                            } else {
-                                TextField("Water amount in millilitres", text: $water)
-                            }
-                        }
-                        .keyboardType(.decimalPad)
-                    }
+                Section(footer: Text("Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed.")) {
+                    Text("Citric Acid:\n") + Text("\(citricAcid, specifier: "%.2f") gr")
+                        .font(.title)
 
-                    Section {
-                        Button(action: {
-                            guard !peels.isEmpty else { return peels = "0" }
-                            guard !water.isEmpty else { return peels = "0" }
-
-                            if selectedMode == .peels {
-                                citricAcid = 0.66 * Double(peels)!
-                                malicAcid = 0.33 * Double(peels)!
-                                waterAmount = 16.66 * Double(peels)!
-                            }
-                        }) {
-                            Text("Calculate")
-                        }
-                    }
-
-                    Section(footer: Text("Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed.")) {
-                        Text("Citric Acid:\n") + Text("\(citricAcid, specifier: "%.2f") gr")
-                            .font(.title)
-
+                    if typeOfJuice == "Lime" {
                         Text("Malic Acid:\n") + Text("\(malicAcid, specifier: "%.2f") gr")
                             .font(.title)
-
-                        Text("Water:\n") + Text("\(waterAmount, specifier: "%.2f") ml")
-                            .font(.title)
                     }
+                    
+                    Text("Water:\n") + Text("\(waterAmount, specifier: "%.2f") ml")
+                        .font(.title)
                 }
-                .navigationTitle("Juice Calculator")
             }
+            .navigationTitle("Juice Calculator")
+        }
+    }
+}
+
+private extension SuperJuiceView {
+    var limeButton: some View {
+        Button(action: {
+            if selectedMode == .peels {
+                guard !peels.isEmpty else { return peels = "0" }
+
+                citricAcid = 0.66 * Double(peels)!
+                malicAcid = 0.33 * Double(peels)!
+                waterAmount = 16.66 * Double(peels)!
+            }
+            if selectedMode == .water {
+                guard !water.isEmpty else { return water = "0" }
+
+                waterAmount = Double(water)!
+                peels = String(waterAmount / 16.66)
+                citricAcid = 0.66 * Double(peels)!
+                malicAcid = 0.33 * Double(peels)!
+            }
+        }) {
+            Text("Calculate")
+        }
+    }
+
+    var lemonButton: some View {
+        Button(action: {
+            if selectedMode == .peels {
+                guard !peels.isEmpty else { return peels = "0" }
+
+                citricAcid = 1 * Double(peels)!
+                waterAmount = 16.66 * Double(peels)!
+            }
+            if selectedMode == .water {
+                guard !water.isEmpty else { return water = "0" }
+
+                waterAmount = Double(water)!
+                peels = String(waterAmount / 16.66)
+                citricAcid = 1 * Double(peels)!
+            }
+        }) {
+            Text("Calculate")
         }
     }
 }
 
 #Preview {
-    SuperJuiceView()
+    SuperJuiceView(typeOfJuice: "Lime")
         .preferredColorScheme(.dark)
 }

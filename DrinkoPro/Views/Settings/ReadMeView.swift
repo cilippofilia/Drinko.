@@ -93,11 +93,16 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                                         name: "Nicolas 🇩🇪",
                                         brief: "X (Twitter): @theduodev",
                                         url: "https://x.com/theduodev?s=21&t=GH4SWEVHVFi_peVsOSu5vA")
+
+                        CreditsCardView(image: "heart.fill",
+                                        name: "Kevin Kos",
+                                        brief: "Instagram: @kevin_kos",
+                                        url: "https://www.instagram.com/kevin_kos")
                     }
                 }
             }
-//            .frame(width: sizeClass == .compact ? compactScreenWidth : regularScreenWidth)
             .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
+            .frame(width: sizeClass == .compact ? compactScreenWidth : nil)
         }
         .navigationBarTitle("Drinko")
     }

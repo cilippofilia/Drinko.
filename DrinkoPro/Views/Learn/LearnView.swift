@@ -26,7 +26,10 @@ struct LearnView: View {
                     }
                 }
 
-                // MARK: SUPERJUICE Section goes here
+                Section(header: Text("Superjuice calculators")) {
+                    SuperjuiceRowView(juiceType: "Lime")
+                    SuperjuiceRowView(juiceType: "Lemon")
+                }
 
                 Section(header: Text("Spirits")) {
                     ForEach(spirits) { spirit in
@@ -43,34 +46,6 @@ struct LearnView: View {
             .navigationTitle("Learn")
         }
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-private extension LearnView {
-    var superjuiceRow: some View {
-        NavigationLink(destination: EmptyView()) {
-            HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                Image("superjuice")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 45,
-                           height: 45)
-                    .cornerRadius(10)
-
-                VStack(alignment: .leading) {
-                    Text("Super Juices Calculator")
-                        .font(.headline)
-
-                    Text("Calculate what you need in order to make your beloved super juices.")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(2)
-                        .truncationMode(.tail)
-                }
-            }
-        }
-        .frame(height: 45)
     }
 }
 

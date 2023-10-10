@@ -28,6 +28,7 @@
 		183AE97F2A94B13200AC156F /* Family-CDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AE97B2A94B13200AC156F /* Family-CDHelpers.swift */; };
 		183AE98C2A94B26B00AC156F /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 183AE98B2A94B26B00AC156F /* Configuration.storekit */; };
 		186BC7422AB51BCA00DE38C1 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC7412AB51BCA00DE38C1 /* UnlockManager.swift */; };
+		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
 		188E93BE2A4C1E04001691E6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BD2A4C1E04001691E6 /* Book.swift */; };
@@ -94,6 +95,7 @@
 		183AE98B2A94B26B00AC156F /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		186BC7412AB51BCA00DE38C1 /* UnlockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
+		1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperjuiceRowView.swift; sourceTree = "<group>"; };
 		188694542AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		188694552AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/books.json; sourceTree = "<group>"; };
 		188694562AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/cocktails.json; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 		18883A842ACC718200FC78C7 /* SuperJuice */ = {
 			isa = PBXGroup;
 			children = (
+				1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */,
 				18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */,
 			);
 			name = SuperJuice;
@@ -399,9 +402,9 @@
 			children = (
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
 				18883A832ACC70C400FC78C7 /* Lessons */,
+				18883A842ACC718200FC78C7 /* SuperJuice */,
 				18F49EAA2A286D2E00862CE3 /* Spirits */,
 				188E93BC2A4C1DF6001691E6 /* Books */,
-				18883A842ACC718200FC78C7 /* SuperJuice */,
 			);
 			path = Learn;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */,
 				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
+				1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */,
 				188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */,
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
