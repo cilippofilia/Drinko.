@@ -54,6 +54,11 @@ struct SuperJuiceView: View {
                 }
 
                 Section(footer: Text("Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed.")) {
+                    if selectedMode == .water {
+                        Text("\(typeOfJuice) peels:\n") + Text("\(Double(peels) ?? 0, specifier: "%.2f") gr")
+                            .font(.title)
+                    }
+
                     Text("Citric Acid:\n") + Text("\(citricAcid, specifier: "%.2f") gr")
                         .font(.title)
 
