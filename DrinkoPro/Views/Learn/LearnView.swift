@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LearnView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @StateObject var proLessons = ProLessonsViewModel()
     static let learnTag: String? = "Learn"
 
     let subjects = Bundle.main.decode([Subject].self, from: "lessons.json")
@@ -25,6 +26,13 @@ struct LearnView: View {
                         }
                     }
                 }
+
+                // TODO: UNCOMMENT WHEN DRINKO PRO IS READY
+//                Section(header: Text("Drinko Pro")) {
+//                    ForEach(proLessons.lessons) { lesson in
+//                        ProLessonRowView(proLesson: lesson)
+//                    }
+//                }
 
                 Section(header: Text("Superjuice calculators")) {
                     SuperjuiceRowView(juiceType: "Lime")
@@ -44,6 +52,12 @@ struct LearnView: View {
                 }
             }
             .navigationTitle("Learn")
+            .onAppear {
+                guard let url = URL(string: "https://raw.githubusercontent.com/cilippofilia/drinko-jsons/main/test.json") else {
+                    return
+                }
+                proLessons.fetchData(from: url)
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

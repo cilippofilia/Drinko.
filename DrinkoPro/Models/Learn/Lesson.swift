@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct Subject: Codable, Equatable, Identifiable {
-    let id: String
-    var name: String
-    var lessons: [Lesson]
-
-    #if DEBUG
-    static let example = Subject(id: "example",
-                                 name: "Example Subject",
-                                 lessons: [Lesson.example, Lesson.example, Lesson.example])
-    #endif
-}
-
 struct Lesson: Codable, Equatable, Identifiable {
     let id: String
     var title: String
