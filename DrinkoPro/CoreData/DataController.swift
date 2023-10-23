@@ -38,16 +38,24 @@ class DataController: ObservableObject {
         self.defaults = defaults
         container = NSPersistentCloudKitContainer(name: "Main", managedObjectModel: Self.model)
 
-        // For testing and previewing purposes, we create a
-        // temporary, in-memory database by writing to /dev/null
-        // so our data is destroyed after the app finishes running.
         if inMemory {
-            container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
+            container.persistentStoreDescriptions.first?.type = NSInMemoryStoreType
+            
+            let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+            let storeURL = directory.appendingPathComponent("Main.sqlite")
+
+            container.persistentStoreDescriptions.first?.url = storeURL
+                // For testing and previewing purposes, we create a
+                // temporary, in-memory database by writing to /dev/null
+                // so our data is destroyed after the app finishes running.
+                // container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
         
         container.loadPersistentStores { storeDescription, error in
             if let error = error {
                 fatalError("Fatal error loading store: \(error.localizedDescription)")
+            } else {
+                print(storeDescription)
             }
         }
     }
