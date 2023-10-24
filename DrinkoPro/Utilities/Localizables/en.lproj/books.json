@@ -45,5 +45,37 @@
         "description": "Modern tropical cocktails",
         "summary": "\"Tiki\" by Shannon Mustipher is a captivating exploration of the world of tropical cocktails, delving into the history, flavors, and cultural significance of Tiki drinks. From the origins of Tiki culture to expert mixology techniques, this book inspires readers to embrace the creativity and community behind these vibrant libations. It's a must-read for cocktail enthusiasts seeking an immersive journey into the art of Tiki.",
         "author": "Shannon Mustipher"
+    },
+
+    {
+        "id": "cocktail-codex",
+        "title": "Cocktail Codex",
+        "description": "Fundamentals - Formulas - Evolution",
+        "summary": "\"Cocktail Codex\" is a mixologist's Bible that unravels the secrets of crafting perfect cocktails. Written by industry experts Alex Day, Nick Fauchald, and David Kaplan, the book dives deep into the science and art of mixology but keeps things delightfully simple. At its core, \"Cocktail Codex\" argues that all cocktails stem from just six 'root' recipes: the Old Fashioned, Martini, Daiquiri, Sidecar, Whiskey Highball, and Flip. Master these, and you've got the keys to unlock endless cocktail possibilities. Whether you're a novice shaking your first Daiquiri or a pro looking to elevate your Martini game, this book serves as an indispensable guide to shaking, stirring, and sipping your way to cocktail excellence.",
+        "author": "Alex Day, Nick Fauchald, and David Kaplan"
+    },
+
+    {
+        "id": "bartender-manual",
+        "title": "Meehan's Bartender Manual",
+        "description": "Fundamentals - Formulas - Evolution",
+        "summary": "In \"Meehan's Bartender Manual\", veteran mixologist Jim Meehan takes you on a spirited journey through the art and science of bartending. More than just a collection of cocktail recipes, this comprehensive guide serves as a masterclass in the craft, blending historical context, expert techniques, and the nuanced flavors of mixology into a must-have manual for both aspiring and seasoned bartenders. Meehan dives deep into the essentials—everything from setting up a professional bar to mastering the chemistry of a perfect cocktail. Sprinkled with personal anecdotes and captivating visuals, the book goes beyond the shaker and strainer, exploring the storytelling and hospitality that make bartending an enduring craft. Whether you're behind the bar or simply an enthusiast, \"Meehan's Bartender Manual\" is your all-in-one toolkit for creating not just great cocktails, but unforgettable experiences.",
+        "author": "Jim Meehan"
+    },
+
+    {
+        "id": "aviary-book",
+        "title": "The Aviary",
+        "description": "Cocktail book",
+        "summary": "\"The Aviary\" is nothing short of a visual and sensory feast for cocktail enthusiasts and curious mixologists alike. Created by Grant Achatz and Nick Kokonas, the masterminds behind the world-renowned Alinea restaurant, this book is an avant-garde journey through the art of drink-making. It transcends traditional cocktail books by not just listing recipes, but by plunging into the science, technique, and theatricality of modern mixology.\n\nThe book serves as a comprehensive guide that opens up a new realm of taste and sensation. With jaw-dropping photography, it invites readers to explore a gamut of flavors and textures that they may have never imagined could exist in a cocktail glass. Whether it's a drink that looks like a whimsical piece of art or one that engages all five senses, \"The Aviary\" is a transformative experience.\n\nFrom whimsical foams to intricate ice sculptures, the cocktails aren't just beverages; they are multi-sensory experiences. This isn't just a book; it's an adventure into a groundbreaking world of innovative drink-making. Perfect for the daring home bartender or the professional looking to revolutionize their craft, \"The Aviary\" is an essential addition to the library of anyone who's ever been fascinated by what's possible in a glass.",
+        "author": "Grant Achatz, Nick Kokonas, Allen Hemberger"
+    },
+
+    {
+        "id": "wild-mixology",
+        "title": "Wild Mixology",
+        "description": "A Guide to Foraging Natural Cocktails",
+        "summary": "\"Wild Mixology: A Guide to Foraging Natural Cocktails\" is your ultimate guide to elevating your mixology game using Mother Nature's own ingredients. Imagine sipping a cocktail infused with hand-picked berries, homegrown herbs, and wildflowers—you can experience this and more, all in your own backyard. This book serves as a treasure map for foragers and cocktail enthusiasts alike, offering a journey through forests, fields, and even urban landscapes to find the perfect botanical blends for your spirits. From rustic to refined, each page unveils the secrets behind crafting drinks that not only taste divine but also connect you to the earth. Ideal for anyone who loves an adventurous tipple, \"Wild Mixology\" is more than just a cocktail book; it's a call to explore the untamed world, one sip at a time. Cheers to your next wild adventure—in a glass!",
+        "author": "Wood-Ing, Valeria Margherita Mosca, Massimo Bottura"
     }
 ]
