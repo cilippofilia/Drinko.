@@ -18,12 +18,21 @@ struct SpiritRowView: View {
     var body: some View {
         NavigationLink(destination: SpiritDetailView(spirit: spirit)) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                Image(spirit.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: rowHeight,
-                           height: rowHeight)
-                    .cornerRadius(corners)
+                AsyncImage(url: URL(string: spirit.image)) { phase in
+                    switch phase {
+                        case .failure:
+                            imageFailedToLoad
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        default:
+                            ProgressView()
+                    }
+                }
+                .frame(width: rowHeight,
+                       height: rowHeight)
+                .cornerRadius(corners)
 
                 VStack(alignment: .leading) {
                     Text(spirit.title)

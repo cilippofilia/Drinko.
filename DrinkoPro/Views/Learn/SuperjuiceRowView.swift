@@ -18,20 +18,36 @@ struct SuperjuiceRowView: View {
     var body: some View {
         NavigationLink(destination: SuperJuiceView(typeOfJuice: juiceType)) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                Image("\(juiceType)s")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: rowHeight,
-                           height: rowHeight)
-                    .cornerRadius(corners)
+                imageURL
 
                 VStack(alignment: .leading) {
-                    Text("\(juiceType) Superjuice")
+                    Text("\(juiceType.capitalizingFirstLetter()) Superjuice")
                         .font(.headline)
                 }
             }
         }
         .frame(height: 45)
+    }
+}
+
+private extension SuperjuiceRowView {
+    var imageURL: some View {
+        AsyncImage(url: URL(string:         "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/\(juiceType)s.jpg"
+)) { phase in
+            switch phase {
+                case .failure:
+                    imageFailedToLoad
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                default:
+                    ProgressView()
+            }
+        }
+        .frame(width: rowHeight,
+               height: rowHeight)
+        .cornerRadius(corners)
     }
 }
 

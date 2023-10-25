@@ -11,6 +11,7 @@
 		180E3E742A96444F0005381F /* FamilyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E3E732A96444F0005381F /* FamilyHeaderView.swift */; };
 		180E3E762A9645EF0005381F /* EditFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E3E752A9645EF0005381F /* EditFamilyView.swift */; };
 		182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
+		182B40342AE90EB30007A03F /* imageFailedToLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B40332AE90EB30007A03F /* imageFailedToLoad.swift */; };
 		182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183AE95D2A94AACC00AC156F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95C2A94AACB00AC156F /* StoreKit.framework */; };
@@ -77,6 +78,7 @@
 		180E3E732A96444F0005381F /* FamilyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyHeaderView.swift; sourceTree = "<group>"; };
 		180E3E752A9645EF0005381F /* EditFamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFamilyView.swift; sourceTree = "<group>"; };
 		1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		182B40332AE90EB30007A03F /* imageFailedToLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageFailedToLoad.swift; sourceTree = "<group>"; };
 		182E43362A2B1221001675FD /* CreditsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCardView.swift; sourceTree = "<group>"; };
 		183AE95A2A94AAC000AC156F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		183AE95C2A94AACB00AC156F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -354,6 +356,7 @@
 				183AE9722A94B0CF00AC156F /* Binding-OnChange.swift */,
 				18F49E862A286D2A00862CE3 /* Bundle-Decodable.swift */,
 				18F49E7C2A286D2A00862CE3 /* Favorites.swift */,
+				182B40332AE90EB30007A03F /* imageFailedToLoad.swift */,
 				18F49E872A286D2A00862CE3 /* Margins.swift */,
 				183AE9742A94B10B00AC156F /* Sequence-Sorting.swift */,
 				188E93E42A4C9D57001691E6 /* String-Ext.swift */,
@@ -565,6 +568,7 @@
 				18F49EC42A286D2E00862CE3 /* LessonRowView.swift in Sources */,
 				18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */,
 				18B951A32A99DE81006119DC /* PurchaseManager.swift in Sources */,
+				182B40342AE90EB30007A03F /* imageFailedToLoad.swift in Sources */,
 				180E3E722A9642D10005381F /* CabinetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,7 +770,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -803,7 +807,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.6;
+				MARKETING_VERSION = 1.2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

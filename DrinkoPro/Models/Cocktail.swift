@@ -17,7 +17,7 @@ struct Cocktail: Codable, Equatable, Identifiable {
     let extra: String
     var history: String
     var pic: String {
-        "https://raw.githubusercontent.com/cilippofilia/drinko-pics/main/\(id)-img.jpg"
+        "https://raw.githubusercontent.com/cilippofilia/drinko-cocktail-pics/main/\(id)-img.jpg"
     }
     let ingredients: [Ingredient]
 

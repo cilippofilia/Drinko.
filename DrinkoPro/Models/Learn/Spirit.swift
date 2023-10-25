@@ -14,7 +14,7 @@ struct Spirit: Codable, Equatable, Identifiable {
     var body: String
 
     var image: String {
-        id
+        "https://raw.githubusercontent.com/cilippofilia//drinko-learn-pics/main/\(id).jpg"
     }
 
 #if DEBUG

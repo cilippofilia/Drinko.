@@ -15,7 +15,7 @@ struct Book: Codable, Equatable, Identifiable {
     var author: String
 
     var image: String {
-        id
+        "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/\(id).jpg"
     }
 
 #if DEBUG

@@ -18,12 +18,21 @@ struct BookRowView: View {
     var body: some View {
         NavigationLink(destination: BookDetailView(book: book)) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                Image(book.image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: rowHeight, 
-                           height: rowHeight)
-                    .cornerRadius(corners)
+                AsyncImage(url: URL(string: book.image)) { phase in
+                    switch phase {
+                        case .failure:
+                            imageFailedToLoad
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        default:
+                            ProgressView()
+                    }
+                }
+                .frame(width: rowHeight,
+                       height: rowHeight)
+                .cornerRadius(corners)
 
                 VStack(alignment: .leading) {
                     Text(book.title)

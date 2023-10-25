@@ -17,7 +17,7 @@ struct Lesson: Codable, Equatable, Identifiable {
     var videoID: String
 
     var img: String {
-        id
+        "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/\(id).jpg"
     }
 
     #if DEBUG

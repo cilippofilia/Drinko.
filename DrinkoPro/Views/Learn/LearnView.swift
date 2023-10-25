@@ -28,8 +28,8 @@ struct LearnView: View {
                 }
 
                 Section(header: Text("Superjuice calculators")) {
-                    SuperjuiceRowView(juiceType: "Lime")
-                    SuperjuiceRowView(juiceType: "Lemon")
+                    SuperjuiceRowView(juiceType: "lime")
+                    SuperjuiceRowView(juiceType: "lemon")
                 }
 
                 Section(header: Text("Spirits")) {
