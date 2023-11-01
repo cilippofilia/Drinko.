@@ -38,11 +38,20 @@ struct LessonDetailView: View {
                         RoundedRectangle(cornerRadius: corners,
                                          style: .continuous))
             } else {
-                Image(lesson.img)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: frameHeight)
-                    .clipped()
+                AsyncImage(url: URL(string: lesson.img)) { phase in
+                    switch phase {
+                        case .failure:
+                            imageFailedToLoad
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        default:
+                            ProgressView()
+                    }
+                }
+                .frame(height: frameHeight)
+                .clipped()
             }
 
             VStack(spacing: 10) {
@@ -62,11 +71,20 @@ struct LessonDetailView: View {
 
     var regularLessonView: some View {
         VStack(spacing: 20) {
-            Image(lesson.img)
-                .resizable()
-                .scaledToFill()
-                .frame(height: frameHeight * 1.75)
-                .clipped()
+            AsyncImage(url: URL(string: lesson.img)) { phase in
+                switch phase {
+                    case .failure:
+                        imageFailedToLoad
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    default:
+                        ProgressView()
+                }
+            }
+            .frame(height: frameHeight * 1.75)
+            .clipped()
 
             VStack(spacing: 20) {
                 Text(lesson.title)

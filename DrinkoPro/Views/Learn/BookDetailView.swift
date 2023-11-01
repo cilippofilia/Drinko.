@@ -28,11 +28,20 @@ struct BookDetailView: View {
 
     var compactBookView: some View {
         VStack {
-            Image(book.image)
-                .resizable()
-                .scaledToFill()
-                .frame(width: compactScreenWidth)
-                .clipped()
+            AsyncImage(url: URL(string: book.image)) { phase in
+                switch phase {
+                    case .failure:
+                        imageFailedToLoad
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    default:
+                        ProgressView()
+                }
+            }
+            .frame(width: compactScreenWidth)
+            .clipped()
 
             VStack(spacing: 10) {
                 Text(book.title)
@@ -51,12 +60,21 @@ struct BookDetailView: View {
 
     var regularBookView: some View {
         VStack(spacing: 20) {
-            Image(book.image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: compactScreenWidth,
-                       height: frameHeight * 1.75)
-                .clipped()
+            AsyncImage(url: URL(string: book.image)) { phase in
+                switch phase {
+                    case .failure:
+                        imageFailedToLoad
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    default:
+                        ProgressView()
+                }
+            }
+            .frame(width: compactScreenWidth,
+                   height: frameHeight * 1.75)
+            .clipped()
 
             VStack(spacing: 20) {
                 Text(book.title)

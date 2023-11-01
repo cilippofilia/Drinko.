@@ -28,12 +28,21 @@ struct SpiritDetailView: View {
 
     var compactSpiritView: some View {
         VStack {
-            Image(spirit.image)
-                .resizable()
-                .scaledToFill()
-                .frame(width: compactScreenWidth,
-                       height: frameHeight)
-                .clipped()
+            AsyncImage(url: URL(string: spirit.image)) { phase in
+                switch phase {
+                    case .failure:
+                        imageFailedToLoad
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    default:
+                        ProgressView()
+                }
+            }
+            .frame(width: compactScreenWidth,
+                   height: frameHeight)
+            .clipped()
 
             VStack(spacing: 10) {
                 Text(spirit.title)
@@ -52,11 +61,20 @@ struct SpiritDetailView: View {
 
     var regularSpiritView: some View {
         VStack(spacing: 20) {
-            Image(spirit.image)
-                .resizable()
-                .scaledToFill()
-                .frame(height: frameHeight * 1.75)
-                .clipped()
+            AsyncImage(url: URL(string: spirit.image)) { phase in
+                switch phase {
+                    case .failure:
+                        imageFailedToLoad
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    default:
+                        ProgressView()
+                }
+            }
+            .frame(height: frameHeight * 1.75)
+            .clipped()
 
             VStack(spacing: 20) {
                 Text(spirit.title)
