@@ -20,6 +20,8 @@ struct SuperJuiceView: View {
     @State private var citricAcid: Double = 0
     @State private var malicAcid: Double = 0
     @State private var waterAmount: Double = 0
+    
+    @FocusState private var focusedField: Bool
 
     let typeOfJuice: String
 
@@ -38,8 +40,11 @@ struct SuperJuiceView: View {
                     Group {
                         if selectedMode == .peels {
                             TextField("\(typeOfJuice) peels in grams", text: $peels)
+                                .focused($focusedField)
                         } else {
                             TextField("Water amount in millilitres", text: $water)
+                                .focused($focusedField)
+
                         }
                     }
                     .keyboardType(.decimalPad)
@@ -98,6 +103,8 @@ private extension SuperJuiceView {
                 citricAcid = 0.66 * Double(peels)!
                 malicAcid = 0.33 * Double(peels)!
             }
+        
+            focusedField = false
         }) {
             Text("Calculate")
         }
@@ -118,6 +125,8 @@ private extension SuperJuiceView {
                 peels = String(waterAmount / 16.66)
                 citricAcid = 1 * Double(peels)!
             }
+            
+            focusedField = false
         }) {
             Text("Calculate")
         }

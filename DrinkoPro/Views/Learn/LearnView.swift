@@ -14,6 +14,7 @@ struct LearnView: View {
 
     let subjects = Bundle.main.decode([Subject].self, from: "lessons.json")
     let spirits = Bundle.main.decode([Spirit].self, from: "spirits.json")
+    let syrups = Bundle.main.decode([Syrup].self, from: "syrups.json")
     let books = Bundle.main.decode([Book].self, from: "books.json")
 
     var body: some View {
@@ -27,17 +28,22 @@ struct LearnView: View {
                     }
                 }
 
-                Section(header: Text("Superjuice calculators")) {
-                    SuperjuiceRowView(juiceType: "lime")
-                    SuperjuiceRowView(juiceType: "lemon")
-                }
-
                 Section(header: Text("Spirits")) {
                     ForEach(spirits) { spirit in
                         SpiritRowView(spirit: spirit)
                     }
                 }
 
+                Section(header: Text("Syrups")) {
+                    ForEach(syrups) { syrup in
+                        SyrupRowView(syrup: syrup)
+                    }
+                }
+                Section(header: Text("Calculators")) {
+                    SuperjuiceRowView(juiceType: "lime")
+                    SuperjuiceRowView(juiceType: "lemon")
+                }
+                
                 Section(header: Text("Books")) {
                     ForEach(books) { book in
                         BookRowView(book: book)

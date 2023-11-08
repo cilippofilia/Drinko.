@@ -758,6 +758,9 @@
         }
       }
     },
+    "Calculators" : {
+
+    },
     "Category detail" : {
       "localizations" : {
         "de" : {
@@ -2968,6 +2971,7 @@
       }
     },
     "Superjuice calculators" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3033,6 +3037,9 @@
           }
         }
       }
+    },
+    "Syrups" : {
+
     },
     "Take Photo" : {
       "extractionState" : "manual",
