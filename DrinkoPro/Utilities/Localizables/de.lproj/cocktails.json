@@ -2682,7 +2682,7 @@
         ]
     },
     {
-        "id":"bloody mary",
+        "id":"bloody-mary",
         "name":"Bloody Mary",
         "method":"throw",
         "glass":"collins",
