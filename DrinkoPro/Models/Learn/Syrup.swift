@@ -12,11 +12,10 @@ struct Syrup: Codable, Equatable, Identifiable {
     var title: String
     var description: String
     var body: String
-
     var image: String {
         "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/\(id).jpg"
     }
-
+    
 #if DEBUG
     static let example = Syrup(id: "simple-syrup",
                                title: "Simple Syrup",

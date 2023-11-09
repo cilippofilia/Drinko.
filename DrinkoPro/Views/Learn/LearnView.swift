@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LearnView: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
-
     static let learnTag: String? = "Learn"
 
     let subjects = Bundle.main.decode([Subject].self, from: "lessons.json")
@@ -39,6 +37,7 @@ struct LearnView: View {
                         SyrupRowView(syrup: syrup)
                     }
                 }
+                
                 Section(header: Text("Calculators")) {
                     SuperjuiceRowView(juiceType: "lime")
                     SuperjuiceRowView(juiceType: "lemon")
