@@ -32,7 +32,7 @@ struct SuperJuiceView: View {
                     Text(mode.rawValue)
                 }
             }
-            .pickerStyle(SegmentedPickerStyle())
+            .pickerStyle(.segmented)
             .padding(.horizontal)
 
             Form {

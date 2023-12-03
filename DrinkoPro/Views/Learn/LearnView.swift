@@ -10,7 +10,10 @@ import SwiftUI
 struct LearnView: View {
     static let learnTag: String? = "Learn"
 
-    let subjects = Bundle.main.decode([Subject].self, from: "lessons.json")
+    @StateObject var viewModel = AdvancedViewModel()
+    @State private var isCollapsed = false
+    
+    let basics = Bundle.main.decode([Lesson].self, from: "basics.json")
     let spirits = Bundle.main.decode([Spirit].self, from: "spirits.json")
     let syrups = Bundle.main.decode([Syrup].self, from: "syrups.json")
     let books = Bundle.main.decode([Book].self, from: "books.json")
@@ -18,20 +21,18 @@ struct LearnView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(subjects) { subject in
-                    Section(header: Text(subject.name)) {
-                        ForEach(subject.lessons) { lesson in
-                            LessonRowView(lesson: lesson)
-                        }
+                Section(header: Text("Basics")) {
+                    ForEach(basics) { lesson in
+                        LessonRowView(lesson: lesson)
                     }
                 }
-
+                
                 Section(header: Text("Spirits")) {
                     ForEach(spirits) { spirit in
                         SpiritRowView(spirit: spirit)
                     }
                 }
-
+                
                 Section(header: Text("Syrups")) {
                     ForEach(syrups) { syrup in
                         SyrupRowView(syrup: syrup)
@@ -41,6 +42,7 @@ struct LearnView: View {
                 Section(header: Text("Calculators")) {
                     SuperjuiceRowView(juiceType: "lime")
                     SuperjuiceRowView(juiceType: "lemon")
+                    ABVRowView()
                 }
                 
                 Section(header: Text("Books")) {
@@ -50,6 +52,9 @@ struct LearnView: View {
                 }
             }
             .navigationTitle("Learn")
+            .onAppear {
+                viewModel.fetchJSON()
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

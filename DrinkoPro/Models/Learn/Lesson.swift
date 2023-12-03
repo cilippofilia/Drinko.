@@ -12,9 +12,9 @@ struct Lesson: Codable, Equatable, Identifiable {
     var title: String
     var description: String
     var body: String
-    var hasVideo: Bool
+    var hasVideo: Bool?
     var videoURL: String?
-    var videoID: String
+    var videoID: String?
 
     var img: String {
         "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/\(id).jpg"

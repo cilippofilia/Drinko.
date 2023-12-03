@@ -1,6 +1,12 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
+    "%" : {
+
+    },
     "% ABV" : {
       "localizations" : {
         "de" : {
@@ -22,6 +28,9 @@
           }
         }
       }
+    },
+    "%.2f %%" : {
+
     },
     "%.2f gr" : {
       "localizations" : {
@@ -367,6 +376,12 @@
         }
       }
     },
+    "ABV Calculator" : {
+
+    },
+    "ABV?" : {
+
+    },
     "Account" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -412,6 +427,9 @@
         }
       }
     },
+    "Add ingredient" : {
+
+    },
     "Add New Product" : {
       "localizations" : {
         "de" : {
@@ -455,6 +473,9 @@
           }
         }
       }
+    },
+    "Amount?" : {
+
     },
     "Are you sure you want to delete this category? You will also delete all the products it contains." : {
       "localizations" : {
@@ -551,6 +572,9 @@
           }
         }
       }
+    },
+    "Basics" : {
+
     },
     "Books" : {
       "localizations" : {
@@ -1973,6 +1997,9 @@
         }
       }
     },
+    "ml" : {
+
+    },
     "N.A." : {
       "localizations" : {
         "de" : {
@@ -2163,6 +2190,12 @@
           }
         }
       }
+    },
+    "Pick the method" : {
+
+    },
+    "Pick the serving" : {
+
     },
     "Preferences" : {
       "localizations" : {
@@ -3259,6 +3292,9 @@
         }
       }
     },
+    "Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink." : {
+
+    },
     "Version" : {
       "localizations" : {
         "de" : {
@@ -3369,6 +3405,9 @@
           }
         }
       }
+    },
+    "What is the ingredient?" : {
+
     },
     "X - Twitter" : {
       "localizations" : {

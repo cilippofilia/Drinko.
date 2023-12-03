@@ -30,8 +30,8 @@ struct LessonDetailView: View {
 
     var compactLessonView: some View {
         VStack {
-            if lesson.hasVideo {
-                VideoView(videoID: lesson.videoID)
+            if lesson.hasVideo ?? false {
+                VideoView(videoID: lesson.videoID!)
                     .frame(width: compactScreenWidth,
                            height: frameHeight)
                     .clipShape(
