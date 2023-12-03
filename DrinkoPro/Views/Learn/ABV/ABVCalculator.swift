@@ -40,24 +40,30 @@ struct ABVCalculator: View {
                     VStack(spacing: 20) {
                         HStack {
                             TextField("What is the ingredient?", text: $bottles[index].name)
+                                .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
                             
-                            Button(action: {
-                                removeIngredient(at: index)
-                            }) {
-                                Label("Delete", systemImage: "xmark.circle")
-                                    .labelStyle(.iconOnly)
-                                    .foregroundColor(.secondary)
+                            if bottles.count > 1 {
+                                Button(action: {
+                                    removeIngredient(at: index)
+                                }) {
+                                    Label("Delete", systemImage: "xmark.circle")
+                                        .labelStyle(.iconOnly)
+                                        .foregroundColor(.secondary)
+                                }
                             }
                         }
                         
                         HStack(spacing: 20) {
                             HStack {
                                 TextField("Amount?", value: $bottles[index].amount, formatter: NumberFormatter())
+                                    .keyboardType(.decimalPad)
+                                
                                 Text("ml")
                             }
                             
                             HStack {
                                 TextField("ABV?", value: $bottles[index].abv, formatter: NumberFormatter())
+                                    .keyboardType(.decimalPad)
                                 Text("%")
                             }
                         }
@@ -65,7 +71,7 @@ struct ABVCalculator: View {
                     }
                     .padding()
                 }
-                
+                                
                 Button(action: {
                     bottles.append(Bottle(name: "", amount: 0.0, abv: 0.0))
                     numbersOfIngredients += 1
@@ -78,31 +84,7 @@ struct ABVCalculator: View {
                 
                 Spacer(minLength: 30)
                 
-                VStack {
-                    HStack {
-                        Text("Pick the method")
-
-                        Spacer()
-                        
-                        Picker("", selection: $selectedMethod) {
-                            ForEach(Method.allCases, id:\.self) { method in
-                                Text(method.rawValue)
-                            }
-                        }
-                    }
-
-                    HStack {
-                        Text("Pick the serving")
-
-                        Spacer()
-                        
-                        Picker("", selection: $selectedServing) {
-                            ForEach(Serving.allCases, id:\.self) { serve in
-                                Text(serve.rawValue)
-                            }
-                        }
-                    }
-                }
+                pickers
                 
                 DrinkoButtonView(title: "Calculate", icon: "calculator") {
                     result = calculateABV()
@@ -114,11 +96,12 @@ struct ABVCalculator: View {
                     Text("ABV")
                         .font(.headline)
                     
+                    Spacer()
+                    
                     Text("\(result, specifier: "%.2f") %")
-                        .font(.largeTitle)
+                        .font(.title)
                         .bold()
                 }
-                .padding()
                 
                 Text("Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink.")
                     .font(.footnote)
@@ -142,11 +125,11 @@ struct ABVCalculator: View {
         }
         
         switch (selectedServing, selectedMethod) {
-            case (.rocks, .stir):
-                dilutionFactor = 0.3
             case (.up, .stir):
                 dilutionFactor = 0.25
             case (.up, .shake):
+                dilutionFactor = 0.3
+            case (.rocks, .stir):
                 dilutionFactor = 0.3
             case (.rocks, .shake):
                 dilutionFactor = 0.35
@@ -164,6 +147,36 @@ struct ABVCalculator: View {
     
     private func removeIngredient(at index: Int) {
         bottles.remove(at: index)
+    }
+}
+
+private extension ABVCalculator {
+    var pickers: some View {
+        VStack {
+            HStack {
+                Text("Pick the method")
+
+                Spacer()
+                
+                Picker("", selection: $selectedMethod) {
+                    ForEach(Method.allCases, id:\.self) { method in
+                        Text(method.rawValue)
+                    }
+                }
+            }
+
+            HStack {
+                Text("Pick the serving")
+
+                Spacer()
+                
+                Picker("", selection: $selectedServing) {
+                    ForEach(Serving.allCases, id:\.self) { serve in
+                        Text(serve.rawValue)
+                    }
+                }
+            }
+        }
     }
 }
 
