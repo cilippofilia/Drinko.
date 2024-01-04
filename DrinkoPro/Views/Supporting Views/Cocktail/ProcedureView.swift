@@ -13,20 +13,23 @@ struct ProcedureView: View {
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack(alignment: .leading) {
+            VStack {
                 Text("Procedure")
                     .font(.title.bold())
                     .padding(.vertical)
                     .padding(.top)
 
-                ForEach(procedure.procedure) { steps in
-                    VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading) {
+                    ForEach(procedure.procedure) { steps in
                         Text(steps.step)
                             .bold()
+                        
                         Text(steps.text)
+                        
+                        Divider()
                     }
-                    .padding(.vertical, 5)
                     .multilineTextAlignment(.leading)
+                    .padding(.vertical, 5)
                 }
             }
             .frame(width: compactScreenWidth)

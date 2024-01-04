@@ -20,24 +20,24 @@ struct LessonRowView: View {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
                 AsyncImage(url: URL(string: lesson.img)) { phase in
                     switch phase {
-                        case .failure:
-                            imageFailedToLoad
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                        default:
-                            ProgressView()
+                    case .failure:
+                        imageFailedToLoad
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    default:
+                        ProgressView()
                     }
                 }
                 .frame(width: rowHeight,
                        height: rowHeight)
                 .cornerRadius(corners)
-
+                
                 VStack(alignment: .leading) {
                     Text(lesson.title)
                         .font(.headline)
-
+                    
                     Text(lesson.description)
                         .font(.subheadline)
                         .foregroundColor(.secondary)

@@ -16,7 +16,7 @@ struct ABVRowView: View {
     var body: some View {
         NavigationLink(destination: ABVCalculator()) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                AsyncImage(url: URL(string: "https://github.com/cilippofilia/drinko-learn-pics/blob/main/abv.jpg")) { phase in
+                AsyncImage(url: URL(string: "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/abv.jpg")) { phase in
                     switch phase {
                     case .failure:
                         imageFailedToLoad

@@ -61,8 +61,17 @@ struct LessonDetailView: View {
                 Text(lesson.description)
                     .font(.headline)
                     .foregroundColor(.secondary)
+                    .padding(.bottom)
 
-                Text(lesson.body)
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(lesson.body) { text in
+                        Text(text.heading)
+                            .font(.headline)
+                        
+                        Text(text.content)
+                            .padding(.bottom)
+                    }
+                }
             }
             .frame(maxWidth: compactScreenWidth)
             .padding(.bottom)
@@ -93,8 +102,17 @@ struct LessonDetailView: View {
                 Text(lesson.description)
                     .font(.headline)
                     .foregroundColor(.secondary)
-
-                Text(lesson.body)
+                    .padding(.bottom)
+               
+                VStack(alignment: .leading, spacing: 20) {
+                    ForEach(lesson.body) { text in
+                        Text(text.heading)
+                            .font(.headline)
+                        
+                        Text(text.content)
+                            .padding(.bottom)
+                    }
+                }
             }
             .frame(maxWidth: regularScreenWidth)
             .padding(.bottom)
