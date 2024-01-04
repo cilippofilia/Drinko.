@@ -1,0 +1,2454 @@
+[
+    {
+        "id":"corpse-reviver-2",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Rinse the coupe with absinthe and add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"london-maid",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"white-lady",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, allow it to settle, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"hanky-panky",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"rolls-royce",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"tuxedo-2",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Rinse the coupe with absinthe and add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"apple-martini",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"cosmopolitan",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"espresso-martini",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"poets-dream",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"vesper-martini",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"vodka-martini",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"gin-martini",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"gibson",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"el-diablo",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; A part from the ginger beer"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top with ginger beer, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"infante",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add crushed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"tommys-margarita",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"augie-march",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"oaxacan-old-fashioned",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"rosita",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"gold-rush",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"kentucky-buck",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; a part from ginger beer"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top it with ginger beer, and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"paper-plane",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"fancy-free",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"grandfather",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"preakness-cocktail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"new-york-sour",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; a part from the red wine"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add cubed ice to the glass, fine strain the cocktail inside the glass and allow it to settle"
+            },
+            {
+                "step": "Step 4",
+                "text": "Use a barspoon to float the red wine and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"ward-eight",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"whiskey-smash",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 1",
+                "text": "Gently muddle the mint to release the oils"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"old-pal",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"red-hook",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"irish-breakfast",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "With a barspoon, stir the marmalade until is into smaller pieces"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 4",
+                "text": "Fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"wild-eyed-rose",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"blackthorn",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass and coat the glass with absinthe"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"improved-whiskey-cocktail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"tipperary-cocktail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"mamie-taylor",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top with ginger beer, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"morning-glory-fizz",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker and coat the flute with absinthe"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add a splash of soda water, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"bobby-burns",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"prince-edward",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"tattletale",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"chet-baker",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"dominicana",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "To prepare the hand-whipped cream, place a bunch of whipping cream inside a shaker with one ice cube and shake for about 8 to 10 seconds. Remove the ice cube from the shaker before using the cream as garnish"
+            },
+            {
+                "step": "Step 4",
+                "text": "Strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"el-presidente",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"airmail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, top it up with champagne, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"daisy-de-santiago",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; apart from the yellow chartreuse"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add crushed ice, float yellow chartreuse, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"mary-pickford",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add one ice cube, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"jungle-bird",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"royal-bermuda-yacht-club",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"beachbum",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"fog-cutter",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, float the sherry on top, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"jet-pilot",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add a big scoop of crushed ice"
+            },
+            {
+                "step": "Step 2",
+                "text": "With a barspoon churn all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top the glass with more crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"painkiller",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"scorpion",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add a big scoop of crushed ice"
+            },
+            {
+                "step": "Step 2",
+                "text": "With a barspoon churn all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top the glass with more crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"three-dots-and-a-dash",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add a big scoop of crushed ice"
+            },
+            {
+                "step": "Step 2",
+                "text": "With a barspoon churn all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top the glass with more crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"zombie",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add a big scoop of crushed ice"
+            },
+            {
+                "step": "Step 2",
+                "text": "With a barspoon churn all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top the glass with more crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"champs-elysees",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"coffee-cocktail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; whole egg included"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add cubed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"georgia-julep",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add crushed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"de-la-louisiane",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"pisco-punch",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"pisco-sour",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, allow it to settle, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"american-trilogy",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"widows-kiss",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glassand give it a quick stir to incordorate all the ingredients"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice (if needed) and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"applejack-rabbit",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"jack-rose",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"philadelphia-fish-house-punch",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"adonis",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"bamboo",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"sherry-cobbler",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, float the sherry on top, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"amaretto-sour",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, allow it to settle, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"americano-cocktail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice, add the soda water on top, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"aperol-spritz",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"arsenic-and-old-lace",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"aviation",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"bees-knees",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"bellini",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"bijou",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"black-russian",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"bloody-mary",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the big tin of the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the tin, place the strainer on top, and throw the cocktail between the two tins until chilled"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"boulevardier",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"bramble",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add crushed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"brandy-alexander",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"brooklynite",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"caipirinha",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add a big scoop of crushed ice"
+            },
+            {
+                "step": "Step 2",
+                "text": "With a barspoon churn all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top the glass with more crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"champagne-cocktail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Muddle the sugar cube and mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top with champagne, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"chartreuse-swizzle",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add a big scoop of crushed ice"
+            },
+            {
+                "step": "Step 2",
+                "text": "With a barspoon churn all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top the glass with more crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"chrysanthemum",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"clover-club",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker, add raspebbies and muddle"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, allow it to settle, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"corn-and-oil",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"daiquiri",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"east-side",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"french-75",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; A part from the champagne"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, top with champagne, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"gimlet",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"gin-rickey",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; A part from the soda water"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top with soda water, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"godfather",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"grasshopper",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"hemingway-daiquiri",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"hot-toddy",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Let the tea brew for a couple of minutes"
+            },
+            {
+                "step": "Step 3",
+                "text": "Garnish it, serve hot and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"irish-coffee",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass; keep the hand-whipped cream on the side for now"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add some heavy cream to a shaker and only one ice cube"
+            },
+            {
+                "step": "Step 3",
+                "text": "Whip shake until chilled and the cream feels less runny"
+            },
+            {
+                "step": "Step 4",
+                "text": "Pour over the top of the cocktail with a barspoon; if whipped correctly the cream will not mix with the hot drink"
+            }
+        ]
+    },
+    {
+        "id":"japanese-cocktail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"kir-royale",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"last-word",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"long-island-iced-tea",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; A part from the coca cola"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top with coca cola, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"mai-tai",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice and a small cap of crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"manhattan",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"margarita",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"cadillac-margarita",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"martinez",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"mimosa",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"mint-julep",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh crushed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"mojito",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add a big scoop of crushed ice"
+            },
+            {
+                "step": "Step 2",
+                "text": "with a barspoon churn all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "top the glass with more crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"moscow-mule",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass; a part from the ginger beer"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice and a small cap of crushed ice"
+            },
+            {
+                "step":"Step 4",
+                "text":"Add the ginger beer on top, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"dark-and-stormy",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass; a part from the dark rum"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice and a small cap of crushed ice to facilitate the float of dark rum"
+            },
+            {
+                "step":"Step 4",
+                "text":"Add the dark rum on top, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"negroni",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"old-cuban",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; a part from the champagne"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, top with champagne, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"old-fashioned",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"old-maid",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"paloma",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker (a part from the soda water) and salt the rim of the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top with soda water, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"penicillin",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, float the peaty whiskey and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"pimms-cup",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add some ice cubes"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add all the fruits at your disposal (check garnish as reference) and give it a short stir to mix and chill the ingredients"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, top it with either ginger ale or lemondate, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"pina-colada",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"pineapple-daiquiri",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"pornstar-martini",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; hold the champagne for now"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"queens-park-swizzle",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and add a big scoop of crushed ice"
+            },
+            {
+                "step": "Step 2",
+                "text": "with a barspoon churn all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "top the glass with more crushed ice, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"ramos-gin-fizz",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; don't add the soda water just yet"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, allow it to settle, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"rob-roy",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"rome-with-a-view",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; A part from the soda water"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top with soda water, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"rusty-nail",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"sazerac",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Rinse the coupe with absinthe and add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"sidecar",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"singapore-sling",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"southside",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"southside-fizz",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; A part from the soda water"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top with soda water, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"stinger",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice to the glass, fine strain the cocktail inside the glass, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"ti-punch",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass and lightly muddle the lime discs"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add a couple of ice cubes and with a barspoon stir to combine all the ingredients in the glass for 8 to 10 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top the glass with crushed ice and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"tom-collins",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker; A part from the ginger beer"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, top with soda water, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"vieux-carre",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, add fresh cubed ice, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"whiskey-sour",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail inside the glass, add fresh cubed ice, allow it to settle, garnish and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"white-russian",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass; keep the hand-whipped cream on the side for now"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to chill and mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, float the hand-whipped cream on top, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"sex-on-the-beach",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass; a part from the cranberry juice"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to chill and mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, pour the orange juice on top, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"cuba-libre",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add lime juice and your rum of choice into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to chill and mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add more fresh cubed ice, top it up with coca cola, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"tequila-sunrise",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the glass, give it a short stir to chill and mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Add fresh cubed ice, pour the grenadine, garnish it and enjoy!"
+            }
+        ]
+    },
+    {
+        "id":"hot-rum-punch",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Give a quick stir to mix the ingredients together"
+            },
+            {
+                "step": "Step 3",
+                "text": "Top the glass with boiling hot water, garnish it and enjoy!"
+            }
+        ]
+    }
+]

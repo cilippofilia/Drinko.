@@ -31,7 +31,6 @@
 		18429C112AFB0ECA00EC6282 /* Syrup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429C102AFB0ECA00EC6282 /* Syrup.swift */; };
 		18429C152AFB108F00EC6282 /* SyrupRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429C142AFB108F00EC6282 /* SyrupRowView.swift */; };
 		18429C182AFB110A00EC6282 /* SyrupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429C172AFB110A00EC6282 /* SyrupDetailView.swift */; };
-		18429C192AFB12C000EC6282 /* syrups.json in Resources */ = {isa = PBXBuildFile; fileRef = 18429C1B2AFB12C000EC6282 /* syrups.json */; };
 		1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */; };
 		186BC7422AB51BCA00DE38C1 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC7412AB51BCA00DE38C1 /* UnlockManager.swift */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
@@ -39,9 +38,7 @@
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
 		188E93BE2A4C1E04001691E6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BD2A4C1E04001691E6 /* Book.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
-		188E93C72A4C1F03001691E6 /* spirits.json in Resources */ = {isa = PBXBuildFile; fileRef = 188E93C92A4C1F03001691E6 /* spirits.json */; };
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
-		188E93CD2A4C29FA001691E6 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 188E93CF2A4C29FA001691E6 /* books.json */; };
 		188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93E42A4C9D57001691E6 /* String-Ext.swift */; };
 		18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
@@ -59,8 +56,6 @@
 		18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E862A286D2A00862CE3 /* Bundle-Decodable.swift */; };
 		18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E872A286D2A00862CE3 /* Margins.swift */; };
 		18F49E9F2A286D2A00862CE3 /* DrinkoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */; };
-		18F49EA02A286D2A00862CE3 /* basics.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E8C2A286D2A00862CE3 /* basics.json */; };
-		18F49EA12A286D2A00862CE3 /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E8E2A286D2A00862CE3 /* cocktails.json */; };
 		18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA52A286D2E00862CE3 /* SettingsView.swift */; };
 		18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */; };
 		18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA72A286D2E00862CE3 /* ReadMeView.swift */; };
@@ -77,6 +72,13 @@
 		18F49ECB2A286D2E00862CE3 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB92A286D2E00862CE3 /* Cocktail.swift */; };
 		18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBA2A286D2E00862CE3 /* HistoryView.swift */; };
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
+		18F5860E2B46322B00BD460B /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5860D2B46322B00BD460B /* cocktails.json */; };
+		18F586132B46328B00BD460B /* history.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586152B46328B00BD460B /* history.json */; };
+		18F5861D2B46334900BD460B /* procedure.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5861F2B46334900BD460B /* procedure.json */; };
+		18F586252B4633A500BD460B /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586272B4633A500BD460B /* books.json */; };
+		18F5862D2B4633F100BD460B /* basics.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5862F2B4633F100BD460B /* basics.json */; };
+		18F586352B46343400BD460B /* syrups.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586372B46343400BD460B /* syrups.json */; };
+		18F5863D2B46348100BD460B /* spirits.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5863F2B46348100BD460B /* spirits.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,31 +107,15 @@
 		18429C102AFB0ECA00EC6282 /* Syrup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syrup.swift; sourceTree = "<group>"; };
 		18429C142AFB108F00EC6282 /* SyrupRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyrupRowView.swift; sourceTree = "<group>"; };
 		18429C172AFB110A00EC6282 /* SyrupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyrupDetailView.swift; sourceTree = "<group>"; };
-		18429C1A2AFB12C000EC6282 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/syrups.json; sourceTree = "<group>"; };
-		18429C1C2AFB12C300EC6282 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/syrups.json; sourceTree = "<group>"; };
-		18429C1D2AFB12C300EC6282 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/syrups.json; sourceTree = "<group>"; };
-		18429C1E2AFB12C600EC6282 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/syrups.json; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		186BC7412AB51BCA00DE38C1 /* UnlockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
 		1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperjuiceRowView.swift; sourceTree = "<group>"; };
-		188694552AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/books.json; sourceTree = "<group>"; };
-		188694562AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/cocktails.json; sourceTree = "<group>"; };
-		188694572AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/basics.json; sourceTree = "<group>"; };
-		188694582AA352B70071D402 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/spirits.json; sourceTree = "<group>"; };
-		1886945A2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/books.json; sourceTree = "<group>"; };
-		1886945B2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/cocktails.json; sourceTree = "<group>"; };
-		1886945C2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/basics.json; sourceTree = "<group>"; };
-		1886945D2AA352BC0071D402 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/spirits.json; sourceTree = "<group>"; };
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		188E93BD2A4C1E04001691E6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
-		188E93C82A4C1F03001691E6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/spirits.json; sourceTree = "<group>"; };
-		188E93CA2A4C1F07001691E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/spirits.json; sourceTree = "<group>"; };
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
-		188E93CE2A4C29FA001691E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/books.json; sourceTree = "<group>"; };
-		188E93D02A4C29FF001691E6 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/books.json; sourceTree = "<group>"; };
 		188E93E42A4C9D57001691E6 /* String-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Ext.swift"; sourceTree = "<group>"; };
 		18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVRowView.swift; sourceTree = "<group>"; };
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
@@ -148,10 +134,6 @@
 		18F49E862A286D2A00862CE3 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		18F49E872A286D2A00862CE3 /* Margins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Margins.swift; sourceTree = "<group>"; };
 		18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkoButtonView.swift; sourceTree = "<group>"; };
-		18F49E8D2A286D2A00862CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/basics.json; sourceTree = "<group>"; };
-		18F49E8F2A286D2A00862CE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/cocktails.json; sourceTree = "<group>"; };
-		18F49E902A286D2A00862CE3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/basics.json; sourceTree = "<group>"; };
-		18F49E912A286D2A00862CE3 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/cocktails.json; sourceTree = "<group>"; };
 		18F49EA52A286D2E00862CE3 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		18F49EA72A286D2E00862CE3 /* ReadMeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeView.swift; sourceTree = "<group>"; };
@@ -168,6 +150,31 @@
 		18F49EB92A286D2E00862CE3 /* Cocktail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		18F49EBA2A286D2E00862CE3 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
+		18F5860D2B46322B00BD460B /* cocktails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cocktails.json; sourceTree = "<group>"; };
+		18F586162B46329400BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/history.json; sourceTree = "<group>"; };
+		18F586172B4632A900BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/history.json; sourceTree = "<group>"; };
+		18F586182B4632AA00BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/history.json; sourceTree = "<group>"; };
+		18F586192B4632AB00BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/history.json; sourceTree = "<group>"; };
+		18F5861E2B46334900BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/procedure.json; sourceTree = "<group>"; };
+		18F586202B46334A00BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/procedure.json; sourceTree = "<group>"; };
+		18F586212B46334B00BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/procedure.json; sourceTree = "<group>"; };
+		18F586222B46334C00BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/procedure.json; sourceTree = "<group>"; };
+		18F586262B4633A500BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/books.json; sourceTree = "<group>"; };
+		18F586282B4633A600BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/books.json; sourceTree = "<group>"; };
+		18F586292B4633A600BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/books.json; sourceTree = "<group>"; };
+		18F5862A2B4633A700BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/books.json; sourceTree = "<group>"; };
+		18F5862E2B4633F100BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/basics.json; sourceTree = "<group>"; };
+		18F586302B4633F200BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/basics.json; sourceTree = "<group>"; };
+		18F586312B4633F200BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/basics.json; sourceTree = "<group>"; };
+		18F586322B4633F300BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/basics.json; sourceTree = "<group>"; };
+		18F586362B46343400BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/syrups.json; sourceTree = "<group>"; };
+		18F586382B46343600BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/syrups.json; sourceTree = "<group>"; };
+		18F586392B46343600BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/syrups.json; sourceTree = "<group>"; };
+		18F5863A2B46343700BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/syrups.json; sourceTree = "<group>"; };
+		18F5863E2B46348100BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/spirits.json; sourceTree = "<group>"; };
+		18F586402B46348200BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/spirits.json; sourceTree = "<group>"; };
+		18F586412B46348200BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/spirits.json; sourceTree = "<group>"; };
+		18F586422B46348300BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/spirits.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -419,11 +426,8 @@
 			isa = PBXGroup;
 			children = (
 				1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */,
-				188E93CF2A4C29FA001691E6 /* books.json */,
-				18F49E8E2A286D2A00862CE3 /* cocktails.json */,
-				18F49E8C2A286D2A00862CE3 /* basics.json */,
-				188E93C92A4C1F03001691E6 /* spirits.json */,
-				18429C1B2AFB12C000EC6282 /* syrups.json */,
+				18F586432B4634B300BD460B /* Learn */,
+				18F5861C2B46332E00BD460B /* Cocktail */,
 			);
 			path = Localizables;
 			sourceTree = "<group>";
@@ -484,6 +488,27 @@
 				18F49EBA2A286D2E00862CE3 /* HistoryView.swift */,
 			);
 			path = Cocktails;
+			sourceTree = "<group>";
+		};
+		18F5861C2B46332E00BD460B /* Cocktail */ = {
+			isa = PBXGroup;
+			children = (
+				18F5860D2B46322B00BD460B /* cocktails.json */,
+				18F586152B46328B00BD460B /* history.json */,
+				18F5861F2B46334900BD460B /* procedure.json */,
+			);
+			path = Cocktail;
+			sourceTree = "<group>";
+		};
+		18F586432B4634B300BD460B /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				18F5862F2B4633F100BD460B /* basics.json */,
+				18F586272B4633A500BD460B /* books.json */,
+				18F5863F2B46348100BD460B /* spirits.json */,
+				18F586372B46343400BD460B /* syrups.json */,
+			);
+			path = Learn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -551,16 +576,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				188E93CD2A4C29FA001691E6 /* books.json in Resources */,
 				183AE98C2A94B26B00AC156F /* Configuration.storekit in Resources */,
 				18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */,
+				18F586352B46343400BD460B /* syrups.json in Resources */,
 				18F49E782A286D0D00862CE3 /* Colors.xcassets in Resources */,
-				188E93C72A4C1F03001691E6 /* spirits.json in Resources */,
-				18429C192AFB12C000EC6282 /* syrups.json in Resources */,
+				18F586252B4633A500BD460B /* books.json in Resources */,
+				18F586132B46328B00BD460B /* history.json in Resources */,
+				18F5863D2B46348100BD460B /* spirits.json in Resources */,
 				1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */,
-				18F49EA02A286D2A00862CE3 /* basics.json in Resources */,
+				18F5862D2B4633F100BD460B /* basics.json in Resources */,
 				18F49E7A2A286D1900862CE3 /* Assets.xcassets in Resources */,
-				18F49EA12A286D2A00862CE3 /* cocktails.json in Resources */,
+				18F5860E2B46322B00BD460B /* cocktails.json in Resources */,
+				18F5861D2B46334900BD460B /* procedure.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,59 +662,70 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		18429C1B2AFB12C000EC6282 /* syrups.json */ = {
+		18F586152B46328B00BD460B /* history.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				18429C1A2AFB12C000EC6282 /* fr */,
-				18429C1C2AFB12C300EC6282 /* de */,
-				18429C1D2AFB12C300EC6282 /* it */,
-				18429C1E2AFB12C600EC6282 /* en */,
+				18F586162B46329400BD460B /* en */,
+				18F586172B4632A900BD460B /* fr */,
+				18F586182B4632AA00BD460B /* de */,
+				18F586192B4632AB00BD460B /* it */,
 			);
-			name = syrups.json;
+			name = history.json;
 			sourceTree = "<group>";
 		};
-		188E93C92A4C1F03001691E6 /* spirits.json */ = {
+		18F5861F2B46334900BD460B /* procedure.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				188E93C82A4C1F03001691E6 /* it */,
-				188E93CA2A4C1F07001691E6 /* en */,
-				188694582AA352B70071D402 /* de */,
-				1886945D2AA352BC0071D402 /* fr */,
+				18F5861E2B46334900BD460B /* en */,
+				18F586202B46334A00BD460B /* fr */,
+				18F586212B46334B00BD460B /* de */,
+				18F586222B46334C00BD460B /* it */,
 			);
-			name = spirits.json;
+			name = procedure.json;
 			sourceTree = "<group>";
 		};
-		188E93CF2A4C29FA001691E6 /* books.json */ = {
+		18F586272B4633A500BD460B /* books.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				188E93CE2A4C29FA001691E6 /* en */,
-				188E93D02A4C29FF001691E6 /* it */,
-				188694552AA352B70071D402 /* de */,
-				1886945A2AA352BC0071D402 /* fr */,
+				18F586262B4633A500BD460B /* en */,
+				18F586282B4633A600BD460B /* fr */,
+				18F586292B4633A600BD460B /* de */,
+				18F5862A2B4633A700BD460B /* it */,
 			);
 			name = books.json;
 			sourceTree = "<group>";
 		};
-		18F49E8C2A286D2A00862CE3 /* basics.json */ = {
+		18F5862F2B4633F100BD460B /* basics.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				18F49E8D2A286D2A00862CE3 /* en */,
-				18F49E902A286D2A00862CE3 /* it */,
-				188694572AA352B70071D402 /* de */,
-				1886945C2AA352BC0071D402 /* fr */,
+				18F5862E2B4633F100BD460B /* en */,
+				18F586302B4633F200BD460B /* fr */,
+				18F586312B4633F200BD460B /* de */,
+				18F586322B4633F300BD460B /* it */,
 			);
 			name = basics.json;
 			sourceTree = "<group>";
 		};
-		18F49E8E2A286D2A00862CE3 /* cocktails.json */ = {
+		18F586372B46343400BD460B /* syrups.json */ = {
 			isa = PBXVariantGroup;
 			children = (
-				18F49E8F2A286D2A00862CE3 /* en */,
-				18F49E912A286D2A00862CE3 /* it */,
-				188694562AA352B70071D402 /* de */,
-				1886945B2AA352BC0071D402 /* fr */,
+				18F586362B46343400BD460B /* en */,
+				18F586382B46343600BD460B /* fr */,
+				18F586392B46343600BD460B /* de */,
+				18F5863A2B46343700BD460B /* it */,
 			);
-			name = cocktails.json;
+			name = syrups.json;
+			sourceTree = "<group>";
+		};
+		18F5863F2B46348100BD460B /* spirits.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18F5863E2B46348100BD460B /* en */,
+				18F586402B46348200BD460B /* it */,
+				18F586412B46348200BD460B /* de */,
+				18F586422B46348300BD460B /* fr */,
+			);
+			name = spirits.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

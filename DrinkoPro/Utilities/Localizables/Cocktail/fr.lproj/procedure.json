@@ -1,0 +1,2454 @@
+[
+    {
+        "id": "corpse-reviver-2",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Rincer la coupe avec de l'absinthe et ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "london-maid",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter de la glace fraîche en cubes et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "white-lady",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouer vigoureusement pour émulsifier votre agent moussant. Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, laisser reposer, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id":"hanky-panky",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id":"rolls-royce",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id":"tuxedo-2",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Rincer la coupe avec de l'absinthe et ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id":"apple-martini",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id":"cosmopolitan",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id":"espresso-martini",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "poets-dream",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "vesper-martini",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "vodka-martini",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "gin-martini",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "gibson",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "el-diablo",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail; à l'exception de la bière de gingembre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter des glaçons frais en cubes, ajouter de la bière de gingembre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "infante",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter de la glace pilée, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "tommys-margarita",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter des glaçons frais en cubes et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "augie-march",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, ajouter des glaçons frais en cubes, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "oaxacan-old-fashioned",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, ajouter des glaçons frais en cubes, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "rosita",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "gold-rush",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter des glaçons frais en cubes et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "kentucky-buck",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail; à l'exception de la bière de gingembre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter des glaçons frais en cubes, verser de la bière de gingembre par-dessus et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "paper-plane",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter des glaçons frais en cubes et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "fancy-free",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, ajouter des glaçons frais en cubes, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "grandfather",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "preakness-cocktail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "new-york-sour",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail; à l'exception du vin rouge"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouer vigoureusement pour émulsifier l'agent moussant. Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajouter des glaçons dans le verre, filtrer finement le cocktail dans le verre et laisser reposer"
+            },
+            {
+                "step": "Étape 4",
+                "text": "Utiliser une cuillère à mélange pour faire flotter le vin rouge et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "ward-eight",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter des glaçons frais en cubes et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "whiskey-smash",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 1",
+                "text": "Écraser délicatement la menthe pour libérer les huiles"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, ajouter des glaçons frais en cubes, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "old-pal",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "red-hook",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, le garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "irish-breakfast",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Avec une cuillère à mélange, remuer la marmelade jusqu'à ce qu'elle soit en morceaux plus petits"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 4",
+                "text": "Filtrer finement le cocktail dans le verre, le garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "wild-eyed-rose",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le shaker à cocktail"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le shaker, le verrouiller et secouer vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il gèle à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer finement le cocktail dans le verre, le garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "blackthorn",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange et enduire le verre d'absinthe"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, ajouter des glaçons frais en cubes, garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id": "improved-whiskey-cocktail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajouter tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajouter de la glace fraîche en cubes dans le verre à mélange et remuer le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrer le cocktail dans le verre, ajouter des glaçons frais en cubes, le garnir et déguster !"
+            }
+        ]
+    },
+    {
+        "id":"tipperary-cocktail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"mamie-taylor",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace fraîche en cubes, ajoutez du ginger beer, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"morning-glory-fizz",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails et enrobez la flûte avec de l'absinthe"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez un peu d'eau gazeuse, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"bobby-burns",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"prince-edward",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"tattletale",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, ajoutez de la glace fraîche en cubes, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"chet-baker",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, ajoutez de la glace fraîche en cubes, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"dominicana",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Pour préparer la crème fouettée à la main, placez une quantité de crème à fouetter dans un shaker avec un glaçon et agitez pendant environ 8 à 10 secondes. Retirez le glaçon du shaker avant d'utiliser la crème comme garniture"
+            },
+            {
+                "step": "Étape 4",
+                "text": "Filtrez le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"el-presidente",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, ajoutez de la glace fraîche en cubes, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"airmail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, complétez-le avec du champagne, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"daisy-de-santiago",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; à l'exception du chartreuse jaune"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace pilée, versez le chartreuse jaune, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"mary-pickford",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez un glaçon, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"jungle-bird",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace fraîche en cubes, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"royal-bermuda-yacht-club",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"beachbum",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"fog-cutter",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace fraîche en cubes, versez le xérès sur le dessus, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"jet-pilot",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez une grosse portion de glace pilée"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Remuez tous les ingrédients dans le verre avec une cuillère de bar pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Recouvrez le verre avec plus de glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"painkiller",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"scorpion",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez une grosse portion de glace pilée"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Remuez tous les ingrédients dans le verre avec une cuillère de bar pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Recouvrez le verre avec plus de glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"three-dots-and-a-dash",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez une grosse portion de glace pilée"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Remuez tous les ingrédients dans le verre avec une cuillère de bar pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Recouvrez le verre avec plus de glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"zombie",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez une grosse portion de glace pilée"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Remuez tous les ingrédients dans le verre avec une cuillère de bar pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Recouvrez le verre avec plus de glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"champs-elysees",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"coffee-cocktail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; y compris l'œuf entier"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsionner l'agent moussant. Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez des glaçons dans le verre, filtrez finement le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"georgia-julep",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsionner. Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez de la glace pilée dans le verre, filtrez finement le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"de-la-louisiane",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélange et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, ajoutez de la glace fraîche en cubes, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"pisco-punch",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"pisco-sour",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsionner l'agent moussant. Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, laissez-le reposer, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"american-trilogy",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélange et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, ajoutez de la glace fraîche en cubes, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"widows-kiss",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre et remuez rapidement pour incorporer tous les ingrédients"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez plus de glace fraîche en cubes (si nécessaire) et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"applejack-rabbit",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"jack-rose",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"philadelphia-fish-house-punch",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace fraîche en cubes, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"adonis",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélange et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"bamboo",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélange et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"sherry-cobbler",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace fraîche en cubes, flottez le xérès par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"amaretto-sour",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsionner l'agent moussant. Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, laissez-le reposer, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"americano-cocktail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre, remuez légèrement pour mélanger les ingrédients ensemble"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez de la glace fraîche en cubes, versez l'eau gazeuse par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"aperol-spritz",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre, remuez légèrement pour mélanger les ingrédients ensemble"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez plus de glace fraîche en cubes, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"arsenic-and-old-lace",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélange et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"aviation",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"bees-knees",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"bellini",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"bijou",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélange et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"black-russian",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre, remuez légèrement pour mélanger les ingrédients ensemble"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez plus de glace fraîche en cubes, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"bloody-mary",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le grand récipient du shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le récipient, placez le tamis sur le dessus, et secouez le cocktail entre les deux récipients jusqu'à ce qu'il soit refroidi"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"boulevardier",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélange"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélange et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, ajoutez de la glace fraîche en cubes, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"bramble",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace pilée, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"brandy-alexander",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"brooklynite",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et agitez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"caipirinha",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez une grosse cuillerée de glace pilée"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Avec une cuillère à mélange, remuez tous les ingrédients dans le verre pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Remplissez le verre avec plus de glace pilée, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"champagne-cocktail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Écrasez le sucre dans le verre et mélangez les ingrédients ensemble"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez du champagne, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"chartreuse-swizzle",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez une grosse cuillerée de glace pilée"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Avec une cuillère à mélange, remuez tous les ingrédients dans le verre pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Remplissez le verre avec plus de glace pilée, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"chrysanthemum",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre, remuez légèrement pour mélanger les ingrédients ensemble"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez plus de glace fraîche en cubes, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"clover-club",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails, ajoutez des framboises et écrasez-les"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier l'agent moussant. Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, laissez reposer, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"corn-and-oil",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier. Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre, filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"daiquiri",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"east-side",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier. Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre, filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"french-75",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; Sauf le champagne"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez du champagne, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"gimlet",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"gin-rickey",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; Sauf l'eau de soda"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace fraîche en cubes, versez l'eau de soda, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"godfather",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre, remuez légèrement pour mélanger les ingrédients ensemble"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez plus de glace fraîche en cubes, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"grasshopper",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"hemingway-daiquiri",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"hot-toddy",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Laissez infuser le thé pendant quelques minutes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Décorez-le, servez chaud et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"irish-coffee",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre; gardez la crème fouettée à la main de côté pour l'instant"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez un peu de crème épaisse dans un shaker avec seulement un glaçon"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Secouez vigoureusement jusqu'à ce que ce soit frais et que la crème paraisse moins liquide"
+            },
+            {
+                "step": "Étape 4",
+                "text": "Versez par-dessus le cocktail avec une cuillère de bar; si la crème est fouettée correctement, elle ne se mélangera pas avec la boisson chaude"
+            }
+        ]
+    },
+    {
+        "id":"japanese-cocktail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"kir-royale",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"last-word",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"long-island-iced-tea",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; Sauf le coca-cola"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace fraîche en cubes, versez du coca-cola, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"mai-tai",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez de la glace fraîche en cubes et un petit chapeau de glace pilée, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"manhattan",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"margarita",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"cadillac-margarita",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"martinez",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"mimosa",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"mint-julep",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier. Ajoutez de la glace fraîche en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez de la glace pilée fraîche dans le verre, filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"mojito",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez une grosse cuillerée de glace pilée"
+            },
+            {
+                "step": "Étape 2",
+                "text": "À l'aide d'une cuillère de bar, mélangez tous les ingrédients dans le verre pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Recouvrez le verre avec plus de glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"moscow-mule",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre; à l'exception de la bière de gingembre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le verre, remuez légèrement pour mélanger les ingrédients"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez des glaçons frais en cubes et un petit chapeau de glace pilée"
+            },
+            {
+                "step":"Étape 4",
+                "text":"Ajoutez la bière de gingembre par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"dark-and-stormy",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre; à l'exception du rhum brun"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le verre, remuez légèrement pour mélanger les ingrédients"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez des glaçons frais en cubes et un petit chapeau de glace pilée pour faciliter la flottaison du rhum brun"
+            },
+            {
+                "step":"Étape 4",
+                "text":"Ajoutez le rhum brun par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"negroni",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le verre, remuez légèrement pour mélanger les ingrédients"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez plus de glaçons frais, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"old-cuban",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; à l'exception du champagne"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais en cubes dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, versez du champagne par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"old-fashioned",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, ajoutez des glaçons frais en cubes, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"old-maid",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier. Ajoutez des glaçons frais dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez des glaçons frais dans le verre, filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"paloma",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails (à l'exception de l'eau gazeuse) et salez le bord du verre"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais, versez de l'eau gazeuse par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"penicillin",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais, versez le whisky tourbé par-dessus et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"pimms-cup",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez quelques glaçons"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez tous les fruits à votre disposition (consultez la garniture comme référence) et remuez légèrement pour mélanger et refroidir les ingrédients"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez plus de glaçons frais, versez de la limonade ou du ginger ale par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"pina-colada",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier. Ajoutez des glaçons frais dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez des glaçons frais dans le verre, filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"pineapple-daiquiri",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"pornstar-martini",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; gardez le champagne de côté pour le moment"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le, et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"queens-park-swizzle",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et ajoutez une grosse cuillerée de glace pilée"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Avec une cuillère de bar, mélangez tous les ingrédients dans le verre pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Recouvrez le verre avec plus de glace pilée, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"ramos-gin-fizz",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; ne versez pas encore l'eau gazeuse"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier l'agent moussant. Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, laissez reposer, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"rob-roy",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"rome-with-a-view",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; à l'exception de l'eau gazeuse"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais, versez de l'eau gazeuse par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"rusty-nail",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"sazerac",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Rincez la coupe avec de l'absinthe et ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez-le et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"sidecar",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"singapore-sling",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier. Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez des glaçons frais dans le verre, filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"southside",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"southside-fizz",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; à l'exception de l'eau gazeuse"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais, versez de l'eau gazeuse par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"stinger",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier. Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Ajoutez des glaçons frais dans le verre, filtrez finement le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"ti-punch",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre et écrasez légèrement les rondelles de citron vert"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez quelques glaçons et avec une cuillère à mélanger, remuez pour combiner tous les ingrédients dans le verre pendant 8 à 10 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Recouvrez le verre de glace pilée et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"tom-collins",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails; à l'exception de la bière de gingembre"
+            },
+            {
+                "step": "Step 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais, versez de l'eau gazeuse par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"vieux-carre",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Step 2",
+                "text": "Ajoutez des glaçons frais dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Step 3",
+                "text": "Filtrez le cocktail dans le verre, ajoutez des glaçons frais, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"whiskey-sour",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Step 2",
+                "text": "Secouez vigoureusement pour émulsifier votre agent moussant. Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais, laissez reposer, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"white-russian",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Ajoutez tous les ingrédients dans le verre; gardez la crème fouettée à portée de main pour le moment"
+            },
+            {
+                "step": "Step 2",
+                "text": "Ajoutez des glaçons frais dans le verre, remuez brièvement pour refroidir et mélanger les ingrédients"
+            },
+            {
+                "step": "Step 3",
+                "text": "Ajoutez plus de glaçons frais, faites flotter la crème fouettée sur le dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"sex-on-the-beach",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Ajoutez tous les ingrédients dans le verre; à l'exception du jus de canneberge"
+            },
+            {
+                "step": "Step 2",
+                "text": "Ajoutez des glaçons frais dans le verre, remuez brièvement pour refroidir et mélanger les ingrédients"
+            },
+            {
+                "step": "Step 3",
+                "text": "Ajoutez plus de glaçons frais, versez le jus d'orange par-dessus, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"cuba-libre",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Ajoutez le jus de citron vert et votre rhum préféré dans le verre"
+            },
+            {
+                "step": "Step 2",
+                "text": "Ajoutez des glaçons frais dans le verre, remuez brièvement pour refroidir et mélanger les ingrédients"
+            },
+            {
+                "step": "Step 3",
+                "text": "Ajoutez plus de glaçons frais, complétez avec du coca-cola, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"tequila-sunrise",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Step 2",
+                "text": "Ajoutez des glaçons frais dans le verre, remuez brièvement pour refroidir et mélanger les ingrédients"
+            },
+            {
+                "step": "Step 3",
+                "text": "Ajoutez des glaçons frais, versez la grenadine, décorez et savourez!"
+            }
+        ]
+    },
+    {
+        "id":"hot-rum-punch",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Ajoutez tous les ingrédients dans le verre"
+            },
+            {
+                "step": "Step 2",
+                "text": "Remuez rapidement pour mélanger les ingrédients"
+            },
+            {
+                "step": "Step 3",
+                "text": "Recouvrez le verre avec de l'eau bouillante, décorez et savourez!"
+            }
+        ]
+    }
+]

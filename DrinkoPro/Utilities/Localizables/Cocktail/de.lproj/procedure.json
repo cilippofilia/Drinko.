@@ -1,0 +1,2451 @@
+[
+    {
+        "id":"corpse-reviver-2",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Spülen Sie die Coupe mit Absinth aus und geben Sie alle Zutaten in den Cocktailshaker"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Fügen Sie frisches Eis in Würfelform hinzu, verschließen Sie den Shaker und schütteln Sie kräftig 8 bis 12 Sekunden lang (bis er von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Fein den Cocktail in das Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "london-maid",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Geben Sie alle Zutaten in den Cocktail-Shaker"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Fügen Sie frisches gewürfeltes Eis hinzu, verschließen Sie ihn und schütteln Sie kräftig 8 bis 12 Sekunden lang (bis er außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Fein den Cocktail ins Glas abseihen, fügen Sie frisches gewürfeltes Eis hinzu und genießen Sie!"
+            }
+        ]
+    },
+    {
+        "id": "white-lady",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Geben Sie alle Zutaten in den Cocktail-Shaker"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Schütteln Sie kräftig, um Ihren Schaumstoff zu emulgieren. Fügen Sie frisches gewürfeltes Eis hinzu, verschließen Sie ihn und schütteln Sie kräftig 8 bis 12 Sekunden lang (bis er außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Fein den Cocktail ins Glas abseihen, lassen Sie ihn sich setzen, garnieren Sie und genießen Sie!"
+            }
+        ]
+    },
+    {
+        "id": "hanky-panky",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Geben Sie alle Zutaten in das Mischglas"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Fügen Sie frisches gewürfeltes Eis hinzu und rühren Sie den Cocktail zwischen 40 und 60 Sekunden lang um"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "rolls-royce",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Geben Sie alle Zutaten in das Mischglas"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Fügen Sie frisches gewürfeltes Eis hinzu und rühren Sie den Cocktail zwischen 40 und 60 Sekunden lang um"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "tuxedo-2",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Spülen Sie die Coupette mit Absinth aus und geben Sie alle Zutaten in das Mischglas"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Fügen Sie frisches gewürfeltes Eis hinzu und rühren Sie den Cocktail zwischen 40 und 60 Sekunden lang um"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "apple-martini",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis hinzufügen, den Shaker verschließen und kräftig für 8 bis 12 Sekunden schütteln (bis es draußen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "cosmopolitan",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis hinzufügen, den Shaker verschließen und kräftig für 8 bis 12 Sekunden schütteln (bis es draußen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "espresso-martini",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis hinzufügen, den Shaker verschließen und kräftig für 8 bis 12 Sekunden schütteln (bis es draußen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "poets-dream",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "vesper-martini",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "vodka-martini",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "gin-martini",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "gibson",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "el-diablo",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben, außer dem Ingwerbier"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, mit Ingwerbier auffüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "infante",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, Crushed Ice hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "tommys-margarita",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "augie-march",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "oaxacan-old-fashioned",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "rosita",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "gold-rush",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "kentucky-buck",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben, außer dem Ingwerbier"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, mit Ingwerbier toppen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "paper-plane",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "fancy-free",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "grandfather",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "preakness-cocktail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "new-york-sour",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben, außer dem Rotwein"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um Ihren Schaumstoffbildner zu emulgieren. Frisches gewürfeltes Eis in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Eiswürfel ins Glas geben, den Cocktail fein in das Glas abseihen und absetzen lassen"
+            },
+            {
+                "step": "Schritt 4",
+                "text": "Verwenden Sie einen Barspoon, um den Rotwein oben schwimmen zu lassen, und genießen Sie!"
+            }
+        ]
+    },
+    {
+        "id": "ward-eight",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "whiskey-smash",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Die Minze vorsichtig zerdrücken, um die Öle freizusetzen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 4",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "old-pal",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "red-hook",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "irish-breakfast",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barspoon die Marmelade rühren, bis sie kleiner wird"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 4",
+                "text": "Den Cocktail fein in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "wild-eyed-rose",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "blackthorn",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben und das Glas mit Absinth auskleiden"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "improved-whiskey-cocktail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "tipperary-cocktail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "mamie-taylor",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, mit Ginger Beer toppen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "morning-glory-fizz",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben und das Flöten-Glas mit Absinth auskleiden"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, einen Spritzer Soda hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "bobby-burns",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "prince-edward",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "tattletale",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "chet-baker",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "dominicana",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Um die handgeschlagene Sahne zuzubereiten, geben Sie eine Portion Schlagsahne mit einem Eiswürfel in einen Shaker und schütteln Sie sie etwa 8 bis 10 Sekunden lang. Entfernen Sie den Eiswürfel aus dem Shaker, bevor Sie die Sahne als Garnitur verwenden."
+            },
+            {
+                "step": "Schritt 4",
+                "text": "Den Cocktail in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "el-presidente",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mischglas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in das Mischglas geben und den Cocktail zwischen 40 und 60 Sekunden lang umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "airmail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, mit Champagner aufgießen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "daisy-de-santiago",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben, außer dem gelben Chartreuse"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, Crushed Ice hinzufügen, gelben Chartreuse darauffloaten lassen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "mary-pickford",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, einen Eiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "jungle-bird",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frisches gewürfeltes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "royal-bermuda-yacht-club",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "beachbum",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frisches gewürfeltes Eis in den Shaker geben, verschließen und kräftig 8 bis 12 Sekunden schütteln (bis es von außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, Crushed Ice hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    
+    {
+        "id": "fog-cutter",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, frische Würfeleiswürfel hinzufügen, den Sherry oben aufschwimmen lassen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "jet-pilot",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Glas geben und einen großen Löffel Crushed Ice hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barlöffel alle Zutaten im Glas für 8 bis 10 Sekunden verrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit mehr Crushed Ice bedecken, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "painkiller",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, Crushed Ice hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "scorpion",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Glas geben und einen großen Löffel Crushed Ice hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barlöffel alle Zutaten im Glas für 8 bis 10 Sekunden verrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit mehr Crushed Ice bedecken, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "three-dots-and-a-dash",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Glas geben und einen großen Löffel Crushed Ice hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barlöffel alle Zutaten im Glas für 8 bis 10 Sekunden verrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit mehr Crushed Ice bedecken, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "zombie",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Glas geben und einen großen Löffel Crushed Ice hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barlöffel alle Zutaten im Glas für 8 bis 10 Sekunden verrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit mehr Crushed Ice bedecken, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "champs-elysees",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "coffee-cocktail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben; ganzes Ei inklusive"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um Ihren Schaumbildner zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Eiswürfel in das Glas geben, den Cocktail fein abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "georgia-julep",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Crushed Ice in das Glas geben, den Cocktail fein abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "de-la-louisiane",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail ins Glas abseihen, frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "pisco-punch",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein in das Glas abseihen, Crushed Ice hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "pisco-sour",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um Ihren Schaumbildner zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, ruhen lassen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "american-trilogy",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail ins Glas abseihen, frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "widows-kiss",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Glas geben und kurz umrühren, um alle Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen (falls erforderlich) und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "applejack-rabbit",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "jack-rose",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "philadelphia-fish-house-punch",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "adonis",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "bamboo",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "sherry-cobbler",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, den Sherry obenauf schweben lassen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "amaretto-sour",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um Ihren Schaumbildner zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, ruhen lassen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "americano-cocktail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Glas geben, kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frische Würfeleiswürfel hinzufügen, das Soda-Wasser oben drauf geben, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "aperol-spritz",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "arsenic-and-old-lace",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "aviation",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "bees-knees",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "bellini",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "bijou",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "black-russian",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "bloody-mary",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in die große Dose des Cocktail-Shakers geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in die Dose geben, den Sieb oben auflegen und den Cocktail zwischen den beiden Dosen werfen, bis er gekühlt ist"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "boulevardier",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in das Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail ins Glas abseihen, frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "bramble",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, zerstoßenes Eis hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "brandy-alexander",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "brooklynite",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "caipirinha",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben und eine große Portion zerstoßenes Eis hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barlöffel alle Zutaten im Glas 8 bis 10 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit mehr zerstoßenem Eis auffüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "champagne-cocktail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Den Zuckerwürfel zerdrücken und die Zutaten vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mit Champagner auffüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "chartreuse-swizzle",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben und eine große Portion zerstoßenes Eis hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barlöffel alle Zutaten im Glas 8 bis 10 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit mehr zerstoßenem Eis auffüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "chrysanthemum",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "clover-club",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben, Himbeeren hinzufügen und zerdrücken"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um den Schaumbildner zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, ihn absetzen lassen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "corn-and-oil",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frische Würfeleiswürfel ins Glas geben, den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "daiquiri",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "east-side",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frische Würfeleiswürfel ins Glas geben, den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "french-75",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben, außer dem Champagner"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, mit Champagner auffüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "gimlet",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "gin-rickey",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben, außer dem Soda-Wasser"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, mit Soda-Wasser auffüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "godfather",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "grasshopper",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "hemingway-daiquiri",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "hot-toddy",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Den Tee ein paar Minuten ziehen lassen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Garnieren, heiß servieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "irish-coffee",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben; Die handgeschlagene Sahne vorerst beiseite stellen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Etwas schwere Sahne in einen Shaker und nur einen Eiswürfel geben"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Kräftig schütteln, bis gekühlt und die Sahne weniger flüssig erscheint"
+            },
+            {
+                "step": "Schritt 4",
+                "text": "Über den Cocktail mit einem Barlöffel gießen; wenn richtig geschlagen, wird die Sahne nicht mit dem heißen Getränk vermischen"
+            }
+        ]
+    },
+    {
+        "id": "japanese-cocktail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden rühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "kir-royale",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "last-word",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "long-island-iced-tea",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben, außer der Cola"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, mit Cola auffüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "mai-tai",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel und einen kleinen Haufen Crushed Ice hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "manhattan",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden rühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "margarita",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "cadillac-margarita",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "martinez",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden rühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "mimosa",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "mint-julep",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frisches Crushed Ice ins Glas geben, den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "mojito",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben und eine große Portion Crushed Ice hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barlöffel alle Zutaten im Glas für 8 bis 10 Sekunden durchrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit weiterem Crushed Ice befüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "moscow-mule",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben; bis auf das Ingwerbier"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frische Würfeleiswürfel und eine kleine Menge Crushed Ice hinzufügen"
+            },
+            {
+                "step":"Schritt 4",
+                "text":"Das Ingwerbier hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "dark-and-stormy",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben; außer dem dunklen Rum"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frische Würfeleiswürfel und eine kleine Menge Crushed Ice hinzufügen, um das Schweben des dunklen Rums zu erleichtern"
+            },
+            {
+                "step":"Schritt 4",
+                "text":"Den dunklen Rum oben drauf geben, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "negroni",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "old-cuban",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben; bis auf den Champagner"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, mit Champagner toppen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "old-fashioned",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden rühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "old-maid",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frisches Würfeleis ins Glas geben, den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "paloma",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben (außer dem Soda-Wasser) und den Rand des Glases salzen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, mit Soda-Wasser toppen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "penicillin",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, den rauchigen Whiskey floaten lassen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "pimms-cup",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben und einige Eiswürfel hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Alle verfügbaren Früchte hinzufügen (als Referenz Garnitur prüfen) und kurz umrühren, um die Zutaten zu vermischen und zu kühlen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, mit Ingwerlimonade oder Zitronenlimonade toppen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "pina-colada",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frisches Würfeleis ins Glas geben, den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "pineapple-daiquiri",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "pornstar-martini",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben; halte den Champagner für den Moment zurück"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "queens-park-swizzle",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben und eine große Portion Crushed Ice hinzufügen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Mit einem Barlöffel alle Zutaten im Glas für 8 bis 10 Sekunden umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit weiterem Crushed Ice befüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "ramos-gin-fizz",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben; füge das Sodawasser noch nicht hinzu"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um deinen Schaumbildner zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, absetzen lassen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "rob-roy",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden rühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "rome-with-a-view",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben; außer dem Sodawasser"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, mit Sodawasser toppen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "rusty-nail",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden rühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "sazerac",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Die Coupe mit Absinth ausspülen und alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "sidecar",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "singapore-sling",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frische Würfeleiswürfel ins Glas geben, den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "southside",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "southside-fizz",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben; außer dem Sodawasser"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, mit Sodawasser toppen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "stinger",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um zu emulgieren. Frische Würfeleiswürfel ins Glas geben, den Cocktail fein ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "ti-punch",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben und die Limettenscheiben leicht zerdrücken"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Ein paar Eiswürfel hinzufügen und mit einem Barlöffel 8 bis 10 Sekunden lang umrühren, um alle Zutaten im Glas zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit Crushed Ice auffüllen und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "tom-collins",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben; außer dem Ginger Beer"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, mit Soda-Wasser toppen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "vieux-carre",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden rühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "whiskey-sour",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um deinen Schaumbildner zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, frische Würfeleiswürfel hinzufügen, absetzen lassen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "white-russian",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben; die handgeschlagene Sahne vorerst beiseite stellen"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu kühlen und zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, die handgeschlagene Sahne oben aufschichten, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "sex-on-the-beach",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben; außer dem Cranberry-Saft"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu kühlen und zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, den Orangensaft darüber gießen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "cuba-libre",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Limettensaft und deinen Rum der Wahl ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu kühlen und zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Mehr frische Würfeleiswürfel hinzufügen, mit Cola auffüllen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "tequila-sunrise",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel ins Glas geben, kurz umrühren, um die Zutaten zu kühlen und zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Frische Würfeleiswürfel hinzufügen, den Grenadinesirup darüber gießen, garnieren und genießen!"
+            }
+        ]
+    },
+    {
+        "id": "hot-rum-punch",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kurz umrühren, um die Zutaten zu vermischen"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit kochendem Wasser füllen, garnieren und genießen!"
+            }
+        ]
+    }
+]
