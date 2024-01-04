@@ -2450,5 +2450,99 @@
                 "text": "Recouvrez le verre avec de l'eau bouillante, décorez et savourez!"
             }
         ]
+    },
+    
+    {
+        "id": "b-52",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Versez d'abord le Kahlua, puis à l'aide d'une cuillère à bar, superposez le Baileys par-dessus"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Superposez le Grand Marnier par-dessus le Baileys"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Maintenant, à l'aide d'un briquet ou d'un petit chalumeau, allumez le Grand Marnier"
+            },
+            {
+                "step": "Étape 4",
+                "text": "Éteignez la flamme et savourez !"
+            }
+        ]
+    },
+    {
+        "id": "blow-job",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Versez d'abord le Kahlua, puis à l'aide d'une cuillère à bar, superposez le Baileys par-dessus"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Si vous souhaitez une garniture, essayez de saupoudrer du chocolat en poudre, de la cannelle ou toute autre poudre que vous aimez et savourez"
+            }
+        ]
+    },
+    {
+        "id": "baby-guinness",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Versez d'abord le Kahlua, puis à l'aide d'une cuillère à bar, superposez le Baileys par-dessus"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Si vous souhaitez une garniture, essayez de saupoudrer du chocolat en poudre, de la cannelle ou toute autre poudre que vous aimez et savourez"
+            }
+        ]
+    },
+    {
+        "id": "irish-car-bomb",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Prenez une pinte de Guinness et buvez-en la moitié"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Versez le whisky Jameson dans un verre à shot"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Déposez le verre à shot dans la moitié de Guinness et buvez le tout d'un seul coup"
+            }
+        ]
+    },
+    {
+        "id": "kamikaze",
+        "procedure": [
+            {
+                "step": "Note :",
+                "text": "Ce shot peut être préparé de deux manières : préparé dans le verre ou secoué et filtré finement dans des verres à shot"
+            },
+            {
+                "step": "Préparation dans le verre :",
+                "text": "Versez tous les ingrédients dans un verre à shot et savourez !"
+            },
+            {
+                "step": "Secoué :",
+                "text": "La méthode suivante est suggérée pour plus d'un shot à la fois"
+            },
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez des glaçons frais dans le shaker, fermez-le et secouez énergiquement pendant 8 à 12 secondes (jusqu'à ce qu'il givre à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais et savourez !"
+            }
+        ]
     }
 ]

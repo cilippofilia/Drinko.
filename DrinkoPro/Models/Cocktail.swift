@@ -107,7 +107,7 @@ struct Procedure: Codable, Equatable, Identifiable {
     let procedure: [Steps]
     
     struct Steps: Codable, Equatable, Identifiable {
-        var id = UUID()
+        var id: String { text }
         let step: String
         let text: String
     }

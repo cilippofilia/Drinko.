@@ -8,22 +8,16 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @Environment(\.dismiss) var dismiss
-    @Environment(\.verticalSizeClass) var sizeClass
-
     let cocktail: Cocktail
     let history: History
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
-                HStack(alignment: .center) {
-                    Text("History of the cocktail:")
-                        .font(.title.bold())
-                        .padding(.vertical)
-                        .multilineTextAlignment(.leading)
-                }
-                .padding(.vertical)
+            VStack(alignment: .leading) {
+                Text("History")
+                    .font(.title.bold())
+                    .padding(.vertical)
+                    .padding(.top)
 
                 Text(history.text)
                     .multilineTextAlignment(.leading)
@@ -36,6 +30,5 @@ struct HistoryView: View {
 #if DEBUG
 #Preview {
     HistoryView(cocktail: .example, history: .example)
-        .preferredColorScheme(.dark)
 }
 #endif

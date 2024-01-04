@@ -14,18 +14,23 @@ struct CocktailDetailView: View {
     @ObservedObject var favorites = Favorites()
     
     @State private var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
+    @State private var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
     
     @State private var showHistory = false
     @State private var showProcedure = false
 
     @State private var selectedUnit = "oz."
+    var units = ["oz.", "ml"]
+
     @State private var frameSize: CGFloat = 280
     @State private var corners: CGFloat = 10
 
-    var units = ["oz.", "ml"]
     var cocktail: Cocktail
     var cocktailHistory: History? {
-        return histories.first(where: { $0.id == cocktail.id } )
+        return histories.first(where: { $0.id == cocktail.id })
+    }
+    var cocktailProcedure: Procedure {
+        return procedures.first(where: { $0.id == cocktail.id })!
     }
 
     var body: some View {
@@ -37,7 +42,7 @@ struct CocktailDetailView: View {
             }
         }
         .navigationTitle(cocktail.name)
-        // forcing displayMode .inline to avoid cropping the back bar button - this way will be standardized between 'Cocktails' and 'Back' if the Navigation Title is too long
+        // forcing displayMode .inline to avoid cropping the back bar button - this way will be standardised between 'Cocktails' and 'Back' if the Navigation Title is too long
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -135,7 +140,8 @@ struct CocktailDetailView: View {
                             showProcedure.toggle()
                         }
                                          .sheet(isPresented: $showProcedure) {
-                                             ProcedureView(procedure: "Procedure")
+                                             ProcedureView(cocktail: cocktail,
+                                                           procedure: Procedure.example)
                                                  .presentationDetents([.large,.fraction(0.75)])
                                          }
                     }
@@ -167,7 +173,8 @@ struct CocktailDetailView: View {
                         showProcedure.toggle()
                     }
                                      .sheet(isPresented: $showProcedure) {
-                                         ProcedureView(procedure: "Procedure")
+                                         ProcedureView(cocktail: cocktail,
+                                                       procedure: Procedure.example)
                                              .presentationDetents([.large,.fraction(0.75)])
                                      }
                 }
@@ -267,13 +274,14 @@ struct CocktailDetailView: View {
 
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Extra")
-
-                ProcedureView(procedure: "Procedure")
                 
-                if (cocktailHistory?.text ?? "") != "" {
-                    HistoryView(cocktail: cocktail, history: cocktailHistory!)
+                VStack(spacing: 20) {
+                    ProcedureView(cocktail: cocktail, procedure: cocktailProcedure)
+                    
+                    if (cocktailHistory?.text ?? "") != "" {
+                        HistoryView(cocktail: cocktail, history: cocktailHistory!)
+                    }
                 }
-                
                 Spacer(minLength: 50)
             }
             .frame(width: regularScreenWidth)
@@ -287,7 +295,6 @@ struct CocktailDetailView: View {
         NavigationStack {
             CocktailDetailView(cocktail: .example)
                 .environmentObject(Favorites())
-                .preferredColorScheme(.dark)
         }
     }
 }

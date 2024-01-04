@@ -3,15 +3,15 @@
         "id":"corpse-reviver-2",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Sciacquare la coppetta con l'assenzio e aggiungere tutti gli ingredienti nello shaker per cocktail"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare energicamente per 8-12 secondi (fino a quando è ghiacciato all'esterno)"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail dentro il bicchiere e gustalo!"
             }
         ]
@@ -20,15 +20,15 @@
         "id":"london-maid",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare energicamente per 8-12 secondi (fino a quando è ghiacciato all'esterno)"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail dentro il bicchiere, aggiungere ghiaccio fresco a cubetti e gustalo!"
             }
         ]
@@ -37,15 +37,15 @@
         "id":"white-lady",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Agitare energicamente per emulsionare il tuo agente schiumogeno. Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare energicamente per 8-12 secondi (fino a quando è ghiacciato all'esterno)"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail dentro il bicchiere, permettere che si posizioni, guarnire e gustalo!"
             }
         ]
@@ -54,15 +54,15 @@
         "id":"hanky-panky",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Aggiungere tutti gli ingredienti nel bicchiere da miscelazione"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere da miscelazione e mescolare il cocktail tra i 40 e i 60 secondi"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
             }
         ]
@@ -71,15 +71,15 @@
         "id":"rolls-royce",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Aggiungere tutti gli ingredienti nel bicchiere da miscelazione"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere da miscelazione e mescolare il cocktail tra i 40 e i 60 secondi"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
             }
         ]
@@ -88,15 +88,15 @@
         "id":"tuxedo-2",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Sciacquare la coppetta con l'assenzio e aggiungere tutti gli ingredienti nel bicchiere da miscelazione"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere da miscelazione e mescolare il cocktail tra i 40 e i 60 secondi"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
             }
         ]
@@ -105,15 +105,15 @@
         "id":"apple-martini",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare energicamente per 8-12 secondi (fino a quando è ghiacciato all'esterno)"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
             }
         ]
@@ -122,15 +122,15 @@
         "id":"cosmopolitan",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare energicamente per 8-12 secondi (fino a quando è ghiacciato all'esterno)"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
             }
         ]
@@ -139,15 +139,15 @@
         "id":"espresso-martini",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare energicamente per 8-12 secondi (fino a quando è ghiacciato all'esterno)"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
             }
         ]
@@ -156,15 +156,15 @@
         "id":"poets-dream",
         "procedure": [
             {
-                "step": "Passo ",
+                "step": "Passo 1",
                 "text": "Aggiungere tutti gli ingredienti nel bicchiere da miscelazione"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 2",
                 "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere da miscelazione e mescolare il cocktail tra i 40 e i 60 secondi"
             },
             {
-                "step": "Passo ",
+                "step": "Passo 3",
                 "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
             }
         ]
@@ -1802,649 +1802,743 @@
         ]
     },
     {
-      "id": "margarita",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere e gustalo!"
-        }
-      ]
+        "id": "margarita",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere e gustalo!"
+            }
+        ]
     },
     {
-      "id": "cadillac-margarita",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere e gustalo!"
-        }
-      ]
+        "id": "cadillac-margarita",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere e gustalo!"
+            }
+        ]
     },
     {
-      "id": "martinez",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel mixing glass"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "martinez",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel mixing glass"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "mimosa",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel bicchiere, guarniscilo e gustalo!"
-        }
-      ]
+        "id": "mimosa",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel bicchiere, guarniscilo e gustalo!"
+            }
+        ]
     },
     {
-      "id": "mint-julep",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Agita energicamente per emulsionare. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi ghiaccio tritato fresco nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "mint-julep",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Agita energicamente per emulsionare. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi ghiaccio tritato fresco nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "mojito",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel bicchiere e aggiungi una grande dose di ghiaccio tritato"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Con un cucchiaio da bar mescola tutti gli ingredienti nel bicchiere per 8-10 secondi"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi più ghiaccio tritato, guarnisci e gustalo!"
-        }
-      ]
+        "id": "mojito",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel bicchiere e aggiungi una grande dose di ghiaccio tritato"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Con un cucchiaio da bar mescola tutti gli ingredienti nel bicchiere per 8-10 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi più ghiaccio tritato, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "moscow-mule",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel bicchiere, tranne la ginger beer"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, mescola brevemente per mescolare gli ingredienti"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi ghiaccio fresco a cubetti e una piccola quantità di ghiaccio tritato"
-        },
-        {
-          "step": "Passo 4",
-          "text": "Aggiungi la ginger beer in cima, guarnisci e gustalo!"
-        }
-      ]
+        "id": "moscow-mule",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel bicchiere, tranne la ginger beer"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, mescola brevemente per mescolare gli ingredienti"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi ghiaccio fresco a cubetti e una piccola quantità di ghiaccio tritato"
+            },
+            {
+                "step": "Passo 4",
+                "text": "Aggiungi la ginger beer in cima, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "dark-and-stormy",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel bicchiere, tranne il rum scuro"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, mescola brevemente per mescolare gli ingredienti"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi ghiaccio fresco a cubetti e una piccola quantità di ghiaccio tritato per facilitare il galleggiamento del rum scuro"
-        },
-        {
-          "step": "Passo 4",
-          "text": "Aggiungi il rum scuro in cima, guarnisci e gustalo!"
-        }
-      ]
+        "id": "dark-and-stormy",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel bicchiere, tranne il rum scuro"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, mescola brevemente per mescolare gli ingredienti"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi ghiaccio fresco a cubetti e una piccola quantità di ghiaccio tritato per facilitare il galleggiamento del rum scuro"
+            },
+            {
+                "step": "Passo 4",
+                "text": "Aggiungi il rum scuro in cima, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "negroni",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel bicchiere"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, mescola brevemente per mescolare gli ingredienti"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi più ghiaccio fresco a cubetti, guarnisci e gustalo!"
-        }
-      ]
+        "id": "negroni",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel bicchiere"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, mescola brevemente per mescolare gli ingredienti"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi più ghiaccio fresco a cubetti, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "old-cuban",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail, tranne lo champagne"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungere lo champagne in cima, guarnire e gustalo!"
-        }
-      ]
+        "id": "old-cuban",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail, tranne lo champagne"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungere lo champagne in cima, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "old-fashioned",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel mixing glass"
-        },
-        {
-          "step": "Passo 2",
-        "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti, guarnisci e gustalo!"
-        }
-      ]
+        "id": "old-fashioned",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel mixing glass"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "old-maid",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Agita energicamente per emulsionare. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "old-maid",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Agita energicamente per emulsionare. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "paloma",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail (tranne l'acqua tonica) e salare il bordo del bicchiere"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo, e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti, aggiungi l'acqua tonica, guarnisci e gustalo!"
-        }
-      ]
+        "id": "paloma",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail (tranne l'acqua tonica) e salare il bordo del bicchiere"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo, e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti, aggiungi l'acqua tonica, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "penicillin",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti, fluttua il whisky torbato e gustalo!"
-        }
-      ]
+        "id": "penicillin",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti, fluttua il whisky torbato e gustalo!"
+            }
+        ]
     },
     {
-      "id": "pimms-cup",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel bicchiere e aggiungi alcuni cubetti di ghiaccio"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi tutti i frutti a tua disposizione (controlla la guarnizione come riferimento) e mescola brevemente per mescolare e raffreddare gli ingredienti"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi più ghiaccio fresco a cubetti, aggiungi ginger ale o limonata, guarnisci e gustalo!"
-        }
-      ]
+        "id": "pimms-cup",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel bicchiere e aggiungi alcuni cubetti di ghiaccio"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi tutti i frutti a tua disposizione (controlla la guarnizione come riferimento) e mescola brevemente per mescolare e raffreddare gli ingredienti"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi più ghiaccio fresco a cubetti, aggiungi ginger ale o limonata, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "pina-colada",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Agita energicamente per emulsionare. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "pina-colada",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Agita energicamente per emulsionare. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "pineapple-daiquiri",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "pineapple-daiquiri",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "pornstar-martini",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail; tieni da parte lo champagne per ora"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "pornstar-martini",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail; tieni da parte lo champagne per ora"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "queens-park-swizzle",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel bicchiere e aggiungi una grande dose di ghiaccio tritato"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Con un cucchiaio da bar mescola tutti gli ingredienti nel bicchiere per 8-10 secondi"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungi più ghiaccio tritato, guarnisci e gustalo!"
-        }
-      ]
+        "id": "queens-park-swizzle",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel bicchiere e aggiungi una grande dose di ghiaccio tritato"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Con un cucchiaio da bar mescola tutti gli ingredienti nel bicchiere per 8-10 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungi più ghiaccio tritato, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "ramos-gin-fizz",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail; non aggiungere ancora l'acqua tonica"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Agita energicamente per emulsionare l'agente schiumogeno. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, lasciarlo stabilizzare, guarnire e gustalo!"
-        }
-      ]
+        "id": "ramos-gin-fizz",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail; non aggiungere ancora l'acqua tonica"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Agita energicamente per emulsionare l'agente schiumogeno. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, lasciarlo stabilizzare, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "rob-roy",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel mixing glass"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "rob-roy",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel mixing glass"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "rome-with-a-view",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail; tranne l'acqua tonica"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti, aggiungi l'acqua tonica, guarnisci e gustalo!"
-        }
-      ]
+        "id": "rome-with-a-view",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail; tranne l'acqua tonica"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita energicamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti, aggiungi l'acqua tonica, guarnisci e gustalo!"
+            }
+        ]
     },
     {
-      "id": "rusty-nail",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungi tutti gli ingredienti nel mixing glass"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "rusty-nail",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel mixing glass"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "sazerac",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Sciacquare la coppetta con assenzio e aggiungere tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "sazerac",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Sciacquare la coppetta con assenzio e aggiungere tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "sidecar",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "sidecar",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "singapore-sling",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Agitare energicamente per emulsionare. Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "singapore-sling",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Agitare energicamente per emulsionare. Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "southside",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, guarnire e gustalo!"
-        }
-      ]
+        "id": "southside",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "southside-fizz",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail; Escludere l'acqua tonica"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, versare l'acqua tonica, guarnire e gustalo!"
-        }
-      ]
+        "id": "southside-fizz",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail; Escludere l'acqua tonica"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, versare l'acqua tonica, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "stinger",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Agitare energicamente per emulsionare. Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
-        }
-      ]
+        "id": "stinger",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Agitare energicamente per emulsionare. Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, filtrare il cocktail nel bicchiere, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "ti-punch",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nel bicchiere e pestare leggermente i dischi di lime"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere un paio di cubetti di ghiaccio e mescolare con un cucchiaio da bar per combinare gli ingredienti nel bicchiere per 8-10 secondi"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Completare il bicchiere con ghiaccio tritato e gustalo!"
-        }
-      ]
+        "id": "ti-punch",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nel bicchiere e pestare leggermente i dischi di lime"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere un paio di cubetti di ghiaccio e mescolare con un cucchiaio da bar per combinare gli ingredienti nel bicchiere per 8-10 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Completare il bicchiere con ghiaccio tritato e gustalo!"
+            }
+        ]
     },
     {
-      "id": "tom-collins",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail; Escludere la birra di zenzero"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, versare la soda, guarnire e gustalo!"
-        }
-      ]
+        "id": "tom-collins",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail; Escludere la birra di zenzero"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, versare la soda, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "vieux-carre",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nel mixing glass"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nel mixing glass e mescolare il cocktail tra i 40 e i 60 secondi"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, guarnire e gustalo!"
-        }
-      ]
+        "id": "vieux-carre",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nel mixing glass"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nel mixing glass e mescolare il cocktail tra i 40 e i 60 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "whiskey-sour",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Agitare energicamente per emulsionare l'agente schiumogeno. Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, lasciarlo riposare, guarnire e gustalo!"
-        }
-      ]
+        "id": "whiskey-sour",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Agitare energicamente per emulsionare l'agente schiumogeno. Aggiungere ghiaccio fresco a cubetti nello shaker, chiudere e agitare vigorosamente per 8-12 secondi (fino a quando diventa ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtrare il cocktail nel bicchiere, aggiungere ghiaccio fresco a cubetti, lasciarlo riposare, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "white-russian",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nel bicchiere; lasciare la panna montata a parte per ora"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, mescolare brevemente per raffreddare e mescolare gli ingredienti insieme"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungere più ghiaccio fresco, mettere a galla la panna montata, guarnire e gustalo!"
-        }
-      ]
+        "id": "white-russian",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nel bicchiere; lasciare la panna montata a parte per ora"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, mescolare brevemente per raffreddare e mescolare gli ingredienti insieme"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungere più ghiaccio fresco, mettere a galla la panna montata, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "sex-on-the-beach",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nel bicchiere; escludere il succo di mirtillo rosso"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, mescolare brevemente per raffreddare e mescolare gli ingredienti insieme"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungere più ghiaccio fresco, versare il succo d'arancia, guarnire e gustalo!"
-        }
-      ]
+        "id": "sex-on-the-beach",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nel bicchiere; escludere il succo di mirtillo rosso"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, mescolare brevemente per raffreddare e mescolare gli ingredienti insieme"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungere più ghiaccio fresco, versare il succo d'arancia, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "cuba-libre",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere il succo di lime e il rum scelto nel bicchiere"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, mescolare brevemente per raffreddare e mescolare gli ingredienti insieme"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungere più ghiaccio fresco, riempire con cola, guarnire e gustalo!"
-        }
-      ]
+        "id": "cuba-libre",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere il succo di lime e il rum scelto nel bicchiere"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, mescolare brevemente per raffreddare e mescolare gli ingredienti insieme"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungere più ghiaccio fresco, riempire con cola, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "tequila-sunrise",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nel bicchiere"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, mescolare brevemente per raffreddare e mescolare gli ingredienti insieme"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Aggiungere ghiaccio fresco, versare la granatina, guarnire e gustalo!"
-        }
-      ]
+        "id": "tequila-sunrise",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nel bicchiere"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungere ghiaccio fresco a cubetti nel bicchiere, mescolare brevemente per raffreddare e mescolare gli ingredienti insieme"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Aggiungere ghiaccio fresco, versare la granatina, guarnire e gustalo!"
+            }
+        ]
     },
     {
-      "id": "hot-rum-punch",
-      "procedure": [
-        {
-          "step": "Passo 1",
-          "text": "Aggiungere tutti gli ingredienti nel bicchiere"
-        },
-        {
-          "step": "Passo 2",
-          "text": "Mescolare rapidamente per mescolare gli ingredienti insieme"
-        },
-        {
-          "step": "Passo 3",
-          "text": "Completare il bicchiere con acqua bollente, guarnire e gustalo!"
-        }
-      ]
+        "id": "hot-rum-punch",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungere tutti gli ingredienti nel bicchiere"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Mescolare rapidamente per mescolare gli ingredienti insieme"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Completare il bicchiere con acqua bollente, guarnire e gustalo!"
+            }
+        ]
+    },
+    
+    {
+        "id":"b-52",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Versa prima il Kahlua e poi, con l'aiuto di un cucchiaio da bar, crea uno strato di Baileys sopra di esso"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Crea uno strato di Grand Marnier sopra il Baileys"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Ora, con l'aiuto di un accendino o un piccolo cannello, accendi il Grand Marnier"
+            },
+            {
+                "step": "Passo 4",
+                "text": "Soffia via la fiamma e goditi il cocktail!"
+            }
+        ]
+    },
+    {
+        "id":"blow-job",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Versa prima il Kahlua e poi, con l'aiuto di un cucchiaio da bar, crea uno strato di Baileys sopra di esso"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Se ti piace un guarnizione, prova a cospargere del cioccolato in polvere, cannella o qualsiasi altra polvere che ti piaccia e goditi il cocktail"
+            }
+        ]
+    },
+    {
+        "id":"baby-guinness",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Versa prima il Kahlua e poi, con l'aiuto di un cucchiaio da bar, crea uno strato di Baileys sopra di esso"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Se ti piace una guarnizione, prova a cospargere del cioccolato in polvere, cannella o qualsiasi altra polvere che ti piaccia e goditi il cocktail"
+            }
+        ]
+    },
+    {
+        "id":"irish-car-bomb",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Prendi una pinta di Guinness e bevine metà"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Dentro un bicchierino versare whiskey Jameson"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Metti il bicchierino dentro la metà di Guinness e bevilo tutto in un sorso"
+            }
+        ]
+    },
+    {
+        "id":"kamikaze",
+        "procedure": [
+            {
+                "step": "Nota:",
+                "text": "Questo shot può essere preparato in due modi: preparato direttamente nel bicchiere o shakerato e filtrato finemente nei bicchierini"
+            },
+            {
+                "step": "Preparato nel bicchiere:",
+                "text": "Versa tutti gli ingredienti dentro un bicchiere da shot e goditi il cocktail!"
+            },
+            {
+                "step": "Shakerato:",
+                "text": "Il metodo seguente è consigliato per più di uno shot alla volta"
+            },
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker da cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e shakeralo energicamente per 8-12 secondi (finché non sarà ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtra finemente il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti e goditi il cocktail!"
+            }
+        ]
     }
 ]

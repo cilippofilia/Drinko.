@@ -2447,5 +2447,98 @@
                 "text": "Das Glas mit kochendem Wasser füllen, garnieren und genießen!"
             }
         ]
+    },
+    {
+        "id": "b-52",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Gießen Sie zuerst Kahlua ein und schichten Sie dann mit Hilfe eines Barlöffels Baileys darauf"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Schichten Sie den Grand Marnier oben auf den Baileys"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Zünden Sie nun mit Hilfe eines Feuerzeugs oder einer kleinen Lötlampe den Grand Marnier an"
+            },
+            {
+                "step": "Schritt 4",
+                "text": "Pusten Sie die Flamme aus und genießen Sie!"
+            }
+        ]
+    },
+    {
+        "id": "blow-job",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Gießen Sie zuerst Kahlua ein und schichten Sie dann mit Hilfe eines Barlöffels Baileys darauf"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Wenn Sie Lust auf eine Garnierung haben, probieren Sie etwas Schokoladenpulver, Zimt oder jedes andere Pulver, das Ihnen gefällt, darüber zu streuen, und genießen Sie"
+            }
+        ]
+    },
+    {
+        "id": "baby-guinness",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Gießen Sie zuerst Kahlua ein und schichten Sie dann mit Hilfe eines Barlöffels Baileys darauf"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Wenn Sie Lust auf eine Garnierung haben, probieren Sie etwas Schokoladenpulver, Zimt oder jedes andere Pulver, das Ihnen gefällt, darüber zu streuen, und genießen Sie"
+            }
+        ]
+    },
+    {
+        "id": "irish-car-bomb",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Nehmen Sie sich ein Pint Guinness und trinken Sie die Hälfte davon"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Gießen Sie in ein Schnapsglas Jameson-Whiskey"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Lassen Sie das Schnapsglas in das halbe Guinness fallen und trinken Sie alles in einem großen Schluck"
+            }
+        ]
+    },
+    {
+        "id": "kamikaze",
+        "procedure": [
+            {
+                "step": "Hinweis:",
+                "text": "Dieser Shot kann auf zwei Arten zubereitet werden: Entweder direkt im Glas oder geschüttelt und durch ein Sieb in Shots gegossen"
+            },
+            {
+                "step": "Direkt im Glas:",
+                "text": "Gießen Sie alle Zutaten in ein Schnapsglas und genießen Sie!"
+            },
+            {
+                "step": "Geschüttelt:",
+                "text": "Die folgende Methode wird für mehr als einen Shot gleichzeitig empfohlen"
+            },
+            {
+                "step": "Schritt 1",
+                "text": "Geben Sie alle Zutaten in den Cocktail-Shaker"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Fügen Sie frisches gewürfeltes Eis in den Shaker, verschließen Sie ihn und schütteln Sie kräftig für 8 bis 12 Sekunden (bis er außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Gießen Sie den Cocktail durch ein Sieb ins Glas, fügen Sie frisches gewürfeltes Eis hinzu und genießen Sie!"
+            }
+        ]
     }
 ]
