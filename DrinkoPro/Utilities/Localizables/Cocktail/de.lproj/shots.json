@@ -1,0 +1,126 @@
+[
+    {
+        "id":"b-52",
+        "name":"B-52",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"Zünde es an - ⚠️ BLASE ES AUS, BEVOR DU TRINKST ⚠️",
+        
+        "ingredients":[
+            {
+                "name":"Kahlua",
+                "quantity":0.3,
+                "unit":"oz."
+            },
+            {
+                "name":"Bailey's",
+                "quantity":0.3,
+                "unit":"oz."
+            },
+            {
+                "name":"Grand Marnier",
+                "quantity":0.3,
+                "unit":"oz."
+            }
+        ]
+    },
+    
+    {
+        "id":"blow-job",
+        "name":"Blow Job",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"",
+        
+        "ingredients":[
+            {
+                "name":"Kahlua",
+                "quantity":0.66,
+                "unit":"oz."
+            },
+            {
+                "name":"Bailey's",
+                "quantity":0.66,
+                "unit":"oz."
+            }
+        ]
+    },
+    
+    {
+        "id":"baby-guinness",
+        "name":"Baby Guinness",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"Dieser Shot hat mehr Kahlua als Bailey's. Verwechsle ihn nicht mit einem \"Blow Job\"",
+        
+        "ingredients":[
+            {
+                "name":"Kahlua",
+                "quantity":0.66,
+                "unit":"oz."
+            },
+            {
+                "name":"Bailey's",
+                "quantity":0.33,
+                "unit":"oz."
+            }
+        ]
+    },
+    
+    {
+        "id":"irish-car-bomb",
+        "name":"Irish Car Bomb",
+        "method":"build & drop it",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"Baue den Shot und lass ihn in ein halbes Glas Guinness fallen",
+        
+        "ingredients":[
+            {
+                "name":"Jameson",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Bailey's",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    
+    {
+        "id":"kamikaze",
+        "name":"Kamikaze",
+        "method":"build",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"Vodka",
+                "quantity":0.33,
+                "unit":"oz."
+            },
+            {
+                "name":"Cointreau",
+                "quantity":0.33,
+                "unit":"oz."
+            },
+            {
+                "name":"Lime juice",
+                "quantity":0.33,
+                "unit":"oz."
+            }
+        ]
+    }
+]

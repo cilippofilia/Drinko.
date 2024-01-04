@@ -14,4 +14,3 @@ var imageFailedToLoad: some View {
     }
     .foregroundColor(.gray)
 }
-

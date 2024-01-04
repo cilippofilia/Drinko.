@@ -79,6 +79,8 @@
 		18F5862D2B4633F100BD460B /* basics.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5862F2B4633F100BD460B /* basics.json */; };
 		18F586352B46343400BD460B /* syrups.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586372B46343400BD460B /* syrups.json */; };
 		18F5863D2B46348100BD460B /* spirits.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5863F2B46348100BD460B /* spirits.json */; };
+		18F5864E2B46FFA800BD460B /* shots.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586502B46FFA800BD460B /* shots.json */; };
+		18F586552B470E7400BD460B /* ProcedureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F586542B470E7400BD460B /* ProcedureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -175,6 +177,11 @@
 		18F586402B46348200BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/spirits.json; sourceTree = "<group>"; };
 		18F586412B46348200BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/spirits.json; sourceTree = "<group>"; };
 		18F586422B46348300BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/spirits.json; sourceTree = "<group>"; };
+		18F5864F2B46FFA800BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/shots.json; sourceTree = "<group>"; };
+		18F586512B46FFAB00BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/shots.json; sourceTree = "<group>"; };
+		18F586522B46FFAC00BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/shots.json; sourceTree = "<group>"; };
+		18F586532B46FFAD00BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/shots.json; sourceTree = "<group>"; };
+		18F586542B470E7400BD460B /* ProcedureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +318,9 @@
 		18B449CD2A8764C300F52B1B /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
+				18F49EBA2A286D2E00862CE3 /* HistoryView.swift */,
+				18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */,
+				18F586542B470E7400BD460B /* ProcedureView.swift */,
 				18B951A12A99D057006119DC /* TipJar */,
 				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
 				1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */,
@@ -484,8 +494,6 @@
 				18F49EB72A286D2E00862CE3 /* CocktailsView.swift */,
 				18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */,
 				18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */,
-				18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */,
-				18F49EBA2A286D2E00862CE3 /* HistoryView.swift */,
 			);
 			path = Cocktails;
 			sourceTree = "<group>";
@@ -494,6 +502,7 @@
 			isa = PBXGroup;
 			children = (
 				18F5860D2B46322B00BD460B /* cocktails.json */,
+				18F586502B46FFA800BD460B /* shots.json */,
 				18F586152B46328B00BD460B /* history.json */,
 				18F5861F2B46334900BD460B /* procedure.json */,
 			);
@@ -582,6 +591,7 @@
 				18F49E782A286D0D00862CE3 /* Colors.xcassets in Resources */,
 				18F586252B4633A500BD460B /* books.json in Resources */,
 				18F586132B46328B00BD460B /* history.json in Resources */,
+				18F5864E2B46FFA800BD460B /* shots.json in Resources */,
 				18F5863D2B46348100BD460B /* spirits.json in Resources */,
 				1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */,
 				18F5862D2B4633F100BD460B /* basics.json in Resources */,
@@ -613,6 +623,7 @@
 				183AE9692A94B02700AC156F /* ItemDetailView.swift in Sources */,
 				183AE96B2A94B02700AC156F /* ItemRowView.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
+				18F586552B470E7400BD460B /* ProcedureView.swift in Sources */,
 				18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */,
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				183AE9752A94B10B00AC156F /* Sequence-Sorting.swift in Sources */,
@@ -726,6 +737,17 @@
 				18F586422B46348300BD460B /* fr */,
 			);
 			name = spirits.json;
+			sourceTree = "<group>";
+		};
+		18F586502B46FFA800BD460B /* shots.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18F5864F2B46FFA800BD460B /* en */,
+				18F586512B46FFAB00BD460B /* fr */,
+				18F586522B46FFAC00BD460B /* de */,
+				18F586532B46FFAD00BD460B /* it */,
+			);
+			name = shots.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

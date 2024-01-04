@@ -12,14 +12,21 @@ struct CocktailDetailView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     
     @ObservedObject var favorites = Favorites()
-
+    
+    @State private var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
+    
     @State private var showHistory = false
+    @State private var showProcedure = false
+
     @State private var selectedUnit = "oz."
     @State private var frameSize: CGFloat = 280
     @State private var corners: CGFloat = 10
 
     var units = ["oz.", "ml"]
     var cocktail: Cocktail
+    var cocktailHistory: History? {
+        return histories.first(where: { $0.id == cocktail.id } )
+    }
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -30,7 +37,7 @@ struct CocktailDetailView: View {
             }
         }
         .navigationTitle(cocktail.name)
-            // forcing displayMode .inline to avoid cropping the back bar button - this way will be standardized between 'Cocktails' and 'Back' if the Navigation Title is too long
+        // forcing displayMode .inline to avoid cropping the back bar button - this way will be standardized between 'Cocktails' and 'Back' if the Navigation Title is too long
         .navigationBarTitleDisplayMode(.inline)
     }
 
@@ -39,7 +46,7 @@ struct CocktailDetailView: View {
             AsyncImage(url: URL(string: cocktail.pic)) { phase in
                 switch phase {
                     case .failure:
-                        failure
+                        imageFailedToLoad
 
                     case .success(let image):
                         image
@@ -105,10 +112,9 @@ struct CocktailDetailView: View {
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Extra")
 
-
-                HStack {
+                HStack(spacing: 10) {
+                    if (cocktailHistory?.text ?? "") != "" {
                         // HISTORY BUTTON
-                    if cocktail.history != "" {
                         DrinkoButtonView(title: "History",
                                          icon: "book.fill",
                                          background: .blue,
@@ -116,47 +122,57 @@ struct CocktailDetailView: View {
                             showHistory.toggle()
                         }
                                          .sheet(isPresented: $showHistory) {
-                                             HistoryView(cocktail: cocktail)
+                                             HistoryView(cocktail: cocktail, history: cocktailHistory!)
+                                                 .presentationDetents([.large,.fraction(0.75)])
+                                         }
+                    } 
+                    
+                    if (cocktailHistory?.text ?? "") == "" {
+                        DrinkoButtonView(title: "Procedure",
+                                         icon: "list.clipboard.fill",
+                                         background: .blue,
+                                         foreground: .white) {
+                            showProcedure.toggle()
+                        }
+                                         .sheet(isPresented: $showProcedure) {
+                                             ProcedureView(procedure: "Procedure")
                                                  .presentationDetents([.large,.fraction(0.75)])
                                          }
                     }
-                        // ADD TO FAV BUTTON
-                    if cocktail.history.isEmpty {
-                        DrinkoButtonView(title: "Like",
-                                         icon: favorites.contains(cocktail) ? "heart.slash.fill" : "heart.fill",
-                                         background: favorites.contains(cocktail) ? .red : .blue,
-                                         foreground: .white,
-                                         handler: {
-                            if favorites.contains(cocktail) {
-                                favorites.remove(cocktail)
-                            } else {
-                                favorites.add(cocktail)
-                                    // haptic feedback
-                                UINotificationFeedbackGenerator()
-                                    .notificationOccurred(.success)
-                            }
-                        })
-                        .frame(maxWidth: .infinity)
-                    } else {
-                        DrinkoButtonView(title: "Like",
-                                         icon: favorites.contains(cocktail) ? "heart.slash.fill" : "heart.fill",
-                                         background: favorites.contains(cocktail) ? .red : .blue,
-                                         foreground: .white,
-                                         handler: {
-                            if favorites.contains(cocktail) {
-                                favorites.remove(cocktail)
-                            } else {
-                                favorites.add(cocktail)
-                                    // haptic feedback
-                                UINotificationFeedbackGenerator()
-                                    .notificationOccurred(.success)
-                            }
-                        })
-                        .frame(maxWidth: frameSize / 2)
-                    }
+                    
+                    // ADD TO FAV BUTTON
+                    DrinkoButtonView(title: "Like",
+                                     icon: favorites.contains(cocktail) ? "heart.slash.fill" : "heart.fill",
+                                     background: favorites.contains(cocktail) ? .red : .blue,
+                                     foreground: .white,
+                                     handler: {
+                        if favorites.contains(cocktail) {
+                            favorites.remove(cocktail)
+                        } else {
+                            favorites.add(cocktail)
+                            // haptic feedback
+                            UINotificationFeedbackGenerator()
+                                .notificationOccurred(.success)
+                        }
+                    })
+                    .frame(maxWidth: (cocktailHistory?.text ?? "") != "" ? frameSize / 2 : .infinity)
                 }
                 .padding(.vertical)
+                
+                if (cocktailHistory?.text ?? "") != "" {
+                    DrinkoButtonView(title: "Procedure",
+                                     icon: "list.clipboard.fill",
+                                     background: .blue,
+                                     foreground: .white) {
+                        showProcedure.toggle()
+                    }
+                                     .sheet(isPresented: $showProcedure) {
+                                         ProcedureView(procedure: "Procedure")
+                                             .presentationDetents([.large,.fraction(0.75)])
+                                     }
+                }
             }
+            Spacer(minLength: 50)
         }
         .frame(width: compactScreenWidth)
     }
@@ -166,7 +182,7 @@ struct CocktailDetailView: View {
             AsyncImage(url: URL(string: cocktail.pic)) { phase in
                 switch phase {
                     case .failure:
-                        failure
+                        imageFailedToLoad
 
                     case .success(let image):
                         image
@@ -252,24 +268,16 @@ struct CocktailDetailView: View {
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Extra")
 
-                if !cocktail.history.isEmpty {
-                    HistoryView(cocktail: cocktail)
+                ProcedureView(procedure: "Procedure")
+                
+                if (cocktailHistory?.text ?? "") != "" {
+                    HistoryView(cocktail: cocktail, history: cocktailHistory!)
                 }
                 
                 Spacer(minLength: 50)
             }
             .frame(width: regularScreenWidth)
         }
-    }
-
-    var failure: some View {
-        VStack(spacing: 10) {
-            Image(systemName: "icloud.slash.fill")
-                .font(.largeTitle)
-            Text("Couldn't load image")
-                .font(.headline)
-        }
-        .foregroundColor(.gray)
     }
 }
 

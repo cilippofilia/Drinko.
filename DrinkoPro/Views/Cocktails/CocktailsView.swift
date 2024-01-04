@@ -14,46 +14,26 @@ struct CocktailsView: View {
     @StateObject var favorites = Favorites()
 
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
+    @State private var shots = Bundle.main.decode([Cocktail].self, from: "shots.json")
+    
     @State private var searchText = ""
     @State private var showingSortOrder = false
-    @State private var sortOption: SortOption = .fromAtoZ
-
-    private let compactColumn = [
-        GridItem(.flexible(minimum: 240,
-                           maximum: 480),
-                 spacing: 20,
-                 alignment: .leading),
-    ]
-
-    private let regularColumns = [
-        GridItem(.flexible(minimum: 240,
-                           maximum: 480),
-                 spacing: 20,
-                 alignment: .leading),
-
-        GridItem(.flexible(minimum: 240,
-                           maximum: 480),
-                 spacing: 20,
-                 alignment: .leading),
-    ]
+    @State private var sortOption: Cocktail.SortOption = .fromAtoZ
     
-    enum SortOption {
-        case fromAtoZ
-        case fromZtoA
-        case byGlass
-        case byIce
+    var drinklist: [Cocktail] {
+        return cocktails + shots
     }
 
     var sortedCocktails: [Cocktail] {
         switch sortOption {
         case .fromAtoZ:
-            return cocktails.sorted { $0.name < $1.name }
+            return drinklist.sorted { $0.name < $1.name }
         case .fromZtoA:
-            return cocktails.sorted { $1.name < $0.name }
+            return drinklist.sorted { $1.name < $0.name }
         case .byGlass:
-            return cocktails.sorted { $0.glass < $1.glass }
+            return drinklist.sorted { $0.glass < $1.glass }
         case .byIce:
-            return cocktails.sorted { $0.ice < $1.ice }
+            return drinklist.sorted { $0.ice < $1.ice }
         }
     }
 

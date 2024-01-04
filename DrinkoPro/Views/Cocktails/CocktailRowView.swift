@@ -23,12 +23,19 @@ struct CocktailRowView: View {
                         .imageScale(.large)
                         .frame(maxWidth: frameSize)
 
-                } else if cocktail.glass == "coffee mug" || cocktail.glass == "julep cup"{
+                } else if cocktail.glass == "coffee mug" || cocktail.glass == "julep cup" {
                     Image("julep")
                         .resizable()
                         .scaledToFit()
                         .padding(10)
                         .frame(width: frameSize)
+                } else if cocktail.glass == "shot" {
+                    Image("shot")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(10)
+                        .frame(width: frameSize)
+                        .scaleEffect(CGSize(width: 0.6, height: 0.6))
                 } else {
                     Image(cocktail.image)
                         .resizable()
