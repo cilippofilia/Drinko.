@@ -28,9 +28,6 @@
 		183AE97F2A94B13200AC156F /* Family-CDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AE97B2A94B13200AC156F /* Family-CDHelpers.swift */; };
 		183AE98C2A94B26B00AC156F /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 183AE98B2A94B26B00AC156F /* Configuration.storekit */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
-		18429C112AFB0ECA00EC6282 /* Syrup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429C102AFB0ECA00EC6282 /* Syrup.swift */; };
-		18429C152AFB108F00EC6282 /* SyrupRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429C142AFB108F00EC6282 /* SyrupRowView.swift */; };
-		18429C182AFB110A00EC6282 /* SyrupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18429C172AFB110A00EC6282 /* SyrupDetailView.swift */; };
 		1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */; };
 		186BC7422AB51BCA00DE38C1 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186BC7412AB51BCA00DE38C1 /* UnlockManager.swift */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
@@ -60,9 +57,6 @@
 		18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */; };
 		18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA72A286D2E00862CE3 /* ReadMeView.swift */; };
 		18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA92A286D2E00862CE3 /* Lesson.swift */; };
-		18F49EC02A286D2E00862CE3 /* SpiritDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAB2A286D2E00862CE3 /* SpiritDetailView.swift */; };
-		18F49EC12A286D2E00862CE3 /* Spirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAC2A286D2E00862CE3 /* Spirit.swift */; };
-		18F49EC22A286D2E00862CE3 /* SpiritRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAD2A286D2E00862CE3 /* SpiritRowView.swift */; };
 		18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAE2A286D2E00862CE3 /* LearnView.swift */; };
 		18F49EC42A286D2E00862CE3 /* LessonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */; };
 		18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */; };
@@ -106,9 +100,6 @@
 		183AE97B2A94B13200AC156F /* Family-CDHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Family-CDHelpers.swift"; sourceTree = "<group>"; };
 		183AE98B2A94B26B00AC156F /* Configuration.storekit */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
 		183E47E32B17548F0095A6E4 /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
-		18429C102AFB0ECA00EC6282 /* Syrup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Syrup.swift; sourceTree = "<group>"; };
-		18429C142AFB108F00EC6282 /* SyrupRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyrupRowView.swift; sourceTree = "<group>"; };
-		18429C172AFB110A00EC6282 /* SyrupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyrupDetailView.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		186BC7412AB51BCA00DE38C1 /* UnlockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
@@ -140,9 +131,6 @@
 		18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		18F49EA72A286D2E00862CE3 /* ReadMeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeView.swift; sourceTree = "<group>"; };
 		18F49EA92A286D2E00862CE3 /* Lesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
-		18F49EAB2A286D2E00862CE3 /* SpiritDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpiritDetailView.swift; sourceTree = "<group>"; };
-		18F49EAC2A286D2E00862CE3 /* Spirit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spirit.swift; sourceTree = "<group>"; };
-		18F49EAD2A286D2E00862CE3 /* SpiritRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpiritRowView.swift; sourceTree = "<group>"; };
 		18F49EAE2A286D2E00862CE3 /* LearnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
 		18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonRowView.swift; sourceTree = "<group>"; };
 		18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
@@ -243,20 +231,9 @@
 			isa = PBXGroup;
 			children = (
 				18F49EA92A286D2E00862CE3 /* Lesson.swift */,
-				18429C102AFB0ECA00EC6282 /* Syrup.swift */,
 				188E93BD2A4C1E04001691E6 /* Book.swift */,
-				18F49EAC2A286D2E00862CE3 /* Spirit.swift */,
 			);
 			path = Learn;
-			sourceTree = "<group>";
-		};
-		18429C162AFB109A00EC6282 /* Syrups */ = {
-			isa = PBXGroup;
-			children = (
-				18429C142AFB108F00EC6282 /* SyrupRowView.swift */,
-				18429C172AFB110A00EC6282 /* SyrupDetailView.swift */,
-			);
-			path = Syrups;
 			sourceTree = "<group>";
 		};
 		188463372B47354400088CA1 /* Cocktail */ = {
@@ -479,21 +456,10 @@
 			children = (
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
 				18883A832ACC70C400FC78C7 /* Lessons */,
-				18F49EAA2A286D2E00862CE3 /* Spirits */,
-				18429C162AFB109A00EC6282 /* Syrups */,
 				18883A842ACC718200FC78C7 /* Calculator */,
 				188E93BC2A4C1DF6001691E6 /* Books */,
 			);
 			path = Learn;
-			sourceTree = "<group>";
-		};
-		18F49EAA2A286D2E00862CE3 /* Spirits */ = {
-			isa = PBXGroup;
-			children = (
-				18F49EAD2A286D2E00862CE3 /* SpiritRowView.swift */,
-				18F49EAB2A286D2E00862CE3 /* SpiritDetailView.swift */,
-			);
-			path = Spirits;
 			sourceTree = "<group>";
 		};
 		18F49EB52A286D2E00862CE3 /* Cocktails */ = {
@@ -623,7 +589,6 @@
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
 				18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
-				18F49EC22A286D2E00862CE3 /* SpiritRowView.swift in Sources */,
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
 				183AE96F2A94B02700AC156F /* CabinetViewModel.swift in Sources */,
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
@@ -636,7 +601,6 @@
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				183AE9752A94B10B00AC156F /* Sequence-Sorting.swift in Sources */,
 				183AE96A2A94B02700AC156F /* EditItemView.swift in Sources */,
-				18429C112AFB0ECA00EC6282 /* Syrup.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */,
 				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
@@ -653,7 +617,6 @@
 				18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */,
 				18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */,
 				183AE9732A94B0CF00AC156F /* Binding-OnChange.swift in Sources */,
-				18F49EC12A286D2E00862CE3 /* Spirit.swift in Sources */,
 				183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */,
 				18D6AEB12AFD38E6003E64EC /* AdvancedViewModel.swift in Sources */,
 				18B951A02A99D052006119DC /* TipJarView.swift in Sources */,
@@ -661,9 +624,7 @@
 				18F49ECB2A286D2E00862CE3 /* Cocktail.swift in Sources */,
 				18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */,
 				18F49E9F2A286D2A00862CE3 /* DrinkoButtonView.swift in Sources */,
-				18429C182AFB110A00EC6282 /* SyrupDetailView.swift in Sources */,
 				183AE97D2A94B13200AC156F /* Main.xcdatamodeld in Sources */,
-				18F49EC02A286D2E00862CE3 /* SpiritDetailView.swift in Sources */,
 				18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */,
 				18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */,
 				183AE97C2A94B13200AC156F /* DataController.swift in Sources */,
@@ -674,7 +635,6 @@
 				18B951A32A99DE81006119DC /* PurchaseManager.swift in Sources */,
 				182B40342AE90EB30007A03F /* ImageFailedToLoad.swift in Sources */,
 				180E3E722A9642D10005381F /* CabinetView.swift in Sources */,
-				18429C152AFB108F00EC6282 /* SyrupRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -61,15 +61,18 @@ struct LessonDetailView: View {
                 Text(lesson.description)
                     .font(.headline)
                     .foregroundColor(.secondary)
-                    .padding(.bottom)
 
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading) {
                     ForEach(lesson.body) { text in
-                        Text(text.heading)
-                            .font(.headline)
-                        
-                        Text(text.content)
-                            .padding(.bottom)
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text(text.heading)
+                                .font(text.heading.count < 50 ? .headline : .body)
+                            
+                            if text.content != "" {
+                                Text(text.content)
+                            }
+                        }
+                        .padding(.vertical, 10)
                     }
                 }
             }
@@ -106,11 +109,15 @@ struct LessonDetailView: View {
                
                 VStack(alignment: .leading, spacing: 20) {
                     ForEach(lesson.body) { text in
-                        Text(text.heading)
-                            .font(.headline)
-                        
-                        Text(text.content)
-                            .padding(.bottom)
+                        VStack(alignment: .leading) {
+                            Text(text.heading)
+                                .font(text.heading.count < 50 ? .headline : .body)
+
+                            if text.content != "" {
+                                Text(text.content)
+                            }
+                        }
+                        .padding(.vertical, 10)
                     }
                 }
             }

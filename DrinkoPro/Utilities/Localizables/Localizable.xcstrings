@@ -2,10 +2,48 @@
   "sourceLanguage" : "en",
   "strings" : {
     "" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        }
+      }
     },
     "%" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        }
+      }
     },
     "% ABV" : {
       "localizations" : {
@@ -30,7 +68,26 @@
       }
     },
     "%.2f %%" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f %%"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f %%"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f %%"
+          }
+        }
+      }
     },
     "%.2f gr" : {
       "localizations" : {
@@ -377,10 +434,48 @@
       }
     },
     "ABV Calculator" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV-Rechner"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV Calculator"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calcolatore di ABV"
+          }
+        }
+      }
     },
     "ABV?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV?"
+          }
+        }
+      }
     },
     "Account" : {
       "extractionState" : "manual",
@@ -428,7 +523,26 @@
       }
     },
     "Add ingredient" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zutat hinzufügen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un ingrédient"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi ingrediente"
+          }
+        }
+      }
     },
     "Add New Product" : {
       "localizations" : {
@@ -475,7 +589,26 @@
       }
     },
     "Amount?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menge?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montant?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume?"
+          }
+        }
+      }
     },
     "Are you sure you want to delete this category? You will also delete all the products it contains." : {
       "localizations" : {
@@ -574,7 +707,26 @@
       }
     },
     "Basics" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Grundlagen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les bases"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Basi"
+          }
+        }
+      }
     },
     "Books" : {
       "localizations" : {
@@ -783,7 +935,26 @@
       }
     },
     "Calculators" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taschenrechner"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculatrices"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calcolatrici"
+          }
+        }
+      }
     },
     "Category detail" : {
       "localizations" : {
@@ -1023,29 +1194,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contenuto"
-          }
-        }
-      }
-    },
-    "Couldn't load image" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bild konnte nicht geladen werden"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Impossible de charger l'image"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Impossibile scaricare l'immagine"
           }
         }
       }
@@ -1581,28 +1729,6 @@
         }
       }
     },
-    "History of the cocktail:" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geschichte des Cocktails:"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Histoire du cocktail:"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Storia del cocktail:"
-          }
-        }
-      }
-    },
     "Ice" : {
       "localizations" : {
         "de" : {
@@ -1999,7 +2125,26 @@
       }
     },
     "ml" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ml"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ml"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ml"
+          }
+        }
+      }
     },
     "N.A." : {
       "localizations" : {
@@ -2193,10 +2338,48 @@
       }
     },
     "Pick the method" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie die Methode"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez la méthode"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli il metodo"
+          }
+        }
+      }
     },
     "Pick the serving" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie die Portion aus"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez la méthode de service"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli come servirlo"
+          }
+        }
+      }
     },
     "Preferences" : {
       "localizations" : {
@@ -2221,7 +2404,26 @@
       }
     },
     "Procedure" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verfahren"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procédure"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procedimento"
+          }
+        }
+      }
     },
     "Product" : {
       "localizations" : {
@@ -3007,29 +3209,6 @@
         }
       }
     },
-    "Superjuice calculators" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Superjuice-Rechner"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Calculateurs de superjus"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Calcolatore di Superjuice"
-          }
-        }
-      }
-    },
     "Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉" : {
       "localizations" : {
         "de" : {
@@ -3076,7 +3255,26 @@
       }
     },
     "Syrups" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sirupe"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sirops"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sciroppi"
+          }
+        }
+      }
     },
     "Take Photo" : {
       "extractionState" : "manual",
@@ -3297,7 +3495,26 @@
       }
     },
     "Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwenden Sie „Im Glas eingebaut“ und „serviert“, um den Alkoholgehalt Ihrer eigenen Chargen zu berechnen. Beides zusammen führt zu keiner Verdünnung des Getränks."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Utilisez «Construit dans le verre» et «Servi» pour calculer l'ABV de vos propres lots. Ces deux combinés n’ajouteront aucune dilution à la boisson."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa 'Costruito nel bicchiere' e 'servito' per calcolare il grado alcolico dei tuoi lotti. Questi due combinati non aggiungeranno alcuna diluizione alla bevanda."
+          }
+        }
+      }
     },
     "Version" : {
       "localizations" : {
@@ -3411,7 +3628,26 @@
       }
     },
     "What is the ingredient?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Was ist die Zutat?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quel est l'ingrédient ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qual è l'ingrediente?"
+          }
+        }
+      }
     },
     "X - Twitter" : {
       "localizations" : {

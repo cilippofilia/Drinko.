@@ -14,8 +14,8 @@ struct LearnView: View {
     @State private var isCollapsed = false
     
     let basics = Bundle.main.decode([Lesson].self, from: "basics.json")
-    let spirits = Bundle.main.decode([Spirit].self, from: "spirits.json")
-    let syrups = Bundle.main.decode([Syrup].self, from: "syrups.json")
+    let spirits = Bundle.main.decode([Lesson].self, from: "spirits.json")
+    let syrups = Bundle.main.decode([Lesson].self, from: "syrups.json")
     let books = Bundle.main.decode([Book].self, from: "books.json")
 
     var body: some View {
@@ -29,13 +29,13 @@ struct LearnView: View {
                 
                 Section(header: Text("Spirits")) {
                     ForEach(spirits) { spirit in
-                        SpiritRowView(spirit: spirit)
+                        LessonRowView(lesson: spirit)
                     }
                 }
                 
                 Section(header: Text("Syrups")) {
                     ForEach(syrups) { syrup in
-                        SyrupRowView(syrup: syrup)
+                        LessonRowView(lesson: syrup)
                     }
                 }
                 
