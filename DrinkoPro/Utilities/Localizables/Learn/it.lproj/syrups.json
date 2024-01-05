@@ -1,32 +1,101 @@
 [
-   {
-      "id":"simple-syrup",
-      "title":"Sciroppi di zucchero",
-      "description":"Vediamo come preparare il 'Simple Syrup' e il 'Rich Syrup' e quando è meglio utilizzarli",
-      "body":"Lo sciroppo di zucchero è una miscela di parti uguali di acqua e zucchero per peso (1:1), mentre uno sciroppo concentrato è fatto con 2 parti di zucchero per 1 parte di acqua (2:1). Per fare lo sciroppo di zucchero, metti lo zucchero in un contenitore e aggiungi acqua calda, mescolando fino a quando il liquido diventa trasparente. Puoi anche mescolare lo zucchero e l'acqua con acqua fredda, ma ciò richiederà più tempo per sciogliere lo zucchero. Questo metodo funziona con tutti i tipi di zucchero, incluso lo zucchero granulato, di canna, demerara, dorato, muscovado e turbinado.\n\nUna volta che lo sciroppo di zucchero è pronto, lascialo raffreddare, imbottiglialo e etichettalo con il nome dello zucchero utilizzato, il rapporto utilizzato e la data in cui è stato preparato. Conservalo in frigorifero per più di un mese.\n\nLa maggior parte dei cocktail richiede lo sciroppo perché lo zucchero granulato non si scioglie completamente quando viene mescolato, agitato o scosso. Per drink come l'old fashioned, mojito o caipirinha che originariamente richiedono zucchero granulato, spetta a te decidere se utilizzare zucchero granulato o sciroppo. Tuttavia, l'utilizzo di zucchero granulato farà evolvere nel tempo la dolcezza del tuo cocktail, il che potrebbe non essere desiderabile. Utilizzando invece lo sciroppo di zucchero, avrai un maggiore controllo sulla dolcezza della bevanda e sarà più facile replicare lo stesso profilo di sapore esatto."
-   },
-   {
-      "id":"honey",
-      "title":"Sciroppi al Miele, Agave & Vanilla",
-      "description":"Impara come utilizzare questi sciroppi densi e alcune informazioni interessanti",
-      "body":"I sciroppi sono un componente fondamentale nella preparazione dei cocktail ed è essenziale realizzarli nel modo corretto per ottenere la consistenza e il sapore desiderati. Tuttavia, è importante fare attenzione quando si utilizzano sciroppi densi, viscosi o non fluidi poiché possono cristallizzarsi facilmente all'interno dello shaker e possono impattare la dolcezza the drink finale. Per evitare ciò, si consiglia di diluirli con acqua nel rapporto di 1:1 o 2:1, a seconda della consistenza desiderata.\n\nAnalizziamo da vicino tre tipi di sciroppi:\n\nSCIROPPO DI MIELE:\nUn ingrediente fondamentale in molti cocktail classici e moderni, lo sciroppo di miele è una scelta eccellente da abbinare con whiskey. È meglio usare acqua calda, ma non bollente, e il rapporto più comunemente utilizzato è 3:1. Può durare oltre un mese e la sua durata può essere prolungata conservandolo in frigorifero.\n\nSCIROPPO D'AGAVE:\nUno sciroppo versatile che si abbina bene con tequila e caffè, lo sciroppo d'agave è meglio diluito con un rapporto di 2:1 di acqua calda. Dopo averlo diluito, basta imbottigliarlo e conservarlo in frigorifero per oltre un mese.\n\nSCIROPPO ALLA VANIGLIA:\nLo sciroppo alla vaniglia è un ingrediente popolare nei cocktail e si abbina bene con caffè e sapori fruttati. Puoi acquistare dello sciroppo alla vaniglia o farlo in casa. Taglia un baccello di vaniglia a metà per lungo e lascialo in infusione con sciroppo semplice o sciroppo aromatizzato per tutto il tempo che desideri.\nSuggerimento professionale: puoi riutilizzare lo stesso baccello di vaniglia più volte.\n\nIn sintesi, gli sciroppi svolgono un ruolo fondamentale nella preparazione dei cocktail ed è essenziale sceglierli correttamente e utilizzarli nel modo giusto per ottenere il perfetto equilibrio di sapore e consistenza."
-   },
-   {
-      "id":"fruity-syrups",
-      "title":"Sciroppi alla frutta",
-      "description":"Parliamo di come puoi creare i tuoi sciroppi di frutta.",
-      "body":"Iniziamo riconoscendo la verità innegabile: gli sciroppi fatti in casa sono decisamente superiori a qualsiasi marca commerciale. Quando lo prepari tu stesso/a, sei in controllo del sapore e non ci sono stabilizzanti, il che significa che i sapori sono più freschi e naturali. Inoltre, puoi preparare esattamente la quantità di cui hai bisogno e combinare frutta, erbe e spezie per creare nuove ed entusiasmanti combinazioni di sapori. Aggiungere acidità è un altro modo per elevare il tuo gioco con gli sciroppi, e i shrub ne sono un ottimo esempio, ma ne parleremo un'altra volta.\n\nOra, approfondiamo due metodi per preparare sciroppi fruttati che consiglio vivamente. Il mio preferito personale consiste nel pesare la frutta e aggiungere la stessa quantità di zucchero in un barattolo. Schiaccia tutto insieme, copri il barattolo e lascialo riposare per 8-12 ore. Trascorso quel tempo, inizierai a vedere lo zucchero che si dissolve. Pesane il risultato e aggiungi la stessa quantità di acqua calda in base al peso, assicurandoti che lo zucchero si sia completamente sciolto. Poi, filtralo e imbottiglialo.\n\nIl secondo metodo consiste nel frullare la frutta con acqua e zucchero. Frutti come mele e bacche ti daranno due profili di sapori diversi a seconda che tu usi acqua calda o a temperatura ambiente. Usare acqua a temperatura ambiente ti darà un sapore più fresco, mentre l'acqua calda ti darà un sapore più ricco, simile a quello della frutta cotta, come la marmellata. Per preparare questo sciroppo, pesa semplicemente parti uguali di frutta, zucchero e acqua, frullali tutti insieme, filtra i solidi con un colino a maglia fine e imbottiglialo.\n\nÈ importante notare che la durata di conservazione di questi sciroppi è relativamente breve. Se lo conservi in frigorifero, durerà una o due settimane, ma aggiungere un goccio di vodka può estendere la durata di conservazione fino a un mese. Quindi, prova diverse combinazioni di frutta, erbe e spezie per creare i tuoi deliziosi sciroppi fatti in casa. Non tornerai mai più a comprare quelli confezionati in negozio!"
-   },
-   {
-      "id":"other-syrups",
-      "title":"Sciroppo di zenzero e 'Triple syrup''",
-      "description":"Esploriamo due sciroppi unici e impariamo come prepararli da zero!",
-      "body":"ZENZERO\n\nPreparare lo sciroppo di zenzero utilizzando il metodo di Jeff Morganthaler è incredibilmente semplice. Tutto ciò che devi fare è mescolare parti uguali di acqua calda, zucchero e zenzero pelato (o non pelato). Filtra tutti i solidi utilizzando una garza o un sacchetto per latte di nocciola. Puoi anche utilizzare una maglietta di cotone, ma assicurati che sia di colore non colorato e preferibilmente bianca. Nota che questo processo potrebbe rovinare o macchiare la maglietta, quindi usa una che puoi tranquillamente buttare via. Assicurati di disinfettare la maglietta prima e dopo l'uso.\n\nTRIPLE SYRUP\n\nMr. Dale DeGroff è l'invetore del 'triple syrup', che è uno sciroppo complesso che sostituisce lo sciroppo di zucchero o lo sciroppo di miele nei cocktail. Mentre lo sciroppo di zucchero è poco interessante in un cocktail acido, lo sciroppo di miele è troppo saporito e può attirare troppa attenzione in un cocktail, il 'triple syrup' combina tre sciroppi, portando i tuoi drink ad una terza dimensione di sapore. Mescola una parte di sciroppo di zucchero (1:1), 1/2 parte di sciroppo di agave e 1/4 parte di sciroppo di miele. Regola la proporzione a tuo gusto e inizia a sperimentare. Inizia provando a mischiare queste misure:\n\n400 ml di sciroppo di zucchero\n200 ml di sciroppo di agave\n100 ml di sciroppo di miele"
-   },
-   {
-      "id":"grenadine",
-      "title":"Sciroppo di melograno",
-      "description":"Quale sciroppo di melograno offre il miglior rapporto qualità-prezzo per il tuo tempo e denaro?",
-      "body":"Per ottenere uno sciroppo di melograno dal sapore migliore, la soluzione migliore è farlo da zero. Anche se richiede una certa preparazione, lo sforzo vale la pena. Segui queste proporzioni e adatta le quantità in base alle tue necessità.\n\nPer iniziare, avrai bisogno di melassa di melograno, che è una miscela di 950 ml di succo di melograno biologico, 600 g di zucchero e 35 ml di succo di limone. Metti tutto in una pentola a fuoco medio-basso, mescolando frequentemente. Una volta che inizia a bollire, lascialo sobbollire per circa 45-60 minuti finché non diventa denso e inizia a attaccarsi sul fondo della pentola.\n\nPer lo sciroppo stesso, avrai bisogno di 950 ml di succo di melograno e 600 g di zucchero. Mettili a fuoco basso e mescola costantemente senza farlo bollire fino a quando lo zucchero si sarà sciolto. Aggiungi 180 ml di melassa e mescola accuratamente.\n\nUna volta pronto, imbottiglia ed etichetta lo sciroppo, e conservalo in frigorifero per un massimo di due settimane. Tuttavia, se non lo usi spesso, ci sono ottime marche disponibili per l'acquisto. Dureranno più a lungo e saranno la scelta migliore per te."
-   }
+    {
+        "id": "simple-syrup",
+        "title": "Sciroppo di zucchero",
+        "description": "Vediamo come fare lo sciroppo semplice, lo sciroppo denso e quando è meglio usarli",
+        "body": [
+            {
+                "heading": "Sciroppo Semplice e Sciroppo Denso",
+                "content": "Lo sciroppo semplice è una miscela di parti uguali di acqua e zucchero per peso (1:1), mentre lo sciroppo denso è fatto con 2 parti di zucchero per 1 parte di acqua (2:1)."
+            },
+            {
+                "heading": "Preparazione dello Sciroppo Semplice",
+                "content": "Per fare lo sciroppo semplice, metti lo zucchero in un contenitore e aggiungi acqua calda, mescolando finché il liquido non diventa trasparente. Puoi anche mescolare lo zucchero e l'acqua con acqua fredda, ma ci vorrà più tempo per far sciogliere lo zucchero. Questo metodo funziona con tutti i tipi di zucchero, incluso quello granulato, di canna, demerara, dorato, muscovado e turbinato."
+            },
+            {
+                "heading": "Conservazione e Uso",
+                "content": "Una volta pronto il tuo sciroppo di zucchero, lascialo raffreddare, imbottiglialo e etichettalo con il nome dello zucchero usato, il rapporto utilizzato e la data in cui l'hai fatto. Conserva in frigorifero per più di un mese. La maggior parte dei cocktail richiede lo sciroppo perché lo zucchero granulato non si scioglie completamente quando mescolato, agitato o lanciato. Per drink come l'old fashioned, mojito o caipirinha che richiedono originariamente zucchero granulato, è a tua discrezione se usare zucchero granulato o sciroppo. Tuttavia, utilizzando lo sciroppo di zucchero avrai maggior controllo sulla dolcezza del drink e sarà più facile replicare esattamente lo stesso profilo di gusto."
+            }
+        ]
+    },
+    {
+        "id": "honey",
+        "title": "Sciroppi di Miele, Agave e Vaniglia",
+        "description": "Scopri come utilizzare questi sciroppi densi e alcune curiosità interessanti",
+        "body": [
+            {
+                "heading": "Importanza degli Sciroppi nei Cocktail",
+                "content": "Gli sciroppi sono un componente chiave nella preparazione dei cocktail ed è essenziale prepararli correttamente per ottenere la consistenza e il sapore desiderati. È importante diluire gli sciroppi densi con acqua in un rapporto 1:1 o 2:1 per evitare la cristallizzazione."
+            },
+            {
+                "heading": "Sciroppo di Miele",
+                "content": "Lo sciroppo di miele è un ingrediente fondamentale in molti cocktail, specialmente con whisky. Il rapporto consigliato è 3:1 con acqua calda. Dura più di un mese e la refrigerazione può prolungarne la durata."
+            },
+            {
+                "heading": "Sciroppo di Agave",
+                "content": "Lo sciroppo d'agave è versatile e si abbina bene con tequila e caffè. Diluiscilo con un rapporto 2:1 di acqua calda, imbottiglialo e conservalo in frigorifero per più di un mese."
+            },
+            {
+                "heading": "Sciroppo di Vaniglia",
+                "content": "Lo sciroppo di vaniglia, ottimo per i cocktail, si abbina bene al caffè e ai sapori fruttati. Puoi comprarlo o farlo da te infondendo un baccello di vaniglia con lo sciroppo semplice. Riutilizza il baccello di vaniglia più volte per il sapore."
+            }
+        ]
+    },
+    {
+        "id": "fruity-syrups",
+        "title": "Sciroppi Aromatizzati ai Frutti di Bosco",
+        "description": "Parliamo di come puoi creare i tuoi sciroppi fruttati.",
+        "body": [
+            {
+                "heading": "Vantaggi degli Sciroppi Fatti in Casa",
+                "content": "Gli sciroppi fatti in casa superano i marchi commerciali con sapori più freschi e naturali. Controlla il gusto, evita gli stabilizzatori e crea miscele uniche di frutta, erbe e spezie."
+            },
+            {
+                "heading": "Due Metodi Consigliati",
+                "content": ""
+            },
+            {
+                "heading": "Frutta, Zucchero e Maceratore",
+                "content": "Unisci pesi uguali di frutta e zucchero in un barattolo, pestali leggermente e lasciali riposare per 8-12 ore (o più, se necessario). Sciogli lo zucchero con un peso uguale di acqua calda, filtra e imbottiglia."
+            },
+            {
+                "heading": "Frullare la Frutta",
+                "content": "Frulla parti uguali di frutta, zucchero e acqua. Utilizzare acqua a temperatura ambiente conferisce un sapore più fresco, mentre l'acqua calda produce un sapore più ricco e cotto della frutta. Filtra e imbottiglia lo sciroppo."
+            },
+            {
+                "heading": "Durata e Conservazione",
+                "content": "Questi sciroppi hanno una durata relativamente breve, circa una o due settimane in frigorifero. È possibile estenderla fino a un mese aggiungendo un po' di vodka. Sperimenta con vari frutti, erbe e spezie per piaceri fatti in casa."
+            }
+        ]
+    },
+    {
+        "id": "other-syrups",
+        "title": "Sciroppo di Zenzero e Triple Syrup",
+        "description": "Unisciti a noi mentre esploriamo due sciroppi unici e impariamo come farli da zero!",
+        "body": [
+            {
+                "heading": "Sciroppo di Zenzero",
+                "content": "Creare lo sciroppo di zenzero usando il metodo di Jeff Morganthaler è semplice: mescola parti uguali di acqua calda, zucchero e zenzero pelato o non pelato. Filtra i solidi usando una garza, un sacchetto per latte di noci o una maglietta di cotone non colorata, preferibilmente bianca (usa e getta a causa delle macchie). Disinfetta la maglietta prima e dopo l'uso."
+            },
+            {
+                "heading": "Triple Syrup",
+                "content": "Il mixologo esperto Dale DeGroff ha creato il complesso triple syrup, che migliora i cocktail. Lo sciroppo semplice manca di complessità nei sour, mentre lo sciroppo di miele è troppo intenso. Unisci parti uguali di sciroppo semplice (1:1), 1/2 parte di sciroppo d'agave e 1/4 parte di sciroppo di miele. Regola le proporzioni a tuo gusto. Ricetta di esempio: 400 ml di sciroppo semplice, 200 ml di sciroppo d'agave, 100 ml di sciroppo di miele."
+            }
+        ]
+    },
+    {
+        "id": "grenadine",
+        "title": "Sciroppo di Grenadine",
+        "description": "Quale grenadine offre il miglior rapporto qualità-prezzo?",
+        "body": [
+            {
+                "heading": "Grenadine Fatta in Casa",
+                "content": "Per ottenere lo sciroppo di melagrana dal miglior sapore, prepararlo da zero è consigliato. Usa 950 ml di succo di melagrana biologico, 600 gr di zucchero e 35 ml di succo di limone. Cuoci a fuoco medio-basso per 45-60 minuti fino a quando si addensa."
+            },
+            {
+                "heading": "Preparazione dello Sciroppo",
+                "content": "Unisci 950 ml di succo di melagrana e 600 gr di zucchero a fuoco basso. Mescola fino a quando lo zucchero si scioglie. Aggiungi 180 ml di melassa, mescola bene. Imbottiglia, etichetta e conserva in frigorifero per un massimo di due settimane. In alternativa, le opzioni di buona qualità in vendita offrono una durata più lunga."
+            }
+        ]
+    }
 ]

@@ -2,49 +2,260 @@
     {
         "id": "vodka",
         "title": "Vodka",
-        "description": "La vodka può essere prodotta con qualsiasi cosa?",
-        "body": "Sebbene sia vero che la vodka può essere prodotta con una varietà di ingredienti, non tutti gli ingredienti sono adatti per produrre vodka di alta qualità. La vodka è un distillato trasparente che può essere prodotto da qualsiasi cosa contenente amido o zucchero. Patate, melassa di barbabietola da zucchero e cereali sono i materiali più comunemente utilizzati.\n\nLa vodka ha avuto origine nelle regioni coltivatrici di cereali dell'Europa occidentale, come Russia, Bielorussia, Lituania, Ucraina e Polonia, conosciute anche come paesi del 'Cinturino della Vodka' a causa dei più alti tassi di consumo e produzione al mondo.\n\nLa vodka è comunemente conosciuta come un 'distillato neutro', ma gli ingredienti grezzi utilizzati durante la produzione conferiranno profili di sapore diversi.\n\nIl grano produce sfumature sottili di anice e pepe, insieme a note di scorza di limone.\n\nLa segale crea dolcezza di nocciola, sapori di pane di segale e di noce del Brasile.\n\nLa vodka di mais ha un sapore burroso, simile al granturco.\n\nLa vodka di orzo ha sapori di pane e di nocciole leggere, insieme a una dolcezza di brioche.\n\nLa vodka di patate ha una consistenza cremosa e un sapore più pieno, con lievi note vegetali.",
+        "description": "La vodka può essere fatta da qualsiasi cosa?",
+        "body": [
+            {
+                "heading": "Creazione della Vodka",
+                "content": "Anche se la vodka può essere prodotta con vari ingredienti, non tutti sono ideali per creare distillati di alta qualità."
+            },
+            {
+                "heading": "Ingredienti per la Produzione della Vodka",
+                "content": "La vodka, uno spirito trasparente, proviene da fonti ricche di amido o zucchero. Materiali comunemente utilizzati includono patate, melassa di barbabietola da zucchero e cereali."
+            },
+            {
+                "heading": "Radici Storiche della Vodka",
+                "content": "Le origini della vodka risalgono alle regioni di coltivazione dei cereali dell'ovest della Russia, Bielorussia, Lituania, Ucraina e Polonia. Queste nazioni formano collettivamente il rinomato 'Cinturino della Vodka' a causa dei loro elevati tassi di consumo e produzione."
+            },
+            {
+                "heading": "Percezione di Neutralità",
+                "content": "Sebbene spesso considerata uno 'spirito neutro', gli ingredienti grezzi variati contribuiscono a profili aromatici diversi alla vodka. Qui di seguito ti dirò i sottili aromi della vodka; molto utili da tenere a mente quando scegli una vodka per i tuoi cocktail martini."
+            },
+            {
+                "heading": "Profili Aromatici Distinti",
+                "content": ""
+            },
+            {
+                "heading": "Grano",
+                "content": "Imprime sottili aromi di anice, pepe e scorza di limone."
+            },
+            {
+                "heading": "Segale",
+                "content": "Porta dolcezze di nocciola, reminiscenti di pane di segale e noci del Brasile."
+            },
+            {
+                "heading": "Mais o Granturco",
+                "content": "Offre un'essenza burrosa simile al mais fresco in spiga."
+            },
+            {
+                "heading": "Orzo",
+                "content": "Contiene note di pane, leggera nocciolosità e dolcezza che ricorda il brioche."
+            },
+            {
+                "heading": "Patata",
+                "content": "Conosciuta per la sua consistenza cremosa, sapore pieno e note di verdure."
+            }
+        ]
     },
 
     {
         "id": "gin",
         "title": "Gin",
         "description": "Lo spirito aromatizzato con erbe botaniche con una ricca storia e un sapore versatile.",
-        "body":  "Il gin è uno spirito che richiede un processo in due fasi per essere prodotto. Prima di tutto, hai bisogno di una base di buona qualità di 'spirito neutro' (in altre parole, vodka), e poi puoi aromatizzare questa base attraverso una seconda distillazione con semi, bacche, radici, frutta, erbe e spezie, conosciuti collettivamente come 'botaniche'. Ogni marca di gin ha le proprie proporzioni di botaniche, e tutti i gin sono unici e diversi, anche se, per poter essere chiamato gin, è necessario avere un aroma dominante di ginepro.\n\nStili e tipi di gin\nIl gin ha diversi stili e tipi.\nGin composto a freddo\nComunemente noto come 'bathtub', è aromatizzato con estratti, essenze e/o per infusione/macerazione senza distillazione.\n\nLondon Dry Gin\nOriginariamente uno stile, ma ora una categoria legale, sfortunatamente non descrive molto il gin se non che è secco. Nonostante il nome, può essere prodotto in qualsiasi parte del mondo.\n\nNew Western Dry Gin\nQuesto è un termine generico che non viene utilizzato molto; include tutti i gin che si discostano dall'abbondante aroma di ginepro, principalmente definiti dall'inclusione e dall'equilibrio attento di sapori di supporto.\n\nOld Tom Gin\nSpesso descritto come uno stile dolce di gin, era molto popolare nel XVIII e XIX secolo a causa della limitata purificazione dello spirito. Il gusto ruvido di quei gin veniva mascherato dall'aromatizzazione e/o dall'addolcimento con liquirizia, e in seguito con lo zucchero.",
+        "body": [
+            {
+                "heading": "Produzione del Gin",
+                "content": "Il gin è uno spirito che richiede un processo in due fasi per essere prodotto. Prima di tutto, è necessaria una base di buona qualità di 'spirito neutro' (in altre parole, vodka), e poi puoi aromatizzare questa base attraverso una seconda distillazione con semi, bacche, radici, frutta, erbe e spezie, conosciuti collettivamente come 'botaniche'. Ogni marca di gin ha le proprie proporzioni di botaniche, e tutti i gin sono unici e differenti, anche se, per poter essere chiamato gin, è necessario avere un aroma dominante di ginepro."
+            },
+            {
+                "heading": "Stili e Tipi di Gin",
+                "content": ""
+            },
+            {
+                "heading": "Gin Composto a Freddo",
+                "content": "Comunemente conosciuto come 'bathtub gin', è aromatizzato con estratti, essenze e/o per infusione/macerazione senza distillazione."
+            },
+            {
+                "heading": "London Dry Gin",
+                "content": "Originariamente uno stile, ma ora una categoria legale, sfortunatamente non descrive molto il gin se non che è secco. Nonostante il nome, può essere prodotto in qualsiasi parte del mondo."
+            },
+            {
+                "heading": "New Western Dry Gin",
+                "content": "Questo è un termine generico che non viene utilizzato molto; include tutti i gin che si discostano dall'abbondante aroma di ginepro, principalmente definiti dall'inclusione e dall'equilibrio di sapori di supporto."
+            },
+            {
+                "heading": "Old Tom Gin",
+                "content": "Spesso descritto come uno stile dolce di gin, erano molto popolari nel XVIII e XIX secolo a causa della limitata purificazione dello spirito. Il sapore ruvido di quei gin veniva mascherato dall'aromatizzazione e/o dall'addolcimento con liquirizia, e in seguito, con lo zucchero."
+            }
+        ]
     },
 
     {
         "id": "rum",
         "title": "Rum",
-        "description": "Lo spirito dolce e complesso con un tocco tropicale e un'eredità secolare.",
-        "body": "Il rum è uno spirito prodotto fermentando e successivamente distillando melassa di canna da zucchero o succo di canna da zucchero. Nella maggior parte dei casi, viene prodotto dalla melassa, ad eccezione delle Antille francesi e del Brasile, dove rispettivamente si utilizza il succo fresco di canna da zucchero per produrre il Rhum Agricole e la Cachaca.\n\nIl processo di distillazione varia tra i produttori, ma in generale, le colonne di distillazione multiple riducono il livello di impurità e producono un rum più leggero. L'utilizzo di un alambicco o di una colonna di distillazione singola darà invece origine a un rum più pesante.\n\nCi sono cinque tipi di rum sul mercato e, per poter essere chiamati tali, devono avere un contenuto alcolico minimo del 37,5%.\n\nIl rum 'chiaro' fa riferimento al suo colore e sapore ed è principalmente utilizzato in cocktail rinfrescanti come mojito e daiquiri perché è leggero al palato. Questo tipo di rum viene imbottigliato subito dopo essere stato distillato e diluito, ad esempio il Bacardi Bianco. Alcuni marchi, come l'Havana con l'Havana 3, lo invecchiano fino a tre anni per conferirgli un colore distintivo e una freschezza migliore.\n\nI rum 'dorati' sono un buon compromesso tra i rum chiari e quelli scuri e hanno un carattere tutto loro pur rimanendo leggeri al palato. Il loro colore deriva dall'invecchiamento all'interno di botti di legno precedentemente utilizzate per il cognac o il whiskey. Alcuni distillatori possono aggiungere caramello per scurirne il colore.\n\nI rum 'scuri' hanno un sapore ricco e intenso e vengono spesso utilizzati come topping sui cocktail per renderli accattivanti. Se li usi per i cocktail, lasciali risaltare e trattali come un buon whiskey o cognac. I rum 'overproof' sono l'ingrediente segreto e particolare nella maggior parte dei cocktail tiki. Possono variare dal chiaro al scuro e la loro particolarità è la percentuale di contenuto alcolico, che deve essere superiore al 50%.\n\nI rum 'aromatizzati' o 'speziati' sono categorie piuttosto autoesplicative. Questi tipi di rum sono generalmente più dolci e possono essere facilmente sostituiti con qualsiasi altro rum per dare una variante. Hai mai provato un mojito al rum al cocco?",
+        "description": "Lo spirito dolce e complesso con un tocco tropicale e un'eredità centenaria.",
+        "body": [
+            {
+                "heading": "Produzione del Rum",
+                "content": "Il rum è uno spirito ottenuto fermentando e poi distillando melassa di canna da zucchero o succo di canna da zucchero. Nella maggior parte dei casi, è prodotto dalla melassa, tranne nelle Antille Francesi e in Brasile, dove rispettivamente si utilizza il succo fresco di canna da zucchero per produrre Rhum Agricole e Cachaça."
+            },
+            {
+                "heading": "Processo di Distillazione",
+                "content": "Il processo di distillazione varia tra i produttori. Comunemente vengono utilizzate colonne di distillazione multiple per ridurre le impurità e creare un rum più leggero. In alternativa, l'utilizzo di un alambicco discontinuo o di una colonna di distillazione singola produce un rum più pesante."
+            },
+            {
+                "heading": "Tipologie di Rum",
+                "content": ""
+            },
+            {
+                "heading": "Rum 'Chiaro'",
+                "content": "Il rum 'chiaro', imbottigliato direttamente dopo la distillazione, è caratterizzato dal suo colore e sapore. Viene comunemente utilizzato in cocktail rinfrescanti come mojito e daiquiri. Alcuni marchi lo invecchiano per una freschezza migliorata."
+            },
+            {
+                "heading": "Rum 'Dorato'",
+                "content": "I rum 'dorati' trovano un equilibrio tra varietà leggere e scure. Ottengono il loro colore dall'invecchiamento in botti di legno, talvolta utilizzate per cognac o whisky. Alcuni potrebbero utilizzare il caramello per scurire l'aspetto."
+            },
+            {
+                "heading": "Rum 'Scuro'",
+                "content": "I rum 'scuri' vantano sapori ricchi e intensi. Spesso utilizzati come decorazione in cocktail per l'aspetto visivo, vengono apprezzati al meglio in modo simile a un buon whisky o cognac."
+            },
+            {
+                "heading": "Rum 'Overproof'",
+                "content": "I rum 'overproof', con un tenore alcolico superiore al 50%, aggiungono un tocco particolare ai cocktail tiki. Possono variare dal chiaro al scuro nel colore."
+            },
+            {
+                "heading": "Rum 'Aromatizzato' o 'Speziato'",
+                "content": "I rum 'aromatizzati' o 'speziati' sono autoesplicativi. Generalmente più dolci, offrono versatilità nei cocktail. Hai mai provato un mojito al rum al cocco?"
+            },
+            {
+                "heading": "Crea il tuo Rum 'Aromatizzato' o 'Speziato'",
+                "content": "Ogni marca ha la propria ricetta unica. Se sei interessato a creare il tuo, inizia procurandoti una bottiglia del tuo rum preferito e aggiungendo i sapori desiderati. È consigliabile iniziare con una piccola quantità, come 300 ml o 10 once, e una quantità specifica di aromi, come ad esempio 100 grammi di scaglie di cacao. Assaggialo quotidianamente e filtralo una volta raggiunto il sapore desiderato. Questo metodo consente di apportare aggiustamenti: semplicemente aggiungi più dello stesso rum per estenderlo fino a raggiungere la miscela perfetta di aromi e sapori. Ricorda di documentare ogni passaggio per poter facilmente ricreare la tua ricetta finale.\n\n Questo processo può essere applicato anche ad altri liquori; il metodo in questione è chiamato Infusione a Freddo - il che significa che non verrà applicato alcun calore per infondere i sapori."
+            }
+        ]
     },
 
     {
         "id": "mezcal",
         "title": "Tequila & Mezcal",
-        "description": "Distillati unici e ricchi di cultura dal Messico con sapori e storie distintive.",
-        "body": "Gli Aztechi iniziarono a produrre vino rituale dal succo delle piante di agave intorno al 250-300 d.C. Quando i soldati di Cortes conquistarono il Messico nel 1519, scoprirono che questo succo poteva essere distillato e iniziarono a produrre una sorta di tequila entro un decennio dal loro arrivo. La tequila viene prodotta nella regione di Jalisco in Messico e il suo nome deriva dalla città di Tequila, che è conosciuta come il luogo di nascita di questo distillato.\n\nPer produrre la tequila, la pianta di agave viene tagliata a cubetti, cotta a vapore e quindi spremita per rimuovere il succo. Si aggiunge lievito naturale e inizia la fermentazione. Per poter essere chiamato tequila, questo liquido fermentato deve essere distillato due volte. La tequila silver può passare direttamente dalla distillazione alla bottiglia, con l'aggiunta di acqua per ridurne la gradazione alcolica. Le tequila reposado e añejo, invece, vengono invecchiate in botti di rovere in modo che il legno possa ammorbidire e addolcire il distillato, conferendogli carattere.\n\nEcco alcuni termini fondamentali da conoscere:\n- Mixto (Misto) - contiene almeno il 51% di agave, mentre il resto è costituito da alcol industriale;\n- Pura (Pura) - distillato al 100% di agave blu;\n- Blanco (Bianco/Argento) - una tequila chiara invecchiata per un massimo di 60 giorni;\n- Oro (Oro) - la stessa tequila bianca ma con l'aggiunta di aromi/coloranti, di solito caramello.\n- Reposado (Riposato) - tequila invecchiata in botti di rovere tra i 60 giorni e 1 anno;\n- Añejo (Invecchiato) - tequila invecchiata per un minimo di 1 anno e fino a 10 anni.\n\nIl mezcal, d'altra parte, viene prodotto fin dal XVI secolo dal succo estratto dalla cottura del cuore della pianta di Maguey, un tipo di agave. Gli Aztechi lo usavano per fare il Pulque, una bevanda dolce simile alla birra consumata durante le cerimonie religiose. A differenza della tequila, per conferire al mezcal il suo caratteristico sapore affumicato, la pianta viene arrostita. Poi viene pressata su pietra per estrarne la polpa, messa a bagno in acqua pura con l'aggiunta di lievito e lasciata fermentare per diversi giorni. Il liquido fermentato viene quindi distillato e imbottigliato.",
+        "description": "Spiriti unici e ricchi di cultura dal Messico con sapori e storie distintive.",
+        "body": [
+            {
+                "heading": "Origini della Tequila",
+                "content": "La produzione di vino rituale dal succo di agave risale agli Aztechi intorno al 250-300 d.C. Quando i soldati di Cortes arrivarono in Messico nel 1519, scoprirono che questo succo poteva essere distillato, portando alla produzione di una pseudo-tequila entro un decennio."
+            },
+            {
+                "heading": "Processo di Produzione della Tequila",
+                "content": "La tequila è prodotta nella regione messicana di Jalisco. La pianta di agave viene tagliuzzata, cotta a vapore e si estrae il succo. Viene aggiunta la lievito naturale per la fermentazione. Per essere chiamato tequila, questo liquido fermentato subisce due distillazioni."
+            },
+            {
+                "heading": "Tipologie e Invecchiamento della Tequila",
+                "content": ""
+            },
+            {
+                "heading": "Mixto",
+                "content": "Il Mixto (o Miscelato) è una tequila che contiene almeno il 51% di agave, il resto è costituito da alcol industriale."
+            },
+            {
+                "heading": "Pura",
+                "content": "La Pura (o Pura) è una tequila fatta al 100% con distillato di agave blu."
+            },
+            {
+                "heading": "Blanco",
+                "content": "La Blanco (o Bianca/Argento) è una tequila chiara invecchiata per un massimo di 60 giorni."
+            },
+            {
+                "heading": "Oro",
+                "content": "L'Oro (o Oro) è una tequila simile alla blanco ma con aromi e/o coloranti, di solito caramello."
+            },
+            {
+                "heading": "Reposado",
+                "content": "La Reposado (o Riposata) è una tequila invecchiata in botti di rovere per 60 giorni fino a 1 anno. Questo le conferisce un leggero colore dorato e note di legno, vaniglia e altri aromi estratti dalla botte di rovere."
+            },
+            {
+                "heading": "Anejo",
+                "content": "L'Anejo (o Invecchiata) è una tequila invecchiata per un minimo di 1 anno fino a 10 anni. Questo processo di invecchiamento le conferisce un colore dorato più intenso e aromi più intensi di legno, vaniglia e altre note estratte dalla botte di rovere."
+            },
+            {
+                "heading": "Storia e Processo del Mezcal",
+                "content": "Il Mezcal è stato prodotto fin dal XVI secolo dal succo estratto dalla cottura del cuore della pianta di Maguey, un tipo di agave. Gli Aztechi lo usavano per fare il Pulque, una bevanda dolce simile a una birra consumata durante cerimonie religiose. A differenza della tequila, per conferire al mezcal il suo sapore affumicato, la pianta viene arrostita. Poi viene pressata con pietra per estrarre la polpa, ammollata in acqua pura con l'aggiunta di lievito e lasciata fermentare per diversi giorni. Il liquido fermentato viene poi distillato e imbottigliato."
+            }
+        ]
     },
 
     {
         "id": "cognac",
         "title": "Brandy & Cognac",
-        "description": "Due spiriti sofisticati e ricchi di sapore prodotti mediante la distillazione del vino, ognuno con un'origine e un processo di invecchiamento distinti.",
-        "body": "Il Brandy e il Cognac hanno molto in comune, ma sono comunque molto diversi l'uno dall'altro. Il Brandy è una bevanda alcolica prodotta mediante distillazione del vino e di solito viene consumato come digestivo dopo cena. Alcuni brandy vengono invecchiati in botti di legno per conferire loro carattere, corpo e quel bellissimo colore caramello. Altri vengono semplicemente colorati con caramello per imitare l'invecchiamento, mentre alcuni vengono prodotti utilizzando una combinazione di invecchiamento e colorazione.\n\nSebbene il Cognac sia un tipo di Brandy francese, prodotto nella regione della piccola città chiamata 'Cognac', ci sono 6 diverse sotto-regioni che forniscono il vino per la distillazione. Per ottenere l'appellazione ufficiale, il vino utilizzato per produrre il Cognac deve essere distillato due volte entro il 31 marzo. La distillazione di solito inizia verso la fine di novembre e per ottenere 1 litro di Cognac sono necessari 9 litri di vino. Di solito richiede 11 ore di distillazione.\n\nIl Cognac ha anche 4 diverse categorie:\n- V.S. (Very Special) / 3 stelle: invecchiato tra 2 anni e mezzo e 4 anni e mezzo\n- V.S.O.P. (Very Special Old Pale): prende il nome dalla casa Hennessy e l'elemento più giovane deve avere almeno 4 anni e mezzo\n- Napoleon: legalmente deve essere invecchiato 6 anni e mezzo, ma è molto comune invecchiarlo per periodi più lunghi\n- X.O. (Extra Old): appellazione creata da Maurice Hennessy dopo aver fatto invecchiare le botti di Cognac per amici e familiari e generalmente indica Cognac invecchiati tra 15 e 20 anni.",
+        "description": "Due spiriti sofisticati e riccamente aromatizzati prodotti distillando il vino, ognuno con un'origine e un processo di invecchiamento distinti.",
+        "body": [
+            {
+                "heading": "Panoramica sul Brandy",
+                "content": "Il brandy, prodotto distillando il vino, è spesso apprezzato come digestivo dopo cena. Alcuni brandy sono invecchiati in botti di legno per carattere e colore, mentre altri utilizzano coloranti al caramello per imitare l'invecchiamento o impiegano una combinazione di entrambi i metodi."
+            },
+            {
+                "heading": "Cognac: Una Distinzione Francese",
+                "content": "Il Cognac, un tipo di brandy francese, è esclusivamente prodotto nella regione della piccola città di 'Cognac'. La regione comprende 6 sotto-regioni che forniscono vini per la distillazione. Per ottenere l'appellativo ufficiale, il vino utilizzato per il Cognac deve essere sottoposto a doppia distillazione entro il 31 marzo. Il processo di distillazione inizia tipicamente verso la fine di novembre, richiedendo 9 litri di vino per produrre 1 litro di Cognac in circa 11 ore."
+            },
+            {
+                "heading": "Categorie di Cognac",
+                "content": ""
+            },
+            {
+                "heading": "V.S. (Very Special) / 3 stelle",
+                "content": "Invecchiato tra 2 1/2 e 4 1/2 anni."
+            },
+            {
+                "heading": "V.S.O.P. (Very Special Old Pale)",
+                "content": "Chiamato così in onore della Casa Hennessy, con l'elemento più giovane invecchiato per almeno 4 1/2 anni."
+            },
+            {
+                "heading": "Napoleon",
+                "content": "Legalmente invecchiato per almeno 6,5 anni, comunemente invecchiato più a lungo."
+            },
+            {
+                "heading": "X.O. (Extra Old)",
+                "content": "Originariamente coniato da Maurice Hennessy per Cognac invecchiati tra i 15 e i 20 anni."
+            }
+        ]
     },
 
     {
         "id": "pisco",
         "title": "Pisco",
-        "description": "Il brandy trasparente fatto da uve, originario del Perù e del Cile, con un profilo di sapore liscio e aromatico",
-        "body": "Il Pisco, il chiaro brandy di uva proveniente dal Perù e dal Cile, non è solo uno spirito delizioso ma ha anche una storia di origine affascinante. La leggenda narra che il nome 'Pisco' derivi dalla parola quechua 'pishku', che significa 'uccello', poiché la città in cui è stato prodotto per la prima volta era sede di un'abbondanza di uccelli.\n\nOggi, il Pisco viene prodotto utilizzando metodi tradizionali tramandati da generazioni. Le uve utilizzate nella produzione vengono accuratamente selezionate e raccolte a mano, e il processo di distillazione è vero lavoro d'amore, con una attenzione particolare alla conservazione dei sapori e degli aromi naturali dell'uva.\n\nIn Perù e in Cile, il Pisco è diventato parte integrante della cultura locale e viene celebrato attraverso festival, musica e danza. È addirittura oggetto di un acceso dibattito tra i due paesi su chi abbia il diritto di considerarlo il loro spirito nazionale.\n\nChe tu lo sorseggi liscio, lo gusti in un classico Pisco Sour o lo utilizzi in altri cocktail, il Pisco offre un profilo di gusto unico e complesso che sicuramente delizierà ogni appassionato di distillati.",
+        "description": "Il brandy trasparente fatto da uve, originario del Perù e del Cile, con un profilo aromatico e liscio",
+        "body": [
+            {
+                "heading": "Origine e Significato del Pisco",
+                "content": "Il Pisco, un chiaro brandy di uva originario del Perù e del Cile, deriva il suo nome dalla parola Quechua 'pishku', che significa 'uccello', facendo riferimento alla città dove è stato prodotto per la prima volta e alla sua abbondanza di uccelli."
+            },
+            {
+                "heading": "Metodi Tradizionali di Produzione",
+                "content": "Oggi, il Pisco è prodotto utilizzando tecniche tradizionali tramandate attraverso le generazioni. Uve accuratamente selezionate vengono raccolte a mano, e il processo di distillazione si concentra nel preservare i sapori naturali e gli aromi dell'uva."
+            },
+            {
+                "heading": "Rilevanza Culturale",
+                "content": "In Perù e in Cile, il Pisco ha un'importanza culturale ed è celebrato attraverso festival, musica, danze e persino un dibattito nazionale sulla sua origine. Entrambi i paesi lo rivendicano come il loro distillato nazionale."
+            },
+            {
+                "heading": "Profilo Aromatico Unico",
+                "content": "Il Pisco offre un profilo aromatico distintivo e complesso, apprezzato liscio, nei cocktail classici come il Pisco Sour, o in varie bevande miscelate, rendendolo una scelta allettante per gli appassionati di distillati."
+            }
+        ]
     },
 
     {
-        "id": "whiskey",
-        "title": "Whisky & Whiskey",
-        "description": "Le diverse e complesse bevande alcoliche con variazioni provenienti da tutto il mondo, che condividono tutte un comune processo di distillazione dei cereali fermentati.",
-        "body": "Scotch Whisky\nÈ prodotto in modo simile ad altri whisky, ma con un processo leggermente più complesso. Il cereale deve essere solo orzo. Una volta raccolto, l'orzo viene maltato, ovvero immerso in acqua per 1-2 giorni e parzialmente fatto germogliare. L'orzo viene quindi essiccato in un forno per interrompere il processo di germinazione e sviluppare il sapore. Per conferire al whisky scozzese il suo caratteristico sapore affumicato, l'orzo viene essiccato in un forno riscaldato da un fuoco di torba.\n\nScotch Grain & Blended Whisky\nScotch Grain Whisky può essere realizzato con frumento, mais, segale o altri cereali. Viene distillato almeno due volte utilizzando un alambicco a colonna, quindi invecchiato per almeno tre anni in Scozia e diluito con acqua fino al 40% di volume alcolico. Questo whiskey viene utilizzato per la miscelazione con whisky di malto per creare il whisky scozzese miscelato o semplicemente Scotch.\n\nIrish Whiskey\nPer questo tipo di whiskey vengono utilizzati cereali maltati e non maltati, che vengono essiccati termicamente. La miscela viene quindi fermentata fino a raggiungere un volume alcolico di circa l'8% e distillata tre volte fino a raggiungere un volume alcolico di 85%. Deve essere invecchiato per almeno tre anni in botti di quercia in Irlanda e dopo tale periodo viene miscelato per almeno 2 anni prima di ridurre il volume alcolico per abbassarne la forza e imbottigliarlo.\n\nAmerican Whiskey\nQuesti sono prodotti in modo simile ad altri whisky, ma hanno alcune caratteristiche e metodi distinti. Gli American Whiskies utilizzano principalmente mais e segale invece di orzo. La ricetta di diversi cereali è chiamata 'mash bill', che viene cotto a pressione con una miscela di acqua e lievito. A questo punto, può essere aggiunto circa il 25% del mash dai lotti precedenti, che viene chiamato 'sour mash' per garantire la coerenza del carattere in tutti i lotti. Questo 'sour mash' viene quindi fermentato per diventare birra e distillato almeno due volte. Il whiskey viene poi invecchiato per diversi anni in nuove botti di quercia americana carbonizzate, che conferiscono dolcezza e leggeri aromi affumicati al whiskey.\n\nBourbon Whiskey\nQuesto tipo di whiskey può essere prodotto esclusivamente negli Stati Uniti per legge e solo se è prodotto in Kentucky può essere chiamato Kentucky Bourbon. La maggior parte del mash deve essere di mais, mentre il resto può essere una miscela di frumento, segale e orzo. Durante la distillazione, non può superare l'80% di volume alcolico e poi viene diluito al 63% di volume alcolico prima di invecchiare per almeno due anni in new botti di quercia.",
+      "id": "whiskey",
+      "title": "Whisky & Whiskey",
+      "description": "Spiriti diversi e complessi con variazioni da tutto il mondo, tutti condividono un comune processo di distillazione di cereali fermentati.",
+      "body": [
+        {
+          "heading": "Whisky Scozzese",
+          "content": "Viene prodotto in modo simile ad altri whisky, ma con un processo leggermente più complesso. Il cereale deve essere solo ed esclusivamente orzo. Una volta raccolto, l'orzo viene maltato, il che significa che viene lasciato in ammollo in acqua per 1-2 giorni e parzialmente fatto germogliare. L'orzo viene poi essiccato in un forno per interrompere il processo di germinazione e sviluppare sapore. Per conferire al Whisky Scozzese il suo caratteristico sapore affumicato, l'orzo viene essiccato in un forno riscaldato dal fuoco di torba."
+        },
+        {
+          "heading": "Whisky di Grano e Whisky Miscelato Scozzese",
+          "content": "Il Whisky di Grano Scozzese può essere realizzato con frumento, mais, segale o altri cereali. Viene distillato almeno due volte usando un alambicco a colonna, quindi invecchiato per almeno tre anni in Scozia e diluito con acqua fino a un minimo del 40% di volume alcolico. Questo whisky viene utilizzato per la miscelazione con whisky di malto per creare il Whisky Miscelato Scozzese, o semplicemente Scotch."
+        },
+        {
+          "heading": "Whiskey Irlandese",
+          "content": "Per questo tipo di whiskey, vengono utilizzati cereali maltati e non maltati, che vengono essiccati termicamente. La miscela viene quindi fermentata fino a circa il 8% di volume alcolico, e distillata tre volte fino all'85% di volume alcolico. Deve essere invecchiato per almeno tre anni in botti di quercia in Irlanda, e dopo quel periodo viene miscelato per almeno 2 anni prima di ridurre il volume alcolico per imbottigliarlo."
+        },
+        {
+          "heading": "Whiskey Americano",
+          "content": "Sono prodotti in modo simile ad altri whisky ma hanno alcune caratteristiche e metodi distinti. I whiskey americani usano prevalentemente mais e segale invece di orzo. La ricetta di diversi cereali è chiamata 'mash bill', che viene cotto a pressione con una miscela di acqua e lievito. A questo punto, può essere aggiunto quasi il 25% della miscela dai lotti precedenti, chiamato 'sour mash', per garantire la consistenza del carattere tra i lotti. Questo 'sour mash' viene quindi fermentato per diventare birra e distillato almeno due volte. Il whisky viene quindi invecchiato per diversi anni in nuove botti di quercia americana carbonizzate, che conferiscono dolcezza e leggeri sapori affumicati al whisky."
+        },
+        {
+          "heading": "Whiskey Bourbon",
+          "content": "Questo tipo di whiskey può essere prodotto esclusivamente negli Stati Uniti per legge e solo se viene prodotto nel Kentucky può essere chiamato Bourbon del Kentucky. La maggior parte del 'mash' deve essere mais e il resto può essere un mix di frumento, segale e orzo. Durante la distillazione, non può superare l'80% di volume alcolico, e quindi viene diluito al 63% di volume alcolico prima di invecchiare per almeno due anni in nuove botti di quercia."
+        }
+      ]
     }
 ]

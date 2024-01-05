@@ -1,50 +1,261 @@
 [
     {
         "id": "vodka",
-        "title": "Vodka",
-        "description": "Kann Wodka aus irgendetwas hergestellt werden?",
-        "body": "Es stimmt zwar, dass Wodka aus einer Vielzahl von Zutaten hergestellt werden kann, doch nicht alle Zutaten sind für die Herstellung von hochwertigem Wodka geeignet.\nWodka ist eine klare Spirituose, die aus allem hergestellt werden kann, das Stärke oder Zucker enthält. Kartoffeln, Zuckerrübenmelasse und Getreidekörner sind die am häufigsten verwendeten Materialien.\n\nWodka hat seinen Ursprung in den Getreideanbaugebieten Westrusslands, Weißrusslands, Litauens, der Ukraine und Polens, die daher auch als „Wodka-Gürtel“-Länder bekannt sind zu den höchsten Konsum- und Produktionsraten der Welt.\n\nWodka ist allgemein als „Neutralspirituose“ bekannt, aber die bei der Herstellung verwendeten Rohzutaten verleihen unterschiedliche Geschmacksprofile.\n\nWeizen erzeugt subtile Anis- und Pfefferaromen, zusammen mit Zitronenschale.\n\nRoggen sorgt für nussige Süße, Roggenbrot- und Paranussaromen.\n\nMais oder Maiswodka hat einen buttrigen Geschmack, ähnlich wie Maiskolben.\n\nGerstenwodka hat Brot und ist leicht nussig Aromen, zusammen mit Briochesüße.\n\nKartoffelwodka hat eine cremige Textur und einen volleren Geschmack, zusammen mit leichten Gemüsenoten.",
+        "title": "Wodka",
+        "description": "Kann Wodka aus allem hergestellt werden?",
+        "body": [
+            {
+                "heading": "Herstellung von Wodka",
+                "content": "Während Wodka aus verschiedenen Zutaten hergestellt werden kann, eignen sich nicht alle ideal für die Herstellung hochwertiger Spirituosen."
+            },
+            {
+                "heading": "Zutaten für die Herstellung von Wodka",
+                "content": "Wodka, eine klare Spirituose, stammt aus Quellen, die reich an Stärke oder Zucker sind. Häufig verwendete Materialien sind Kartoffeln, Zuckerrübenmelasse und Getreide."
+            },
+            {
+                "heading": "Historische Wurzeln des Wodkas",
+                "content": "Die Ursprünge des Wodkas gehen auf die Getreideanbaugebiete in Westrussland, Weißrussland, Litauen, der Ukraine und Polen zurück. Diese Länder bilden zusammen den renommierten 'Wodka-Gürtel' aufgrund ihrer hohen Konsum- und Produktionsraten."
+            },
+            {
+                "heading": "Wahrnehmung der Neutralität",
+                "content": "Obwohl oft als 'neutrale Spirituose' betrachtet, tragen die vielfältigen Rohstoffe zu unterschiedlichen Geschmacksprofilen des Wodkas bei. Ich werde Ihnen unten die subtilen Aromen des Wodkas erzählen; Sehr nützlich, um sich zu merken, wenn Sie einen Wodka für Ihre Martinis auswählen."
+            },
+            {
+                "heading": "Unterschiedliche Geschmacksprofile",
+                "content": ""
+            },
+            {
+                "heading": "Weizen",
+                "content": "Verleiht subtile Aromen von Anis, Pfeffer und Zitronenschale."
+            },
+            {
+                "heading": "Roggen",
+                "content": "Bringt eine nussige Süße hervor, die an Roggenbrot und Brasilianische Nüsse erinnert."
+            },
+            {
+                "heading": "Mais oder Mais",
+                "content": "Bietet einen buttrigen Geschmack, ähnlich frischem Maiskolben."
+            },
+            {
+                "heading": "Gerste",
+                "content": "Enthält Noten von Brot, leichter Nussigkeit und Süße, die an Brioche erinnern."
+            },
+            {
+                "heading": "Kartoffel",
+                "content": "Bekannt für ihre cremige Textur, vollen Geschmack und Hinweise von Gemüse."
+            }
+        ]
     },
-
+    
     {
         "id": "gin",
         "title": "Gin",
-        "description": "Die mit Pflanzen angereicherte Spirituose mit einer reichen Geschichte und einem vielseitigen Geschmacksprofil.",
-        "body": "Gin ist eine Spirituose, deren Herstellung einen zweistufigen Prozess erfordert. Zuerst benötigen Sie eine qualitativ hochwertige Basis aus „Neutralspiritus“ (mit anderen Worten Wodka), und dann können Sie diese Basis durch eine zweite Destillation mit Samen, Beeren, Wurzeln, Früchten, Kräutern und Gewürzen aromatisieren, die zusammen als „Neutralgeist“ bezeichnet werden. Pflanzenstoffe.' Jede Gin-Marke hat ihre eigenen Anteile an pflanzlichen Stoffen und alle Gins sind einzigartig und unterschiedlich, auch wenn sie, um als Gin bezeichnet zu werden, einen vorherrschenden Wacholdergeschmack haben müssen.\n\nGin gibt es in verschiedenen Stilen und Sorten.\n\nKalt gemischt Gin:\nÜblicherweise als „Badewannen-Gins“ bekannt, werden sie mit Extrakten, Essenzen und/oder durch Aufguss/Mazeration ohne Destillation aromatisiert.\n\nLondon Dry Gin:\nUrsprünglich ein Stil, mittlerweile aber leider eine legale Kategorie beschreibt nicht viel über den Gin, außer dass er trocken ist. Trotz des Namens können sie überall auf der Welt hergestellt werden.\n\nNew Western Dry Gin:\nDies ist ein loser Begriff, der nicht oft verwendet wird; Es umfasst alle Gins, die vom übermäßigen Wacholdergeschmack abweichen und sich vor allem durch die sorgfältige Einbeziehung und Ausgewogenheit unterstützender Aromen auszeichnen.\n\nOld Tom Gin:\nOft als süßer Gin-Stil beschrieben, waren sie vor allem im 18. Jahrhundert beliebt und 19. Jahrhundert aufgrund der begrenzten Reinigung des Geistes. Der raue Geschmack dieser Gins wurde durch Aromatisieren und/oder Süßen mit Lakritze und später mit Zucker überdeckt.",
+        "description": "Der mit pflanzlichen Inhaltsstoffen angereicherte Geist mit einer reichen Geschichte und vielseitigem Geschmacksprofil.",
+        "body": [
+            {
+                "heading": "Herstellung von Gin",
+                "content": "Gin ist ein Geist, der einen zweistufigen Prozess zur Herstellung erfordert. Zunächst benötigen Sie eine qualitativ hochwertige Basis aus 'neutralen Alkohol' (oder auch Wodka genannt), und dann können Sie diese Basis durch eine zweite Destillation mit Samen, Beeren, Wurzeln, Früchten, Kräutern und Gewürzen, die gemeinsam als 'Botanicals' bekannt sind, aromatisieren. Jede Gin-Marke hat ihre eigenen Mischverhältnisse von Botanicals, und alle Gins sind einzigartig und unterschiedlich, auch wenn es für die Bezeichnung Gin erforderlich ist, einen dominanten Wacholdergeschmack zu haben."
+            },
+            {
+                "heading": "Stile und Arten von Gin",
+                "content": ""
+            },
+            {
+                "heading": "Kalt komponierter Gin",
+                "content": "Im Volksmund als 'Badewannen-Gins' bekannt, werden sie mit Extrakten, Essenzen und/oder durch Infusion/Mazerierung ohne Destillation aromatisiert."
+            },
+            {
+                "heading": "London Dry Gin",
+                "content": "Ursprünglich ein Stil, aber jetzt eine gesetzliche Kategorie, beschreibt leider nicht viel über den Gin außer seiner Trockenheit. Trotz des Namens können sie überall auf der Welt hergestellt werden."
+            },
+            {
+                "heading": "New Western Dry Gin",
+                "content": "Dies ist ein lockerer Begriff, der nicht oft verwendet wird; er umfasst alle Gins, die sich vom übermäßigen Wacholdergeschmack entfernen, meist definiert durch die sorgfältige Einbeziehung und Balance unterstützender Aromen."
+            },
+            {
+                "heading": "Old Tom Gin",
+                "content": "Oft als süßer Gin-Stil beschrieben, waren sie im 18. und 19. Jahrhundert aufgrund der begrenzten Reinigung des Geistes meist populär. Der raue Geschmack dieser Gins wurde durch Aromatisierung und/oder Süßung mit Lakritz und später mit Zucker maskiert."
+            }
+        ]
     },
-
+    
     {
         "id": "rum",
         "title": "Rum",
-        "description": "Der süße und komplexe Geist mit tropischem Flair und jahrhundertealtem Erbe.",
-        "body": "Rum ist eine Spirituose, die durch Fermentierung und anschließende Destillation von Zuckerrohrmelasse oder Zuckerrohrsaft hergestellt wird. In den meisten Fällen wird es aus Melasse hergestellt, außer in Französisch-Westindien und Brasilien, wo frischer Zuckerrohrsaft zur Herstellung von Rhum Agricole bzw. Cachaca verwendet wird.\n\nDer Destillationsprozess variiert je nach Hersteller, im Allgemeinen ist dies jedoch bei Destillierapparaten mit mehreren Kolonnen der Fall Reduzieren Sie den Grad an Verunreinigungen und erzeugen Sie einen leichteren Rum. Die Verwendung eines Pot Still oder eines Single Column Destillierapparats führt zu einem schwereren Rum.\n\nEs gibt fünf Arten von Rum auf dem Markt, und um so genannt zu werden, müssen sie einen Alkoholgehalt von mindestens 37,5 % haben.\n\ „n'Light“-Rum bezieht sich auf seine Farbe und seinen Geschmack und wird hauptsächlich in erfrischenden Cocktails wie Mojitos und Daiquiris verwendet, da er leicht im Geschmack ist. Diese Rumsorte wird direkt nach der Destillation und Verdünnung in Flaschen abgefüllt, beispielsweise Bacardi White. Einige Marken, wie Havana mit Havana 3, lassen ihn bis zu drei Jahre reifen, um ihm eine charakteristische Farbe und mehr Frische zu verleihen.\n\n„Goldene“ Rumsorten sind ein guter Kompromiss zwischen hellen und dunklen Rumsorten und haben ihren eigenen Charakter und bleibt dabei leicht am Gaumen. Ihre Farbe entsteht durch die Reifung in Holzfässern, die früher für Cognac oder Whisky verwendet wurden. Einige Brennereien fügen möglicherweise Karamell hinzu, um die Farbe dunkler zu machen.\n\n„Dunkle“ Rumsorten haben einen reichen und intensiven Geschmack und werden oft als Floater auf Cocktails verwendet, um sie zu einem Blickfang zu machen. Wenn Sie sie für Cocktails verwenden, lassen Sie sie durchscheinen und behandeln Sie sie wie einen guten Whiskey oder Cognac. „Overproof“-Rum ist die heimliche Funky-Zutat in den meisten Tiki-Cocktails. Sie können von hell bis dunkel reichen und ihre Besonderheit ist der Alkoholgehalt, der über 50 % liegen muss.\n\n„Gewürzte“ oder „gewürzte“ Rumsorten sind ziemlich selbsterklärende Kategorien. Diese Rumsorten sind im Allgemeinen süßer und können leicht mit jedem anderen Rum ausgetauscht werden, um Abwechslung zu schaffen. Haben Sie schon einmal einen Kokos-Rum-Mojito probiert?",
+        "description": "Der süße und komplexe Geist mit einem tropischen Flair und jahrhundertealter Tradition.",
+        "body": [
+            {
+                "heading": "Herstellung von Rum",
+                "content": "Rum ist ein Geist, der durch Fermentation und anschließende Destillation von Zuckerrohrmelasse oder Zuckerrohrsaft hergestellt wird. In den meisten Fällen wird er aus Melasse hergestellt, außer in den französischen Westindischen Inseln und Brasilien, wo frischer Zuckerrohrsaft zur Herstellung von Rhum Agricole bzw. Cachaca verwendet wird."
+            },
+            {
+                "heading": "Destillationsprozess",
+                "content": "Der Destillationsprozess variiert je nach Hersteller. Mehrere Säulenbrennblasen werden häufig verwendet, um Verunreinigungen zu reduzieren und einen leichteren Rum herzustellen. Alternativ führt die Verwendung eines Pot-Still oder einer einzigen Säulenbrennblase zu einem schwereren Rum."
+            },
+            {
+                "heading": "Arten von Rum",
+                "content": ""
+            },
+            {
+                "heading": "'Hell' Rum",
+                "content": "'Hell' Rum, direkt nach der Destillation abgefüllt, zeichnet sich durch seine Farbe und seinen Geschmack aus. Er wird häufig in erfrischenden Cocktails wie Mojitos und Daiquiris verwendet. Einige Marken lagern ihn für eine verbesserte Frische."
+            },
+            {
+                "heading": "'Goldener' Rum",
+                "content": "'Goldene' Rumsorten finden einen Kompromiss zwischen hellen und dunklen Varianten. Ihre Farbe erhalten sie durch die Lagerung in Holzfässern, manchmal auch in Fässern, die zuvor für Cognac oder Whisky verwendet wurden. Einige mögen Karamell verwenden, um die Farbe zu verdunkeln."
+            },
+            {
+                "heading": "'Dunkler' Rum",
+                "content": "'Dunkle' Rums haben reiche, intensive Aromen. Oft als Schicht in Cocktails für visuelle Attraktivität verwendet, werden sie ähnlich wie hochwertiger Whisky oder Cognac geschätzt."
+            },
+            {
+                "heading": "'Überstarker' Rum",
+                "content": "'Überstarke' Rums mit einem Alkoholgehalt über 50% bringen eine besondere Note in Tiki-Cocktails. Sie können in der Farbe von hell bis dunkel variieren."
+            },
+            {
+                "heading": "'Aromatisierter' oder 'Gewürzter' Rum",
+                "content": "'Aromatisierte' oder 'gewürzte' Rumsorten sind selbsterklärend. Generell süßer, bieten sie Vielseitigkeit in Cocktails. Haben Sie schon einmal einen Kokosnuss-Rum-Mojito probiert?"
+            },
+            {
+                "heading": "Herstellung Ihres eigenen 'Aromatisierten' oder 'Gewürzten' Rums",
+                "content": "Jede Marke hat ihr eigenes einzigartiges Rezept. Wenn Sie daran interessiert sind, Ihren eigenen Rum herzustellen, beginnen Sie mit einer Flasche Ihres bevorzugten Rums und fügen Sie die gewünschten Aromen hinzu. Es ist ratsam, mit einer kleinen Menge zu beginnen, z. B. 300 ml oder 10 oz., und einer bestimmten Menge Aromastoff, wie zum Beispiel 100 Gramm Kakaonibs. Probieren Sie ihn täglich und sieben Sie ihn ab, sobald Sie den gewünschten Geschmack erreicht haben. Mit dieser Methode können Sie Anpassungen vornehmen - fügen Sie einfach mehr von demselben Rum hinzu, um ihn zu verlängern, bis Sie die perfekte Mischung von Aromen und Geschmack erreichen. Denken Sie daran, jeden Schritt zu dokumentieren, damit Sie Ihr abschließendes Rezept leicht reproduzieren können.\n\nDieser Prozess kann auf jeden anderen Spirituosen angewendet werden; die Methode, von der hier die Rede ist, wird Kaltmazeration genannt - was bedeutet, dass keine Hitze zur Aromatisierung angewendet wird."
+            }
+        ]
     },
-
+    
     {
         "id": "mezcal",
         "title": "Tequila & Mezcal",
-        "description": "Einzigartige, kulturreiche Spirituosen aus Mexiko mit unterschiedlichen Geschmacksrichtungen und Geschichten.",
-        "body": "Die Azteken begannen um 250–300 n. Chr. mit der Herstellung von Ritualwein aus dem Saft von Agavenpflanzen. Als Cortes‘ Soldaten 1519 Mexiko eroberten, entdeckten sie, dass dieser Saft destilliert werden konnte und begannen bereits ein Jahrzehnt nach ihrer Ankunft mit der Herstellung eines Pseudo-Tequilas. Tequila wird in der mexikanischen Region Jalisco hergestellt und sein Name leitet sich von der Stadt Tequila ab, die als Geburtsort dieser Spirituose bekannt ist.\n\nZur Herstellung von Tequila wird die Agavenpflanze gewürfelt, gedämpft und dann ausgepresst, um sie zu entfernen Saft. Es wird natürliche Hefe hinzugefügt und die Gärung beginnt. Um Tequila genannt zu werden, muss diese fermentierte Flüssigkeit zwei Mal destilliert werden. Silver Tequila kann direkt aus der Destille in die Flasche gefüllt werden, wobei Wasser hinzugefügt wird, um die Stärke zu verringern. Reposado- und Anejo-Tequilas hingegen werden in Eichenfässern gereift, damit das Holz den Geist weicher und milder machen und ihm Charakter verleihen kann.\n\nHier sind einige grundlegende Begriffe, die Sie kennen sollten:\n- Mixto (gemischt) – enthält mindestens 51 % Agave, der Rest besteht aus Industriespirituosen;\n- Pura (Rein) – 100 % blaues Agavendestillat;\n- Blanco (Weiß/Silber) – ein klarer Tequila, der maximal 60 Tage gereift ist;\n - Oro (Gold) – das Gleiche wie Blanco-Tequila, jedoch mit Zusatz von Aroma/Farbstoff, normalerweise Karamell.\n- Reposado (Rested) – zwischen 60 Tagen und 1 Jahr in Eichenfässern gereifter Tequila;\n- Anejo (Gereift) - Tequila, der mindestens 1 Jahr und bis zu 10 Jahre lang gereift ist.\n\nMezcal hingegen wird seit dem 16. Jahrhundert aus dem Saft hergestellt, der beim Kochen des Herzens der Maguey-Pflanze gewonnen wird, einer Art von Agavenpflanze. Die Azteken stellten daraus Pulque her, ein süßes bierähnliches Getränk, das bei religiösen Zeremonien getrunken wurde. Im Gegensatz zu Tequila wird die Pflanze geröstet, um Mezcal seinen rauchigen Geschmack zu verleihen. Anschließend wird das Fruchtfleisch durch Steinpressen extrahiert, in reinem Wasser unter Zugabe von Hefe eingeweicht und mehrere Tage lang fermentiert. Die vergorene Flüssigkeit wird dann destilliert und in Flaschen abgefüllt.",
+        "description": "Einzigartige, kulturell reiche Spirituosen aus Mexiko mit unterschiedlichen Aromen und Geschichte.",
+        "body": [
+            {
+                "heading": "Ursprung des Tequilas",
+                "content": "Die Produktion von Ritualwein aus Agavensaft geht auf die Azteken um 250-300 n. Chr. zurück. Als die Soldaten von Cortés 1519 in Mexiko ankamen, entdeckten sie, dass dieser Saft destilliert werden konnte, was innerhalb eines Jahrzehnts zur Herstellung eines Pseudo-Tequilas führte."
+            },
+            {
+                "heading": "Herstellungsprozess von Tequila",
+                "content": "Tequila wird in der Region Jalisco in Mexiko hergestellt. Die Agavenpflanze wird zerkleinert, gedämpft und der Saft extrahiert. Natürliche Hefe wird zur Fermentation hinzugefügt. Um als Tequila bezeichnet zu werden, durchläuft dieser fermentierte Saft zwei Destillationsvorgänge."
+            },
+            {
+                "heading": "Arten und Reifung von Tequila",
+                "content": ""
+            },
+            {
+                "heading": "Mixto",
+                "content": "Mixto (oder Gemischt) ist ein Tequila, der mindestens 51% Agave enthält, der Rest sind industrielle Spirituosen."
+            },
+            {
+                "heading": "Pura",
+                "content": "Pura (oder Rein) ist ein Tequila, der aus 100% blauem Agaven-Destillat hergestellt wird."
+            },
+            {
+                "heading": "Blanco",
+                "content": "Blanco (oder Weiß/Silber) ist ein klarer Tequila, der maximal 60 Tage lang gereift ist."
+            },
+            {
+                "heading": "Oro",
+                "content": "Oro (oder Gold) ist ein Tequila ähnlich dem Blanco, aber mit Aromatisierung und/oder Färbung, normalerweise Karamell."
+            },
+            {
+                "heading": "Reposado",
+                "content": "Reposado (oder Ausgeruht) ist ein Tequila, der 60 Tage bis 1 Jahr in Eichenfässern gereift ist. Dies verleiht ihm eine leichte goldene Farbe und Anklänge von Holz, Vanille und anderen Noten, die aus dem Eichenfass extrahiert wurden."
+            },
+            {
+                "heading": "Anejo",
+                "content": "Anejo (oder Gealtert) ist ein Tequila, der mindestens 1 Jahr und bis zu 10 Jahre lang gereift ist. Dieser Reifeprozess verleiht dem Tequila eine stärkere goldene Farbe und intensivere Aromen von Holz, Vanille und anderen Noten, die aus dem Eichenfass extrahiert wurden."
+            },
+            {
+                "heading": "Geschichte und Herstellungsprozess von Mezcal",
+                "content": "Mezcal wird seit dem 16. Jahrhundert aus dem Saft hergestellt, der aus dem Kochen des Herzens der Maguey-Pflanze, einer Art Agavenpflanze, extrahiert wird. Die Azteken verwendeten ihn, um Pulque herzustellen, ein süßes, bierähnliches Getränk, das bei religiösen Zeremonien konsumiert wurde. Anders als Tequila wird die Pflanze für den rauchigen Geschmack von Mezcal geröstet. Dann wird sie steingepresst, um das Fruchtfleisch zu extrahieren, in reines Wasser mit Hefe eingeweicht und mehrere Tage lang fermentiert. Die fermentierte Flüssigkeit wird dann destilliert und abgefüllt."
+            }
+        ]
     },
-
+    
     {
         "id": "cognac",
         "title": "Brandy & Cognac",
-        "description": "Zwei raffinierte und geschmacksintensive Spirituosen, die durch die Destillation von Wein hergestellt werden und jeweils einen eigenen Ursprung und Alterungsprozess haben.",
-        "body": "Brandy und Cognac haben viele Gemeinsamkeiten, unterscheiden sich aber dennoch stark voneinander. Brandy ist ein Likör, der durch die Destillation von Wein hergestellt wird und typischerweise als Digestif nach dem Abendessen konsumiert wird. Einige Brandys werden in Holzfässern gereift, um ihnen Charakter, Körper und die schöne Karamellfarbe zu verleihen. Andere werden einfach mit Karamellfarbe gefärbt, um die Alterung nachzuahmen, während andere durch eine Kombination aus Alterung und Färbung hergestellt werden.\n\nObwohl Cognac eine Art französischer Brandy ist, der in der Region der kleinen Stadt namens „Cognac“ hergestellt wird, Es gibt 6 verschiedene Unterregionen, die Weine für die Destillation liefern. Um die offizielle Appellation zu erhalten, muss der zur Herstellung von Cognac verwendete Wein bis zum 31. März zweimal destilliert werden. Die Destillation beginnt normalerweise etwa Ende November und für die Herstellung von 1 Liter Cognac werden 9 Liter Wein benötigt. Normalerweise sind 11 Stunden Destillation erforderlich.\n\nCognac hat auch 4 verschiedene Kategorien:\n- V.S. (Ganz besonders) / 3 Sterne: im Alter zwischen 2 1/2 und 4 1/2 Jahren\n- V.S.O.P. (Very Special Old Pale): benannt nach dem Hennessy House, und das jüngste Element muss mindestens 4 1/2 Jahre alt sein\n- Napoleon: gesetzlich vorgeschrieben muss es 6 1/2 Jahre alt sein, aber es ist sehr üblich, zu altern sie länger\n- X.O. (Extra Old): Bezeichnung, die von Maurice Hennessy nach der Reifung von Cognac-Fässern für Freunde und Familie geschaffen wurde und im Allgemeinen für Cognacs steht, die zwischen 15 und 20 Jahre alt sind.",
+        "description": "Zwei raffinierte und geschmacksintensive Spirituosen, hergestellt durch Destillation von Wein, jede mit einem eigenen Ursprung und Reifungsprozess.",
+        "body": [
+            {
+                "heading": "Überblick über Brandy",
+                "content": "Brandy, hergestellt durch die Destillation von Wein, wird oft als Digestif nach dem Essen genossen. Einige Brandys reifen in Holzfässern für Charakter und Farbe, während andere Karamellfarbstoff zur Nachahmung der Reifung verwenden oder eine Kombination beider Methoden einsetzen."
+            },
+            {
+                "heading": "Cognac: Eine französische Auszeichnung",
+                "content": "Cognac, eine Art französischer Brandy, wird ausschließlich in der Region der kleinen Stadt 'Cognac' hergestellt. Die Region umfasst 6 Unterregionen, die Weine für die Destillation liefern. Um die offizielle Appellation zu erhalten, muss der für Cognac verwendete Wein bis zum 31. März zweifach destilliert werden. Der Destillationsprozess beginnt in der Regel Ende November und erfordert 9 Liter Wein, um über etwa 11 Stunden 1 Liter Cognac herzustellen."
+            },
+            {
+                "heading": "Kategorien von Cognac",
+                "content": ""
+            },
+            {
+                "heading": "V.S. (Very Special) / 3 Sterne",
+                "content": "Gereift zwischen 2 1/2 und 4 1/2 Jahren."
+            },
+            {
+                "heading": "V.S.O.P. (Very Special Old Pale)",
+                "content": "Benannt nach dem Hennessy House, wobei das jüngste Element mindestens 4 1/2 Jahre gereift ist."
+            },
+            {
+                "heading": "Napoleon",
+                "content": "Gesetzlich mindestens 6,5 Jahre alt, üblicherweise jedoch länger gereift."
+            },
+            {
+                "heading": "X.O. (Extra Old)",
+                "content": "Ursprünglich geprägt von Maurice Hennessy für Cognacs, die zwischen 15 und 20 Jahren gereift sind."
+            }
+        ]
     },
-
+    
     {
         "id": "pisco",
         "title": "Pisco",
-        "description": "Der klare Brandy aus Trauben aus Peru und Chile mit einem sanften, aromatischen Geschmacksprofil",
-        "body": "Pisco, der klare Traubenbrand aus Peru und Chile, ist nicht nur eine köstliche Spirituose, sondern hat auch eine faszinierende Entstehungsgeschichte. Der Legende nach kommt der Name „Pisco“ vom Quechuan-Wort „pishku“, was „Vogel“ bedeutet, da in der Stadt, in der es erstmals hergestellt wurde, eine Fülle von Vögeln lebte.\n\nHeute wird Pisco nach traditionellen Methoden hergestellt die seit Generationen weitergegeben werden. Die für die Produktion verwendeten Trauben werden sorgfältig ausgewählt und von Hand geerntet, und der Destillationsprozess ist eine echte Liebesarbeit, bei der der Schwerpunkt auf der Erhaltung der natürlichen Aromen und Aromen der Traube liegt.\n\nIn Peru und Chile ist Pisco zu einem festen Bestandteil geworden der lokalen Kultur und wird durch Feste, Musik und Tanz gefeiert. Es ist sogar Gegenstand einer heftigen Debatte zwischen den beiden Ländern darüber, wer das Recht hat, ihn als ihre Nationalspirituose zu beanspruchen.\n\nOb Sie ihn pur trinken, ihn in einem klassischen Pisco Sour genießen oder ihn in anderen Cocktails verwenden Pisco bietet ein einzigartiges und komplexes Geschmacksprofil, das jeden Spirituosenliebhaber begeistern wird.",
+        "description": "Der klare Weinbrand aus Trauben, stammend aus Peru und Chile mit einem sanften, aromatischen Geschmacksprofil.",
+        "body": [
+            {
+                "heading": "Ursprung und Bedeutung von Pisco",
+                "content": "Pisco, ein klarer Traubenbrandy aus Peru und Chile, leitet seinen Namen vom Quechua-Wort 'pishku' ab, was 'Vogel' bedeutet und auf die Stadt verweist, in der er erstmals produziert wurde und die reich an Vögeln ist."
+            },
+            {
+                "heading": "Traditionelle Herstellungsmethoden",
+                "content": "Heutzutage wird Pisco mit traditionellen Techniken hergestellt, die über Generationen weitergegeben wurden. Sorgfältig ausgewählte Trauben werden von Hand geerntet, und der Destillationsprozess konzentriert sich darauf, die natürlichen Aromen und Aromen der Trauben zu bewahren."
+            },
+            {
+                "heading": "Kulturelle Bedeutung",
+                "content": "In Peru und Chile hat Pisco kulturelle Bedeutung und wird durch Festivals, Musik, Tanz und sogar eine nationale Debatte über seinen Ursprung gefeiert. Beide Länder beanspruchen ihn als ihren Nationalgeist."
+            },
+            {
+                "heading": "Einzigartiges Geschmacksprofil",
+                "content": "Pisco bietet ein unverwechselbares und komplexes Geschmacksprofil, das pur genossen wird, in klassischen Cocktails wie dem Pisco Sour oder in verschiedenen Mixgetränken, was es zu einer verlockenden Wahl für Spirituosenliebhaber macht."
+            }
+        ]
     },
-
+    
     {
         "id": "whiskey",
         "title": "Whisky & Whiskey",
-        "description": "Die vielfältigen und komplexen Spirituosen mit Variationen aus der ganzen Welt teilen sich alle ein gemeinsames Verfahren der Destillation fermentierter Getreidesorten.",
-        "body": "• Scotch Whisky\nEr wird ähnlich wie andere Whiskys hergestellt, jedoch mit einem etwas komplexeren Verfahren. Das Getreide darf nur aus Gerste und Gerste bestehen. Nach der Ernte wird die Gerste gemälzt, das heißt, sie wird ein bis zwei Tage lang in Wasser eingeweicht und kann teilweise keimen. Anschließend wird die Gerste in einem Ofen getrocknet, um den Keimungsprozess zu stoppen und den Geschmack zu entwickeln. Um Scotch Whisky seinen charakteristischen Rauchgeschmack zu verleihen, wird die Gerste in einem durch Torffeuer erhitzten Ofen getrocknet.\n\n• Scotch Grain & Blended Whisky\nScotch Grain Whisky kann aus Weizen, Mais, Roggen oder anderen Getreidesorten hergestellt werden. Er wird mindestens zweimal mit einer Kolonnendestille destilliert, anschließend mindestens drei Jahre in Schottland gereift und mit Wasser auf einen Alkoholgehalt von mindestens 40 % reduziert. Dieser Whisky wird zum Mischen mit Malt-Whiskys verwendet, um schottischen Blended Whisky, oder einfach Scotch, herzustellen.\n\n• Irish Whiskey\nFür diese Art von Whisky werden gemälzte und ungemälzte Körner verwendet, die hitzegetrocknet werden. Die Mischung wird dann auf etwa 8 % ABV fermentiert und dreimal auf 85 % ABV destilliert. Er muss mindestens drei Jahre in Eichenfässern in Irland reifen und danach mindestens zwei Jahre lang gemischt werden, bevor der Alkoholgehalt reduziert wird, um die Stärke zu verringern, und in Flaschen abgefüllt wird.\n\n• American Whiskey\nDies sind Wird ähnlich wie andere Whiskys hergestellt, weist jedoch einige unterschiedliche Merkmale und Methoden auf. Amerikanische Whiskys verwenden überwiegend Mais und Roggen anstelle von Gerste. Das Rezept aus verschiedenen Körnern heißt „Mash Bill“ und wird mit einer Mischung aus Wasser und Hefe unter Druck gekocht. Zu diesem Zeitpunkt können fast 25 % der Maische aus früheren Chargen hinzugefügt werden, was als „Sauermaische“ bezeichnet wird, um die Konsistenz des Charakters über alle Chargen hinweg sicherzustellen. Diese „saure Maische“ wird dann zu Bier vergoren und mindestens zweimal destilliert. Anschließend reift der Whisky mehrere Jahre lang in neuen verkohlten Fässern aus amerikanischer Eiche, die dem Whisky Süße und leichte Raucharomen verleihen.\n\n• Bourbon Whiskey\nDiese Art von Whisky darf per Gesetz ausschließlich in den USA hergestellt werden und nur, wenn Es wird in Kentucky hergestellt und kann Kentucky Bourbon genannt werden. Der Großteil der Maische muss aus Mais bestehen, der Rest kann eine Mischung aus Weizen, Roggen und Gerste sein. Während der Destillation darf der Alkoholgehalt 80 % ABV nicht überschreiten und wird dann auf 63 % ABV verdünnt, bevor er mindestens zwei Jahre lang in brandneuen Eichenfässern reift.",
+        "description": "Die vielfältigen und komplexen Spirituosen mit Variationen aus der ganzen Welt, die alle einen gemeinsamen Prozess der Destillation fermentierter Getreide teilen.",
+        "body": [
+            {
+                "heading": "Schottischer Whisky",
+                "content": "Er wird ähnlich wie andere Whiskys hergestellt, hat jedoch einen etwas komplexeren Prozess. Das Getreide muss ausschließlich Gerste sein. Sobald geerntet, wird die Gerste gemälzt, indem sie 1-2 Tage lang in Wasser eingeweicht und teilweise keimen gelassen wird. Die Gerste wird dann in einem Ofen getrocknet, um den Keimprozess zu stoppen und Geschmack zu entwickeln. Um dem schottischen Whisky seinen charakteristischen rauchigen Geschmack zu verleihen, wird die Gerste in einem Ofen getrocknet, der mit Torffeuer beheizt wird."
+            },
+            {
+                "heading": "Schottischer Grain & Blended Whisky",
+                "content": "Schottischer Grain Whisky kann aus Weizen, Mais, Roggen oder anderen Getreidesorten hergestellt werden. Er wird mindestens zweimal in einer Säulendestillation destilliert, dann mindestens drei Jahre lang in Schottland gereift und auf einen Alkoholgehalt von mindestens 40% verdünnt. Dieser Whisky wird zum Mischen mit Malt Whiskys verwendet, um schottischen Blended Whisky oder einfach nur Scotch herzustellen."
+            },
+            {
+                "heading": "Irischer Whiskey",
+                "content": "Für diese Art von Whiskey werden gemälzte und ungemälzte Getreidesorten verwendet, die hitzegedarrt sind. Die Mischung wird dann auf etwa 8% Alkoholgehalt vergoren und dreimal auf 85% Alkoholgehalt destilliert. Er muss mindestens drei Jahre lang in Eichenfässern in Irland reifen, und nach dieser Zeit wird er mindestens zwei Jahre lang gemischt, bevor der Alkoholgehalt reduziert und abgefüllt wird."
+            },
+            {
+                "heading": "Amerikanischer Whiskey",
+                "content": "Diese werden ähnlich wie andere Whiskys hergestellt, haben jedoch einige spezifische Merkmale und Methoden. Amerikanische Whiskys verwenden überwiegend Mais und Roggen anstelle von Gerste. Das Rezept aus verschiedenen Getreidesorten wird als 'Mash Bill' bezeichnet und unter Druck mit einer Mischung aus Wasser und Hefe gekocht. An diesem Punkt kann fast 25% des Trebers aus früheren Chargen hinzugefügt werden, was als 'Sour Mash' bezeichnet wird, um die Charakterkonsistenz in den Chargen sicherzustellen. Dieser 'Sour Mash' wird dann zu Bier vergoren und mindestens zweimal destilliert. Der Whiskey reift dann mehrere Jahre lang in neuen verkohlten amerikanischen Eichenfässern, die dem Whiskey Süße und leichte rauchige Aromen verleihen."
+            },
+            {
+                "heading": "Bourbon Whiskey",
+                "content": "Diese Art von Whiskey kann laut Gesetz nur in den USA hergestellt werden und nur dann als Kentucky Bourbon bezeichnet werden, wenn er in Kentucky hergestellt wird. Der Großteil des Trebers muss aus Mais bestehen, der Rest kann eine Mischung aus Weizen, Roggen und Gerste sein. Während der Destillation darf der Alkoholgehalt nicht über 80% steigen und dann wird er auf 63% verdünnt, bevor er mindestens zwei Jahre lang in brandneuen Eichenfässern reift."
+            }
+        ]
     }
 ]

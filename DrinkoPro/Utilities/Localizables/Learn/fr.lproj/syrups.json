@@ -1,32 +1,101 @@
 [
-   {
-      "id":"simple-syrup",
-      "title":"Sirop simple",
-      "description":"Voyons comment préparer un sirop simple, riche et quand il est préférable de les utiliser",
-      "body":"Le sirop simple est un mélange à parts égales d'eau et de sucre en poids (1:1), tandis qu'un sirop riche est composé de 2 parts de sucre pour 1 part d'eau (2:1). Pour faire un sirop simple, mettez le sucre dans un récipient et ajoutez de l'eau chaude en remuant jusqu'à ce que le liquide devienne clair. Vous pouvez également mélanger le sucre et l'eau avec de l'eau froide, mais cela prendra plus de temps pour dissoudre le sucre. Cette méthode fonctionne avec tous les types de sucre, y compris le sucre granulé, brun, demerara, doré, muscovado et turbinado.\n\nUne fois votre sirop de sucre prêt, laissez-le refroidir, mettez-le en bouteille et étiquetez-le avec le nom du sucre utilisé, le ratio utilisé et la date à laquelle vous l'avez fait. Conservez-le au réfrigérateur pendant plus d'un mois.\n\nLa plupart des cocktails nécessitent du sirop, car le sucre cristallisé ne se dissout pas complètement lorsqu'il est mélangé, secoué ou jeté. Pour les boissons comme le old fashioned, le mojito ou la caipirinha qui nécessitent à l'origine du sucre granulé, c'est à vous de décider si vous devez utiliser du sucre granulé ou du sirop. Cependant, utiliser du sucre semoule fera évoluer la douceur de votre cocktail avec le temps, ce qui n'est peut-être pas souhaitable. En utilisant du sirop de sucre à la place, vous aurez plus de contrôle sur la douceur de la boisson et il sera plus facile de reproduire exactement le même profil de saveur."
-   },
-   {
-      "id":"honey",
-      "title":"Sirops de miel, d'agave et de vanille",
-      "description":"Apprenez à utiliser ces sirops épais et quelques faits intéressants",
-      "body":"Les sirops sont un élément clé dans la préparation des cocktails, et il est essentiel de les préparer correctement pour obtenir la consistance et la saveur souhaitées. Cependant, il est important d'être prudent lorsque vous utilisez des sirops denses, épais ou non coulants, car ils peuvent facilement cristalliser et créer une texture dure et désagréable. Pour éviter cela, il est recommandé de les diluer avec de l'eau dans un rapport de 1:1 ou 2:1, selon l'épaisseur souhaitée.\n\nRegardons maintenant de plus près trois types de sirops :\n\nSIROP DE MIEL : \nIngrédient de base de nombreux cocktails classiques et modernes, le sirop de miel est un excellent choix pour accompagner les whiskies. Il est préférable d'utiliser de l'eau chaude, mais pas bouillante, et le rapport le plus couramment utilisé est de 3:1. Il peut durer plus d'un mois et sa durée de conservation peut être prolongée en le conservant au réfrigérateur.\n\nSIROP D'AGAVE :\nSirop polyvalent qui se marie bien avec les tequilas et le café, le sirop d'agave est mieux coupé avec un rapport 2:1, rapport d'eau chaude. Après l'avoir coupé, il suffit de le mettre en bouteille et de le conserver au réfrigérateur pendant plus d'un mois.\n\nSIROP DE VANILLE :\nLe sirop de vanille est un ingrédient populaire dans les cocktails et il se marie bien avec le café et les saveurs fruitées. Vous pouvez soit acheter du sirop de vanille, soit le préparer vous-même. Pour réaliser le vôtre, coupez une gousse de vanille en deux dans le sens de la longueur et laissez-la infuser avec du sirop simple ou du sirop aromatisé aussi longtemps que vous le souhaitez. Conseil de pro : vous pouvez réutiliser la même gousse de vanille plusieurs fois.\n\nEn résumé, les sirops jouent un rôle essentiel dans la préparation des cocktails, et il est essentiel de choisir les bons et de les utiliser correctement pour obtenir l'équilibre parfait entre saveur et consistance."
-   },
-   {
-      "id":"fruity-syrups",
-      "title":"Sirops aromatisés aux baies",
-      "description":"Parlons de la façon dont vous pouvez préparer vos propres sirops fruités.",
-      "body":"Commençons par reconnaître la vérité indéniable : les sirops faits maison sont de loin supérieurs à n’importe quelle marque commerciale. Lorsque vous le préparez vous-même, vous contrôlez la saveur et il n’y a pas de stabilisants, ce qui signifie que les saveurs sont plus fraîches et plus naturelles. De plus, vous pouvez préparer juste la bonne quantité dont vous avez besoin et mélanger des fruits avec des herbes et des épices pour créer de nouvelles combinaisons de saveurs passionnantes. L'ajout d'acidité est une autre façon d'améliorer votre gamme de sirop, et les shrubs en sont un excellent exemple, mais nous garderons cela pour une autre fois.\n\nPlongeons maintenant dans deux méthodes pour préparer des sirops fruités que je recommande vivement. Mon préféré consiste à peser les fruits et à ajouter une quantité égale de sucre dans un pot. Mélangez le tout, couvrez le pot et laissez reposer pendant 8 à 12 heures. Une fois ce temps écoulé, vous commencerez à voir le sucre se dissoudre. Pesez le résultat et ajoutez une quantité égale d'eau tiède en poids, en vous assurant que tout le sucre est dissous. Ensuite, filtrez-le et mettez-le en bouteille.\n\nLa deuxième méthode consiste à mélanger des fruits avec de l'eau et du sucre. Les fruits comme les pommes et les baies vous donneront deux profils de saveur différents selon que vous utilisez de l'eau chaude ou à température ambiante. L’utilisation d’eau à température ambiante donnera une saveur plus fraîche, tandis que l’eau chaude vous donnera une saveur de compote plus riche, comme la confiture. Pour préparer ce sirop, pesez simplement des parties égales de fruits, de sucre et d'eau, mélangez le tout, filtrez les morceaux avec une passoire fine et mettez-le en bouteille.\n\nIl est important de noter que la durée de conservation de ces sirops sont relativement courts. Si vous le conservez au réfrigérateur, il durera une semaine ou deux, mais l'ajout d'un peu de vodka peut prolonger la durée de conservation jusqu'à un mois. Alors n’hésitez plus et expérimentez différents fruits, herbes et épices pour créer vos délicieux sirops faits maison. Vous ne reviendrez plus jamais aux produits achetés en magasin !"
-   },
-   {
-      "id":"other-syrups",
-      "title":"Sirop de gingembre et sirop triple",
-      "description":"Rejoignez-moi pour explorer deux sirops uniques et apprendre à les fabriquer à partir de zéro !",
-      "body":"GINGEMBRE\n\nFaire du sirop de gingembre selon la méthode de Jeff Morganthaler est incroyablement simple. Tout ce que vous avez à faire est de mélanger des parts égales d’eau chaude, de sucre et de gingembre pelé (ou non pelé). Filtrez tous les morceaux à l’aide d’une étamine ou d’un sac de lait de noix. Vous pouvez également utiliser un t-shirt en coton, mais veillez à ce qu'il soit de préférence blanc. Notez que ce processus peut abîmer ou tacher le t-shirt, alors utilisez-en un que vous êtes prêt à jeter. Assurez-vous de désinfecter le t-shirt avant et après son utilisation.\n\nSIROP TRIPLE\n\nLe maître mixologue Dale DeGroff a développé le triple sirop, un sirop complexe qui remplace le sirop simple ou le sirop de miel dans les cocktails.Le sirop simple n'est pas intéressant dans un sirop aigre, et le sirop de miel est trop chaud et savoureux et peut attirer trop d'attention dans un cocktail. Le triple sirop combine trois sirops, emmenant vos sens vers une troisième dimension de saveur. Mélangez une partie de sirop simple (1:1), 1/2 partie de sirop d'agave et 1/4 partie de sirop de miel. Ajustez le rapport à votre goût et commencez à expérimenter. Voici un exemple de recette pour commencer :\n\n400 ml de sirop simple\n200 ml de sirop d'agave\n100 ml de sirop de miel"
-   },
-   {
-      "id":"grenadine",
-      "title":"Sirop de grenadine",
-      "description":"Quelle grenadine a le meilleur rapport qualité/prix ?",
-      "body":"Pour obtenir le sirop de grenadine le plus savoureux, il est préférable de le préparer à partir de zéro. Même si cela demande une certaine préparation, l’effort en vaut la peine. Suivez ces proportions et adaptez-les en fonction de vos besoins.\n\nPour commencer, vous aurez besoin de mélasse de grenade, qui est un mélange de 950 ml de jus de grenade bio, 600 gr de sucre et 35 ml de jus de citron. Mettez le tout dans une casserole à feu moyen-doux en remuant fréquemment. Une fois qu'il commence à bouillir, laissez-le mijoter pendant environ 45 à 60 minutes jusqu'à ce qu'il devienne épais et commence à coller au fond de la casserole.\n\nPour le sirop lui-même, vous aurez besoin de 950 ml de jus de grenade et de 600 g de sucre. Placez-le sur feu doux et remuez constamment sans porter à ébullition jusqu'à ce que le sucre soit dissous. Incorporez 180 ml de mélasse et mélangez bien.\n\nUne fois terminé, embouteillez et étiquetez le sirop, puis réfrigérez jusqu'à deux semaines. Cependant, si vous ne l’utilisez pas fréquemment, il existe d’excellentes marques disponibles à l’achat. Ils dureront plus longtemps et constitueront le meilleur choix pour vous."
-   }
+    {
+        "id": "simple-syrup",
+        "title": "Sirop simple",
+        "description": "Voyons comment faire du sirop simple, du sirop riche et quand il est préférable de les utiliser",
+        "body": [
+            {
+                "heading": "Sirop simple et sirop riche",
+                "content": "Le sirop simple est un mélange de parties égales d'eau et de sucre par poids (1:1), tandis qu'un sirop riche est composé de 2 parts de sucre pour 1 part d'eau (2:1)."
+            },
+            {
+                "heading": "Fabrication du sirop simple",
+                "content": "Pour faire du sirop simple, mettez du sucre dans un récipient et ajoutez de l'eau chaude, en remuant jusqu'à ce que le liquide devienne clair. Vous pouvez également mélanger le sucre et l'eau avec de l'eau froide, mais cela prendra plus de temps pour dissoudre le sucre. Cette méthode fonctionne avec tous les types de sucre, y compris le sucre granulé, brun, de canne, doré, muscovado et turbinado."
+            },
+            {
+                "heading": "Stockage et utilisation",
+                "content": "Une fois votre sirop de sucre prêt, laissez-le refroidir, embouteillez-le et étiquetez-le avec le nom du sucre utilisé, le ratio utilisé et la date de fabrication. Conservez-le au réfrigérateur pendant plus d'un mois. La plupart des cocktails nécessitent du sirop car le sucre granulé ne se dissout pas complètement lorsqu'on remue, secoue ou jette. Pour des boissons comme le old fashioned, le mojito ou la caipirinha qui utilisent initialement du sucre granulé, c'est à vous de choisir d'utiliser du sucre granulé ou du sirop. Cependant, l'utilisation de sucre granulé fera évoluer la douceur de votre cocktail avec le temps, ce qui peut ne pas être souhaitable. En utilisant plutôt du sirop de sucre, vous aurez plus de contrôle sur la douceur de la boisson et il sera plus facile de reproduire exactement le même profil de saveur."
+            }
+        ]
+    },
+    {
+        "id": "honey",
+        "title": "Sirops de miel, d'agave et de vanille",
+        "description": "Apprenez à utiliser ces sirops épais et découvrez quelques faits intéressants",
+        "body": [
+            {
+                "heading": "Importance des sirops dans les cocktails",
+                "content": "Les sirops sont un élément clé de la confection de cocktails, et il est essentiel de les réussir pour obtenir la consistance et la saveur désirées. Il est important de diluer les sirops denses avec de l'eau dans un rapport de 1:1 ou 2:1 pour éviter la cristallisation."
+            },
+            {
+                "heading": "Sirop de miel",
+                "content": "Le sirop de miel est un ingrédient incontournable de nombreux cocktails, surtout avec les whiskys. Le ratio recommandé est de 3:1 avec de l'eau chaude. Il se conserve pendant plus d'un mois et la réfrigération peut prolonger sa durée de conservation."
+            },
+            {
+                "heading": "Sirop d'agave",
+                "content": "Le sirop d'agave est polyvalent et se marie bien avec les tequilas et le café. Diluez-le dans un rapport de 2:1 avec de l'eau chaude, embouteillez-le et conservez-le au réfrigérateur pendant plus d'un mois."
+            },
+            {
+                "heading": "Sirop de vanille",
+                "content": "Le sirop de vanille, idéal pour les cocktails, se marie bien avec le café et les saveurs fruitées. Vous pouvez l'acheter ou le faire vous-même en infusant une gousse de vanille avec du sirop simple. Réutilisez la gousse de vanille plusieurs fois pour la saveur."
+            }
+        ]
+    },
+    {
+        "id": "fruity-syrups",
+        "title": "Sirops aromatisés aux baies",
+        "description": "Parlons de comment faire vos propres sirops fruités.",
+        "body": [
+            {
+                "heading": "Avantages des sirops faits maison",
+                "content": "Les sirops faits maison surpassent les marques commerciales avec des saveurs plus fraîches et plus naturelles. Contrôlez le goût, évitez les stabilisants et créez des mélanges uniques de fruits, d'herbes et d'épices."
+            },
+            {
+                "heading": "Deux méthodes recommandées",
+                "content": ""
+            },
+            {
+                "heading": "Fruits, sucre et mélangeur",
+                "content": "Mélangez des poids égaux de fruits et de sucre dans un bocal, écrasez légèrement et laissez reposer pendant 8 à 12 heures (ou plus si nécessaire). Dissolvez le sucre avec un poids égal d'eau tiède, filtrez et embouteillez."
+            },
+            {
+                "heading": "Mélange de fruits",
+                "content": "Mélangez des parties égales de fruits, de sucre et d'eau. L'utilisation d'eau à température ambiante donne une saveur plus fraîche, tandis que l'eau chaude donne une saveur plus riche et cuite des fruits. Filtrez et embouteillez le sirop."
+            },
+            {
+                "heading": "Durée de conservation et préservation",
+                "content": "Ces sirops ont une durée de conservation relativement courte d'environ une semaine ou deux au réfrigérateur. Il est possible de la prolonger jusqu'à un mois en ajoutant une touche de vodka. Expérimentez avec différents fruits, herbes et épices pour des délices faits maison."
+            }
+        ]
+    },
+    {
+        "id": "other-syrups",
+        "title": "Sirop de gingembre et sirop triple",
+        "description": "Rejoignez-moi pour explorer deux sirops uniques et apprendre à les fabriquer de zéro !",
+        "body": [
+            {
+                "heading": "Sirop de gingembre",
+                "content": "Créer du sirop de gingembre selon la méthode de Jeff Morganthaler est simple : mélangez des parts égales d'eau chaude, de sucre et de gingembre pelé ou non pelé. Filtrez les solides avec de la gaze, un sac à lait végétal ou un T-shirt en coton non coloré, de préférence blanc (à usage unique en raison des taches). Désinfectez le tissu avant et après utilisation."
+            },
+            {
+                "heading": "Sirop triple",
+                "content": "Le mixologue expert Dale DeGroff a créé le sirop triple complexe pour sublimer les cocktails. Le sirop simple manque de complexité dans les boissons acides, tandis que le sirop de miel est trop intense. Combinez des parts égales de sirop simple (1:1), 1/2 part de sirop d'agave et 1/4 de sirop de miel. Ajustez les ratios selon votre goût. Exemple de recette : 400 ml de sirop simple, 200 ml de sirop d'agave, 100 ml de sirop de miel."
+            }
+        ]
+    },
+    {
+        "id": "grenadine",
+        "title": "Sirop de grenadine",
+        "description": "Quelle grenadine offre le meilleur rapport qualité-prix en termes de temps/argent ?",
+        "body": [
+            {
+                "heading": "Grenadine maison",
+                "content": "Pour obtenir le meilleur sirop de grenade, le faire à partir de zéro est recommandé. Utilisez 950 ml de jus de grenade biologique, 600 g de sucre et 35 ml de jus de citron. Laissez mijoter à feu moyen à doux pendant 45 à 60 minutes jusqu'à épaississement."
+            },
+            {
+                "heading": "Préparation du sirop",
+                "content": "Mélangez 950 ml de jus de grenade et 600 g de sucre à feu doux. Remuez jusqu'à dissolution du sucre. Ajoutez 180 ml de mélasse, mélangez soigneusement. Embouteillez, étiquetez et réfrigérez jusqu'à deux semaines. Alternativement, de bonnes options disponibles en magasin offrent une durée de conservation plus longue."
+            }
+        ]
+    }
 ]
