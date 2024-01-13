@@ -35,7 +35,7 @@ struct Cocktail: Codable, Equatable, Identifiable {
 
     #if DEBUG
     static let example = Cocktail(
-        id: "margarita",
+        id: "aperol-spritz",
         name: "Corpse Reviver No.2",
         method: "shake & fine strain",
         glass: "shot",
@@ -113,7 +113,7 @@ struct Procedure: Codable, Equatable, Identifiable {
     }
     
     #if DEBUG
-    static let example = Procedure(id: "cosmopolitan",
+    static let example = Procedure(id: "aperol-spritz",
                                    procedure: [
                                     Procedure.Steps(step: "Step 1",
                                                     text: "Add all the ingredients into the cocktail shaker; a part from the red wine"),

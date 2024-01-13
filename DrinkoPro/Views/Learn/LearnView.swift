@@ -10,7 +10,6 @@ import SwiftUI
 struct LearnView: View {
     static let learnTag: String? = "Learn"
 
-    @StateObject var viewModel = AdvancedViewModel()
     @State private var isCollapsed = false
     
     let basics = Bundle.main.decode([Lesson].self, from: "basics.json")
@@ -52,9 +51,6 @@ struct LearnView: View {
                 }
             }
             .navigationTitle("Learn")
-            .onAppear {
-                viewModel.fetchJSON()
-            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

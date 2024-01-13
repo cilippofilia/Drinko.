@@ -25,12 +25,12 @@ struct CocktailDetailView: View {
     @State private var frameSize: CGFloat = 280
     @State private var corners: CGFloat = 10
 
-    var cocktail: Cocktail
+    let cocktail: Cocktail
     var cocktailHistory: History? {
         return histories.first(where: { $0.id == cocktail.id })
     }
-    var cocktailProcedure: Procedure {
-        return procedures.first(where: { $0.id == cocktail.id })!
+    var cocktailProcedure: Procedure? {
+        return procedures.first(where: { cocktail.id == $0.id })
     }
 
     var body: some View {
@@ -79,28 +79,32 @@ struct CocktailDetailView: View {
                 .pickerStyle(.segmented)
                 .frame(maxWidth: compactScreenWidth / 2)
                 .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.bottom)
 
 
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Ingredients")
 
-                ForEach(cocktail.ingredients) { ingredient in
-                    HStack {
-                            // "%2g" reduces the decimal points to 2 digits
-                        Text(selectedUnit == "oz." ?
-                             "\(ingredient.quantity, specifier: "%2g")" :
-                                "\(ingredient.mlQuantity, specifier: "%2g")")
+                VStack {
+                    ForEach(cocktail.ingredients) { ingredient in
+                        HStack {
+                                // "%2g" reduces the decimal points to 2 digits
+                            Text(selectedUnit == "oz." ?
+                                 "\(ingredient.quantity, specifier: "%2g")" :
+                                    "\(ingredient.mlQuantity, specifier: "%2g")")
 
-                        Text(selectedUnit == "oz." ?
-                             ingredient.unit :
-                                ingredient.mlUnit)
+                            Text(selectedUnit == "oz." ?
+                                 ingredient.unit :
+                                    ingredient.mlUnit)
 
-                        Text(ingredient.name.capitalized)
+                            Text(ingredient.name.capitalized)
 
-                        Spacer()
+                            Spacer()
+                        }
+                        .multilineTextAlignment(.leading)
                     }
-                    .multilineTextAlignment(.leading)
                 }
+                .padding(.bottom)
 
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Method")
@@ -276,7 +280,7 @@ struct CocktailDetailView: View {
                                           text: "Extra")
                 
                 VStack(spacing: 20) {
-                    ProcedureView(cocktail: cocktail, procedure: cocktailProcedure)
+                    ProcedureView(cocktail: cocktail, procedure: cocktailProcedure!)
                     
                     if (cocktailHistory?.text ?? "") != "" {
                         HistoryView(cocktail: cocktail, history: cocktailHistory!)

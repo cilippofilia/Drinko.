@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ProcedureView: View {
-    let cocktail: Cocktail
-    let procedure: Procedure
+    var cocktail: Cocktail
+    var procedure: Procedure
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
