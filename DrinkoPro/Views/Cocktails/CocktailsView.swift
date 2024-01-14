@@ -55,6 +55,9 @@ struct CocktailsView: View {
             .toolbar {
                 sortButtonToolbarItem
             }
+            .swipeActions {
+                Text("Action")
+            }
         }
         .environmentObject(favorites)
         .navigationViewStyle(StackNavigationViewStyle())

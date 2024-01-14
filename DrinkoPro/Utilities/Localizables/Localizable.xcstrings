@@ -620,6 +620,9 @@
         }
       }
     },
+    "Action" : {
+
+    },
     "Add Family" : {
       "localizations" : {
         "de" : {
@@ -2237,6 +2240,9 @@
           }
         }
       }
+    },
+    "Instagram" : {
+
     },
     "It's good to be back!" : {
       "localizations" : {
