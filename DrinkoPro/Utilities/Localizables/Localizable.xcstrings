@@ -620,9 +620,6 @@
         }
       }
     },
-    "Action" : {
-
-    },
     "Add Family" : {
       "localizations" : {
         "de" : {
@@ -3806,6 +3803,7 @@
       }
     },
     "Start adding categories and products\nby pressing the + above." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3832,6 +3830,9 @@
           }
         }
       }
+    },
+    "Start adding categories and products by pressing the + above." : {
+
     },
     "Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉" : {
       "localizations" : {
@@ -3889,6 +3890,12 @@
           }
         }
       }
+    },
+    "Swipe left" : {
+
+    },
+    "Swipe right" : {
+
     },
     "Syrups" : {
       "localizations" : {
@@ -3948,7 +3955,6 @@
       }
     },
     "Test button" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4119,6 +4125,12 @@
           }
         }
       }
+    },
+    "To add a product to your cart so you know what is missing from your cabinet with a quick glance." : {
+
+    },
+    "To mark your favorite cocktails" : {
+
     },
     "Try Again" : {
       "extractionState" : "manual",

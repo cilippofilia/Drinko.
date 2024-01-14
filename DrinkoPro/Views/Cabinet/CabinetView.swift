@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import TipKit
 
 struct CabinetView: View {
     static let cabinetViewTag: String? = "Cabinet"
-
+    
+    @Environment(\.horizontalSizeClass) var sizeClass
     @ObservedObject var favoriteProducts = FavoriteProduct()
 
     @StateObject var viewModel: ViewModel
@@ -19,15 +21,28 @@ struct CabinetView: View {
         let viewModel = ViewModel(dataController: dataController)
         _viewModel = StateObject(wrappedValue: viewModel)
     }
+    
+    var favoriteItemTip = SwipeToCartTip()
 
     var body: some View {
         NavigationStack {
             Group {
                 if viewModel.families.isEmpty {
-                    Text("Start adding categories and products\nby pressing the + above.")
-                        .italic()
-                        .foregroundColor(.secondary)
-                        .multilineTextAlignment(.center)
+                    /// This VStack can be replaced by ContentUnavailableView
+                    /// available only from iOS17 onwards
+                    VStack {
+                        Image(systemName: "cabinet.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 44)
+                        
+                        Text("Start adding categories and products by pressing the + above.")
+                    }
+                    .italic()
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                    .frame(maxWidth: sizeClass == .compact ? compactScreenWidth : regularScreenWidth)
+
                 } else {
                     cabinetList
                 }
@@ -45,11 +60,15 @@ struct CabinetView: View {
 private extension CabinetView {
     var cabinetList: some View {
         List {
+            
             ForEach(viewModel.families) { family in
                 Section(header: FamilyHeaderView(family: family)) {
+                    if #available(iOS 17.0, *) {
+                        TipView(favoriteItemTip, arrowEdge: .bottom)
+                    }
                     ForEach(family.familyItems(using: viewModel.sortOrder)) { item in
                         ItemRowView(family: family, item: item)
-                            .contextMenu {
+                            .swipeActions(edge: .leading) {
                                 Button(action: {
                                     if favoriteProducts.contains(item) {
                                         favoriteProducts.remove(item)
@@ -63,6 +82,7 @@ private extension CabinetView {
                                     Text(favoriteProducts.contains(item) ? "Remove from Cart" : "Add to Cart")
                                 }
                             }
+                            .tint(favoriteProducts.contains(item) ? .red : .blue)
                     }
                     .onDelete { offsets in
                         viewModel.delete(offsets, from: family)
@@ -79,6 +99,15 @@ private extension CabinetView {
             }
         }
         .listStyle(InsetGroupedListStyle())
+        .task {
+            if #available(iOS 17.0, *) {
+                // Configure and load your tips at app launch.
+                try? Tips.configure([
+                    .displayFrequency(.immediate),
+                    .datastoreLocation(.applicationDefault)
+                ])
+            }
+        }
     }
 }
 
