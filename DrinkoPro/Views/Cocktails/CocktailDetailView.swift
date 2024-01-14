@@ -178,7 +178,7 @@ struct CocktailDetailView: View {
                     }
                                      .sheet(isPresented: $showProcedure) {
                                          ProcedureView(cocktail: cocktail,
-                                                       procedure: Procedure.example)
+                                                       procedure: cocktailProcedure!)
                                              .presentationDetents([.large,.fraction(0.75)])
                                      }
                 }

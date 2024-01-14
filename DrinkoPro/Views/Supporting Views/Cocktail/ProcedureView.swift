@@ -37,6 +37,8 @@ struct ProcedureView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     ProcedureView(cocktail: .example, procedure: .example)
 }
+#endif
