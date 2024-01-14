@@ -51,13 +51,9 @@ struct CocktailsView: View {
             List(filteredCocktails) { cocktail in
                 /// conditional to make the tip pop up only on devices supporting iOS 17.0 +
                 if #available(iOS 17.0, *), (cocktail.id == "adonis") {
-                    Spacer()
-                        .frame(maxHeight: 50)
-                    
                     TipView(favoriteCocktailsTip, arrowEdge: .bottom)
                         .background(Color.clear)
                 }
-
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
                     .swipeActions(edge: .trailing) {
                         FavoriteButtonView(favorites: favorites, cocktail: cocktail)
