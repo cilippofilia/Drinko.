@@ -35,7 +35,7 @@ struct Cocktail: Codable, Equatable, Identifiable {
 
     #if DEBUG
     static let example = Cocktail(
-        id: "aperol-spritz",
+        id: "adonis",
         name: "Corpse Reviver No.2",
         method: "shake & fine strain",
         glass: "shot",

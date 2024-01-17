@@ -19,8 +19,8 @@ struct CocktailDetailView: View {
     @State private var showHistory = false
     @State private var showProcedure = false
 
-    @State private var selectedUnit = "oz."
-    var units = ["oz.", "ml"]
+    @State private var selectedUnit = "ml"
+    var units = ["ml", "oz."]
 
     @State private var frameSize: CGFloat = 280
     @State private var corners: CGFloat = 10
@@ -37,6 +37,11 @@ struct CocktailDetailView: View {
         ScrollView(.vertical, showsIndicators: false) {
             if sizeClass == .compact {
                 compactDetailView
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            likeButton
+                        }
+                    }
             } else {
                 regularDetailView
             }
@@ -80,108 +85,56 @@ struct CocktailDetailView: View {
                 .frame(maxWidth: compactScreenWidth / 2)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.bottom)
-
-
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Ingredients")
-
-                VStack {
-                    ForEach(cocktail.ingredients) { ingredient in
-                        HStack {
-                                // "%2g" reduces the decimal points to 2 digits
-                            Text(selectedUnit == "oz." ?
-                                 "\(ingredient.quantity, specifier: "%2g")" :
-                                    "\(ingredient.mlQuantity, specifier: "%2g")")
-
-                            Text(selectedUnit == "oz." ?
-                                 ingredient.unit :
-                                    ingredient.mlUnit)
-
-                            Text(ingredient.name.capitalized)
-
-                            Spacer()
-                        }
-                        .multilineTextAlignment(.leading)
-                    }
-                }
-                .padding(.bottom)
-
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Method")
-
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Glass")
-
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Garnish")
-
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Ice")
-
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Extra")
-
-                HStack(spacing: 10) {
-                    if (cocktailHistory?.text ?? "") != "" {
-                        // HISTORY BUTTON
-                        DrinkoButtonView(title: "History",
-                                         icon: "book.fill",
-                                         background: .blue,
-                                         foreground: .white) {
-                            showHistory.toggle()
-                        }
-                                         .sheet(isPresented: $showHistory) {
-                                             HistoryView(cocktail: cocktail, history: cocktailHistory!)
-                                                 .presentationDetents([.large,.fraction(0.75)])
-                                         }
-                    } 
+                
+                Divider()
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Ingredients")
                     
-                    if (cocktailHistory?.text ?? "") == "" {
-                        DrinkoButtonView(title: "Procedure",
-                                         icon: "list.clipboard.fill",
-                                         background: .blue,
-                                         foreground: .white) {
-                            showProcedure.toggle()
-                        }
-                                         .sheet(isPresented: $showProcedure) {
-                                             ProcedureView(cocktail: cocktail,
-                                                           procedure: cocktailProcedure!)
-                                                 .presentationDetents([.large,.fraction(0.75)])
-                                         }
-                    }
+                    ingredientsView
                     
-                    // ADD TO FAV BUTTON
-                    DrinkoButtonView(title: "Like",
-                                     icon: favorites.contains(cocktail) ? "heart.slash.fill" : "heart.fill",
-                                     background: favorites.contains(cocktail) ? .red : .blue,
-                                     foreground: .white,
-                                     handler: {
-                        if favorites.contains(cocktail) {
-                            favorites.remove(cocktail)
-                        } else {
-                            favorites.add(cocktail)
-                            // haptic feedback
-                            UINotificationFeedbackGenerator()
-                                .notificationOccurred(.success)
-                        }
-                    })
-                    .frame(maxWidth: (cocktailHistory?.text ?? "") != "" ? frameSize / 2 : .infinity)
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Method")
+                    
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Glass")
+                    
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Garnish")
+                    
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Ice")
+                    
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Extra")
                 }
                 .padding(.vertical)
                 
-                if (cocktailHistory?.text ?? "") != "" {
-                    DrinkoButtonView(title: "Procedure",
-                                     icon: "list.clipboard.fill",
-                                     background: .blue,
-                                     foreground: .white) {
-                        showProcedure.toggle()
+                Divider()
+
+                VStack {
+                    ProcedureView(cocktail: cocktail,
+                                  procedure: cocktailProcedure!)
+                    
+                    HStack(spacing: 10) {
+                        if (cocktailHistory?.text ?? "") != "" {
+                            // HISTORY BUTTON
+                            DrinkoButtonView(title: "History",
+                                             icon: "book.fill",
+                                             background: .blue,
+                                             foreground: .white) {
+                                showHistory.toggle()
+                            }
+                                             .sheet(isPresented: $showHistory) {
+                                                 HistoryView(cocktail: cocktail, history: cocktailHistory!)
+                                                     .presentationDetents([.large,.fraction(0.75)])
+                                             }
+                        }
                     }
-                                     .sheet(isPresented: $showProcedure) {
-                                         ProcedureView(cocktail: cocktail,
-                                                       procedure: cocktailProcedure!)
-                                             .presentationDetents([.large,.fraction(0.75)])
-                                     }
+                    .padding(.vertical)
                 }
+                .padding(.top)
             }
             Spacer(minLength: 50)
         }
@@ -209,7 +162,7 @@ struct CocktailDetailView: View {
             .background(Color.white)
             .cornerRadius(corners * 1.75)
 
-            VStack(spacing: 20) {
+            VStack(spacing: 10) {
                 HStack {
                     Text(cocktail.name)
                         .font(.title.bold())
@@ -246,23 +199,7 @@ struct CocktailDetailView: View {
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Ingredients")
 
-                ForEach(cocktail.ingredients) { ingredient in
-                    HStack {
-                            // "%2g" reduces the decimal points to 2 digits
-                        Text(selectedUnit == "oz." ?
-                             "\(ingredient.quantity, specifier: "%2g")" :
-                                "\(ingredient.mlQuantity, specifier: "%2g")")
-
-                        Text(selectedUnit == "oz." ?
-                             ingredient.unit :
-                                ingredient.mlUnit)
-
-                        Text(ingredient.name.capitalized)
-
-                        Spacer()
-                    }
-                    .multilineTextAlignment(.leading)
-                }
+                ingredientsView
 
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Method")
@@ -279,17 +216,53 @@ struct CocktailDetailView: View {
                 CocktailDetailSectionView(cocktail: cocktail,
                                           text: "Extra")
                 
-                VStack(spacing: 20) {
-                    ProcedureView(cocktail: cocktail, procedure: cocktailProcedure!)
-                    
-                    if (cocktailHistory?.text ?? "") != "" {
-                        HistoryView(cocktail: cocktail, history: cocktailHistory!)
-                    }
+                ProcedureView(cocktail: cocktail, procedure: cocktailProcedure!)
+
+                if (cocktailHistory?.text ?? "") != "" {
+                    HistoryView(cocktail: cocktail, history: cocktailHistory!)
                 }
+                
                 Spacer(minLength: 50)
             }
-            .frame(width: regularScreenWidth)
         }
+    }
+}
+
+extension CocktailDetailView {
+    var ingredientsView: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            ForEach(cocktail.ingredients) { ingredient in
+                HStack {
+                    Text(selectedUnit == "oz." ? "\(ingredient.quantity, specifier: "%2g")" : "\(ingredient.mlQuantity, specifier: "%2g")")
+
+                    Text(selectedUnit == "oz." ? ingredient.unit : ingredient.mlUnit)
+
+                    Text(ingredient.name.capitalized)
+                    
+                    Spacer()
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+        .padding(.bottom)
+    }
+    
+    var likeButton: some View {
+        Button(action: {
+            if favorites.contains(cocktail) {
+                favorites.remove(cocktail)
+            } else {
+                favorites.add(cocktail)
+                // haptic feedback
+                UINotificationFeedbackGenerator()
+                    .notificationOccurred(.success)
+            }
+        }) {
+            Label("Like", systemImage: favorites.contains(cocktail) ? "heart.fill" : "heart")
+                .foregroundStyle(.red)
+        }
+        .buttonStyle(.plain)
+        .animation(.easeInOut, value: favorites.contains(cocktail))
     }
 }
 

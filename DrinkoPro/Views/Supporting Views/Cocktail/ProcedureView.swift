@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ProcedureView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
+    
     var cocktail: Cocktail
     var procedure: Procedure
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            VStack {
+            VStack(alignment: .leading) {
                 Text("Procedure")
-                    .font(.title.bold())
-                    .padding(.vertical)
-                    .padding(.top)
+                    .font(sizeClass == .compact ? .title3.bold() : .title.bold())
 
                 VStack(alignment: .leading) {
                     ForEach(procedure.procedure) { steps in
@@ -31,8 +31,8 @@ struct ProcedureView: View {
                     .multilineTextAlignment(.leading)
                     .padding(.vertical, 5)
                 }
+                .lineSpacing(sizeClass == .compact ? 5 : 10)
             }
-            .frame(width: compactScreenWidth)
         }
     }
 }

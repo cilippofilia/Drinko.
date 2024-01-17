@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HistoryView: View {
+    @Environment(\.horizontalSizeClass) var sizeClass
+    
     let cocktail: Cocktail
     let history: History
 
@@ -15,12 +17,13 @@ struct HistoryView: View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading) {
                 Text("History")
-                    .font(.title.bold())
+                    .font(.title3.bold())
                     .padding(.vertical)
                     .padding(.top)
 
                 Text(history.text)
                     .multilineTextAlignment(.leading)
+                    .lineSpacing(sizeClass == .compact ? 5 : 10)
             }
             .frame(width: regularScreenWidth)
         }
