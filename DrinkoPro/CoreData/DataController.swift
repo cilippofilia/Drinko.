@@ -17,17 +17,6 @@ class DataController: ObservableObject {
     // The UserDefaults suite where we're saving user data.
     let defaults: UserDefaults
 
-    // Loads and saves whether our premium unlock has been purchased.
-    var plusVersionUnlocked: Bool {
-        get {
-            defaults.bool(forKey: "plusVersionUnlocked")
-        }
-
-        set {
-            defaults.set(newValue, forKey: "plusVersionUnlocked")
-        }
-    }
-
     /// Initializes a data controller, either in memory (for temporary use such as testing and previewing),
     /// or on permanent storage (for use in regular app runs.)
     ///

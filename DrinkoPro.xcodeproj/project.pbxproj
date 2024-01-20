@@ -14,7 +14,6 @@
 		182B40342AE90EB30007A03F /* ImageFailedToLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B40332AE90EB30007A03F /* ImageFailedToLoad.swift */; };
 		182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
-		183AE95D2A94AACC00AC156F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95C2A94AACB00AC156F /* StoreKit.framework */; };
 		183AE9682A94B02700AC156F /* ItemRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AE9602A94B02700AC156F /* ItemRowViewModel.swift */; };
 		183AE9692A94B02700AC156F /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AE9612A94B02700AC156F /* ItemDetailView.swift */; };
 		183AE96A2A94B02700AC156F /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AE9622A94B02700AC156F /* EditItemView.swift */; };
@@ -82,7 +81,6 @@
 		182B40332AE90EB30007A03F /* ImageFailedToLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFailedToLoad.swift; sourceTree = "<group>"; };
 		182E43362A2B1221001675FD /* CreditsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCardView.swift; sourceTree = "<group>"; };
 		183AE95A2A94AAC000AC156F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-		183AE95C2A94AACB00AC156F /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		183AE95E2A94AB4500AC156F /* DrinkoPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrinkoPro.entitlements; sourceTree = "<group>"; };
 		183AE9602A94B02700AC156F /* ItemRowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemRowViewModel.swift; sourceTree = "<group>"; };
 		183AE9612A94B02700AC156F /* ItemDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */,
-				183AE95D2A94AACC00AC156F /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +179,6 @@
 		183723C82A909AB700DBCD5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				183AE95C2A94AACB00AC156F /* StoreKit.framework */,
 				183AE95A2A94AAC000AC156F /* CloudKit.framework */,
 			);
 			name = Frameworks;
