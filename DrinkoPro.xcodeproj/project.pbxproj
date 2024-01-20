@@ -11,7 +11,6 @@
 		180E3E742A96444F0005381F /* FamilyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E3E732A96444F0005381F /* FamilyHeaderView.swift */; };
 		180E3E762A9645EF0005381F /* EditFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E3E752A9645EF0005381F /* EditFamilyView.swift */; };
 		182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
-		182739A42B5BD68E00B6909A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 182739A32B5BD68E00B6909A /* .gitignore */; };
 		182B40342AE90EB30007A03F /* ImageFailedToLoad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B40332AE90EB30007A03F /* ImageFailedToLoad.swift */; };
 		182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
@@ -84,7 +83,6 @@
 		180E3E732A96444F0005381F /* FamilyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyHeaderView.swift; sourceTree = "<group>"; };
 		180E3E752A9645EF0005381F /* EditFamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFamilyView.swift; sourceTree = "<group>"; };
 		1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		182739A32B5BD68E00B6909A /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		182B40332AE90EB30007A03F /* ImageFailedToLoad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFailedToLoad.swift; sourceTree = "<group>"; };
 		182E43362A2B1221001675FD /* CreditsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCardView.swift; sourceTree = "<group>"; };
 		183AE95A2A94AAC000AC156F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -374,7 +372,6 @@
 			isa = PBXGroup;
 			children = (
 				183AE95E2A94AB4500AC156F /* DrinkoPro.entitlements */,
-				182739A32B5BD68E00B6909A /* .gitignore */,
 				18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */,
 				18F49E712A286CDD00862CE3 /* HomeView.swift */,
 				183AE9762A94B13200AC156F /* CoreData */,
@@ -573,7 +570,6 @@
 				18F586132B46328B00BD460B /* history.json in Resources */,
 				18F5864E2B46FFA800BD460B /* shots.json in Resources */,
 				18F5863D2B46348100BD460B /* spirits.json in Resources */,
-				182739A42B5BD68E00B6909A /* .gitignore in Resources */,
 				1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */,
 				18F5862D2B4633F100BD460B /* basics.json in Resources */,
 				18F49E7A2A286D1900862CE3 /* Assets.xcassets in Resources */,
