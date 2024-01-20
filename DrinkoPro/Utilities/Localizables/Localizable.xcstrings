@@ -199,6 +199,7 @@
       }
     },
     "%@ - %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3835,6 +3836,7 @@
 
     },
     "Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4070,6 +4072,7 @@
       }
     },
     "Tip Jar" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

@@ -24,12 +24,6 @@ struct SettingsPreferenceView: View {
             .onTapGesture {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
-
-            NavigationLink(destination: TipJarView()) {
-                SettingsRowView(icon: "giftcard.fill",
-                                color: .green,
-                                itemName: "Tip Jar")
-            }
         }
     }
 }

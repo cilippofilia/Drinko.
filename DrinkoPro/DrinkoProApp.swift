@@ -11,13 +11,10 @@ import SwiftUI
 struct DrinkoProApp: App {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     @StateObject var dataController: DataController
-    @StateObject var purchaseManager: PurchaseManager
 
     init() {
         let dataController = DataController()
-        let purchaseManager = PurchaseManager()
         _dataController = StateObject(wrappedValue: dataController)
-        _purchaseManager = StateObject(wrappedValue: purchaseManager)
     }
     
     var body: some Scene {
@@ -26,10 +23,6 @@ struct DrinkoProApp: App {
                 SplashScreenView()
                     .environment(\.managedObjectContext, dataController.container.viewContext)
                     .environmentObject(dataController)
-                    .environmentObject(purchaseManager)
-                    .task {
-                        await purchaseManager.updatePurchasedProducts()
-                    }
                     // Automatically save when we detect that we are
                     // no longer the foreground app. Use this rather than
                     // scene phase so we can port to macOS, where scene
@@ -42,10 +35,6 @@ struct DrinkoProApp: App {
                 SplashScreenView()
                     .environment(\.managedObjectContext, dataController.container.viewContext)
                     .environmentObject(dataController)
-                    .environmentObject(purchaseManager)
-                    .task {
-                        await purchaseManager.updatePurchasedProducts()
-                    }
                     // Automatically save when we detect that we are
                     // no longer the foreground app. Use this rather than
                     // scene phase so we can port to macOS, where scene
