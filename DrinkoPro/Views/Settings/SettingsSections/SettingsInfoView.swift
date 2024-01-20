@@ -25,7 +25,6 @@ struct SettingsInfoView: View {
                                 color: .secondary,
                                 itemName: "Share the app")
             }
-            .buttonStyle(.plain)
 
             HStack {
                 SettingsRowView(icon: "v.circle",
@@ -37,6 +36,7 @@ struct SettingsInfoView: View {
                     .foregroundColor(.secondary)
             }
         }
+        .foregroundStyle(.primary)
     }
 
     // Get current Version of the App function

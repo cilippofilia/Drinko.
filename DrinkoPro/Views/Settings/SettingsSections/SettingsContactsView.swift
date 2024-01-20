@@ -28,7 +28,6 @@ struct SettingsContactsView: View {
                                 itemName: "Contact the developer")
             }
             .disabled(!MFMailComposeViewController.canSendMail())
-            .buttonStyle(.plain)
             .confirmationDialog("Select an option",
                                 isPresented: $showOptions,
                                 titleVisibility: .visible) {
@@ -40,7 +39,6 @@ struct SettingsContactsView: View {
             rateApp
             twitterRow
             instaRow
-
         }
     }
 }

@@ -198,35 +198,6 @@
         }
       }
     },
-    "%@ - %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ - %2$@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ - %2$@"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ - %2$@"
-          }
-        }
-      }
-    },
     "%@ peels (gr)" : {
       "localizations" : {
         "de" : {
@@ -3260,35 +3231,6 @@
         }
       }
     },
-    "Restore Purchases" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Käufe wiederherstellen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restore Purchases"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurer les achats"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ripristina l'acquisto"
-          }
-        }
-      }
-    },
     "Save Changes" : {
       "localizations" : {
         "de" : {
@@ -3803,66 +3745,8 @@
         }
       }
     },
-    "Start adding categories and products\nby pressing the + above." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beginnen Sie, Kategorien und Produkte hinzuzufügen,\nindem Sie oben auf + drücken."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start adding categories and products\nby pressing the + above."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Commences par ajouter des catégories et des produits\nen appuyant sur le + au-dessus."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inizia aggiungendo categorie e prodotti premendo + in alto."
-          }
-        }
-      }
-    },
     "Start adding categories and products by pressing the + above." : {
 
-    },
-    "Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterstützen Sie den Entwickler, indem Sie ihm einen Tipp geben!\nSo wie man es mit einem Barkeeper machen würde, wenn man abends etwas zu trinken bekommt. 😉"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Soutenez le développeur en lui donnant un pourboire !\nTout comme vous le feriez avec un barman lorsque vous receviez un verre lors d’une soirée. 😉"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Supporta lo sviluppatore dandogli una mancia! Esattamente come faresti se fossi al bar a chiacchierare con il bartender durante una serata. 😉"
-          }
-        }
-      }
     },
     "Support the developer by giving him a tip! Just like you would do to a bartender when you got get some drinks at a night out. 😉" : {
       "extractionState" : "manual",
@@ -4067,35 +3951,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Questa app è stata fatta con ❤️ da Filippo Cilia 🇮🇹"
-          }
-        }
-      }
-    },
-    "Tip Jar" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trinkgeldglas"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tip Jar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pot à pointe"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lascia la mancia"
           }
         }
       }

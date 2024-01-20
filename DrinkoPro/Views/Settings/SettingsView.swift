@@ -5,7 +5,6 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
-import StoreKit
 import SwiftUI
 
 struct SettingsView: View {
