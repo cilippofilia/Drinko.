@@ -12,6 +12,7 @@ struct CabinetView: View {
     static let cabinetViewTag: String? = "Cabinet"
     
     @Environment(\.horizontalSizeClass) var sizeClass
+    
     @ObservedObject var favoriteProducts = FavoriteProduct()
 
     @StateObject var viewModel: ViewModel
@@ -22,6 +23,7 @@ struct CabinetView: View {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     
+    // TipKit variable
     var favoriteItemTip = SwipeToCartTip()
 
     var body: some View {
@@ -60,7 +62,6 @@ struct CabinetView: View {
 private extension CabinetView {
     var cabinetList: some View {
         List {
-            
             ForEach(viewModel.families) { family in
                 Section(header: FamilyHeaderView(family: family)) {
                     if #available(iOS 17.0, *) {

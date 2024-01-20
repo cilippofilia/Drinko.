@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1806400E2B5C73240057F470 /* UserIngredients-CDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806400D2B5C73240057F470 /* UserIngredients-CDHelpers.swift */; };
+		180640102B5C74740057F470 /* UserCocktail-CDHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1806400F2B5C74740057F470 /* UserCocktail-CDHelpers.swift */; };
+		180640122B5C7C440057F470 /* UserCocktailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640112B5C7C440057F470 /* UserCocktailViewModel.swift */; };
+		180640182B5C88F30057F470 /* FavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteButtonView.swift */; };
 		180E3E722A9642D10005381F /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E3E712A9642D10005381F /* CabinetView.swift */; };
 		180E3E742A96444F0005381F /* FamilyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E3E732A96444F0005381F /* FamilyHeaderView.swift */; };
 		180E3E762A9645EF0005381F /* EditFamilyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180E3E752A9645EF0005381F /* EditFamilyView.swift */; };
@@ -74,6 +78,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1806400D2B5C73240057F470 /* UserIngredients-CDHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserIngredients-CDHelpers.swift"; sourceTree = "<group>"; };
+		1806400F2B5C74740057F470 /* UserCocktail-CDHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserCocktail-CDHelpers.swift"; sourceTree = "<group>"; };
+		180640112B5C7C440057F470 /* UserCocktailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCocktailViewModel.swift; sourceTree = "<group>"; };
+		180640172B5C88F30057F470 /* FavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonView.swift; sourceTree = "<group>"; };
 		180E3E712A9642D10005381F /* CabinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
 		180E3E732A96444F0005381F /* FamilyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FamilyHeaderView.swift; sourceTree = "<group>"; };
 		180E3E752A9645EF0005381F /* EditFamilyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFamilyView.swift; sourceTree = "<group>"; };
@@ -176,6 +184,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1806400B2B5C6CDF0057F470 /* Cabinet */ = {
+			isa = PBXGroup;
+			children = (
+				183AE97B2A94B13200AC156F /* Family-CDHelpers.swift */,
+				183AE97A2A94B13200AC156F /* Item-CDHelpers.swift */,
+			);
+			path = Cabinet;
+			sourceTree = "<group>";
+		};
+		1806400C2B5C6CEA0057F470 /* Cocktails */ = {
+			isa = PBXGroup;
+			children = (
+				1806400D2B5C73240057F470 /* UserIngredients-CDHelpers.swift */,
+				1806400F2B5C74740057F470 /* UserCocktail-CDHelpers.swift */,
+			);
+			path = Cocktails;
+			sourceTree = "<group>";
+		};
+		180640192B5C8E680057F470 /* UserCocktail */ = {
+			isa = PBXGroup;
+			children = (
+				180640112B5C7C440057F470 /* UserCocktailViewModel.swift */,
+			);
+			path = UserCocktail;
+			sourceTree = "<group>";
+		};
 		183723C82A909AB700DBCD5D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,8 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				183AE9772A94B13200AC156F /* DataController.swift */,
-				183AE97B2A94B13200AC156F /* Family-CDHelpers.swift */,
-				183AE97A2A94B13200AC156F /* Item-CDHelpers.swift */,
+				1806400C2B5C6CEA0057F470 /* Cocktails */,
+				1806400B2B5C6CDF0057F470 /* Cabinet */,
 				183AE9782A94B13200AC156F /* Main.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -316,6 +350,7 @@
 			children = (
 				18D6AEB22AFD407E003E64EC /* Learn */,
 				183AE9702A94B04B00AC156F /* Cabinet */,
+				180640192B5C8E680057F470 /* UserCocktail */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -392,6 +427,7 @@
 				183AE9742A94B10B00AC156F /* Sequence-Sorting.swift */,
 				188E93E42A4C9D57001691E6 /* String-Ext.swift */,
 				184F25022B54925F000A06D0 /* SwipeToActionTips.swift */,
+				180640172B5C88F30057F470 /* FavoriteButtonView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -572,6 +608,8 @@
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
 				183AE9692A94B02700AC156F /* ItemDetailView.swift in Sources */,
 				183AE96B2A94B02700AC156F /* ItemRowView.swift in Sources */,
+				1806400E2B5C73240057F470 /* UserIngredients-CDHelpers.swift in Sources */,
+				180640182B5C88F30057F470 /* FavoriteButtonView.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
 				18F586552B470E7400BD460B /* ProcedureView.swift in Sources */,
 				18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */,
@@ -580,8 +618,10 @@
 				183AE96A2A94B02700AC156F /* EditItemView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				18F49E9C2A286D2A00862CE3 /* Margins.swift in Sources */,
+				180640122B5C7C440057F470 /* UserCocktailViewModel.swift in Sources */,
 				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
 				18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */,
+				180640102B5C74740057F470 /* UserCocktail-CDHelpers.swift in Sources */,
 				1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */,
 				188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */,
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,

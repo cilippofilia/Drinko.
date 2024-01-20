@@ -12,14 +12,20 @@ struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
     
     @Environment(\.horizontalSizeClass) var sizeClass
+    
     @StateObject var favorites = Favorites()
+    @StateObject var userCocktailVM: ViewModel
     
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var shots = Bundle.main.decode([Cocktail].self, from: "shots.json")
-    
     @State private var searchText = ""
     @State private var showingSortOrder = false
     @State private var sortOption: Cocktail.SortOption = .fromAtoZ
+    
+    init(dataController: DataController) {
+        let viewModel = ViewModel(dataController: dataController)
+        _userCocktailVM = StateObject(wrappedValue: viewModel)
+    }
     
     // TipKit variable
     var favoriteCocktailsTip = SwipeToFavoriteTip()
@@ -49,16 +55,19 @@ struct CocktailsView: View {
     var body: some View {
         NavigationStack {
             List(filteredCocktails) { cocktail in
+                
                 /// conditional to make the tip pop up only on devices supporting iOS 17.0 +
+                /// added to the first cocktail on the list - might change with future updates
                 if #available(iOS 17.0, *), (cocktail.id == "adonis") {
                     TipView(favoriteCocktailsTip, arrowEdge: .bottom)
                         .background(Color.clear)
                 }
+                
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
                     .swipeActions(edge: .trailing) {
                         FavoriteButtonView(favorites: favorites, cocktail: cocktail)
+                            .tint(favorites.contains(cocktail) ? .red : .blue)
                     }
-                    .tint(favorites.contains(cocktail) ? .red : .blue)
             }
             .navigationTitle("Cocktails")
             .searchable(text: $searchText, prompt: "Search Cocktails")
@@ -77,27 +86,6 @@ struct CocktailsView: View {
         }
         .environmentObject(favorites)
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-struct FavoriteButtonView: View {
-    let favorites: Favorites
-    let cocktail: Cocktail
-
-    var body: some View {
-        Button(action: {
-            if favorites.contains(cocktail) {
-                favorites.remove(cocktail)
-            } else {
-                favorites.add(cocktail)
-                UINotificationFeedbackGenerator()
-                    .notificationOccurred(.success)
-            }
-        }) {
-            Image(systemName: favorites.contains(cocktail) ?
-                  "heart.slash" : "heart")
-            Text("Like")
-        }
     }
 }
 
@@ -136,5 +124,7 @@ private extension CocktailsView {
 }
 
 #Preview {
-    CocktailsView()
+    NavigationStack {
+        CocktailsView(dataController: DataController())
+    }
 }

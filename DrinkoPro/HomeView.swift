@@ -24,7 +24,7 @@ struct HomeView: View {
                     Label("Learn", systemImage: "books.vertical")
                 }
 
-            CocktailsView()
+            CocktailsView(dataController: dataController)
                 .tag(CocktailsView.cocktailsTag)
                 .tabItem {
                     Label("Cocktails", systemImage: "wineglass")

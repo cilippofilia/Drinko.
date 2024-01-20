@@ -53,7 +53,7 @@ class DataController: ObservableObject {
         let dataController = DataController(inMemory: true)
         
         do {
-            try dataController.createSampleData()
+            try dataController.createCabinetSampleData()
         } catch {
             fatalError("Fatal error creating preview: \(error.localizedDescription)")
         }
@@ -75,7 +75,7 @@ class DataController: ObservableObject {
 
     /// Creates example projects and items to make manual testing easier.
     /// - Throws: An NSError sent from calling save() on the NSManagedObjectContext.
-    func createSampleData() throws {
+    func createCabinetSampleData() throws {
         let viewContext = container.viewContext
         
         for f in 1 ... 5 {
@@ -101,6 +101,31 @@ class DataController: ObservableObject {
         
         try viewContext.save()
     }
+    
+    func createUserCocktailSampleData() throws {
+        let viewContext = container.viewContext
+        for x in 1 ... 5 {
+            let ccktl = UserCocktail(context: viewContext)
+            ccktl.name = "User Cocktail Test \(x)"
+            ccktl.method = "Shake & Strain"
+            ccktl.glass = "Hiball"
+            ccktl.garnish = "-"
+            ccktl.ice = "Cubed"
+            ccktl.extra = "-"
+            ccktl.creationDate = Date()
+            ccktl.userIngredients = []
+            
+            for y in 1 ... 5 {
+                let ingr = UserIngredient(context: viewContext)
+                ingr.name = "Ingredient \(y)"
+                ingr.quantity = 25.0
+                ingr.unit = "ml"
+                ingr.creationDate = Date()
+                ingr.userCocktail = ccktl
+            }
+        }
+        try viewContext.save()
+    }
 
     /// Saves our Core Data context iff there are changes. This silently ignores
     /// any errors caused by saving, but this should be fine because all our attributes are optional.
@@ -114,12 +139,22 @@ class DataController: ObservableObject {
         container.viewContext.delete(object)
     }
     
-    func deleteAll() {
+    func deleteAllCabinet() {
         let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = Item.fetchRequest()
         let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
         _ = try? container.viewContext.execute(batchDeleteRequest1)
         
         let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = Family.fetchRequest()
+        let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
+        _ = try? container.viewContext.execute(batchDeleteRequest2)
+    }
+
+    func deleteAllUserCocktail() {
+        let fetchRequest1: NSFetchRequest<NSFetchRequestResult> = UserIngredient.fetchRequest()
+        let batchDeleteRequest1 = NSBatchDeleteRequest(fetchRequest: fetchRequest1)
+        _ = try? container.viewContext.execute(batchDeleteRequest1)
+        
+        let fetchRequest2: NSFetchRequest<NSFetchRequestResult> = UserCocktail.fetchRequest()
         let batchDeleteRequest2 = NSBatchDeleteRequest(fetchRequest: fetchRequest2)
         _ = try? container.viewContext.execute(batchDeleteRequest2)
     }
