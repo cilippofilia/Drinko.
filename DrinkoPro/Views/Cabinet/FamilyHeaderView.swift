@@ -30,10 +30,3 @@ struct FamilyHeaderView: View {
         .padding(.bottom, 10)
     }
 }
-
-// THIS PREVIEW IS NOT WORKING
-//struct FamilyHeaderView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FamilyHeaderView(family: family)
-//    }
-//}

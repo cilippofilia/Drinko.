@@ -8,7 +8,7 @@
 import CoreData
 import SwiftUI
 
-extension CocktailsView {
+extension UserCreationsView {
     class ViewModel: NSObject, ObservableObject, NSFetchedResultsControllerDelegate {
         let dataController: DataController
 

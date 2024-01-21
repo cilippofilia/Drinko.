@@ -32,6 +32,7 @@
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
 		184F25032B54925F000A06D0 /* SwipeToActionTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F25022B54925F000A06D0 /* SwipeToActionTips.swift */; };
 		1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */; };
+		18767F612B5D15C000C6C8F5 /* UserCreationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18767F602B5D15C000C6C8F5 /* UserCreationsView.swift */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
@@ -105,6 +106,7 @@
 		184F25022B54925F000A06D0 /* SwipeToActionTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToActionTips.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		18767F602B5D15C000C6C8F5 /* UserCreationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreationsView.swift; sourceTree = "<group>"; };
 		1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperjuiceRowView.swift; sourceTree = "<group>"; };
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
@@ -258,6 +260,14 @@
 				188E93BD2A4C1E04001691E6 /* Book.swift */,
 			);
 			path = Learn;
+			sourceTree = "<group>";
+		};
+		18767F5F2B5D15B300C6C8F5 /* UserCreations */ = {
+			isa = PBXGroup;
+			children = (
+				18767F602B5D15C000C6C8F5 /* UserCreationsView.swift */,
+			);
+			path = UserCreations;
 			sourceTree = "<group>";
 		};
 		188463372B47354400088CA1 /* Cocktail */ = {
@@ -448,6 +458,7 @@
 				18F49EA82A286D2E00862CE3 /* Learn */,
 				18F49EB52A286D2E00862CE3 /* Cocktails */,
 				183AE95F2A94B02700AC156F /* Cabinet */,
+				18767F5F2B5D15B300C6C8F5 /* UserCreations */,
 				18F49EA42A286D2E00862CE3 /* Settings */,
 				18B449CD2A8764C300F52B1B /* Supporting Views */,
 			);
@@ -632,6 +643,7 @@
 				180E3E742A96444F0005381F /* FamilyHeaderView.swift in Sources */,
 				188E93BE2A4C1E04001691E6 /* Book.swift in Sources */,
 				18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */,
+				18767F612B5D15C000C6C8F5 /* UserCreationsView.swift in Sources */,
 				18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */,
 				183AE9732A94B0CF00AC156F /* Binding-OnChange.swift in Sources */,
 				183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */,
@@ -873,7 +885,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrinkoPro/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Drinko;
+				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -910,7 +922,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrinkoPro/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Drinko;
+				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

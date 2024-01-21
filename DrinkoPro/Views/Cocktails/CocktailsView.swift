@@ -14,26 +14,22 @@ struct CocktailsView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     
     @StateObject var favorites = Favorites()
-    @StateObject var userCocktailVM: ViewModel
     
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var shots = Bundle.main.decode([Cocktail].self, from: "shots.json")
     @State private var searchText = ""
     @State private var showingSortOrder = false
     @State private var sortOption: Cocktail.SortOption = .fromAtoZ
-    
-    init(dataController: DataController) {
-        let viewModel = ViewModel(dataController: dataController)
-        _userCocktailVM = StateObject(wrappedValue: viewModel)
-    }
-    
+        
     // TipKit variable
     var favoriteCocktailsTip = SwipeToFavoriteTip()
     
     var drinklist: [Cocktail] {
-        return cocktails + shots
+        let list = cocktails + shots
+        
+        return list
     }
-
+    
     var sortedCocktails: [Cocktail] {
         switch sortOption {
         case .fromAtoZ:
@@ -125,6 +121,6 @@ private extension CocktailsView {
 
 #Preview {
     NavigationStack {
-        CocktailsView(dataController: DataController())
+        CocktailsView()
     }
 }

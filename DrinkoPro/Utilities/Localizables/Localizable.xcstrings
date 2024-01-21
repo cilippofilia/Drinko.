@@ -592,6 +592,9 @@
         }
       }
     },
+    "Add Cocktail" : {
+
+    },
     "Add Family" : {
       "localizations" : {
         "de" : {
@@ -3748,6 +3751,9 @@
     "Start adding categories and products by pressing the + above." : {
 
     },
+    "Start adding your cocktail creations by pressing the + above." : {
+
+    },
     "Support the developer by giving him a tip! Just like you would do to a bartender when you got get some drinks at a night out. 😉" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4302,6 +4308,9 @@
           }
         }
       }
+    },
+    "Your Creations" : {
+
     },
     "Z -> A" : {
       "localizations" : {

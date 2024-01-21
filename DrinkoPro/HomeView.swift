@@ -24,16 +24,22 @@ struct HomeView: View {
                     Label("Learn", systemImage: "books.vertical")
                 }
 
-            CocktailsView(dataController: dataController)
+            CocktailsView()
                 .tag(CocktailsView.cocktailsTag)
                 .tabItem {
                     Label("Cocktails", systemImage: "wineglass")
                 }
-
+            
             CabinetView(dataController: dataController)
                 .tag(CabinetView.cabinetViewTag)
                 .tabItem {
                     Label("Cabinet", systemImage: "cabinet")
+                }
+
+            UserCreationsView(dataController: dataController)
+                .tag(UserCreationsView.userCreationsTag)
+                .tabItem {
+                    Label("Your Creations", systemImage: "testtube.2")
                 }
 
             SettingsView()
@@ -57,7 +63,8 @@ struct HomeView: View {
         guard let scene = UIApplication.shared.currentScene else { return }
         appUsageCounter += 1
 
-        if appUsageCounter == 3 || appUsageCounter % 5 == 0 {
+        if appUsageCounter == 3 || appUsageCounter % 15 == 0 {
+            if appUsageCounter > 103 { appUsageCounter = 0 }
             SKStoreReviewController.requestReview(in: scene)
         }
     }

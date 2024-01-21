@@ -46,7 +46,7 @@ struct SplashScreenView: View {
                     .scaleEffect(scale)
                     .opacity(opacity)
 
-                Text("Drinko")
+                Text("Drinko.")
                     .font(.system(size: sizeClass == .compact ? titleFontSize : titleFontSize * 1.75,
                                   weight: .bold,
                                   design: .rounded))

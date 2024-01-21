@@ -114,7 +114,7 @@ private extension CabinetView {
 
 private extension CabinetView {
     var addFamilyToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
+        ToolbarItem(placement: .topBarTrailing) {
             Button {
                 withAnimation {
                     viewModel.addFamily()
@@ -130,7 +130,7 @@ private extension CabinetView {
     }
 
     var sortOrderToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
+        ToolbarItem(placement: .topBarTrailing) {
             Button {
                 showingSortOrder.toggle()
             } label: {

@@ -39,7 +39,7 @@ extension UserCocktail {
     var userCocktailIngredients: [UserIngredient] {
         userIngredients?.allObjects as? [UserIngredient] ?? []
     }
-
+        
     static var example: UserCocktail {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext

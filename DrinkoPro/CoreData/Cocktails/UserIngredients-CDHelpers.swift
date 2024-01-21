@@ -23,7 +23,11 @@ extension UserIngredient {
     var userIngredientCreationDate: Date {
         creationDate ?? Date()
     }
-        
+    
+    var userCreatedIngredient: Cocktail.Ingredient {
+        return Cocktail.Ingredient(name: userIngredientName, quantity: quantity, unit: userIngredientUnit)
+    }
+    
     static var example: UserIngredient {
         let controller = DataController(inMemory: true)
         let viewContext = controller.container.viewContext
