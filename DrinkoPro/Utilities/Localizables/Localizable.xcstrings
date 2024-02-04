@@ -340,6 +340,7 @@
       }
     },
     "%@%% ABV" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -396,6 +397,7 @@
       }
     },
     "%d" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -592,10 +594,14 @@
         }
       }
     },
-    "Add Cocktail" : {
+    "Add a product" : {
+
+    },
+    "Add category" : {
 
     },
     "Add Family" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -652,6 +658,7 @@
       }
     },
     "Add New Product" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -679,7 +686,11 @@
         }
       }
     },
+    "Add Product" : {
+
+    },
     "Add to Cart" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1159,7 +1170,11 @@
         }
       }
     },
+    "Cancel" : {
+
+    },
     "Category detail" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1186,6 +1201,9 @@
           }
         }
       }
+    },
+    "Category Details" : {
+
     },
     "Category name" : {
       "localizations" : {
@@ -1503,6 +1521,7 @@
       }
     },
     "Creation Date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1645,6 +1664,7 @@
       }
     },
     "Delete category?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1815,6 +1835,9 @@
         }
       }
     },
+    "Drinko." : {
+
+    },
     "Edit Category" : {
       "localizations" : {
         "de" : {
@@ -1842,6 +1865,9 @@
           }
         }
       }
+    },
+    "Edit Product" : {
+
     },
     "Email" : {
       "extractionState" : "manual",
@@ -1900,6 +1926,9 @@
           }
         }
       }
+    },
+    "Empty Cabinet" : {
+
     },
     "Extra" : {
       "localizations" : {
@@ -2557,6 +2586,7 @@
       }
     },
     "N.A." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2585,6 +2615,7 @@
       }
     },
     "Name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2699,6 +2730,7 @@
       }
     },
     "Optimized" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2896,6 +2928,7 @@
       }
     },
     "Product" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3093,6 +3126,7 @@
       }
     },
     "Remove from Cart" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3235,6 +3269,7 @@
       }
     },
     "Save Changes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3665,6 +3700,7 @@
       }
     },
     "Sort products" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3747,12 +3783,6 @@
           }
         }
       }
-    },
-    "Start adding categories and products by pressing the + above." : {
-
-    },
-    "Start adding your cocktail creations by pressing the + above." : {
-
     },
     "Support the developer by giving him a tip! Just like you would do to a bartender when you got get some drinks at a night out. 😉" : {
       "extractionState" : "manual",
@@ -3994,6 +4024,9 @@
 
     },
     "To mark your favorite cocktails" : {
+
+    },
+    "To start, press 'Add a product' below or \n the + button at the top of the view." : {
 
     },
     "Try Again" : {
@@ -4309,7 +4342,7 @@
         }
       }
     },
-    "Your Creations" : {
+    "Your notes on %@..." : {
 
     },
     "Z -> A" : {

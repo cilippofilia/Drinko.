@@ -1,0 +1,170 @@
+{
+  "identifier" : "BD365F47",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "internalID" : "6463096299",
+      "localizations" : [
+        {
+          "description" : "Get a pizza slice for the hungry dev",
+          "displayName" : "Big Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Regala una pizza allo sviluppatore goloso",
+          "displayName" : "Grossa Mancia",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "BigTip",
+      "referenceName" : "Big Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "internalID" : "6463473949",
+      "localizations" : [
+        {
+          "description" : "Get a crown for the dev who reigns supreme",
+          "displayName" : "Extremely Generous Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Regala un pacchetto di siga allo sviluppatore",
+          "displayName" : "Mancia Molto Generosa",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "ExtremelyGenerousTip",
+      "referenceName" : "Extremely Generous tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "internalID" : "6463473948",
+      "localizations" : [
+        {
+          "description" : "Regala un Gin Tonic allo sviluppatore",
+          "displayName" : "Mancia Generosa",
+          "locale" : "it"
+        },
+        {
+          "description" : "Get a superhero cape for the mighty dev",
+          "displayName" : "Generous Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "GenerousTip",
+      "referenceName" : "Generous Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "6463474004",
+      "localizations" : [
+        {
+          "description" : "Get a donut for the dev with a sweet tooth",
+          "displayName" : "Medium Tip",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Regala cappuccio e brioche allo sviluppatore",
+          "displayName" : "Mancia Media",
+          "locale" : "it"
+        }
+      ],
+      "productID" : "MediumTip",
+      "referenceName" : "Medium Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6463096188",
+      "localizations" : [
+        {
+          "description" : "Compra un espresso allo sviluppatore",
+          "displayName" : "Piccola Mancia",
+          "locale" : "it"
+        },
+        {
+          "description" : "Get a lollipop for the penny-pinching dev",
+          "displayName" : "Small Tip",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "SmallTip",
+      "referenceName" : "Small Tip",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6449893371",
+    "_developerTeamID" : "3K3GFX53DY",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 728065155.07988906,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

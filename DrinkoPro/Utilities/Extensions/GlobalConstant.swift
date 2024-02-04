@@ -1,5 +1,5 @@
 //
-//  ScreenSizeMargins.swift
+//  GlobalConstant.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 23/04/2023.

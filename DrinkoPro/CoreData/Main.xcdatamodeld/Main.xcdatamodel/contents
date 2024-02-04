@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22225" systemVersion="23C71" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="Family" representedClassName="Family" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -16,22 +16,5 @@
         <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="tried" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="family" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Family" inverseName="items" inverseEntity="Family"/>
-    </entity>
-    <entity name="UserCocktail" representedClassName="UserCocktail" syncable="YES" codeGenerationType="class">
-        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="extra" optional="YES" attributeType="String"/>
-        <attribute name="garnish" optional="YES" attributeType="String"/>
-        <attribute name="glass" optional="YES" attributeType="String"/>
-        <attribute name="ice" optional="YES" attributeType="String"/>
-        <attribute name="method" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="userIngredients" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="UserIngredient" inverseName="userCocktail" inverseEntity="UserIngredient"/>
-    </entity>
-    <entity name="UserIngredient" representedClassName="UserIngredient" syncable="YES" codeGenerationType="class">
-        <attribute name="creationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="quantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="unit" optional="YES" attributeType="String"/>
-        <relationship name="userCocktail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserCocktail" inverseName="userIngredients" inverseEntity="UserCocktail"/>
     </entity>
 </model>

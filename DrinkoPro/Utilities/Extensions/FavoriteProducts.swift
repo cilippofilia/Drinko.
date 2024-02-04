@@ -1,15 +1,15 @@
 //
-//  Favorites.swift
+//  FavoriteProducts.swift
 //  DrinkoPro
 //
-//  Created by Filippo Cilia on 28/04/2023.
+//  Created by Filippo Cilia on 29/01/2024.
 //
 
-import SwiftUI
+import Foundation
 
-class Favorites: ObservableObject {
+class FavoriteProducts: ObservableObject {
     // the actual cocktails the user has favourited
-    private var cocktails: Set<String>
+    private var products: Set<String>
     
     // the key we're using to read/write in UserDefaults
     private let saveKey = "Favorites"
@@ -18,48 +18,39 @@ class Favorites: ObservableObject {
         // load our saved data
         if let encodedCocktailData = UserDefaults.standard.data(forKey: saveKey) {
             if let data = try? JSONDecoder().decode(Set<String>.self, from: encodedCocktailData) {
-                cocktails = data
+                products = data
                 return
             }
         }
         // still here? Use an empty array
-        self.cocktails = []
+        self.products = []
     }
 
     // returns true if our set contains this cocktail
-    func contains(_ cocktail: Cocktail) -> Bool {
-        cocktails.contains(cocktail.id)
+    func contains(_ product: Product) -> Bool {
+        products.contains(product.name)
     }
 
     // adds the cocktail to our set, updates all views, and saves the change
-    func add(_ cocktail: Cocktail) {
+    func add(_ product: Product) {
         objectWillChange.send()
-        cocktails.insert(cocktail.id)
+        products.insert(product.name)
         save()
     }
 
     // removes the cocktail from our set, updates all views, and saves the change
-    func remove(_ cocktail: Cocktail) {
+    func remove(_ product: Product) {
         objectWillChange.send()
-        cocktails.remove(cocktail.id)
+        products.remove(product.name)
         save()
     }
 
     private func save() {
         // write out our data
-        if let data = try? JSONEncoder().encode(cocktails) {
+        if let data = try? JSONEncoder().encode(products) {
             UserDefaults.standard.set(data, forKey: saveKey)
         } else {
             fatalError("Unable to save!")
         }
-    }
-}
-
-extension FileManager {
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        // just send back the first one, which ought to be the only one
-        return paths[0]
     }
 }

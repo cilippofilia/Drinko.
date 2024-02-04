@@ -5,14 +5,12 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
-import CoreData
 import StoreKit
 import SwiftUI
 
 struct HomeView: View {
     // AppStorage is used to keep track of how many times the app has been opened
     @AppStorage("appUsageCounter") var appUsageCounter: Int = 0
-    @EnvironmentObject var dataController: DataController
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
 
@@ -29,17 +27,10 @@ struct HomeView: View {
                 .tabItem {
                     Label("Cocktails", systemImage: "wineglass")
                 }
-            
-            CabinetView(dataController: dataController)
-                .tag(CabinetView.cabinetViewTag)
+            CabinetView(favoriteProducts: FavoriteProducts())
+                .tag(CabinetView.cabinetTag)
                 .tabItem {
                     Label("Cabinet", systemImage: "cabinet")
-                }
-
-            UserCreationsView(dataController: dataController)
-                .tag(UserCreationsView.userCreationsTag)
-                .tabItem {
-                    Label("Your Creations", systemImage: "testtube.2")
                 }
 
             SettingsView()
@@ -79,5 +70,4 @@ extension UIApplication {
 
 #Preview {
     HomeView()
-        .environmentObject(DataController())
 }
