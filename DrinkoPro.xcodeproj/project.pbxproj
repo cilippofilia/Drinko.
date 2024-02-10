@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180640182B5C88F30057F470 /* FavoriteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteButtonView.swift */; };
+		180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
 		182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
 		1827137F2B655D78000D3343 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137B2B655D78000D3343 /* Product.swift */; };
 		182713802B655D78000D3343 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137C2B655D78000D3343 /* Category.swift */; };
@@ -36,6 +36,8 @@
 		18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
 		18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
 		18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307732B6F99DD00CB94AB /* EditProductView.swift */; };
+		18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */; };
+		18B3077E2B778AB200CB94AB /* IconsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B3077D2B778AB200CB94AB /* IconsView.swift */; };
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */; };
 		18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
@@ -70,7 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		180640172B5C88F30057F470 /* FavoriteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonView.swift; sourceTree = "<group>"; };
+		180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCocktailButtonView.swift; sourceTree = "<group>"; };
 		1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		1827137B2B655D78000D3343 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1827137C2B655D78000D3343 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -101,6 +103,8 @@
 		18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContactsView.swift; sourceTree = "<group>"; };
 		18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoView.swift; sourceTree = "<group>"; };
 		18B307732B6F99DD00CB94AB /* EditProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductView.swift; sourceTree = "<group>"; };
+		18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductButtonView.swift; sourceTree = "<group>"; };
+		18B3077D2B778AB200CB94AB /* IconsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconsView.swift; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -272,12 +276,22 @@
 			path = Superjuice;
 			sourceTree = "<group>";
 		};
+		18B3077A2B77843200CB94AB /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */,
+				18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */,
+				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		18B449CD2A8764C300F52B1B /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
-				180640172B5C88F30057F470 /* FavoriteButtonView.swift */,
+				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 				188463372B47354400088CA1 /* Cocktail */,
-				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
+				18B3077A2B77843200CB94AB /* Buttons */,
 				1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */,
 			);
 			path = "Supporting Views";
@@ -386,10 +400,10 @@
 			isa = PBXGroup;
 			children = (
 				18F49EA52A286D2E00862CE3 /* SettingsView.swift */,
-				189EEA1F2ABBA59900D67806 /* SettingsSections */,
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
+				189EEA1F2ABBA59900D67806 /* SettingsSections */,
+				18B3077D2B778AB200CB94AB /* IconsView.swift */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
-				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -535,7 +549,8 @@
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
 				1827138C2B6576AB000D3343 /* CategoryHeaderView.swift in Sources */,
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
-				180640182B5C88F30057F470 /* FavoriteButtonView.swift in Sources */,
+				180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */,
+				18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
 				18F586552B470E7400BD460B /* ProcedureView.swift in Sources */,
 				18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */,
@@ -557,6 +572,7 @@
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
 				182713882B65657C000D3343 /* CabinetView.swift in Sources */,
 				188E93BE2A4C1E04001691E6 /* Book.swift in Sources */,
+				18B3077E2B778AB200CB94AB /* IconsView.swift in Sources */,
 				18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */,
 				18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */,
 				183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */,

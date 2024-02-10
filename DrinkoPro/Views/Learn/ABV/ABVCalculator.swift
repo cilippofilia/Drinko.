@@ -112,6 +112,8 @@ struct ABVCalculator: View {
             }
             .navigationTitle("ABV Calculator")
             .padding(.horizontal)
+            .scrollIndicators(.hidden, axes: .vertical)
+            .scrollBounceBehavior(.basedOnSize)
     }
         
     func calculateABV() -> Double {

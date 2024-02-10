@@ -10,10 +10,9 @@ import SwiftUI
 
 struct CabinetView: View {
     static let cabinetTag: String? = "Cabinet"
-    let favoriteProducts: FavoriteProducts
-    
     @Environment(\.modelContext) private var modelContext
-    
+    @ObservedObject var favoriteProducts: FavoriteProducts
+
     @State private var path = NavigationPath()
     
     @Query(sort: [
@@ -27,6 +26,9 @@ struct CabinetView: View {
                 Section(header: CategoryHeaderView(category: category)) {
                     ForEach(category.products!, id:\.self) { product in
                         ProductRowView(favoriteProduct: favoriteProducts, product: product)
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                FavoriteProductButtonView(favorites: favoriteProducts, product: product)                            .tint(favoriteProducts.contains(product) ? .red : .blue)
+                            }
                     }
                     .onDelete(perform: deleteProducts)
 
@@ -46,6 +48,7 @@ struct CabinetView: View {
                 Button("Add category", systemImage: "plus", action: addCategory)
             }
         }
+        .listStyle(InsetGroupedListStyle())
     }
     
     var body: some View {
@@ -54,10 +57,11 @@ struct CabinetView: View {
                 ContentUnavailableView(label: {
                     Label("Empty Cabinet", systemImage: "cabinet.fill")
                 }, description: {
-                    Text("To start, press 'Add a product' below or \n the + button at the top of the view.")
+                    Text("To start, press 'Add a product' below or the + button at the top of the view.")
                 }, actions: {
                     Button("Add a product", action: addCategory)
                 })
+                .frame(maxWidth: UIScreen.main.bounds.size.width * 0.83)
                 .navigationTitle("Cabinet")
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {

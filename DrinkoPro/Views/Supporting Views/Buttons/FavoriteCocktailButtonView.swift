@@ -1,5 +1,5 @@
 //
-//  FavoriteButtonView.swift
+//  FavoriteCocktailButtonView.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 20/01/2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FavoriteButtonView: View {
+struct FavoriteCocktailButtonView: View {
     let favorites: Favorites
     let cocktail: Cocktail
 
@@ -21,13 +21,11 @@ struct FavoriteButtonView: View {
                     .notificationOccurred(.success)
             }
         }) {
-            Image(systemName: favorites.contains(cocktail) ?
-                  "heart.slash" : "heart")
-            Text("Like")
+            Label("Like", systemImage: "heart")
         }
     }
 }
 
 #Preview {
-    FavoriteButtonView(favorites: Favorites(), cocktail: .example)
+    FavoriteCocktailButtonView(favorites: Favorites(), cocktail: .example)
 }

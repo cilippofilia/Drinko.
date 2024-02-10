@@ -14,7 +14,7 @@ struct ProcedureView: View {
     var procedure: Procedure
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        ScrollView {
             VStack(alignment: .leading) {
                 Text("Procedure")
                     .font(sizeClass == .compact ? .title3.bold() : .title.bold())
@@ -34,6 +34,8 @@ struct ProcedureView: View {
                 .lineSpacing(sizeClass == .compact ? 5 : 10)
             }
         }
+        .scrollIndicators(.hidden, axes: .vertical)
+        .scrollBounceBehavior(.basedOnSize)
     }
 }
 

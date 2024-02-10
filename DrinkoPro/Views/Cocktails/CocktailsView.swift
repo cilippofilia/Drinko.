@@ -51,17 +51,12 @@ struct CocktailsView: View {
     var body: some View {
         NavigationStack {
             List(filteredCocktails) { cocktail in
-                
-                /// conditional to make the tip pop up only on devices supporting iOS 17.0 +
-                /// added to the first cocktail on the list - might change with future updates
-                if #available(iOS 17.0, *), (cocktail.id == "adonis") {
-                    TipView(favoriteCocktailsTip, arrowEdge: .bottom)
-                        .background(Color.clear)
-                }
+                TipView(favoriteCocktailsTip, arrowEdge: .bottom)
+                    .background(Color.clear)
                 
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
-                    .swipeActions(edge: .trailing) {
-                        FavoriteButtonView(favorites: favorites, cocktail: cocktail)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
                             .tint(favorites.contains(cocktail) ? .red : .blue)
                     }
             }
@@ -71,13 +66,10 @@ struct CocktailsView: View {
                 sortButtonToolbarItem
             }
             .task {
-                if #available(iOS 17.0, *) {
-                    // Configure and load your tips at app launch.
-                    try? Tips.configure([
-                        .displayFrequency(.immediate),
-                        .datastoreLocation(.applicationDefault)
-                    ])
-                }
+                try? Tips.configure([
+                    .displayFrequency(.immediate),
+                    .datastoreLocation(.applicationDefault)
+                ])
             }
         }
         .environmentObject(favorites)

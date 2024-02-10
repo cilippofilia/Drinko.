@@ -24,6 +24,10 @@ struct SettingsPreferenceView: View {
             .onTapGesture {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
+            
+            NavigationLink(destination: EmptyView()) {
+                SettingsRowView(icon: "app.gift", color: .secondary, itemName: "Icons")
+            }
         }
     }
 }

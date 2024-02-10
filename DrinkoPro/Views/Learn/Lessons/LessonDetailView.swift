@@ -17,7 +17,7 @@ struct LessonDetailView: View {
     var lesson: Lesson
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        ScrollView {
             if sizeClass == .compact {
                 compactLessonView
             } else {
@@ -26,6 +26,8 @@ struct LessonDetailView: View {
         }
         .navigationTitle(lesson.title)
         .navigationBarTitleDisplayMode(.inline)
+        .scrollIndicators(.hidden, axes: .vertical)
+        .scrollBounceBehavior(.basedOnSize)
     }
 
     var compactLessonView: some View {

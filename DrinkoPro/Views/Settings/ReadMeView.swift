@@ -42,7 +42,7 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
     ]
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        ScrollView {
             VStack(spacing: sizeClass == .compact ? 10 : 20) {
                 Text(text)
                     .multilineTextAlignment(.leading)
@@ -52,38 +52,66 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                     Text("Special thanks to:")
                         .frame(maxWidth: .infinity, alignment: .leading)
 
+                    Text("Drink selection")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
                         CreditsCardView(image: "heart.fill",
                                         name: "Danil Nevsky 🍸",
                                         brief: "Instagram: @cocktailman",
                                         url: "https://instagram.com/cocktailman")
-
+                        
                         CreditsCardView(image: "heart.fill",
                                         name: "Christopher Lowder 🍸",
                                         brief: "Instagram: @getlowdernow",
                                         url: "https://instagram.com/getlowdernow")
-
+                        
                         CreditsCardView(image: "heart.fill",
-                                        name: "Simone Colombatto 🎥",
-                                        brief: "Instagram: @simonkol_",
-                                        url: "https://instagram.com/simonkol_?igshid=MzRlODBiNWFlZA==")
-
-                        CreditsCardView(image: "heart.fill",
-                                        name: "The Beer Corner 🍺",
-                                        brief: "Instagram: @thebeercornercantu",
-                                        url: "https://instagram.com/thebeercornercantu?igshid=MzRlODBiNWFlZA==")
-
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Difford's Guide 🍸",
-                                        brief: "For discerning drinkers.",
-                                        url: "https://www.diffordsguide.com")
+                                        name: "Kevin Kos 🍸",
+                                        brief: "Instagram: @kevin_kos",
+                                        url: "https://www.instagram.com/kevin_kos")
 
                         CreditsCardView(image: "heart.fill",
                                         name: "Filippo Cilia 🇮🇹 / 🍸",
                                         brief: "Instagram: @cilippofilia",
                                         url: "https://instagram.com/cilippofilia")
+                        
+                        CreditsCardView(image: "heart.fill",
+                                        name: "Valentina Mircea 🇷🇴 / 🍸",
+                                        brief: "Instagram: @mvandra96",
+                                        url: "https://instagram.com/cilippofilia")
 
+                    }
+                    
+                    Text("Photos & Videos")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                    LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
+                              spacing: sizeClass == .compact ? 10 : 20) {
+                        CreditsCardView(image: "heart.fill",
+                                        name: "Difford's Guide 🍸",
+                                        brief: "For discerning drinkers.",
+                                        url: "https://www.diffordsguide.com")
+                        
+                        CreditsCardView(image: "heart.fill",
+                                        name: "Simone Colombatto 🎥",
+                                        brief: "Instagram: @simonkol_",
+                                        url: "https://instagram.com/simonkol_?igshid=MzRlODBiNWFlZA==")
+                        
+                        CreditsCardView(image: "heart.fill",
+                                        name: "The Beer Corner 🍺",
+                                        brief: "Instagram: @thebeercornercantu",
+                                        url: "https://instagram.com/thebeercornercantu?igshid=MzRlODBiNWFlZA==")
+                    }
+                    
+                    Text("Translations")
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                    LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
+                              spacing: sizeClass == .compact ? 10 : 20) {
                         CreditsCardView(image: "heart.fill",
                                         name: "Arthur 🇫🇷",
                                         brief: "X (Twitter): @AriOS_app",
@@ -93,18 +121,15 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                                         name: "Nicolas 🇩🇪",
                                         brief: "X (Twitter): @theduodev",
                                         url: "https://x.com/theduodev?s=21&t=GH4SWEVHVFi_peVsOSu5vA")
-
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Kevin Kos",
-                                        brief: "Instagram: @kevin_kos",
-                                        url: "https://www.instagram.com/kevin_kos")
                     }
                 }
             }
             .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
             .frame(width: sizeClass == .compact ? compactScreenWidth : nil)
         }
-        .navigationBarTitle("Drinko")
+        .navigationBarTitle("Drinko.")
+        .scrollIndicators(.hidden, axes: .vertical)
+        .scrollBounceBehavior(.basedOnSize)
     }
 }
 

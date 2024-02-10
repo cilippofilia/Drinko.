@@ -17,24 +17,9 @@ struct CreditsCardView: View {
 
     var body: some View {
         Button(action: {
-            if UIApplication.shared.canOpenURL(URL(string: url)!) {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(URL(string: url)!,
-                                              options: [:],
-                                              completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(URL(string: url)!)
-                }
-            } else {
-                //redirect to safari because the user doesn't have Instagram app
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(URL(string: url)!,
-                                              options: [:],
-                                              completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(URL(string: url)!)
-                }
-            }
+            UIApplication.shared.open(URL(string: url)!,
+                                      options: [:],
+                                      completionHandler: nil)
         }) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
                 Image(systemName: image)

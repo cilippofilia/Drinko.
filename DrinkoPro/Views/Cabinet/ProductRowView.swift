@@ -9,23 +9,17 @@ import SwiftUI
 
 struct ProductRowView: View {
     @Environment(\.modelContext) private var modelContext
-    let favoriteProduct: FavoriteProducts
+    @ObservedObject var favoriteProduct: FavoriteProducts
     
     let product: Product
     
     var body: some View {
         NavigationLink(destination: EditProductView(product: product)) {
             HStack {
-                if favoriteProduct.contains(product) {
-                    Image(systemName: "cart.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(.secondary)
-                        .frame(width: 22, height: 22, alignment: .center)
-                        .padding(8)
-                        .animation(.easeOut, value: product)
-                }
-                
+                Image(systemName: "cart")
+                    .foregroundColor(favoriteProduct.contains(product) ? Color.secondary : Color.clear)
+                    .animation(.default, value: favoriteProduct.contains(product))
+
                 VStack(alignment: .leading) {
                     Text(product.name)
                         .font(.headline)
