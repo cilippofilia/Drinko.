@@ -32,6 +32,8 @@
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
 		188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93E42A4C9D57001691E6 /* String-Ext.swift */; };
 		18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
+		18AA31582B815A6000072180 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA31572B815A6000072180 /* IconImage.swift */; };
+		18AA315A2B815AA200072180 /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA31592B815AA200072180 /* IconModel.swift */; };
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
 		18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
 		18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
@@ -99,6 +101,8 @@
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		188E93E42A4C9D57001691E6 /* String-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Ext.swift"; sourceTree = "<group>"; };
 		18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVRowView.swift; sourceTree = "<group>"; };
+		18AA31572B815A6000072180 /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
+		18AA31592B815AA200072180 /* IconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
 		18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContactsView.swift; sourceTree = "<group>"; };
 		18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoView.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 		189EEA1F2ABBA59900D67806 /* SettingsSections */ = {
 			isa = PBXGroup;
 			children = (
+				18AA31562B815A3500072180 /* IconsSection */,
 				18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */,
 				18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */,
 				18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */,
@@ -274,6 +279,15 @@
 				18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */,
 			);
 			path = Superjuice;
+			sourceTree = "<group>";
+		};
+		18AA31562B815A3500072180 /* IconsSection */ = {
+			isa = PBXGroup;
+			children = (
+				18B3077D2B778AB200CB94AB /* IconsView.swift */,
+				18AA31572B815A6000072180 /* IconImage.swift */,
+			);
+			path = IconsSection;
 			sourceTree = "<group>";
 		};
 		18B3077A2B77843200CB94AB /* Buttons */ = {
@@ -300,6 +314,7 @@
 		18B449CE2A87655000F52B1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				18AA31592B815AA200072180 /* IconModel.swift */,
 				18413B0F2A8D3EAC001BB0CB /* Learn */,
 				18F49EB92A286D2E00862CE3 /* Cocktail.swift */,
 				182713832B655FE1000D3343 /* Cabinet */,
@@ -402,7 +417,6 @@
 				18F49EA52A286D2E00862CE3 /* SettingsView.swift */,
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
 				189EEA1F2ABBA59900D67806 /* SettingsSections */,
-				18B3077D2B778AB200CB94AB /* IconsView.swift */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
 			);
 			path = Settings;
@@ -569,7 +583,9 @@
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
 				182713942B685829000D3343 /* FavoriteProducts.swift in Sources */,
 				182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */,
+				18AA315A2B815AA200072180 /* IconModel.swift in Sources */,
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
+				18AA31582B815A6000072180 /* IconImage.swift in Sources */,
 				182713882B65657C000D3343 /* CabinetView.swift in Sources */,
 				188E93BE2A4C1E04001691E6 /* Book.swift in Sources */,
 				18B3077E2B778AB200CB94AB /* IconsView.swift in Sources */,
@@ -798,8 +814,9 @@
 		18F49E6F2A27B28F00862CE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = original;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DrinkoPro/DrinkoPro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
@@ -835,8 +852,9 @@
 		18F49E702A27B28F00862CE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = original;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = DrinkoPro/DrinkoPro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;

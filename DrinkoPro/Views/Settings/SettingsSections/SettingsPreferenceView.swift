@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsPreferenceView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @EnvironmentObject var iconModel: IconModel
 
     var body: some View {
         Section(header: Text("Preferences")) {
@@ -25,7 +26,7 @@ struct SettingsPreferenceView: View {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
             
-            NavigationLink(destination: EmptyView()) {
+            NavigationLink(destination: IconsView()) {
                 SettingsRowView(icon: "app.gift", color: .secondary, itemName: "Icons")
             }
         }

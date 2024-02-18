@@ -10,9 +10,10 @@ import SwiftUI
 class Favorites: ObservableObject {
     // the actual cocktails the user has favourited
     private var cocktails: Set<String>
-    
     // the key we're using to read/write in UserDefaults
-    private let saveKey = "Favorites"
+    private let saveKey: String = "Favorites"
+    // variable that comes in handy for animations
+    public var animated: Bool = false
     
     init() {
         // load our saved data
@@ -35,6 +36,7 @@ class Favorites: ObservableObject {
     func add(_ cocktail: Cocktail) {
         objectWillChange.send()
         cocktails.insert(cocktail.id)
+        animated.toggle()
         save()
     }
 
@@ -42,6 +44,7 @@ class Favorites: ObservableObject {
     func remove(_ cocktail: Cocktail) {
         objectWillChange.send()
         cocktails.remove(cocktail.id)
+        animated.toggle()
         save()
     }
 

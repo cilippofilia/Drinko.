@@ -42,14 +42,12 @@ struct ABVCalculator: View {
                             TextField("What is the ingredient?", text: $bottles[index].name)
                                 .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
                             
-                            if bottles.count > 1 {
-                                Button(action: {
-                                    removeIngredient(at: index)
-                                }) {
-                                    Label("Delete", systemImage: "xmark.circle")
-                                        .labelStyle(.iconOnly)
-                                        .foregroundColor(.secondary)
-                                }
+                            Button(action: {
+                                removeIngredient(at: index)
+                            }) {
+                                Label("Delete", systemImage: "xmark.circle")
+                                    .labelStyle(.iconOnly)
+                                    .foregroundColor(bottles.count > 1 ? .secondary : .clear)
                             }
                         }
                         

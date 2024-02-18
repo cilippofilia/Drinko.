@@ -57,30 +57,25 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                         .frame(maxWidth: .infinity, alignment: .leading)
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Danil Nevsky 🍸",
+                        CreditsCardView(name: "Danil Nevsky 🍸",
                                         brief: "Instagram: @cocktailman",
                                         url: "https://instagram.com/cocktailman")
                         
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Christopher Lowder 🍸",
+                        CreditsCardView(name: "Christopher Lowder 🍸",
                                         brief: "Instagram: @getlowdernow",
                                         url: "https://instagram.com/getlowdernow")
                         
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Kevin Kos 🍸",
+                        CreditsCardView(name: "Kevin Kos 🍸",
                                         brief: "Instagram: @kevin_kos",
                                         url: "https://www.instagram.com/kevin_kos")
 
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Filippo Cilia 🇮🇹 / 🍸",
+                        CreditsCardView(name: "Filippo Cilia 🇮🇹 / 🍸",
                                         brief: "Instagram: @cilippofilia",
                                         url: "https://instagram.com/cilippofilia")
                         
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Valentina Mircea 🇷🇴 / 🍸",
+                        CreditsCardView(name: "Valentina Mircea 🇷🇴 / 🍸",
                                         brief: "Instagram: @mvandra96",
-                                        url: "https://instagram.com/cilippofilia")
+                                        url: "https://instagram.com/mvandra96")
 
                     }
                     
@@ -90,20 +85,17 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
 
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Difford's Guide 🍸",
+                        CreditsCardView(name: "Difford's Guide 🍸",
                                         brief: "For discerning drinkers.",
                                         url: "https://www.diffordsguide.com")
                         
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Simone Colombatto 🎥",
+                        CreditsCardView(name: "Simone Colombatto 🎥",
                                         brief: "Instagram: @simonkol_",
-                                        url: "https://instagram.com/simonkol_?igshid=MzRlODBiNWFlZA==")
+                                        url: "https://instagram.com/simonkol_")
                         
-                        CreditsCardView(image: "heart.fill",
-                                        name: "The Beer Corner 🍺",
+                        CreditsCardView(name: "The Beer Corner 🍺",
                                         brief: "Instagram: @thebeercornercantu",
-                                        url: "https://instagram.com/thebeercornercantu?igshid=MzRlODBiNWFlZA==")
+                                        url: "https://instagram.com/thebeercornercantu")
                     }
                     
                     Text("Translations")
@@ -112,15 +104,13 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
 
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Arthur 🇫🇷",
+                        CreditsCardView(name: "Arthur 🇫🇷",
                                         brief: "X (Twitter): @AriOS_app",
-                                        url: "https://x.com/arios_app?s=21&t=GH4SWEVHVFi_peVsOSu5vA")
+                                        url: "https://x.com/arios_app")
 
-                        CreditsCardView(image: "heart.fill",
-                                        name: "Nicolas 🇩🇪",
+                        CreditsCardView(name: "Nicolas 🇩🇪",
                                         brief: "X (Twitter): @theduodev",
-                                        url: "https://x.com/theduodev?s=21&t=GH4SWEVHVFi_peVsOSu5vA")
+                                        url: "https://x.com/theduodev")
                     }
                 }
             }

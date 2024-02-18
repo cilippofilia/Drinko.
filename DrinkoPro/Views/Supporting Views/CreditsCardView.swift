@@ -10,7 +10,6 @@ import SwiftUI
 struct CreditsCardView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
 
-    var image: String
     var name: String
     var brief: String
     var url: String
@@ -22,7 +21,7 @@ struct CreditsCardView: View {
                                       completionHandler: nil)
         }) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                Image(systemName: image)
+                Image(systemName: "heart.fill")
                     .foregroundColor(.red)
                     .imageScale(.large)
 
@@ -62,20 +61,16 @@ struct CreditsCardView: View {
                                            maximum: 480),
                                  spacing: 20,
                                  alignment: .leading)]) {
-        CreditsCardView(image: "heart",
-                        name: "Test",
+        CreditsCardView(name: "Test",
                         brief: "@thisisatest",
                         url: "disTest??")
-        CreditsCardView(image: "heart",
-                        name: "Test",
+        CreditsCardView(name: "Test",
                         brief: "@thisisatest",
                         url: "disTest??")
-        CreditsCardView(image: "heart",
-                        name: "Test",
+        CreditsCardView(name: "Test",
                         brief: "@thisisatest",
                         url: "disTest??")
-        CreditsCardView(image: "heart",
-                        name: "Test",
+        CreditsCardView(name: "Test",
                         brief: "@thisisatest",
                         url: "disTest??")
 

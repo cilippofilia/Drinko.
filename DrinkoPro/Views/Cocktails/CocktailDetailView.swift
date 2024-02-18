@@ -262,9 +262,10 @@ extension CocktailDetailView {
         }) {
             Label("Like", systemImage: favorites.contains(cocktail) ? "heart.fill" : "heart")
                 .foregroundStyle(.red)
+                .animation(.default, value: favorites.animated)
+                .symbolEffect(.bounce.up, value: favorites.animated)
         }
         .buttonStyle(.plain)
-        .animation(.easeInOut, value: favorites.contains(cocktail))
     }
 }
 

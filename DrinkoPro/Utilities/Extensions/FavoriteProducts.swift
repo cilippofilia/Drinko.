@@ -10,10 +10,11 @@ import Foundation
 class FavoriteProducts: ObservableObject {
     // the actual cocktails the user has favourited
     private var products: Set<String>
-    
     // the key we're using to read/write in UserDefaults
     private let saveKey = "Favorites"
-    
+    // variable that comes in handy for animations
+    public var animated: Bool = false
+
     init() {
         // load our saved data
         if let encodedCocktailData = UserDefaults.standard.data(forKey: saveKey) {
@@ -35,6 +36,7 @@ class FavoriteProducts: ObservableObject {
     func add(_ product: Product) {
         objectWillChange.send()
         products.insert(product.name)
+        animated.toggle()
         save()
     }
 
@@ -42,6 +44,7 @@ class FavoriteProducts: ObservableObject {
     func remove(_ product: Product) {
         objectWillChange.send()
         products.remove(product.name)
+        animated.toggle()
         save()
     }
 

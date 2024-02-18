@@ -51,15 +51,21 @@ struct CocktailsView: View {
     var body: some View {
         NavigationStack {
             List(filteredCocktails) { cocktail in
-                TipView(favoriteCocktailsTip, arrowEdge: .bottom)
-                    .background(Color.clear)
-                
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
                             .tint(favorites.contains(cocktail) ? .red : .blue)
                     }
             }
+            .overlay(content: {
+                VStack {
+                    Spacer()
+                    TipView(favoriteCocktailsTip, arrowEdge: .top)
+                        .padding()
+                        .animation(.default, value: favorites.animated)
+                        .symbolEffect(.bounce.up, value: favorites.animated)
+                }
+            })
             .navigationTitle("Cocktails")
             .searchable(text: $searchText, prompt: "Search Cocktails")
             .toolbar {

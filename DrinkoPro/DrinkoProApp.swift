@@ -10,10 +10,12 @@ import SwiftUI
 
 @main
 struct DrinkoProApp: App {
+    
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
         }
+        .environmentObject(IconModel())
         .modelContainer(for: [
             Category.self
         ])

@@ -11,7 +11,8 @@ struct EditProductView: View {
     @Bindable var product: Product
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    @State private var showingDeleteConfirmation = false
+    @State private var showingDeleteConfirmation: Bool = false
+    @State private var isAnimated: Bool = false
     
     var offImage: Image?
     var onImage = Image(systemName: "star.fill")
@@ -48,7 +49,10 @@ struct EditProductView: View {
                             .foregroundColor(star > product.rating ? Color.secondary : Color.yellow)
                             .onTapGesture {
                                 product.rating = star
+                                isAnimated.toggle()
                             }
+                            .animation(.default, value: isAnimated)
+                            .symbolEffect(.bounce.up, value: isAnimated)
                     }
                     
                     Spacer()

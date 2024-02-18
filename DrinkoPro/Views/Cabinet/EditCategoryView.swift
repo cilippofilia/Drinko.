@@ -14,7 +14,8 @@ struct EditCategoryView: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var showingDeleteConfirmation = false
-    
+    @State private var isSelected = false
+
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
     ]
@@ -70,11 +71,13 @@ struct EditCategoryView: View {
             if item == category.color {
                 Image(systemName: "checkmark.circle")
                     .foregroundColor(.white)
-                    .font(.largeTitle)
+                    .font(.title)
+                    .symbolEffect(.bounce.down, value: isSelected)
             }
         }
         .onTapGesture {
             category.color = item
+            isSelected.toggle()
         }
         .accessibilityElement(children: .ignore)
         .accessibilityAddTraits(
