@@ -27,8 +27,14 @@ struct SettingsPreferenceView: View {
             }
             
             NavigationLink(destination: IconsView()) {
-                SettingsRowView(icon: "app.gift", color: .secondary, itemName: "Icons")
+                HStack {
+                    SettingsRowView(icon: "app.gift", color: .secondary, itemName: "Icons")
+                    Text("(coming soon)")
+                        .font(.caption)
+                        .italic()
+                }
             }
+            .disabled(true)
         }
     }
 }
@@ -36,5 +42,6 @@ struct SettingsPreferenceView: View {
 #Preview {
     Form {
         SettingsPreferenceView()
+            .environmentObject(IconModel())
     }
 }

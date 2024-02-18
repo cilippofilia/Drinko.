@@ -71,4 +71,5 @@ extension UIApplication {
 
 #Preview {
     HomeView()
+        .environmentObject(IconModel())
 }

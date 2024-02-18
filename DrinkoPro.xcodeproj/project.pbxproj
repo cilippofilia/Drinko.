@@ -314,11 +314,11 @@
 		18B449CE2A87655000F52B1B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				18AA31592B815AA200072180 /* IconModel.swift */,
 				18413B0F2A8D3EAC001BB0CB /* Learn */,
 				18F49EB92A286D2E00862CE3 /* Cocktail.swift */,
 				182713832B655FE1000D3343 /* Cabinet */,
 				182713892B656F28000D3343 /* Previewer.swift */,
+				18AA31592B815AA200072180 /* IconModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

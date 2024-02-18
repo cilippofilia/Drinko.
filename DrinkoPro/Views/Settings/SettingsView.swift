@@ -23,6 +23,7 @@ struct SettingsView: View {
             .navigationBarTitle("Settings")
         }
         .navigationViewStyle(StackNavigationViewStyle())
+        .scrollBounceBehavior(.basedOnSize, axes: .vertical)
     }
 }
 

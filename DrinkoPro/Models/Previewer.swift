@@ -20,7 +20,7 @@ struct Previewer {
         container = try ModelContainer(for: Category.self, configurations: config)
 
         category = Category(name: "Vodka", detail: "Taste like water", color: "Dr. Blue", creationDate: Date.now)
-        product = Product(name: "Absolut", detail: "Made from potates", madeIn: "Poland", abv: "40")
+        product = Product(name: "Absolut", detail: "Made from potatoes", madeIn: "Poland", abv: "40")
         
         container.mainContext.insert(category)
     }
