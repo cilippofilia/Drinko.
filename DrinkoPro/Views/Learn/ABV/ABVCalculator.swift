@@ -78,7 +78,6 @@ struct ABVCalculator: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
-                .animation(.default, value: numbersOfIngredients)
                 
                 Spacer(minLength: 30)
                 
@@ -142,7 +141,7 @@ struct ABVCalculator: View {
             let dilutedVolume = totalVolume * (1 + dilutionFactor)
             let overallABV = totalAlcohol / dilutedVolume * 100
 
-            return overallABV.isNaN ? 0.0 : overallABV
+            return overallABV.isZero ? 0.0 : overallABV
     }
     
     private func removeIngredient(at index: Int) {

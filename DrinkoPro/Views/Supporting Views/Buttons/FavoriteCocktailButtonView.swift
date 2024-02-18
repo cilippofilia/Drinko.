@@ -23,8 +23,8 @@ struct FavoriteCocktailButtonView: View {
         }) {
             Label("Like", systemImage: "heart")
         }
-        .animation(.default, value: favorites.animated)
-        .symbolEffect(.bounce.up, value: favorites.animated)
+        .animation(.default, value: favorites.hasEffect)
+        .symbolEffect(.bounce.up, value: favorites.hasEffect)
     }
 }
 

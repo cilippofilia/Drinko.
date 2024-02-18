@@ -62,8 +62,8 @@ struct CocktailsView: View {
                     Spacer()
                     TipView(favoriteCocktailsTip, arrowEdge: .top)
                         .padding()
-                        .animation(.default, value: favorites.animated)
-                        .symbolEffect(.bounce.up, value: favorites.animated)
+                        .animation(.default, value: favorites.hasEffect)
+                        .symbolEffect(.bounce.up, value: favorites.hasEffect)
                 }
             })
             .navigationTitle("Cocktails")

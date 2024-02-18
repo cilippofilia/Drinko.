@@ -23,7 +23,7 @@ struct FavoriteProductButtonView: View {
         }) {
             Label(favorites.contains(product) ? "Remove from Cart" : "Add to Cart", systemImage: "cart")
         }
-        .animation(.default, value: favorites.animated)
+        .animation(.default, value: favorites.hasEffect)
     }
 }
 

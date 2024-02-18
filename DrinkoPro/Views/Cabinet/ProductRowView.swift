@@ -19,7 +19,7 @@ struct ProductRowView: View {
                 Image(systemName: "cart")
                     .foregroundColor(favoriteProduct.contains(product) ? Color.secondary : Color.clear)
                     .animation(.default, value: favoriteProduct.contains(product))
-                    .symbolEffect(.bounce.up, value: favoriteProduct.animated)
+                    .symbolEffect(.bounce.up, value: favoriteProduct.hasEffect)
 
                 
                 VStack(alignment: .leading) {

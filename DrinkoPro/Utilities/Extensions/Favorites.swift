@@ -13,7 +13,7 @@ class Favorites: ObservableObject {
     // the key we're using to read/write in UserDefaults
     private let saveKey: String = "Favorites"
     // variable that comes in handy for animations
-    public var animated: Bool = false
+    public var hasEffect: Bool = false
     
     init() {
         // load our saved data
@@ -36,7 +36,7 @@ class Favorites: ObservableObject {
     func add(_ cocktail: Cocktail) {
         objectWillChange.send()
         cocktails.insert(cocktail.id)
-        animated.toggle()
+        hasEffect.toggle()
         save()
     }
 
@@ -44,7 +44,7 @@ class Favorites: ObservableObject {
     func remove(_ cocktail: Cocktail) {
         objectWillChange.send()
         cocktails.remove(cocktail.id)
-        animated.toggle()
+        hasEffect.toggle()
         save()
     }
 

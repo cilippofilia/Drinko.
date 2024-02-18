@@ -48,8 +48,8 @@ struct CocktailRowView: View {
 
                 Image(systemName: favorites.contains(cocktail) ? "heart.fill" : "heart")
                     .foregroundColor(favorites.contains(cocktail) ? Color.red : Color.clear)
-                    .animation(.default, value: favorites.animated)
-                    .symbolEffect(.bounce.up, value: favorites.animated)
+                    .animation(.default, value: favorites.hasEffect)
+                    .symbolEffect(.bounce.up, value: favorites.hasEffect)
             }
         }
         .frame(height: frameSize)
