@@ -51,7 +51,7 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                 VStack(spacing: sizeClass == .compact ? 10 : 20) {
                     Text("Special thanks to:")
                         .frame(maxWidth: .infinity, alignment: .leading)
-
+                    
                     Text("Drink selection")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -60,39 +60,33 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                         CreditsCardView(name: "Danil Nevsky 🍸",
                                         brief: "Instagram: @cocktailman",
                                         url: "https://instagram.com/cocktailman")
-                        
                         CreditsCardView(name: "Christopher Lowder 🍸",
                                         brief: "Instagram: @getlowdernow",
                                         url: "https://instagram.com/getlowdernow")
-                        
                         CreditsCardView(name: "Kevin Kos 🍸",
                                         brief: "Instagram: @kevin_kos",
                                         url: "https://www.instagram.com/kevin_kos")
-
-                        CreditsCardView(name: "Filippo Cilia 🇮🇹 / 🍸",
+                        CreditsCardView(name: "Filippo Cilia 🍸",
                                         brief: "Instagram: @cilippofilia",
                                         url: "https://instagram.com/cilippofilia")
-                        
-                        CreditsCardView(name: "Valentina Mircea 🇷🇴 / 🍸",
+                        CreditsCardView(name: "Valentina Mircea 🍸",
                                         brief: "Instagram: @mvandra96",
                                         url: "https://instagram.com/mvandra96")
-
+                        
                     }
                     
                     Text("Photos & Videos")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
-
+                    
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
                         CreditsCardView(name: "Difford's Guide 🍸",
                                         brief: "For discerning drinkers.",
                                         url: "https://www.diffordsguide.com")
-                        
                         CreditsCardView(name: "Simone Colombatto 🎥",
                                         brief: "Instagram: @simonkol_",
                                         url: "https://instagram.com/simonkol_")
-                        
                         CreditsCardView(name: "The Beer Corner 🍺",
                                         brief: "Instagram: @thebeercornercantu",
                                         url: "https://instagram.com/thebeercornercantu")
@@ -101,16 +95,22 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                     Text("Translations")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
-
+                    
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
+                        CreditsCardView(name: "Filippo Cilia 🇮🇹",
+                                        brief: "Instagram: @cilippofilia",
+                                        url: "https://instagram.com/cilippofilia")
                         CreditsCardView(name: "Arthur 🇫🇷",
                                         brief: "X (Twitter): @AriOS_app",
                                         url: "https://x.com/arios_app")
-
                         CreditsCardView(name: "Nicolas 🇩🇪",
                                         brief: "X (Twitter): @theduodev",
                                         url: "https://x.com/theduodev")
+                        CreditsCardView(name: "Valentina Mircea 🇷🇴",
+                                        brief: "Instagram: @mvandra96",
+                                        url: "https://instagram.com/mvandra96")
+
                     }
                 }
             }

@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct SettingsInfoView: View {
-    @State private var lovelyText = "This app was made with ❤️ by Filippo Cilia 🇮🇹"
+    let lovelyText = "This app was made with ❤️ by Filippo Cilia 🇮🇹"
 
     var body: some View {
-        Section(header: Text("Info"), footer: Text(lovelyText)) {
+        Section(
+            header: Text("Info").foregroundStyle(.secondary),
+            footer: Text(lovelyText).foregroundStyle(.secondary)
+        ) {
             NavigationLink(destination: ReadMeView()) {
                 SettingsRowView(icon: "r.circle",
                                 color: .secondary,

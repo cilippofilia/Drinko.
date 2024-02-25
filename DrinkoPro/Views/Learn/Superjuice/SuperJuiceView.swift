@@ -36,7 +36,7 @@ struct SuperJuiceView: View {
             .padding(.horizontal)
 
             Form {
-                Section(header: Text(selectedMode == .peels ? "\(typeOfJuice) peels (gr)" : "Water (ml)")) {
+                Section(header: Text(selectedMode == .peels ? "\(typeOfJuice.capitalizingFirstLetter()) peels (gr)" : "Water (ml)")) {
                     Group {
                         if selectedMode == .peels {
                             TextField("\(typeOfJuice) peels in grams", text: $peels)
@@ -51,7 +51,7 @@ struct SuperJuiceView: View {
                 }
 
                 Section {
-                    if typeOfJuice == "Lime" {
+                    if typeOfJuice == "lime" {
                         limeButton
                     } else {
                         lemonButton
@@ -60,22 +60,22 @@ struct SuperJuiceView: View {
 
                 Section(footer: Text("Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed.")) {
                     if selectedMode == .water {
-                        Text("\(typeOfJuice) peels:\n") + 
+                        Text("\(typeOfJuice.capitalizingFirstLetter()) peels: ") +
                         Text("\(Double(peels) ?? 0, specifier: "%.2f") gr")
                             .font(.title)
                     }
 
-                    Text("Citric Acid:\n") + 
+                    Text("Citric Acid: ") +
                     Text("\(citricAcid, specifier: "%.2f") gr")
                         .font(.title)
 
-                    if typeOfJuice == "Lime" {
-                        Text("Malic Acid:\n") + 
+                    if typeOfJuice == "lime" {
+                        Text("Malic Acid: ") +
                         Text("\(malicAcid, specifier: "%.2f") gr")
                             .font(.title)
                     }
                     
-                    Text("Water:\n") + 
+                    Text("Water: ") +
                     Text("\(waterAmount, specifier: "%.2f") ml")
                         .font(.title)
                 }
