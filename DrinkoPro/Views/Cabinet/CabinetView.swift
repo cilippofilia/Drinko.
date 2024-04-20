@@ -11,7 +11,8 @@ import SwiftUI
 struct CabinetView: View {
     static let cabinetTag: String? = "Cabinet"
     @Environment(\.modelContext) private var modelContext
-    @ObservedObject var favoriteProducts: FavoriteProducts
+
+    @StateObject var favorites = Favorites()
 
     @State private var path = NavigationPath()
     
@@ -25,9 +26,9 @@ struct CabinetView: View {
             ForEach(categories) { category in
                 Section(header: CategoryHeaderView(category: category)) {
                     ForEach(category.products!, id:\.self) { product in
-                        ProductRowView(favoriteProduct: favoriteProducts, product: product)
+                        ProductRowView(favorites: favorites, product: product)
                             .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                FavoriteProductButtonView(favorites: favoriteProducts, product: product)                            .tint(favoriteProducts.contains(product) ? .red : .blue)
+                                FavoriteProductButtonView(favorites: favorites, product: product)                            .tint(favorites.containsItem(product) ? .red : .blue)
                             }
                     }
                     .onDelete(perform: deleteProducts)
@@ -86,7 +87,7 @@ struct CabinetView: View {
     }
     
     func addProduct(to category: Category) {
-        category.products?.append(Product(name: "Product Name"))
+        category.products?.append(Item(name: "Product Name"))
     }
     
     func deleteProducts(at offsets: IndexSet) {
@@ -101,7 +102,7 @@ struct CabinetView: View {
     do {
         let previewer = try Previewer()
         
-        return CabinetView(favoriteProducts: FavoriteProducts())
+        return CabinetView(favorites: Favorites())
         /// comment the following line to display an emptyCabinet
             .modelContainer(previewer.container)
     } catch {

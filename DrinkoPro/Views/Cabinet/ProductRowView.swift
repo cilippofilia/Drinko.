@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ProductRowView: View {
     @Environment(\.modelContext) private var modelContext
-    @ObservedObject var favoriteProduct: FavoriteProducts
+    @ObservedObject var favorites: Favorites
     
-    let product: Product
+    let product: Item
     
     var body: some View {
         NavigationLink(destination: EditProductView(product: product)) {
             HStack {
                 Image(systemName: "cart")
-                    .foregroundColor(favoriteProduct.contains(product) ? Color.secondary : Color.clear)
-                    .animation(.default, value: favoriteProduct.contains(product))
-                    .symbolEffect(.bounce.up, value: favoriteProduct.hasEffect)
+                    .foregroundColor(favorites.containsItem(product) ? Color.secondary : Color.clear)
+                    .animation(.default, value: favorites.containsItem(product))
+                    .symbolEffect(.bounce.up, value: favorites.hasEffect)
 
                 
                 VStack(alignment: .leading) {
@@ -45,7 +45,7 @@ struct ProductRowView: View {
     do {
         let previewer = try Previewer()
         
-        return ProductRowView(favoriteProduct: FavoriteProducts(), product: Product(name: "Absolut Vodka", detail: "This is to test the detail section of a profuct", madeIn: "", abv: "43", tried: false))
+        return ProductRowView(favorites: Favorites(), product: Item(name: "Absolut Vodka", detail: "This is to test the detail section of a profuct", madeIn: "", abv: "43", tried: false))
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

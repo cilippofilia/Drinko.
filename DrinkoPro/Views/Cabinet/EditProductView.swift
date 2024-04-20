@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EditProductView: View {
-    @Bindable var product: Product
+    @Bindable var product: Item
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @State private var showingDeleteConfirmation: Bool = false
@@ -102,7 +102,7 @@ struct EditProductView: View {
     do {
         let previewer = try Previewer()
         
-        return EditProductView(product: Product(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", madeIn: "Poland", abv: "45", rating: 5, tried: false, creationDate: Date.now))
+        return EditProductView(product: Item(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", madeIn: "Poland", abv: "45", rating: 5, tried: false, creationDate: Date.now))
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

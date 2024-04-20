@@ -13,10 +13,10 @@ struct FavoriteCocktailButtonView: View {
 
     var body: some View {
         Button(action: {
-            if favorites.contains(cocktail) {
-                favorites.remove(cocktail)
+            if favorites.containsCocktail(cocktail) {
+                favorites.removeCocktail(cocktail)
             } else {
-                favorites.add(cocktail)
+                favorites.addCocktail(cocktail)
                 UINotificationFeedbackGenerator()
                     .notificationOccurred(.success)
             }

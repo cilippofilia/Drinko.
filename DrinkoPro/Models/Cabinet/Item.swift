@@ -1,5 +1,5 @@
 //
-//  Product.swift
+//  Item.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 27/01/2024.
@@ -10,7 +10,7 @@ import Foundation
 import SwiftData
 
 @Model 
-class Product {
+class Item {
     var name: String = "Product Name"
     var detail: String = ""
     var madeIn: String = "Italy"

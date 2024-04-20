@@ -17,7 +17,7 @@ class Category {
     var creationDate: Date = Date()
     
     @Relationship(.unique)
-    var products: [Product]? = []
+    var products: [Item]? = []
     
     static let colors = [
         "Dr. Indigo",

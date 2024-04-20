@@ -172,14 +172,14 @@ struct CocktailDetailView: View {
                     Spacer()
 
                     DrinkoButtonView(title: "Like",
-                                     icon: favorites.contains(cocktail) ? "heart.slash.fill" : "heart.fill",
-                                     background: favorites.contains(cocktail) ? .red : .blue,
+                                     icon: favorites.containsCocktail(cocktail) ? "heart.slash.fill" : "heart.fill",
+                                     background: favorites.containsCocktail(cocktail) ? .red : .blue,
                                      foreground: .white,
                                      handler: {
-                        if favorites.contains(cocktail) {
-                            favorites.remove(cocktail)
+                        if favorites.containsCocktail(cocktail) {
+                            favorites.removeCocktail(cocktail)
                         } else {
-                            favorites.add(cocktail)
+                            favorites.addCocktail(cocktail)
                                 // haptic feedback
                             UINotificationFeedbackGenerator()
                                 .notificationOccurred(.success)
@@ -251,16 +251,16 @@ extension CocktailDetailView {
     
     var likeButton: some View {
         Button(action: {
-            if favorites.contains(cocktail) {
-                favorites.remove(cocktail)
+            if favorites.containsCocktail(cocktail) {
+                favorites.removeCocktail(cocktail)
             } else {
-                favorites.add(cocktail)
+                favorites.addCocktail(cocktail)
                 // haptic feedback
                 UINotificationFeedbackGenerator()
                     .notificationOccurred(.success)
             }
         }) {
-            Label("Like", systemImage: favorites.contains(cocktail) ? "heart.fill" : "heart")
+            Label("Like", systemImage: favorites.containsCocktail(cocktail) ? "heart.fill" : "heart")
                 .foregroundStyle(.red)
                 .animation(.default, value: favorites.hasEffect)
                 .symbolEffect(.bounce.up, value: favorites.hasEffect)

@@ -53,7 +53,7 @@ struct CocktailsView: View {
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
                     .swipeActions(edge: .trailing, allowsFullSwipe: true) {
                         FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
-                            .tint(favorites.contains(cocktail) ? .red : .blue)
+                            .tint(favorites.containsCocktail(cocktail) ? .red : .blue)
                     }
             }
             .overlay(content: {
