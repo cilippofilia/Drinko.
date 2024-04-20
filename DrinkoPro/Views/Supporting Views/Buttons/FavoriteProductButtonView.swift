@@ -8,25 +8,19 @@
 import SwiftUI
 
 struct FavoriteProductButtonView: View {
-    let favorites: Favorites
     let product: Item
 
     var body: some View {
         Button(action: {
-            if favorites.containsItem(product) {
-                favorites.removeItem(product)
-            } else {
-                favorites.addItem(product)
-                UINotificationFeedbackGenerator()
-                    .notificationOccurred(.success)
-            }
+            product.isFavorite.toggle()
+            UINotificationFeedbackGenerator().notificationOccurred(.success)
         }) {
-            Label(favorites.containsItem(product) ? "Remove from Cart" : "Add to Cart", systemImage: "cart")
+            Label(product.isFavorite ? "Remove from Cart" : "Add to Cart", systemImage: "cart")
         }
-        .animation(.default, value: favorites.hasEffect)
+        .animation(.default, value: product.isFavorite)
     }
 }
 
 #Preview {
-    FavoriteProductButtonView(favorites: Favorites(), product: Item(name: "Test"))
+    FavoriteProductButtonView(product: Item(name: "Test"))
 }

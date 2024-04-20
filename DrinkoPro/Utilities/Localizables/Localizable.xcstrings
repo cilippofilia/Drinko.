@@ -393,14 +393,14 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "A -> Z"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A-> Z"
+            "value" : "A -> Z"
           }
         },
         "fr" : {
@@ -411,7 +411,7 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "A -> Z"
           }
         }

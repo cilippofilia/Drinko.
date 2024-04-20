@@ -12,8 +12,6 @@ struct CabinetView: View {
     static let cabinetTag: String? = "Cabinet"
     @Environment(\.modelContext) private var modelContext
 
-    @StateObject var favorites = Favorites()
-
     @State private var path = NavigationPath()
     
     @Query(sort: [
@@ -26,9 +24,10 @@ struct CabinetView: View {
             ForEach(categories) { category in
                 Section(header: CategoryHeaderView(category: category)) {
                     ForEach(category.products!, id:\.self) { product in
-                        ProductRowView(favorites: favorites, product: product)
+                        ProductRowView(product: product)
                             .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                FavoriteProductButtonView(favorites: favorites, product: product)                            .tint(favorites.containsItem(product) ? .red : .blue)
+                                FavoriteProductButtonView(product: product)
+                                    .tint(product.isFavorite ? .red : .blue)
                             }
                     }
                     .onDelete(perform: deleteProducts)
@@ -102,7 +101,7 @@ struct CabinetView: View {
     do {
         let previewer = try Previewer()
         
-        return CabinetView(favorites: Favorites())
+        return CabinetView()
         /// comment the following line to display an emptyCabinet
             .modelContainer(previewer.container)
     } catch {

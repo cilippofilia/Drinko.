@@ -29,7 +29,7 @@ struct HomeView: View {
                     Label("Cocktails", systemImage: "wineglass")
                 }
             
-            CabinetView(favorites: Favorites())
+            CabinetView()
                 .tag(CabinetView.cabinetTag)
                 .tabItem {
                     Label("Cabinet", systemImage: "cabinet")

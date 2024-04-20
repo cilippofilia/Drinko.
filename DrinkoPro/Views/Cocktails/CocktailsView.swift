@@ -51,9 +51,9 @@ struct CocktailsView: View {
         NavigationStack {
             List(filteredCocktails) { cocktail in
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
-                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
                         FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
-                            .tint(favorites.containsCocktail(cocktail) ? .red : .blue)
+                            .tint(favorites.contains(cocktail) ? .red : .blue)
                     }
             }
             .overlay(content: {

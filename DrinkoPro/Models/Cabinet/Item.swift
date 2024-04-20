@@ -18,6 +18,7 @@ class Item {
     var rating: Int = 3
     var tried: Bool = false
     var creationDate: Date = Date()
+    var isFavorite: Bool = false
     
     var category: Category?
     
@@ -28,7 +29,8 @@ class Item {
         abv: String = "",
         rating: Int = 3,
         tried: Bool = false,
-        creationDate: Date = Date()
+        creationDate: Date = Date(),
+        isFavorite: Bool = false
     ) {
         self.name = name
         self.detail = detail
@@ -37,5 +39,6 @@ class Item {
         self.rating = rating
         self.tried = tried
         self.creationDate = creationDate
+        self.isFavorite = isFavorite
     }
 }
