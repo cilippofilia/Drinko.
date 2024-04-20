@@ -29,12 +29,8 @@ struct SettingsPreferenceView: View {
             NavigationLink(destination: IconsView()) {
                 HStack {
                     SettingsRowView(icon: "app.gift", color: .secondary, itemName: "Icons")
-                    Text("(coming soon)")
-                        .font(.caption)
-                        .italic()
                 }
             }
-            .disabled(true)
         }
     }
 }

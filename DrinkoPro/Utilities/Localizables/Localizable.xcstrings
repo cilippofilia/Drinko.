@@ -29,16 +29,6 @@
         }
       }
     },
-    "(coming soon)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "(coming soon)"
-          }
-        }
-      }
-    },
     "%" : {
       "localizations" : {
         "de" : {
@@ -264,37 +254,27 @@
         }
       }
     },
-    "%@ peels:\n" : {
-      "extractionState" : "stale",
+    "%@ peels: " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ schalen:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ peels:"
+            "value" : "%@ schält:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ zestes:"
+            "value" : "%@ peler:"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "bucce di %@:"
+            "value" : "%@ biccie"
           }
         }
       }
-    },
-    "%@ peels: " : {
-
     },
     "%@ Superjuice" : {
       "localizations" : {
@@ -554,7 +534,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Fügen Sie ein Produkt hinzu"
           }
         },
@@ -566,13 +546,13 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ajouter un produit"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Aggiungi un prodotto"
           }
         }
@@ -582,7 +562,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Kategorie hinzufügen"
           }
         },
@@ -594,13 +574,13 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ajouter une catégorie"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Aggiungi Categoria"
           }
         }
@@ -720,6 +700,12 @@
     },
     "App icon" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App-Symbol"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -730,6 +716,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "App icon"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icona"
           }
         }
       }
@@ -1300,19 +1292,12 @@
         }
       }
     },
-    "Citric Acid:\n" : {
-      "extractionState" : "stale",
+    "Citric Acid: " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zitronensäure:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Citric Acid:"
           }
         },
         "fr" : {
@@ -1328,9 +1313,6 @@
           }
         }
       }
-    },
-    "Citric Acid: " : {
-
     },
     "Cocktails" : {
       "comment" : "Cocktails Tab",
@@ -2158,10 +2140,28 @@
     },
     "Icons" : {
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symbole"
+          }
+        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icons"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icônes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icone"
           }
         }
       }
@@ -2565,8 +2565,7 @@
         }
       }
     },
-    "Malic Acid:\n" : {
-      "extractionState" : "stale",
+    "Malic Acid: " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2574,28 +2573,19 @@
             "value" : "Äpfelsäure:"
           }
         },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Malic Acid:"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Acide Malique:"
+            "value" : "Malice Acide:"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Acido Malico:"
+            "value" : "Acido Malico"
           }
         }
       }
-    },
-    "Malic Acid: " : {
-
     },
     "Method" : {
       "localizations" : {
@@ -4215,19 +4205,12 @@
         }
       }
     },
-    "Water:\n" : {
-      "extractionState" : "stale",
+    "Water: " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wasser:"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Water:"
           }
         },
         "fr" : {
@@ -4243,9 +4226,6 @@
           }
         }
       }
-    },
-    "Water: " : {
-
     },
     "Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.\n\nBut, let's face it, taste is subjective, and there's no one-size-fits-all approach to making cocktails. However, this app will be your trusty companion to help you discover new recipes, perfect your favorites, and even create your signature cocktail.\n\nFrom refreshing tropical blends to sophisticated sips, we've got you covered. You'll find everything from classic cocktails to modern twists, so get ready to impress your guests with your newfound mixology skills.\n\nBut, at the end of the day, the most important thing is that you enjoy the cocktail sitting in front of you. So, use this app as a guideline, experiment with different ingredients and techniques, and most importantly, have fun! Who knows, you might even uncover some professional bartending tips and tricks along the way.\n\nSo, are you ready to shake things up and craft some delicious drinks? Let's raise a glass and cheers to endless possibilities!" : {
       "comment" : "Settings Tab - Read me",
@@ -4395,7 +4375,7 @@
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ihre Notizen zu %@..."
           }
         },
@@ -4407,13 +4387,13 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Vos notes sur %@..."
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "I tuoi appunti su %@..."
           }
         }

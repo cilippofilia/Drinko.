@@ -19,9 +19,8 @@ struct CocktailsView: View {
     @State private var shots = Bundle.main.decode([Cocktail].self, from: "shots.json")
     @State private var searchText = ""
     @State private var showingSortOrder = false
-    @State private var sortOption: Cocktail.SortOption = .fromAtoZ
+    @State private var sortOption: SortOption = .fromAtoZ
         
-    // TipKit variable
     var favoriteCocktailsTip = SwipeToFavoriteTip()
     
     var drinklist: [Cocktail] {

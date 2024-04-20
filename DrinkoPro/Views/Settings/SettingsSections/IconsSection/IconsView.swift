@@ -34,8 +34,8 @@ struct IconsView: View {
                         }
                     }
                 }
-                .navigationTitle("App icon")
             }
+            .navigationTitle("App icon")
             .scrollIndicators(.hidden, axes: .vertical)
             .scrollBounceBehavior(.basedOnSize)
         }
