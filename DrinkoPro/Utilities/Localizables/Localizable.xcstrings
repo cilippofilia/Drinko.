@@ -670,6 +670,9 @@
         }
       }
     },
+    "Advanced" : {
+
+    },
     "Amount?" : {
       "localizations" : {
         "de" : {
@@ -2536,6 +2539,9 @@
           }
         }
       }
+    },
+    "Locked" : {
+
     },
     "Made in" : {
       "localizations" : {

@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
 		180EC7112BD3CB960092AD02 /* Samples+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7102BD3CB960092AD02 /* Samples+Ext.swift */; };
+		180EC7212BD413BE0092AD02 /* LessonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7202BD413BE0092AD02 /* LessonsSection.swift */; };
+		180EC7232BD414330092AD02 /* SpiritsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7222BD414330092AD02 /* SpiritsSection.swift */; };
+		180EC7262BD414C50092AD02 /* SyrupsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7252BD414C50092AD02 /* SyrupsSection.swift */; };
+		180EC7282BD414FC0092AD02 /* BooksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7272BD414FC0092AD02 /* BooksSection.swift */; };
+		180EC72A2BD4158B0092AD02 /* CalculatorsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7292BD4158B0092AD02 /* CalculatorsSection.swift */; };
 		182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
 		1827137F2B655D78000D3343 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137B2B655D78000D3343 /* Product.swift */; };
 		182713802B655D78000D3343 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137C2B655D78000D3343 /* Category.swift */; };
@@ -77,6 +82,11 @@
 /* Begin PBXFileReference section */
 		180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCocktailButtonView.swift; sourceTree = "<group>"; };
 		180EC7102BD3CB960092AD02 /* Samples+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Samples+Ext.swift"; sourceTree = "<group>"; };
+		180EC7202BD413BE0092AD02 /* LessonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsSection.swift; sourceTree = "<group>"; };
+		180EC7222BD414330092AD02 /* SpiritsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritsSection.swift; sourceTree = "<group>"; };
+		180EC7252BD414C50092AD02 /* SyrupsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyrupsSection.swift; sourceTree = "<group>"; };
+		180EC7272BD414FC0092AD02 /* BooksSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksSection.swift; sourceTree = "<group>"; };
+		180EC7292BD4158B0092AD02 /* CalculatorsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorsSection.swift; sourceTree = "<group>"; };
 		1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		1827137B2B655D78000D3343 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		1827137C2B655D78000D3343 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -186,6 +196,22 @@
 			path = Samples;
 			sourceTree = "<group>";
 		};
+		180EC71D2BD412BF0092AD02 /* Spirits */ = {
+			isa = PBXGroup;
+			children = (
+				180EC7222BD414330092AD02 /* SpiritsSection.swift */,
+			);
+			name = Spirits;
+			sourceTree = "<group>";
+		};
+		180EC7242BD414B80092AD02 /* Syrups */ = {
+			isa = PBXGroup;
+			children = (
+				180EC7252BD414C50092AD02 /* SyrupsSection.swift */,
+			);
+			name = Syrups;
+			sourceTree = "<group>";
+		};
 		182713832B655FE1000D3343 /* Cabinet */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,25 +263,27 @@
 		18883A832ACC70C400FC78C7 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
+				180EC7202BD413BE0092AD02 /* LessonsSection.swift */,
 				18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */,
 				18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */,
-				188BCF402A3875D500FBEF20 /* VideoView.swift */,
 			);
 			path = Lessons;
 			sourceTree = "<group>";
 		};
-		18883A842ACC718200FC78C7 /* Calculator */ = {
+		18883A842ACC718200FC78C7 /* Calculators */ = {
 			isa = PBXGroup;
 			children = (
+				180EC7292BD4158B0092AD02 /* CalculatorsSection.swift */,
 				18A8C8222B1C884C0052F0B4 /* ABV */,
 				18A8C8232B1C885C0052F0B4 /* Superjuice */,
 			);
-			name = Calculator;
+			name = Calculators;
 			sourceTree = "<group>";
 		};
 		188E93BC2A4C1DF6001691E6 /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				180EC7272BD414FC0092AD02 /* BooksSection.swift */,
 				188E93BF2A4C1E0E001691E6 /* BookRowView.swift */,
 				188E93CB2A4C260E001691E6 /* BookDetailView.swift */,
 			);
@@ -313,6 +341,7 @@
 		18B449CD2A8764C300F52B1B /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
+				188BCF402A3875D500FBEF20 /* VideoView.swift */,
 				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 				188463372B47354400088CA1 /* Cocktail */,
 				18B3077A2B77843200CB94AB /* Buttons */,
@@ -438,7 +467,9 @@
 			children = (
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
 				18883A832ACC70C400FC78C7 /* Lessons */,
-				18883A842ACC718200FC78C7 /* Calculator */,
+				180EC71D2BD412BF0092AD02 /* Spirits */,
+				180EC7242BD414B80092AD02 /* Syrups */,
+				18883A842ACC718200FC78C7 /* Calculators */,
 				188E93BC2A4C1DF6001691E6 /* Books */,
 			);
 			path = Learn;
@@ -569,6 +600,7 @@
 				188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */,
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
 				18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */,
+				180EC7262BD414C50092AD02 /* SyrupsSection.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
 				18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */,
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
@@ -576,6 +608,7 @@
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
 				180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */,
 				18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */,
+				180EC72A2BD4158B0092AD02 /* CalculatorsSection.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
 				18F586552B470E7400BD460B /* ProcedureView.swift in Sources */,
 				18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */,
@@ -591,12 +624,14 @@
 				188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */,
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,
 				1827138A2B656F28000D3343 /* Previewer.swift in Sources */,
+				180EC7282BD414FC0092AD02 /* BooksSection.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
 				182713942B685829000D3343 /* FavoriteProducts.swift in Sources */,
 				182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */,
 				18AA315A2B815AA200072180 /* IconModel.swift in Sources */,
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
 				18AA31582B815A6000072180 /* IconImage.swift in Sources */,
+				180EC7232BD414330092AD02 /* SpiritsSection.swift in Sources */,
 				182713882B65657C000D3343 /* CabinetView.swift in Sources */,
 				188E93BE2A4C1E04001691E6 /* Book.swift in Sources */,
 				18B3077E2B778AB200CB94AB /* IconsView.swift in Sources */,
@@ -615,6 +650,7 @@
 				180EC7112BD3CB960092AD02 /* Samples+Ext.swift in Sources */,
 				18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */,
 				182B40342AE90EB30007A03F /* ImageFailedToLoad.swift in Sources */,
+				180EC7212BD413BE0092AD02 /* LessonsSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
