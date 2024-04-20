@@ -12,15 +12,14 @@ struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
     
     @Environment(\.horizontalSizeClass) var sizeClass
-    
-    @StateObject var favorites = Favorites()
-    
+        
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var shots = Bundle.main.decode([Cocktail].self, from: "shots.json")
     @State private var searchText = ""
     @State private var showingSortOrder = false
     @State private var sortOption: SortOption = .fromAtoZ
         
+    var favorites = Favorites()
     var favoriteCocktailsTip = SwipeToFavoriteTip()
     
     var drinklist: [Cocktail] {
@@ -77,7 +76,6 @@ struct CocktailsView: View {
                 ])
             }
         }
-        .environmentObject(favorites)
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }

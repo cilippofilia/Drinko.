@@ -11,8 +11,9 @@ struct CocktailDetailView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var sizeClass
     
-    @ObservedObject var favorites = Favorites()
-    
+    var favorites = Favorites()
+    var units = ["ml", "oz."]
+
     @State private var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
     @State private var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
     
@@ -20,7 +21,6 @@ struct CocktailDetailView: View {
     @State private var showProcedure = false
 
     @State private var selectedUnit = "ml"
-    var units = ["ml", "oz."]
 
     @State private var frameSize: CGFloat = 280
     @State private var corners: CGFloat = 10
@@ -274,7 +274,7 @@ extension CocktailDetailView {
     TabView {
         NavigationStack {
             CocktailDetailView(cocktail: .example)
-                .environmentObject(Favorites())
+                .environment(Favorites())
         }
     }
 }

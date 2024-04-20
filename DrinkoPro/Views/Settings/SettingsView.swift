@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     static let settingsTag: String? = "Settings"
-    @EnvironmentObject var iconModel: IconModel
+    @Environment(IconModel.self) var iconModel: IconModel
 
     var body: some View {
         NavigationStack {
@@ -29,7 +29,7 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
-        .environmentObject(IconModel())
+        .environment(IconModel())
 }
 
 

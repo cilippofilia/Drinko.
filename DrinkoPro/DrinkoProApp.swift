@@ -10,11 +10,15 @@ import SwiftUI
 
 @main
 struct DrinkoProApp: App {
+    @State private var favorites = Favorites()
+    @State private var icons = IconModel()
+
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
         }
-        .environmentObject(IconModel())
+        .environment(favorites)
+        .environment(icons)
         .modelContainer(for: [
             Category.self
         ])

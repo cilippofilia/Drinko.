@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsPreferenceView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @EnvironmentObject var iconModel: IconModel
+    @Environment(IconModel.self) var iconModel: IconModel
 
     var body: some View {
         Section(header: Text("Preferences")) {
@@ -38,6 +38,6 @@ struct SettingsPreferenceView: View {
 #Preview {
     Form {
         SettingsPreferenceView()
-            .environmentObject(IconModel())
+            .environment(IconModel())
     }
 }

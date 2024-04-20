@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IconsView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @EnvironmentObject var iconModel: IconModel
+    @Environment(IconModel.self) var iconModel: IconModel
     @State private var isSelected: Bool = false
 
     let columns = Array(repeating: GridItem(.adaptive(minimum: 114, maximum: 1024), spacing: 0), count: 3)
@@ -45,6 +45,6 @@ struct IconsView: View {
 #Preview {
     NavigationStack {
         IconsView()
-            .environmentObject(IconModel())
+            .environment(IconModel())
     }
 }

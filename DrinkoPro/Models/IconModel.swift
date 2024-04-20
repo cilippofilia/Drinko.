@@ -28,8 +28,9 @@ enum Icon: String, CaseIterable, Identifiable {
     var id: String { self.rawValue }
 }
 
-class IconModel: ObservableObject, Equatable {
-    @Published var appIcon: Icon = .primary
+@Observable
+class IconModel: Equatable {
+    var appIcon: Icon = .primary
 
     static func == (lhs: IconModel, rhs: IconModel) -> Bool {
         return lhs.appIcon == rhs.appIcon

@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-class Favorites: ObservableObject {
+@Observable
+class Favorites {
     // What the user has favourited
     private var cocktails: Set<String>
 
@@ -36,7 +37,6 @@ class Favorites: ObservableObject {
 
     // Add cocktail to our set, updates all views, and saves the change
     func add(_ cocktail: Cocktail) {
-        objectWillChange.send()
         cocktails.insert(cocktail.id)
         hasEffect.toggle()
         save()
@@ -44,7 +44,6 @@ class Favorites: ObservableObject {
 
     // Remove cocktail from our set, updates all views, and saves the change
     func remove(_ cocktail: Cocktail) {
-        objectWillChange.send()
         cocktails.remove(cocktail.id)
         hasEffect.toggle()
         save()

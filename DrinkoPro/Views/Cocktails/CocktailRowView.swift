@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CocktailRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @ObservedObject var favorites = Favorites()
     @State private var frameSize: CGFloat = 45
 
+    var favorites = Favorites()
     var cocktail: Cocktail
 
     var body: some View {
@@ -59,6 +59,6 @@ struct CocktailRowView: View {
 #if DEBUG
 #Preview {
     CocktailRowView(cocktail: .example)
-        .environmentObject(Favorites())
+        .environment(Favorites())
 }
 #endif
