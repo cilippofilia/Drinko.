@@ -32,13 +32,16 @@
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
+		188C16762BD4502E005B4B86 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C16732BD4502D005B4B86 /* TipJarView.swift */; };
+		188C16772BD4502E005B4B86 /* UnlockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C16742BD4502D005B4B86 /* UnlockManager.swift */; };
+		188C16782BD4502E005B4B86 /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C16752BD4502E005B4B86 /* PurchaseManager.swift */; };
 		188E93BE2A4C1E04001691E6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BD2A4C1E04001691E6 /* Book.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
 		188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93E42A4C9D57001691E6 /* String-Ext.swift */; };
 		18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
 		18AA31582B815A6000072180 /* IconImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA31572B815A6000072180 /* IconImage.swift */; };
-		18AA315A2B815AA200072180 /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA31592B815AA200072180 /* IconModel.swift */; };
+		18AA315A2B815AA200072180 /* DrinkoIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AA31592B815AA200072180 /* DrinkoIcons.swift */; };
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
 		18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
 		18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
@@ -106,13 +109,16 @@
 		1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperjuiceRowView.swift; sourceTree = "<group>"; };
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		188C16732BD4502D005B4B86 /* TipJarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		188C16742BD4502D005B4B86 /* UnlockManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnlockManager.swift; sourceTree = "<group>"; };
+		188C16752BD4502E005B4B86 /* PurchaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		188E93BD2A4C1E04001691E6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		188E93E42A4C9D57001691E6 /* String-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-Ext.swift"; sourceTree = "<group>"; };
 		18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVRowView.swift; sourceTree = "<group>"; };
 		18AA31572B815A6000072180 /* IconImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconImage.swift; sourceTree = "<group>"; };
-		18AA31592B815AA200072180 /* IconModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
+		18AA31592B815AA200072180 /* DrinkoIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoIcons.swift; sourceTree = "<group>"; };
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
 		18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContactsView.swift; sourceTree = "<group>"; };
 		18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoView.swift; sourceTree = "<group>"; };
@@ -278,6 +284,16 @@
 			name = Calculators;
 			sourceTree = "<group>";
 		};
+		188C16722BD45024005B4B86 /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				188C16752BD4502E005B4B86 /* PurchaseManager.swift */,
+				188C16732BD4502D005B4B86 /* TipJarView.swift */,
+				188C16742BD4502D005B4B86 /* UnlockManager.swift */,
+			);
+			path = Tips;
+			sourceTree = "<group>";
+		};
 		188E93BC2A4C1DF6001691E6 /* Books */ = {
 			isa = PBXGroup;
 			children = (
@@ -339,11 +355,12 @@
 		18B449CD2A8764C300F52B1B /* Supporting Views */ = {
 			isa = PBXGroup;
 			children = (
-				188BCF402A3875D500FBEF20 /* VideoView.swift */,
-				182E43362A2B1221001675FD /* CreditsCardView.swift */,
-				188463372B47354400088CA1 /* Cocktail */,
 				18B3077A2B77843200CB94AB /* Buttons */,
+				188463372B47354400088CA1 /* Cocktail */,
+				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 				1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */,
+				188C16722BD45024005B4B86 /* Tips */,
+				188BCF402A3875D500FBEF20 /* VideoView.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -355,7 +372,7 @@
 				18F49EB92A286D2E00862CE3 /* Cocktail.swift */,
 				182713832B655FE1000D3343 /* Cabinet */,
 				182713892B656F28000D3343 /* Previewer.swift */,
-				18AA31592B815AA200072180 /* IconModel.swift */,
+				18AA31592B815AA200072180 /* DrinkoIcons.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -606,6 +623,7 @@
 				180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */,
 				18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */,
 				180EC72A2BD4158B0092AD02 /* CalculatorsSection.swift in Sources */,
+				188C16772BD4502E005B4B86 /* UnlockManager.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
 				18F586552B470E7400BD460B /* ProcedureView.swift in Sources */,
 				18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */,
@@ -623,8 +641,9 @@
 				1827138A2B656F28000D3343 /* Previewer.swift in Sources */,
 				180EC7282BD414FC0092AD02 /* BooksSection.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
+				188C16782BD4502E005B4B86 /* PurchaseManager.swift in Sources */,
 				182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */,
-				18AA315A2B815AA200072180 /* IconModel.swift in Sources */,
+				18AA315A2B815AA200072180 /* DrinkoIcons.swift in Sources */,
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
 				18AA31582B815A6000072180 /* IconImage.swift in Sources */,
 				180EC7232BD414330092AD02 /* SpiritsSection.swift in Sources */,
@@ -640,6 +659,7 @@
 				18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */,
 				18F49E9F2A286D2A00862CE3 /* DrinkoButtonView.swift in Sources */,
 				18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */,
+				188C16762BD4502E005B4B86 /* TipJarView.swift in Sources */,
 				18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */,
 				1827137F2B655D78000D3343 /* Item.swift in Sources */,
 				18F49EC42A286D2E00862CE3 /* LessonRowView.swift in Sources */,

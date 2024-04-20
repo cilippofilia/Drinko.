@@ -11,7 +11,7 @@ import SwiftUI
 @main
 struct DrinkoProApp: App {
     @State private var favorites = Favorites()
-    @State private var icons = IconModel()
+    @State private var icons = DrinkoIcons()
 
     var body: some Scene {
         WindowGroup {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IconsView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @Environment(IconModel.self) var iconModel: IconModel
+    @Environment(DrinkoIcons.self) var icons: DrinkoIcons
     @State private var isSelected: Bool = false
 
     let columns = Array(repeating: GridItem(.adaptive(minimum: 114, maximum: 1024), spacing: 0), count: 3)
@@ -21,15 +21,15 @@ struct IconsView: View {
                     ForEach(Icon.allCases) { icon in
                         VStack(spacing: 0) {
                             Button {
-                                iconModel.setAlternateAppIcon(icon: icon)
+                                icons.setAlternateAppIcon(icon: icon)
                                 isSelected.toggle()
                             } label: {
                                 IconImage(icon: icon)
                             }
                             
-                            Image(systemName: icon.id == iconModel.appIcon.rawValue ? "checkmark.circle" : "circle")
+                            Image(systemName: icon.id == icons.appIcon.rawValue ? "checkmark.circle" : "circle")
                                 .font(.title)
-                                .foregroundStyle(icon.id == iconModel.appIcon.rawValue ? Color.secondary : Color.clear)
+                                .foregroundStyle(icon.id == icons.appIcon.rawValue ? Color.secondary : Color.clear)
                                 .symbolEffect(.bounce.up, value: isSelected)
                         }
                     }
@@ -45,6 +45,6 @@ struct IconsView: View {
 #Preview {
     NavigationStack {
         IconsView()
-            .environment(IconModel())
+            .environment(DrinkoIcons())
     }
 }

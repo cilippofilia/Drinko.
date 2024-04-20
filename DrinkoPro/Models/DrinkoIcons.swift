@@ -1,5 +1,5 @@
 //
-//  IconModel.swift
+//  DrinkoIcons.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 17/02/2024.
@@ -29,10 +29,10 @@ enum Icon: String, CaseIterable, Identifiable {
 }
 
 @Observable
-class IconModel: Equatable {
+class DrinkoIcons: Equatable {
     var appIcon: Icon = .primary
 
-    static func == (lhs: IconModel, rhs: IconModel) -> Bool {
+    static func == (lhs: DrinkoIcons, rhs: DrinkoIcons) -> Bool {
         return lhs.appIcon == rhs.appIcon
     }
 

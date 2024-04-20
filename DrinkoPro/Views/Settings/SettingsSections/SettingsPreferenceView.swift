@@ -9,14 +9,16 @@ import SwiftUI
 
 struct SettingsPreferenceView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @Environment(IconModel.self) var iconModel: IconModel
+    @Environment(DrinkoIcons.self) var icons: DrinkoIcons
 
     var body: some View {
         Section(header: Text("Preferences")) {
             HStack {
-                SettingsRowView(icon: "character.bubble",
-                                color: .secondary,
-                                itemName: "Language")
+                SettingsRowView(
+                    icon: "character.bubble",
+                    color: .secondary,
+                    itemName: "Language"
+                )
                 Spacer()
 
                 Text(Bundle.main.preferredLocalizations.first!.uppercased())
@@ -28,8 +30,20 @@ struct SettingsPreferenceView: View {
             
             NavigationLink(destination: IconsView()) {
                 HStack {
-                    SettingsRowView(icon: "app.gift", color: .secondary, itemName: "Icons")
+                    SettingsRowView(
+                        icon: "questionmark.app",
+                        color: .secondary,
+                        itemName: "Icons"
+                    )
                 }
+            }
+            
+            NavigationLink(destination: TipJarView()) {
+                SettingsRowView(
+                    icon: "giftcard.fill",
+                    color: .green,
+                    itemName: "Tip Jar"
+                )
             }
         }
     }
@@ -38,6 +52,6 @@ struct SettingsPreferenceView: View {
 #Preview {
     Form {
         SettingsPreferenceView()
-            .environment(IconModel())
+            .environment(DrinkoIcons())
     }
 }
