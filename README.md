@@ -34,7 +34,7 @@ Additional Features:
 
 ## Tech Stack
 
-**Swift: framework SwiftUI**
+**Swift - UIKit & SwiftUI**
 
 Core and fundation of the whole app developed and shipped entirly using SwiftUI. 
 The whole app is taylored to perfection for every iPhone and iPad
@@ -46,18 +46,17 @@ in order to achive the best user experience possible, and that native look and f
 - **Combine**:
     To handle asyc events in case of in-app purchases.
 
-- **CoreData**:
+- **SwiftDataa**:
     Used to keep track and store the items created by the user inside the 'Cabinet' section.
 
 - **MessageUI**:
     Used to recive feedback and bugs directly from the testers and users.
    
 - **StoreKit**:
-    To support in-app purchases mainly (used to learn how to implement and use the framework it in the app).
+    To support in-app purchases
 
 - **Figma & Shots.so**:
     Main tool to sketch, design, style app icons, logos, AppStore Connect previews.
 
-- **Git & GitHub**:
+- **Git/GitHub/GitHub Desktop**:
     Used to work on updates and future release of the app.
-
