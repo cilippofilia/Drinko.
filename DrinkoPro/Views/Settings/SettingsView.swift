@@ -30,6 +30,8 @@ struct SettingsView: View {
 #Preview {
     SettingsView()
         .environment(DrinkoIcons())
+        .environment(Favorites())
+        .environment(StoreManager())
 }
 
 

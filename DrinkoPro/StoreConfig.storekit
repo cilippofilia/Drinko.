@@ -1,5 +1,5 @@
 {
-  "identifier" : "BD365F47",
+  "identifier" : "80F9A81D",
   "nonRenewingSubscriptions" : [
 
   ],
@@ -65,6 +65,21 @@
       "type" : "Consumable"
     },
     {
+      "displayPrice" : "24.99",
+      "familyShareable" : false,
+      "internalID" : "6499106952",
+      "localizations" : [
+        {
+          "description" : "Unlock more premium content for ever",
+          "displayName" : "Drinko Premium Lifetime",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "drinko_premium_lifetime",
+      "referenceName" : "Lifetime",
+      "type" : "NonConsumable"
+    },
+    {
       "displayPrice" : "3.99",
       "familyShareable" : false,
       "internalID" : "6463474004",
@@ -109,7 +124,7 @@
     "_applicationInternalID" : "6449893371",
     "_developerTeamID" : "3K3GFX53DY",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 728065155.07988906,
+    "_lastSynchronizedDate" : 735417218.12234497,
     "_locale" : "en_US",
     "_storefront" : "USA",
     "_storeKitErrors" : [
@@ -161,7 +176,65 @@
     ]
   },
   "subscriptionGroups" : [
+    {
+      "id" : "21478906",
+      "localizations" : [
 
+      ],
+      "name" : "Drinko Premium",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "0.99",
+          "familyShareable" : true,
+          "groupNumber" : 1,
+          "internalID" : "6499106567",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlock more premium content",
+              "displayName" : "Drinko Premium Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "DrinkoPremiumMonthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Monthly",
+          "subscriptionGroupID" : "21478906",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "9.99",
+          "familyShareable" : true,
+          "groupNumber" : 2,
+          "internalID" : "6499106425",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Unlock more premium content for cheaper",
+              "displayName" : "Drinko Premium Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "DrinkoPremiumYearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Yearly",
+          "subscriptionGroupID" : "21478906",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
   ],
   "version" : {
     "major" : 3,

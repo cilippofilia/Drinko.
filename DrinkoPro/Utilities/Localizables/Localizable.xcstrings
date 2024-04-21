@@ -198,6 +198,16 @@
         }
       }
     },
+    "%@ - %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ - %2$@"
+          }
+        }
+      }
+    },
     "%@ peels (gr)" : {
       "localizations" : {
         "de" : {
@@ -388,6 +398,9 @@
           }
         }
       }
+    },
+    "✨ Premium Member ✨" : {
+
     },
     "A -> Z" : {
       "localizations" : {
@@ -1374,6 +1387,9 @@
         }
       }
     },
+    "Consider living a tip! 😉" : {
+
+    },
     "Contact the developer" : {
       "localizations" : {
         "de" : {
@@ -1717,6 +1733,9 @@
         }
       }
     },
+    "Do you like Drinko. ?" : {
+
+    },
     "Done" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1971,6 +1990,9 @@
           }
         }
       }
+    },
+    "Failed to create preview: %@" : {
+
     },
     "Garnish" : {
       "localizations" : {
@@ -2339,6 +2361,9 @@
           }
         }
       }
+    },
+    "Join _Drinko Premium_ and unlock more content, new app icons and unlimited Categories and Products inside your Cabinet!" : {
+
     },
     "Juice Calculator" : {
       "localizations" : {
@@ -2904,6 +2929,9 @@
         }
       }
     },
+    "Premium" : {
+
+    },
     "Procedure" : {
       "localizations" : {
         "de" : {
@@ -3242,6 +3270,9 @@
           }
         }
       }
+    },
+    "Restore Purchases" : {
+
     },
     "Search Cocktails" : {
       "localizations" : {
@@ -3842,6 +3873,9 @@
         }
       }
     },
+    "Thank you for being a" : {
+
+    },
     "Thank you!" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3928,6 +3962,9 @@
           }
         }
       }
+    },
+    "Tip Jar" : {
+
     },
     "Title" : {
       "extractionState" : "manual",
@@ -4154,6 +4191,9 @@
           }
         }
       }
+    },
+    "Want to go the extra mile?" : {
+
     },
     "Water (ml)" : {
       "localizations" : {

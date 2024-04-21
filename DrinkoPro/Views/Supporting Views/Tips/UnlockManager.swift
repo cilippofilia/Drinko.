@@ -32,7 +32,7 @@
 //        self.dataController = dataController
 //
 //        // Prepare to look for our unlock products.
-//        let productIDs = Set(["CabinetPlus"])
+//        let tipsIds = Set(["CabinetPlus"])
 //        
 //        request = SKProductsRequest(productIdentifiers: productIDs)
 //
