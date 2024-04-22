@@ -10,8 +10,7 @@ import SwiftUI
 
 struct PremiumView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    
-    var storeManager = StoreManager()
+    @EnvironmentObject var storeManager: StoreManager
     
     var products: [Product] {
         storeManager.sortByPrice(storeManager.products)
@@ -32,7 +31,7 @@ struct PremiumView: View {
                         .bold()
                     Text("Consider living a tip! 😉")
                 }
-                .padding(.vertical)
+                .padding(.bottom)
                 
                 ForEach(tips, id: \.self) { tip in
                     DrinkoButtonView(
@@ -44,34 +43,26 @@ struct PremiumView: View {
                     .padding(.horizontal)
                     .frame(maxWidth: 420)
                 }
-                                
-                    VStack {
-                        Text("Want to go the extra mile?")
-                            .font(.title2)
-                            .bold()
-                        Text("Join _Drinko Premium_ and unlock more content, new app icons and unlimited Categories and Products inside your Cabinet!")
-                            .multilineTextAlignment(.center)
-                    }
-                    .padding(.vertical)
-                    
-                    ForEach(subs, id: \.self) { sub in
-                        DrinkoButtonView(
-                            title: "\(sub.displayPrice) - \(sub.displayName)",
-                            icon: nil
-                        ) {
-                            storeManager.purchaseProduct(sub)
-                        }
-                        .padding(.horizontal)
-                        .frame(maxWidth: 420)
-                    }
-
-                    Button(action: {
-                        storeManager.restoreSubscription()
-                    }) {
-                        Text("Restore Purchases")
-                    }
-                    .padding()
+                        
+                VStack {
+                    Text("Want to go the extra mile?")
+                        .font(.title2)
+                        .bold()
+                    Text("Join _Drinko Premium_ and unlock more content, new app icons and unlimited Categories and Products inside your Cabinet!")
+                        .multilineTextAlignment(.center)
+                }
+                .padding(.vertical)
                 
+                ForEach(subs, id: \.self) { sub in
+                    DrinkoButtonView(
+                        title: "\(sub.displayPrice) - \(sub.displayName)",
+                        icon: nil
+                    ) {
+                        storeManager.purchaseProduct(sub)
+                    }
+                    .padding(.horizontal)
+                    .frame(maxWidth: 420)
+                }
                 
                 if storeManager.hasUnlockedPro {
                     VStack {
@@ -84,6 +75,13 @@ struct PremiumView: View {
                     }
                     .padding(.vertical)
                 }
+                
+                Button(action: {
+                    storeManager.restoreSubscription()
+                }) {
+                    Text("Restore Purchases")
+                }
+                .padding(.vertical)
             }
             .padding(.vertical)
             .frame(width: compactScreenWidth)
@@ -93,16 +91,17 @@ struct PremiumView: View {
                 do {
                     try await storeManager.loadTipsProducts()
                 } catch {
-                    print(error.localizedDescription)
+                    print("Error: \(error.localizedDescription)")
                 }
             }
         }
         .scrollBounceBehavior(.basedOnSize)
         .scrollIndicators(.hidden)
+        .contentMargins(.top, 0)
     }
 }
 
 #Preview {
     PremiumView()
-        .environment(StoreManager())
+        .environmentObject(StoreManager())
 }

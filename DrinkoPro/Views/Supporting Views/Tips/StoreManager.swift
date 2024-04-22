@@ -8,8 +8,8 @@
 import Foundation
 import StoreKit
 
-@Observable
-class StoreManager {
+@MainActor
+class StoreManager: ObservableObject {
     private let productIds = [
         "drinko_premium_lifetime",
         "DrinkoPremiumYearly",
@@ -21,8 +21,9 @@ class StoreManager {
         "ExtremelyGenerousTip"
     ]
     
-    var products: [Product] = []
-    
+    @Published private(set) var products: [Product] = []
+    @Published private(set) var purchasedProductIds = Set<String>()
+        
     var hasUnlockedPro: Bool {
         return self.purchasedProductIds.contains(where: { $0 == "drinko_premium_lifetime" })
         || self.purchasedProductIds.contains(where: { $0 == "DrinkoPremiumYearly" })
@@ -32,7 +33,6 @@ class StoreManager {
     private var productLoaded = false
     private var updates: Task<Void, Never>? = nil
     
-    private(set) var purchasedProductIds = Set<String>()
 
     init() {
         updates = observeTransactionUpdates()

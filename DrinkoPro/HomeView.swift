@@ -75,5 +75,5 @@ extension UIApplication {
     HomeView()
         .environment(DrinkoIcons())
         .environment(Favorites())
-        .environment(StoreManager())
+        .environmentObject(StoreManager())
 }

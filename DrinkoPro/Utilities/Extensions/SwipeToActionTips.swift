@@ -12,7 +12,7 @@ struct SwipeToFavoriteTip: Tip, Identifiable {
     var id = UUID()
     
     var title: Text {
-        Text("Swipe left")
+        Text("Swipe right")
     }
 
     var message: Text? {

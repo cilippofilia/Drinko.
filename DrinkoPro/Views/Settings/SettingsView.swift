@@ -23,7 +23,6 @@ struct SettingsView: View {
             .navigationBarTitle("Settings")
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        .scrollBounceBehavior(.basedOnSize, axes: .vertical)
     }
 }
 
@@ -31,7 +30,7 @@ struct SettingsView: View {
     SettingsView()
         .environment(DrinkoIcons())
         .environment(Favorites())
-        .environment(StoreManager())
+        .environmentObject(StoreManager())
 }
 
 

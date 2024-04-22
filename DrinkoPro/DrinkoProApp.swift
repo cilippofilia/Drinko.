@@ -12,12 +12,12 @@ import SwiftUI
 struct DrinkoProApp: App {
     @State private var favorites = Favorites()
     @State private var icons = DrinkoIcons()
-    @State private var storeManager = StoreManager()
+    @StateObject private var storeManager = StoreManager()
     
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
-                .environment(storeManager)
+                .environmentObject(storeManager)
                 .task {
                     await storeManager.updatePurchasedProducts()
                 }
