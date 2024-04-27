@@ -5,11 +5,16 @@
 //  Created by Filippo Cilia on 26/08/2023.
 //
 
-import Foundation
 import StoreKit
+import SwiftUI
 
 @MainActor
-class StoreManager: ObservableObject {
+class StoreManager: NSObject, ObservableObject {
+    @AppStorage("hasPro", store: userDefaults) var hasPro: Bool = false
+    @AppStorage("hasTipped", store: userDefaults) var hasTipped: Bool = false
+
+    static let userDefaults = UserDefaults(suiteName: "group.drinko.app")!
+    
     private let productIds = [
         "drinko_premium_lifetime",
         "DrinkoPremiumYearly",
@@ -20,22 +25,41 @@ class StoreManager: ObservableObject {
         "GenerousTip",
         "ExtremelyGenerousTip"
     ]
+    let subsIds = [
+        "drinko_premium_lifetime",
+        "DrinkoPremiumYearly",
+        "DrinkoPremiumMonthly"
+    ]
+    let tipsIds = [
+        "SmallTip",
+        "MediumTip",
+        "BigTip",
+        "GenerousTip",
+        "ExtremelyGenerousTip"
+    ]
     
     @Published private(set) var products: [Product] = []
     @Published private(set) var purchasedProductIds = Set<String>()
-        
+    
     var hasUnlockedPro: Bool {
         return self.purchasedProductIds.contains(where: { $0 == "drinko_premium_lifetime" })
         || self.purchasedProductIds.contains(where: { $0 == "DrinkoPremiumYearly" })
         || self.purchasedProductIds.contains(where: { $0 == "DrinkoPremiumMonthly" })
     }
+    
+    var hasLeftTip: Bool {
+        return self.purchasedProductIds.contains(where: { $0 != "drinko_premium_lifetime" })
+        || self.purchasedProductIds.contains(where: { $0 != "DrinkoPremiumYearly" })
+        || self.purchasedProductIds.contains(where: { $0 != "DrinkoPremiumMonthly" })
+    }
 
     private var productLoaded = false
     private var updates: Task<Void, Never>? = nil
     
-
-    init() {
-        updates = observeTransactionUpdates()
+    override init() {
+        super.init()
+        self.updates = observeTransactionUpdates()
+        SKPaymentQueue.default().add(self)
     }
 
     deinit {
@@ -87,11 +111,19 @@ class StoreManager: ObservableObject {
                 self.purchasedProductIds.remove(transaction.productID)
             }
         }
+        
+        if hasLeftTip {
+            hasTipped = true
+        }
+        
+        if hasUnlockedPro {
+            hasPro = true
+        }
     }
     
     private func observeTransactionUpdates() -> Task<Void, Never> {
         Task(priority: .background) { [unowned self] in
-//            for await verificationResult in Transaction.updates {
+            // for await verificationResult in Transaction.updates {
             for await _ in Transaction.updates {
                 // Using verificationResult directly would be better
                 // but this way works for this tutorial
@@ -102,7 +134,15 @@ class StoreManager: ObservableObject {
 }
 
 // MARK: HELPER METHODS
-extension StoreManager {
+extension StoreManager: SKPaymentTransactionObserver {
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, shouldAddStorePayment payment: SKPayment, for product: SKProduct) -> Bool {
+        return true
+    }
+    
     func purchaseProduct(_ product: Product) {
         Task {
             do {

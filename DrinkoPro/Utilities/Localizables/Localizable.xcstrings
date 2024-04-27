@@ -198,16 +198,6 @@
         }
       }
     },
-    "%@ - %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        }
-      }
-    },
     "%@ peels (gr)" : {
       "localizations" : {
         "de" : {
@@ -1387,9 +1377,6 @@
         }
       }
     },
-    "Consider living a tip! 😉" : {
-
-    },
     "Contact the developer" : {
       "localizations" : {
         "de" : {
@@ -1732,9 +1719,6 @@
           }
         }
       }
-    },
-    "Do you like Drinko. ?" : {
-
     },
     "Done" : {
       "extractionState" : "manual",
@@ -3733,6 +3717,7 @@
       }
     },
     "Swipe left" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3962,6 +3947,9 @@
           }
         }
       }
+    },
+    "Tip jar" : {
+
     },
     "Tip Jar" : {
 

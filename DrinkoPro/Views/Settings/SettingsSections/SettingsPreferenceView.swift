@@ -38,10 +38,18 @@ struct SettingsPreferenceView: View {
                 }
             }
             
+            NavigationLink(destination: TipJarView()) {
+                SettingsRowView(
+                    icon: "giftcard.fill",
+                    color: .green,
+                    itemName: "Tip jar"
+                )
+            }
+            
             NavigationLink(destination: PremiumView()) {
                 SettingsRowView(
-                    icon: "gift.fill",
-                    color: .red,
+                    icon: "crown.fill",
+                    color: .yellow,
                     itemName: "Premium"
                 )
             }
