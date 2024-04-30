@@ -11,7 +11,9 @@ import SwiftUI
 struct PremiumView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     @EnvironmentObject var storeManager: StoreManager
-        
+    
+    var blurStyle: UIBlurEffect.Style = .dark
+
     var body: some View {
         ScrollView {
             VStack {
@@ -20,26 +22,13 @@ struct PremiumView: View {
                     .bold()
                 Text("Join _Drinko Premium_ and unlock more content, new app icons and unlimited Categories and Products inside your Cabinet!")
                     .multilineTextAlignment(.center)
-                
-                ProductView(id: storeManager.subsIds[0]) {
-                    Image(systemName: "rainbow")
-                        .resizable()
-                        .scaledToFit()
-                        .symbolRenderingMode(.multicolor)
-                        .symbolEffect(.variableColor.reversing, options: .repeating, isActive: true)
-                }
-                .padding()
-                .frame(maxWidth: .infinity)
-                .background(.background.secondary,
-                            in: .rect(cornerRadius: 20, style: .continuous))
-                .productViewStyle(.large)
-                
-                ForEach(storeManager.subsIds.dropFirst().reversed(), id: \.self) { product in
+
+                ForEach(storeManager.subsIds, id: \.self) { product in
                     ProductView(id: product) {
-                        Image(systemName: "rainbow")
+                        Image(product)
                             .resizable()
-                            .scaledToFit()
-                            .symbolRenderingMode(.multicolor)
+                            .scaledToFill()
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     .padding()
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -81,6 +70,18 @@ struct PremiumView: View {
         .contentMargins(.horizontal, 20, for: .scrollContent)
         .scrollIndicators(.hidden)
         .background(.background.secondary)
+    }
+}
+
+struct VisualEffectView: UIViewRepresentable {
+    var effect: UIVisualEffect?
+    
+    func makeUIView(context: UIViewRepresentableContext<Self>) -> UIVisualEffectView {
+        return UIVisualEffectView()
+    }
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: UIViewRepresentableContext<Self>) {
+        uiView.effect = effect
     }
 }
 
