@@ -24,6 +24,8 @@ struct LearnHeaderView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LearnHeaderView(text: "Advanced", isCollapsed: .constant(true))
 }
+#endif

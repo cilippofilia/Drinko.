@@ -51,6 +51,8 @@ private extension SuperjuiceRowView {
     }
 }
 
+#if DEBUG
 #Preview {
     SuperjuiceRowView(juiceType: "Lime")
 }
+#endif

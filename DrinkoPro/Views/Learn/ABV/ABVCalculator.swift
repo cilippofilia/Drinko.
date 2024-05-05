@@ -179,6 +179,8 @@ private extension ABVCalculator {
     }
 }
 
+#if DEBUG
 #Preview {
     ABVCalculator()
 }
+#endif

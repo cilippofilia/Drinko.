@@ -96,6 +96,8 @@ struct SplashScreenView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     SplashScreenView()
 }
+#endif

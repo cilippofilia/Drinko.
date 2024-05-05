@@ -42,6 +42,8 @@ struct ABVRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     ABVRowView()
 }
+#endif

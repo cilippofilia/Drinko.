@@ -96,6 +96,7 @@ struct CabinetView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     do {
         let previewer = try Previewer()
@@ -107,3 +108,4 @@ struct CabinetView: View {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }
 }
+#endif

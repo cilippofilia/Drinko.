@@ -23,6 +23,8 @@ struct SettingsRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     SettingsRowView(icon: "gear", color: .secondary, itemName: "Settings")
 }
+#endif

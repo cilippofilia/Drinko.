@@ -92,6 +92,7 @@ struct EditCategoryView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     do {
         let previewer = try Previewer()
@@ -102,3 +103,4 @@ struct EditCategoryView: View {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }
 }
+#endif

@@ -26,10 +26,10 @@ struct SettingsView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     SettingsView()
         .environment(DrinkoIcons())
         .environment(Favorites())
 }
-
-
+#endif

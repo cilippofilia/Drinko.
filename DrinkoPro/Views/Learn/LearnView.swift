@@ -171,6 +171,8 @@ struct LearnView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LearnView()
 }
+#endif
