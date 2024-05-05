@@ -14,6 +14,9 @@ struct DrinkoProApp: App {
     @State private var icons = DrinkoIcons()
     
     init() {
+        #if DEBUG
+        Tips.showAllTipsForTesting()
+        #endif
         try? Tips.configure()
     }
     var body: some Scene {

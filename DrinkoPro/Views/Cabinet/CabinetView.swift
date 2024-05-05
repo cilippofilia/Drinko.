@@ -7,7 +7,6 @@
 
 import SwiftData
 import SwiftUI
-import TipKit
 
 struct CabinetView: View {
     static let cabinetTag: String? = "Cabinet"
@@ -19,8 +18,6 @@ struct CabinetView: View {
         SortDescriptor(\Category.name),
         SortDescriptor(\Category.creationDate)
     ]) var categories: [Category]
-
-    var addToCartTip = SwipeToCartTip()
 
     var categoriesList: some View {
         List {

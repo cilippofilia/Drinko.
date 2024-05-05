@@ -53,7 +53,6 @@ struct LearnView: View {
                         text: "Bar Preps",
                         isCollapsed: $isBarPrepsCollapsed)
                 }
-
                 // MARK: BASIC SPIRITS
                 Section {
                     if isBasicSpiritsCollapsed {
