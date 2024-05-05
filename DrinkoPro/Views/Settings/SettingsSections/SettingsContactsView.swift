@@ -27,6 +27,7 @@ struct SettingsContactsView: View {
                                 color: .blue,
                                 itemName: "Contact the developer")
             }
+            .buttonStyle(PlainButtonStyle())
             .disabled(!MFMailComposeViewController.canSendMail())
             .confirmationDialog("Select an option",
                                 isPresented: $showOptions,
