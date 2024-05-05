@@ -29,39 +29,71 @@ struct LessonContent: Codable, Equatable, Identifiable {
 }
 
 @Observable
-class AdvancedLesson {
+class LessonsViewModel {
+    var basicLessons: [Lesson] = []
     var advancedLessons: [Lesson] = []
     var barPreps: [Lesson] = []
+    var basicSpirits: [Lesson] = []
     var advancedSpirits: [Lesson] = []
     var liqueurs: [Lesson] = []
+    var books: [Book] = []
+    var syrups: [Lesson] = []
 
-    var basicLessons = Bundle.main.decode([Lesson].self, from: "basics.json")
-    var spirits = Bundle.main.decode([Lesson].self, from: "spirits.json")
-    var syrups = Bundle.main.decode([Lesson].self, from: "syrups.json")
-    var books = Bundle.main.decode([Book].self, from: "books.json")
-    
     let baseURL = "https://raw.githubusercontent.com/cilippofilia/drinko-learn/main"
-    let topics = ["advanced-lessons", "bar-preps", "advanced-spirits", "liqueurs"]
+    let topics = [
+        "basic-lessons",
+        "advanced-lessons",
+        "bar-preps",
+        "basic-spirits",
+        "advanced-spirits",
+        "liqueurs",
+        "syrups"
+    ]
     var language = "\(Bundle.main.preferredLocalizations.first!)/"
 
     init() { }
 
-    func fetchAdvancedLessons() {
+    func fetchBooks() {
+        if let url = URL(string: "https://raw.githubusercontent.com/cilippofilia/drinko-learn/main/books/\(language)/books.json") {
+            URLSession.shared.dataTask(with: url) { data, _, error in
+                if let data = data {
+                    do {
+                        let decodedData = try JSONDecoder().decode([Book].self, from: data)
+                        DispatchQueue.main.async {
+                            self.books = decodedData
+                        }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                    }
+                } else if let error = error {
+                    print("Error fetching data: \(error)")
+                }
+            }.resume()
+        }
+    }
+
+    func fetchLessons() {
         for topic in topics {
             if let url = URL(string: "\(baseURL)/\(topic)/\(language)/\(topic).json") {
                 URLSession.shared.dataTask(with: url) { data, _, error in
                     if let data = data {
                         do {
-                            let decodedData = try JSONDecoder().decode([Lesson].self, from: data)
+                            let decodedLessonData = try JSONDecoder().decode([Lesson].self, from: data)
                             DispatchQueue.main.async {
-                                if topic == "advanced-lessons" {
-                                    self.advancedLessons.append(contentsOf: decodedData)
+                                if topic == "basic-lessons" {
+                                    self.basicLessons = decodedLessonData
+                                } else if topic == "advanced-lessons" {
+                                    self.advancedLessons = decodedLessonData
                                 } else if topic == "bar-preps" {
-                                    self.barPreps.append(contentsOf: decodedData)
+                                    self.barPreps = decodedLessonData
+                                } else if topic == "basic-spirits" {
+                                    self.basicSpirits = decodedLessonData
                                 } else if topic == "advanced-spirits" {
-                                    self.advancedSpirits.append(contentsOf: decodedData)
+                                    self.advancedSpirits = decodedLessonData
                                 } else if topic == "liqueurs" {
-                                    self.liqueurs.append(contentsOf: decodedData)
+                                    self.liqueurs = decodedLessonData
+                                } else if topic == "syrups" {
+                                    self.syrups = decodedLessonData
                                 }
                             }
                         } catch {
@@ -73,5 +105,10 @@ class AdvancedLesson {
                 }.resume()
             }
         }
+    }
+
+    func refreshData() {
+        fetchLessons()
+        fetchBooks()
     }
 }

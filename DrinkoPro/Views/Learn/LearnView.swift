@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LearnView: View {
     static let learnTag: String? = "Learn"
-    @State private var viewModel = AdvancedLesson()
+    @State private var viewModel = LessonsViewModel()
     
     @State private var isBasicCollapsed = false
     @State private var isBarPrepsCollapsed = false
@@ -57,9 +57,9 @@ struct LearnView: View {
                 // MARK: BASIC SPIRITS
                 Section {
                     if isBasicSpiritsCollapsed {
-                        LessonRowView(lesson: viewModel.spirits[0])
+                        LessonRowView(lesson: viewModel.basicSpirits[0])
                     } else {
-                        ForEach(viewModel.spirits) { spirit in
+                        ForEach(viewModel.basicSpirits) { spirit in
                             LessonRowView(lesson: spirit)
                         }
                     }
@@ -160,8 +160,12 @@ struct LearnView: View {
             .navigationTitle("Learn")
             .onAppear {
                 if viewModel.advancedLessons.isEmpty {
-                    viewModel.fetchAdvancedLessons()
+                    viewModel.fetchLessons()
+                    viewModel.fetchBooks()
                 }
+            }
+            .refreshable {
+                viewModel.refreshData()
             }
         }
         .navigationViewStyle(StackNavigationViewStyle())
@@ -174,10 +178,9 @@ struct LearnView: View {
 
 
 /*
- TODO: MOVE ALL THE JSONS ONLINE
  TODO: NEED TO IMPLEMENT THIS
  TODO: CACHE LOADED JSONS
- 
+
  ForEach(viewModel.topics, id:\.self) { topic in
      Section {
 

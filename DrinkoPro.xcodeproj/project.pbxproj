@@ -65,10 +65,6 @@
 		18F5860E2B46322B00BD460B /* cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5860D2B46322B00BD460B /* cocktails.json */; };
 		18F586132B46328B00BD460B /* history.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586152B46328B00BD460B /* history.json */; };
 		18F5861D2B46334900BD460B /* procedure.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5861F2B46334900BD460B /* procedure.json */; };
-		18F586252B4633A500BD460B /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586272B4633A500BD460B /* books.json */; };
-		18F5862D2B4633F100BD460B /* basics.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5862F2B4633F100BD460B /* basics.json */; };
-		18F586352B46343400BD460B /* syrups.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586372B46343400BD460B /* syrups.json */; };
-		18F5863D2B46348100BD460B /* spirits.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5863F2B46348100BD460B /* spirits.json */; };
 		18F5864E2B46FFA800BD460B /* shots.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586502B46FFA800BD460B /* shots.json */; };
 		18F586552B470E7400BD460B /* ProcedureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F586542B470E7400BD460B /* ProcedureView.swift */; };
 /* End PBXBuildFile section */
@@ -141,22 +137,6 @@
 		18F586202B46334A00BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/procedure.json; sourceTree = "<group>"; };
 		18F586212B46334B00BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/procedure.json; sourceTree = "<group>"; };
 		18F586222B46334C00BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/procedure.json; sourceTree = "<group>"; };
-		18F586262B4633A500BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/books.json; sourceTree = "<group>"; };
-		18F586282B4633A600BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/books.json; sourceTree = "<group>"; };
-		18F586292B4633A600BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/books.json; sourceTree = "<group>"; };
-		18F5862A2B4633A700BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/books.json; sourceTree = "<group>"; };
-		18F5862E2B4633F100BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/basics.json; sourceTree = "<group>"; };
-		18F586302B4633F200BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/basics.json; sourceTree = "<group>"; };
-		18F586312B4633F200BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/basics.json; sourceTree = "<group>"; };
-		18F586322B4633F300BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/basics.json; sourceTree = "<group>"; };
-		18F586362B46343400BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/syrups.json; sourceTree = "<group>"; };
-		18F586382B46343600BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/syrups.json; sourceTree = "<group>"; };
-		18F586392B46343600BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/syrups.json; sourceTree = "<group>"; };
-		18F5863A2B46343700BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/syrups.json; sourceTree = "<group>"; };
-		18F5863E2B46348100BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/spirits.json; sourceTree = "<group>"; };
-		18F586402B46348200BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/spirits.json; sourceTree = "<group>"; };
-		18F586412B46348200BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/spirits.json; sourceTree = "<group>"; };
-		18F586422B46348300BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/spirits.json; sourceTree = "<group>"; };
 		18F5864F2B46FFA800BD460B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/shots.json; sourceTree = "<group>"; };
 		18F586512B46FFAB00BD460B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/shots.json; sourceTree = "<group>"; };
 		18F586522B46FFAC00BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/shots.json; sourceTree = "<group>"; };
@@ -401,7 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */,
-				18F586432B4634B300BD460B /* Learn */,
 				18F5861C2B46332E00BD460B /* Cocktail */,
 			);
 			path = Localizables;
@@ -460,17 +439,6 @@
 				18F5861F2B46334900BD460B /* procedure.json */,
 			);
 			path = Cocktail;
-			sourceTree = "<group>";
-		};
-		18F586432B4634B300BD460B /* Learn */ = {
-			isa = PBXGroup;
-			children = (
-				18F5862F2B4633F100BD460B /* basics.json */,
-				18F586272B4633A500BD460B /* books.json */,
-				18F5863F2B46348100BD460B /* spirits.json */,
-				18F586372B46343400BD460B /* syrups.json */,
-			);
-			path = Learn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -539,14 +507,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */,
-				18F586352B46343400BD460B /* syrups.json in Resources */,
 				18F49E782A286D0D00862CE3 /* Colors.xcassets in Resources */,
-				18F586252B4633A500BD460B /* books.json in Resources */,
 				18F586132B46328B00BD460B /* history.json in Resources */,
 				18F5864E2B46FFA800BD460B /* shots.json in Resources */,
-				18F5863D2B46348100BD460B /* spirits.json in Resources */,
 				1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */,
-				18F5862D2B4633F100BD460B /* basics.json in Resources */,
 				18F49E7A2A286D1900862CE3 /* Assets.xcassets in Resources */,
 				18F5860E2B46322B00BD460B /* cocktails.json in Resources */,
 				18F5861D2B46334900BD460B /* procedure.json in Resources */,
@@ -637,50 +601,6 @@
 				18F586222B46334C00BD460B /* it */,
 			);
 			name = procedure.json;
-			sourceTree = "<group>";
-		};
-		18F586272B4633A500BD460B /* books.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18F586262B4633A500BD460B /* en */,
-				18F586282B4633A600BD460B /* fr */,
-				18F586292B4633A600BD460B /* de */,
-				18F5862A2B4633A700BD460B /* it */,
-			);
-			name = books.json;
-			sourceTree = "<group>";
-		};
-		18F5862F2B4633F100BD460B /* basics.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18F5862E2B4633F100BD460B /* en */,
-				18F586302B4633F200BD460B /* fr */,
-				18F586312B4633F200BD460B /* de */,
-				18F586322B4633F300BD460B /* it */,
-			);
-			name = basics.json;
-			sourceTree = "<group>";
-		};
-		18F586372B46343400BD460B /* syrups.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18F586362B46343400BD460B /* en */,
-				18F586382B46343600BD460B /* fr */,
-				18F586392B46343600BD460B /* de */,
-				18F5863A2B46343700BD460B /* it */,
-			);
-			name = syrups.json;
-			sourceTree = "<group>";
-		};
-		18F5863F2B46348100BD460B /* spirits.json */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18F5863E2B46348100BD460B /* en */,
-				18F586402B46348200BD460B /* it */,
-				18F586412B46348200BD460B /* de */,
-				18F586422B46348300BD460B /* fr */,
-			);
-			name = spirits.json;
 			sourceTree = "<group>";
 		};
 		18F586502B46FFA800BD460B /* shots.json */ = {
