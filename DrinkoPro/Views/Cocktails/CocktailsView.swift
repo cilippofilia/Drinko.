@@ -55,15 +55,7 @@ struct CocktailsView: View {
                             .tint(favorites.contains(cocktail) ? .red : .blue)
                     }
             }
-            .overlay(content: {
-                VStack {
-                    Spacer()
-                    TipView(favoriteCocktailsTip, arrowEdge: .top)
-                        .padding()
-                        .animation(.default, value: favorites.hasEffect)
-                        .symbolEffect(.bounce.up, value: favorites.hasEffect)
-                }
-            })
+            .popoverTip(favoriteCocktailsTip)
             .navigationTitle("Cocktails")
             .searchable(text: $searchText, prompt: "Search Cocktails")
             .toolbar {

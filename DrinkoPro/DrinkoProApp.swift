@@ -7,12 +7,15 @@
 
 import SwiftData
 import SwiftUI
-
+import TipKit
 @main
 struct DrinkoProApp: App {
     @State private var favorites = Favorites()
     @State private var icons = DrinkoIcons()
-
+    
+    init() {
+        try? Tips.configure()
+    }
     var body: some Scene {
         WindowGroup {
             SplashScreenView()

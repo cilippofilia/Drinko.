@@ -175,17 +175,3 @@ struct LearnView: View {
 #Preview {
     LearnView()
 }
-
-
-/*
- TODO: NEED TO IMPLEMENT THIS
- TODO: CACHE LOADED JSONS
-
- ForEach(viewModel.topics, id:\.self) { topic in
-     Section {
-
-     } header: {
-         LearnHeaderView(text: topic.replacingOccurrences(of: "-", with: " "), isCollapsed: .constant(true))
-     }
- }
-*/
