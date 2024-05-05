@@ -11,8 +11,9 @@ struct CocktailDetailView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var sizeClass
     
-    @ObservedObject var favorites = Favorites()
-    
+    var favorites = Favorites()
+    var units = ["ml", "oz."]
+
     @State private var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
     @State private var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
     
@@ -20,7 +21,6 @@ struct CocktailDetailView: View {
     @State private var showProcedure = false
 
     @State private var selectedUnit = "ml"
-    var units = ["ml", "oz."]
 
     @State private var frameSize: CGFloat = 280
     @State private var corners: CGFloat = 10
@@ -34,7 +34,7 @@ struct CocktailDetailView: View {
     }
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        ScrollView {
             if sizeClass == .compact {
                 compactDetailView
                     .toolbar {
@@ -49,6 +49,8 @@ struct CocktailDetailView: View {
         .navigationTitle(cocktail.name)
         // forcing displayMode .inline to avoid cropping the back bar button - this way will be standardised between 'Cocktails' and 'Back' if the Navigation Title is too long
         .navigationBarTitleDisplayMode(.inline)
+        .scrollIndicators(.hidden, axes: .vertical)
+        .scrollBounceBehavior(.basedOnSize)
     }
 
     var compactDetailView: some View {
@@ -260,9 +262,10 @@ extension CocktailDetailView {
         }) {
             Label("Like", systemImage: favorites.contains(cocktail) ? "heart.fill" : "heart")
                 .foregroundStyle(.red)
+                .animation(.default, value: favorites.hasEffect)
+                .symbolEffect(.bounce.up, value: favorites.hasEffect)
         }
         .buttonStyle(.plain)
-        .animation(.easeInOut, value: favorites.contains(cocktail))
     }
 }
 
@@ -271,7 +274,7 @@ extension CocktailDetailView {
     TabView {
         NavigationStack {
             CocktailDetailView(cocktail: .example)
-                .environmentObject(Favorites())
+                .environment(Favorites())
         }
     }
 }

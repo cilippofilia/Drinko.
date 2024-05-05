@@ -5,11 +5,11 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
-import StoreKit
 import SwiftUI
 
 struct SettingsView: View {
     static let settingsTag: String? = "Settings"
+    @Environment(DrinkoIcons.self) var icons: DrinkoIcons
 
     var body: some View {
         NavigationStack {
@@ -28,6 +28,8 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+        .environment(DrinkoIcons())
+        .environment(Favorites())
 }
 
 

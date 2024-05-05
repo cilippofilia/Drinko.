@@ -7,100 +7,63 @@
 
 import SwiftUI
 
-class Favorites: ObservableObject {
-    // the actual cocktails the user has favourited
+@Observable
+class Favorites {
+    // What the user has favourited
     private var cocktails: Set<String>
 
-    // the key we're using to read/write in UserDefaults
-    private let saveKey = "Favorites"
+    // The key we're using to read/write in UserDefaults
+    private let saveKey: String = "Cocktails"
 
+    // Variable that comes in handy for animations
+    public var hasEffect: Bool = false
+    
     init() {
-        // load our saved data
-        if let encodedData = UserDefaults.standard.data(forKey: saveKey) {
-            if let data = try? JSONDecoder().decode(Set<String>.self, from: encodedData) {
+        // Load our saved data
+        if let encodedCocktailsData = UserDefaults.standard.data(forKey: saveKey) {
+            if let data = try? JSONDecoder().decode(Set<String>.self, from: encodedCocktailsData) {
                 cocktails = data
                 return
             }
-        }
-        // still here? Use an empty array
+        } 
+        
         self.cocktails = []
     }
 
-    // returns true if our set contains this cocktail
+    // Returns true if our set contains this cocktail
     func contains(_ cocktail: Cocktail) -> Bool {
         cocktails.contains(cocktail.id)
     }
 
-    // adds the cocktail to our set, updates all views, and saves the change
+    // Add cocktail to our set, updates all views, and saves the change
     func add(_ cocktail: Cocktail) {
-        objectWillChange.send()
         cocktails.insert(cocktail.id)
+        hasEffect.toggle()
         save()
     }
 
-    // removes the cocktail from our set, updates all views, and saves the change
+    // Remove cocktail from our set, updates all views, and saves the change
     func remove(_ cocktail: Cocktail) {
-        objectWillChange.send()
         cocktails.remove(cocktail.id)
+        hasEffect.toggle()
         save()
     }
 
     private func save() {
-        // write out our data
+        // Write out our favorite cocktails data
         if let data = try? JSONEncoder().encode(cocktails) {
             UserDefaults.standard.set(data, forKey: saveKey)
         } else {
-            fatalError("Unable to save!")
-        }
-    }
-}
-
-class FavoriteProduct: ObservableObject {
-    private var products: Set<String>
-
-    private let saveProductKey = "FavProduct"
-
-    init() {
-        if let encodedData = UserDefaults.standard.data(forKey: saveProductKey) {
-            if let data = try? JSONDecoder().decode(Set<String>.self, from: encodedData) {
-                products = data
-                return
-            }
-        }
-
-        self.products = []
-    }
-
-    func contains(_ product: Item) -> Bool {
-        products.contains(product.itemName)
-    }
-
-    func add(_ product: Item) {
-        objectWillChange.send()
-        products.insert(product.itemName)
-        save()
-    }
-
-    func remove(_ product: Item) {
-        objectWillChange.send()
-        products.remove(product.itemName)
-        save()
-    }
-
-    private func save() {
-        if let data = try? JSONEncoder().encode(products) {
-            UserDefaults.standard.set(data, forKey: saveProductKey)
-        } else {
-            fatalError("Unable to save")
-        }
+            fatalError("Unable to save cocktail!")
+        }        
     }
 }
 
 extension FileManager {
     func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
+        // Find all possible documents directories for this user
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        // just send back the first one, which ought to be the only one
+        // Just send back the first one, which ought to be the only one
         return paths[0]
     }
 }

@@ -42,14 +42,12 @@ struct ABVCalculator: View {
                             TextField("What is the ingredient?", text: $bottles[index].name)
                                 .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
                             
-                            if bottles.count > 1 {
-                                Button(action: {
-                                    removeIngredient(at: index)
-                                }) {
-                                    Label("Delete", systemImage: "xmark.circle")
-                                        .labelStyle(.iconOnly)
-                                        .foregroundColor(.secondary)
-                                }
+                            Button(action: {
+                                removeIngredient(at: index)
+                            }) {
+                                Label("Delete", systemImage: "xmark.circle")
+                                    .labelStyle(.iconOnly)
+                                    .foregroundColor(bottles.count > 1 ? .secondary : .clear)
                             }
                         }
                         
@@ -80,7 +78,6 @@ struct ABVCalculator: View {
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
-                .animation(.default, value: numbersOfIngredients)
                 
                 Spacer(minLength: 30)
                 
@@ -112,6 +109,8 @@ struct ABVCalculator: View {
             }
             .navigationTitle("ABV Calculator")
             .padding(.horizontal)
+            .scrollIndicators(.hidden, axes: .vertical)
+            .scrollBounceBehavior(.basedOnSize)
     }
         
     func calculateABV() -> Double {
@@ -142,7 +141,7 @@ struct ABVCalculator: View {
             let dilutedVolume = totalVolume * (1 + dilutionFactor)
             let overallABV = totalAlcohol / dilutedVolume * 100
 
-            return overallABV.isNaN ? 0.0 : overallABV
+            return overallABV
     }
     
     private func removeIngredient(at index: Int) {

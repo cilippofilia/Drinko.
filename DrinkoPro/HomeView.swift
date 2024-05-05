@@ -5,14 +5,14 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
-import CoreData
 import StoreKit
 import SwiftUI
 
 struct HomeView: View {
     // AppStorage is used to keep track of how many times the app has been opened
     @AppStorage("appUsageCounter") var appUsageCounter: Int = 0
-    @EnvironmentObject var dataController: DataController
+    @Environment(DrinkoIcons.self) var icons: DrinkoIcons
+    
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
 
@@ -29,9 +29,9 @@ struct HomeView: View {
                 .tabItem {
                     Label("Cocktails", systemImage: "wineglass")
                 }
-
-            CabinetView(dataController: dataController)
-                .tag(CabinetView.cabinetViewTag)
+            
+            CabinetView()
+                .tag(CabinetView.cabinetTag)
                 .tabItem {
                     Label("Cabinet", systemImage: "cabinet")
                 }
@@ -57,7 +57,8 @@ struct HomeView: View {
         guard let scene = UIApplication.shared.currentScene else { return }
         appUsageCounter += 1
 
-        if appUsageCounter == 3 || appUsageCounter % 5 == 0 {
+        if appUsageCounter == 3 || appUsageCounter % 15 == 0 {
+            if appUsageCounter > 103 { appUsageCounter = 0 }
             SKStoreReviewController.requestReview(in: scene)
         }
     }
@@ -72,5 +73,6 @@ extension UIApplication {
 
 #Preview {
     HomeView()
-        .environmentObject(DataController())
+        .environment(DrinkoIcons())
+        .environment(Favorites())
 }

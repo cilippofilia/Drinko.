@@ -28,7 +28,6 @@ struct SettingsContactsView: View {
                                 itemName: "Contact the developer")
             }
             .disabled(!MFMailComposeViewController.canSendMail())
-            .buttonStyle(.plain)
             .confirmationDialog("Select an option",
                                 isPresented: $showOptions,
                                 titleVisibility: .visible) {
@@ -40,7 +39,6 @@ struct SettingsContactsView: View {
             rateApp
             twitterRow
             instaRow
-
         }
     }
 }
@@ -85,24 +83,9 @@ private extension SettingsContactsView {
 
     var twitterRow: some View {
         Button(action: {
-            if UIApplication.shared.canOpenURL(twitterURL!) {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(twitterURL!,
-                                              options: [:],
-                                              completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(twitterURL!)
-                }
-            } else {
-                    //redirect to safari because the user doesn't have Twitter
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(twitterURL!,
-                                              options: [:],
-                                              completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(twitterURL!)
-                }
-            }
+            UIApplication.shared.open(twitterURL!,
+                                      options: [:],
+                                      completionHandler: nil)
         }) {
             HStack {
                 Image("x")
@@ -118,24 +101,9 @@ private extension SettingsContactsView {
     
     var instaRow: some View {
         Button(action: {
-            if UIApplication.shared.canOpenURL(instaURL!) {
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(instaURL!,
-                                              options: [:],
-                                              completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(instaURL!)
-                }
-            } else {
-                    //redirect to safari because the user doesn't have Twitter
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(instaURL!,
-                                              options: [:],
-                                              completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(instaURL!)
-                }
-            }
+            UIApplication.shared.open(instaURL!,
+                                      options: [:],
+                                      completionHandler: nil)
         }) {
             HStack {
                 Image("insta")

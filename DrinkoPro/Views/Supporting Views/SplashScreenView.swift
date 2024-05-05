@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SplashScreenView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @State private var viewModel = LessonsViewModel()
 
     @State private var showHomeView = false
     @State private var angle: Double = -90
@@ -26,6 +27,10 @@ struct SplashScreenView: View {
                 HomeView()
             } else {
                 animatedLogo
+                    .onAppear {
+                        viewModel.fetchLessons()
+                        viewModel.fetchBooks()
+                    }
             }
         }
     }
@@ -46,7 +51,7 @@ struct SplashScreenView: View {
                     .scaleEffect(scale)
                     .opacity(opacity)
 
-                Text("Drinko")
+                Text("Drinko.")
                     .font(.system(size: sizeClass == .compact ? titleFontSize : titleFontSize * 1.75,
                                   weight: .bold,
                                   design: .rounded))

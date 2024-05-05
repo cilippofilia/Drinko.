@@ -12,22 +12,22 @@ struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
     
     @Environment(\.horizontalSizeClass) var sizeClass
-    @StateObject var favorites = Favorites()
-    
+        
     @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     @State private var shots = Bundle.main.decode([Cocktail].self, from: "shots.json")
-    
     @State private var searchText = ""
     @State private var showingSortOrder = false
-    @State private var sortOption: Cocktail.SortOption = .fromAtoZ
-    
-    // TipKit variable
+    @State private var sortOption: SortOption = .fromAtoZ
+        
+    var favorites = Favorites()
     var favoriteCocktailsTip = SwipeToFavoriteTip()
     
     var drinklist: [Cocktail] {
-        return cocktails + shots
+        let list = cocktails + shots
+        
+        return list
     }
-
+    
     var sortedCocktails: [Cocktail] {
         switch sortOption {
         case .fromAtoZ:
@@ -49,55 +49,26 @@ struct CocktailsView: View {
     var body: some View {
         NavigationStack {
             List(filteredCocktails) { cocktail in
-                /// conditional to make the tip pop up only on devices supporting iOS 17.0 +
-                if #available(iOS 17.0, *), (cocktail.id == "adonis") {
-                    TipView(favoriteCocktailsTip, arrowEdge: .bottom)
-                        .background(Color.clear)
-                }
                 CocktailRowView(favorites: favorites, cocktail: cocktail)
-                    .swipeActions(edge: .trailing) {
-                        FavoriteButtonView(favorites: favorites, cocktail: cocktail)
+                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                        FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
+                            .tint(favorites.contains(cocktail) ? .red : .blue)
                     }
-                    .tint(favorites.contains(cocktail) ? .red : .blue)
             }
+            .popoverTip(favoriteCocktailsTip)
             .navigationTitle("Cocktails")
             .searchable(text: $searchText, prompt: "Search Cocktails")
             .toolbar {
                 sortButtonToolbarItem
             }
             .task {
-                if #available(iOS 17.0, *) {
-                    // Configure and load your tips at app launch.
-                    try? Tips.configure([
-                        .displayFrequency(.immediate),
-                        .datastoreLocation(.applicationDefault)
-                    ])
-                }
+                try? Tips.configure([
+                    .displayFrequency(.immediate),
+                    .datastoreLocation(.applicationDefault)
+                ])
             }
         }
-        .environmentObject(favorites)
         .navigationViewStyle(StackNavigationViewStyle())
-    }
-}
-
-struct FavoriteButtonView: View {
-    let favorites: Favorites
-    let cocktail: Cocktail
-
-    var body: some View {
-        Button(action: {
-            if favorites.contains(cocktail) {
-                favorites.remove(cocktail)
-            } else {
-                favorites.add(cocktail)
-                UINotificationFeedbackGenerator()
-                    .notificationOccurred(.success)
-            }
-        }) {
-            Image(systemName: favorites.contains(cocktail) ?
-                  "heart.slash" : "heart")
-            Text("Like")
-        }
     }
 }
 
@@ -136,5 +107,7 @@ private extension CocktailsView {
 }
 
 #Preview {
-    CocktailsView()
+    NavigationStack {
+        CocktailsView()
+    }
 }

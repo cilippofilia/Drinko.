@@ -9,48 +9,163 @@ import SwiftUI
 
 struct LearnView: View {
     static let learnTag: String? = "Learn"
-
-    @State private var isCollapsed = false
+    @State private var viewModel = LessonsViewModel()
     
-    let basics = Bundle.main.decode([Lesson].self, from: "basics.json")
-    let spirits = Bundle.main.decode([Lesson].self, from: "spirits.json")
-    let syrups = Bundle.main.decode([Lesson].self, from: "syrups.json")
-    let books = Bundle.main.decode([Book].self, from: "books.json")
+    @State private var isBasicCollapsed = false
+    @State private var isBarPrepsCollapsed = false
+    @State private var isBasicSpiritsCollapsed = false
+    @State private var isAdvSpiritsCollapsed = false
+    @State private var isLiqueursCollapsed = false
+    @State private var isSyrupsCollapsed = false
+    @State private var isAdvTechniquesCollapsed = false
+    @State private var isCalculatorsCollapsed = false
+    @State private var isBooksCollapsed = false
 
     var body: some View {
         NavigationStack {
             List {
-                Section(header: Text("Basics")) {
-                    ForEach(basics) { lesson in
-                        LessonRowView(lesson: lesson)
+                // MARK: BASIC LESSONS
+                Section {
+                    if isBasicCollapsed {
+                        LessonRowView(lesson: viewModel.basicLessons[0])
+                    } else {
+                        ForEach(viewModel.basicLessons, id: \.id) { lesson in
+                            LessonRowView(lesson: lesson)
+                        }
                     }
+                } header: {
+                    LearnHeaderView(
+                        text: "Basic",
+                        isCollapsed: $isBasicCollapsed)
                 }
-                
-                Section(header: Text("Spirits")) {
-                    ForEach(spirits) { spirit in
-                        LessonRowView(lesson: spirit)
+
+                // MARK: BAR PREPS
+                Section {
+                    if isBarPrepsCollapsed {
+                        LessonRowView(lesson: viewModel.barPreps[0])
+                    } else {
+                        ForEach(viewModel.barPreps, id: \.id) { lesson in
+                            LessonRowView(lesson: lesson)
+                        }
                     }
+                } header: {
+                    LearnHeaderView(
+                        text: "Bar Preps",
+                        isCollapsed: $isBarPrepsCollapsed)
                 }
-                
-                Section(header: Text("Syrups")) {
-                    ForEach(syrups) { syrup in
-                        LessonRowView(lesson: syrup)
+                // MARK: BASIC SPIRITS
+                Section {
+                    if isBasicSpiritsCollapsed {
+                        LessonRowView(lesson: viewModel.basicSpirits[0])
+                    } else {
+                        ForEach(viewModel.basicSpirits) { spirit in
+                            LessonRowView(lesson: spirit)
+                        }
                     }
+                } header: {
+                    LearnHeaderView(
+                        text: "Spirits",
+                        isCollapsed: $isBasicSpiritsCollapsed)
                 }
-                
-                Section(header: Text("Calculators")) {
-                    SuperjuiceRowView(juiceType: "lime")
-                    SuperjuiceRowView(juiceType: "lemon")
+
+                // MARK: ADVANCED SPIRITS
+                Section {
+                    if isAdvSpiritsCollapsed {
+                        LessonRowView(lesson: viewModel.advancedSpirits[0])
+                    } else {
+                        ForEach(viewModel.advancedSpirits, id: \.id) { lesson in
+                            LessonRowView(lesson: lesson)
+                        }
+                    }
+                } header: {
+                    LearnHeaderView(
+                        text: "Advanced Spirits",
+                        isCollapsed: $isAdvSpiritsCollapsed)
+                }
+
+                // MARK: LIQUEURS
+                Section {
+                    if isLiqueursCollapsed {
+                        LessonRowView(lesson: viewModel.liqueurs[0])
+                    } else {
+                        ForEach(viewModel.liqueurs, id: \.id) { lesson in
+                            LessonRowView(lesson: lesson)
+                        }
+                    }
+                } header: {
+                    LearnHeaderView(
+                        text: "Liqueurs",
+                        isCollapsed: $isLiqueursCollapsed)
+                }
+
+                // MARK: SYRUPS
+                Section {
+                    if isSyrupsCollapsed {
+                        LessonRowView(lesson: viewModel.syrups[0])
+                    } else {
+                        ForEach(viewModel.syrups) { syrup in
+                            LessonRowView(lesson: syrup)
+                        }
+                    }
+                } header: {
+                    LearnHeaderView(
+                        text: "Syrups",
+                        isCollapsed: $isSyrupsCollapsed)
+                }
+
+                // MARK: ADVANCED TECHNIQUES
+                Section {
+                    if isAdvTechniquesCollapsed {
+                        LessonRowView(lesson: viewModel.advancedLessons[0])
+                    } else {
+                        ForEach(viewModel.advancedLessons) { lesson in
+                            LessonRowView(lesson: lesson)
+                        }
+                    }
+                } header: {
+                    LearnHeaderView(
+                        text: "Advanced techniques",
+                        isCollapsed: $isAdvTechniquesCollapsed)
+                }
+
+                // MARK: CALCULATORS
+                Section {
                     ABVRowView()
-                }
-                
-                Section(header: Text("Books")) {
-                    ForEach(books) { book in
-                        BookRowView(book: book)
+                    if !isCalculatorsCollapsed {
+                        SuperjuiceRowView(juiceType: "lime")
+                        SuperjuiceRowView(juiceType: "lemon")
                     }
+                } header: {
+                    LearnHeaderView(
+                        text: "Calculators",
+                        isCollapsed: $isCalculatorsCollapsed)
+                }
+
+                // MARK: BOOKS
+                Section {
+                    if isBooksCollapsed {
+                        BookRowView(book: viewModel.books[0])
+                    } else {
+                        ForEach(viewModel.books) { book in
+                            BookRowView(book: book)
+                        }
+                    }
+                } header: {
+                    LearnHeaderView(
+                        text: "Books",
+                        isCollapsed: $isBooksCollapsed)
                 }
             }
             .navigationTitle("Learn")
+            .onAppear {
+                if viewModel.advancedLessons.isEmpty {
+                    viewModel.fetchLessons()
+                    viewModel.fetchBooks()
+                }
+            }
+            .refreshable {
+                viewModel.refreshData()
+            }
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

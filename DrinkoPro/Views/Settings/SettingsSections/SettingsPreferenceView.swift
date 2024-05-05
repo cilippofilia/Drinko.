@@ -9,13 +9,16 @@ import SwiftUI
 
 struct SettingsPreferenceView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @Environment(DrinkoIcons.self) var icons: DrinkoIcons
 
     var body: some View {
         Section(header: Text("Preferences")) {
             HStack {
-                SettingsRowView(icon: "character.bubble",
-                                color: .secondary,
-                                itemName: "Language")
+                SettingsRowView(
+                    icon: "character.bubble",
+                    color: .secondary,
+                    itemName: "Language"
+                )
                 Spacer()
 
                 Text(Bundle.main.preferredLocalizations.first!.uppercased())
@@ -24,11 +27,15 @@ struct SettingsPreferenceView: View {
             .onTapGesture {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
-
-            NavigationLink(destination: TipJarView()) {
-                SettingsRowView(icon: "giftcard.fill",
-                                color: .green,
-                                itemName: "Tip Jar")
+            
+            NavigationLink(destination: IconsView()) {
+                HStack {
+                    SettingsRowView(
+                        icon: "questionmark.app",
+                        color: .secondary,
+                        itemName: "Icons"
+                    )
+                }
             }
         }
     }
@@ -37,5 +44,6 @@ struct SettingsPreferenceView: View {
 #Preview {
     Form {
         SettingsPreferenceView()
+            .environment(DrinkoIcons())
     }
 }

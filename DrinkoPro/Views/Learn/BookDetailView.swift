@@ -15,7 +15,7 @@ struct BookDetailView: View {
     var book: Book
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        ScrollView {
             if sizeClass == .compact {
                 compactBookView
             } else {
@@ -24,6 +24,9 @@ struct BookDetailView: View {
         }
         .navigationBarTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
+        .scrollIndicators(.hidden, axes: .vertical)
+        .scrollBounceBehavior(.basedOnSize)
+
     }
 
     var compactBookView: some View {

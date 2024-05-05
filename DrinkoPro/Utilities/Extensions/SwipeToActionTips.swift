@@ -12,7 +12,7 @@ struct SwipeToFavoriteTip: Tip, Identifiable {
     var id = UUID()
     
     var title: Text {
-        Text("Swipe left")
+        Text("Swipe right")
     }
 
     var message: Text? {
@@ -23,20 +23,3 @@ struct SwipeToFavoriteTip: Tip, Identifiable {
         Image(systemName: "heart.fill")
     }
 }
-
-struct SwipeToCartTip: Tip, Identifiable {
-    var id = UUID()
-    
-    var title: Text {
-        Text("Swipe right")
-    }
-
-    var message: Text? {
-        Text("To add a product to your cart so you know what is missing from your cabinet with a quick glance.")
-    }
-
-    var image: Image? {
-        Image(systemName: "cart.badge.plus")
-    }
-}
-

@@ -14,7 +14,7 @@ struct HistoryView: View {
     let history: History
 
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        ScrollView {
             VStack(alignment: .leading) {
                 Text("History")
                     .font(.title3.bold())
@@ -27,6 +27,8 @@ struct HistoryView: View {
             }
             .frame(width: regularScreenWidth)
         }
+        .scrollIndicators(.hidden, axes: .vertical)
+        .scrollBounceBehavior(.basedOnSize)
     }
 }
 

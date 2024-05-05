@@ -198,34 +198,6 @@
         }
       }
     },
-    "%@ - %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ - %2$@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ - %2$@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ - %2$@"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ - %2$@"
-          }
-        }
-      }
-    },
     "%@ peels (gr)" : {
       "localizations" : {
         "de" : {
@@ -282,30 +254,30 @@
         }
       }
     },
-    "%@ peels:\n" : {
+    "%@ peels: " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ schalen:"
+            "value" : "%@ schält:"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ peels:"
+            "value" : "%@ peels: "
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ zestes:"
+            "value" : "%@ peler:"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "bucce di %@:"
+            "value" : "%@ biccie"
           }
         }
       }
@@ -367,34 +339,6 @@
         }
       }
     },
-    "%@%% ABV" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@%% Alkoholgehalt"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@%% ABV"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@%% ABV"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@%% ABV"
-          }
-        }
-      }
-    },
     "%2g" : {
       "localizations" : {
         "de" : {
@@ -419,34 +363,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%2g"
-          }
-        }
-      }
-    },
-    "%d" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d"
           }
         }
       }
@@ -490,7 +406,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A-> Z"
+            "value" : "A -> Z"
           }
         },
         "fr" : {
@@ -620,24 +536,52 @@
         }
       }
     },
-    "Add Family" : {
+    "Add a product" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Familie hinzufügen"
+            "value" : "Fügen Sie ein Produkt hinzu"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add Family"
+            "value" : "Add product"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajouter une famille"
+            "value" : "Ajouter un produit"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi un prodotto"
+          }
+        }
+      }
+    },
+    "Add category" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategorie hinzufügen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add Category"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter une catégorie"
           }
         },
         "it" : {
@@ -676,30 +620,30 @@
         }
       }
     },
-    "Add New Product" : {
+    "Add Product" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Neues Produkt hinzufügen"
+            "value" : "Produkt hinzufügen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add New Product"
+            "value" : "Add Product"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajouter un nouveau produit"
+            "value" : "Ajouter un produit"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aggiungi Nuovo Prodotto"
+            "value" : "Aggiungi Prodotto"
           }
         }
       }
@@ -732,6 +676,35 @@
         }
       }
     },
+    "Advanced" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortschrittlich"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advanced"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avancée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avanzato"
+          }
+        }
+      }
+    },
     "Amount?" : {
       "localizations" : {
         "de" : {
@@ -756,6 +729,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volume?"
+          }
+        }
+      }
+    },
+    "App icon" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App-Symbol"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App icon"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App icon"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icona"
           }
         }
       }
@@ -875,6 +876,7 @@
       }
     },
     "Basics" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -903,6 +905,7 @@
       }
     },
     "Books" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1157,6 +1160,7 @@
       }
     },
     "Calculators" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1184,24 +1188,52 @@
         }
       }
     },
-    "Category detail" : {
+    "Cancel" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kategoriedetail"
+            "value" : "Stornieren"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Category detail"
+            "value" : "Cancel"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Détail de la catégorie"
+            "value" : "Annuler"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancella"
+          }
+        }
+      }
+    },
+    "Category Details" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategoriedetails"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Category Details"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détails de la catégorie"
           }
         },
         "it" : {
@@ -1298,7 +1330,7 @@
         }
       }
     },
-    "Citric Acid:\n" : {
+    "Citric Acid: " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1309,7 +1341,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Citric Acid:"
+            "value" : "Citric Acid: "
           }
         },
         "fr" : {
@@ -1527,34 +1559,6 @@
         }
       }
     },
-    "Creation Date" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstellungsdatum"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Creation Date"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date de création"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Data di creazione"
-          }
-        }
-      }
-    },
     "Delete" : {
       "localizations" : {
         "de" : {
@@ -1665,34 +1669,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elimina Categoria"
-          }
-        }
-      }
-    },
-    "Delete category?" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kategorie löschen?"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete category?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Supprimer la catégorie ?"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eliminare la Categoria?"
           }
         }
       }
@@ -1811,31 +1787,58 @@
         }
       }
     },
-    "Drinko" : {
-      "comment" : "Drinko Splashscreen",
+    "Drink selection" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Drinko"
+            "value" : "Getränkeauswahl"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Drinko"
+            "value" : "Drink selection"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Drinko"
+            "value" : "Sélection de boissons"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Drinko"
+            "value" : "Selezione dei drink"
+          }
+        }
+      }
+    },
+    "Drinko." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko."
           }
         }
       }
@@ -1864,6 +1867,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Modifica Categoria"
+          }
+        }
+      }
+    },
+    "Edit Product" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Produkt bearbeiten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edit Product"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifier le produit"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica Prodotto"
           }
         }
       }
@@ -1926,6 +1957,34 @@
         }
       }
     },
+    "Empty Cabinet" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Leerer Schrank"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty Cabinet"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Armoire vide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Armadietto Vuoto"
+          }
+        }
+      }
+    },
     "Extra" : {
       "localizations" : {
         "de" : {
@@ -1950,6 +2009,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Extra"
+          }
+        }
+      }
+    },
+    "Failed to create preview: %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorschau konnte nicht erstellt werden: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to create preview: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échec de la création de l'aperçu : %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile creare l'anteprima: %@"
           }
         }
       }
@@ -2123,6 +2210,34 @@
         }
       }
     },
+    "Icons" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symbole"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icons"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icônes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Icone"
+          }
+        }
+      }
+    },
     "If you already have bought the Cabinet+ version on another device, press 'Restore Purchases'." : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2239,7 +2354,32 @@
       }
     },
     "Instagram" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instagram"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instagram"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instagram"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instagram"
+          }
+        }
+      }
     },
     "It's good to be back!" : {
       "localizations" : {
@@ -2469,6 +2609,35 @@
         }
       }
     },
+    "Locked" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gesperrt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locked"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermé à clé"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloccato"
+          }
+        }
+      }
+    },
     "Made in" : {
       "localizations" : {
         "de" : {
@@ -2497,7 +2666,7 @@
         }
       }
     },
-    "Malic Acid:\n" : {
+    "Malic Acid: " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2508,19 +2677,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Malic Acid:"
+            "value" : "Malic Acid: "
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Acide Malique:"
+            "value" : "Malice Acide:"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Acido Malico:"
+            "value" : "Acido Malico"
           }
         }
       }
@@ -2577,62 +2746,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ml"
-          }
-        }
-      }
-    },
-    "N.A." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nicht verfügbar"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "N.A."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "N.A."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "N.D."
-          }
-        }
-      }
-    },
-    "Name" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nom"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nome"
           }
         }
       }
@@ -2723,34 +2836,6 @@
         }
       }
     },
-    "Optimized" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Optimiert"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Optimized"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Optimisé"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ottimizzato"
-          }
-        }
-      }
-    },
     "Other Enquiry" : {
       "localizations" : {
         "de" : {
@@ -2804,6 +2889,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Password"
+          }
+        }
+      }
+    },
+    "Photos & Videos" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotos und Videos"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photos & Videos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photos et vidéos"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto e Video"
           }
         }
       }
@@ -2916,34 +3029,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Procedimento"
-          }
-        }
-      }
-    },
-    "Product" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Produkt"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Product"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Produit"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Prodotto"
           }
         }
       }
@@ -3255,63 +3340,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Richiedi una feature"
-          }
-        }
-      }
-    },
-    "Restore Purchases" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Käufe wiederherstellen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restore Purchases"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restaurer les achats"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ripristina l'acquisto"
-          }
-        }
-      }
-    },
-    "Save Changes" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Änderungen speichern"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save Changes"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sauvegarder les changements"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Salva le modifiche"
           }
         }
       }
@@ -3718,34 +3746,6 @@
         }
       }
     },
-    "Sort products" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Produkte sortieren"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sort products"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trier les produits"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Organizza i prodotti"
-          }
-        }
-      }
-    },
     "Special thanks to:" : {
       "localizations" : {
         "de" : {
@@ -3775,6 +3775,7 @@
       }
     },
     "Spirits" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3802,102 +3803,36 @@
         }
       }
     },
-    "Start adding categories and products\nby pressing the + above." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beginnen Sie, Kategorien und Produkte hinzuzufügen,\nindem Sie oben auf + drücken."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start adding categories and products\nby pressing the + above."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Commences par ajouter des catégories et des produits\nen appuyant sur le + au-dessus."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Inizia aggiungendo categorie e prodotti premendo + in alto."
-          }
-        }
-      }
-    },
-    "Start adding categories and products by pressing the + above." : {
-
-    },
-    "Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterstützen Sie den Entwickler, indem Sie ihm einen Tipp geben!\nSo wie man es mit einem Barkeeper machen würde, wenn man abends etwas zu trinken bekommt. 😉"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Support the developer by giving him a tip!\nJust like you would do to a bartender when you got get some drinks at a night out. 😉"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Soutenez le développeur en lui donnant un pourboire !\nTout comme vous le feriez avec un barman lorsque vous receviez un verre lors d’une soirée. 😉"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Supporta lo sviluppatore dandogli una mancia! Esattamente come faresti se fossi al bar a chiacchierare con il bartender durante una serata. 😉"
-          }
-        }
-      }
-    },
-    "Support the developer by giving him a tip! Just like you would do to a bartender when you got get some drinks at a night out. 😉" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterstützen Sie den Entwickler, indem Sie ihm einen Tipp geben! So wie man es mit einem Barkeeper machen würde, wenn man abends etwas zu trinken bekommt. 😉"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Support the developer by giving him a tip! Just like you would do to a bartender when you got get some drinks at a night out. 😉"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Soutenez le développeur en lui donnant un pourboire ! Tout comme vous le feriez avec un barman lorsque vous receviez un verre lors d’une soirée. 😉"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Supporta lo sviluppatore dandogli una mancia! Esattamente come faresti se fossi al bar a chiacchierare con il bartender durante una serata. 😉"
-          }
-        }
-      }
-    },
-    "Swipe left" : {
-
-    },
     "Swipe right" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wische nach rechts"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swipe right"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Balayez vers la droite"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trascina verso destra"
+          }
+        }
+      }
     },
     "Syrups" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4069,34 +4004,6 @@
         }
       }
     },
-    "Tip Jar" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trinkgeldglas"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tip Jar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pot à pointe"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lascia la mancia"
-          }
-        }
-      }
-    },
     "Title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -4127,10 +4034,116 @@
       }
     },
     "To add a product to your cart so you know what is missing from your cabinet with a quick glance." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um ein Produkt in Ihren Warenkorb zu legen, wissen Sie auf einen Blick, was in Ihrem Schrank fehlt."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To add a product to your cart so you know what is missing from your cabinet with a quick glance."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour ajouter un produit à votre panier afin de savoir d'un simple coup d'œil ce qui manque dans votre armoire."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi un prodotto al carrello in modo da sapere cosa ti manca a casa con una rapida occhiata."
+          }
+        }
+      }
     },
     "To mark your favorite cocktails" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zum Markieren Ihrer Lieblingscocktails"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To mark your favorite cocktails"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour marquer vos cocktails préférés"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per marchiare i tuoi cocktail preferiti"
+          }
+        }
+      }
+    },
+    "To start, press 'Add a product' below or the + button at the top of the view." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Um zu beginnen, klicken Sie unten auf `Produkt hinzufügen` oder oben in der Ansicht auf die Schaltfläche `+`."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "To start, press 'Add a product' below or the + button at the top of the view."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour commencer, appuyez sur «Ajouter un produit» ci-dessous ou sur le bouton + en haut de la vue."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Per iniziare, premi \"Aggiungi un prodotto\" o il pulsante + in alto a destra."
+          }
+        }
+      }
+    },
+    "Translations" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Übersetzungen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Translations"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traductions"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traduzioni"
+          }
+        }
+      }
     },
     "Try Again" : {
       "extractionState" : "manual",
@@ -4273,7 +4286,7 @@
         }
       }
     },
-    "Water:\n" : {
+    "Water: " : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4284,7 +4297,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Water:"
+            "value" : "Water: "
           }
         },
         "fr" : {
@@ -4441,6 +4454,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Puoi aggiungere fino a 3 categorie e 9 prodotti in totale, o spendi %@ per avere categorie e prodotti illimitati."
+          }
+        }
+      }
+    },
+    "Your notes on %@..." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ihre Notizen zu %@..."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your notes on %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos notes sur %@..."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I tuoi appunti su %@..."
           }
         }
       }

@@ -7,10 +7,9 @@
 
 import SwiftUI
 
+// EXTENSION ON BUNDLE
+// load JSON from a BUNDLE; FIND > OPEN > DECODE > RETURN
 extension Bundle {
-    // EXTENSION ON BUNDLE
-    // load JSON from a BUNDLE; FIND IT ;OPEN IT; DECODE IT; RETURN IT
-
     func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
 
         guard let url = self.url(forResource: file, withExtension: nil) else {

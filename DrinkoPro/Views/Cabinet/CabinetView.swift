@@ -2,158 +2,108 @@
 //  CabinetView.swift
 //  DrinkoPro
 //
-//  Created by Filippo Cilia on 23/08/2023.
+//  Created by Filippo Cilia on 27/01/2024.
 //
 
+import SwiftData
 import SwiftUI
-import TipKit
 
 struct CabinetView: View {
-    static let cabinetViewTag: String? = "Cabinet"
+    static let cabinetTag: String? = "Cabinet"
+    @Environment(\.modelContext) private var modelContext
+
+    @State private var path = NavigationPath()
     
-    @Environment(\.horizontalSizeClass) var sizeClass
-    @ObservedObject var favoriteProducts = FavoriteProduct()
+    @Query(sort: [
+        SortDescriptor(\Category.name),
+        SortDescriptor(\Category.creationDate)
+    ]) var categories: [Category]
 
-    @StateObject var viewModel: ViewModel
-    @State private var showingSortOrder = false
-
-    init(dataController: DataController) {
-        let viewModel = ViewModel(dataController: dataController)
-        _viewModel = StateObject(wrappedValue: viewModel)
-    }
-    
-    var favoriteItemTip = SwipeToCartTip()
-
-    var body: some View {
-        NavigationStack {
-            Group {
-                if viewModel.families.isEmpty {
-                    /// This VStack can be replaced by ContentUnavailableView
-                    /// available only from iOS17 onwards
-                    VStack {
-                        Image(systemName: "cabinet.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 44)
-                        
-                        Text("Start adding categories and products by pressing the + above.")
+    var categoriesList: some View {
+        List {
+            ForEach(categories) { category in
+                Section(header: CategoryHeaderView(category: category)) {
+                    ForEach(category.products!, id:\.self) { product in
+                        ProductRowView(product: product)
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                FavoriteProductButtonView(product: product)
+                                    .tint(product.isFavorite ? .red : .blue)
+                            }
                     }
-                    .italic()
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .frame(maxWidth: sizeClass == .compact ? compactScreenWidth : regularScreenWidth)
+                    .onDelete(perform: deleteProducts)
 
-                } else {
-                    cabinetList
+                    Button(action: {
+                        addProduct(to: category)
+                    }) {
+                        Label("Add Product", systemImage: "plus")
+                    }
                 }
-            }
-            .navigationTitle("Cabinet")
-            .navigationSplitViewStyle(AutomaticNavigationSplitViewStyle())
-            .toolbar {
-                addFamilyToolbarItem
-                sortOrderToolbarItem
             }
         }
-    }
-}
-
-private extension CabinetView {
-    var cabinetList: some View {
-        List {
-            
-            ForEach(viewModel.families) { family in
-                Section(header: FamilyHeaderView(family: family)) {
-                    if #available(iOS 17.0, *) {
-                        TipView(favoriteItemTip, arrowEdge: .bottom)
-                    }
-                    ForEach(family.familyItems(using: viewModel.sortOrder)) { item in
-                        ItemRowView(family: family, item: item)
-                            .swipeActions(edge: .leading) {
-                                Button(action: {
-                                    if favoriteProducts.contains(item) {
-                                        favoriteProducts.remove(item)
-                                    } else {
-                                        favoriteProducts.add(item)
-                                        UINotificationFeedbackGenerator()
-                                            .notificationOccurred(.success)
-                                    }
-                                }) {
-                                    Image(systemName: "cart")
-                                    Text(favoriteProducts.contains(item) ? "Remove from Cart" : "Add to Cart")
-                                }
-                            }
-                            .tint(favoriteProducts.contains(item) ? .red : .blue)
-                    }
-                    .onDelete { offsets in
-                        viewModel.delete(offsets, from: family)
-                    }
-
-                    Button {
-                        withAnimation {
-                            viewModel.addItem(to: family)
-                        }
-                    } label: {
-                        Label("Add New Product", systemImage: "plus")
-                    }
-                }
+        .navigationDestination(for: Category.self) { category in
+            EditCategoryView(category: category, navigationPath: $path)
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add category", systemImage: "plus", action: addCategory)
             }
         }
         .listStyle(InsetGroupedListStyle())
-        .task {
-            if #available(iOS 17.0, *) {
-                // Configure and load your tips at app launch.
-                try? Tips.configure([
-                    .displayFrequency(.immediate),
-                    .datastoreLocation(.applicationDefault)
-                ])
+    }
+    
+    var body: some View {
+        NavigationStack {
+            if categories.isEmpty {
+                ContentUnavailableView(label: {
+                    Label("Empty Cabinet", systemImage: "cabinet.fill")
+                }, description: {
+                    Text("To start, press 'Add a product' below or the + button at the top of the view.")
+                }, actions: {
+                    Button("Add a product", action: addCategory)
+                })
+                .frame(maxWidth: UIScreen.main.bounds.size.width * 0.83)
+                .navigationTitle("Cabinet")
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Add category", systemImage: "plus", action: addCategory)
+                    }
+                }
+            } else {
+                categoriesList
+                    .navigationTitle("Cabinet")
             }
         }
     }
-}
-
-private extension CabinetView {
-    var addFamilyToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
-            Button {
-                withAnimation {
-                    viewModel.addFamily()
-                }
-            } label: {
-                if UIAccessibility.isVoiceOverRunning {
-                    Text("Add Family")
-                } else {
-                    Label("Add Family", systemImage: "plus")
-                }
-            }
-        }
+    
+    func addCategory() {
+        let category = Category(name: "Category Name",
+                                detail: "",
+                                color: "Dr. Blue",
+                                creationDate: Date.now)
+        modelContext.insert(category)
+        path.append(category)
     }
-
-    var sortOrderToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
-            Button {
-                showingSortOrder.toggle()
-            } label: {
-                Label("Sort", systemImage: "arrow.up.arrow.down")
-            }
-            .confirmationDialog("Sort products",
-                                isPresented: $showingSortOrder) {
-                Button("Optimized") {
-                    viewModel.sortOrder = .optimized
-                }
-                Button("Creation Date") {
-                    viewModel.sortOrder = .creationDate
-                }
-                Button("Name") {
-                    viewModel.sortOrder = .title
-                }
-            }
-            .environmentObject(favoriteProducts)
+    
+    func addProduct(to category: Category) {
+        category.products?.append(Item(name: "Product Name"))
+    }
+    
+    func deleteProducts(at offsets: IndexSet) {
+        for category in categories {
+            guard category.products?.isEmpty != true else { return }
+            category.products!.remove(atOffsets: offsets)
         }
     }
 }
 
 #Preview {
-    NavigationStack {
-        CabinetView(dataController: DataController())
+    do {
+        let previewer = try Previewer()
+        
+        return CabinetView()
+        /// comment the following line to display an emptyCabinet
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
     }
 }

@@ -9,10 +9,9 @@ import SwiftUI
 
 struct CocktailRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @ObservedObject var favorites = Favorites()
-    
     @State private var frameSize: CGFloat = 45
 
+    var favorites = Favorites()
     var cocktail: Cocktail
 
     var body: some View {
@@ -22,7 +21,6 @@ struct CocktailRowView: View {
                     Image(systemName: "wineglass")
                         .imageScale(.large)
                         .frame(maxWidth: frameSize)
-
                 } else if cocktail.glass == "coffee mug" || cocktail.glass == "julep cup" {
                     Image("julep")
                         .resizable()
@@ -48,13 +46,10 @@ struct CocktailRowView: View {
 
                 Spacer()
 
-                if favorites.contains(cocktail) {
-                    withAnimation(.easeInOut(duration: 0.5)) {
-                        Image(systemName: favorites.contains(cocktail) ? "heart.fill" : "heart")
-                            .foregroundColor(.red)
-                            .opacity(favorites.contains(cocktail) ? 1 : 0)
-                    }
-                }
+                Image(systemName: favorites.contains(cocktail) ? "heart.fill" : "heart")
+                    .foregroundColor(favorites.contains(cocktail) ? Color.red : Color.clear)
+                    .animation(.default, value: favorites.hasEffect)
+                    .symbolEffect(.bounce.up, value: favorites.hasEffect)
             }
         }
         .frame(height: frameSize)
@@ -64,6 +59,6 @@ struct CocktailRowView: View {
 #if DEBUG
 #Preview {
     CocktailRowView(cocktail: .example)
-        .environmentObject(Favorites())
+        .environment(Favorites())
 }
 #endif
