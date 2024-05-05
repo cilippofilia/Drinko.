@@ -30,7 +30,6 @@ struct SettingsView: View {
     SettingsView()
         .environment(DrinkoIcons())
         .environment(Favorites())
-        .environmentObject(StoreManager())
 }
 
 

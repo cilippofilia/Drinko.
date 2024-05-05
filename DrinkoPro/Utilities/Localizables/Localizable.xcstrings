@@ -262,6 +262,12 @@
             "value" : "%@ schält:"
           }
         },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ peels: "
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -389,14 +395,11 @@
         }
       }
     },
-    "✨ Premium Member ✨" : {
-
-    },
     "A -> Z" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "A -> Z"
           }
         },
@@ -414,7 +417,7 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "A -> Z"
           }
         }
@@ -674,7 +677,33 @@
       }
     },
     "Advanced" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortschrittlich"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advanced"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avancée"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Avanzato"
+          }
+        }
+      }
     },
     "Amount?" : {
       "localizations" : {
@@ -847,6 +876,7 @@
       }
     },
     "Basics" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -875,6 +905,7 @@
       }
     },
     "Books" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1129,6 +1160,7 @@
       }
     },
     "Calculators" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1304,6 +1336,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zitronensäure:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Citric Acid: "
           }
         },
         "fr" : {
@@ -1976,7 +2014,32 @@
       }
     },
     "Failed to create preview: %@" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorschau konnte nicht erstellt werden: %@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Failed to create preview: %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échec de la création de l'aperçu : %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile creare l'anteprima: %@"
+          }
+        }
+      }
     },
     "Garnish" : {
       "localizations" : {
@@ -2346,9 +2409,6 @@
         }
       }
     },
-    "Join _Drinko Premium_ and unlock more content, new app icons and unlimited Categories and Products inside your Cabinet!" : {
-
-    },
     "Juice Calculator" : {
       "localizations" : {
         "de" : {
@@ -2550,7 +2610,33 @@
       }
     },
     "Locked" : {
-
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gesperrt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Locked"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermé à clé"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bloccato"
+          }
+        }
+      }
     },
     "Made in" : {
       "localizations" : {
@@ -2586,6 +2672,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Äpfelsäure:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malic Acid: "
           }
         },
         "fr" : {
@@ -2912,9 +3004,6 @@
           }
         }
       }
-    },
-    "Premium" : {
-
     },
     "Procedure" : {
       "localizations" : {
@@ -3254,9 +3343,6 @@
           }
         }
       }
-    },
-    "Restore Purchases" : {
-
     },
     "Search Cocktails" : {
       "localizations" : {
@@ -3689,6 +3775,7 @@
       }
     },
     "Spirits" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3712,35 +3799,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Distillati"
-          }
-        }
-      }
-    },
-    "Swipe left" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nach links wischen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Swipe left"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Glisser vers la gauche"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Trascina verso sinistra"
           }
         }
       }
@@ -3774,6 +3832,7 @@
       }
     },
     "Syrups" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3857,9 +3916,6 @@
           }
         }
       }
-    },
-    "Thank you for being a" : {
-
     },
     "Thank you!" : {
       "extractionState" : "manual",
@@ -3947,12 +4003,6 @@
           }
         }
       }
-    },
-    "Tip jar" : {
-
-    },
-    "Tip Jar" : {
-
     },
     "Title" : {
       "extractionState" : "manual",
@@ -4180,9 +4230,6 @@
         }
       }
     },
-    "Want to go the extra mile?" : {
-
-    },
     "Water (ml)" : {
       "localizations" : {
         "de" : {
@@ -4245,6 +4292,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wasser:"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Water: "
           }
         },
         "fr" : {

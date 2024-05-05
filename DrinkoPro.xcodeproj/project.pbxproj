@@ -9,11 +9,7 @@
 /* Begin PBXBuildFile section */
 		180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
 		180EC7112BD3CB960092AD02 /* Samples+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7102BD3CB960092AD02 /* Samples+Ext.swift */; };
-		180EC7212BD413BE0092AD02 /* LessonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7202BD413BE0092AD02 /* LessonsSection.swift */; };
-		180EC7232BD414330092AD02 /* SpiritsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7222BD414330092AD02 /* SpiritsSection.swift */; };
-		180EC7262BD414C50092AD02 /* SyrupsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7252BD414C50092AD02 /* SyrupsSection.swift */; };
-		180EC7282BD414FC0092AD02 /* BooksSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7272BD414FC0092AD02 /* BooksSection.swift */; };
-		180EC72A2BD4158B0092AD02 /* CalculatorsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7292BD4158B0092AD02 /* CalculatorsSection.swift */; };
+		180EC7212BD413BE0092AD02 /* LearnHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7202BD413BE0092AD02 /* LearnHeaderView.swift */; };
 		182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
 		1827137F2B655D78000D3343 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137B2B655D78000D3343 /* Item.swift */; };
 		182713802B655D78000D3343 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137C2B655D78000D3343 /* Category.swift */; };
@@ -27,14 +23,10 @@
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
 		184F25032B54925F000A06D0 /* SwipeToActionTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F25022B54925F000A06D0 /* SwipeToActionTips.swift */; };
-		1851A9802BD588870092CAEC /* StoreConfig.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 1851A97F2BD588870092CAEC /* StoreConfig.storekit */; };
 		1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
-		188C16762BD4502E005B4B86 /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C16732BD4502D005B4B86 /* PremiumView.swift */; };
-		188C16782BD4502E005B4B86 /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C16752BD4502E005B4B86 /* StoreManager.swift */; };
-		188D84872BDD930E00E17E92 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188D84862BDD930E00E17E92 /* TipJarView.swift */; };
 		188E93BE2A4C1E04001691E6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BD2A4C1E04001691E6 /* Book.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
@@ -84,11 +76,7 @@
 /* Begin PBXFileReference section */
 		180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCocktailButtonView.swift; sourceTree = "<group>"; };
 		180EC7102BD3CB960092AD02 /* Samples+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Samples+Ext.swift"; sourceTree = "<group>"; };
-		180EC7202BD413BE0092AD02 /* LessonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsSection.swift; sourceTree = "<group>"; };
-		180EC7222BD414330092AD02 /* SpiritsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritsSection.swift; sourceTree = "<group>"; };
-		180EC7252BD414C50092AD02 /* SyrupsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyrupsSection.swift; sourceTree = "<group>"; };
-		180EC7272BD414FC0092AD02 /* BooksSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksSection.swift; sourceTree = "<group>"; };
-		180EC7292BD4158B0092AD02 /* CalculatorsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorsSection.swift; sourceTree = "<group>"; };
+		180EC7202BD413BE0092AD02 /* LearnHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnHeaderView.swift; sourceTree = "<group>"; };
 		1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		1827137B2B655D78000D3343 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1827137C2B655D78000D3343 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -103,15 +91,11 @@
 		183AE95E2A94AB4500AC156F /* DrinkoPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrinkoPro.entitlements; sourceTree = "<group>"; };
 		183E47E32B17548F0095A6E4 /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		184F25022B54925F000A06D0 /* SwipeToActionTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToActionTips.swift; sourceTree = "<group>"; };
-		1851A97F2BD588870092CAEC /* StoreConfig.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = StoreConfig.storekit; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperjuiceRowView.swift; sourceTree = "<group>"; };
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
-		188C16732BD4502D005B4B86 /* PremiumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
-		188C16752BD4502E005B4B86 /* StoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
-		188D84862BDD930E00E17E92 /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
 		188E93BD2A4C1E04001691E6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
@@ -200,22 +184,6 @@
 			path = Samples;
 			sourceTree = "<group>";
 		};
-		180EC71D2BD412BF0092AD02 /* Spirits */ = {
-			isa = PBXGroup;
-			children = (
-				180EC7222BD414330092AD02 /* SpiritsSection.swift */,
-			);
-			name = Spirits;
-			sourceTree = "<group>";
-		};
-		180EC7242BD414B80092AD02 /* Syrups */ = {
-			isa = PBXGroup;
-			children = (
-				180EC7252BD414C50092AD02 /* SyrupsSection.swift */,
-			);
-			name = Syrups;
-			sourceTree = "<group>";
-		};
 		182713832B655FE1000D3343 /* Cabinet */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,7 +235,7 @@
 		18883A832ACC70C400FC78C7 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
-				180EC7202BD413BE0092AD02 /* LessonsSection.swift */,
+				180EC7202BD413BE0092AD02 /* LearnHeaderView.swift */,
 				18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */,
 				18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */,
 			);
@@ -277,27 +245,15 @@
 		18883A842ACC718200FC78C7 /* Calculators */ = {
 			isa = PBXGroup;
 			children = (
-				180EC7292BD4158B0092AD02 /* CalculatorsSection.swift */,
 				18A8C8222B1C884C0052F0B4 /* ABV */,
 				18A8C8232B1C885C0052F0B4 /* Superjuice */,
 			);
 			name = Calculators;
 			sourceTree = "<group>";
 		};
-		188C16722BD45024005B4B86 /* StoreKit */ = {
-			isa = PBXGroup;
-			children = (
-				188C16752BD4502E005B4B86 /* StoreManager.swift */,
-				188C16732BD4502D005B4B86 /* PremiumView.swift */,
-				188D84862BDD930E00E17E92 /* TipJarView.swift */,
-			);
-			path = StoreKit;
-			sourceTree = "<group>";
-		};
 		188E93BC2A4C1DF6001691E6 /* Books */ = {
 			isa = PBXGroup;
 			children = (
-				180EC7272BD414FC0092AD02 /* BooksSection.swift */,
 				188E93BF2A4C1E0E001691E6 /* BookRowView.swift */,
 				188E93CB2A4C260E001691E6 /* BookDetailView.swift */,
 			);
@@ -359,7 +315,6 @@
 				188463372B47354400088CA1 /* Cocktail */,
 				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 				1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */,
-				188C16722BD45024005B4B86 /* StoreKit */,
 				188BCF402A3875D500FBEF20 /* VideoView.swift */,
 			);
 			path = "Supporting Views";
@@ -406,7 +361,6 @@
 				18F49E792A286D1900862CE3 /* Assets.xcassets */,
 				18F49E772A286D0D00862CE3 /* Colors.xcassets */,
 				185672E42A2C71820001813D /* Info.plist */,
-				1851A97F2BD588870092CAEC /* StoreConfig.storekit */,
 				18F49E692A27B28F00862CE3 /* Preview Content */,
 			);
 			path = DrinkoPro;
@@ -481,8 +435,6 @@
 			children = (
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
 				18883A832ACC70C400FC78C7 /* Lessons */,
-				180EC71D2BD412BF0092AD02 /* Spirits */,
-				180EC7242BD414B80092AD02 /* Syrups */,
 				18883A842ACC718200FC78C7 /* Calculators */,
 				188E93BC2A4C1DF6001691E6 /* Books */,
 			);
@@ -591,7 +543,6 @@
 				18F49E782A286D0D00862CE3 /* Colors.xcassets in Resources */,
 				18F586252B4633A500BD460B /* books.json in Resources */,
 				18F586132B46328B00BD460B /* history.json in Resources */,
-				1851A9802BD588870092CAEC /* StoreConfig.storekit in Resources */,
 				18F5864E2B46FFA800BD460B /* shots.json in Resources */,
 				18F5863D2B46348100BD460B /* spirits.json in Resources */,
 				1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */,
@@ -614,7 +565,6 @@
 				188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */,
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
 				18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */,
-				180EC7262BD414C50092AD02 /* SyrupsSection.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
 				18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */,
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
@@ -622,7 +572,6 @@
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
 				180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */,
 				18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */,
-				180EC72A2BD4158B0092AD02 /* CalculatorsSection.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
 				18F586552B470E7400BD460B /* ProcedureView.swift in Sources */,
 				18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */,
@@ -638,15 +587,11 @@
 				188E93E52A4C9D57001691E6 /* String-Ext.swift in Sources */,
 				188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */,
 				1827138A2B656F28000D3343 /* Previewer.swift in Sources */,
-				180EC7282BD414FC0092AD02 /* BooksSection.swift in Sources */,
 				18F49EBF2A286D2E00862CE3 /* Lesson.swift in Sources */,
-				188C16782BD4502E005B4B86 /* StoreManager.swift in Sources */,
 				182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */,
 				18AA315A2B815AA200072180 /* DrinkoIcons.swift in Sources */,
-				188D84872BDD930E00E17E92 /* TipJarView.swift in Sources */,
 				18F49E942A286D2A00862CE3 /* Favorites.swift in Sources */,
 				18AA31582B815A6000072180 /* IconImage.swift in Sources */,
-				180EC7232BD414330092AD02 /* SpiritsSection.swift in Sources */,
 				182713882B65657C000D3343 /* CabinetView.swift in Sources */,
 				188E93BE2A4C1E04001691E6 /* Book.swift in Sources */,
 				18B3077E2B778AB200CB94AB /* IconsView.swift in Sources */,
@@ -659,14 +604,13 @@
 				18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */,
 				18F49E9F2A286D2A00862CE3 /* DrinkoButtonView.swift in Sources */,
 				18F49E9B2A286D2A00862CE3 /* Bundle-Decodable.swift in Sources */,
-				188C16762BD4502E005B4B86 /* PremiumView.swift in Sources */,
 				18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */,
 				1827137F2B655D78000D3343 /* Item.swift in Sources */,
 				18F49EC42A286D2E00862CE3 /* LessonRowView.swift in Sources */,
 				180EC7112BD3CB960092AD02 /* Samples+Ext.swift in Sources */,
 				18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */,
 				182B40342AE90EB30007A03F /* ImageFailedToLoad.swift in Sources */,
-				180EC7212BD413BE0092AD02 /* LessonsSection.swift in Sources */,
+				180EC7212BD413BE0092AD02 /* LearnHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
