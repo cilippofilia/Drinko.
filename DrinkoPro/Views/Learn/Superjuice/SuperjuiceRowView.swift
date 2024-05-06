@@ -18,7 +18,12 @@ struct SuperjuiceRowView: View {
     var body: some View {
         NavigationLink(destination: SuperJuiceView(typeOfJuice: juiceType)) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                imageURL
+                Image("\(juiceType)")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: rowHeight,
+                           height: rowHeight)
+                    .cornerRadius(corners)
 
                 VStack(alignment: .leading) {
                     Text("\(juiceType.capitalizingFirstLetter()) Superjuice")
@@ -30,27 +35,6 @@ struct SuperjuiceRowView: View {
     }
 }
 
-private extension SuperjuiceRowView {
-    var imageURL: some View {
-        AsyncImage(url: URL(string:         "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/\(juiceType)s.jpg"
-)) { phase in
-            switch phase {
-                case .failure:
-                    imageFailedToLoad
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                default:
-                    ProgressView()
-            }
-        }
-        .frame(width: rowHeight,
-               height: rowHeight)
-        .cornerRadius(corners)
-    }
-}
-
 #Preview {
-    SuperjuiceRowView(juiceType: "Lime")
+    SuperjuiceRowView(juiceType: "lime")
 }
