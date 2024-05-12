@@ -35,6 +35,7 @@ struct SuperjuiceRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     SuperjuiceRowView(juiceType: "lime")
 }
