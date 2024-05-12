@@ -13,11 +13,42 @@ struct CabinetView: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var path = NavigationPath()
-    
+
     @Query(sort: [
         SortDescriptor(\Category.name),
         SortDescriptor(\Category.creationDate)
     ]) var categories: [Category]
+
+    var body: some View {
+        NavigationStack {
+            if categories.isEmpty {
+                unavailableView
+            } else {
+                categoriesList
+                    .navigationTitle("Cabinet")
+            }
+        }
+    }
+}
+
+// MARK: VIEWS
+extension CabinetView {
+    var unavailableView: some View {
+        ContentUnavailableView(label: {
+            Label("Empty Cabinet", systemImage: "cabinet.fill")
+        }, description: {
+            Text("To start, press 'Add a product' below or the + button at the top of the view.")
+        }, actions: {
+            Button("Add a product", action: addCategory)
+        })
+        .frame(maxWidth: UIScreen.main.bounds.size.width * 0.83)
+        .navigationTitle("Cabinet")
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button("Add category", systemImage: "plus", action: addCategory)
+            }
+        }
+    }
 
     var categoriesList: some View {
         List {
@@ -50,31 +81,10 @@ struct CabinetView: View {
         }
         .listStyle(InsetGroupedListStyle())
     }
-    
-    var body: some View {
-        NavigationStack {
-            if categories.isEmpty {
-                ContentUnavailableView(label: {
-                    Label("Empty Cabinet", systemImage: "cabinet.fill")
-                }, description: {
-                    Text("To start, press 'Add a product' below or the + button at the top of the view.")
-                }, actions: {
-                    Button("Add a product", action: addCategory)
-                })
-                .frame(maxWidth: UIScreen.main.bounds.size.width * 0.83)
-                .navigationTitle("Cabinet")
-                .toolbar {
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button("Add category", systemImage: "plus", action: addCategory)
-                    }
-                }
-            } else {
-                categoriesList
-                    .navigationTitle("Cabinet")
-            }
-        }
-    }
-    
+}
+
+// MARK: METHODS
+extension CabinetView {
     func addCategory() {
         let category = Category(name: "Category Name",
                                 detail: "",
