@@ -29,7 +29,7 @@ struct CachedImage<Content: View>: View {
     }
 
     var body: some View {
-        ZStack {
+        VStack {
             switch manager.currentState {
             case .loading:
                 content(.empty)
@@ -63,9 +63,11 @@ private extension CachedImage {
     }
 }
 
+#if DEBUG
 #Preview {
     CachedImage(url: "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/abv.jpg") { _ in
         EmptyView()
     }
     .environmentObject(CachedImageManager())
 }
+#endif
