@@ -31,6 +31,7 @@ struct CategoryHeaderView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     do {
         let previewer = try Previewer()
@@ -41,3 +42,4 @@ struct CategoryHeaderView: View {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }
 }
+#endif

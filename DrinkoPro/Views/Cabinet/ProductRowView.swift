@@ -40,6 +40,7 @@ struct ProductRowView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     do {
         let previewer = try Previewer()
@@ -50,3 +51,4 @@ struct ProductRowView: View {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }
 }
+#endif

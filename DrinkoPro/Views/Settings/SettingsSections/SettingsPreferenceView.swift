@@ -41,9 +41,11 @@ struct SettingsPreferenceView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     Form {
         SettingsPreferenceView()
             .environment(DrinkoIcons())
     }
 }
+#endif

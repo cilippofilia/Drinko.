@@ -133,7 +133,9 @@ private extension SuperJuiceView {
     }
 }
 
+#if DEBUG
 #Preview {
     SuperJuiceView(typeOfJuice: "Lime")
         .preferredColorScheme(.dark)
 }
+#endif

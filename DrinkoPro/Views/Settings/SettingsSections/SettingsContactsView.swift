@@ -120,8 +120,10 @@ private extension SettingsContactsView {
 
 }
 
+#if DEBUG
 #Preview {
     Form {
         SettingsContactsView()
     }
 }
+#endif

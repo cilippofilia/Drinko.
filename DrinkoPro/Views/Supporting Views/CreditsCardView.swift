@@ -52,6 +52,7 @@ struct CreditsCardView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LazyVGrid(columns: [GridItem(.flexible(minimum: 240,
                                            maximum: 480),
@@ -76,3 +77,4 @@ struct CreditsCardView: View {
 
     }
 }
+#endif

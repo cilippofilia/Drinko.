@@ -27,6 +27,8 @@ struct IconImage: View {
     }
 }
 
+#if DEBUG
 #Preview {
     IconImage(icon: .primary)
 }
+#endif
