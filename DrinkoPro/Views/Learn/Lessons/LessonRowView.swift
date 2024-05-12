@@ -18,22 +18,30 @@ struct LessonRowView: View {
     var body: some View {
         NavigationLink(destination: LessonDetailView(lesson: lesson)) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                AsyncImage(url: URL(string: lesson.img)) { phase in
+                CachedImage(
+                    url: lesson.img,
+                    animation: .easeInOut,
+                    transition: .opacity
+                ) { phase in
                     switch phase {
-                    case .failure:
-                        imageFailedToLoad
+                    case .empty:
+                        ProgressView()  
+
                     case .success(let image):
                         image
                             .resizable()
                             .scaledToFill()
-                    default:
-                        ProgressView()
+                    case .failure:
+                        imageFailedToLoad
+                        
+                    @unknown default:
+                        EmptyView()
                     }
                 }
                 .frame(width: rowHeight,
                        height: rowHeight)
                 .cornerRadius(corners)
-                
+
                 VStack(alignment: .leading) {
                     Text(lesson.title)
                         .font(.headline)

@@ -8,11 +8,9 @@
 import SwiftUI
 
 var imageFailedToLoad: some View {
-    VStack(spacing: 10) {
-        Image(systemName: "icloud.slash.fill")
-            .imageScale(.large)
-    }
-    .foregroundColor(.gray)
+    Image(systemName: "xmark.octagon.fill")
+        .imageScale(.large)
+        .symbolRenderingMode(.multicolor)
 }
 
 #if DEBUG

@@ -55,18 +55,24 @@ struct CocktailDetailView: View {
 
     var compactDetailView: some View {
         VStack {
-            AsyncImage(url: URL(string: cocktail.pic)) { phase in
+            CachedImage(
+                url: cocktail.pic,
+                animation: .easeInOut,
+                transition: .opacity
+            ) { phase in
                 switch phase {
-                    case .failure:
-                        imageFailedToLoad
+                case .empty:
+                    ProgressView()
 
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFit()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFit()
+                case .failure:
+                    imageFailedToLoad
 
-                    default:
-                        ProgressView()
+                @unknown default:
+                    EmptyView()
                 }
             }
             .frame(width: compactScreenWidth,
@@ -145,24 +151,30 @@ struct CocktailDetailView: View {
 
     var regularDetailView: some View {
         VStack {
-            AsyncImage(url: URL(string: cocktail.pic)) { phase in
+            CachedImage(
+                url: cocktail.pic,
+                animation: .easeInOut,
+                transition: .opacity
+            ) { phase in
                 switch phase {
-                    case .failure:
-                        imageFailedToLoad
+                case .empty:
+                    ProgressView()
 
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFit()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFit()
+                case .failure:
+                    imageFailedToLoad
 
-                    default:
-                        ProgressView()
+                @unknown default:
+                    EmptyView()
                 }
             }
-            .frame(width: regularScreenWidth,
-                   height: frameSize * 1.75)
+            .frame(width: compactScreenWidth,
+                   height: frameSize)
             .background(Color.white)
-            .cornerRadius(corners * 1.75)
+            .cornerRadius(corners)
 
             VStack(spacing: 10) {
                 HStack {

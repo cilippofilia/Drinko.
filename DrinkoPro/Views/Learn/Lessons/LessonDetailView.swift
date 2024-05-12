@@ -40,16 +40,24 @@ struct LessonDetailView: View {
                         RoundedRectangle(cornerRadius: corners,
                                          style: .continuous))
             } else {
-                AsyncImage(url: URL(string: lesson.img)) { phase in
+                CachedImage(
+                    url: lesson.img,
+                    animation: .easeInOut,
+                    transition: .opacity
+                ) { phase in
                     switch phase {
-                        case .failure:
-                            imageFailedToLoad
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                        default:
-                            ProgressView()
+                    case .empty:
+                        ProgressView()
+
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    case .failure:
+                        imageFailedToLoad
+
+                    @unknown default:
+                        EmptyView()
                     }
                 }
                 .frame(height: frameHeight)
@@ -85,19 +93,26 @@ struct LessonDetailView: View {
 
     var regularLessonView: some View {
         VStack(spacing: 20) {
-            AsyncImage(url: URL(string: lesson.img)) { phase in
+            CachedImage(
+                url: lesson.img,
+                animation: .easeInOut,
+                transition: .opacity
+            ) { phase in
                 switch phase {
-                    case .failure:
-                        imageFailedToLoad
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    default:
-                        ProgressView()
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                case .failure:
+                    imageFailedToLoad
+
+                @unknown default:
+                    EmptyView()
                 }
             }
-            .frame(height: frameHeight * 1.75)
+            .frame(height: frameHeight)
             .clipped()
 
             VStack(spacing: 20) {

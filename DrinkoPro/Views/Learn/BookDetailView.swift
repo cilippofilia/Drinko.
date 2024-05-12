@@ -31,16 +31,24 @@ struct BookDetailView: View {
 
     var compactBookView: some View {
         VStack {
-            AsyncImage(url: URL(string: book.image)) { phase in
+            CachedImage(
+                url: book.image,
+                animation: .easeInOut,
+                transition: .opacity
+            ) { phase in
                 switch phase {
-                    case .failure:
-                        imageFailedToLoad
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    default:
-                        ProgressView()
+                case .empty:
+                    ProgressView()
+
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                case .failure:
+                    imageFailedToLoad
+
+                @unknown default:
+                    EmptyView()
                 }
             }
             .frame(width: compactScreenWidth)
@@ -63,20 +71,27 @@ struct BookDetailView: View {
 
     var regularBookView: some View {
         VStack(spacing: 20) {
-            AsyncImage(url: URL(string: book.image)) { phase in
+            CachedImage(
+                url: book.image,
+                animation: .easeInOut,
+                transition: .opacity
+            ) { phase in
                 switch phase {
-                    case .failure:
-                        imageFailedToLoad
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    default:
-                        ProgressView()
+                case .empty:
+                    ProgressView()
+
+                case .success(let image):
+                    image
+                        .resizable()
+                        .scaledToFill()
+                case .failure:
+                    imageFailedToLoad
+
+                @unknown default:
+                    EmptyView()
                 }
             }
-            .frame(width: compactScreenWidth,
-                   height: frameHeight * 1.75)
+            .frame(width: compactScreenWidth)
             .clipped()
 
             VStack(spacing: 20) {
