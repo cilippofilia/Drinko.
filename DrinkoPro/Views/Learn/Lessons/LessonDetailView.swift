@@ -40,16 +40,24 @@ struct LessonDetailView: View {
                         RoundedRectangle(cornerRadius: corners,
                                          style: .continuous))
             } else {
-                AsyncImage(url: URL(string: lesson.img)) { phase in
+                CachedImage(
+                    url: lesson.img,
+                    animation: .easeInOut,
+                    transition: .opacity
+                ) { phase in
                     switch phase {
-                        case .failure:
-                            imageFailedToLoad
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .scaledToFill()
-                        default:
-                            ProgressView()
+                    case .empty:
+                        ProgressView()
+
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                    case .failure:
+                        imageFailedToLoad
+
+                    @unknown default:
+                        EmptyView()
                     }
                 }
                 .frame(height: frameHeight)
@@ -85,20 +93,36 @@ struct LessonDetailView: View {
 
     var regularLessonView: some View {
         VStack(spacing: 20) {
-            AsyncImage(url: URL(string: lesson.img)) { phase in
-                switch phase {
-                    case .failure:
-                        imageFailedToLoad
+            if lesson.hasVideo ?? false {
+                VideoView(videoID: lesson.videoID!)
+                    .frame(width: compactScreenWidth,
+                           height: frameHeight)
+                    .clipShape(
+                        RoundedRectangle(cornerRadius: corners,
+                                         style: .continuous))
+            } else {
+                CachedImage(
+                    url: lesson.img,
+                    animation: .easeInOut,
+                    transition: .opacity
+                ) { phase in
+                    switch phase {
+                    case .empty:
+                        ProgressView()
                     case .success(let image):
                         image
                             .resizable()
                             .scaledToFill()
-                    default:
-                        ProgressView()
+                    case .failure:
+                        imageFailedToLoad
+
+                    @unknown default:
+                        EmptyView()
+                    }
                 }
+                .frame(height: frameHeight)
+                .clipped()
             }
-            .frame(height: frameHeight * 1.75)
-            .clipped()
 
             VStack(spacing: 20) {
                 Text(lesson.title)

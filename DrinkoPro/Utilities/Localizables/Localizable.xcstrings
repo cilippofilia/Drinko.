@@ -4034,6 +4034,7 @@
       }
     },
     "To add a product to your cart so you know what is missing from your cabinet with a quick glance." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
