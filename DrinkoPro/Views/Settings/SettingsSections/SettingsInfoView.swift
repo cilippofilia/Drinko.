@@ -62,8 +62,10 @@ struct SettingsInfoView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     Form {
         SettingsInfoView()
     }
 }
+#endif

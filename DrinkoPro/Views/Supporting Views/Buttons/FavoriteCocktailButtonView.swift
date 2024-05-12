@@ -28,6 +28,8 @@ struct FavoriteCocktailButtonView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     FavoriteCocktailButtonView(favorites: Favorites(), cocktail: .example)
 }
+#endif

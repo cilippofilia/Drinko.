@@ -71,8 +71,10 @@ extension UIApplication {
     }
 }
 
+#if DEBUG
 #Preview {
     HomeView()
         .environment(DrinkoIcons())
         .environment(Favorites())
 }
+#endif

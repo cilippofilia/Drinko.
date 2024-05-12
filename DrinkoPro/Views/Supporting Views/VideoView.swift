@@ -22,6 +22,8 @@ struct VideoView: UIViewRepresentable {
     }
 }
 
+#if DEBUG
 #Preview {
     VideoView(videoID: "5QQ0cDGohA0")
 }
+#endif

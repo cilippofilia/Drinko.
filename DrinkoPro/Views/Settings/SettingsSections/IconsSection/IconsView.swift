@@ -42,9 +42,11 @@ struct IconsView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     NavigationStack {
         IconsView()
             .environment(DrinkoIcons())
     }
 }
+#endif

@@ -21,6 +21,8 @@ struct FavoriteProductButtonView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     FavoriteProductButtonView(product: Item(name: "Test"))
 }
+#endif

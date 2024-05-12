@@ -106,8 +106,10 @@ private extension CocktailsView {
     }
 }
 
+#if DEBUG
 #Preview {
     NavigationStack {
         CocktailsView()
     }
 }
+#endif

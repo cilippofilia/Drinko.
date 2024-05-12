@@ -52,15 +52,12 @@ struct CreditsCardView: View {
     }
 }
 
+#if DEBUG
 #Preview {
-    LazyVGrid(columns: [GridItem(.flexible(minimum: 240,
-                                           maximum: 480),
-                                 spacing: 20,
-                                 alignment: .leading),
-                        GridItem(.flexible(minimum: 240,
-                                           maximum: 480),
-                                 spacing: 20,
-                                 alignment: .leading)]) {
+    LazyVGrid(columns: [
+        GridItem(.flexible(minimum: 240, maximum: 480), spacing: 20, alignment: .leading),
+        GridItem(.flexible(minimum: 240, maximum: 480), spacing: 20, alignment: .leading)
+    ]) {
         CreditsCardView(name: "Test",
                         brief: "@thisisatest",
                         url: "disTest??")
@@ -76,3 +73,4 @@ struct CreditsCardView: View {
 
     }
 }
+#endif
