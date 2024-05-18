@@ -50,8 +50,8 @@ struct CocktailDetailSectionView: View {
                     Text(cocktail.extra.capitalizingFirstLetter())
                 }
             }
-            Spacer() // spacer pushes the text on the trailing part of the view
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

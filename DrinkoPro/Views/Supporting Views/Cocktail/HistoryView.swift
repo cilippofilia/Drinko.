@@ -25,7 +25,7 @@ struct HistoryView: View {
                     .multilineTextAlignment(.leading)
                     .lineSpacing(sizeClass == .compact ? 5 : 10)
             }
-            .frame(width: regularScreenWidth)
+            .padding()
         }
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)

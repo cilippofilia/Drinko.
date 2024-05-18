@@ -11,7 +11,7 @@ import Foundation
 extension Cocktail {
 #if DEBUG
     static let example = Cocktail(
-        id: "adonis",
+        id: "mojito",
         name: "Corpse Reviver No.2",
         method: "shake & fine strain",
         glass: "shot",

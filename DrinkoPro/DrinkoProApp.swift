@@ -16,9 +16,6 @@ struct DrinkoProApp: App {
     @StateObject private var imageManager = CachedImageManager()
 
     init() {
-        #if DEBUG
-        Tips.showAllTipsForTesting()
-        #endif
         try? Tips.configure()
     }
     

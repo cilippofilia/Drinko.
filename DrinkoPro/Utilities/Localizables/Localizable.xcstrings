@@ -536,30 +536,30 @@
         }
       }
     },
-    "Add a product" : {
+    "Add a category" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fügen Sie ein Produkt hinzu"
+            "value" : "Fügen Sie eine Kategorie hinzu"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Add product"
+            "value" : "Add a category"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajouter un produit"
+            "value" : "Ajouter une catégorie"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aggiungi un prodotto"
+            "value" : "Aggiungi una categoria"
           }
         }
       }
@@ -2014,7 +2014,6 @@
       }
     },
     "Failed to create preview: %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2235,35 +2234,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Icone"
-          }
-        }
-      }
-    },
-    "If you already have bought the Cabinet+ version on another device, press 'Restore Purchases'." : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wenn Sie bereits die Cabinet+ Version auf einem anderen Gerät gekauft haben, drücken Sie 'Käufe wiederherstellen'."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "If you already have bought the Cabinet+ version on another device, press 'Restore Purchases'"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Si tu as déjà acheté la version Cabinet+ sur un autre device, clique sur 'Restaurer les achats'."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Se hai già comprato Mobiletto+ su un altro dispositivo, tap 'Restore Purchase'"
           }
         }
       }
@@ -2606,35 +2576,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Caricamento"
-          }
-        }
-      }
-    },
-    "Locked" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gesperrt"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Locked"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fermé à clé"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bloccato"
           }
         }
       }
@@ -3891,7 +3832,6 @@
       }
     },
     "Test button" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4035,35 +3975,6 @@
         }
       }
     },
-    "To add a product to your cart so you know what is missing from your cabinet with a quick glance." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Um ein Produkt in Ihren Warenkorb zu legen, wissen Sie auf einen Blick, was in Ihrem Schrank fehlt."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "To add a product to your cart so you know what is missing from your cabinet with a quick glance."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pour ajouter un produit à votre panier afin de savoir d'un simple coup d'œil ce qui manque dans votre armoire."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aggiungi un prodotto al carrello in modo da sapere cosa ti manca a casa con una rapida occhiata."
-          }
-        }
-      }
-    },
     "To mark your favorite cocktails" : {
       "localizations" : {
         "de" : {
@@ -4092,30 +4003,30 @@
         }
       }
     },
-    "To start, press 'Add a product' below or the + button at the top of the view." : {
+    "To start, press 'Add a category' below or the + button at the top of the view." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Um zu beginnen, klicken Sie unten auf `Produkt hinzufügen` oder oben in der Ansicht auf die Schaltfläche `+`."
+            "value" : "Um zu beginnen, klicken Sie unten auf „Kategorie hinzufügen“ oder oben in der Ansicht auf die Schaltfläche \"+“."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "To start, press 'Add a product' below or the + button at the top of the view."
+            "value" : "To start, press 'Add a category' below or the + button at the top of the view."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pour commencer, appuyez sur «Ajouter un produit» ci-dessous ou sur le bouton + en haut de la vue."
+            "value" : "Pour commencer, appuyez sur « Ajouter une catégorie » ci-dessous ou sur le bouton + en haut de la vue."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Per iniziare, premi \"Aggiungi un prodotto\" o il pulsante + in alto a destra."
+            "value" : "Per iniziare, premi \"Aggiungi una categoria\" qua sotto o il + in alto a destra"
           }
         }
       }
@@ -4431,32 +4342,30 @@
         }
       }
     },
-    "You can add up to 3 product categories and 9 items in total, or pay %@ to add as many as you want." : {
-      "comment" : "StoreKit - Paywall",
-      "extractionState" : "manual",
+    "You may also like" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sie können bis zu 3 Produktkategorien und insgesamt 9 Artikel hinzufügen oder %@ zahlen, um so viele hinzuzufügen, wie Sie möchten."
+            "value" : "Sie können auch mögen"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "You can add up to 3 product categories and 9 items in total, or pay %@ to add as many as you want."
+            "value" : "You may also like"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tu peux ajouter jusqu'à 3 catégories de produits et 9 items au total, ou payer %@ pour en ajouter autant que tu veux."
+            "value" : "Tu pourrais aussi aimer"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Puoi aggiungere fino a 3 categorie e 9 prodotti in totale, o spendi %@ per avere categorie e prodotti illimitati."
+            "value" : "Potrebbe piacerti anche..."
           }
         }
       }

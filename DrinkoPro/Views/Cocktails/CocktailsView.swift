@@ -12,52 +12,30 @@ struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
     
     @Environment(\.horizontalSizeClass) var sizeClass
-        
-    @State private var cocktails = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
-    @State private var shots = Bundle.main.decode([Cocktail].self, from: "shots.json")
-    @State private var searchText = ""
+    @State private var viewModel = CocktailsViewModel()
     @State private var showingSortOrder = false
-    @State private var sortOption: SortOption = .fromAtoZ
-        
+    @State var path = NavigationPath()
+
     var favorites = Favorites()
     var favoriteCocktailsTip = SwipeToFavoriteTip()
-    
-    var drinklist: [Cocktail] {
-        let list = cocktails + shots
-        
-        return list
-    }
-    
-    var sortedCocktails: [Cocktail] {
-        switch sortOption {
-        case .fromAtoZ:
-            return drinklist.sorted { $0.name < $1.name }
-        case .fromZtoA:
-            return drinklist.sorted { $1.name < $0.name }
-        case .byGlass:
-            return drinklist.sorted { $0.glass < $1.glass }
-        case .byIce:
-            return drinklist.sorted { $0.ice < $1.ice }
-        }
-    }
-
-    var filteredCocktails: [Cocktail] {
-        guard !searchText.isEmpty else { return sortedCocktails }
-        return sortedCocktails.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
-    }
 
     var body: some View {
-        NavigationStack {
-            List(filteredCocktails) { cocktail in
-                CocktailRowView(favorites: favorites, cocktail: cocktail)
-                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                        FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
-                            .tint(favorites.contains(cocktail) ? .red : .blue)
-                    }
+        NavigationStack(path: $path) {
+            List(viewModel.filteredCocktails) { cocktail in
+                NavigationLink(value: cocktail) {
+                    CocktailRowView(favorites: favorites, cocktail: cocktail)
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
+                                .tint(favorites.contains(cocktail) ? .red : .blue)
+                        }
+                }
             }
             .popoverTip(favoriteCocktailsTip)
             .navigationTitle("Cocktails")
-            .searchable(text: $searchText, prompt: "Search Cocktails")
+            .navigationDestination(for: Cocktail.self) { cocktail in
+                CocktailDetailView(favorites: favorites, cocktail: cocktail)
+            }
+            .searchable(text: $viewModel.searchText, prompt: "Search Cocktails")
             .toolbar {
                 sortButtonToolbarItem
             }
@@ -84,22 +62,21 @@ private extension CocktailsView {
                     Label("Sort", systemImage: "arrow.up.arrow.down")
                 }
             }
-            .confirmationDialog("Sort cocktails",
-                                isPresented: $showingSortOrder) {
+            .confirmationDialog(
+                "Sort cocktails",
+                isPresented: $showingSortOrder
+            ) {
                 Button("A -> Z") {
-                    sortOption = .fromAtoZ
+                    viewModel.sortOption = .fromAtoZ
                 }
-
                 Button("Z -> A") {
-                    sortOption = .fromZtoA
+                    viewModel.sortOption = .fromZtoA
                 }
-
                 Button("By Glass") {
-                    sortOption = .byGlass
+                    viewModel.sortOption = .byGlass
                 }
-
                 Button("By Ice") {
-                    sortOption = .byIce
+                    viewModel.sortOption = .byIce
                 }
             }
         }

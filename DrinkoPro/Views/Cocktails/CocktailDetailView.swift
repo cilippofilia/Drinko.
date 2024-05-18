@@ -14,9 +14,8 @@ struct CocktailDetailView: View {
     var favorites = Favorites()
     var units = ["ml", "oz."]
 
-    @State private var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
-    @State private var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
-    
+    @State private var viewModel = CocktailsViewModel()
+
     @State private var showHistory = false
     @State private var showProcedure = false
 
@@ -27,10 +26,13 @@ struct CocktailDetailView: View {
 
     let cocktail: Cocktail
     var cocktailHistory: History? {
-        return histories.first(where: { $0.id == cocktail.id })
+        return viewModel.histories.first(where: { $0.id == cocktail.id })
     }
     var cocktailProcedure: Procedure? {
-        return procedures.first(where: { cocktail.id == $0.id })
+        return viewModel.procedures.first(where: { $0.id == cocktail.id })
+    }
+    var linkedCocktails: [Cocktail] {
+        viewModel.getsSuggestedCocktails(with: "\(cocktail.ingredients[0].name)", from: cocktail)
     }
 
     var body: some View {
@@ -39,15 +41,25 @@ struct CocktailDetailView: View {
                 compactDetailView
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
+                            historyButton
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
                             likeButton
                         }
                     }
             } else {
                 regularDetailView
+                    .toolbar {
+                        ToolbarItem(placement: .topBarTrailing) {
+                            historyButton
+                        }
+                        ToolbarItem(placement: .topBarTrailing) {
+                            likeButton
+                        }
+                    }
             }
         }
         .navigationTitle(cocktail.name)
-        // forcing displayMode .inline to avoid cropping the back bar button - this way will be standardised between 'Cocktails' and 'Back' if the Navigation Title is too long
         .navigationBarTitleDisplayMode(.inline)
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
@@ -121,28 +133,21 @@ struct CocktailDetailView: View {
                 
                 Divider()
 
-                VStack {
-                    ProcedureView(cocktail: cocktail,
-                                  procedure: cocktailProcedure!)
-                    
-                    HStack(spacing: 10) {
-                        if (cocktailHistory?.text ?? "") != "" {
-                            // HISTORY BUTTON
-                            DrinkoButtonView(title: "History",
-                                             icon: "book.fill",
-                                             background: .blue,
-                                             foreground: .white) {
-                                showHistory.toggle()
-                            }
-                                             .sheet(isPresented: $showHistory) {
-                                                 HistoryView(cocktail: cocktail, history: cocktailHistory!)
-                                                     .presentationDetents([.large,.fraction(0.75)])
-                                             }
-                        }
+                VStack(alignment: .leading, spacing: 0) {
+                    ProcedureView(
+                        cocktail: cocktail,
+                        procedure: cocktailProcedure!
+                    )
+
+                    if !linkedCocktails.isEmpty {
+                        Text("You may also like")
+                            .font(sizeClass == .compact ? .title3.bold() : .title.bold())
+                            .padding(.vertical)
+
+                        linkedCocktailRow
                     }
-                    .padding(.vertical)
                 }
-                .padding(.top)
+                .padding(.vertical)
             }
             Spacer(minLength: 50)
         }
@@ -171,35 +176,14 @@ struct CocktailDetailView: View {
                     EmptyView()
                 }
             }
-            .frame(width: compactScreenWidth,
+            .frame(width: regularScreenWidth,
                    height: frameSize)
             .background(Color.white)
             .cornerRadius(corners)
 
-            VStack(spacing: 10) {
-                HStack {
-                    Text(cocktail.name)
-                        .font(.title.bold())
-
-                    Spacer()
-
-                    DrinkoButtonView(title: "Like",
-                                     icon: favorites.contains(cocktail) ? "heart.slash.fill" : "heart.fill",
-                                     background: favorites.contains(cocktail) ? .red : .blue,
-                                     foreground: .white,
-                                     handler: {
-                        if favorites.contains(cocktail) {
-                            favorites.remove(cocktail)
-                        } else {
-                            favorites.add(cocktail)
-                                // haptic feedback
-                            UINotificationFeedbackGenerator()
-                                .notificationOccurred(.success)
-                        }
-                    })
-                    .frame(maxWidth: frameSize / 1.75 )
-                }
-                .padding(.vertical)
+            VStack(alignment: .leading) {
+                Text(cocktail.name)
+                    .font(.title.bold())
 
                 Picker("Select unit", selection: $selectedUnit) {
                     ForEach(units, id: \.self) {
@@ -209,36 +193,53 @@ struct CocktailDetailView: View {
                 .pickerStyle(.segmented)
                 .frame(maxWidth: regularScreenWidth / 2)
                 .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.bottom)
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Ingredients")
+                Divider()
 
-                ingredientsView
+                VStack(alignment: .leading, spacing: 10) {
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Ingredients")
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Method")
+                    ingredientsView
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Glass")
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Method")
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Garnish")
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Glass")
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Ice")
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Garnish")
 
-                CocktailDetailSectionView(cocktail: cocktail,
-                                          text: "Extra")
-                
-                ProcedureView(cocktail: cocktail, procedure: cocktailProcedure!)
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Ice")
 
-                if (cocktailHistory?.text ?? "") != "" {
-                    HistoryView(cocktail: cocktail, history: cocktailHistory!)
+                    CocktailDetailSectionView(cocktail: cocktail,
+                                              text: "Extra")
                 }
-                
-                Spacer(minLength: 50)
+                .padding(.vertical)
+
+                Divider()
+
+                VStack(alignment: .leading, spacing: 0) {
+                    ProcedureView(
+                        cocktail: cocktail,
+                        procedure: cocktailProcedure!
+                    )
+
+                    if !linkedCocktails.isEmpty {
+                        Text("You may also like")
+                            .font(sizeClass == .compact ? .title3.bold() : .title.bold())
+                            .padding(.vertical)
+
+                        linkedCocktailRow
+                    }
+                }
+                .padding(.vertical)
             }
         }
+        .frame(width: regularScreenWidth)
     }
 }
 
@@ -278,6 +279,52 @@ extension CocktailDetailView {
                 .symbolEffect(.bounce.up, value: favorites.hasEffect)
         }
         .buttonStyle(.plain)
+    }
+
+    var historyButton: some View {
+        Group {
+            if (cocktailHistory?.text ?? "") != "" {
+                Button(action: {
+                    showHistory.toggle()
+                }) {
+                    Label("History", systemImage: "book")
+                }
+                .sheet(isPresented: $showHistory) {
+                    HistoryView(cocktail: cocktail, history: cocktailHistory!)
+                        .presentationDetents(
+                            sizeClass == .regular ? 
+                                [.fraction(0.6), .height(.infinity)] :
+                                [.large, .height(50)]
+                        )
+                }
+            }
+        }
+    }
+
+    var linkedCocktailRow: some View {
+        Group {
+            ForEach(linkedCocktails) { link in
+                NavigationLink(value: link) {
+                    HStack {
+                        CocktailRowView(favorites: favorites, cocktail: link)
+                        HStack {
+                            if favorites.contains(cocktail) {
+                                Image(systemName: "heart.fill")
+                                    .imageScale(.small)
+                                    .foregroundStyle(.red)
+                            }
+
+                            Image(systemName: "chevron.right")
+                                .bold()
+                                .imageScale(.small)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+                .buttonStyle(.plain)
+
+            }
+        }
     }
 }
 

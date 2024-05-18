@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Cocktail: Codable, Equatable, Identifiable {
+struct Cocktail: Codable, Equatable, Identifiable, Hashable {
     let id: String
     let name: String
     let method: String
@@ -19,7 +19,11 @@ struct Cocktail: Codable, Equatable, Identifiable {
     let ingredients: [Ingredient]
     
     var pic: String {
-        "https://raw.githubusercontent.com/cilippofilia/drinko-cocktail-pics/main/\(id)-img.jpg"
+        if id == "augie-march" {
+            "https://raw.githubusercontent.com/cilippofilia/drinko-cocktail-pics/main/manhattan-img.jpg"
+        } else {
+            "https://raw.githubusercontent.com/cilippofilia/drinko-cocktail-pics/main/\(id)-img.jpg"
+        }
     }
 
     var image: String {
@@ -34,7 +38,7 @@ enum SortOption {
     case byIce
 }
 
-struct Ingredient: Codable, Equatable, Identifiable {
+struct Ingredient: Codable, Equatable, Identifiable, Hashable {
     var id: String { name }
     let name: String
     let quantity: Double
@@ -72,5 +76,56 @@ struct Procedure: Codable, Equatable, Identifiable {
         var id: String { text }
         let step: String
         let text: String
+    }
+}
+
+@Observable
+class CocktailsViewModel {
+    var listOfCocktails: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
+    var listOfShots: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "shots.json")
+    var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
+    var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
+
+    var listOfAllDrinks: [Cocktail] {
+        listOfCocktails + listOfShots
+    }
+    var sortOption: SortOption = .fromAtoZ
+    var searchText = ""
+
+    var sortedCocktails: [Cocktail] {
+        switch sortOption {
+        case .fromAtoZ:
+            return listOfAllDrinks.sorted { $0.name < $1.name }
+        case .fromZtoA:
+            return listOfAllDrinks.sorted { $1.name < $0.name }
+        case .byGlass:
+            return listOfAllDrinks.sorted { $0.glass < $1.glass }
+        case .byIce:
+            return listOfAllDrinks.sorted { $0.ice < $1.ice }
+        }
+    }
+
+    var filteredCocktails: [Cocktail] {
+        guard !searchText.isEmpty else { return sortedCocktails }
+        return sortedCocktails.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+    }
+
+    func getsSuggestedCocktails(with ingredient: String, from cocktail: Cocktail) -> [Cocktail] {
+        var list: [Cocktail] = []
+        var seen: Set<String> = []
+
+        for drink in sortedCocktails {
+            if drink.id == cocktail.id { continue }
+            for ingr in drink.ingredients {
+                if ingr.name.contains(ingredient) {
+                    if !seen.contains(drink.id) {
+                        list.append(drink)
+                        seen.insert(drink.name)
+                    }
+                }
+            }
+        }
+        list.shuffle()
+        return Array(list.prefix(5))
     }
 }
