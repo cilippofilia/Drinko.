@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Cocktail: Codable, Equatable, Identifiable {
+struct Cocktail: Codable, Equatable, Identifiable, Hashable {
     let id: String
     let name: String
     let method: String
@@ -34,7 +34,7 @@ enum SortOption {
     case byIce
 }
 
-struct Ingredient: Codable, Equatable, Identifiable {
+struct Ingredient: Codable, Equatable, Identifiable, Hashable {
     var id: String { name }
     let name: String
     let quantity: Double

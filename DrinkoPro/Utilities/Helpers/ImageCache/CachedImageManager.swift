@@ -27,9 +27,6 @@ class CachedImageManager: ObservableObject {
         if let imageData = cache.object(forKey: imageUrl as NSString) {
             // Update current state to success if image is found in cache
             self.currentState = .success(data: imageData)
-            #if DEBUG
-            print("📱 Fetching image from the cache: \(imageUrl)")
-            #endif
             return
         }
 
@@ -42,9 +39,6 @@ class CachedImageManager: ObservableObject {
                 object: data as NSData,
                 forKey: imageUrl as NSString
             )
-            #if DEBUG
-            print("📱 Caching image: \(imageUrl)")
-            #endif
         } catch {
             // Update current state to failed if image retrieval fails
             currentState = .failed(error: error)
