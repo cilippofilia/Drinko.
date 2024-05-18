@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Lesson: Codable, Equatable, Identifiable {
+struct Lesson: Codable, Equatable, Identifiable, Hashable {
     let id: String
     var title: String
     var description: String
@@ -22,7 +22,7 @@ struct Lesson: Codable, Equatable, Identifiable {
     }
 }
 
-struct LessonContent: Codable, Equatable, Identifiable {
+struct LessonContent: Codable, Equatable, Identifiable, Hashable {
     var id: String { heading }
     let heading: String
     let content: String

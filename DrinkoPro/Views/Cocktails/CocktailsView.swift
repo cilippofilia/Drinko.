@@ -30,12 +30,12 @@ struct CocktailsView: View {
                         }
                 }
             }
-            .popoverTip(favoriteCocktailsTip)
             .navigationTitle("Cocktails")
             .navigationDestination(for: Cocktail.self) { cocktail in
                 CocktailDetailView(favorites: favorites, cocktail: cocktail)
             }
             .searchable(text: $viewModel.searchText, prompt: "Search Cocktails")
+            .popoverTip(favoriteCocktailsTip)
             .toolbar {
                 sortButtonToolbarItem
             }

@@ -13,17 +13,15 @@ struct SettingsPreferenceView: View {
 
     var body: some View {
         Section(header: Text("Preferences")) {
-            HStack {
-                SettingsRowView(
-                    icon: "character.bubble",
-                    color: .secondary,
-                    itemName: "Language"
-                )
-                Spacer()
-
+            SettingsRowView(
+                icon: "character.bubble",
+                color: .secondary,
+                itemName: "Language"
+            )
+            .badge(
                 Text(Bundle.main.preferredLocalizations.first!.uppercased())
                     .foregroundColor(.secondary)
-            }
+            )
             .onTapGesture {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }

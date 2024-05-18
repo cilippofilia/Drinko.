@@ -26,6 +26,6 @@ struct DrinkoProApp: App {
         .environment(favorites)
         .environment(icons)
         .environmentObject(imageManager)
-        .modelContainer(for: [Category.self])
+        .modelContainer(for: Category.self)
     }
 }
