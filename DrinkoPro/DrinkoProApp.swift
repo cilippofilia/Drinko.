@@ -16,9 +16,6 @@ struct DrinkoProApp: App {
     @StateObject private var imageManager = CachedImageManager()
 
     init() {
-        #if DEBUG
-        Tips.showAllTipsForTesting()
-        #endif
         try? Tips.configure()
     }
     
@@ -29,6 +26,6 @@ struct DrinkoProApp: App {
         .environment(favorites)
         .environment(icons)
         .environmentObject(imageManager)
-        .modelContainer(for: [Category.self])
+        .modelContainer(for: Category.self)
     }
 }

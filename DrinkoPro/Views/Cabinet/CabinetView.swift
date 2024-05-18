@@ -37,9 +37,9 @@ extension CabinetView {
         ContentUnavailableView(label: {
             Label("Empty Cabinet", systemImage: "cabinet.fill")
         }, description: {
-            Text("To start, press 'Add a product' below or the + button at the top of the view.")
+            Text("To start, press 'Add a category' below or the + button at the top of the view.")
         }, actions: {
-            Button("Add a product", action: addCategory)
+            Button("Add a category", action: addCategory)
         })
         .frame(maxWidth: UIScreen.main.bounds.size.width * 0.83)
         .navigationTitle("Cabinet")

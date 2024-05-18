@@ -6,11 +6,12 @@
 //
 //
 
-import Foundation
 import SwiftData
+import SwiftUI
 
 @Model 
 class Item {
+    var id = UUID()
     var name: String = "Product Name"
     var detail: String = ""
     var madeIn: String = "Italy"

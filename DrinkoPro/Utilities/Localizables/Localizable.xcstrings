@@ -536,7 +536,11 @@
         }
       }
     },
+    "Add a category" : {
+
+    },
     "Add a product" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4090,7 +4094,11 @@
         }
       }
     },
+    "To start, press 'Add a category' below or the + button at the top of the view." : {
+
+    },
     "To start, press 'Add a product' below or the + button at the top of the view." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

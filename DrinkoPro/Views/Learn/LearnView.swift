@@ -10,7 +10,7 @@ import SwiftUI
 struct LearnView: View {
     static let learnTag: String? = "Learn"
     @State private var viewModel = LessonsViewModel()
-    
+
     @State private var isBasicCollapsed = false
     @State private var isBarPrepsCollapsed = false
     @State private var isBasicSpiritsCollapsed = false
@@ -27,10 +27,14 @@ struct LearnView: View {
                 // MARK: BASIC LESSONS
                 Section {
                     if isBasicCollapsed {
-                        LessonRowView(lesson: viewModel.basicLessons[0])
+                        NavigationLink(value: viewModel.basicLessons[0]) {
+                            LessonRowView(lesson: viewModel.basicLessons[0])
+                        }
                     } else {
                         ForEach(viewModel.basicLessons, id: \.id) { lesson in
-                            LessonRowView(lesson: lesson)
+                            NavigationLink(value: lesson) {
+                                LessonRowView(lesson: lesson)
+                            }
                         }
                     }
                 } header: {
@@ -42,10 +46,14 @@ struct LearnView: View {
                 // MARK: BAR PREPS
                 Section {
                     if isBarPrepsCollapsed {
-                        LessonRowView(lesson: viewModel.barPreps[0])
+                        NavigationLink(value: viewModel.barPreps[0]) {
+                            LessonRowView(lesson: viewModel.barPreps[0])
+                        }
                     } else {
                         ForEach(viewModel.barPreps, id: \.id) { lesson in
-                            LessonRowView(lesson: lesson)
+                            NavigationLink(value: lesson) {
+                                LessonRowView(lesson: lesson)
+                            }
                         }
                     }
                 } header: {
@@ -53,13 +61,18 @@ struct LearnView: View {
                         text: "Bar Preps",
                         isCollapsed: $isBarPrepsCollapsed)
                 }
+
                 // MARK: BASIC SPIRITS
                 Section {
                     if isBasicSpiritsCollapsed {
-                        LessonRowView(lesson: viewModel.basicSpirits[0])
+                        NavigationLink(value: viewModel.basicSpirits[0]) {
+                            LessonRowView(lesson: viewModel.basicSpirits[0])
+                        }
                     } else {
                         ForEach(viewModel.basicSpirits) { spirit in
-                            LessonRowView(lesson: spirit)
+                            NavigationLink(value: spirit) {
+                                LessonRowView(lesson: spirit)
+                            }
                         }
                     }
                 } header: {
@@ -71,10 +84,14 @@ struct LearnView: View {
                 // MARK: ADVANCED SPIRITS
                 Section {
                     if isAdvSpiritsCollapsed {
-                        LessonRowView(lesson: viewModel.advancedSpirits[0])
+                        NavigationLink(value: viewModel.advancedSpirits[0]) {
+                            LessonRowView(lesson: viewModel.advancedSpirits[0])
+                        }
                     } else {
                         ForEach(viewModel.advancedSpirits, id: \.id) { lesson in
-                            LessonRowView(lesson: lesson)
+                            NavigationLink(value: lesson) {
+                                LessonRowView(lesson: lesson)
+                            }
                         }
                     }
                 } header: {
@@ -86,10 +103,14 @@ struct LearnView: View {
                 // MARK: LIQUEURS
                 Section {
                     if isLiqueursCollapsed {
-                        LessonRowView(lesson: viewModel.liqueurs[0])
+                        NavigationLink(value: viewModel.liqueurs[0]) {
+                            LessonRowView(lesson: viewModel.liqueurs[0])
+                        }
                     } else {
                         ForEach(viewModel.liqueurs, id: \.id) { lesson in
-                            LessonRowView(lesson: lesson)
+                            NavigationLink(value: lesson) {
+                                LessonRowView(lesson: lesson)
+                            }
                         }
                     }
                 } header: {
@@ -101,10 +122,14 @@ struct LearnView: View {
                 // MARK: SYRUPS
                 Section {
                     if isSyrupsCollapsed {
-                        LessonRowView(lesson: viewModel.syrups[0])
+                        NavigationLink(value: viewModel.syrups[0]) {
+                            LessonRowView(lesson: viewModel.syrups[0])
+                        }
                     } else {
                         ForEach(viewModel.syrups) { syrup in
-                            LessonRowView(lesson: syrup)
+                            NavigationLink(value: syrup) {
+                                LessonRowView(lesson: syrup)
+                            }
                         }
                     }
                 } header: {
@@ -116,10 +141,14 @@ struct LearnView: View {
                 // MARK: ADVANCED TECHNIQUES
                 Section {
                     if isAdvTechniquesCollapsed {
-                        LessonRowView(lesson: viewModel.advancedLessons[0])
+                        NavigationLink(value: viewModel.advancedLessons[0]) {
+                            LessonRowView(lesson: viewModel.advancedLessons[0])
+                        }
                     } else {
                         ForEach(viewModel.advancedLessons) { lesson in
-                            LessonRowView(lesson: lesson)
+                            NavigationLink(value: lesson) {
+                                LessonRowView(lesson: lesson)
+                            }
                         }
                     }
                 } header: {
@@ -144,10 +173,14 @@ struct LearnView: View {
                 // MARK: BOOKS
                 Section {
                     if isBooksCollapsed {
-                        BookRowView(book: viewModel.books[0])
+                        NavigationLink(value: viewModel.books[0]) {
+                            BookRowView(book: viewModel.books[0])
+                        }
                     } else {
                         ForEach(viewModel.books) { book in
-                            BookRowView(book: book)
+                            NavigationLink(value: book) {
+                                BookRowView(book: book)
+                            }
                         }
                     }
                 } header: {
@@ -157,6 +190,12 @@ struct LearnView: View {
                 }
             }
             .navigationTitle("Learn")
+            .navigationDestination(for: Lesson.self) { lesson in
+                LessonDetailView(lesson: lesson)
+            }
+            .navigationDestination(for: Book.self) { book in
+                BookDetailView(book: book)
+            }
             .onAppear {
                 if viewModel.advancedLessons.isEmpty {
                     viewModel.fetchLessons()

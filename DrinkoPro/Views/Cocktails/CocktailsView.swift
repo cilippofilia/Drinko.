@@ -49,15 +49,20 @@ struct CocktailsView: View {
     var body: some View {
         NavigationStack {
             List(filteredCocktails) { cocktail in
-                CocktailRowView(favorites: favorites, cocktail: cocktail)
-                    .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                        FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
-                            .tint(favorites.contains(cocktail) ? .red : .blue)
-                    }
+                NavigationLink(value: cocktail) {
+                    CocktailRowView(favorites: favorites, cocktail: cocktail)
+                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                            FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
+                                .tint(favorites.contains(cocktail) ? .red : .blue)
+                        }
+                }
             }
-            .popoverTip(favoriteCocktailsTip)
             .navigationTitle("Cocktails")
+            .navigationDestination(for: Cocktail.self) { cocktail in
+                CocktailDetailView(favorites: favorites, cocktail: cocktail)
+            }
             .searchable(text: $searchText, prompt: "Search Cocktails")
+            .popoverTip(favoriteCocktailsTip)
             .toolbar {
                 sortButtonToolbarItem
             }
