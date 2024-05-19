@@ -24,7 +24,7 @@ struct SettingsContactsView: View {
                 showOptions = true
             }) {
                 SettingsRowView(icon: "envelope",
-                                color: .blue,
+                                color: .primary,
                                 itemName: "Contact the developer")
             }
             .buttonStyle(PlainButtonStyle())

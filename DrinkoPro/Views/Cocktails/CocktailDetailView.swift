@@ -318,7 +318,6 @@ extension CocktailDetailView {
                     }
                 }
                 .buttonStyle(.plain)
-
             }
         }
     }
