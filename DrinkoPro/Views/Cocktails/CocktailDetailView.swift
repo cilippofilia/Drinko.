@@ -291,11 +291,7 @@ extension CocktailDetailView {
                 }
                 .sheet(isPresented: $showHistory) {
                     HistoryView(cocktail: cocktail, history: cocktailHistory!)
-                        .presentationDetents(
-                            sizeClass == .regular ? 
-                                [.fraction(0.6), .height(.infinity)] :
-                                [.large, .height(50)]
-                        )
+                        .presentationDetents([.medium, .large])
                 }
             }
         }
