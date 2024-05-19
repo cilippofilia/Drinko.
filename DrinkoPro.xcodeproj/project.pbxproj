@@ -27,7 +27,8 @@
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
 		184F25032B54925F000A06D0 /* SwipeToActionTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F25022B54925F000A06D0 /* SwipeToActionTips.swift */; };
-		1863E1922BF9F3C60085C4B6 /* GenericTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863E1912BF9F3C60085C4B6 /* GenericTests.swift */; };
+		1863E1922BF9F3C60085C4B6 /* CocktailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863E1912BF9F3C60085C4B6 /* CocktailsViewModelTests.swift */; };
+		1863E19B2BFA10EB0085C4B6 /* FavoritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863E19A2BFA10EB0085C4B6 /* FavoritesTests.swift */; };
 		1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
@@ -108,7 +109,8 @@
 		184F25022B54925F000A06D0 /* SwipeToActionTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToActionTips.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1863E18F2BF9F3C60085C4B6 /* DrinkoProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkoProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1863E1912BF9F3C60085C4B6 /* GenericTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTests.swift; sourceTree = "<group>"; };
+		1863E1912BF9F3C60085C4B6 /* CocktailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsViewModelTests.swift; sourceTree = "<group>"; };
+		1863E19A2BFA10EB0085C4B6 /* FavoritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTests.swift; sourceTree = "<group>"; };
 		1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperjuiceRowView.swift; sourceTree = "<group>"; };
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
@@ -244,7 +246,8 @@
 		1863E1902BF9F3C60085C4B6 /* DrinkoProTests */ = {
 			isa = PBXGroup;
 			children = (
-				1863E1912BF9F3C60085C4B6 /* GenericTests.swift */,
+				1863E1912BF9F3C60085C4B6 /* CocktailsViewModelTests.swift */,
+				1863E19A2BFA10EB0085C4B6 /* FavoritesTests.swift */,
 			);
 			path = DrinkoProTests;
 			sourceTree = "<group>";
@@ -604,7 +607,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1863E1922BF9F3C60085C4B6 /* GenericTests.swift in Sources */,
+				1863E1922BF9F3C60085C4B6 /* CocktailsViewModelTests.swift in Sources */,
+				1863E19B2BFA10EB0085C4B6 /* FavoritesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

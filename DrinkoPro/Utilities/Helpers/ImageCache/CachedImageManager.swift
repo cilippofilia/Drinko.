@@ -12,7 +12,13 @@ class CachedImageManager: ObservableObject {
     @Published private(set) var currentState: CurrentState?
 
     // Instance of ImageRetriever to fetch images
-    private let imageRetriever = ImageRetriever()
+    private let imageRetriever: ImageRetriever
+
+    init(
+        imageRetriever: ImageRetriever = ImageRetriever()
+    ) {
+        self.imageRetriever = imageRetriever
+    }
 
     // Asynchronous function to load an image from a URL
     @MainActor
