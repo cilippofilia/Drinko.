@@ -54,9 +54,8 @@ struct LessonDetailView: View {
                         EmptyView()
                     }
                 }
-                .frame(width: frameHeight,
-                       height: frameHeight)
-                .cornerRadius(corners)
+                .frame(height: frameHeight)
+                .clipped()
             }
 
             VStack(spacing: 10) {
@@ -110,9 +109,8 @@ struct LessonDetailView: View {
                         EmptyView()
                     }
                 }
-                .frame(width: frameHeight,
-                       height: frameHeight)
-                .cornerRadius(corners)
+                .frame(height: frameHeight)
+                .clipped()
             }
 
             VStack(spacing: 20) {

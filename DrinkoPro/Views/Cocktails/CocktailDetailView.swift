@@ -67,14 +67,14 @@ struct CocktailDetailView: View {
 
     var compactDetailView: some View {
         VStack {
-            AsyncImage(url: URL(string: cocktail.image)) { state in
+            AsyncImage(url: URL(string: cocktail.pic)) { state in
                 switch state {
                 case .empty:
                     ProgressView()
                 case .success(let image):
                     image
                         .resizable()
-                        .scaledToFill()
+                        .scaledToFit()
                 case .failure:
                     imageFailedToLoad
                 @unknown default:
@@ -150,14 +150,14 @@ struct CocktailDetailView: View {
 
     var regularDetailView: some View {
         VStack {
-            AsyncImage(url: URL(string: cocktail.image)) { state in
+            AsyncImage(url: URL(string: cocktail.pic)) { state in
                 switch state {
                 case .empty:
                     ProgressView()
                 case .success(let image):
                     image
                         .resizable()
-                        .scaledToFill()
+                        .scaledToFit()
                 case .failure:
                     imageFailedToLoad
                 @unknown default:
