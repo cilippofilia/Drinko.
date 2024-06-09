@@ -1,0 +1,49 @@
+[
+    {
+        "id": "fatwashing",
+        "title": "Fat-washing spirits",
+        "description": "Cosa significa 'fat-washing' e cosa puoi ottenere con questa tecnica.",
+        "body": [
+            {
+                "heading": "Introduzione",
+                "content": "Il 'fat-washing' è una tecnica utilizzata per aggiungere sapori salati, e/o grassi, agli alcolici, conferendo una complessità lussuosa che non può essere ottenuta attraverso metodi di infusione tradizionali."
+            },
+            {
+                "heading": "Cosa succede?",
+                "content": "Questo processo, spesso visto nei bar e ristoranti di alta classe, è una sorta di alchimia che infonde l'essenza di sostanze grasse nell'alcol. Il metodo coinvolge il \"lavaggio\" di uno spirito con un grasso scelto, che sia burro, pancetta o anche olio d'oliva, per poi congelarlo per solidificare il grasso da rimuovere, lasciando solo i sapori desiderati."
+            },
+            {
+                "heading": "Il risultato?",
+                "content": "Uno spirito che ha una sensazione vellutata in bocca e sfumature ricche che possono elevare i cocktail a una nuova dimensione. Immagina un whiskey affumicato con un accenno di pancetta, perfetto per un Old Fashioned robusto, o un gin agrumato toccato dalle sfumature cremose dell'olio di cocco, pronto a portare un tocco tropicale al tuo martini.\n\nIl lavaggio del grasso non solo esemplifica l'ingegnosità culinaria, ma offre anche ai barman una tela per la creatività. Il processo rispetta l'integrità dello spirito di base mentre stratifica la complessità, rendendolo una tecnica amata dai creatori di cocktail artigianali desiderosi di sorprendere e deliziare i sensi dei loro ospiti."
+            },
+            {
+                "heading": "Alcune altre note",
+                "content": "È importante notare che il lavaggio del grasso non riguarda solo il sapore; è un processo trasformativo che gioca con la consistenza e l'aroma, creando un'esperienza multisensoriale. L'interazione di profumo e gusto, unita a una setosità spesso inaspettata, rende gli alcolici lavati con il grasso una nuova esplorazione per il bevitore curioso e uno strumento per il barman visionario.\n\nMentre il movimento dei cocktail artigianali continua ad abbracciare tecniche tradizionali e moderne, il lavaggio del grasso si distingue come un modo innovativo per personalizzare e perfezionare l'essenza di una bevanda. È una narrazione in un bicchiere, dove ogni sorso svela strati di sapore, invitando a un viaggio attraverso i sensi che è tanto immaginativo quanto delizioso."
+            }
+        ]
+    },
+
+    {
+        "id": "milk-clarification",
+        "title": "Chiarificazione con il latte",
+        "description": "Latte, agrumi e sensazioni vellutate",
+        "body": [
+            {
+                "heading": "Introduzione",
+                "content": "La chiarificazione del latte è una tecnica di mixologia affascinante che risale al XVIII secolo, un'epoca in cui il punch al latte dominava la scena dei cocktail. Questo processo apparentemente alchemico comporta la cagliatura del latte per rimuovere le impurità da un cocktail, risultando in una bevanda che è sorprendentemente chiara e liscia al palato."
+            },
+            {
+                "heading": "Il Processo",
+                "content": "Il processo inizia con l'aggiunta di una miscela acida—tipicamente una combinazione di succo di agrumi e uno spirito—al latte caldo. L'acido fa cagliare il latte, separando il siero dalla cagliata. La miscela del cocktail viene poi lentamente filtrata attraverso la cagliata, che agisce come un filtro. Col tempo, la cagliata cattura molti degli elementi più pesanti che possono causare torbidità e asprezza nella bevanda."
+            },
+            {
+                "heading": "Risultato e Benefici",
+                "content": "Ciò che emerge dall'altro lato è una rivelazione — un cocktail che non è solo visivamente puro ma anche tessituralmente vellutato, con una complessità di sapore che è sia sfumata che pulita. La chiarificazione del latte smussa gli spigoli degli spiriti, addolcisce l'acidità e integra i componenti in un modo che la semplice miscelazione o agitazione non possono ottenere."
+            },
+            {
+                "heading": "Rilevanza Moderna",
+                "content": "Nonostante le sue radici storiche, la chiarificazione del latte si sente moderna, un perfetto mix di scienza culinaria e arte del cocktail. È un metodo che richiede pazienza e precisione, ma per coloro che sono disposti a immergersi nelle sue complessità, il risultato è un'esperienza di cocktail assolutamente trascendente."
+            }
+        ]
+    }
+]

@@ -27,10 +27,20 @@
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
 		184F25032B54925F000A06D0 /* SwipeToActionTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F25022B54925F000A06D0 /* SwipeToActionTips.swift */; };
+		1863E1922BF9F3C60085C4B6 /* CocktailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863E1912BF9F3C60085C4B6 /* CocktailsViewModelTests.swift */; };
+		1863E19B2BFA10EB0085C4B6 /* FavoritesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863E19A2BFA10EB0085C4B6 /* FavoritesTests.swift */; };
 		1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
+		188CCA2E2C160BC600E4FEBD /* basic-spirits.json in Resources */ = {isa = PBXBuildFile; fileRef = 188CCA2D2C160BC600E4FEBD /* basic-spirits.json */; };
+		188CCA392C160C4E00E4FEBD /* advanced-lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 188CCA382C160C4E00E4FEBD /* advanced-lessons.json */; };
+		188CCA412C160C6E00E4FEBD /* bar-preps.json in Resources */ = {isa = PBXBuildFile; fileRef = 188CCA402C160C6E00E4FEBD /* bar-preps.json */; };
+		188CCA492C160CB500E4FEBD /* advanced-spirits.json in Resources */ = {isa = PBXBuildFile; fileRef = 188CCA482C160CB500E4FEBD /* advanced-spirits.json */; };
+		188CCA512C160CE500E4FEBD /* basic-lessons.json in Resources */ = {isa = PBXBuildFile; fileRef = 188CCA502C160CE500E4FEBD /* basic-lessons.json */; };
+		188CCA5A2C160D4200E4FEBD /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 188CCA592C160D4200E4FEBD /* books.json */; };
+		188CCA622C160D6600E4FEBD /* liqueurs.json in Resources */ = {isa = PBXBuildFile; fileRef = 188CCA612C160D6600E4FEBD /* liqueurs.json */; };
+		188CCA6A2C160D8700E4FEBD /* syrups.json in Resources */ = {isa = PBXBuildFile; fileRef = 188CCA692C160D8700E4FEBD /* syrups.json */; };
 		188E93BE2A4C1E04001691E6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BD2A4C1E04001691E6 /* Book.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
@@ -73,6 +83,16 @@
 		18F586552B470E7400BD460B /* ProcedureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F586542B470E7400BD460B /* ProcedureView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1863E1932BF9F3C60085C4B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18F49E582A27B28D00862CE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18F49E5F2A27B28D00862CE3;
+			remoteInfo = DrinkoPro;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCocktailButtonView.swift; sourceTree = "<group>"; };
 		180EC7102BD3CB960092AD02 /* Samples+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Samples+Ext.swift"; sourceTree = "<group>"; };
@@ -96,10 +116,45 @@
 		183E47E32B17548F0095A6E4 /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		184F25022B54925F000A06D0 /* SwipeToActionTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToActionTips.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1863E18F2BF9F3C60085C4B6 /* DrinkoProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkoProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1863E1912BF9F3C60085C4B6 /* CocktailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsViewModelTests.swift; sourceTree = "<group>"; };
+		1863E19A2BFA10EB0085C4B6 /* FavoritesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTests.swift; sourceTree = "<group>"; };
 		1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperjuiceRowView.swift; sourceTree = "<group>"; };
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
 		188BCF402A3875D500FBEF20 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
+		188CCA2F2C160BC900E4FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = "en.lproj/basic-spirits.json"; sourceTree = "<group>"; };
+		188CCA322C160BCC00E4FEBD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = "it.lproj/basic-spirits.json"; sourceTree = "<group>"; };
+		188CCA332C160C2F00E4FEBD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = "de.lproj/basic-spirits.json"; sourceTree = "<group>"; };
+		188CCA342C160C3100E4FEBD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = "fr.lproj/basic-spirits.json"; sourceTree = "<group>"; };
+		188CCA372C160C4E00E4FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = "en.lproj/advanced-lessons.json"; sourceTree = "<group>"; };
+		188CCA3A2C160C4F00E4FEBD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = "fr.lproj/advanced-lessons.json"; sourceTree = "<group>"; };
+		188CCA3B2C160C5000E4FEBD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = "de.lproj/advanced-lessons.json"; sourceTree = "<group>"; };
+		188CCA3C2C160C5100E4FEBD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = "it.lproj/advanced-lessons.json"; sourceTree = "<group>"; };
+		188CCA3F2C160C6E00E4FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = "en.lproj/bar-preps.json"; sourceTree = "<group>"; };
+		188CCA422C160C6F00E4FEBD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = "fr.lproj/bar-preps.json"; sourceTree = "<group>"; };
+		188CCA432C160C7000E4FEBD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = "de.lproj/bar-preps.json"; sourceTree = "<group>"; };
+		188CCA442C160C7000E4FEBD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = "it.lproj/bar-preps.json"; sourceTree = "<group>"; };
+		188CCA472C160CB500E4FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = "en.lproj/advanced-spirits.json"; sourceTree = "<group>"; };
+		188CCA4A2C160CB700E4FEBD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = "fr.lproj/advanced-spirits.json"; sourceTree = "<group>"; };
+		188CCA4B2C160CB700E4FEBD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = "it.lproj/advanced-spirits.json"; sourceTree = "<group>"; };
+		188CCA4C2C160CBA00E4FEBD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = "de.lproj/advanced-spirits.json"; sourceTree = "<group>"; };
+		188CCA4F2C160CE500E4FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = "en.lproj/basic-lessons.json"; sourceTree = "<group>"; };
+		188CCA522C160CE700E4FEBD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = "de.lproj/basic-lessons.json"; sourceTree = "<group>"; };
+		188CCA532C160CE700E4FEBD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = "fr.lproj/basic-lessons.json"; sourceTree = "<group>"; };
+		188CCA542C160CE800E4FEBD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = "it.lproj/basic-lessons.json"; sourceTree = "<group>"; };
+		188CCA582C160D4200E4FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/books.json; sourceTree = "<group>"; };
+		188CCA5B2C160D4300E4FEBD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/books.json; sourceTree = "<group>"; };
+		188CCA5C2C160D4300E4FEBD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/books.json; sourceTree = "<group>"; };
+		188CCA5D2C160D4400E4FEBD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/books.json; sourceTree = "<group>"; };
+		188CCA602C160D6600E4FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/liqueurs.json; sourceTree = "<group>"; };
+		188CCA632C160D6900E4FEBD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/liqueurs.json; sourceTree = "<group>"; };
+		188CCA642C160D6900E4FEBD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/liqueurs.json; sourceTree = "<group>"; };
+		188CCA652C160D6A00E4FEBD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/liqueurs.json; sourceTree = "<group>"; };
+		188CCA682C160D8700E4FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = en; path = en.lproj/syrups.json; sourceTree = "<group>"; };
+		188CCA6B2C160D8800E4FEBD /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = fr; path = fr.lproj/syrups.json; sourceTree = "<group>"; };
+		188CCA6C2C160D8900E4FEBD /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/syrups.json; sourceTree = "<group>"; };
+		188CCA6D2C160D8900E4FEBD /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/syrups.json; sourceTree = "<group>"; };
 		188E93BD2A4C1E04001691E6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
@@ -153,6 +208,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1863E18C2BF9F3C60085C4B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18F49E5D2A27B28D00862CE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -221,6 +283,15 @@
 			path = Learn;
 			sourceTree = "<group>";
 		};
+		1863E1902BF9F3C60085C4B6 /* DrinkoProTests */ = {
+			isa = PBXGroup;
+			children = (
+				1863E1912BF9F3C60085C4B6 /* CocktailsViewModelTests.swift */,
+				1863E19A2BFA10EB0085C4B6 /* FavoritesTests.swift */,
+			);
+			path = DrinkoProTests;
+			sourceTree = "<group>";
+		};
 		188463372B47354400088CA1 /* Cocktail */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +319,37 @@
 				18A8C8232B1C885C0052F0B4 /* Superjuice */,
 			);
 			name = Calculators;
+			sourceTree = "<group>";
+		};
+		188CCA282C160B3800E4FEBD /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				188CCA592C160D4200E4FEBD /* books.json */,
+				188CCA552C160CFE00E4FEBD /* Lessons */,
+				188CCA692C160D8700E4FEBD /* syrups.json */,
+				188CCA292C160BA000E4FEBD /* Spirits */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		188CCA292C160BA000E4FEBD /* Spirits */ = {
+			isa = PBXGroup;
+			children = (
+				188CCA612C160D6600E4FEBD /* liqueurs.json */,
+				188CCA482C160CB500E4FEBD /* advanced-spirits.json */,
+				188CCA2D2C160BC600E4FEBD /* basic-spirits.json */,
+			);
+			path = Spirits;
+			sourceTree = "<group>";
+		};
+		188CCA552C160CFE00E4FEBD /* Lessons */ = {
+			isa = PBXGroup;
+			children = (
+				188CCA382C160C4E00E4FEBD /* advanced-lessons.json */,
+				188CCA402C160C6E00E4FEBD /* bar-preps.json */,
+				188CCA502C160CE500E4FEBD /* basic-lessons.json */,
+			);
+			path = Lessons;
 			sourceTree = "<group>";
 		};
 		188E93BC2A4C1DF6001691E6 /* Books */ = {
@@ -335,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				18F49E622A27B28D00862CE3 /* DrinkoPro */,
+				1863E1902BF9F3C60085C4B6 /* DrinkoProTests */,
 				18F49E612A27B28D00862CE3 /* Products */,
 				183723C82A909AB700DBCD5D /* Frameworks */,
 			);
@@ -344,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				18F49E602A27B28D00862CE3 /* DrinkoPro.app */,
+				1863E18F2BF9F3C60085C4B6 /* DrinkoProTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -400,8 +504,9 @@
 		18F49E8B2A286D2A00862CE3 /* Localizables */ = {
 			isa = PBXGroup;
 			children = (
-				1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */,
+				188CCA282C160B3800E4FEBD /* Learn */,
 				18F5861C2B46332E00BD460B /* Cocktail */,
+				1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */,
 			);
 			path = Localizables;
 			sourceTree = "<group>";
@@ -464,6 +569,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1863E18E2BF9F3C60085C4B6 /* DrinkoProTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1863E1972BF9F3C60085C4B6 /* Build configuration list for PBXNativeTarget "DrinkoProTests" */;
+			buildPhases = (
+				1863E18B2BF9F3C60085C4B6 /* Sources */,
+				1863E18C2BF9F3C60085C4B6 /* Frameworks */,
+				1863E18D2BF9F3C60085C4B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1863E1942BF9F3C60085C4B6 /* PBXTargetDependency */,
+			);
+			name = DrinkoProTests;
+			productName = DrinkoProTests;
+			productReference = 1863E18F2BF9F3C60085C4B6 /* DrinkoProTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		18F49E5F2A27B28D00862CE3 /* DrinkoPro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F49E6E2A27B28F00862CE3 /* Build configuration list for PBXNativeTarget "DrinkoPro" */;
@@ -490,9 +613,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					1863E18E2BF9F3C60085C4B6 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 18F49E5F2A27B28D00862CE3;
+					};
 					18F49E5F2A27B28D00862CE3 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -517,21 +644,37 @@
 			projectRoot = "";
 			targets = (
 				18F49E5F2A27B28D00862CE3 /* DrinkoPro */,
+				1863E18E2BF9F3C60085C4B6 /* DrinkoProTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1863E18D2BF9F3C60085C4B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18F49E5E2A27B28D00862CE3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				188CCA5A2C160D4200E4FEBD /* books.json in Resources */,
+				188CCA622C160D6600E4FEBD /* liqueurs.json in Resources */,
 				18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */,
 				18F49E782A286D0D00862CE3 /* Colors.xcassets in Resources */,
 				18F586132B46328B00BD460B /* history.json in Resources */,
+				188CCA2E2C160BC600E4FEBD /* basic-spirits.json in Resources */,
 				18F5864E2B46FFA800BD460B /* shots.json in Resources */,
 				1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */,
+				188CCA512C160CE500E4FEBD /* basic-lessons.json in Resources */,
+				188CCA6A2C160D8700E4FEBD /* syrups.json in Resources */,
+				188CCA492C160CB500E4FEBD /* advanced-spirits.json in Resources */,
 				18F49E7A2A286D1900862CE3 /* Assets.xcassets in Resources */,
+				188CCA412C160C6E00E4FEBD /* bar-preps.json in Resources */,
+				188CCA392C160C4E00E4FEBD /* advanced-lessons.json in Resources */,
 				18F5860E2B46322B00BD460B /* cocktails.json in Resources */,
 				18F5861D2B46334900BD460B /* procedure.json in Resources */,
 			);
@@ -540,6 +683,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1863E18B2BF9F3C60085C4B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1863E1922BF9F3C60085C4B6 /* CocktailsViewModelTests.swift in Sources */,
+				1863E19B2BFA10EB0085C4B6 /* FavoritesTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18F49E5C2A27B28D00862CE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -604,7 +756,103 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1863E1942BF9F3C60085C4B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
+			targetProxy = 1863E1932BF9F3C60085C4B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		188CCA2D2C160BC600E4FEBD /* basic-spirits.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188CCA2F2C160BC900E4FEBD /* en */,
+				188CCA322C160BCC00E4FEBD /* it */,
+				188CCA332C160C2F00E4FEBD /* de */,
+				188CCA342C160C3100E4FEBD /* fr */,
+			);
+			name = "basic-spirits.json";
+			sourceTree = "<group>";
+		};
+		188CCA382C160C4E00E4FEBD /* advanced-lessons.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188CCA372C160C4E00E4FEBD /* en */,
+				188CCA3A2C160C4F00E4FEBD /* fr */,
+				188CCA3B2C160C5000E4FEBD /* de */,
+				188CCA3C2C160C5100E4FEBD /* it */,
+			);
+			name = "advanced-lessons.json";
+			sourceTree = "<group>";
+		};
+		188CCA402C160C6E00E4FEBD /* bar-preps.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188CCA3F2C160C6E00E4FEBD /* en */,
+				188CCA422C160C6F00E4FEBD /* fr */,
+				188CCA432C160C7000E4FEBD /* de */,
+				188CCA442C160C7000E4FEBD /* it */,
+			);
+			name = "bar-preps.json";
+			sourceTree = "<group>";
+		};
+		188CCA482C160CB500E4FEBD /* advanced-spirits.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188CCA472C160CB500E4FEBD /* en */,
+				188CCA4A2C160CB700E4FEBD /* fr */,
+				188CCA4B2C160CB700E4FEBD /* it */,
+				188CCA4C2C160CBA00E4FEBD /* de */,
+			);
+			name = "advanced-spirits.json";
+			sourceTree = "<group>";
+		};
+		188CCA502C160CE500E4FEBD /* basic-lessons.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188CCA4F2C160CE500E4FEBD /* en */,
+				188CCA522C160CE700E4FEBD /* de */,
+				188CCA532C160CE700E4FEBD /* fr */,
+				188CCA542C160CE800E4FEBD /* it */,
+			);
+			name = "basic-lessons.json";
+			sourceTree = "<group>";
+		};
+		188CCA592C160D4200E4FEBD /* books.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188CCA582C160D4200E4FEBD /* en */,
+				188CCA5B2C160D4300E4FEBD /* fr */,
+				188CCA5C2C160D4300E4FEBD /* de */,
+				188CCA5D2C160D4400E4FEBD /* it */,
+			);
+			name = books.json;
+			sourceTree = "<group>";
+		};
+		188CCA612C160D6600E4FEBD /* liqueurs.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188CCA602C160D6600E4FEBD /* en */,
+				188CCA632C160D6900E4FEBD /* fr */,
+				188CCA642C160D6900E4FEBD /* de */,
+				188CCA652C160D6A00E4FEBD /* it */,
+			);
+			name = liqueurs.json;
+			sourceTree = "<group>";
+		};
+		188CCA692C160D8700E4FEBD /* syrups.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				188CCA682C160D8700E4FEBD /* en */,
+				188CCA6B2C160D8800E4FEBD /* fr */,
+				188CCA6C2C160D8900E4FEBD /* de */,
+				188CCA6D2C160D8900E4FEBD /* it */,
+			);
+			name = syrups.json;
+			sourceTree = "<group>";
+		};
 		18F586152B46328B00BD460B /* history.json */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -641,6 +889,47 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1863E1952BF9F3C60085C4B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K3GFX53DY;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkoPro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkoPro";
+			};
+			name = Debug;
+		};
+		1863E1962BF9F3C60085C4B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K3GFX53DY;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkoPro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkoPro";
+			};
+			name = Release;
+		};
 		18F49E6C2A27B28F00862CE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -789,7 +1078,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -828,7 +1117,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -844,6 +1133,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1863E1972BF9F3C60085C4B6 /* Build configuration list for PBXNativeTarget "DrinkoProTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1863E1952BF9F3C60085C4B6 /* Debug */,
+				1863E1962BF9F3C60085C4B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		18F49E5B2A27B28D00862CE3 /* Build configuration list for PBXProject "DrinkoPro" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
