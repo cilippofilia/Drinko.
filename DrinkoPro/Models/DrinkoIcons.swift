@@ -14,16 +14,17 @@ import UIKit
 /// `ASSETCATALOG_COMPILER_APPICON_NAME` and `ASSETCATALOG_COMPILER_ALTERNATE_APPICON_NAMES`.
 
 enum Icon: String, CaseIterable, Identifiable {
-    case blackYellow    = "text-black-yellow"
+    case blackBlue      = "text-black-blue"
     case blueYellow     = "text-blue-yellow"
     case pride          = "text-pride"
     
     case blackWhite     = "text-black-white"
     case blueWhite      = "text-blue-white"
-    case blackBlue      = "text-black-blue"
+    case glow           = "glow"
 
     case black          = "original-black-white"
-    case original        = "original"
+    case original       = "original"
+    case rainbow        = "rainbow"
 
     var id: String { self.rawValue }
 }
