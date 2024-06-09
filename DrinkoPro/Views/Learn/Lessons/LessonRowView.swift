@@ -17,22 +17,16 @@ struct LessonRowView: View {
 
     var body: some View {
         HStack(spacing: sizeClass == .compact ? 10 : 20) {
-            CachedImage(
-                url: lesson.img,
-                animation: .easeInOut,
-                transition: .opacity
-            ) { phase in
-                switch phase {
+            AsyncImage(url: URL(string: lesson.image)) { state in
+                switch state {
                 case .empty:
-                    ProgressView()  
-                    
+                    ProgressView()
                 case .success(let image):
                     image
                         .resizable()
                         .scaledToFill()
                 case .failure:
                     imageFailedToLoad
-                    
                 @unknown default:
                     EmptyView()
                 }

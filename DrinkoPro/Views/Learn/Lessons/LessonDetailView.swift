@@ -40,28 +40,23 @@ struct LessonDetailView: View {
                         RoundedRectangle(cornerRadius: corners,
                                          style: .continuous))
             } else {
-                CachedImage(
-                    url: lesson.img,
-                    animation: .easeInOut,
-                    transition: .opacity
-                ) { phase in
-                    switch phase {
+                AsyncImage(url: URL(string: lesson.image)) { state in
+                    switch state {
                     case .empty:
                         ProgressView()
-
                     case .success(let image):
                         image
                             .resizable()
                             .scaledToFill()
                     case .failure:
                         imageFailedToLoad
-
                     @unknown default:
                         EmptyView()
                     }
                 }
-                .frame(height: frameHeight)
-                .clipped()
+                .frame(width: frameHeight,
+                       height: frameHeight)
+                .cornerRadius(corners)
             }
 
             VStack(spacing: 10) {
@@ -101,12 +96,8 @@ struct LessonDetailView: View {
                         RoundedRectangle(cornerRadius: corners,
                                          style: .continuous))
             } else {
-                CachedImage(
-                    url: lesson.img,
-                    animation: .easeInOut,
-                    transition: .opacity
-                ) { phase in
-                    switch phase {
+                AsyncImage(url: URL(string: lesson.image)) { state in
+                    switch state {
                     case .empty:
                         ProgressView()
                     case .success(let image):
@@ -115,13 +106,13 @@ struct LessonDetailView: View {
                             .scaledToFill()
                     case .failure:
                         imageFailedToLoad
-
                     @unknown default:
                         EmptyView()
                     }
                 }
-                .frame(height: frameHeight)
-                .clipped()
+                .frame(width: frameHeight,
+                       height: frameHeight)
+                .cornerRadius(corners)
             }
 
             VStack(spacing: 20) {

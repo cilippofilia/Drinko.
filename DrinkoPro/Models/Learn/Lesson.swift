@@ -17,7 +17,7 @@ struct Lesson: Codable, Equatable, Identifiable, Hashable {
     var videoURL: String?
     var videoID: String?
 
-    var img: String {
+    var image: String {
         "https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/\(id).jpg"
     }
 }

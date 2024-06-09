@@ -67,22 +67,16 @@ struct CocktailDetailView: View {
 
     var compactDetailView: some View {
         VStack {
-            CachedImage(
-                url: cocktail.pic,
-                animation: .easeInOut,
-                transition: .opacity
-            ) { phase in
-                switch phase {
+            AsyncImage(url: URL(string: cocktail.image)) { state in
+                switch state {
                 case .empty:
                     ProgressView()
-
                 case .success(let image):
                     image
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                 case .failure:
                     imageFailedToLoad
-
                 @unknown default:
                     EmptyView()
                 }
@@ -156,22 +150,16 @@ struct CocktailDetailView: View {
 
     var regularDetailView: some View {
         VStack {
-            CachedImage(
-                url: cocktail.pic,
-                animation: .easeInOut,
-                transition: .opacity
-            ) { phase in
-                switch phase {
+            AsyncImage(url: URL(string: cocktail.image)) { state in
+                switch state {
                 case .empty:
                     ProgressView()
-
                 case .success(let image):
                     image
                         .resizable()
-                        .scaledToFit()
+                        .scaledToFill()
                 case .failure:
                     imageFailedToLoad
-
                 @unknown default:
                     EmptyView()
                 }

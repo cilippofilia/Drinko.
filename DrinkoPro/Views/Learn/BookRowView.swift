@@ -17,12 +17,8 @@ struct BookRowView: View {
 
     var body: some View {
         HStack(spacing: sizeClass == .compact ? 10 : 20) {
-            CachedImage(
-                url: book.image,
-                animation: .easeInOut,
-                transition: .opacity
-            ) { phase in
-                switch phase {
+            AsyncImage(url: URL(string: book.image)) { state in
+                switch state {
                 case .empty:
                     ProgressView()
                 case .success(let image):
@@ -31,7 +27,6 @@ struct BookRowView: View {
                         .scaledToFill()
                 case .failure:
                     imageFailedToLoad
-
                 @unknown default:
                     EmptyView()
                 }

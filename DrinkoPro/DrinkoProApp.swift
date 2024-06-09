@@ -13,7 +13,6 @@ import TipKit
 struct DrinkoProApp: App {
     @State private var favorites = Favorites()
     @State private var icons = DrinkoIcons()
-    @StateObject private var imageManager = CachedImageManager()
 
     init() {
         try? Tips.configure()
@@ -25,7 +24,6 @@ struct DrinkoProApp: App {
         }
         .environment(favorites)
         .environment(icons)
-        .environmentObject(imageManager)
         .modelContainer(for: Category.self)
     }
 }

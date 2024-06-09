@@ -31,22 +31,16 @@ struct BookDetailView: View {
 
     var compactBookView: some View {
         VStack {
-            CachedImage(
-                url: book.image,
-                animation: .easeInOut,
-                transition: .opacity
-            ) { phase in
-                switch phase {
+            AsyncImage(url: URL(string: book.image)) { state in
+                switch state {
                 case .empty:
                     ProgressView()
-
                 case .success(let image):
                     image
                         .resizable()
                         .scaledToFill()
                 case .failure:
                     imageFailedToLoad
-
                 @unknown default:
                     EmptyView()
                 }
@@ -71,22 +65,16 @@ struct BookDetailView: View {
 
     var regularBookView: some View {
         VStack(spacing: 20) {
-            CachedImage(
-                url: book.image,
-                animation: .easeInOut,
-                transition: .opacity
-            ) { phase in
-                switch phase {
+            AsyncImage(url: URL(string: book.image)) { state in
+                switch state {
                 case .empty:
                     ProgressView()
-
                 case .success(let image):
                     image
                         .resizable()
                         .scaledToFill()
                 case .failure:
                     imageFailedToLoad
-
                 @unknown default:
                     EmptyView()
                 }
