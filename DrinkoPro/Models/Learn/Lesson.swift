@@ -30,85 +30,49 @@ struct LessonContent: Codable, Equatable, Identifiable, Hashable {
 
 @Observable
 class LessonsViewModel {
-    var basicLessons: [Lesson] = []
-    var advancedLessons: [Lesson] = []
-    var barPreps: [Lesson] = []
-    var basicSpirits: [Lesson] = []
-    var advancedSpirits: [Lesson] = []
-    var liqueurs: [Lesson] = []
-    var books: [Book] = []
-    var syrups: [Lesson] = []
+    var basicLessons: [Lesson] = Bundle.main.decode([Lesson].self, from: "basic-lessons.json")
+    var advancedLessons: [Lesson] = Bundle.main.decode([Lesson].self, from: "advanced-lessons.json")
+    var barPreps: [Lesson] = Bundle.main.decode([Lesson].self, from: "bar-preps.json")
+    var basicSpirits: [Lesson] = Bundle.main.decode([Lesson].self, from: "basic-spirits.json")
+    var advancedSpirits: [Lesson] = Bundle.main.decode([Lesson].self, from: "advanced-spirits.json")
+    var liqueurs: [Lesson] = Bundle.main.decode([Lesson].self, from: "liqueurs.json")
+    var books: [Book] = Bundle.main.decode([Book].self, from: "books.json")
+    var syrups: [Lesson] = Bundle.main.decode([Lesson].self, from: "syrups.json")
 
-    let baseURL = "https://raw.githubusercontent.com/cilippofilia/drinko-learn/main"
+    init() { }
+
     let topics = [
         "basic-lessons",
-        "advanced-lessons",
         "bar-preps",
         "basic-spirits",
         "advanced-spirits",
         "liqueurs",
+        "advanced-lessons",
         "syrups"
     ]
-    var language = "\(Bundle.main.preferredLocalizations.first!)/"
 
-    init() { }
-
-    func fetchBooks() {
-        if let url = URL(string: "https://raw.githubusercontent.com/cilippofilia/drinko-learn/main/books/\(language)/books.json") {
-            URLSession.shared.dataTask(with: url) { data, _, error in
-                if let data = data {
-                    do {
-                        let decodedData = try JSONDecoder().decode([Book].self, from: data)
-                        DispatchQueue.main.async {
-                            self.books = decodedData
-                        }
-                    } catch {
-                        print("Error decoding JSON: \(error)")
-                    }
-                } else if let error = error {
-                    print("Error fetching data: \(error)")
-                }
-            }.resume()
-        }
+    var allLessons: [Lesson] {
+        return basicLessons + advancedLessons + barPreps + basicSpirits + advancedSpirits + liqueurs + syrups
     }
 
-    func fetchLessons() {
-        for topic in topics {
-            if let url = URL(string: "\(baseURL)/\(topic)/\(language)/\(topic).json") {
-                URLSession.shared.dataTask(with: url) { data, _, error in
-                    if let data = data {
-                        do {
-                            let decodedLessonData = try JSONDecoder().decode([Lesson].self, from: data)
-                            DispatchQueue.main.async {
-                                if topic == "basic-lessons" {
-                                    self.basicLessons = decodedLessonData
-                                } else if topic == "advanced-lessons" {
-                                    self.advancedLessons = decodedLessonData
-                                } else if topic == "bar-preps" {
-                                    self.barPreps = decodedLessonData
-                                } else if topic == "basic-spirits" {
-                                    self.basicSpirits = decodedLessonData
-                                } else if topic == "advanced-spirits" {
-                                    self.advancedSpirits = decodedLessonData
-                                } else if topic == "liqueurs" {
-                                    self.liqueurs = decodedLessonData
-                                } else if topic == "syrups" {
-                                    self.syrups = decodedLessonData
-                                }
-                            }
-                        } catch {
-                            print("Error decoding JSON: \(error)")
-                        }
-                    } else if let error = error {
-                        print("Error fetching data: \(error)")
-                    }
-                }.resume()
-            }
+    func getLessons(for topic: String) -> [Lesson] {
+        switch topic {
+        case "basic-lessons":
+            return basicLessons
+        case "advanced-lessons":
+            return advancedLessons
+        case "bar-preps": 
+            return barPreps
+        case "basic-spirits": 
+            return basicSpirits
+        case "advanced-spirits":
+            return advancedSpirits
+        case "liqueurs":
+            return liqueurs
+        case "syrups":
+            return syrups
+        default: 
+            return []
         }
-    }
-
-    func refreshData() {
-        fetchLessons()
-        fetchBooks()
     }
 }
