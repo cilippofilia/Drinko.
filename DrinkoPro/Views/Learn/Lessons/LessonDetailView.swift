@@ -10,9 +10,6 @@ import SwiftUI
 struct LessonDetailView: View {
     @Environment(\.openURL) var openURL
     @Environment(\.horizontalSizeClass) var sizeClass
-    
-    @State private var frameHeight: CGFloat = 280
-    @State private var corners: CGFloat = 10
 
     var lesson: Lesson
 
@@ -35,9 +32,9 @@ struct LessonDetailView: View {
             if lesson.hasVideo ?? false {
                 VideoView(videoID: lesson.videoID!)
                     .frame(width: compactScreenWidth,
-                           height: frameHeight)
+                           height: imageFrameHeight)
                     .clipShape(
-                        RoundedRectangle(cornerRadius: corners,
+                        RoundedRectangle(cornerRadius: imageCornerRadius,
                                          style: .continuous))
             } else {
                 AsyncImage(url: URL(string: lesson.image)) { state in
@@ -54,7 +51,7 @@ struct LessonDetailView: View {
                         EmptyView()
                     }
                 }
-                .frame(height: frameHeight)
+                .frame(height: imageFrameHeight)
                 .clipped()
             }
 
@@ -90,9 +87,9 @@ struct LessonDetailView: View {
             if lesson.hasVideo ?? false {
                 VideoView(videoID: lesson.videoID!)
                     .frame(width: compactScreenWidth,
-                           height: frameHeight)
+                           height: imageFrameHeight)
                     .clipShape(
-                        RoundedRectangle(cornerRadius: corners,
+                        RoundedRectangle(cornerRadius: imageCornerRadius,
                                          style: .continuous))
             } else {
                 AsyncImage(url: URL(string: lesson.image)) { state in
@@ -109,7 +106,7 @@ struct LessonDetailView: View {
                         EmptyView()
                     }
                 }
-                .frame(height: frameHeight)
+                .frame(height: imageFrameHeight)
                 .clipped()
             }
 

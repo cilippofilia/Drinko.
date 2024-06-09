@@ -10,9 +10,6 @@ import SwiftUI
 struct BookRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
 
-    @State private var rowHeight: CGFloat = 45
-    @State private var corners: CGFloat = 10
-
     var book: Book
 
     var body: some View {
@@ -33,7 +30,7 @@ struct BookRowView: View {
             }
             .frame(width: rowHeight,
                    height: rowHeight)
-            .cornerRadius(corners)
+            .cornerRadius(imageCornerRadius)
 
             VStack(alignment: .leading) {
                 Text(book.title)

@@ -27,9 +27,9 @@ struct IconsView: View {
                                 IconImage(icon: icon)
                             }
                             
-                            Image(systemName: icon.id == icons.appIcon.rawValue ? "checkmark.circle" : "circle")
+                            Image(systemName: UIApplication.shared.alternateIconName == icon.id ? "checkmark.circle" : "circle")
                                 .font(.title)
-                                .foregroundStyle(icon.id == icons.appIcon.rawValue ? Color.secondary : Color.clear)
+                                .foregroundStyle(UIApplication.shared.alternateIconName == icon.id ? Color.secondary : Color.clear)
                                 .symbolEffect(.bounce.up, value: isSelected)
                         }
                     }

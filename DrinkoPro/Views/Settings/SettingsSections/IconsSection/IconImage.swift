@@ -23,12 +23,11 @@ struct IconImage: View {
                 .padding()
         }
         .labelStyle(.iconOnly)
-        
     }
 }
 
 #if DEBUG
 #Preview {
-    IconImage(icon: .primary)
+    IconImage(icon: .original)
 }
 #endif

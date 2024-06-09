@@ -10,16 +10,12 @@ import SwiftUI
 struct ABVRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
 
-    @State var rowHeight: CGFloat = 45
-    @State var corners: CGFloat = 10
-
     var body: some View {
         NavigationLink(destination: ABVCalculator()) {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
                 Image("abv")
-                    .frame(width: rowHeight,
-                           height: rowHeight)
-                    .cornerRadius(corners)
+                    .frame(width: rowHeight, height: rowHeight)
+                    .cornerRadius(imageCornerRadius)
             }
             
             VStack(alignment: .leading) {

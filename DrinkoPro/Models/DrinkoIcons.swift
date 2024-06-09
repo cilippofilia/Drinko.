@@ -23,15 +23,15 @@ enum Icon: String, CaseIterable, Identifiable {
     case blackBlue      = "text-black-blue"
 
     case black          = "original-black-white"
-    case primary        = "original"
+    case original        = "original"
 
     var id: String { self.rawValue }
 }
 
 @Observable
 class DrinkoIcons: Equatable {
-    var appIcon: Icon = .primary
-
+    var appIcon: Icon
+    
     static func == (lhs: DrinkoIcons, rhs: DrinkoIcons) -> Bool {
         return lhs.appIcon == rhs.appIcon
     }
@@ -40,8 +40,8 @@ class DrinkoIcons: Equatable {
     /// - Tag: setAlternateAppIcon
     func setAlternateAppIcon(icon: Icon) {
         // Set the icon name to nil to use the primary icon.
-        let iconName: String? = (icon != .primary) ? icon.rawValue : nil
-        
+        let iconName: String? = (icon != .original) ? icon.rawValue : nil
+
         // Avoid setting the name if the app already uses that icon.
         guard UIApplication.shared.alternateIconName != iconName else { return }
         
@@ -58,7 +58,7 @@ class DrinkoIcons: Equatable {
         let iconName = UIApplication.shared.alternateIconName
 
         if iconName == nil {
-            appIcon = .primary
+            appIcon = .original
         } else {
             appIcon = Icon(rawValue: iconName!)!
         }

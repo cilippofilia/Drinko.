@@ -10,9 +10,6 @@ import SwiftUI
 struct SuperjuiceRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
 
-    @State private var rowHeight: CGFloat = 45
-    @State private var corners: CGFloat = 10
-
     let juiceType: String
 
     var body: some View {
@@ -21,9 +18,8 @@ struct SuperjuiceRowView: View {
                 Image("\(juiceType)")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: rowHeight,
-                           height: rowHeight)
-                    .cornerRadius(corners)
+                    .frame(width: rowHeight, height: rowHeight)
+                    .cornerRadius(imageCornerRadius)
 
                 VStack(alignment: .leading) {
                     Text("\(juiceType.capitalizingFirstLetter()) Superjuice")

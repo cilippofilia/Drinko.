@@ -21,9 +21,6 @@ struct CocktailDetailView: View {
 
     @State private var selectedUnit = "ml"
 
-    @State private var frameSize: CGFloat = 280
-    @State private var corners: CGFloat = 10
-
     let cocktail: Cocktail
     var cocktailHistory: History? {
         return viewModel.histories.first(where: { $0.id == cocktail.id })
@@ -81,10 +78,9 @@ struct CocktailDetailView: View {
                     EmptyView()
                 }
             }
-            .frame(width: compactScreenWidth,
-                   height: frameSize)
+            .frame(width: compactScreenWidth, height: imageFrameHeight)
             .background(Color.white)
-            .cornerRadius(corners)
+            .cornerRadius(imageCornerRadius)
 
             VStack(alignment: .leading) {
                 Text(cocktail.name)
@@ -164,10 +160,9 @@ struct CocktailDetailView: View {
                     EmptyView()
                 }
             }
-            .frame(width: regularScreenWidth,
-                   height: frameSize)
+            .frame(width: regularScreenWidth, height: imageFrameHeight)
             .background(Color.white)
-            .cornerRadius(corners)
+            .cornerRadius(imageCornerRadius)
 
             VStack(alignment: .leading) {
                 Text(cocktail.name)

@@ -10,9 +10,6 @@ import SwiftUI
 struct LessonRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
 
-    @State private var rowHeight: CGFloat = 45
-    @State private var corners: CGFloat = 10
-
     var lesson: Lesson
 
     var body: some View {
@@ -31,10 +28,9 @@ struct LessonRowView: View {
                     EmptyView()
                 }
             }
-            .frame(width: rowHeight,
-                   height: rowHeight)
-            .cornerRadius(corners)
-            
+            .frame(width: rowHeight, height: rowHeight)
+            .cornerRadius(imageCornerRadius)
+
             VStack(alignment: .leading) {
                 Text(lesson.title)
                     .font(.headline)

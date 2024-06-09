@@ -9,8 +9,6 @@ import SwiftUI
 
 struct BookDetailView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @State private var frameHeight: CGFloat = 280
-    @State private var corners: CGFloat = 10
 
     var book: Book
 

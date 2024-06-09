@@ -70,7 +70,6 @@ struct CreditsCardView: View {
         CreditsCardView(name: "Test",
                         brief: "@thisisatest",
                         url: "disTest??")
-
     }
 }
 #endif
