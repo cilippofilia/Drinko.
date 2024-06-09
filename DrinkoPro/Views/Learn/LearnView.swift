@@ -35,7 +35,9 @@ struct LearnView: View {
                     Section {
                         if !(collapsedStates[topic] ?? false) {
                             ForEach(viewModel.getLessons(for: topic)) { lesson in
-                                LessonRowView(lesson: lesson)
+                                NavigationLink(value: lesson) {
+                                    LessonRowView(lesson: lesson)
+                                }
                             }
                         }
                     } header: {

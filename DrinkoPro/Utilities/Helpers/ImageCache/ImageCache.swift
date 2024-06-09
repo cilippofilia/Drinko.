@@ -20,8 +20,8 @@ class ImageCache {
     /// Lazy initialization of NSCache with count and cost limits
     private lazy var cache: CacheType = {
         let cache = CacheType()
-        cache.countLimit = 100
-        cache.totalCostLimit = 100 * 1024 * 1024 // roughly a bit more than 100 mb
+        cache.countLimit = 10000
+        cache.totalCostLimit = 1000 * 1024 * 1024 // roughly a bit more than 100 mb
         return cache
     }()
 
