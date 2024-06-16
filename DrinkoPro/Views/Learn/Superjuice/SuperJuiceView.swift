@@ -13,6 +13,7 @@ enum CalculationMode: String, CaseIterable {
 }
 
 struct SuperJuiceView: View {
+    @FocusState private var isFocused: Bool
     @State private var selectedMode = CalculationMode.peels
     @State private var peels = ""
     @State private var water = ""
@@ -20,8 +21,6 @@ struct SuperJuiceView: View {
     @State private var citricAcid: Double = 0
     @State private var malicAcid: Double = 0
     @State private var waterAmount: Double = 0
-    
-    @FocusState private var focusedField: Bool
 
     let typeOfJuice: String
 
@@ -40,11 +39,10 @@ struct SuperJuiceView: View {
                     Group {
                         if selectedMode == .peels {
                             TextField("\(typeOfJuice) peels in grams", text: $peels)
-                                .focused($focusedField)
+                                .focused($isFocused)
                         } else {
                             TextField("Water amount in millilitres", text: $water)
-                                .focused($focusedField)
-
+                                .focused($isFocused)
                         }
                     }
                     .keyboardType(.decimalPad)
@@ -60,27 +58,52 @@ struct SuperJuiceView: View {
 
                 Section(footer: Text("Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed.")) {
                     if selectedMode == .water {
-                        Text("\(typeOfJuice.capitalizingFirstLetter()) peels: ") +
-                        Text("\(Double(peels) ?? 0, specifier: "%.2f") gr")
-                            .font(.title)
+                        HStack {
+                            Text("\(typeOfJuice.capitalizingFirstLetter()) peels: ")
+                            Spacer()
+                            Text("\(Double(peels) ?? 0, specifier: "%.2f")")
+                                .font(.title)
+                            Text("gr")
+                        }
                     }
 
-                    Text("Citric Acid: ") +
-                    Text("\(citricAcid, specifier: "%.2f") gr")
-                        .font(.title)
+                    HStack {
+                        Text("Citric Acid: ")
+                        Spacer()
+                        Text("\(citricAcid, specifier: "%.2f")")
+                            .font(.title)
+                        Text("gr")
+                    }
 
                     if typeOfJuice == "lime" {
-                        Text("Malic Acid: ") +
-                        Text("\(malicAcid, specifier: "%.2f") gr")
-                            .font(.title)
+                        HStack {
+                            Text("Malic Acid: ")
+                            Spacer()
+                            Text("\(malicAcid, specifier: "%.2f")")
+                                .font(.title)
+                            Text("gr")
+                        }
                     }
                     
-                    Text("Water: ") +
-                    Text("\(waterAmount, specifier: "%.2f") ml")
-                        .font(.title)
+                    HStack {
+                        Text("Water: ")
+                        Spacer()
+                        Text("\(waterAmount, specifier: "%.2f")")
+                            .font(.title)
+                        Text("ml")
+                    }
                 }
             }
             .navigationTitle("Juice Calculator")
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+
+                    Button("Done") {
+                        isFocused = false
+                    }
+                }
+            }
         }
     }
 }
@@ -104,7 +127,7 @@ private extension SuperJuiceView {
                 malicAcid = 0.33 * Double(peels)!
             }
         
-            focusedField = false
+            isFocused = false
         }) {
             Text("Calculate")
         }
@@ -126,7 +149,7 @@ private extension SuperJuiceView {
                 citricAcid = 1 * Double(peels)!
             }
             
-            focusedField = false
+            isFocused = false
         }) {
             Text("Calculate")
         }

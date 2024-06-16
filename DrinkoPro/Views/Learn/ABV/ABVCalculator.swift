@@ -27,6 +27,7 @@ struct Bottle {
 }
 
 struct ABVCalculator: View {
+    @FocusState private var isFocused: Bool
     @State private var bottles: [Bottle] = [Bottle(name: "", amount: 0.0, abv: 0.0)]
     @State var numbersOfIngredients = 1
     
@@ -35,82 +36,95 @@ struct ABVCalculator: View {
     @State private var result: Double = 0
     
     var body: some View {
-            ScrollView {
-                ForEach(bottles.indices, id:\.self) { index in
-                    VStack(spacing: 20) {
-                        HStack {
-                            TextField("What is the ingredient?", text: $bottles[index].name)
-                                .keyboardType(/*@START_MENU_TOKEN@*/.default/*@END_MENU_TOKEN@*/)
-                            
-                            Button(action: {
-                                removeIngredient(at: index)
-                            }) {
-                                Label("Delete", systemImage: "xmark.circle")
-                                    .labelStyle(.iconOnly)
-                                    .foregroundColor(bottles.count > 1 ? .secondary : .clear)
-                            }
+        ScrollView {
+            ForEach(bottles.indices, id:\.self) { index in
+                VStack(spacing: 20) {
+                    HStack {
+                        TextField("What is the ingredient?", text: $bottles[index].name)
+                            .keyboardType(.default)
+                            .focused($isFocused)
+
+                        Button(action: {
+                            removeIngredient(at: index)
+                        }) {
+                            Label("Delete", systemImage: "xmark.circle")
+                                .labelStyle(.iconOnly)
+                                .foregroundColor(bottles.count > 1 ? .secondary : .clear)
                         }
-                        
-                        HStack(spacing: 20) {
-                            HStack {
-                                TextField("Amount?", value: $bottles[index].amount, formatter: NumberFormatter())
-                                    .keyboardType(.decimalPad)
-                                
-                                Text("ml")
-                            }
-                            
-                            HStack {
-                                TextField("ABV?", value: $bottles[index].abv, formatter: NumberFormatter())
-                                    .keyboardType(.decimalPad)
-                                Text("%")
-                            }
-                        }
-                        Divider()
                     }
-                    .padding()
+
+                    HStack(spacing: 20) {
+                        HStack {
+                            TextField("Amount?", value: $bottles[index].amount, formatter: NumberFormatter())
+                                .keyboardType(.decimalPad)
+                                .focused($isFocused)
+
+                            Text("ml")
+                        }
+
+                        HStack {
+                            TextField("ABV?", value: $bottles[index].abv, formatter: NumberFormatter())
+                                .keyboardType(.decimalPad)
+                                .focused($isFocused)
+
+                            Text("%")
+                        }
+                    }
+                    Divider()
                 }
-                                
-                Button(action: {
-                    bottles.append(Bottle(name: "", amount: 0.0, abv: 0.0))
-                    numbersOfIngredients += 1
-                }) {
-                    Label("Add ingredient", systemImage: "plus")
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal)
-                
-                Spacer(minLength: 30)
-                
-                pickers
-                
-                DrinkoButtonView(title: "Calculate", icon: "calculator") {
-                    result = calculateABV()
-                }
-                .frame(width: 200)
                 .padding()
-                
-                VStack {
-                    Text("ABV")
-                        .font(.headline)
-                    
-                    Spacer()
-                    
-                    Text("\(result, specifier: "%.2f") %")
-                        .font(.title)
-                        .bold()
-                }
-                
-                Text("Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink.")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-                    .padding(.vertical)
-                
-                Spacer(minLength: 50)
             }
-            .navigationTitle("ABV Calculator")
+
+            Button(action: {
+                bottles.append(Bottle(name: "", amount: 0.0, abv: 0.0))
+                numbersOfIngredients += 1
+            }) {
+                Label("Add ingredient", systemImage: "plus")
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
-            .scrollIndicators(.hidden, axes: .vertical)
-            .scrollBounceBehavior(.basedOnSize)
+
+            Spacer(minLength: 30)
+
+            pickers
+
+            DrinkoButtonView(title: "Calculate", icon: "calculator") {
+                result = calculateABV()
+            }
+            .frame(width: 200)
+            .padding()
+
+            VStack {
+                Text("ABV")
+                    .font(.headline)
+
+                Spacer()
+
+                Text("\(result, specifier: "%.2f") %")
+                    .font(.title)
+                    .bold()
+            }
+
+            Text("Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink.")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
+                .padding(.vertical)
+
+            Spacer(minLength: 50)
+        }
+        .navigationTitle("ABV Calculator")
+        .padding(.horizontal)
+        .scrollIndicators(.hidden, axes: .vertical)
+        .scrollBounceBehavior(.basedOnSize)
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+
+                Button("Done") {
+                    isFocused = false
+                }
+            }
+        }
     }
         
     func calculateABV() -> Double {
