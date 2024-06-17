@@ -53,8 +53,8 @@ struct LearnView: View {
 
                 // MARK: CALCULATORS
                 Section {
-                    ABVRowView()
                     if !isCalculatorsCollapsed {
+                        ABVRowView()
                         SuperjuiceRowView(juiceType: "lime")
                         SuperjuiceRowView(juiceType: "lemon")
                     }
@@ -66,11 +66,7 @@ struct LearnView: View {
 
                 // MARK: BOOKS
                 Section {
-                    if isBooksCollapsed {
-                        NavigationLink(value: viewModel.books[0]) {
-                            BookRowView(book: viewModel.books[0])
-                        }
-                    } else {
+                    if !isBooksCollapsed {
                         ForEach(viewModel.books) { book in
                             NavigationLink(value: book) {
                                 BookRowView(book: book)

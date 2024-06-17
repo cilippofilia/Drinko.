@@ -19,7 +19,9 @@ struct LearnHeaderView: View {
             Text(text)
         }
         .onTapGesture {
-            isCollapsed.wrappedValue.toggle()
+            withAnimation {
+                isCollapsed.wrappedValue.toggle()
+            }
         }
     }
 }
