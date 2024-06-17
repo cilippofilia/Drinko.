@@ -26,13 +26,13 @@ struct EditCategoryView: View {
                 TextField("Category name",
                           text: $category.name)
                 .textContentType(.name)
-                
+
                 TextField("Category Details",
                           text: $category.detail,
                           axis: .vertical)
                 .multilineTextAlignment(.leading)
             }
-            
+
             Section("Colors") {
                 LazyVGrid(columns: colorColumns) {
                     ForEach(Category.colors, id: \.self) { color in
@@ -41,7 +41,7 @@ struct EditCategoryView: View {
                 }
                 .padding(.vertical, 7)
             }
-            
+
             Section(footer: Text("By deleting the category you will be deleting every product inside it.")) {
                 Button(action: {
                     showingDeleteConfirmation.toggle()
@@ -61,7 +61,10 @@ struct EditCategoryView: View {
             Text("Are you sure you want to delete this category? You will also delete all the products it contains.")
         }
     }
-    
+}
+
+// MARK: FUNCTIONS
+extension EditCategoryView {
     func colorButton(for item: String) -> some View {
         ZStack {
             Color(item)

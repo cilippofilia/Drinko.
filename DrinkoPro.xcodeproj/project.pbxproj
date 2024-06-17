@@ -22,6 +22,7 @@
 		182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
+		18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18481D262C20E8120083FD5A /* AddCategoryView.swift */; };
 		184F25032B54925F000A06D0 /* SwipeToActionTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184F25022B54925F000A06D0 /* SwipeToActionTips.swift */; };
 		1869B1502AD683F900AC2AD2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
@@ -94,6 +95,7 @@
 		183AE95A2A94AAC000AC156F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		183AE95E2A94AB4500AC156F /* DrinkoPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrinkoPro.entitlements; sourceTree = "<group>"; };
 		183E47E32B17548F0095A6E4 /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
+		18481D262C20E8120083FD5A /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
 		184F25022B54925F000A06D0 /* SwipeToActionTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeToActionTips.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1869B14F2AD683F900AC2AD2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			children = (
 				182713872B65657C000D3343 /* CabinetView.swift */,
 				1827138B2B6576AB000D3343 /* CategoryHeaderView.swift */,
+				18481D262C20E8120083FD5A /* AddCategoryView.swift */,
 				182713972B685B8A000D3343 /* EditCategoryView.swift */,
 				1827138D2B658293000D3343 /* ProductRowView.swift */,
 				18B307732B6F99DD00CB94AB /* EditProductView.swift */,
@@ -622,6 +625,7 @@
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				18F49E9C2A286D2A00862CE3 /* GlobalConstant.swift in Sources */,
+				18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */,
 				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
 				18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */,
 				1827138E2B658293000D3343 /* ProductRowView.swift in Sources */,

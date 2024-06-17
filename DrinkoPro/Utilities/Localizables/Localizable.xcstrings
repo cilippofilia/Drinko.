@@ -597,6 +597,9 @@
         }
       }
     },
+    "Add Category" : {
+
+    },
     "Add ingredient" : {
       "localizations" : {
         "de" : {
@@ -3294,6 +3297,9 @@
         }
       }
     },
+    "Save" : {
+
+    },
     "Search Cocktails" : {
       "localizations" : {
         "de" : {
@@ -3752,6 +3758,9 @@
           }
         }
       }
+    },
+    "Suggested Categories" : {
+
     },
     "Swipe right" : {
       "localizations" : {

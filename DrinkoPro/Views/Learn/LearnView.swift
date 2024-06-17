@@ -86,6 +86,7 @@ struct LearnView: View {
             .navigationDestination(for: Book.self) { book in
                 BookDetailView(book: book)
             }
+            .listSectionSpacing(.compact)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }

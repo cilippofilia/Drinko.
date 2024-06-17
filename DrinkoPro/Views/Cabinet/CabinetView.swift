@@ -13,6 +13,7 @@ struct CabinetView: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var path = NavigationPath()
+    @State private var showAddCategorySheet: Bool = false
 
     @Query(sort: [
         SortDescriptor(\Category.name),
@@ -39,14 +40,23 @@ extension CabinetView {
         }, description: {
             Text("To start, press 'Add a category' below or the + button at the top of the view.")
         }, actions: {
-            Button("Add a category", action: addCategory)
+            Button("Add a category") {
+                showAddCategorySheet.toggle()
+            }
         })
         .frame(maxWidth: UIScreen.main.bounds.size.width * 0.83)
         .navigationTitle("Cabinet")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Add category", systemImage: "plus", action: addCategory)
+                Button(action: {
+                    showAddCategorySheet.toggle()
+                }) {
+                    Label("Add category", systemImage: "plus")
+                }
             }
+        }
+        .sheet(isPresented: $showAddCategorySheet) {
+            AddCategoryView()
         }
     }
 
@@ -76,24 +86,23 @@ extension CabinetView {
         }
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Add category", systemImage: "plus", action: addCategory)
+                Button(action: {
+                    showAddCategorySheet.toggle()
+                }) {
+                    Label("Add category", systemImage: "plus")
+                }
             }
+        }
+        .sheet(isPresented: $showAddCategorySheet) {
+            AddCategoryView()
+                .presentationDetents([.medium, .large])
         }
         .listStyle(InsetGroupedListStyle())
     }
 }
 
 // MARK: METHODS
-extension CabinetView {
-    func addCategory() {
-        let category = Category(name: "Category Name",
-                                detail: "",
-                                color: "Dr. Blue",
-                                creationDate: Date.now)
-        modelContext.insert(category)
-        path.append(category)
-    }
-    
+extension CabinetView {    
     func addProduct(to category: Category) {
         category.products?.append(Item(name: "Product Name"))
     }
