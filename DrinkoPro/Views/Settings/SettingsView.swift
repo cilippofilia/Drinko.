@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SettingsView: View {
     static let settingsTag: String? = "Settings"
-    @Environment(DrinkoIcons.self) var icons: DrinkoIcons
 
     var body: some View {
         NavigationStack {
@@ -29,7 +28,6 @@ struct SettingsView: View {
 #if DEBUG
 #Preview {
     SettingsView()
-        .environment(DrinkoIcons())
         .environment(Favorites())
 }
 #endif

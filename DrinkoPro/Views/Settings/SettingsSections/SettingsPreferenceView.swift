@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsPreferenceView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @Environment(DrinkoIcons.self) var icons: DrinkoIcons
+    @ObservedObject var viewModel = ChangeAppIconViewModel()
 
     var body: some View {
         Section(header: Text("Preferences")) {
@@ -26,7 +26,7 @@ struct SettingsPreferenceView: View {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
             
-            NavigationLink(destination: IconsView()) {
+            NavigationLink(destination: ChangeAppIconView(viewModel: viewModel)) {
                 HStack {
                     SettingsRowView(
                         icon: "questionmark.app",
@@ -43,7 +43,6 @@ struct SettingsPreferenceView: View {
 #Preview {
     Form {
         SettingsPreferenceView()
-            .environment(DrinkoIcons())
     }
 }
 #endif

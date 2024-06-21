@@ -11,8 +11,7 @@ import SwiftUI
 struct HomeView: View {
     // AppStorage is used to keep track of how many times the app has been opened
     @AppStorage("appUsageCounter") var appUsageCounter: Int = 0
-    @Environment(DrinkoIcons.self) var icons: DrinkoIcons
-    
+
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
 
@@ -74,7 +73,6 @@ extension UIApplication {
 #if DEBUG
 #Preview {
     HomeView()
-        .environment(DrinkoIcons())
         .environment(Favorites())
 }
 #endif

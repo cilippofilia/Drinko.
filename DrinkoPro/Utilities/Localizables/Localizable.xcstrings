@@ -742,6 +742,7 @@
       }
     },
     "App icon" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -768,6 +769,9 @@
           }
         }
       }
+    },
+    "App icons" : {
+
     },
     "Are you sure you want to delete this category? You will also delete all the products it contains." : {
       "localizations" : {
