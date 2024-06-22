@@ -10,7 +10,7 @@ import SwiftUI
 struct AddCategoryView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-
+    @FocusState private var isFocused: Bool
     @State private var categoryName = ""
     @State private var categoryDetails = ""
     @State private var categoryColor = "Dr. Blue"
@@ -26,9 +26,10 @@ struct AddCategoryView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section {
+                Section("Info") {
                     TextField("Category name", text: $categoryName)
                         .textContentType(.name)
+                        .focused($isFocused)
 
                     TextField(
                         "Category Details",
@@ -36,8 +37,7 @@ struct AddCategoryView: View {
                         axis: .vertical
                     )
                     .multilineTextAlignment(.leading)
-                } header: {
-                    Text("Info")
+                    .focused($isFocused)
                 }
 
                 Section {
@@ -69,6 +69,10 @@ struct AddCategoryView: View {
                                 Image(systemName: "circle.fill")
                                     .foregroundStyle(Color(category.color))
                                 Text(category.name)
+                            }
+                            .onTapGesture {
+                                modelContext.insert(category)
+                                dismiss()
                             }
                         }
                     }
@@ -103,6 +107,13 @@ struct AddCategoryView: View {
                         dismiss()
                     }) {
                         Text("Cancel")
+                    }
+                }
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+
+                    Button("Done") {
+                        isFocused = false
                     }
                 }
             }

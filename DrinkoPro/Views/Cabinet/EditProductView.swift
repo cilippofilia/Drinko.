@@ -11,6 +11,7 @@ struct EditProductView: View {
     @Bindable var product: Item
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @FocusState private var isFocused: Bool
     @State private var showingDeleteConfirmation: Bool = false
     @State private var isAnimated: Bool = false
     
@@ -21,11 +22,13 @@ struct EditProductView: View {
         Form {
             Section {
                 TextField("Product name", text: $product.name)
+                    .focused($isFocused)
                 HStack {
                     TextField("ABV", text: $product.abv)
                         .frame(width: 33)
                         .keyboardType(.decimalPad)
-                    
+                        .focused($isFocused)
+
                     Text("% ABV")
                     Spacer()
                 }
@@ -33,6 +36,7 @@ struct EditProductView: View {
                 HStack {
                     Image(systemName: "flag")
                     TextField("Made in", text: $product.madeIn)
+                        .focused($isFocused)
                 }
             }
             
@@ -60,9 +64,12 @@ struct EditProductView: View {
             }
 
             Section(header: Text("Notes")) {
-                TextField("Your notes on \(product.name)...",
-                          text: $product.detail,
-                          axis: .vertical)
+                TextField(
+                    "Your notes on \(product.name)...",
+                    text: $product.detail,
+                    axis: .vertical
+                )
+                .focused($isFocused)
             }
             
             Section(footer: Text("By deleting the product you will be deleting every informations added to it.")) {
@@ -75,12 +82,20 @@ struct EditProductView: View {
             }
         }
         .navigationTitle("Edit Product")
-        .alert("Delete product?",
-               isPresented: $showingDeleteConfirmation) {
+        .alert("Delete product?", isPresented: $showingDeleteConfirmation) {
             Button("Delete", role: .destructive) { delete() }
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("Are you sure you want to delete this product? You will delete all the informations added to it.")
+        }
+        .toolbar {
+            ToolbarItemGroup(placement: .keyboard) {
+                Spacer()
+
+                Button("Done") {
+                    isFocused = false
+                }
+            }
         }
     }
     
