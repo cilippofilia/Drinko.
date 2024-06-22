@@ -286,18 +286,11 @@ extension CocktailDetailView {
                 NavigationLink(value: link) {
                     HStack {
                         CocktailRowView(favorites: favorites, cocktail: link)
-                        HStack {
-                            if favorites.contains(cocktail) {
-                                Image(systemName: "heart.fill")
-                                    .imageScale(.small)
-                                    .foregroundStyle(.red)
-                            }
 
-                            Image(systemName: "chevron.right")
-                                .bold()
-                                .imageScale(.small)
-                                .foregroundStyle(.secondary)
-                        }
+                        Image(systemName: "chevron.right")
+                            .bold()
+                            .imageScale(.small)
+                            .foregroundStyle(.secondary)
                     }
                 }
                 .buttonStyle(.plain)
