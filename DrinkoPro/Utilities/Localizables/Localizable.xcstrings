@@ -2036,6 +2036,7 @@
       }
     },
     "Failed to create preview: %@" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2745,6 +2746,9 @@
           }
         }
       }
+    },
+    "Need to buy" : {
+
     },
     "New Post" : {
       "extractionState" : "manual",
@@ -3863,6 +3867,7 @@
       }
     },
     "Test button" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

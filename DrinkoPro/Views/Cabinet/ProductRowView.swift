@@ -15,16 +15,16 @@ struct ProductRowView: View {
     var body: some View {
         NavigationLink(destination: EditProductView(product: product)) {
             HStack {
-                Image(systemName: "cart")
+                Label("Need to buy", systemImage: "cart")
                     .foregroundColor(product.isFavorite ? Color.secondary : Color.clear)
                     .animation(.default, value: product.isFavorite)
                     .symbolEffect(.bounce.up, value: product.isFavorite)
+                    .labelStyle(.iconOnly)
+                    .padding(.trailing, 4)
 
-                
                 VStack(alignment: .leading) {
                     Text(product.name)
-                        .font(.headline)
-                                    
+
                     HStack(spacing: 0) {
                         if product.abv != "" {
                             Text(product.abv)

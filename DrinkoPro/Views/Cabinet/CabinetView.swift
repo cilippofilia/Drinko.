@@ -44,7 +44,7 @@ extension CabinetView {
                 showAddCategorySheet.toggle()
             }
         })
-        .frame(maxWidth: UIScreen.main.bounds.size.width * 0.83)
+        .frame(maxWidth: compactScreenWidth)
         .navigationTitle("Cabinet")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -64,14 +64,13 @@ extension CabinetView {
         List {
             ForEach(categories) { category in
                 Section(header: CategoryHeaderView(category: category)) {
-                    ForEach(category.products!, id:\.self) { product in
+                    ForEach(category.products!) { product in
                         ProductRowView(product: product)
                             .swipeActions(edge: .leading, allowsFullSwipe: true) {
                                 FavoriteProductButtonView(product: product)
                                     .tint(product.isFavorite ? .red : .blue)
                             }
                     }
-                    .onDelete(perform: deleteProduct)
 
                     Button(action: {
                         addProduct(to: category)
@@ -102,16 +101,9 @@ extension CabinetView {
 }
 
 // MARK: METHODS
-extension CabinetView {    
+extension CabinetView {
     func addProduct(to category: Category) {
         category.products?.append(Item(name: "Product Name"))
-    }
-    
-    func deleteProduct(at offsets: IndexSet) {
-        for category in categories {
-            guard category.products?.isEmpty != true else { return }
-            category.products!.remove(atOffsets: offsets)
-        }
     }
 }
 
