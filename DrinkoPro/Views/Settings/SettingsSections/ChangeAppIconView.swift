@@ -31,7 +31,7 @@ struct ChangeAppIconView: View {
                         
                         Spacer()
                         
-                        if UIApplication.shared.alternateIconName == appIcon.id {
+                        if UIApplication.shared.alternateIconName == appIcon.iconName {
                             Image(systemName: "checkmark")
                                 .font(.title3)
                                 .foregroundStyle(Color.secondary)
