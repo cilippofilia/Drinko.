@@ -75,11 +75,6 @@
 		18F5861D2B46334900BD460B /* procedure.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F5861F2B46334900BD460B /* procedure.json */; };
 		18F5864E2B46FFA800BD460B /* shots.json in Resources */ = {isa = PBXBuildFile; fileRef = 18F586502B46FFA800BD460B /* shots.json */; };
 		18F586552B470E7400BD460B /* ProcedureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F586542B470E7400BD460B /* ProcedureView.swift */; };
-		18F7AF3A2C29A4D300018CA3 /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 18F7AF392C29A4D300018CA3 /* RealityKitContent */; };
-		18F7AF3C2C29A4D300018CA3 /* DrinkoVisionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F7AF3B2C29A4D300018CA3 /* DrinkoVisionApp.swift */; };
-		18F7AF3E2C29A4D300018CA3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F7AF3D2C29A4D300018CA3 /* ContentView.swift */; };
-		18F7AF402C29A4D300018CA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F7AF3F2C29A4D300018CA3 /* Assets.xcassets */; };
-		18F7AF432C29A4D300018CA3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F7AF422C29A4D300018CA3 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -187,13 +182,7 @@
 		18F586522B46FFAC00BD460B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = de; path = de.lproj/shots.json; sourceTree = "<group>"; };
 		18F586532B46FFAD00BD460B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = it; path = it.lproj/shots.json; sourceTree = "<group>"; };
 		18F586542B470E7400BD460B /* ProcedureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureView.swift; sourceTree = "<group>"; };
-		18F7AF352C29A4D300018CA3 /* DrinkoVision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoVision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F7AF382C29A4D300018CA3 /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
-		18F7AF3B2C29A4D300018CA3 /* DrinkoVisionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoVisionApp.swift; sourceTree = "<group>"; };
-		18F7AF3D2C29A4D300018CA3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		18F7AF3F2C29A4D300018CA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		18F7AF422C29A4D300018CA3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		18F7AF442C29A4D300018CA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,14 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18F7AF322C29A4D300018CA3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18F7AF3A2C29A4D300018CA3 /* RealityKitContent in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +380,6 @@
 			isa = PBXGroup;
 			children = (
 				18F49E622A27B28D00862CE3 /* DrinkoPro */,
-				18F7AF362C29A4D300018CA3 /* DrinkoVision */,
 				18F7AF372C29A4D300018CA3 /* Packages */,
 				18F49E612A27B28D00862CE3 /* Products */,
 				183723C82A909AB700DBCD5D /* Frameworks */,
@@ -410,7 +390,6 @@
 			isa = PBXGroup;
 			children = (
 				18F49E602A27B28D00862CE3 /* DrinkoPro.app */,
-				18F7AF352C29A4D300018CA3 /* DrinkoVision.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -528,32 +507,12 @@
 			path = Cocktail;
 			sourceTree = "<group>";
 		};
-		18F7AF362C29A4D300018CA3 /* DrinkoVision */ = {
-			isa = PBXGroup;
-			children = (
-				18F7AF3B2C29A4D300018CA3 /* DrinkoVisionApp.swift */,
-				18F7AF3D2C29A4D300018CA3 /* ContentView.swift */,
-				18F7AF3F2C29A4D300018CA3 /* Assets.xcassets */,
-				18F7AF442C29A4D300018CA3 /* Info.plist */,
-				18F7AF412C29A4D300018CA3 /* Preview Content */,
-			);
-			path = DrinkoVision;
-			sourceTree = "<group>";
-		};
 		18F7AF372C29A4D300018CA3 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
 				18F7AF382C29A4D300018CA3 /* RealityKitContent */,
 			);
 			path = Packages;
-			sourceTree = "<group>";
-		};
-		18F7AF412C29A4D300018CA3 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				18F7AF422C29A4D300018CA3 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,26 +537,6 @@
 			productReference = 18F49E602A27B28D00862CE3 /* DrinkoPro.app */;
 			productType = "com.apple.product-type.application";
 		};
-		18F7AF342C29A4D300018CA3 /* DrinkoVision */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18F7AF472C29A4D300018CA3 /* Build configuration list for PBXNativeTarget "DrinkoVision" */;
-			buildPhases = (
-				18F7AF312C29A4D300018CA3 /* Sources */,
-				18F7AF322C29A4D300018CA3 /* Frameworks */,
-				18F7AF332C29A4D300018CA3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DrinkoVision;
-			packageProductDependencies = (
-				18F7AF392C29A4D300018CA3 /* RealityKitContent */,
-			);
-			productName = DrinkoVision;
-			productReference = 18F7AF352C29A4D300018CA3 /* DrinkoVision.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -610,9 +549,6 @@
 				TargetAttributes = {
 					18F49E5F2A27B28D00862CE3 = {
 						CreatedOnToolsVersion = 14.3;
-					};
-					18F7AF342C29A4D300018CA3 = {
-						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -635,7 +571,6 @@
 			projectRoot = "";
 			targets = (
 				18F49E5F2A27B28D00862CE3 /* DrinkoPro */,
-				18F7AF342C29A4D300018CA3 /* DrinkoVision */,
 			);
 		};
 /* End PBXProject section */
@@ -661,15 +596,6 @@
 				188CCA392C160C4E00E4FEBD /* advanced-lessons.json in Resources */,
 				18F5860E2B46322B00BD460B /* cocktails.json in Resources */,
 				18F5861D2B46334900BD460B /* procedure.json in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18F7AF332C29A4D300018CA3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18F7AF432C29A4D300018CA3 /* Preview Assets.xcassets in Resources */,
-				18F7AF402C29A4D300018CA3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -731,15 +657,6 @@
 				18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */,
 				182B40342AE90EB30007A03F /* ImageFailedToLoad.swift in Sources */,
 				180EC7212BD413BE0092AD02 /* LearnHeaderView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		18F7AF312C29A4D300018CA3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18F7AF3E2C29A4D300018CA3 /* ContentView.swift in Sources */,
-				18F7AF3C2C29A4D300018CA3 /* DrinkoVisionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -931,6 +848,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
 		};
@@ -989,6 +907,7 @@
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};
@@ -1070,69 +989,6 @@
 			};
 			name = Release;
 		};
-		18F7AF452C29A4D300018CA3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DrinkoVision/Preview Content\"";
-				DEVELOPMENT_TEAM = 3K3GFX53DY;
-				ENABLE_PREVIEWS = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoVision;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = xros;
-				SUPPORTED_PLATFORMS = "xros xrsimulator";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 1.0;
-			};
-			name = Debug;
-		};
-		18F7AF462C29A4D300018CA3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"DrinkoVision/Preview Content\"";
-				DEVELOPMENT_TEAM = 3K3GFX53DY;
-				ENABLE_PREVIEWS = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoVision;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = xros;
-				SUPPORTED_PLATFORMS = "xros xrsimulator";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 1.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1154,23 +1010,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18F7AF472C29A4D300018CA3 /* Build configuration list for PBXNativeTarget "DrinkoVision" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18F7AF452C29A4D300018CA3 /* Debug */,
-				18F7AF462C29A4D300018CA3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		18F7AF392C29A4D300018CA3 /* RealityKitContent */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = RealityKitContent;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18F49E582A27B28D00862CE3 /* Project object */;
 }
