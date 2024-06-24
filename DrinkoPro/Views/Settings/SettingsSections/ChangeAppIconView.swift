@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChangeAppIconView: View {
-    @ObservedObject var viewModel: ChangeAppIconViewModel
+    @StateObject var viewModel: ChangeAppIconViewModel
     @State private var isSelected: Bool = false
 
     var body: some View {
@@ -17,8 +17,8 @@ struct ChangeAppIconView: View {
                 Button(action: { 
                     withAnimation {
                         viewModel.updateAppIcon(to: appIcon)
+                        isSelected.toggle()
                     }
-                    isSelected.toggle()
                 }) {
                     HStack {
                         Image(uiImage: appIcon.preview)
@@ -31,10 +31,12 @@ struct ChangeAppIconView: View {
                         
                         Spacer()
                         
-                        Image(systemName: UIApplication.shared.alternateIconName == appIcon.id || UIApplication.shared.alternateIconName == nil ? "checkmark.circle" : "circle")
-                            .font(.title3)
-                            .foregroundStyle(UIApplication.shared.alternateIconName == appIcon.id ? Color.secondary : Color.clear)
-                            .symbolEffect(.bounce.up, value: isSelected)
+                        if UIApplication.shared.alternateIconName == appIcon.id {
+                            Image(systemName: "checkmark")
+                                .font(.title3)
+                                .foregroundStyle(Color.secondary)
+                                .symbolEffect(.bounce.up, value: isSelected)
+                        }
                     }
                 }
                 .buttonStyle(PlainButtonStyle())

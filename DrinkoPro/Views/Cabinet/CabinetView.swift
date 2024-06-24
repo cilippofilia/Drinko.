@@ -71,7 +71,7 @@ extension CabinetView {
                                     .tint(product.isFavorite ? .red : .blue)
                             }
                     }
-                    .onDelete(perform: deleteProducts)
+                    .onDelete(perform: deleteProduct)
 
                     Button(action: {
                         addProduct(to: category)
@@ -107,7 +107,7 @@ extension CabinetView {
         category.products?.append(Item(name: "Product Name"))
     }
     
-    func deleteProducts(at offsets: IndexSet) {
+    func deleteProduct(at offsets: IndexSet) {
         for category in categories {
             guard category.products?.isEmpty != true else { return }
             category.products!.remove(atOffsets: offsets)

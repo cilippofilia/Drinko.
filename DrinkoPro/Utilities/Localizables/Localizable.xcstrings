@@ -407,6 +407,7 @@
       }
     },
     "A -> Z" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -433,6 +434,9 @@
           }
         }
       }
+    },
+    "A > Z" : {
+
     },
     "ABV" : {
       "localizations" : {
@@ -4426,6 +4430,7 @@
       }
     },
     "Z -> A" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4452,6 +4457,9 @@
           }
         }
       }
+    },
+    "Z > A" : {
+
     }
   },
   "version" : "1.0"

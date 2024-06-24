@@ -37,7 +37,7 @@ struct CocktailsView: View {
             .searchable(text: $viewModel.searchText, prompt: "Search Cocktails")
             .popoverTip(favoriteCocktailsTip)
             .toolbar {
-                sortButtonToolbarItem
+                sortButtonMenu
             }
             .task {
                 try? Tips.configure([
@@ -51,33 +51,33 @@ struct CocktailsView: View {
 }
 
 private extension CocktailsView {
-    var sortButtonToolbarItem: some ToolbarContent {
-        ToolbarItem(placement: .navigationBarTrailing) {
-            Button {
-                showingSortOrder.toggle()
-            } label: {
-                if UIAccessibility.isVoiceOverRunning {
-                    Text("Sort cocktails")
-                } else {
-                    Label("Sort", systemImage: "arrow.up.arrow.down")
-                }
+    var sortButtonMenu: some View {
+        Menu {
+            Button(action: {
+                viewModel.sortOption = .fromAtoZ
+            }) {
+                Label("A > Z", systemImage: viewModel.sortOption == .fromAtoZ ? "checkmark" : "")
             }
-            .confirmationDialog(
-                "Sort cocktails",
-                isPresented: $showingSortOrder
-            ) {
-                Button("A -> Z") {
-                    viewModel.sortOption = .fromAtoZ
-                }
-                Button("Z -> A") {
-                    viewModel.sortOption = .fromZtoA
-                }
-                Button("By Glass") {
-                    viewModel.sortOption = .byGlass
-                }
-                Button("By Ice") {
-                    viewModel.sortOption = .byIce
-                }
+            Button(action: {
+                viewModel.sortOption = .fromZtoA
+            }) {
+                Label("Z > A", systemImage: viewModel.sortOption == .fromZtoA ? "checkmark" : "")
+            }
+            Button(action: {
+                viewModel.sortOption = .byGlass
+            }) {
+                Label("By Glass", systemImage: viewModel.sortOption == .byGlass ? "checkmark" : "")
+            }
+            Button(action: {
+                viewModel.sortOption = .byIce
+            }) {
+                Label("By Ice", systemImage: viewModel.sortOption == .byIce ? "checkmark" : "")
+            }
+        } label: {
+            if UIAccessibility.isVoiceOverRunning {
+                Text("Sort cocktails")
+            } else {
+                Label("Sort", systemImage: "arrow.up.arrow.down")
             }
         }
     }

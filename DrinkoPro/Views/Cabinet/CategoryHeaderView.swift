@@ -17,7 +17,8 @@ struct CategoryHeaderView: View {
 
             Text(category.detail)
                 .foregroundStyle(.secondary)
-            
+                .lineLimit(2)
+
             Spacer()
             
             NavigationLink(value: category) {
