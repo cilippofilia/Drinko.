@@ -11,7 +11,7 @@ struct LearnView: View {
     static let learnTag: String? = "Learn"
     @State private var viewModel = LessonsViewModel()
 
-    @State private var collapsedStates: [String: Bool] = UserDefaults.standard.dictionary(forKey: "collapsedStates") as? [String: Bool] ?? [
+    @State private var collapsedStates: [String: Bool] = UserDefaults.standard.dictionary(forKey: "mobileCollapsedStates") as? [String: Bool] ?? [
         "basic-lessons": false,
         "bar-preps": false,
         "basic-spirits": false,

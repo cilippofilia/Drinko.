@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SettingsPreferenceView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
-    @ObservedObject var viewModel = ChangeAppIconViewModel()
 
     var body: some View {
         Section(header: Text("Preferences")) {

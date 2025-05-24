@@ -11,7 +11,7 @@ import SwiftUI
 struct DrinkoProMacApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LearnMacView()
         }
     }
 }
