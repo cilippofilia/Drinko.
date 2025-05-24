@@ -25,16 +25,6 @@ struct SettingsPreferenceView: View {
             .onTapGesture {
                 UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
             }
-            
-            NavigationLink(destination: ChangeAppIconView(viewModel: viewModel)) {
-                HStack {
-                    SettingsRowView(
-                        icon: "questionmark.app",
-                        color: .secondary,
-                        itemName: "Icons"
-                    )
-                }
-            }
         }
     }
 }
