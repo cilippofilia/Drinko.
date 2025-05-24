@@ -2719,6 +2719,9 @@
         }
       }
     },
+    "More content coming soon." : {
+
+    },
     "Name:" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3315,6 +3318,9 @@
           }
         }
       }
+    },
+    "Resources" : {
+
     },
     "Save" : {
 

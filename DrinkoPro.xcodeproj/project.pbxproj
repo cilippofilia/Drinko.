@@ -120,7 +120,9 @@
 				"Helpers/Bundle-Decodable.swift",
 				Helpers/Favorites.swift,
 				Helpers/GlobalConstant.swift,
-				Helpers/ImageFailedToLoad.swift,
+				"Helpers/Image Helpers/AsyncImageView.swift",
+				"Helpers/Image Helpers/ImageFailedToLoad.swift",
+				"Helpers/Image Helpers/ImageSuccesful.swift",
 				"Helpers/String-Ext.swift",
 				Helpers/SwipeToActionTips.swift,
 				Models/Cocktail.swift,
@@ -549,6 +551,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DrinkoProMac/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -580,6 +583,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DrinkoProMac/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

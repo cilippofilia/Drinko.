@@ -31,30 +31,22 @@ struct LessonDetailView: View {
         VStack {
             if lesson.hasVideo ?? false {
                 VideoView(videoID: lesson.videoID!)
-                    .frame(width: compactScreenWidth,
-                           height: imageFrameHeight)
+                    .frame(
+                        width: compactScreenWidth,
+                        height: imageFrameHeight
+                    )
                     .clipShape(
-                        RoundedRectangle(cornerRadius: imageCornerRadius,
-                                         style: .continuous))
+                        RoundedRectangle(
+                            cornerRadius: imageCornerRadius,
+                            style: .continuous
+                        )
+                    )
             } else {
-                AsyncImage(url: URL(string: lesson.image)) { state in
-                    switch state {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    case .failure:
-                        imageFailedToLoad
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-                .frame(height: imageFrameHeight)
-                .clipped()
+                AsyncImageView(
+                    image: lesson.image,
+                    frameHeight: imageFrameHeight
+                )
             }
-
             VStack(spacing: 10) {
                 Text(lesson.title)
                     .font(.title.bold())
@@ -86,28 +78,21 @@ struct LessonDetailView: View {
         VStack(spacing: 20) {
             if lesson.hasVideo ?? false {
                 VideoView(videoID: lesson.videoID!)
-                    .frame(width: compactScreenWidth,
-                           height: imageFrameHeight)
+                    .frame(
+                        width: compactScreenWidth,
+                        height: imageFrameHeight
+                    )
                     .clipShape(
-                        RoundedRectangle(cornerRadius: imageCornerRadius,
-                                         style: .continuous))
+                        RoundedRectangle(
+                            cornerRadius: imageCornerRadius,
+                            style: .continuous
+                        )
+                    )
             } else {
-                AsyncImage(url: URL(string: lesson.image)) { state in
-                    switch state {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFill()
-                    case .failure:
-                        imageFailedToLoad
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-                .frame(height: imageFrameHeight)
-                .clipped()
+                AsyncImageView(
+                    image: lesson.image,
+                    frameHeight: imageFrameHeight
+                )
             }
 
             VStack(spacing: 20) {
