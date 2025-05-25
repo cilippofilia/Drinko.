@@ -44,7 +44,11 @@ struct LearnView: View {
             if let lesson = selectedLesson {
                 LessonDetailView(lesson: lesson)
             } else {
-                UnselectedView()
+                UnselectedView(
+                    image: "book.fill",
+                    title: "Welcome to Drinko Learn",
+                    subtitle: "Select a lesson from the sidebar to get started."
+                )
             }
         }
         .navigationDestination(for: Lesson.self) { lesson in
