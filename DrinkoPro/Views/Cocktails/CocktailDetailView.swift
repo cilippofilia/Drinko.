@@ -29,20 +29,28 @@ struct CocktailDetailView: View {
                 compactDetailView
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
-                            historyButton
+                            HistoryButtonView(
+                                history: viewModel.getCocktailHistory(for: cocktail),
+                                showHistory: $showHistory,
+                                cocktail: cocktail
+                            )
                         }
                         ToolbarItem(placement: .topBarTrailing) {
-                            likeButton
+                            LikeButtonView(favorites: favorites, cocktail: cocktail)
                         }
                     }
             } else {
                 regularDetailView
                     .toolbar {
                         ToolbarItem(placement: .topBarTrailing) {
-                            historyButton
+                            HistoryButtonView(
+                                history: viewModel.getCocktailHistory(for: cocktail),
+                                showHistory: $showHistory,
+                                cocktail: cocktail
+                            )
                         }
                         ToolbarItem(placement: .topBarTrailing) {
-                            likeButton
+                            LikeButtonView(favorites: favorites, cocktail: cocktail)
                         }
                     }
             }
@@ -237,44 +245,6 @@ struct CocktailDetailView: View {
             }
         }
         .frame(width: regularScreenWidth)
-    }
-}
-
-extension CocktailDetailView {    
-    var likeButton: some View {
-        Button(action: {
-            if favorites.contains(cocktail) {
-                favorites.remove(cocktail)
-            } else {
-                favorites.add(cocktail)
-                // haptic feedback
-                UINotificationFeedbackGenerator()
-                    .notificationOccurred(.success)
-            }
-        }) {
-            Label("Like", systemImage: favorites.contains(cocktail) ? "heart.fill" : "heart")
-                .foregroundStyle(.red)
-                .animation(.default, value: favorites.hasEffect)
-                .symbolEffect(.bounce.up, value: favorites.hasEffect)
-        }
-        .buttonStyle(.plain)
-    }
-
-    var historyButton: some View {
-        Group {
-            if let history = viewModel.getCocktailHistory(for: cocktail),
-               history.text != "" {
-                Button(action: {
-                    showHistory.toggle()
-                }) {
-                    Label("History", systemImage: "book")
-                }
-                .sheet(isPresented: $showHistory) {
-                    HistoryView(cocktail: cocktail, history: history)
-                        .presentationDetents([.medium, .large])
-                }
-            }
-        }
     }
 }
 

@@ -123,6 +123,8 @@
 				"Samples/Samples+Ext.swift",
 				Utilities/Cocktail/cocktails.json,
 				Utilities/Localizable.xcstrings,
+				Views/Buttons/HistoryButtonView.swift,
+				Views/Buttons/LikeButtonView.swift,
 				Views/Cocktail/CocktailDetailSectionView.swift,
 				Views/Cocktail/HistoryView.swift,
 				Views/Cocktail/IngredientsView.swift,

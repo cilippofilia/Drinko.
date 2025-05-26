@@ -12,13 +12,14 @@ struct LessonDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .center, spacing: 16) {
                 AsyncImageView(
                     image: lesson.image,
                     frameHeight: imageFrameHeight,
                     aspectRatio: .fit
                 )
-                
+                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+
                 Text(lesson.title)
                     .font(.largeTitle)
                     .bold()

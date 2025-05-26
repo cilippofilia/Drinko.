@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct DetailCocktailsView: View {
-    @State private var windowSize: CGSize = .zero
-
     @State var selectedUnit = "ml"
     var units = ["ml", "oz."]
 
@@ -21,7 +19,7 @@ struct DetailCocktailsView: View {
     var body: some View {
         GeometryReader { geo in
             ScrollView {
-                VStack(alignment: .leading) {
+                VStack(alignment: .center) {
                     AsyncImageView(
                         image: cocktail.pic,
                         frameHeight: imageFrameHeight,
