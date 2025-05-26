@@ -21,7 +21,6 @@
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
 		18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18481D262C20E8120083FD5A /* AddCategoryView.swift */; };
-		185620AC2C260102001F07CB /* ChangeAppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185620AB2C260102001F07CB /* ChangeAppIconView.swift */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
@@ -45,10 +44,7 @@
 		18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */; };
 		18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */; };
 		18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
-		18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */; };
-		18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBA2A286D2E00862CE3 /* HistoryView.swift */; };
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
-		18F586552B470E7400BD460B /* ProcedureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F586542B470E7400BD460B /* ProcedureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +64,6 @@
 		183CED542DE1BAB7005B9699 /* DrinkoProMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoProMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183E47E32B17548F0095A6E4 /* ABVCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVCalculator.swift; sourceTree = "<group>"; };
 		18481D262C20E8120083FD5A /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
-		185620AB2C260102001F07CB /* ChangeAppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppIconView.swift; sourceTree = "<group>"; };
 		185672E42A2C71820001813D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperjuiceRowView.swift; sourceTree = "<group>"; };
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
@@ -94,10 +89,7 @@
 		18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
 		18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailRowView.swift; sourceTree = "<group>"; };
 		18F49EB72A286D2E00862CE3 /* CocktailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailsView.swift; sourceTree = "<group>"; };
-		18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailSectionView.swift; sourceTree = "<group>"; };
-		18F49EBA2A286D2E00862CE3 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
-		18F586542B470E7400BD460B /* ProcedureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -131,6 +123,11 @@
 				"Samples/Samples+Ext.swift",
 				Utilities/Cocktail/cocktails.json,
 				Utilities/Localizable.xcstrings,
+				Views/Cocktail/CocktailDetailSectionView.swift,
+				Views/Cocktail/HistoryView.swift,
+				Views/Cocktail/IngredientsView.swift,
+				Views/Cocktail/LinkedCocktailsView.swift,
+				Views/Cocktail/ProcedureView.swift,
 			);
 			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
 		};
@@ -191,16 +188,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		188463372B47354400088CA1 /* Cocktail */ = {
-			isa = PBXGroup;
-			children = (
-				18F49EB82A286D2E00862CE3 /* CocktailDetailSectionView.swift */,
-				18F49EBA2A286D2E00862CE3 /* HistoryView.swift */,
-				18F586542B470E7400BD460B /* ProcedureView.swift */,
-			);
-			path = Cocktail;
-			sourceTree = "<group>";
-		};
 		18883A832ACC70C400FC78C7 /* Lessons */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +222,6 @@
 				18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */,
 				18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */,
 				18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */,
-				185620AB2C260102001F07CB /* ChangeAppIconView.swift */,
 			);
 			path = SettingsSections;
 			sourceTree = "<group>";
@@ -272,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				18B3077A2B77843200CB94AB /* Buttons */,
-				188463372B47354400088CA1 /* Cocktail */,
 				182E43362A2B1221001675FD /* CreditsCardView.swift */,
 				1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */,
 				188BCF402A3875D500FBEF20 /* VideoView.swift */,
@@ -495,7 +480,6 @@
 				18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */,
 				188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */,
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
-				18F49ECA2A286D2E00862CE3 /* CocktailDetailSectionView.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
 				18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */,
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
@@ -504,12 +488,10 @@
 				180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */,
 				18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */,
 				18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */,
-				18F586552B470E7400BD460B /* ProcedureView.swift in Sources */,
 				18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */,
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */,
-				18F49ECC2A286D2E00862CE3 /* HistoryView.swift in Sources */,
 				18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */,
 				1827138E2B658293000D3343 /* ProductRowView.swift in Sources */,
 				182713802B655D78000D3343 /* Category.swift in Sources */,
@@ -528,7 +510,6 @@
 				18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */,
 				1827137F2B655D78000D3343 /* Item.swift in Sources */,
 				18F49EC42A286D2E00862CE3 /* LessonRowView.swift in Sources */,
-				185620AC2C260102001F07CB /* ChangeAppIconView.swift in Sources */,
 				18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */,
 				180EC7212BD413BE0092AD02 /* LearnHeaderView.swift in Sources */,
 			);

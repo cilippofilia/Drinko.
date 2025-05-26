@@ -13,11 +13,12 @@ struct LessonDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                #warning("This is not working and I dont know why")
-//                AsyncImageView(
-//                    image: lesson.image,
-//                    frameHeight: imageFrameHeight
-//                )
+                AsyncImageView(
+                    image: lesson.image,
+                    frameHeight: imageFrameHeight,
+                    aspectRatio: .fit
+                )
+                
                 Text(lesson.title)
                     .font(.largeTitle)
                     .bold()

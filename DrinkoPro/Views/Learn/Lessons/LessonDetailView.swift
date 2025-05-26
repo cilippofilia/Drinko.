@@ -44,7 +44,8 @@ struct LessonDetailView: View {
             } else {
                 AsyncImageView(
                     image: lesson.image,
-                    frameHeight: imageFrameHeight
+                    frameHeight: imageFrameHeight,
+                    aspectRatio: .fill
                 )
             }
             VStack(spacing: 10) {
@@ -91,7 +92,8 @@ struct LessonDetailView: View {
             } else {
                 AsyncImageView(
                     image: lesson.image,
-                    frameHeight: imageFrameHeight
+                    frameHeight: imageFrameHeight,
+                    aspectRatio: .fill
                 )
             }
 

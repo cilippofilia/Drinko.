@@ -12,6 +12,7 @@ struct DrinkoProMacApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
+                .frame(minWidth: windowMinWidth, minHeight: windowMinHeight)
         }
     }
 }

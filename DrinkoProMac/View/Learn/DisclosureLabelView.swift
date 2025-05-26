@@ -13,6 +13,7 @@ struct DisclosureLabelView: View {
     var body: some View {
         Text(topic.replacingOccurrences(of: "-", with: " ").capitalized)
             .padding(.horizontal, 6)
+            .foregroundStyle(Color.secondary)
     }
 }
 

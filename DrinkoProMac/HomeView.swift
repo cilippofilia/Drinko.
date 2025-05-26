@@ -20,7 +20,7 @@ struct HomeView: View {
                     Label("Cocktails", systemImage: "wineglass")
                 }
         }
-        .frame(minWidth: 750, minHeight: 400)
+        .tabViewStyle(.sidebarAdaptable)
     }
 }
 

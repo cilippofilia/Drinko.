@@ -23,7 +23,7 @@ struct BookRowView: View {
                         .resizable()
                         .scaledToFill()
                 case .failure:
-                    imageFailedToLoad
+                    ImageFailedToLoad()
                 @unknown default:
                     EmptyView()
                 }

@@ -17,7 +17,7 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
     let extra: String
     
     let ingredients: [Ingredient]
-    
+
     var pic: String {
         if id == "augie-march" {
             "https://raw.githubusercontent.com/cilippofilia/drinko-cocktail-pics/main/manhattan-img.jpg"
@@ -103,6 +103,18 @@ class CocktailsViewModel {
         case .byIce:
             return listOfAllDrinks.sorted { $0.ice < $1.ice }
         }
+    }
+
+    func getCocktailHistory(for cocktail: Cocktail) -> History? {
+        return histories.first(where: { $0.id == cocktail.id })
+    }
+
+    func getCocktailProcedure(for cocktail: Cocktail) -> Procedure? {
+        return procedures.first(where: { $0.id == cocktail.id })
+    }
+
+    func getLinkedCocktails(for cocktail: Cocktail) -> [Cocktail] {
+        getsSuggestedCocktails(with: "\(cocktail.ingredients[0].name)", from: cocktail)
     }
 
     var filteredCocktails: [Cocktail] {

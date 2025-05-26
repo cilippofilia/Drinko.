@@ -22,15 +22,6 @@ struct CocktailDetailView: View {
     @State private var selectedUnit = "ml"
 
     let cocktail: Cocktail
-    var cocktailHistory: History? {
-        return viewModel.histories.first(where: { $0.id == cocktail.id })
-    }
-    var cocktailProcedure: Procedure? {
-        return viewModel.procedures.first(where: { $0.id == cocktail.id })
-    }
-    var linkedCocktails: [Cocktail] {
-        viewModel.getsSuggestedCocktails(with: "\(cocktail.ingredients[0].name)", from: cocktail)
-    }
 
     var body: some View {
         ScrollView {
@@ -64,21 +55,12 @@ struct CocktailDetailView: View {
 
     var compactDetailView: some View {
         VStack {
-            AsyncImage(url: URL(string: cocktail.pic)) { state in
-                switch state {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFit()
-                case .failure:
-                    imageFailedToLoad
-                @unknown default:
-                    EmptyView()
-                }
-            }
-            .frame(width: compactScreenWidth, height: imageFrameHeight)
+            AsyncImageView(
+                image: cocktail.pic,
+                frameHeight: imageFrameHeight,
+                aspectRatio: .fit
+            )
+            .frame(width: compactScreenWidth)
             .background(Color.white)
             .cornerRadius(imageCornerRadius)
 
@@ -99,42 +81,63 @@ struct CocktailDetailView: View {
                 Divider()
                 
                 VStack(alignment: .leading, spacing: 10) {
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Ingredients")
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Ingredients"
+                    )
                     
-                    ingredientsView
+                    IngredientsView(
+                        ingredients: cocktail.ingredients,
+                        selectedUnit: selectedUnit
+                    )
+
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Method"
+                    )
                     
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Method")
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Glass"
+                    )
                     
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Glass")
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Garnish"
+                    )
                     
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Garnish")
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Ice"
+                    )
                     
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Ice")
-                    
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Extra")
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Extra"
+                    )
                 }
                 .padding(.vertical)
                 
                 Divider()
 
                 VStack(alignment: .leading, spacing: 0) {
-                    ProcedureView(
-                        cocktail: cocktail,
-                        procedure: cocktailProcedure!
-                    )
+                    if let procedure = viewModel.getCocktailProcedure(for: cocktail) {
+                        ProcedureView(
+                            cocktail: cocktail,
+                            procedure: procedure
+                        )
+                    }
 
-                    if !linkedCocktails.isEmpty {
+                    if !viewModel.getLinkedCocktails(for: cocktail).isEmpty {
                         Text("You may also like")
                             .font(sizeClass == .compact ? .title3.bold() : .title.bold())
                             .padding(.vertical)
 
-                        linkedCocktailRow
+                        LinkedCocktailsView(
+                            cocktails: viewModel.getLinkedCocktails(for: cocktail),
+                            procedure: viewModel.getCocktailProcedure(for: cocktail),
+                            favorites: favorites
+                        )
                     }
                 }
                 .padding(.vertical)
@@ -146,21 +149,12 @@ struct CocktailDetailView: View {
 
     var regularDetailView: some View {
         VStack {
-            AsyncImage(url: URL(string: cocktail.pic)) { state in
-                switch state {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFit()
-                case .failure:
-                    imageFailedToLoad
-                @unknown default:
-                    EmptyView()
-                }
-            }
-            .frame(width: regularScreenWidth, height: imageFrameHeight)
+            AsyncImageView(
+                image: cocktail.pic,
+                frameHeight: imageFrameHeight,
+                aspectRatio: .fit
+            )
+            .frame(width: regularScreenWidth)
             .background(Color.white)
             .cornerRadius(imageCornerRadius)
 
@@ -181,42 +175,62 @@ struct CocktailDetailView: View {
                 Divider()
 
                 VStack(alignment: .leading, spacing: 10) {
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Ingredients")
-
-                    ingredientsView
-
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Method")
-
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Glass")
-
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Garnish")
-
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Ice")
-
-                    CocktailDetailSectionView(cocktail: cocktail,
-                                              text: "Extra")
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Ingredients"
+                    )
+                    
+                    IngredientsView(
+                        ingredients: cocktail.ingredients,
+                        selectedUnit: selectedUnit
+                    )
+                    
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Method"
+                    )
+                    
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Glass"
+                    )
+                    
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Garnish"
+                    )
+                    
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Ice"
+                    )
+                    
+                    CocktailDetailSectionView(
+                        cocktail: cocktail,
+                        text: "Extra"
+                    )
                 }
                 .padding(.vertical)
 
                 Divider()
 
                 VStack(alignment: .leading, spacing: 0) {
-                    ProcedureView(
-                        cocktail: cocktail,
-                        procedure: cocktailProcedure!
-                    )
-
-                    if !linkedCocktails.isEmpty {
+                    if let procedure = viewModel.getCocktailProcedure(for: cocktail) {
+                        ProcedureView(
+                            cocktail: cocktail,
+                            procedure: procedure
+                        )
+                    }
+                    if !viewModel.getLinkedCocktails(for: cocktail).isEmpty {
                         Text("You may also like")
                             .font(sizeClass == .compact ? .title3.bold() : .title.bold())
                             .padding(.vertical)
 
-                        linkedCocktailRow
+                        LinkedCocktailsView(
+                            cocktails: viewModel.getLinkedCocktails(for: cocktail),
+                            procedure: viewModel.getCocktailProcedure(for: cocktail),
+                            favorites: favorites
+                        )
                     }
                 }
                 .padding(.vertical)
@@ -226,25 +240,7 @@ struct CocktailDetailView: View {
     }
 }
 
-extension CocktailDetailView {
-    var ingredientsView: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            ForEach(cocktail.ingredients) { ingredient in
-                HStack {
-                    Text(selectedUnit == "oz." ? "\(ingredient.quantity, specifier: "%2g")" : "\(ingredient.mlQuantity, specifier: "%2g")")
-
-                    Text(selectedUnit == "oz." ? ingredient.unit : ingredient.mlUnit)
-
-                    Text(ingredient.name.capitalized)
-                    
-                    Spacer()
-                }
-            }
-            .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .padding(.bottom)
-    }
-    
+extension CocktailDetailView {    
     var likeButton: some View {
         Button(action: {
             if favorites.contains(cocktail) {
@@ -266,34 +262,17 @@ extension CocktailDetailView {
 
     var historyButton: some View {
         Group {
-            if (cocktailHistory?.text ?? "") != "" {
+            if let history = viewModel.getCocktailHistory(for: cocktail),
+               history.text != "" {
                 Button(action: {
                     showHistory.toggle()
                 }) {
                     Label("History", systemImage: "book")
                 }
                 .sheet(isPresented: $showHistory) {
-                    HistoryView(cocktail: cocktail, history: cocktailHistory!)
+                    HistoryView(cocktail: cocktail, history: history)
                         .presentationDetents([.medium, .large])
                 }
-            }
-        }
-    }
-
-    var linkedCocktailRow: some View {
-        Group {
-            ForEach(linkedCocktails) { link in
-                NavigationLink(value: link) {
-                    HStack {
-                        CocktailRowView(favorites: favorites, cocktail: link)
-
-                        Image(systemName: "chevron.right")
-                            .bold()
-                            .imageScale(.small)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-                .buttonStyle(.plain)
             }
         }
     }

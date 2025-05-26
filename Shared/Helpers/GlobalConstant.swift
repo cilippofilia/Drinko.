@@ -13,6 +13,9 @@ let compactScreenWidth = deviceWidth * 0.9 /// iPhone padded view
 let regularScreenWidth = deviceWidth * 0.7 /// iPad padded view
 #endif
 
+let windowMinWidth: CGFloat = 750
+let windowMinHeight: CGFloat = 350
+
 let rowHeight: CGFloat = 45
 let imageCornerRadius: CGFloat = 10
 let imageFrameHeight: CGFloat = 280

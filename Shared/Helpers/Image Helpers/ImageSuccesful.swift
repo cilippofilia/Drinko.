@@ -9,16 +9,17 @@ import SwiftUI
 
 struct ImageSuccesful: View {
     let image: Image
+    let aspectRatio: ContentMode
 
     var body: some View {
         image
             .resizable()
-            .scaledToFill()
+            .aspectRatio(contentMode: aspectRatio)
     }
 }
 
 #if DEBUG
 #Preview {
-    ImageSuccesful(image: Image("lemon"))
+    ImageSuccesful(image: Image("lemon"), aspectRatio: .fit)
 }
 #endif
