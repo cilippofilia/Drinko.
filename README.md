@@ -91,24 +91,6 @@ Keep track of your ingredients like a professional:
 
 ---
 
-## 📱 Screenshots
-
-<div align="center">
-  
-  ### iPhone Screenshots
-  <img src="https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/shake.jpg" alt="Cocktails View" width="200"/>
-  <img src="https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/abv.jpg" alt="Learn View" width="200"/>
-  <img src="https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/gin.jpg" alt="Cabinet View" width="200"/>
-  
-  ### iPad Screenshots
-  <img src="https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/cocktail_olives.jpg" alt="iPad Cocktails" width="300"/>
-  <img src="https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/stir.jpg" alt="iPad Learn" width="300"/>
-  <img src="https://raw.githubusercontent.com/cilippofilia/drinko-learn-pics/main/whiskey.jpg" alt="iPad Cabinet" width="300"/>
-  
-</div>
-
----
-
 ## 🏗️ Architecture
 
 ### Project Structure
