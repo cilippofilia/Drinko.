@@ -1,5 +1,3 @@
-![Logo](./DrinkoPro/Assets.xcassets/thumbnail-red.png)
-
 # Professional cocktails at home
 
 Whether you're a newbie cocktail enthusiast, aspiring bartender or simply looking to up your mixology game, this app is your ultimate guide to the world of bartending. From the basics to advanced techniques, you'll learn insider tips and tricks to craft delicious, Instagram-worthy cocktails. Drinko is your one-stop-shop for everything you need to know about the most famous cocktails, their history, and how to make them like a pro. Let's shake things up and get started on your cocktail-making journey!
