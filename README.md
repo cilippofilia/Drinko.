@@ -1,18 +1,4 @@
-<div align="center">
-  <img src="./DrinkoPro/Assets.xcassets/thumbnail-red.png" alt="Drinko Logo" width="200"/>
-  
-  # 🍹 Drinko
-  
-  **Professional cocktails at home**
-  
-  [![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)](https://swift.org)
-  [![SwiftUI](https://img.shields.io/badge/SwiftUI-5.0+-blue.svg)](https://developer.apple.com/xcode/swiftui/)
-  [![iOS](https://img.shields.io/badge/iOS-17.0+-lightgrey.svg)](https://www.apple.com/ios/)
-  [![Platform](https://img.shields.io/badge/Platform-iOS%20%7C%20macOS-lightgrey.svg)](https://www.apple.com/)
-  
-</div>
-
----
+# Professional cocktails at home
 
 ## 📖 About
 
