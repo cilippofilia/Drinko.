@@ -1,0 +1,4704 @@
+[
+    {
+        "id":"corpse-reviver-2",
+        "name":"Corpse Reviver No.2",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"absinthe-rinsed coupe",
+        
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"cointreau",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"london-maid",
+        "name":"London Maid",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"cucumber mint",
+        "ice":"cubed",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"mint",
+                "quantity":6.0,
+                "unit":"leaves"
+            },
+            {
+                "name":"cucumber",
+                "quantity":2.0,
+                "unit":"slices"
+            }
+        ]
+    },
+    {
+        "id":"white-lady",
+        "name":"White Lady",
+        "method":"dry shake, shake & fine strain",
+        "glass":"coupe",
+        "garnish":"lemon twist expressed and discarded",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"cointreau",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"egg white",
+                "quantity":1.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"hanky-panky",
+        "name":"Hanky Panky",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"orange twist",
+        "ice":"-",
+        "extra":"-",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ],
+        
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"fernet",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"rolls-royce",
+        "name":"Rolls Royce",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"tuxedo-2",
+        "name":"Tuxedo No.2",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"absinth-rinsed coupe",
+        
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"apple-martini",
+        "name":"Apple Martini",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"apple slices",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"freshly pressed apple juice",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cinnamon",
+                "quantity":0.15,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"cosmopolitan",
+        "name":"Cosmopolitan",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"flamed orange twist",
+        "ice":"-",
+        "extra":"To maximise the WOW factor, lightly warm up the skin on the orange and firmly squeeze the sides over the flame, aimng towards the top of the cocktail.\nThis will make the oils bursts and burn",
+
+        "ingredients":[
+            {
+                "name":"citron vodka",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cointreau",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"cranberry juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"espresso-martini",
+        "name":"Espresso Martini",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"3 coffee beans",
+        "ice":"-",
+        "extra":"Use cold espresso made up to 72 hours prior. This will guarantee you to have more control over the dilution of the cocktail. Freshly made espresso can lead to an over diluted cocktail because of the temperature of the espresso itself",
+
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"espresso",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"kahlua",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"poets-dream",
+        "name":"Poet's Dream",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"freshly pressed apple juice",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"vesper-martini",
+        "name":"Vesper Martini",
+        "method":"stir & strain",
+        "glass":"nick-nora",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"vodka-martini",
+        "name":"Vodka Martini",
+        "method":"stir & strain",
+        "glass":"nick-nora",
+        "garnish":"lemon twist or olive (1 or 3, never 2)",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"gin-martini",
+        "name":"Gin Martini",
+        "method":"stir & strain",
+        "glass":"nick-nora",
+        "garnish":"lemon twist or olive (1 or 3, never 2)",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"gibson",
+        "name":"Gibson",
+        "method":"stir & strain",
+        "glass":"nick-nora",
+        "garnish":"pickled onion (1 or 3, never 2)",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"onion brine",
+                "quantity":0.15,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"el-diablo",
+        "name":"El Diablo",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lime wedge",
+        "ice":"cubed",
+        "extra":"top with ginger beer",
+        
+        "ingredients":[
+            {
+                "name":"blanco tequila",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"ginger syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"creme de cassis",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"infante",
+        "name":"Infante",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"mint",
+        "ice":"crushed ice/pebble ice",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"blanco tequila",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"orgeat (almond syrup)",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"orange blossom water",
+                "quantity":3.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"tommys-margarita",
+        "name":"Tommy's Margarita",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"blanco tequila",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"agave syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"augie-march",
+        "name":"Augie March",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"cherry on a pick",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"reposado tequila",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"cynar",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"oaxacan-old-fashioned",
+        "name":"Oaxacan Old Fashioned",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"flamed orange twist",
+        "ice":"cubed",
+        "extra":"To maximise the WOW factor, lightly warm up the skin on the orange and firmly squeeze the sides over the flame, aimng towards the top of the cocktail.\nThis will make the oils bursts and burn",
+
+        "ingredients":[
+            {
+                "name":"reposado tequila",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"mezcal",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"agave syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"rosita",
+        "name":"Rosita",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"orange twist",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"reposado tequila",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"campari",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"gold-rush",
+        "name":"Gold Rush",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"cubed",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"bourbon whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"kentucky-buck",
+        "name":"Kentucky Buck",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lemon wheel",
+        "ice":"cubed",
+        "extra":"top with ginger beer",
+
+        "ingredients":[
+            {
+                "name":"bourbon whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"strawberry",
+                "quantity":1.0,
+                "unit":"muddled"
+            }
+        ]
+    },
+    {
+        "id":"paper-plane",
+        "name":"Paper Plane",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"bourbon whiskey",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"aperol",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"amaro nonino",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"fancy-free",
+        "name":"Fancy Free",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"orange twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"bourbon whiskey",
+                "quantity":2.25,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"grandfather",
+        "name":"Grandfather",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"bourbon whiskey",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"apple brandy",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"peychaud's bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"preakness-cocktail",
+        "name":"Preakness Cocktail",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"orange twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"overproof bourbon whiskey",
+                "quantity":1.75,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"aromatic bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"new-york-sour",
+        "name":"New York Sour",
+        "method":"dry shake, shake & fine strain",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"cubed",
+        "extra":"float of red wine",
+
+        "ingredients":[
+            {
+                "name":"rye whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"egg white",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"pinot noir or similar",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"ward-eight",
+        "name":"Ward Eight",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"rye whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"grenadine",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"whiskey-smash",
+        "name":"Whiskey Smash",
+        "method":"lightly muddle, shake & fine strain",
+        "glass":"rock",
+        "garnish":"mint",
+        "ice":"cubed",
+        "extra":"-",
+        
+        "ingredients":[
+            {
+                "name":"rye whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon",
+                "quantity":3.0,
+                "unit":"wedges"
+            },
+            {
+                "name":"mint",
+                "quantity":8.0,
+                "unit":"leaves"
+            }
+        ]
+    },
+    {
+        "id":"old-pal",
+        "name":"Old Pal",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"rye whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"campari",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"red-hook",
+        "name":"Red Hook",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lime wheel",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"rye whiskey",
+                "quantity":1.75,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"irish-breakfast",
+        "name":"Irish Breakfast",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"orange twist",
+        "ice":"-",
+        "extra":"stir marmalade until dissolved",
+
+        "ingredients":[
+            {
+                "name":"irish whiskey",
+                "quantity":1.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cointreau",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"marmelade",
+                "quantity":1.0,
+                "unit":"barspoon"
+            }
+        ]
+    },
+    {
+        "id":"wild-eyed-rose",
+        "name":"Wild Eyed Rose",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"lime wheel",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"irish whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"grenadine",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"blackthorn",
+        "name":"Blackthorn",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"lemon twist expressed and discarded",
+        "ice":"cubed",
+        "extra":"absinthe-rinsed glass",
+
+        "ingredients":[
+            {
+                "name":"irish whiskey",
+                "quantity":2.5,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup (1:1)",
+                "quantity":0.25,
+                "unit":"dashes"
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"improved-whiskey-cocktail",
+        "name":"Improved Whiskey Cocktail",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"lemon & orange twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"irish whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup (1:1)",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"absinthe",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"tipperary-cocktail",
+        "name":"Tipperary Cocktail",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"irish whiskey",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"green chartreuse",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"aromatic bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"absinthe",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"mamie-taylor",
+        "name":"Mamie Taylor",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lime wedge",
+        "ice":"cubed",
+        "extra":"top ginger beer & 4 dashes of angostura",
+
+        "ingredients":[
+            {
+                "name":"blended scotch whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"ginger syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"morning-glory-fizz",
+        "name":"Morning Glory Fizz",
+        "method":"shake & fine strain",
+        "glass":"flute",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"absinthe-rinsed glass & splash soda water",
+
+        "ingredients":[
+            {
+                "name":"blended scotch whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"egg white",
+                "quantity":1.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bobby-burns",
+        "name":"Bobby Burns",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"blended malt whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"prince-edward",
+        "name":"Prince Edward",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"orange twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"blended malt whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lillet blanc",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"drambuie",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"tattletale",
+        "name":"Tattletale",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"lemon & orange twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"highland scotch whiskey",
+                "quantity":1.25,
+                "unit":"oz."
+            },
+            {
+                "name":"islay scotch whiskey",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"chet-baker",
+        "name":"Chet Baker",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"orange twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"aged rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"dominicana",
+        "name":"Dominicana",
+        "method":"stir & strain",
+        "glass":"nick-nora",
+        "garnish":"grated cinnamon",
+        "ice":"-",
+        "extra":"hand-whipped cream float",
+
+        "ingredients":[
+            {
+                "name":"aged rum",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"kahlua",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"double cream",
+                "quantity":1.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"el-presidente",
+        "name":"El Presidente",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"orange twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"white rum",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"white vermouth",
+                "quantity":1.25,
+                "unit":"oz."
+            },
+            {
+                "name":"orange curacao",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"grenadine",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"airmail",
+        "name":"Air Mail",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lime wheel",
+        "ice":"-",
+        "extra":"top with champagne",
+
+        "ingredients":[
+            {
+                "name":"white rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"daisy-de-santiago",
+        "name":"Daisy de Santiago",
+        "method":"shake & fine strain",
+        "glass":"wine",
+        "garnish":"mint",
+        "ice":"crushed",
+        "extra":"float of yellow chartreuse",
+
+        "ingredients":[
+            {
+                "name":"white rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"mary-pickford",
+        "name":"Mary Pickford",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"lime wheel",
+        "ice":"1 cube",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"white rum",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"grenadine",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"jungle-bird",
+        "name":"Jungle Bird",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"pineapple fronds",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"blackstrap rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"aged rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"campari",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"royal-bermuda-yacht-club",
+        "name":"Royal Bermuda Yacht Club",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"grated nutmeg",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"aged rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"couintreau",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"falernum",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"beachbum",
+        "name":"Beachbum",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"orange slice & cherry skewer flag",
+        "ice":"crushed ice",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"aged rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"white rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"apricot liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orgeat (almond syrup)",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"fog-cutter",
+        "name":"Fog Cutter",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lemon wheel",
+        "ice":"cubed",
+        "extra":"float of sherry - Moscatel if possible",
+
+        "ingredients":[
+            {
+                "name":"funky white rum",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cognac",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"london dry gin",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"orgeat (almond syrup)",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"jet-pilot",
+        "name":"Jet Pilot",
+        "method":"swizzle/churn",
+        "glass":"tiki",
+        "garnish":"fruits & fire",
+        "ice":"crushed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"overproof jamaican rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"aged 151 rum",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"aged rum",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"falernum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cinnamon syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"grapefruit juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"absinthe",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"painkiller",
+        "name":"Painkiller",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"grated nutmeg, orange slice & cherry",
+        "ice":"crushed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"aged 151 rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"overproof aged jamaican rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"aged jamaican rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"coconut syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"pinapple juice",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"scorpion",
+        "name":"Scorpion",
+        "method":"swizzle/churn",
+        "glass":"tiki",
+        "garnish":"grated nutmeg, orange & lime wheel, orchid",
+        "ice":"crushed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"overproof jamaican rum",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cognac",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"orgeat (almond syrup)",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"peychaud's bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"three-dots-and-a-dash",
+        "name":"Three Dots & A Dash",
+        "method":"swizzle/churn",
+        "glass":"tiki",
+        "garnish":"pineapple wedge & 3 cherries",
+        "ice":"crushed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"dry, aged agricole rum",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"aged guyanese rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"falernum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"allspice dram",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"zombie",
+        "name":"Zombie (1934)",
+        "method":"swizzle/churn",
+        "glass":"tiki",
+        "garnish":"flaming half lime, cinnamon stick, whatever other cool stuff on top",
+        "ice":"crushed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"aged jamaican rum",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"aged trinidadian rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"aged overproof rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"grapefruit juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"falernum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cinnamon syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"granadine",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"absinthe",
+                "quantity":3.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"champs-elysees",
+        "name":"Champ-Elysees",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"yellow chartreuse",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"coffee-cocktail",
+        "name":"Coffee Cocktail",
+        "method":"dry shake, shake & fine strain",
+        "glass":"rock",
+        "garnish":"grated nutmeg",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"port",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cognac",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"whole egg",
+                "quantity":1.0,
+                "unit":"-"
+            }
+        ]
+    },
+    {
+        "id":"georgia-julep",
+        "name":"Georgia Julep",
+        "method":"whip shake",
+        "glass":"julep cup",
+        "garnish":"mint sprigs",
+        "ice":"crushed",
+        "extra":"slap the mint to release the oils",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":2.25,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"peach liqueur",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"mint",
+                "quantity":1.0,
+                "unit":"handful"
+            }
+        ]
+    },
+    {
+        "id":"de-la-louisiane",
+        "name":"De La Louisiane",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"lemon twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"rye whiskey",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"peychaud's bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"pisco-punch",
+        "name":"Pisco Punch",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"orange twist, pineapple wedge & mint",
+        "ice":"crushed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"pisco",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple gomme syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lillet rouge",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"pisco-sour",
+        "name":"Pisco Sour",
+        "method":"dry shake, shake & fine strain",
+        "glass":"coupe",
+        "garnish":"6 drops Chuncho bitters",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"pisco",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"egg white",
+                "quantity":1.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"american-trilogy",
+        "name":"American Trilogy",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"orange & lemon twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"rye whiskey",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"apple brandy",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup (1:1)",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"widows-kiss",
+        "name":"Widow's Kiss",
+        "method":"built + short stir",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"apple brandy",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"yellow chartreuse",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"applejack-rabbit",
+        "name":"Applejack Rabbit",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"apple brandy",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"maple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"jack-rose",
+        "name":"Jack Rose",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"american apple brandy",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"calvados",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"grenadine",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"philadelphia-fish-house-punch",
+        "name":"Philadelphia Fish House Punch",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"lemon wheel & grated cinnamon",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"calvados",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"aged jamaican rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"peach liqueur",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"ginger syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"adonis",
+        "name":"Adonis",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"orange twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"amontillado sherry",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"bamboo",
+        "name":"Bamboo",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"amontillado sherry",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":1.25,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"sherry-cobbler",
+        "name":"Sherry Cobbler",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"mint, lemon and orange wheel",
+        "ice":"crushed",
+        "extra":"float of Pedro Ximenez sherry",
+
+        "ingredients":[
+            {
+                "name":"fino sherry",
+                "quantity":3.0,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple gomme syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"amaretto-sour",
+        "name":"Amaretto Sour",
+        "method":"dry shake, shake & fine strain",
+        "glass":"rock",
+        "garnish":"lemon twist & cherry",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"disaronno",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"overproof bourbon",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"egg white",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"americano-cocktail",
+        "name":"Americano (cocktail)",
+        "method":"build + short stir",
+        "glass":"collins",
+        "garnish":"orange slice",
+        "ice":"crushed",
+        "extra":"top with soda water",
+
+        "ingredients":[
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"campari",
+                "quantity":1.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"aperol-spritz",
+        "name":"Aperol Spritz",
+        "method":"build + short stir",
+        "glass":"wine",
+        "garnish":"orange slice",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"soda water",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"aperol",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"prosecco",
+                "quantity":3.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"arsenic-and-old-lace",
+        "name":"Arsenic & Old Lace",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"orange twist",
+        "ice":"-",
+        "extra":"absinthe-rinsed coupe",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"creme de violette",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"aviation",
+        "name":"Aviation",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"cherry inside the coupe",
+        "ice":"-",
+        "extra":"creme de violette rinsed coupe",
+
+        "ingredients":[
+            {
+                "name":"plymouth gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bees-knees",
+        "name":"Bee's Knees",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"lemon wheel",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bellini",
+        "name":"Bellini",
+        "method":"build + quick stir",
+        "glass":"flute",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"to make it extra cold, stir the peach puree with a splash of prosecco over ice & strain inside the flute - then top with more prosecco",
+
+        "ingredients":[
+            {
+                "name":"creme de peche or peach puree",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"prosecco",
+                "quantity":3.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bijou",
+        "name":"Bijou",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"plymouth gin",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"green chartreuse",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"orange bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"black-russian",
+        "name":"Black Russian",
+        "method":"build + quick stir",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"kahlua",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bloody-mary",
+        "name":"Bloody Mary",
+        "method":"throw",
+        "glass":"collins",
+        "garnish":"olives or gerkins, lemon wedge & celery stick",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"smoked salt",
+                "quantity":1.0,
+                "unit":"heavy pinch"
+            },
+            {
+                "name":"ground black pepper",
+                "quantity":1.0,
+                "unit":"heavy pinch"
+            },
+            {
+                "name":"hot sauce",
+                "quantity":3.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"worchestershire sauce",
+                "quantity":5.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"tomato juice",
+                "quantity":4.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"boulevardier",
+        "name":"Boulevardier",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"orange twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"bourbon",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"campari",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bramble",
+        "name":"Bramble",
+        "method":"whip shake & strain",
+        "glass":"rock",
+        "garnish":"lemon twist",
+        "ice":"crushed",
+        "extra":"5 blackberries crushed in the glass",
+
+        "ingredients":[
+            {
+                "name":"overproof gin",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"brandy-alexander",
+        "name":"Brandy Alexander",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"nutmeg",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dark creme de cacao",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"heavy cream",
+                "quantity":1.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"brooklynite",
+        "name":"Brooklynite",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"lime wheel",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"aged jamaican rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"caipirinha",
+        "name":"Caipiriña",
+        "method":"swizzle/churn",
+        "glass":"rock",
+        "garnish":"lime wedge",
+        "ice":"crushed",
+        "extra":"muddle lime wedges",
+
+        "ingredients":[
+            {
+                "name":"cachaca",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"lime wedges",
+                "quantity":3.0,
+                "unit":"-"
+            }
+        ]
+    },
+    {
+        "id":"champagne-cocktail",
+        "name":"Champagne Cocktail",
+        "method":"build",
+        "glass":"flute",
+        "garnish":"spiraling lemon twist",
+        "ice":"-",
+        "extra":"top with champagne",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sugar cube",
+                "quantity":1.0,
+                "unit":"-"
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"champagne",
+                "quantity":3.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"chartreuse-swizzle",
+        "name":"Chartreuse Swizzle",
+        "method":"swizzle/churn",
+        "glass":"collins",
+        "garnish":"grated nutmeg & mint sprig",
+        "ice":"crushed",
+        "extra":"float of angostura bitters",
+
+        "ingredients":[
+            {
+                "name":"green chartreuse",
+                "quantity":1.25,
+                "unit":"oz."
+            },
+            {
+                "name":"falernum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"chrysanthemum",
+        "name":"Chrysanthemum",
+        "method":"build",
+        "glass":"rock",
+        "garnish":"orange twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"dry vermouth",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"absinthe",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"clover-club",
+        "name":"Clover Club",
+        "method":"dry shake, shake & fine strain",
+        "glass":"coupe",
+        "garnish":"3 skewered raspberries & lemon twist",
+        "ice":"-",
+        "extra":"muddle raspberries inside the shaker",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"dry vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"egg white",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"corn-and-oil",
+        "name":"Corn & Oil",
+        "method":"shake & strain",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"blackstrap rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"falernum",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"lime wedges",
+                "quantity":3.0,
+                "unit":"-"
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"daiquiri",
+        "name":"Daiquiri",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"white rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"east-side",
+        "name":"East Side",
+        "method":"whip shake & strain",
+        "glass":"rock",
+        "garnish":"mint sprig & cucumber slice",
+        "ice":"crushed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"mint leaves",
+                "quantity":1.0,
+                "unit":"handful"
+            },
+            {
+                "name":"cucumber",
+                "quantity":2.0,
+                "unit":"slices"
+            }
+        ]
+    },
+    {
+        "id":"french-75",
+        "name":"French 75",
+        "method":"shake & fine strain",
+        "glass":"flute",
+        "garnish":"spiraling lemon twist",
+        "ice":"-",
+        "extra":"top with champagne",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"gimlet",
+        "name":"Gimlet",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"lime wedge",
+        "ice":"cubed if served in rock glass",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"gin-rickey",
+        "name":"Gin Rickey",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lime wedge",
+        "ice":"cubed",
+        "extra":"soda water top",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"godfather",
+        "name":"Godfather / Godmother",
+        "method":"build + short stir",
+        "glass":"rock",
+        "garnish":"orange twist",
+        "ice":"cubed",
+        "extra":"scotch for the Godfather - vodka for the Godmother",
+
+        "ingredients":[
+            {
+                "name":"blended scotch / vodka",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"disaronno",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"grasshopper",
+        "name":"Grasshopper",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"mint leaf",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"white creme de cacao",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"green creme de menthe",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"heavy cream",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"mint",
+                "quantity":8.0,
+                "unit":"leaves"
+            }
+        ]
+    },
+    {
+        "id":"hemingway-daiquiri",
+        "name":"Hemingway Daiquiri",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"lime wheel",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"white rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"grapefruit juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cane syrup (2:1)",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"hot-toddy",
+        "name":"Hot Toddy",
+        "method":"build",
+        "glass":"coffee mug",
+        "garnish":"cinnamon stick & clove-studded lemon wedge",
+        "ice":"-",
+        "extra":"serve hot",
+
+        "ingredients":[
+            {
+                "name":"bourbon",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"hot black tea (english breakfast or assam)",
+                "quantity":3.5,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"peychaud's bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"irish-coffee",
+        "name":"Irish Coffee",
+        "method":"build",
+        "glass":"coffee mug",
+        "garnish":"1 coffee beans or grated cinnamon",
+        "ice":"-",
+        "extra":"serve hot - hand whipped heavy cream float",
+
+        "ingredients":[
+            {
+                "name":"hot water",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"irish whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"espresso",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"japanese-cocktail",
+        "name":"Japanese Cocktail",
+        "method":"stir & strain",
+        "glass":"nick-nora",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":2.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orgeat (almond syrup)",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"kir-royale",
+        "name":"Kir Royale",
+        "method":"build",
+        "glass":"flute",
+        "garnish":"raspberry and lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"creme de mure/framboise",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"champagne",
+                "quantity":3.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"last-word",
+        "name":"Last Word",
+        "method":"shake & fine strain",
+        "glass":"nick-nora",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"green chartreuse",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"long-island-iced-tea",
+        "name":"Long Island Iced Tea",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lemon wedge",
+        "ice":"cubed",
+        "extra":"top with coca cola",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"blanco tequila",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"white rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cointreau",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"mai-tai",
+        "name":"Mai Tai",
+        "method":"shake & strain",
+        "glass":"rock",
+        "garnish":"mint sprig, lime wedge & orange slice",
+        "ice":"cubed + crushed top",
+        "extra":"MUST: be house-made orgeat or premium brand - bottled almond syrup as the wrong viscosity",
+
+        "ingredients":[
+            {
+                "name":"aged jamaican rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"white agricole rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"orange curacao (creole shrub is best)",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"orgeat (almond syrup)",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"manhattan",
+        "name":"Manhattan",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"cherry",
+        "ice":"-",
+        "extra":"MUST: offer coupe or rock glass & choice of bourbon or rye whiskey",
+
+        "ingredients":[
+            {
+                "name":"bourbon or rye whiskey",
+                "quantity":2.5,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"margarita",
+        "name":"Margarita",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"MUST: offer salt rim, coupe or rock glass - ALWAYS: salt rim half glass & add straw if on the rocks",
+
+        "ingredients":[
+            {
+                "name":"blanco tequila",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"cointreau",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"cadillac-margarita",
+        "name":"Cadillac Margarita",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"MUST: offer salt rim, coupe or rock glass - ALWAYS: salt rim half glass & add straw if on the rocks",
+
+        "ingredients":[
+            {
+                "name":"blanco tequila",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"grand marnier",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"martinez",
+        "name":"Martinez",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"old tom gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"maraschino liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"aromatic bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"mimosa",
+        "name":"Mimosa",
+        "method":"build",
+        "glass":"flute",
+        "garnish":"spiraling orange twist",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"champagne",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":2.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"mint-julep",
+        "name":"Mint Julep",
+        "method":"whip shake + strain",
+        "glass":"julep cup",
+        "garnish":"mint sprig",
+        "ice":"crushed",
+        "extra":"slap the mint to release the oils",
+
+        "ingredients":[
+            {
+                "name":"bourbon",
+                "quantity":2.25,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"mint",
+                "quantity":1.0,
+                "unit":"handful"
+            }
+        ]
+    },
+    {
+        "id":"mojito",
+        "name":"Mojito",
+        "method":"swizzle/churn",
+        "glass":"collins",
+        "garnish":"mint sprig & lime wedge",
+        "ice":"crushed",
+        "extra":"slap the mint to release the oils",
+
+        "ingredients":[
+            {
+                "name":"white rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"mint",
+                "quantity":1.0,
+                "unit":"large handful"
+            }
+        ]
+    },
+    {
+        "id":"moscow-mule",
+        "name":"Moscow-mule (and all mules)",
+        "method":"build",
+        "glass":"collins",
+        "garnish":"lime wedge",
+        "ice":"cubed + crush top",
+        "extra":"REPLACE: base spirit with other spirit for different mules",
+
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup/ginger syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"ginger beer",
+                "quantity":6.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"dark-and-stormy",
+        "name":"Dark & Stormy",
+        "method":"build",
+        "glass":"collins",
+        "garnish":"lime wedge & mint sprig",
+        "ice":"cubed + crush top",
+        "extra":"float dark rum on top",
+
+        "ingredients":[
+            {
+                "name":"blackstrap rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup/ginger syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"ginger beer",
+                "quantity":6.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"negroni",
+        "name":"Negroni",
+        "method":"build + short stir",
+        "glass":"rock",
+        "garnish":"orange wedge",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"campari",
+                "quantity":1.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"old-cuban",
+        "name":"Old Cuban",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"mint leaf",
+        "ice":"-",
+        "extra":"top champagne",
+
+        "ingredients":[
+            {
+                "name":"aged rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"mint",
+                "quantity":6.0,
+                "unit":"leaves"
+            }
+        ]
+    },
+    {
+        "id":"old-fashioned",
+        "name":"Old Fashioned",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"lemon & orange twist",
+        "ice":"cubed",
+        "extra":"MUST: offer choice of whiskey",
+
+        "ingredients":[
+            {
+                "name":"bourbon or rye whiskey",
+                "quantity":2.5,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"aromatic bitters",
+                "quantity":1.0,
+                "unit":"dash"
+            }
+        ]
+    },
+    {
+        "id":"old-maid",
+        "name":"Old Maid",
+        "method":"whip shake & fine strain",
+        "glass":"rock",
+        "garnish":"mint & cucumber slice",
+        "ice":"cubed",
+        "extra":"TIP: this recipe works with any white spirit",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"mint leaves",
+                "quantity":1.0,
+                "unit":"handful"
+            },
+            {
+                "name":"cucumber",
+                "quantity":2.0,
+                "unit":"slices"
+            }
+        ]
+    },
+    {
+        "id":"paloma",
+        "name":"Paloma",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"half salted rim glass & lime wedge",
+        "ice":"cubed",
+        "extra":"This recipe works with soda water; if grapefruit soda is available and use that instead of juice and soda water",
+
+        "ingredients":[
+            {
+                "name":"blanco tequila",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"mezcal",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"grapefruit juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"agave syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"penicillin",
+        "name":"Penicillin",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"cubed",
+        "extra":"float of peated scotch whiskey",
+
+        "ingredients":[
+            {
+                "name":"blended scotch whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"ginger syrup",
+                "quantity":0.35,
+                "unit":"oz."
+            },
+            {
+                "name":"honey syrup (2:1)",
+                "quantity":0.35,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"pimms-cup",
+        "name":"Pimm's Cup",
+        "method":"build + short stir",
+        "glass":"collins",
+        "garnish":"TOP: orange slice & mint sprig. INSIDE: orange slice, 6 mint leaves, cucumber slice & a quartered strawberry",
+        "ice":"cubed",
+        "extra":"top with ginger ale OR lemonade",
+
+        "ingredients":[
+            {
+                "name":"Pimm's No. 1",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"ginger syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"agave syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"pina-colada",
+        "name":"Piña Colada",
+        "method":"whip shake and strain",
+        "glass":"collins",
+        "garnish":"pineapple wedge & pineapple fronds",
+        "ice":"cubed + crushed top",
+        "extra":"TIP: KokoKanu or Aluna are great coconut rums to use or alternativly make your own coconut rum - avoid Malibu, please",
+
+        "ingredients":[
+            {
+                "name":"coconut rum (ABV 37.5% or above)",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple juice",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"cream of coconut/coconut cream",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters or chocolate bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"pineapple-daiquiri",
+        "name":"Pineapple Daiquiri",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"stripe of angostura bitter on top",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"white rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"aged agricole rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"pornstar-martini",
+        "name":"Pornstar Martini",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"1/2 passion fruit",
+        "ice":"-",
+        "extra":"shot of champagne on the side",
+
+        "ingredients":[
+            {
+                "name":"vanilla vodka",
+                "quantity":1.15,
+                "unit":"oz."
+            },
+            {
+                "name":"vanilla syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"passionfruit juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"passionfruit puree",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"queens-park-swizzle",
+        "name":"Queen's Park Swizzle",
+        "method":"swizzle/churn",
+        "glass":"collins",
+        "garnish":"mint sprig",
+        "ice":"crushed",
+        "extra":"create a float of angostura after churning & add fresh crushed ice on top of it",
+
+        "ingredients":[
+            {
+                "name":"aged rum",
+                "quantity":2.25,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"ramos-gin-fizz",
+        "name":"Ramos Gin Fizz",
+        "method":"dry shake, shake & fine strain",
+        "glass":"collins",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"put the collins inside a freezer before starting to make the drink - add soda water at the bottom of the glass before straining the cocktail inside - pop the cocktail in the freezer to solidify the foam - after a couple of minutes slowly top it up with soda water to create an attractive head",
+
+        "ingredients":[
+            {
+                "name":"old tom gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"heavy cream",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"orange flower water",
+                "quantity":5.0,
+                "unit":"drops"
+            }
+        ]
+    },
+    {
+        "id":"rob-roy",
+        "name":"Rob Roy",
+        "method":"stir & strain",
+        "glass":"coupe",
+        "garnish":"cherry on cocktail pick",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"blended scotch whiskey",
+                "quantity":2.5,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"rome-with-a-view",
+        "name":"Rome with a view",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lime wedge",
+        "ice":"cubed",
+        "extra":"top the cocktail with soda water",
+
+        "ingredients":[
+            {
+                "name":"dry vermouth",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"campari",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"rusty-nail",
+        "name":"Rusty Nail",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"cinnamon stick",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"blended scotch whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"drambuie",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"sazerac",
+        "name":"Sazerac",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"lemon twist",
+        "ice":"-",
+        "extra":"absinthe-rinsed CHILLED glass",
+
+        "ingredients":[
+            {
+                "name":"rye whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"cognac",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"demerara syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"peychaud's bitters",
+                "quantity":3.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":1.0,
+                "unit":"dash"
+            }
+        ]
+    },
+    {
+        "id":"sidecar",
+        "name":"Sidecar",
+        "method":"shake & fine strain",
+        "glass":"coupe",
+        "garnish":"sugar the rim of half the glass",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"cointreau",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"singapore-sling",
+        "name":"Singapore Sling",
+        "method":"whip shake & strain",
+        "glass":"collins",
+        "garnish":"orange slice, cherry & pineapple fronds",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"cherry heering",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"cointreau",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"pineapple juice",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"grenadine",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"southside",
+        "name":"Southside",
+        "method":"shake & fine strain",
+        "glass":"rock",
+        "garnish":"mint sprig",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"mint leaves",
+                "quantity":1.0,
+                "unit":"handful"
+            }
+        ]
+    },
+    {
+        "id":"southside-fizz",
+        "name":"Southside Fizz",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lemon wheel & mint sprig",
+        "ice":"cubed",
+        "extra":"top with club soda",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"mint leaves",
+                "quantity":1.0,
+                "unit":"handful"
+            }
+        ]
+    },
+    {
+        "id":"stinger",
+        "name":"Stinger",
+        "method":"whip shake & strain",
+        "glass":"rock",
+        "garnish":"mint sprig",
+        "ice":"crushed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"creme de menthe",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"ti-punch",
+        "name":"Ti' Punch",
+        "method":"muddle & swizzle/churn",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"1/2 cubed + 1/2 crushed",
+        "extra":"Lime heels are discs sliced deep from the side of the lime, mostly peel but with a thin layer of juice sacs still attached",
+
+        "ingredients":[
+            {
+                "name":"agricole rum",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"cane syrup",
+                "quantity":0.3,
+                "unit":"oz."
+            },
+            {
+                "name":"lime",
+                "quantity":2.0,
+                "unit":"heels"
+            }
+        ]
+    },
+    {
+        "id":"tom-collins",
+        "name":"Tom Collins",
+        "method":"shake & fine strain",
+        "glass":"collins",
+        "garnish":"lemon wedge",
+        "ice":"cubed",
+        "extra":"top with club soda or any flavoured soda",
+
+        "ingredients":[
+            {
+                "name":"london dry gin",
+                "quantity":1.5,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"vieux-carre",
+        "name":"Vieux Carre",
+        "method":"stir & strain",
+        "glass":"rock",
+        "garnish":"lemon twist",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"cognac",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"rye whiskey",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"sweet red vermouth",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"dom benedictine",
+                "quantity":0.15,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"peychaud's bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"whiskey-sour",
+        "name":"Whiskey Sour",
+        "method":"dry shake, shake with ice & fine strain",
+        "glass":"rock",
+        "garnish":"lemon wheel",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"whiskey",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"simple syrup",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"lemon juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"angostura bitters",
+                "quantity":2.0,
+                "unit":"dashes"
+            },
+            {
+                "name":"egg white",
+                "quantity":0.5,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"white-russian",
+        "name":"White Russian",
+        "method":"build + quick stir",
+        "glass":"rock",
+        "garnish":"-",
+        "ice":"cubed",
+        "extra":"hand-whipped cream float",
+
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"kahlua",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"double cream",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"sex-on-the-beach",
+        "name":"Sex on the Beach",
+        "method":"build + quick stir",
+        "glass":"collins",
+        "garnish":"orange slice",
+        "ice":"cubed",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"vodka",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"peach schnapps",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"cranberry juice",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":2.0,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"cuba-libre",
+        "name":"Cuba Libre",
+        "method":"build + quick stir",
+        "glass":"collins",
+        "garnish":"lime wedge & mint sprig",
+        "ice":"cubed",
+        "extra":"top with coca cola",
+
+        "ingredients":[
+            {
+                "name":"rum (your choice)",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"lime juice",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"tequila-sunrise",
+        "name":"Tequila Sunrise",
+        "method":"build + quick stir",
+        "glass":"collins",
+        "garnish":"orange slice",
+        "ice":"cubed",
+        "extra":"pour grenadine over the ice to make it sink - add as much grenadine as you want",
+
+        "ingredients":[
+            {
+                "name":"tequila (your choice)",
+                "quantity":2.0,
+                "unit":"oz."
+            },
+            {
+                "name":"orange juice",
+                "quantity":5.0,
+                "unit":"oz."
+            },
+            {
+                "name":"grenadine",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"hot-rum-punch",
+        "name":"Hot Rum Punch",
+        "method":"build",
+        "glass":"coffee mug",
+        "garnish":"grated nutmeg",
+        "ice":"-",
+        "extra":"top up with boiling hot water",
+
+        "ingredients":[
+            {
+                "name":"light rum",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"cognac",
+                "quantity":1.0,
+                "unit":"oz."
+            },
+            {
+                "name":"fino sherry",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"rich demerara syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    }
+]
