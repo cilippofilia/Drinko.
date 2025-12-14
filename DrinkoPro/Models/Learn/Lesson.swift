@@ -28,6 +28,7 @@ struct LessonContent: Codable, Equatable, Identifiable, Hashable {
     let content: String
 }
 
+@MainActor
 @Observable
 class LessonsViewModel {
     var basicLessons: [Lesson] = Bundle.main.decode([Lesson].self, from: "basic-lessons.json")

@@ -17,8 +17,6 @@ struct SplashScreenView: View {
     @State private var imgOffset: CGFloat = -800
     @State private var txtOffset: CGFloat = 0
     @State private var frameSize: CGFloat = 200
-    @State private var titleFontSize: CGFloat = 66
-    @State private var subtitleFontSize: CGFloat = 24
 
     var body: some View {
         Group {
@@ -33,7 +31,7 @@ struct SplashScreenView: View {
     private var animatedLogo: some View {
         ZStack {
             Color("Dr. Blue")
-                .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea()
 
             VStack {
                 Image("logo")
@@ -47,23 +45,20 @@ struct SplashScreenView: View {
                     .opacity(opacity)
 
                 Text("Drinko.")
-                    .font(.system(size: sizeClass == .compact ? titleFontSize : titleFontSize * 1.75,
-                                  weight: .bold,
-                                  design: .rounded))
+                    .font(.system(sizeClass == .compact ? .title : .largeTitle, design: .rounded, weight: .bold))
                     .rotation3DEffect(.degrees(angle),
                                       axis: (x: 0.5, y: 0.0, z: 0.0))
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                     .offset(y: txtOffset)
                     .scaleEffect(scale)
                     .opacity(opacity)
 
                 Text("It's good to be back!")
-                    .font(.system(size: sizeClass == .compact ? subtitleFontSize : subtitleFontSize * 1.75,
-                                  weight: .bold,
-                                  design: .rounded))
+                    .font(.system(sizeClass == .compact ? .title3 : .title2, design: .rounded))
+                    .bold()
                     .rotation3DEffect(.degrees(angle),
                                       axis: (x: 0.5, y: 0.0, z: 0.0))
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                     .offset(y: txtOffset)
                     .scaleEffect(scale)
                     .opacity(opacity)

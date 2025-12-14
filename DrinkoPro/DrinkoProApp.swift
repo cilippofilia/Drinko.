@@ -12,6 +12,8 @@ import TipKit
 @main
 struct DrinkoProApp: App {
     @State private var favorites = Favorites()
+    @State private var cocktailsViewModel = CocktailsViewModel()
+    @State private var lessonsViewModel = LessonsViewModel()
 
     init() {
         try? Tips.configure()
@@ -22,6 +24,8 @@ struct DrinkoProApp: App {
             SplashScreenView()
         }
         .environment(favorites)
+        .environment(cocktailsViewModel)
+        .environment(lessonsViewModel)
         .modelContainer(for: Category.self)
     }
 }

@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-#if os(iOS)
-let deviceWidth = UIScreen.main.bounds.size.width /// Device width size
-let compactScreenWidth = deviceWidth * 0.9 /// iPhone padded view
-let regularScreenWidth = deviceWidth * 0.7 /// iPad padded view
-#endif
-
 let windowMinWidth: CGFloat = 750
 let windowMinHeight: CGFloat = 350
 

@@ -31,10 +31,10 @@ struct LessonDetailView: View {
         VStack {
             if lesson.hasVideo ?? false {
                 VideoView(videoID: lesson.videoID!)
-                    .frame(
-                        width: compactScreenWidth,
-                        height: imageFrameHeight
-                    )
+                    .containerRelativeFrame(.horizontal) { length, axis in
+                        length * 0.9
+                    }
+                    .frame(height: imageFrameHeight)
                     .clipShape(
                         RoundedRectangle(
                             cornerRadius: imageCornerRadius,
@@ -70,7 +70,9 @@ struct LessonDetailView: View {
                     }
                 }
             }
-            .frame(maxWidth: compactScreenWidth)
+            .containerRelativeFrame(.horizontal) { length, axis in
+                length * 0.9
+            }
             .padding(.bottom)
         }
     }
@@ -79,10 +81,10 @@ struct LessonDetailView: View {
         VStack(spacing: 20) {
             if lesson.hasVideo ?? false {
                 VideoView(videoID: lesson.videoID!)
-                    .frame(
-                        width: compactScreenWidth,
-                        height: imageFrameHeight
-                    )
+                    .containerRelativeFrame(.horizontal) { length, axis in
+                        length * 0.7
+                    }
+                    .frame(height: imageFrameHeight)
                     .clipShape(
                         RoundedRectangle(
                             cornerRadius: imageCornerRadius,
@@ -120,7 +122,9 @@ struct LessonDetailView: View {
                     }
                 }
             }
-            .frame(maxWidth: regularScreenWidth)
+            .containerRelativeFrame(.horizontal) { length, axis in
+                length * 0.7
+            }
             .padding(.bottom)
         }
     }

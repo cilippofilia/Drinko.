@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 @Observable
 class Favorites {
     // What the user has favourited
@@ -51,19 +52,10 @@ class Favorites {
 
     private func save() {
         // Write out our favorite cocktails data
-        if let data = try? JSONEncoder().encode(cocktails) {
-            UserDefaults.standard.set(data, forKey: saveKey)
-        } else {
-            fatalError("Unable to save cocktail!")
-        }        
-    }
-}
-
-extension FileManager {
-    func getDocumentsDirectory() -> URL {
-        // Find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        // Just send back the first one, which ought to be the only one
-        return paths[0]
+        guard let data = try? JSONEncoder().encode(cocktails) else {
+            print("Warning: Unable to save favorite cocktails")
+            return
+        }
+        UserDefaults.standard.set(data, forKey: saveKey)
     }
 }

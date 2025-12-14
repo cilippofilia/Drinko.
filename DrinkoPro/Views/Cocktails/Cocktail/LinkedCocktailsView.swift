@@ -10,7 +10,6 @@ import SwiftUI
 struct LinkedCocktailsView: View {
     let cocktails: [Cocktail]
     let procedure: Procedure?
-    let favorites: Favorites
 
     var body: some View {
         Group {
@@ -18,7 +17,6 @@ struct LinkedCocktailsView: View {
                 NavigationLink(value: cocktail) {
                     HStack {
                         CocktailRowView(
-                            favorites: favorites,
                             cocktail: cocktail
                         )
 
@@ -35,5 +33,5 @@ struct LinkedCocktailsView: View {
 }
 
 #Preview {
-    LinkedCocktailsView(cocktails: [], procedure: nil, favorites: Favorites())
+    LinkedCocktailsView(cocktails: [], procedure: nil)
 }

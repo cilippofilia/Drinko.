@@ -13,11 +13,20 @@ extension Bundle {
     func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
 
         guard let url = self.url(forResource: file, withExtension: nil) else {
-            fatalError("Failed to locate \(file) in bundle.")
+            print("Error: Failed to locate \(file) in bundle.")
+            // Return empty array/default value based on type
+            if let emptyArray = [Any]() as? T {
+                return emptyArray
+            }
+            preconditionFailure("Failed to locate \(file) in bundle and unable to provide default value")
         }
 
         guard let data = try? Data(contentsOf: url) else {
-            fatalError("Failed to load \(file) from bundle.")
+            print("Error: Failed to load \(file) from bundle.")
+            if let emptyArray = [Any]() as? T {
+                return emptyArray
+            }
+            preconditionFailure("Failed to load \(file) from bundle and unable to provide default value")
         }
 
         let decoder = JSONDecoder()
@@ -28,19 +37,39 @@ extension Bundle {
             return try decoder.decode(T.self, from: data)
 
         } catch DecodingError.keyNotFound(let key, let context) {
-            fatalError("Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' - \(context.debugDescription)")
+            print("Error: Failed to decode \(file) from bundle due to missing key '\(key.stringValue)' - \(context.debugDescription)")
+            if let emptyArray = [Any]() as? T {
+                return emptyArray
+            }
+            preconditionFailure("Failed to decode \(file) and unable to provide default value")
 
         } catch DecodingError.typeMismatch(_, let context) {
-            fatalError("Failed to decode \(file) from bundle due to type mismatch - \(context.debugDescription)")
+            print("Error: Failed to decode \(file) from bundle due to type mismatch - \(context.debugDescription)")
+            if let emptyArray = [Any]() as? T {
+                return emptyArray
+            }
+            preconditionFailure("Failed to decode \(file) and unable to provide default value")
 
         } catch DecodingError.valueNotFound(let type, let context) {
-            fatalError("Failed to decode \(file) from bundle due to missing \(type) value – \(context.debugDescription)")
+            print("Error: Failed to decode \(file) from bundle due to missing \(type) value – \(context.debugDescription)")
+            if let emptyArray = [Any]() as? T {
+                return emptyArray
+            }
+            preconditionFailure("Failed to decode \(file) and unable to provide default value")
 
         }catch DecodingError.dataCorrupted(_) {
-            fatalError("Failed to decode \(file) from bundle because it appears to be invalid JSON")
+            print("Error: Failed to decode \(file) from bundle because it appears to be invalid JSON")
+            if let emptyArray = [Any]() as? T {
+                return emptyArray
+            }
+            preconditionFailure("Failed to decode \(file) and unable to provide default value")
 
         } catch {
-            fatalError("Failed to decode \(file) from bundle: \(error.localizedDescription)")
+            print("Error: Failed to decode \(file) from bundle: \(error.localizedDescription)")
+            if let emptyArray = [Any]() as? T {
+                return emptyArray
+            }
+            preconditionFailure("Failed to decode \(file) and unable to provide default value")
 
         }
     }

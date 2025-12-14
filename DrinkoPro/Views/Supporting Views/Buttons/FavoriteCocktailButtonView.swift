@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoriteCocktailButtonView: View {
-    let favorites: Favorites
+    @Environment(Favorites.self) private var favorites
     let cocktail: Cocktail
 
     var body: some View {
@@ -30,6 +30,6 @@ struct FavoriteCocktailButtonView: View {
 
 #if DEBUG
 #Preview {
-    FavoriteCocktailButtonView(favorites: Favorites(), cocktail: .example)
+    FavoriteCocktailButtonView(cocktail: .example)
 }
 #endif

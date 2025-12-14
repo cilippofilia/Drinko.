@@ -43,7 +43,9 @@ struct BookDetailView: View {
                     EmptyView()
                 }
             }
-            .frame(width: compactScreenWidth)
+            .containerRelativeFrame(.horizontal) { lenght, axis in
+                lenght * 0.9
+            }
             .clipped()
 
             VStack(spacing: 10) {
@@ -56,7 +58,9 @@ struct BookDetailView: View {
 
                 Text(book.summary)
             }
-            .frame(maxWidth: compactScreenWidth)
+            .containerRelativeFrame(.horizontal) { lenght, axis in
+                lenght * 0.9
+            }
             .padding(.bottom)
         }
     }
@@ -77,7 +81,9 @@ struct BookDetailView: View {
                     EmptyView()
                 }
             }
-            .frame(width: compactScreenWidth)
+            .containerRelativeFrame(.horizontal) { lenght, axis in
+                lenght * 0.9
+            }
             .clipped()
 
             VStack(spacing: 20) {
@@ -91,7 +97,9 @@ struct BookDetailView: View {
 
                 Text(book.summary)
             }
-            .frame(maxWidth: compactScreenWidth)
+            .containerRelativeFrame(.horizontal) { lenght, axis in
+                lenght * 0.9
+            }
             .padding(.bottom)
         }
     }

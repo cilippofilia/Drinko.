@@ -9,23 +9,43 @@ import SwiftUI
 
 struct LearnView: View {
     static let learnTag: String? = "Learn"
-    @State private var viewModel = LessonsViewModel()
+    @Environment(LessonsViewModel.self) private var viewModel
 
-    @State private var collapsedStates: [String: Bool] = UserDefaults.standard.dictionary(forKey: "mobileCollapsedStates") as? [String: Bool] ?? [
-        "basic-lessons": false,
-        "bar-preps": false,
-        "basic-spirits": false,
-        "advanced-spirits": false,
-        "liqueurs": false,
-        "syrups": false,
-        "advanced-techniques": false,
-    ] {
-        didSet {
-            UserDefaults.standard.set(collapsedStates, forKey: "collapsedStates")
+    @AppStorage("basicLessonsCollapsed") private var basicLessonsCollapsed = false
+    @AppStorage("barPrepsCollapsed") private var barPrepsCollapsed = false
+    @AppStorage("basicSpiritsCollapsed") private var basicSpiritsCollapsed = false
+    @AppStorage("advancedSpiritsCollapsed") private var advancedSpiritsCollapsed = false
+    @AppStorage("liqueursCollapsed") private var liqueursCollapsed = false
+    @AppStorage("syrupsCollapsed") private var syrupsCollapsed = false
+    @AppStorage("advancedLessonsCollapsed") private var advancedLessonsCollapsed = false
+    @AppStorage("calculatorsCollapsed") private var isCalculatorsCollapsed = false
+    @AppStorage("booksCollapsed") private var isBooksCollapsed = false
+    
+    private func isCollapsed(for topic: String) -> Bool {
+        switch topic {
+        case "basic-lessons": return basicLessonsCollapsed
+        case "bar-preps": return barPrepsCollapsed
+        case "basic-spirits": return basicSpiritsCollapsed
+        case "advanced-spirits": return advancedSpiritsCollapsed
+        case "liqueurs": return liqueursCollapsed
+        case "syrups": return syrupsCollapsed
+        case "advanced-lessons": return advancedLessonsCollapsed
+        default: return false
         }
     }
-    @State private var isCalculatorsCollapsed = false
-    @State private var isBooksCollapsed = false
+    
+    private func setCollapsed(for topic: String, value: Bool) {
+        switch topic {
+        case "basic-lessons": basicLessonsCollapsed = value
+        case "bar-preps": barPrepsCollapsed = value
+        case "basic-spirits": basicSpiritsCollapsed = value
+        case "advanced-spirits": advancedSpiritsCollapsed = value
+        case "liqueurs": liqueursCollapsed = value
+        case "syrups": syrupsCollapsed = value
+        case "advanced-lessons": advancedLessonsCollapsed = value
+        default: break
+        }
+    }
 
     var body: some View {
         NavigationStack {
@@ -33,7 +53,7 @@ struct LearnView: View {
                 // MARK: ALL LESSONS
                 ForEach(viewModel.topics, id: \.self) { topic in
                     Section {
-                        if !(collapsedStates[topic] ?? false) {
+                        if !isCollapsed(for: topic) {
                             ForEach(viewModel.getLessons(for: topic)) { lesson in
                                 NavigationLink(value: lesson) {
                                     LessonRowView(lesson: lesson)
@@ -42,10 +62,10 @@ struct LearnView: View {
                         }
                     } header: {
                         LearnHeaderView(
-                            text: topic.replacingOccurrences(of: "-", with: " ").capitalizingFirstLetter(),
+                            text: topic.replacing("-", with: " ").capitalizingFirstLetter(),
                             isCollapsed: Binding(
-                                get: { collapsedStates[topic] ?? false },
-                                set: { collapsedStates[topic] = $0 }
+                                get: { isCollapsed(for: topic) },
+                                set: { setCollapsed(for: topic, value: $0) }
                             )
                         )
                     }
@@ -88,7 +108,6 @@ struct LearnView: View {
             }
             .listSectionSpacing(.compact)
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

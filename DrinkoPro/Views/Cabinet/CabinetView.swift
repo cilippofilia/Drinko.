@@ -44,7 +44,9 @@ extension CabinetView {
                 showAddCategorySheet.toggle()
             }
         })
-        .frame(maxWidth: compactScreenWidth)
+        .containerRelativeFrame(.horizontal) { length, axis in
+            length * 0.9
+        }
         .navigationTitle("Cabinet")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

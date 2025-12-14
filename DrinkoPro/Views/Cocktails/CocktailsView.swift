@@ -12,29 +12,35 @@ struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
     
     @Environment(\.horizontalSizeClass) var sizeClass
-    @State private var viewModel = CocktailsViewModel()
+    @Environment(CocktailsViewModel.self) private var viewModel
+    @Environment(Favorites.self) private var favorites
     @State private var showingSortOrder = false
     @State var path = NavigationPath()
 
-    var favorites = Favorites()
     var favoriteCocktailsTip = SwipeToFavoriteTip()
 
     var body: some View {
         NavigationStack(path: $path) {
             List(viewModel.filteredCocktails) { cocktail in
                 NavigationLink(value: cocktail) {
-                    CocktailRowView(favorites: favorites, cocktail: cocktail)
+                    CocktailRowView(cocktail: cocktail)
                         .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                            FavoriteCocktailButtonView(favorites: favorites, cocktail: cocktail)
+                            FavoriteCocktailButtonView(cocktail: cocktail)
                                 .tint(favorites.contains(cocktail) ? .red : .blue)
                         }
                 }
             }
             .navigationTitle("Cocktails")
             .navigationDestination(for: Cocktail.self) { cocktail in
-                CocktailDetailView(favorites: favorites, cocktail: cocktail)
+                CocktailDetailView(cocktail: cocktail)
             }
-            .searchable(text: $viewModel.searchText, prompt: "Search Cocktails")
+            .searchable(
+                text: Binding(
+                    get: { viewModel.searchText },
+                    set: { viewModel.searchText = $0 }
+                ),
+                prompt: "Search Cocktails"
+            )
             .popoverTip(favoriteCocktailsTip)
             .toolbar {
                 sortButtonMenu
@@ -46,7 +52,6 @@ struct CocktailsView: View {
                 ])
             }
         }
-        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

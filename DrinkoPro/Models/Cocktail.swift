@@ -44,22 +44,17 @@ struct Ingredient: Codable, Equatable, Identifiable, Hashable {
     let quantity: Double
     let unit: String
 
+    @MainActor
     var mlQuantity: Double {
         if unit == "oz." {
-            if quantity == 1.75 { return 50.0 }
-            if quantity == 1.25 { return 40.0 }
-            if quantity == 0.75 { return 25.0 }
-            if quantity == 0.66 { return 20.0 }
-            if quantity == 0.33 { return 10.0 }
-            if quantity == 0.15 { return 5.00 }
-
-            return quantity * 30.0
+            return UnitConverter.convert(quantity, from: "oz.", to: "ml")
         }
         return quantity
     }
 
+    @MainActor
     var mlUnit: String {
-        unit == "oz." ? "ml" : unit
+        UnitConverter.unitLabel(for: unit, convertingTo: "ml")
     }
 }
 
@@ -79,6 +74,7 @@ struct Procedure: Codable, Equatable, Identifiable {
     }
 }
 
+@MainActor
 @Observable
 class CocktailsViewModel {
     var listOfCocktails: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
@@ -119,7 +115,7 @@ class CocktailsViewModel {
 
     var filteredCocktails: [Cocktail] {
         guard !searchText.isEmpty else { return sortedCocktails }
-        return sortedCocktails.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+        return sortedCocktails.filter { $0.name.localizedStandardContains(searchText) }
     }
 
     func getsSuggestedCocktails(with ingredient: String, from cocktail: Cocktail) -> [Cocktail] {
@@ -132,7 +128,7 @@ class CocktailsViewModel {
                 if ingr.name.contains(ingredient) {
                     if !seen.contains(drink.id) {
                         list.append(drink)
-                        seen.insert(drink.name)
+                        seen.insert(drink.id)
                     }
                 }
             }

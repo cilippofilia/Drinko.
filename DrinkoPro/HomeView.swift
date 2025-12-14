@@ -14,59 +14,45 @@ struct HomeView: View {
 
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
+    
+    @Environment(\.requestReview) private var requestReview
 
     var body: some View {
         TabView(selection: $selectedView) {
-            LearnView()
-                .tag(LearnView.learnTag)
-                .tabItem {
-                    Label("Learn", systemImage: "books.vertical")
-                }
-
-            CocktailsView()
-                .tag(CocktailsView.cocktailsTag)
-                .tabItem {
-                    Label("Cocktails", systemImage: "wineglass")
-                }
+            Tab("Learn", systemImage: "books.vertical", value: LearnView.learnTag) {
+                LearnView()
+            }
             
-            CabinetView()
-                .tag(CabinetView.cabinetTag)
-                .tabItem {
-                    Label("Cabinet", systemImage: "cabinet")
-                }
-
-            SettingsView()
-                .tag(SettingsView.settingsTag)
-                .tabItem {
-                    Label("Settings", systemImage: "gear")
-                }
+            Tab("Cocktails", systemImage: "wineglass", value: CocktailsView.cocktailsTag) {
+                CocktailsView()
+            }
+            
+            Tab("Cabinet", systemImage: "cabinet", value: CabinetView.cabinetTag) {
+                CabinetView()
+            }
+            
+            Tab("Settings", systemImage: "gear", value: SettingsView.settingsTag) {
+                SettingsView()
+            }
         }
         .onAppear(perform: checkForReview)
     }
 
     // Get current Version of the App
     func getCurrentAppVersion() -> String {
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
-        let version = (appVersion as! String)
-
+        guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            return "Unknown"
+        }
         return version
     }
 
     func checkForReview() {
-        guard let scene = UIApplication.shared.currentScene else { return }
         appUsageCounter += 1
 
         if appUsageCounter == 3 || appUsageCounter % 15 == 0 {
             if appUsageCounter > 103 { appUsageCounter = 0 }
-            SKStoreReviewController.requestReview(in: scene)
+            requestReview()
         }
-    }
-}
-
-extension UIApplication {
-    var currentScene: UIWindowScene? {
-        connectedScenes
-            .first { $0.activationState == .foregroundActive } as? UIWindowScene
     }
 }
 

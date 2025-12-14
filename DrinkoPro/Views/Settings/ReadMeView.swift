@@ -111,7 +111,9 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                 }
             }
             .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
-            .frame(width: sizeClass == .compact ? compactScreenWidth : nil)
+            .containerRelativeFrame(.horizontal) { length, axis in
+                sizeClass == .compact ? length * 0.9 : length
+            }
         }
         .navigationBarTitle("Drinko.")
         .scrollIndicators(.hidden, axes: .vertical)

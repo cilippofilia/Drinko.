@@ -9,9 +9,9 @@ import SwiftUI
 
 struct CocktailRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @Environment(Favorites.self) private var favorites
     @State private var frameSize: CGFloat = 45
 
-    var favorites = Favorites()
     var cocktail: Cocktail
 
     var body: some View {
@@ -46,7 +46,7 @@ struct CocktailRowView: View {
             Spacer()
 
             Image(systemName: favorites.contains(cocktail) ? "heart.fill" : "heart")
-                .foregroundColor(favorites.contains(cocktail) ? Color.red : Color.clear)
+                .foregroundStyle(favorites.contains(cocktail) ? Color.red : Color.clear)
                 .animation(.default, value: favorites.hasEffect)
                 .symbolEffect(.bounce.up, value: favorites.hasEffect)
         }
