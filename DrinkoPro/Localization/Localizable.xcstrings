@@ -2062,6 +2062,7 @@
       }
     },
     "Instagram" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3946,6 +3947,7 @@
       }
     },
     "X - Twitter" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
