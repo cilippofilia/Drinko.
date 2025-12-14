@@ -69,10 +69,6 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                         CreditsCardView(name: "Filippo Cilia 🍸",
                                         brief: "Instagram: @cilippofilia",
                                         url: "https://instagram.com/cilippofilia")
-                        CreditsCardView(name: "Valentina Mircea 🍸",
-                                        brief: "Instagram: @mvandra96",
-                                        url: "https://instagram.com/mvandra96")
-                        
                     }
                     
                     Text("Photos & Videos")

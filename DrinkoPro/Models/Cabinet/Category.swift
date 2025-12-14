@@ -17,7 +17,7 @@ class Category {
     var color: String = "Dr. Blue"
     var creationDate: Date = Date()
     
-    @Relationship(.unique)
+    @Relationship(deleteRule: .cascade)
     var products: [Item]? = []
     
     static let colors = [

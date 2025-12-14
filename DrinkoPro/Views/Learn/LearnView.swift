@@ -42,7 +42,7 @@ struct LearnView: View {
                         }
                     } header: {
                         LearnHeaderView(
-                            text: topic.replacingOccurrences(of: "-", with: " "),
+                            text: topic.replacingOccurrences(of: "-", with: " ").capitalizingFirstLetter(),
                             isCollapsed: Binding(
                                 get: { collapsedStates[topic] ?? false },
                                 set: { collapsedStates[topic] = $0 }

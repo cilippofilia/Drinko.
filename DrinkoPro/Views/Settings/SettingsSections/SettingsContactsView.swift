@@ -38,8 +38,6 @@ struct SettingsContactsView: View {
             }
 
             rateApp
-            twitterRow
-            instaRow
         }
     }
 }
@@ -81,43 +79,6 @@ private extension SettingsContactsView {
         }
         .buttonStyle(.plain)
     }
-
-    var twitterRow: some View {
-        Button(action: {
-            UIApplication.shared.open(twitterURL!,
-                                      options: [:],
-                                      completionHandler: nil)
-        }) {
-            HStack {
-                Image("x")
-                    .resizable()
-                    .frame(width: 16, height: 16)
-                    .padding(.horizontal, 8)
-
-                Text("X - Twitter")
-            }
-        }
-        .buttonStyle(.plain)
-    }
-    
-    var instaRow: some View {
-        Button(action: {
-            UIApplication.shared.open(instaURL!,
-                                      options: [:],
-                                      completionHandler: nil)
-        }) {
-            HStack {
-                Image("insta")
-                    .resizable()
-                    .frame(width: 16, height: 16)
-                    .padding(.horizontal, 8)
-
-                Text("Instagram")
-            }
-        }
-        .buttonStyle(.plain)
-    }
-
 }
 
 #if DEBUG
