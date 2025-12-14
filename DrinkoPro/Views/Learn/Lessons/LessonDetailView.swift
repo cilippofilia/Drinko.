@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 27/04/2023.
 //
 
+import AVKit
 import SwiftUI
 
 struct LessonDetailView: View {
@@ -29,25 +30,12 @@ struct LessonDetailView: View {
 
     var compactLessonView: some View {
         VStack {
-            if lesson.hasVideo ?? false {
-                VideoView(videoID: lesson.videoID!)
-                    .frame(
-                        width: 350,
-                        height: imageFrameHeight
-                    )
-                    .clipShape(
-                        RoundedRectangle(
-                            cornerRadius: imageCornerRadius,
-                            style: .continuous
-                        )
-                    )
-            } else {
-                AsyncImageView(
-                    image: lesson.image,
-                    frameHeight: imageFrameHeight,
-                    aspectRatio: .fill
-                )
-            }
+            AsyncImageView(
+                image: lesson.image,
+                frameHeight: imageFrameHeight,
+                aspectRatio: .fill
+            )
+
             VStack(spacing: 10) {
                 Text(lesson.title)
                     .font(.title.bold())
@@ -77,25 +65,11 @@ struct LessonDetailView: View {
 
     var regularLessonView: some View {
         VStack(spacing: 20) {
-            if lesson.hasVideo ?? false {
-                VideoView(videoID: lesson.videoID!)
-                    .frame(
-                        width: 350,
-                        height: imageFrameHeight
-                    )
-                    .clipShape(
-                        RoundedRectangle(
-                            cornerRadius: imageCornerRadius,
-                            style: .continuous
-                        )
-                    )
-            } else {
-                AsyncImageView(
-                    image: lesson.image,
-                    frameHeight: imageFrameHeight,
-                    aspectRatio: .fill
-                )
-            }
+            AsyncImageView(
+                image: lesson.image,
+                frameHeight: imageFrameHeight,
+                aspectRatio: .fill
+            )
 
             VStack(spacing: 20) {
                 Text(lesson.title)
