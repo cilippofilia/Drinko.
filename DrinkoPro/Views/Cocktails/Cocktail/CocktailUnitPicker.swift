@@ -19,9 +19,7 @@ struct CocktailUnitPicker: View {
             }
         }
         .pickerStyle(.segmented)
-        .containerRelativeFrame(.horizontal) { length, axis in
-            sizeClass == .compact ? length * 0.45 : length * 0.35
-        }
+        .frame(width: screenWidth * (sizeClass == .compact ? 0.45 : 0.35))
         .frame(maxWidth: .infinity, alignment: .center)
         .padding(.bottom)
     }

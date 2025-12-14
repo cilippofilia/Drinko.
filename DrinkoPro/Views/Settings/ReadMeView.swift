@@ -103,17 +103,11 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
                         CreditsCardView(name: "Nicolas 🇩🇪",
                                         brief: "X (Twitter): @theduodev",
                                         url: "https://x.com/theduodev")
-                        CreditsCardView(name: "Valentina Mircea 🇷🇴",
-                                        brief: "Instagram: @mvandra96",
-                                        url: "https://instagram.com/mvandra96")
-
                     }
                 }
             }
             .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
-            .containerRelativeFrame(.horizontal) { length, axis in
-                sizeClass == .compact ? length * 0.9 : length
-            }
+            .frame(width: sizeClass == .compact ? screenWidth * 0.9 : nil)
         }
         .navigationBarTitle("Drinko.")
         .scrollIndicators(.hidden, axes: .vertical)

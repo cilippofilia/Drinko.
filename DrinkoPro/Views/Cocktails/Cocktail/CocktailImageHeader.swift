@@ -17,9 +17,7 @@ struct CocktailImageHeader: View {
             frameHeight: imageFrameHeight,
             aspectRatio: .fit
         )
-        .containerRelativeFrame(.horizontal) { length, axis in
-            sizeClass == .compact ? length * 0.9 : length * 0.7
-        }
+        .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
         .background(Color.white)
         .clipShape(.rect(cornerRadius: imageCornerRadius))
     }
