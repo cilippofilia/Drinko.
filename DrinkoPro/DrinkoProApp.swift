@@ -26,6 +26,8 @@ struct DrinkoProApp: App {
         .environment(favorites)
         .environment(cocktailsViewModel)
         .environment(lessonsViewModel)
-        .modelContainer(for: Category.self)
+        #if os(iOS)
+        .modelContainer(for: [Category.self, Item.self])
+        #endif
     }
 }

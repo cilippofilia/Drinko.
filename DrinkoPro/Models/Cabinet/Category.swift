@@ -11,7 +11,6 @@ import SwiftData
 
 @Model 
 class Category {
-    var id = UUID()
     var name: String = "Category Name"
     var detail: String = ""
     var color: String = "Dr. Blue"

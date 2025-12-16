@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+#if os(iOS)
 import UIKit
+#endif
 
-let windowMinWidth: CGFloat = 750
-let windowMinHeight: CGFloat = 350
+let windowMinWidth: CGFloat = 600
+let windowMinHeight: CGFloat = 300
 
-let rowHeight: CGFloat = 45
-let imageCornerRadius: CGFloat = 10
-let imageFrameHeight: CGFloat = 280
+#if os(iOS)
 let screenWidth: CGFloat = UIScreen.main.bounds.width
+#endif
 
 // URLs inside the app
 let twitterURL = URL(string: "https://x.com/the_drinko_app")
