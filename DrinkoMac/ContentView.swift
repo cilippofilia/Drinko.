@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  DrinkoProMac
+//  DrinkoMac
 //
-//  Created by Filippo Cilia on 14/12/2025.
+//  Created by Filippo Cilia on 16/12/2025.
 //
 
 import SwiftUI
