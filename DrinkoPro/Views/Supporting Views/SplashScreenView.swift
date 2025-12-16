@@ -33,53 +33,55 @@ struct SplashScreenView: View {
             Color("Dr. Blue")
                 .ignoresSafeArea()
 
-            VStack(spacing: 20) {
+            VStack {
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(
-                        width: sizeClass == .compact ? frameSize : frameSize * 1.5,
-                        height: sizeClass == .compact ? frameSize : frameSize * 1.5
-                    )
+                    .frame(width: sizeClass == .compact ? frameSize : frameSize * 1.75,
+                           height: sizeClass == .compact ? frameSize : frameSize * 1.75,
+                           alignment: .center)
                     .offset(y: imgOffset)
+                    .scaleEffect(scale)
                     .opacity(opacity)
 
                 Text("Drinko.")
-                    .font(.system(.largeTitle, design: .rounded))
-                    .bold()
-                    .rotation3DEffect(
-                        .degrees(angle),
-                        axis: (x: 0.5, y: 0.0, z: 0.0)
-                    )
+                    .font(.system(sizeClass == .compact ? .title : .largeTitle, design: .rounded, weight: .bold))
+                    .rotation3DEffect(.degrees(angle),
+                                      axis: (x: 0.5, y: 0.0, z: 0.0))
                     .foregroundStyle(.white)
-                    .scaleEffect(sizeClass == .compact ? 1.5 : 2)
+                    .offset(y: txtOffset)
+                    .scaleEffect(scale)
+                    .opacity(opacity)
+
+                Text("It's good to be back!")
+                    .font(.system(sizeClass == .compact ? .title3 : .title2, design: .rounded))
+                    .bold()
+                    .rotation3DEffect(.degrees(angle),
+                                      axis: (x: 0.5, y: 0.0, z: 0.0))
+                    .foregroundStyle(.white)
+                    .offset(y: txtOffset)
+                    .scaleEffect(scale)
                     .opacity(opacity)
             }
         }
-        .opacity(showHomeView ? 0 : 1)
-        .task {
-            // Logo slides in
-            withAnimation(.spring(response: 0.6, dampingFraction: 0.7)) {
+        .onAppear {
+            withAnimation(.interactiveSpring(response: 0.5,
+                                             dampingFraction: 0.6,
+                                             blendDuration: 0.7)) {
                 imgOffset = 0
             }
-
-            // Text rotates in after a brief delay
-            try? await Task.sleep(for: .milliseconds(400))
-            withAnimation(.spring(response: 0.6, dampingFraction: 0.7)) {
-                angle = 0
-            }
-
-            // Hold the animation for a moment
-            try? await Task.sleep(for: .milliseconds(1000))
-
-            // Fade out smoothly
-            withAnimation(.easeOut(duration: 0.4)) {
+            withAnimation(Animation.interactiveSpring(response: 0.5,
+                                                      dampingFraction: 0.6,
+                                                      blendDuration: 0.7)
+                .delay(0.4)) {
+                    angle = 0
+                }
+            withAnimation(Animation.linear.delay(1.8)) {
                 opacity = 0
             }
-
-            // Transition to home view after fade completes
-            try? await Task.sleep(for: .milliseconds(400))
-            showHomeView = true
+            withAnimation(Animation.linear.delay(1.8)) {
+                showHomeView = true
+            }
         }
     }
 }
