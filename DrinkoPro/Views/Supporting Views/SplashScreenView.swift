@@ -38,7 +38,9 @@ struct SplashScreenView: View {
     var body: some View {
         Group {
             if showHomeView {
+                #if os(iOS)
                 HomeView()
+                #else
                 ContentView()
                 #endif
             } else {
