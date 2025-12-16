@@ -118,6 +118,38 @@ class CocktailsViewModel {
         return sortedCocktails.filter { $0.name.localizedStandardContains(searchText) }
     }
 
+    var cocktailsGrouped: [String: [Cocktail]] {
+        let grouped = Dictionary(grouping: filteredCocktails) { cocktail in
+            switch sortOption {
+            case .byGlass:
+                return cocktail.glass.capitalizingFirstLetter()
+            case .byIce:
+                return cocktail.ice.capitalizingFirstLetter()
+            case .fromAtoZ, .fromZtoA:
+                let firstCharacter = cocktail.name.prefix(1).uppercased()
+                if let char = firstCharacter.first, char.isLetter {
+                    return String(char)
+                }
+                return "#"
+            }
+        }
+        
+        // Sort cocktails within each section alphabetically by name
+        return grouped.mapValues { cocktails in
+            cocktails.sorted { $0.name < $1.name }
+        }
+    }
+    
+    var sortedSectionKeys: [String] {
+        let keys = Array(cocktailsGrouped.keys)
+        switch sortOption {
+        case .fromZtoA:
+            return keys.sorted(by: >)
+        default:
+            return keys.sorted(by: <)
+        }
+    }
+
     func getsSuggestedCocktails(with ingredient: String, from cocktail: Cocktail) -> [Cocktail] {
         var list: [Cocktail] = []
         var seen: Set<String> = []

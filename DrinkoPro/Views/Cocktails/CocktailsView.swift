@@ -21,13 +21,35 @@ struct CocktailsView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            List(viewModel.filteredCocktails) { cocktail in
-                NavigationLink(value: cocktail) {
-                    CocktailRowView(cocktail: cocktail)
-                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                            FavoriteCocktailButtonView(cocktail: cocktail)
-                                .tint(favorites.contains(cocktail) ? .red : .blue)
+            Group {
+                if viewModel.searchText.isEmpty {
+                    List {
+                        ForEach(viewModel.sortedSectionKeys, id: \.self) { sectionKey in
+                            Section {
+                                ForEach(viewModel.cocktailsGrouped[sectionKey] ?? []) { cocktail in
+                                    NavigationLink(value: cocktail) {
+                                        CocktailRowView(cocktail: cocktail)
+                                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                                FavoriteCocktailButtonView(cocktail: cocktail)
+                                                    .tint(favorites.contains(cocktail) ? .red : .blue)
+                                            }
+                                    }
+                                }
+                            } header: {
+                                Text(sectionKey)
+                            }
                         }
+                    }
+                } else {
+                    List(viewModel.filteredCocktails) { cocktail in
+                        NavigationLink(value: cocktail) {
+                            CocktailRowView(cocktail: cocktail)
+                                .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                    FavoriteCocktailButtonView(cocktail: cocktail)
+                                        .tint(favorites.contains(cocktail) ? .red : .blue)
+                                }
+                        }
+                    }
                 }
             }
             .navigationTitle("Cocktails")
