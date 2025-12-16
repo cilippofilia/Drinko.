@@ -2091,6 +2091,7 @@
       }
     },
     "It's good to be back!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
