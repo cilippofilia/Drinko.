@@ -27,21 +27,13 @@ struct SplashScreenView: View {
         #endif
     }
 
-    private var scaleFactor: CGFloat {
-        #if os(macOS)
-        return 1.5
-        #else
-        return sizeClass == .compact ? 1.5 : 2
-        #endif
-    }
-
     var body: some View {
         Group {
             if showHomeView {
                 #if os(iOS)
                 HomeView()
                 #else
-                ContentView()
+                MacHomeView()
                 #endif
             } else {
                 animatedLogo
@@ -66,14 +58,16 @@ struct SplashScreenView: View {
                     .opacity(opacity)
 
                 Text("Drinko.")
+                    #if os(iOS)
                     .font(.system(.largeTitle, design: .rounded))
                     .bold()
+                    .scaleEffect(sizeClass == .compact ? 1.5 : 2)
+                    #endif
                     .rotation3DEffect(
                         .degrees(angle),
                         axis: (x: 0.5, y: 0.0, z: 0.0)
                     )
                     .foregroundStyle(.white)
-                    .scaleEffect(scaleFactor)
                     .opacity(opacity)
             }
         }
