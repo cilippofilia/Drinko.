@@ -62,6 +62,8 @@ struct SplashScreenView: View {
                     .font(.system(.largeTitle, design: .rounded))
                     .bold()
                     .scaleEffect(sizeClass == .compact ? 1.5 : 2)
+                    #elseif os(macOS)
+                    .font(.system(size: 48, weight: .bold, design: .rounded))
                     #endif
                     .rotation3DEffect(
                         .degrees(angle),
