@@ -13,10 +13,11 @@ import UIKit
 let windowMinWidth: CGFloat = 600
 let windowMinHeight: CGFloat = 300
 
-#if os(iOS)
 let rowHeight: CGFloat = 45
 let imageCornerRadius: CGFloat = 10
 let imageFrameHeight: CGFloat = 280
+
+#if os(iOS)
 let screenWidth: CGFloat = UIScreen.main.bounds.width
 #endif
 

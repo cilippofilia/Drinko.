@@ -28,9 +28,6 @@ struct DrinkoProApp: App {
         .environment(cocktailsViewModel)
         .environment(lessonsViewModel)
         .environment(macTabViewModel)
-        .commands {
-            LessonCommands()
-        }
         #if os(iOS)
         .modelContainer(for: [Category.self, Item.self])
         #endif

@@ -9,11 +9,18 @@ import SwiftUI
 
 struct LessonRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    let lesson: Lesson
 
-    var lesson: Lesson
+    var spacing: CGFloat {
+        #if os(iOS)
+        sizeClass == .compact ? 10 : 20
+        #else
+        10
+        #endif
+    }
 
     var body: some View {
-        HStack(spacing: sizeClass == .compact ? 10 : 20) {
+        HStack(spacing: spacing) {
             AsyncImage(url: URL(string: lesson.image)) { state in
                 switch state {
                 case .empty:

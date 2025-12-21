@@ -11,24 +11,34 @@ struct LearnView: View {
     static let learnTag: String? = "Learn"
     @Environment(LessonsViewModel.self) private var lessonsViewModel
     @State private var selectedLesson: Lesson?
+    @State private var selectedTopic: String?
 
     var body: some View {
         @Bindable var lessonsVM = lessonsViewModel
 
         NavigationSplitView {
-            List(lessonsVM.allLessons, selection: $selectedLesson) { lesson in
-                HStack {
-                    Image(systemName: "book.pages") // replace with lesson image
-                    VStack(alignment: .leading) {
-                        Text(lesson.title)
-                        Text(lesson.description)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
+            List(lessonsVM.topics, id: \.self, selection: $selectedTopic) { topic in
+                Text(topic.replacing("-", with: " ").capitalizingFirstLetter())
+                    .tag(topic)
+            }
+        } content: {
+            if let topic = selectedTopic {
+                List(
+                    lessonsVM.getLessons(for: topic),
+                    selection: $selectedLesson
+                ) { lesson in
+                    LessonRowView(lesson: lesson)
+                        .tag(lesson.id)
                 }
-                .tag(lesson)
+            } else {
+                ContentUnavailableView(
+                    "No Topic Selected",
+                    systemImage: "book.closed",
+                    description: Text("Select a topic from the list to view all the lessons related to it.")
+                )
             }
         } detail: {
+            // Detail lesson view
             if let lesson = selectedLesson {
                 VStack(alignment: .center) {
                     Text(lesson.title)
@@ -54,3 +64,4 @@ struct LearnView: View {
     LearnView()
         .environment(LessonsViewModel())
 }
+

@@ -21,6 +21,7 @@
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
 		18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18481D262C20E8120083FD5A /* AddCategoryView.swift */; };
+		1873BAFA2EF878010053B1E9 /* LessonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188BCF412A3875D500FBEF20 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188BCF402A3875D500FBEF20 /* VideoView.swift */; };
@@ -123,12 +124,12 @@
 			);
 			target = 18CABC1F2EF21010000A3278 /* DrinkoMac */;
 		};
-		1877CFE92EF692EC00E4A3EB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+		1873BAFC2EF878800053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Learn/LessonCommands.swift,
+				"Samples+Ext.swift",
 			);
-			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
+			target = 18CABC1F2EF21010000A3278 /* DrinkoMac */;
 		};
 		18CABC3E2EF21A7E000A3278 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -157,11 +158,11 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		183CED602DE1BAC6005B9699 /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
-		18CABC212EF21010000A3278 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1877CFE92EF692EC00E4A3EB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
+		18CABC212EF21010000A3278 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
 		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
 		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
 		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18CABC3E2EF21A7E000A3278 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
-		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
+		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1873BAFC2EF878800053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
 		18EB4F212EEED4B100691DC2 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1873BAED2EF856BB0053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
@@ -516,6 +517,7 @@
 			files = (
 				18CABC2E2EF218BB000A3278 /* DrinkoProApp.swift in Sources */,
 				18CABC2B2EF2121F000A3278 /* SplashScreenView.swift in Sources */,
+				1873BAFA2EF878010053B1E9 /* LessonRowView.swift in Sources */,
 				18CABC3C2EF21A6B000A3278 /* Cocktail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

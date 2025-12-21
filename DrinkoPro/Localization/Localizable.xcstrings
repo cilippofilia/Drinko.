@@ -1203,9 +1203,6 @@
         }
       }
     },
-    "Command Lesson" : {
-
-    },
     "Contact the developer" : {
       "localizations" : {
         "de" : {
@@ -2501,6 +2498,9 @@
     "No Lesson Selected" : {
 
     },
+    "No Topic Selected" : {
+
+    },
     "Notes" : {
       "localizations" : {
         "de" : {
@@ -3080,6 +3080,9 @@
     "Select a lesson from the list to view its details" : {
 
     },
+    "Select a topic from the list to view all the lessons related to it." : {
+
+    },
     "Select an option" : {
       "localizations" : {
         "de" : {
@@ -3541,9 +3544,6 @@
           }
         }
       }
-    },
-    "TEST" : {
-
     },
     "Thank you!" : {
       "extractionState" : "manual",

@@ -114,8 +114,7 @@ struct ABVCalculator: View {
         }
         .navigationTitle("ABV Calculator")
         .padding(.horizontal)
-        .scrollIndicators(.hidden, axes: .vertical)
-        .scrollBounceBehavior(.basedOnSize)
+        .scrollIndicators(.hidden)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
@@ -198,3 +197,4 @@ private extension ABVCalculator {
     ABVCalculator()
 }
 #endif
+
