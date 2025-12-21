@@ -1203,6 +1203,9 @@
         }
       }
     },
+    "Command Lesson" : {
+
+    },
     "Contact the developer" : {
       "localizations" : {
         "de" : {
@@ -1919,6 +1922,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "History" : {
       "localizations" : {
         "de" : {
@@ -2091,6 +2097,7 @@
       }
     },
     "It's good to be back!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2490,6 +2497,9 @@
           }
         }
       }
+    },
+    "No Lesson Selected" : {
+
     },
     "Notes" : {
       "localizations" : {
@@ -2971,6 +2981,15 @@
         }
       }
     },
+    "Replace with MacCabinetView" : {
+
+    },
+    "Replace with MacCocktailsView" : {
+
+    },
+    "Replace with MacSettingsView" : {
+
+    },
     "Report a bug" : {
       "localizations" : {
         "de" : {
@@ -3057,6 +3076,9 @@
           }
         }
       }
+    },
+    "Select a lesson from the list to view its details" : {
+
     },
     "Select an option" : {
       "localizations" : {
@@ -3519,6 +3541,9 @@
           }
         }
       }
+    },
+    "TEST" : {
+
     },
     "Thank you!" : {
       "extractionState" : "manual",

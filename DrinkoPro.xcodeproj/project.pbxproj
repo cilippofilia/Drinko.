@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 76;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -104,6 +104,32 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		1873BAED2EF856BB0053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/Cocktail/history.json,
+				/Localized/Cocktail/procedure.json,
+				/Localized/Cocktail/shots.json,
+				/Localized/Learn/books.json,
+				"/Localized/Learn/Lessons/advanced-lessons.json",
+				"/Localized/Learn/Lessons/bar-preps.json",
+				"/Localized/Learn/Lessons/basic-lessons.json",
+				"/Localized/Learn/Spirits/advanced-spirits.json",
+				"/Localized/Learn/Spirits/basic-spirits.json",
+				/Localized/Learn/Spirits/liqueurs.json,
+				/Localized/Learn/syrups.json,
+				Cocktail/cocktails.json,
+				Localizable.xcstrings,
+			);
+			target = 18CABC1F2EF21010000A3278 /* DrinkoMac */;
+		};
+		1877CFE92EF692EC00E4A3EB /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Learn/LessonCommands.swift,
+			);
+			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
+		};
 		18CABC3E2EF21A7E000A3278 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -131,12 +157,12 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		183CED602DE1BAC6005B9699 /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
-		18CABC212EF21010000A3278 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
+		18CABC212EF21010000A3278 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1877CFE92EF692EC00E4A3EB /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
 		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
 		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
 		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18CABC3E2EF21A7E000A3278 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
 		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
-		18EB4F212EEED4B100691DC2 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
+		18EB4F212EEED4B100691DC2 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1873BAED2EF856BB0053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,7 +468,6 @@
 				};
 			};
 			buildConfigurationList = 18F49E5B2A27B28D00862CE3 /* Build configuration list for PBXProject "DrinkoPro" */;
-			compatibilityVersion = "Xcode 15.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -455,6 +480,7 @@
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
 			);
+			preferredProjectObjectVersion = 60;
 			productRefGroup = 18F49E612A27B28D00862CE3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

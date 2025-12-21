@@ -22,15 +22,15 @@ struct HomeView: View {
             Tab("Learn", systemImage: "books.vertical", value: LearnView.learnTag) {
                 LearnView()
             }
-            
+
             Tab("Cocktails", systemImage: "wineglass", value: CocktailsView.cocktailsTag) {
                 CocktailsView()
             }
-            
+
             Tab("Cabinet", systemImage: "cabinet", value: CabinetView.cabinetTag) {
                 CabinetView()
             }
-            
+
             Tab("Settings", systemImage: "gear", value: SettingsView.settingsTag) {
                 SettingsView()
             }
