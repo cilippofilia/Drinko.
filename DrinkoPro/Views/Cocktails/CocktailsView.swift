@@ -21,13 +21,35 @@ struct CocktailsView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            List(viewModel.filteredCocktails) { cocktail in
-                NavigationLink(value: cocktail) {
-                    CocktailRowView(cocktail: cocktail)
-                        .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                            FavoriteCocktailButtonView(cocktail: cocktail)
-                                .tint(favorites.contains(cocktail) ? .red : .blue)
+            Group {
+                if viewModel.searchText.isEmpty {
+                    List {
+                        ForEach(viewModel.sortedSectionKeys, id: \.self) { sectionKey in
+                            Section {
+                                ForEach(viewModel.cocktailsGrouped[sectionKey] ?? []) { cocktail in
+                                    NavigationLink(value: cocktail) {
+                                        CocktailRowView(cocktail: cocktail)
+                                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                                FavoriteCocktailButtonView(cocktail: cocktail)
+                                                    .tint(favorites.contains(cocktail) ? .red : .blue)
+                                            }
+                                    }
+                                }
+                            } header: {
+                                Text(sectionKey)
+                            }
                         }
+                    }
+                } else {
+                    List(viewModel.filteredCocktails) { cocktail in
+                        NavigationLink(value: cocktail) {
+                            CocktailRowView(cocktail: cocktail)
+                                .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                    FavoriteCocktailButtonView(cocktail: cocktail)
+                                        .tint(favorites.contains(cocktail) ? .red : .blue)
+                                }
+                        }
+                    }
                 }
             }
             .navigationTitle("Cocktails")
@@ -61,22 +83,42 @@ private extension CocktailsView {
             Button(action: {
                 viewModel.sortOption = .fromAtoZ
             }) {
-                Label("A > Z", systemImage: viewModel.sortOption == .fromAtoZ ? "checkmark" : "")
+                HStack {
+                    Text("A > Z")
+                    if viewModel.sortOption == .fromAtoZ {
+                        Image(systemName: "checkmark")
+                    }
+                }
             }
             Button(action: {
                 viewModel.sortOption = .fromZtoA
             }) {
-                Label("Z > A", systemImage: viewModel.sortOption == .fromZtoA ? "checkmark" : "")
+                HStack {
+                    Text("Z > A")
+                    if viewModel.sortOption == .fromZtoA {
+                        Image(systemName: "checkmark")
+                    }
+                }
             }
             Button(action: {
                 viewModel.sortOption = .byGlass
             }) {
-                Label("By Glass", systemImage: viewModel.sortOption == .byGlass ? "checkmark" : "")
+                HStack {
+                    Text("By Glass")
+                    if viewModel.sortOption == .byGlass {
+                        Image(systemName: "checkmark")
+                    }
+                }
             }
             Button(action: {
                 viewModel.sortOption = .byIce
             }) {
-                Label("By Ice", systemImage: viewModel.sortOption == .byIce ? "checkmark" : "")
+                HStack {
+                    Text("By Ice")
+                    if viewModel.sortOption == .byIce {
+                        Image(systemName: "checkmark")
+                    }
+                }
             }
         } label: {
             if UIAccessibility.isVoiceOverRunning {

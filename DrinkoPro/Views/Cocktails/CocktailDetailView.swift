@@ -49,10 +49,10 @@ struct CocktailDetailView: View {
             CocktailImageHeader(cocktail: cocktail)
             
             VStack(alignment: .leading) {
+                CocktailUnitPicker(selectedUnit: $selectedUnit)
+                
                 Text(cocktail.name)
                     .font(.title.bold())
-
-                CocktailUnitPicker(selectedUnit: $selectedUnit)
                 
                 Divider()
                 
