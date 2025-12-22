@@ -20,6 +20,13 @@ struct CocktailDetailView: View {
 
     @State private var selectedUnit = "ml"
 
+    var toolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        return .topBarTrailing
+        #elseif os(macOS)
+        return .automatic
+        #endif
+    }
     let cocktail: Cocktail
 
     var body: some View {
@@ -27,19 +34,22 @@ struct CocktailDetailView: View {
             cocktailContent
         }
         .navigationTitle(cocktail.name)
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: toolbarPlacement) {
                 HistoryButtonView(
                     history: viewModel.getCocktailHistory(for: cocktail),
                     showHistory: $showHistory,
                     cocktail: cocktail
                 )
             }
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: toolbarPlacement) {
                 LikeButtonView(cocktail: cocktail)
+                    .frame(minWidth: 30, minHeight: 30)
             }
         }
     }
@@ -67,7 +77,11 @@ struct CocktailDetailView: View {
             }
             Spacer(minLength: 50)
         }
+        #if os(iOS)
         .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
+        #elseif os(macOS)
+        .padding(.horizontal, 20)
+        #endif
     }
 
 }

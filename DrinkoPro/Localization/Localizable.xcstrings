@@ -2495,6 +2495,9 @@
         }
       }
     },
+    "No Cocktail Selected" : {
+
+    },
     "No Lesson Selected" : {
 
     },
@@ -2984,9 +2987,6 @@
     "Replace with MacCabinetView" : {
 
     },
-    "Replace with MacCocktailsView" : {
-
-    },
     "Replace with MacSettingsView" : {
 
     },
@@ -3077,6 +3077,9 @@
         }
       }
     },
+    "Select a cocktail from the sidebar to check the recipe." : {
+
+    },
     "Select a lesson from the list to view its details" : {
 
     },
@@ -3112,6 +3115,7 @@
       }
     },
     "Select unit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

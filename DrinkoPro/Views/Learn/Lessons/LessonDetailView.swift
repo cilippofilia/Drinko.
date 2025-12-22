@@ -15,11 +15,7 @@ struct LessonDetailView: View {
     var lesson: Lesson
     var spacing: CGFloat {
         #if os(iOS)
-        if sizeClass == .compact {
-            return 10
-        } else {
-            return 20
-        }
+        return sizeClass == .compact ? 10 : 20
         #elseif os(macOS)
         return 10
         #endif

@@ -19,7 +19,7 @@ struct MacHomeView: View {
                     Label("Learn", systemImage: MacTab.learn.rawValue)
                 }
                 .tag(MacTab.learn)
-            Text("Replace with MacCocktailsView")
+            CocktailsView()
                 .tabItem {
                     Label("Cocktails", systemImage: MacTab.cocktails.rawValue)
                 }

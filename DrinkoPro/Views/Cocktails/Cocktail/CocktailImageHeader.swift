@@ -17,7 +17,11 @@ struct CocktailImageHeader: View {
             frameHeight: imageFrameHeight,
             aspectRatio: .fit
         )
+        #if os(iOS)
         .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
+        #elseif os(macOS)
+        .padding(.horizontal, 20)
+        #endif
         .background(Color.white)
         .clipShape(.rect(cornerRadius: imageCornerRadius))
     }

@@ -9,9 +9,33 @@ import SwiftUI
 
 struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
-    
+    @Environment(CocktailsViewModel.self) private var cocktailsViewModel
+    @State private var selectedCocktail: Cocktail?
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        @Bindable var cocktailsVM = cocktailsViewModel
+        
+        NavigationSplitView {
+            List(
+                cocktailsVM.listOfAllDrinks,
+                selection: $selectedCocktail
+            ) { cocktail in
+                CocktailRowView(cocktail: cocktail)
+                    .tag(cocktail)
+            }
+        } detail: {
+            if let selectedCocktail = selectedCocktail {
+                CocktailDetailView(cocktail: selectedCocktail)
+                    .tag(selectedCocktail)
+            } else {
+                ContentUnavailableView(
+                    "No Cocktail Selected",
+                    systemImage: "wineglass",
+                    description: Text("Select a cocktail from the sidebar to check the recipe.")
+                )
+
+            }
+        }
     }
 }
 

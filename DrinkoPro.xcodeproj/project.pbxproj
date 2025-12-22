@@ -24,6 +24,10 @@
 		1873BAFA2EF878010053B1E9 /* LessonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */; };
 		1873BB012EF941020053B1E9 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */; };
 		1873BC462EF94FF50053B1E9 /* CocktailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */; };
+		1873BC472EF9562A0053B1E9 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
+		1873BC482EF9564E0053B1E9 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */; };
+		1873BC492EF9564E0053B1E9 /* DrinkoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */; };
+		1873BC4A2EF9564E0053B1E9 /* HistoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
@@ -131,6 +135,21 @@
 			);
 			target = 18CABC1F2EF21010000A3278 /* DrinkoMac */;
 		};
+		1873BC4C2EF956590053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CocktailDetailSectionView.swift,
+				CocktailDetailsSection.swift,
+				CocktailImageHeader.swift,
+				CocktailRelatedSection.swift,
+				CocktailUnitPicker.swift,
+				HistoryView.swift,
+				IngredientsView.swift,
+				LinkedCocktailsView.swift,
+				ProcedureView.swift,
+			);
+			target = 18CABC1F2EF21010000A3278 /* DrinkoMac */;
+		};
 		18CABC3E2EF21A7E000A3278 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -159,7 +178,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		183CED602DE1BAC6005B9699 /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
 		18CABC212EF21010000A3278 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
-		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
+		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 1873BC4C2EF956590053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
 		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
 		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18CABC3E2EF21A7E000A3278 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
 		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1873BAFC2EF878800053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
@@ -517,7 +536,11 @@
 				18CABC2E2EF218BB000A3278 /* DrinkoProApp.swift in Sources */,
 				18CABC2B2EF2121F000A3278 /* SplashScreenView.swift in Sources */,
 				1873BAFA2EF878010053B1E9 /* LessonRowView.swift in Sources */,
+				1873BC472EF9562A0053B1E9 /* CocktailDetailView.swift in Sources */,
 				1873BB012EF941020053B1E9 /* LessonDetailView.swift in Sources */,
+				1873BC482EF9564E0053B1E9 /* LikeButtonView.swift in Sources */,
+				1873BC492EF9564E0053B1E9 /* DrinkoButtonView.swift in Sources */,
+				1873BC4A2EF9564E0053B1E9 /* HistoryButtonView.swift in Sources */,
 				1873BC462EF94FF50053B1E9 /* CocktailRowView.swift in Sources */,
 				18CABC3C2EF21A6B000A3278 /* Cocktail.swift in Sources */,
 			);

@@ -13,9 +13,16 @@ struct CocktailRowView: View {
     @State private var frameSize: CGFloat = 45
 
     var cocktail: Cocktail
+    var spacing: CGFloat {
+        #if os(iOS)
+        return sizeClass == .compact ? 10 : 20
+        #elseif os(macOS)
+        return 5
+        #endif
+    }
 
     var body: some View {
-        HStack(spacing: sizeClass == .compact ? 10 : 20) {
+        HStack(spacing: spacing) {
             if cocktail.glass == "wine" {
                 Image(systemName: "wineglass")
                     .imageScale(.large)
@@ -42,15 +49,16 @@ struct CocktailRowView: View {
             }
 
             Text(cocktail.name)
-
+                .frame(maxWidth: .infinity, alignment: .leading)
             Spacer()
-
+        }
+        .frame(height: frameSize)
+        .overlay(alignment: .trailing) {
             Image(systemName: favorites.contains(cocktail) ? "heart.fill" : "heart")
                 .foregroundStyle(favorites.contains(cocktail) ? Color.red : Color.clear)
                 .animation(.default, value: favorites.hasEffect)
                 .symbolEffect(.bounce.up, value: favorites.hasEffect)
         }
-        .frame(height: frameSize)
     }
 }
 

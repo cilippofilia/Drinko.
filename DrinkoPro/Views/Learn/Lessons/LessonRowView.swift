@@ -13,9 +13,9 @@ struct LessonRowView: View {
 
     var spacing: CGFloat {
         #if os(iOS)
-        sizeClass == .compact ? 10 : 20
+        return sizeClass == .compact ? 10 : 20
         #else
-        10
+        return 10
         #endif
     }
 

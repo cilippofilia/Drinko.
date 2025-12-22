@@ -10,10 +10,13 @@ import SwiftUI
 struct FavoriteCocktailButtonView: View {
     @Environment(Favorites.self) private var favorites
     let cocktail: Cocktail
+    var isFavorite: Bool {
+       return favorites.contains(cocktail)
+    }
 
     var body: some View {
         Button(action: {
-            if favorites.contains(cocktail) {
+            if isFavorite {
                 favorites.remove(cocktail)
             } else {
                 favorites.add(cocktail)
@@ -21,7 +24,7 @@ struct FavoriteCocktailButtonView: View {
                     .notificationOccurred(.success)
             }
         }) {
-            Label("Like", systemImage: "heart")
+            Label("Like", systemImage: isFavorite ? "heart.slash.fill" : "heart")
         }
         .animation(.default, value: favorites.hasEffect)
         .symbolEffect(.bounce.up, value: favorites.hasEffect)
