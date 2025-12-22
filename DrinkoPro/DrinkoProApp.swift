@@ -31,8 +31,6 @@ struct DrinkoProApp: App {
         #if os(macOS)
         .environment(macTabViewModel)
         #endif
-        #if os(iOS)
         .modelContainer(for: [Category.self, Item.self])
-        #endif
     }
 }

@@ -24,7 +24,7 @@ struct MacHomeView: View {
                     Label("Cocktails", systemImage: MacTab.cocktails.rawValue)
                 }
                 .tag(MacTab.cocktails)
-            Text("Replace with MacCabinetView")
+            CabinetView()
                 .tabItem {
                     Label("Cabinet", systemImage: MacTab.cabinet.rawValue)
                 }

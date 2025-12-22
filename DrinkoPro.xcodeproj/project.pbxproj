@@ -28,6 +28,9 @@
 		1873BC482EF9564E0053B1E9 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */; };
 		1873BC492EF9564E0053B1E9 /* DrinkoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */; };
 		1873BC4A2EF9564E0053B1E9 /* HistoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */; };
+		1873BC552EF9C7B90053B1E9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137C2B655D78000D3343 /* Category.swift */; };
+		1873BC562EF9C7BD0053B1E9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137B2B655D78000D3343 /* Item.swift */; };
+		1873BC572EF9C7C30053B1E9 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713892B656F28000D3343 /* Previewer.swift */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
@@ -533,15 +536,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1873BC572EF9C7C30053B1E9 /* Previewer.swift in Sources */,
 				18CABC2E2EF218BB000A3278 /* DrinkoProApp.swift in Sources */,
 				18CABC2B2EF2121F000A3278 /* SplashScreenView.swift in Sources */,
 				1873BAFA2EF878010053B1E9 /* LessonRowView.swift in Sources */,
 				1873BC472EF9562A0053B1E9 /* CocktailDetailView.swift in Sources */,
 				1873BB012EF941020053B1E9 /* LessonDetailView.swift in Sources */,
 				1873BC482EF9564E0053B1E9 /* LikeButtonView.swift in Sources */,
+				1873BC562EF9C7BD0053B1E9 /* Item.swift in Sources */,
 				1873BC492EF9564E0053B1E9 /* DrinkoButtonView.swift in Sources */,
 				1873BC4A2EF9564E0053B1E9 /* HistoryButtonView.swift in Sources */,
 				1873BC462EF94FF50053B1E9 /* CocktailRowView.swift in Sources */,
+				1873BC552EF9C7B90053B1E9 /* Category.swift in Sources */,
 				18CABC3C2EF21A6B000A3278 /* Cocktail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,16 +24,24 @@ struct CocktailsView: View {
                     .tag(cocktail)
             }
         } detail: {
-            if let selectedCocktail = selectedCocktail {
-                CocktailDetailView(cocktail: selectedCocktail)
-                    .tag(selectedCocktail)
-            } else {
-                ContentUnavailableView(
-                    "No Cocktail Selected",
-                    systemImage: "wineglass",
-                    description: Text("Select a cocktail from the sidebar to check the recipe.")
-                )
+            NavigationStack {
+                if let selectedCocktail = selectedCocktail {
+                    CocktailDetailView(cocktail: selectedCocktail)
+                        .navigationDestination(for: Cocktail.self) { cocktail in
+                            CocktailDetailView(cocktail: cocktail)
+                                .onAppear {
+                                    self.selectedCocktail = cocktail
+                                }
+                        }
+                        .tag(selectedCocktail)
+                } else {
+                    ContentUnavailableView(
+                        "No Cocktail Selected",
+                        systemImage: "wineglass",
+                        description: Text("Select a cocktail from the sidebar to check the recipe.")
+                    )
 
+                }
             }
         }
     }

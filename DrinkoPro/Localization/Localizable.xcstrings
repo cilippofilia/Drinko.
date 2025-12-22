@@ -1518,6 +1518,9 @@
         }
       }
     },
+    "details" : {
+
+    },
     "Dismiss" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2984,9 +2987,6 @@
         }
       }
     },
-    "Replace with MacCabinetView" : {
-
-    },
     "Replace with MacSettingsView" : {
 
     },
@@ -3257,6 +3257,9 @@
           }
         }
       }
+    },
+    "sidebar" : {
+
     },
     "Sign In" : {
       "extractionState" : "manual",
