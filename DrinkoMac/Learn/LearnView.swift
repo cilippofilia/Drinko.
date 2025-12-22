@@ -17,7 +17,11 @@ struct LearnView: View {
         @Bindable var lessonsVM = lessonsViewModel
 
         NavigationSplitView {
-            List(lessonsVM.topics, id: \.self, selection: $selectedTopic) { topic in
+            List(
+                lessonsVM.topics,
+                id: \.self,
+                selection: $selectedTopic
+            ) { topic in
                 Text(topic.replacing("-", with: " ").capitalizingFirstLetter())
                     .tag(topic)
             }
@@ -28,7 +32,7 @@ struct LearnView: View {
                     selection: $selectedLesson
                 ) { lesson in
                     LessonRowView(lesson: lesson)
-                        .tag(lesson.id)
+                        .tag(lesson)
                 }
             } else {
                 ContentUnavailableView(
@@ -40,15 +44,8 @@ struct LearnView: View {
         } detail: {
             // Detail lesson view
             if let lesson = selectedLesson {
-                VStack(alignment: .center) {
-                    Text(lesson.title)
-                        .font(.title2)
-                        .bold()
-                    Text(lesson.description)
-                        .foregroundStyle(.secondary)
-                }
-                .padding()
-                .multilineTextAlignment(.center)
+                LessonDetailView(lesson: lesson)
+                    .tag(lesson)
             } else {
                 ContentUnavailableView(
                     "No Lesson Selected",
