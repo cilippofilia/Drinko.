@@ -10,6 +10,8 @@ import SwiftUI
 import UIKit
 #endif
 
+typealias ActionVoid = () -> Void
+
 let windowMinWidth: CGFloat = 600
 let windowMinHeight: CGFloat = 300
 

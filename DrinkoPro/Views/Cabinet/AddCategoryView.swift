@@ -5,19 +5,38 @@
 //  Created by Filippo Cilia on 17/06/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct AddCategoryView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+
     @FocusState private var isFocused: Bool
+    
     @State private var categoryName = ""
     @State private var categoryDetails = ""
     @State private var categoryColor = "Dr. Blue"
-
     @State private var isSelected: Bool = false
     @State private var isColorsCollapsed: Bool = false
     @State private var isSuggestedCollapsed: Bool = false
+
+    func toolbarPlacement(
+        isLeading: Bool? = false,
+        isTrailing: Bool? = false
+    ) -> ToolbarItemPlacement {
+        #if os(iOS)
+        if isLeading == true {
+            return .topLeading
+        } else if isTrailing == true {
+            return .topTrailing
+        } else {
+            return .automatic
+        }
+        #elseif os(macOS)
+        return .automatic
+        #endif
+    }
 
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -90,11 +109,13 @@ struct AddCategoryView: View {
                     }
                 }
             }
+            #if os(iOS)
             .listSectionSpacing(.compact)
             .navigationTitle("Add Category")
             .navigationBarTitleDisplayMode(.inline)
+            #endif
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: toolbarPlacement(isTrailing: true)) {
                     Button(action: {
                         addCategory()
                         dismiss()
@@ -102,7 +123,7 @@ struct AddCategoryView: View {
                         Text("Save")
                     }
                 }
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: toolbarPlacement(isLeading: true)) {
                     Button(action: {
                         dismiss()
                     }) {

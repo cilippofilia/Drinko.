@@ -608,6 +608,9 @@
         }
       }
     },
+    "Add your first product to %@" : {
+
+    },
     "Amount?" : {
       "localizations" : {
         "de" : {
@@ -1059,6 +1062,12 @@
           }
         }
       }
+    },
+    "Choose a category from the sidebar to view its products." : {
+
+    },
+    "Choose a product from the list to view its details." : {
+
     },
     "Choose from Library" : {
       "extractionState" : "manual",
@@ -1518,9 +1527,6 @@
         }
       }
     },
-    "details" : {
-
-    },
     "Dismiss" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1777,6 +1783,9 @@
           }
         }
       }
+    },
+    "Empty search bar" : {
+
     },
     "Extra" : {
       "localizations" : {
@@ -2504,6 +2513,12 @@
     "No Lesson Selected" : {
 
     },
+    "No matches found.\nIt seems like we can't find what you are looking for..." : {
+
+    },
+    "No Products" : {
+
+    },
     "No Topic Selected" : {
 
     },
@@ -2534,6 +2549,9 @@
           }
         }
       }
+    },
+    "OOPS!" : {
+
     },
     "Other Enquiry" : {
       "localizations" : {
@@ -2732,6 +2750,12 @@
         }
       }
     },
+    "Product Details" : {
+
+    },
+    "Product details would go here" : {
+
+    },
     "Product name" : {
       "localizations" : {
         "de" : {
@@ -2759,6 +2783,9 @@
           }
         }
       }
+    },
+    "Product statistics would go here" : {
+
     },
     "Profile" : {
       "extractionState" : "manual",
@@ -3049,6 +3076,9 @@
     "Save" : {
 
     },
+    "Search categories" : {
+
+    },
     "Search Cocktails" : {
       "localizations" : {
         "de" : {
@@ -3077,10 +3107,16 @@
         }
       }
     },
+    "Select a Category" : {
+
+    },
     "Select a cocktail from the sidebar to check the recipe." : {
 
     },
     "Select a lesson from the list to view its details" : {
+
+    },
+    "Select a Product" : {
 
     },
     "Select a topic from the list to view all the lessons related to it." : {
@@ -3257,9 +3293,6 @@
           }
         }
       }
-    },
-    "sidebar" : {
-
     },
     "Sign In" : {
       "extractionState" : "manual",
@@ -3723,6 +3756,9 @@
           }
         }
       }
+    },
+    "To start, press the + button at the top to add a category." : {
+
     },
     "Translations" : {
       "localizations" : {
