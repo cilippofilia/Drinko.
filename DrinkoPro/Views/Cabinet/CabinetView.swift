@@ -67,8 +67,11 @@ extension CabinetView {
                     ForEach(category.products!) { product in
                         ProductRowView(product: product)
                             .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                FavoriteProductButtonView(product: product)
-                                    .tint(product.isFavorite ? .red : .blue)
+                                FavoriteProductButtonView(
+                                    product: product,
+                                    labelText: product.isFavorite ? "Remove from cart" : "Add to cart"
+                                )
+                                .tint(product.isFavorite ? .red : .blue)
                             }
                     }
 

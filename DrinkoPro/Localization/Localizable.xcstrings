@@ -590,6 +590,7 @@
       }
     },
     "Add to Cart" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -704,6 +705,9 @@
           }
         }
       }
+    },
+    "Are you sure you want to delete this product?\nYou will delete all the informations added to it." : {
+
     },
     "Are you sure you want to delete this product? You will delete all the informations added to it." : {
       "localizations" : {
@@ -1480,6 +1484,9 @@
         }
       }
     },
+    "Delete item" : {
+
+    },
     "Delete Product" : {
       "localizations" : {
         "de" : {
@@ -1535,6 +1542,9 @@
           }
         }
       }
+    },
+    "Details:" : {
+
     },
     "Dismiss" : {
       "extractionState" : "manual",
@@ -2371,6 +2381,9 @@
         }
       }
     },
+    "Made in:" : {
+
+    },
     "Malic Acid: " : {
       "localizations" : {
         "de" : {
@@ -2759,12 +2772,6 @@
         }
       }
     },
-    "Product Details" : {
-
-    },
-    "Product details would go here" : {
-
-    },
     "Product name" : {
       "localizations" : {
         "de" : {
@@ -2793,7 +2800,7 @@
         }
       }
     },
-    "Product statistics would go here" : {
+    "Product name:" : {
 
     },
     "Profile" : {
@@ -2941,6 +2948,7 @@
 
     },
     "Remove from Cart" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

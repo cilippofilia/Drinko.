@@ -48,7 +48,7 @@ extension CabinetView {
     var detailContent: some View {
         Group {
             if let selectedProduct {
-                productDetailView(for: selectedProduct)
+                DetailsView(product: selectedProduct)
             } else {
                 selectProductPlaceholder
             }
@@ -61,73 +61,6 @@ extension CabinetView {
         }, description: {
             Text("Choose a product from the list to view its details.")
         })
-    }
-
-    func productDetailView(for product: Item) -> some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 24) {
-                // Product header
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Text(product.name)
-                            .font(.title)
-                            .fontWeight(.bold)
-
-                        Spacer()
-
-                        Button(action: {
-                            product.isFavorite.toggle()
-                        }) {
-                            Image(systemName: product.isFavorite ? "star.fill" : "star")
-                                .foregroundStyle(product.isFavorite ? .yellow : .secondary)
-                                .font(.title2)
-                        }
-                        .buttonStyle(.borderless)
-                    }
-                }
-
-                Divider()
-
-                // Product information sections
-                VStack(alignment: .leading, spacing: 16) {
-                    infoSection(title: "Details", systemImage: "info.circle") {
-                        Text("Product details would go here")
-                            .foregroundStyle(.secondary)
-                    }
-
-                    Divider()
-
-                    infoSection(title: "Statistics", systemImage: "chart.bar") {
-                        Text("Product statistics would go here")
-                            .foregroundStyle(.secondary)
-                    }
-                }
-            }
-            .padding()
-        }
-        .navigationTitle("Product Details")
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button(action: {
-                    // Edit product action
-                }) {
-                    Label("Edit Product", systemImage: "pencil")
-                }
-            }
-        }
-    }
-
-    func infoSection<Content: View>(
-        title: String,
-        systemImage: String,
-        @ViewBuilder content: () -> Content
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Label(title, systemImage: systemImage)
-                .font(.headline)
-
-            content()
-        }
     }
 }
 

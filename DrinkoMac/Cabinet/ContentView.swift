@@ -38,41 +38,27 @@ private extension ContentView {
         List(selection: selectedProduct) {
             ForEach(products) { product in
                 NavigationLink(value: product) {
-                    HStack {
-                        HStack {
-                            if product.isFavorite {
-                                Image(systemName: "cart")
-                            }
-
-                            Text(product.name)
-                                .fontWeight(.medium)
-                        }
-
-                        Spacer()
-
-                        if product.tried {
-                            HStack(spacing: 2) {
-                                Text("\(product.rating, specifier: "%.1f")")
-                                Image(systemName: "star.fill")
-                            }
-                            .foregroundStyle(.yellow)
-                            .font(.caption)
-                        }
-                    }
-                    .frame(height: 45)
+                    ProductRowView(product: product)
+                        .frame(minHeight: 45)
                 }
                 .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                    FavoriteProductButtonView(product: product)
+                    FavoriteProductButtonView(product: product, labelText: product.isFavorite ? "Remove" : "Add")
                         .tint(product.isFavorite ? .red : .blue)
                 }
                 .contextMenu {
-                    FavoriteProductButtonView(product: product)
+                    FavoriteProductButtonView(
+                        product: product,
+                        labelText: product.isFavorite ? "Remove from cart" : "Add to cart"
+                    )
 
                     Divider()
 
-                    Button("Delete Product", role: .destructive) {
+                    Button(action: {
                         deleteProduct(product, from: category)
+                    }) {
+                        Label("Delete item", systemImage: "trash")
                     }
+                    .tint(.red)
                 }
             }
             .onDelete { indexSet in
@@ -88,6 +74,9 @@ private extension ContentView {
             .padding(.vertical, 4)
         }
         .listStyle(.plain)
+        .navigationDestination(for: Category.self) { category in
+            // TODO: what about here?
+        }
     }
 
     var selectCategoryPlaceholder: some View {
@@ -138,7 +127,6 @@ private extension ContentView {
         products.remove(atOffsets: offsets)
         category.products = products
     }
-
 }
 
 #Preview {
