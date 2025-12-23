@@ -87,12 +87,12 @@ private extension SidebarView {
         ContentUnavailableView(label: {
             Label("OOPS!", systemImage: "cabinet.fill")
         }, description: {
-            Text("No matches found.\nIt seems like we can't find what you are looking for...")
+            Text("No matches found.\nCheck your query or try clearing the search bar.")
         }, actions: {
             Button(action: {
                 searchText.wrappedValue = ""
             }) {
-                Label("Empty search bar", systemImage: "clear")
+                Label("Empty search bar", systemImage: "xmark.circle.fill")
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .center)

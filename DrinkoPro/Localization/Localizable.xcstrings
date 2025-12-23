@@ -2513,7 +2513,7 @@
     "No Lesson Selected" : {
 
     },
-    "No matches found.\nIt seems like we can't find what you are looking for..." : {
+    "No matches found.\nCheck your query or try clearing the search bar." : {
 
     },
     "No Products" : {
@@ -3757,7 +3757,7 @@
         }
       }
     },
-    "To start, press the + button at the top to add a category." : {
+    "To start, press Add Category below." : {
 
     },
     "Translations" : {
