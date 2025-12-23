@@ -88,6 +88,9 @@
         }
       }
     },
+    "%.1f" : {
+
+    },
     "%.2f" : {
 
     },
@@ -465,6 +468,9 @@
         }
       }
     },
+    "Add" : {
+
+    },
     "Add a category" : {
       "localizations" : {
         "de" : {
@@ -552,6 +558,9 @@
         }
       }
     },
+    "Add Item" : {
+
+    },
     "Add Product" : {
       "localizations" : {
         "de" : {
@@ -608,7 +617,7 @@
         }
       }
     },
-    "Add your first product to %@" : {
+    "Add your first item to %@" : {
 
     },
     "Amount?" : {
@@ -2510,13 +2519,13 @@
     "No Cocktail Selected" : {
 
     },
+    "No Items" : {
+
+    },
     "No Lesson Selected" : {
 
     },
     "No matches found.\nCheck your query or try clearing the search bar." : {
-
-    },
-    "No Products" : {
 
     },
     "No Topic Selected" : {
@@ -2927,6 +2936,9 @@
           }
         }
       }
+    },
+    "Remove" : {
+
     },
     "Remove from Cart" : {
       "localizations" : {

@@ -32,7 +32,10 @@ struct CabinetView: View {
                 selectedProduct: $selectedProduct
             )
         } content: {
-            contentView
+            ContentView(
+                selectedCategory: $selectedCategory,
+                selectedProduct: $selectedProduct
+            )
         } detail: {
             detailContent
         }
@@ -42,95 +45,6 @@ struct CabinetView: View {
 
 // MARK: VIEWS
 extension CabinetView {
-    var contentView: some View {
-        Group {
-            if let selectedCategory {
-                productsListView(for: selectedCategory)
-            } else {
-                selectCategoryPlaceholder
-            }
-        }
-    }
-
-    var selectCategoryPlaceholder: some View {
-        ContentUnavailableView(label: {
-            Label("Select a Category", systemImage: "cabinet")
-        }, description: {
-            Text("Choose a category from the sidebar to view its products.")
-        })
-    }
-
-    func productsListView(for category: Category) -> some View {
-        Group {
-            if let products = category.products, !products.isEmpty {
-                productsList(for: category, products: products)
-            } else {
-                emptyProductsView(for: category)
-            }
-        }
-        .navigationTitle(category.name)
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button(action: {
-                    addProduct(to: category)
-                }) {
-                    Label("Add Product", systemImage: "plus")
-                }
-            }
-        }
-    }
-
-    func productsList(for category: Category, products: [Item]) -> some View {
-        List(selection: $selectedProduct) {
-            ForEach(products) { product in
-                NavigationLink(value: product) {
-                    HStack {
-                        Text(product.name)
-                            .fontWeight(.medium)
-
-                        Spacer()
-
-                        if product.isFavorite {
-                            Image(systemName: "star.fill")
-                                .foregroundStyle(.yellow)
-                                .font(.caption)
-                        }
-                    }
-                }
-                .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                    FavoriteProductButtonView(product: product)
-                        .tint(product.isFavorite ? .red : .blue)
-                }
-                .contextMenu {
-                    FavoriteProductButtonView(product: product)
-
-                    Divider()
-
-                    Button("Delete Product", role: .destructive) {
-                        deleteProduct(product, from: category)
-                    }
-                }
-            }
-            .onDelete { indexSet in
-                deleteProducts(at: indexSet, from: category)
-            }
-        }
-        .listStyle(.inset)
-    }
-
-    func emptyProductsView(for category: Category) -> some View {
-        ContentUnavailableView(label: {
-            Label("No Products", systemImage: "shippingbox")
-        }, description: {
-            Text("Add your first product to \(category.name)")
-        }, actions: {
-            Button("Add Product") {
-                addProduct(to: category)
-            }
-            .buttonStyle(.borderedProminent)
-        })
-    }
-
     var detailContent: some View {
         Group {
             if let selectedProduct {
@@ -214,32 +128,6 @@ extension CabinetView {
 
             content()
         }
-    }
-}
-
-// MARK: METHODS
-extension CabinetView {
-    func addProduct(to category: Category) {
-        let newProduct = Item(name: "Product Name")
-        category.products?.append(newProduct)
-        selectedProduct = newProduct
-    }
-
-    func deleteProduct(_ product: Item, from category: Category) {
-        if selectedProduct?.id == product.id {
-            selectedProduct = nil
-        }
-        category.products?.removeAll { $0.id == product.id }
-    }
-
-    func deleteProducts(at offsets: IndexSet, from category: Category) {
-        guard var products = category.products else { return }
-        let deletedProducts = offsets.map { products[$0] }
-        if let selectedProduct, deletedProducts.contains(where: { $0.id == selectedProduct.id }) {
-            self.selectedProduct = nil
-        }
-        products.remove(atOffsets: offsets)
-        category.products = products
     }
 }
 

@@ -17,7 +17,11 @@ struct FavoriteProductButtonView: View {
             UINotificationFeedbackGenerator().notificationOccurred(.success)
             #endif
         }) {
+            #if os(iOS)
             Label(product.isFavorite ? "Remove from Cart" : "Add to Cart", systemImage: "cart")
+            #elseif os(macOS)
+            Label(product.isFavorite ? "Remove" : "Add", systemImage: "cart")
+            #endif
         }
         .animation(.default, value: product.isFavorite)
     }
