@@ -10,11 +10,7 @@ import SwiftUI
 
 struct DetailsView: View {
     @Bindable var product: Item
-
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-
-    @FocusState private var isFocused: Bool
 
     @State private var showingDeleteConfirmation: Bool = false
     @State private var isAnimated: Bool = false
@@ -29,22 +25,24 @@ struct DetailsView: View {
                 Group {
                     Text("Product name:")
                     TextField("", text: $product.name)
-
                 }
-
-                HStack {
-                    TextField("", text: $product.abv)
-                    Text("% ABV")
+                // ABV
+                Group {
+                    HStack {
+                        TextField("", text: $product.abv)
+                        Text("% ABV")
+                    }
                 }
-
-                HStack {
-                    Image(systemName: "flag")
-                    Text("Made in:")
+                // made in
+                Group {
+                    HStack {
+                        Image(systemName: "flag")
+                        Text("Made in:")
+                    }
+                    TextField("", text: $product.madeIn)
                 }
-                TextField("", text: $product.madeIn)
-
-
-                VStack {
+                // details
+                Group {
                     Text("Details:")
                     TextField(
                         "",
@@ -52,33 +50,37 @@ struct DetailsView: View {
                         axis: .vertical
                     )
                 }
+                // review
+                Group {
+                    Toggle(isOn: $product.tried) {
+                        Text("Have you tried it yet?")
+                    }
 
-                Toggle(isOn: $product.tried) {
-                    Text("Have you tried it yet?")
-                }
-
-                HStack {
-                    ForEach(1 ..< 5 + 1) { star in
-                        image(for: star)
-                            .foregroundColor(star > product.rating ? Color.secondary : Color.yellow)
-                            .onTapGesture {
-                                product.rating = star
-                                isAnimated.toggle()
-                            }
-                            .animation(.default, value: isAnimated)
-                            .symbolEffect(.bounce.up, value: isAnimated)
+                    HStack {
+                        ForEach(1 ..< 5 + 1) { star in
+                            image(for: star)
+                                .foregroundColor(star > product.rating ? Color.secondary : Color.yellow)
+                                .onTapGesture {
+                                    product.rating = star
+                                    isAnimated.toggle()
+                                }
+                                .animation(.default, value: isAnimated)
+                                .symbolEffect(.bounce.up, value: isAnimated)
+                        }
                     }
                 }
 
-                Section(footer: Text("By deleting the product you will be deleting every informations added to it.")) {
+                Section {
                     Button(action: {
                         showingDeleteConfirmation = true
                     }) {
                         Label("Delete Product", systemImage: "trash")
                             .foregroundStyle(.red)
                     }
+                } footer: {
+                    Text("By deleting the product you will be deleting every informations added to it.")
+                        .font(.caption)
                 }
-
             }
             .padding(.horizontal)
         }
@@ -100,7 +102,6 @@ struct DetailsView: View {
 
     func delete() {
         modelContext.delete(product)
-        dismiss()
     }
 }
 

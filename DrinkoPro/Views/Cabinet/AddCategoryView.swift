@@ -27,9 +27,9 @@ struct AddCategoryView: View {
     ) -> ToolbarItemPlacement {
         #if os(iOS)
         if isLeading == true {
-            return .topLeading
+            return .topBarLeading
         } else if isTrailing == true {
-            return .topTrailing
+            return .topBarTrailing
         } else {
             return .automatic
         }
