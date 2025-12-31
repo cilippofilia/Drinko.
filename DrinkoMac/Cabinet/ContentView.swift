@@ -74,9 +74,6 @@ private extension ContentView {
             .padding(.vertical, 4)
         }
         .listStyle(.plain)
-        .navigationDestination(for: Category.self) { category in
-            // TODO: what about here?
-        }
     }
 
     var selectCategoryPlaceholder: some View {

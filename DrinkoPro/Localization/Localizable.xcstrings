@@ -324,6 +324,16 @@
     "%lld" : {
 
     },
+    "%lld star%@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld star%2$@"
+          }
+        }
+      }
+    },
     "© %@" : {
       "localizations" : {
         "de" : {
@@ -351,6 +361,9 @@
           }
         }
       }
+    },
+    "0.0" : {
+
     },
     "A > Z" : {
 
@@ -499,6 +512,9 @@
         }
       }
     },
+    "Add any additional notes or description..." : {
+
+    },
     "Add category" : {
       "localizations" : {
         "de" : {
@@ -621,6 +637,9 @@
     "Add your first item to %@" : {
 
     },
+    "Alcohol Content" : {
+
+    },
     "Amount?" : {
       "localizations" : {
         "de" : {
@@ -648,6 +667,9 @@
           }
         }
       }
+    },
+    "Are you sure you want to delete '%@'? This action cannot be undone." : {
+
     },
     "Are you sure you want to delete this category? You will also delete all the products it contains." : {
       "localizations" : {
@@ -765,6 +787,9 @@
           }
         }
       }
+    },
+    "Basic Information" : {
+
     },
     "Buy: %@" : {
       "extractionState" : "manual",
@@ -1310,6 +1335,9 @@
         }
       }
     },
+    "Country or region" : {
+
+    },
     "Create Account" : {
       "comment" : "AuthView",
       "extractionState" : "manual",
@@ -1542,6 +1570,9 @@
           }
         }
       }
+    },
+    "Deleting this product will permanently remove all associated information. This action cannot be undone." : {
+
     },
     "Details:" : {
 
@@ -1981,6 +2012,9 @@
         }
       }
     },
+    "I've tried this product" : {
+
+    },
     "Ice" : {
       "localizations" : {
         "de" : {
@@ -2094,6 +2128,9 @@
           }
         }
       }
+    },
+    "Insert name here" : {
+
     },
     "Instagram" : {
       "extractionState" : "stale",
@@ -2575,6 +2612,9 @@
     "OOPS!" : {
 
     },
+    "Origin" : {
+
+    },
     "Other Enquiry" : {
       "localizations" : {
         "de" : {
@@ -2772,6 +2812,9 @@
         }
       }
     },
+    "Product Details" : {
+
+    },
     "Product name" : {
       "localizations" : {
         "de" : {
@@ -2799,6 +2842,9 @@
           }
         }
       }
+    },
+    "Product Name" : {
+
     },
     "Product name:" : {
 
@@ -3092,6 +3138,9 @@
           }
         }
       }
+    },
+    "Review" : {
+
     },
     "Save" : {
 
@@ -4147,6 +4196,9 @@
           }
         }
       }
+    },
+    "Your Rating" : {
+
     },
     "Z > A" : {
 

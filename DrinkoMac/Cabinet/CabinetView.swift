@@ -37,7 +37,16 @@ struct CabinetView: View {
                 selectedProduct: $selectedProduct
             )
         } detail: {
-            detailContent
+            if let selectedProduct, let category = selectedCategory {
+                ProductListView(
+                    product: selectedProduct,
+                    deleteAction: {
+                        deleteProduct(selectedProduct, from: category)
+                    }
+                )
+            } else {
+                selectProductPlaceholder
+            }
         }
         .searchable(text: $searchText, placement: .sidebar, prompt: "Search categories")
     }
@@ -61,6 +70,24 @@ extension CabinetView {
         }, description: {
             Text("Choose a product from the list to view its details.")
         })
+    }
+
+    func deleteProduct(_ product: Item, from category: Category) {
+        if selectedProduct?.id == product.id {
+            selectedProduct = nil
+        }
+        category.products?.removeAll { $0.id == product.id }
+    }
+
+    func deleteProducts(at offsets: IndexSet, from category: Category) {
+        guard var products = category.products else { return }
+        let deletedProducts = offsets.map { products[$0] }
+        let selectedProduct = selectedProduct
+        if deletedProducts.contains(where: { $0.id == selectedProduct?.id }) {
+            self.selectedProduct = nil
+        }
+        products.remove(atOffsets: offsets)
+        category.products = products
     }
 }
 
