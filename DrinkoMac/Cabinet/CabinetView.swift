@@ -56,8 +56,13 @@ struct CabinetView: View {
 extension CabinetView {
     var detailContent: some View {
         Group {
-            if let selectedProduct {
-                DetailsView(product: selectedProduct)
+            if let selectedProduct, let category = selectedCategory {
+                ProductListView(
+                    product: selectedProduct,
+                    deleteAction: {
+                        deleteProduct(selectedProduct, from: category)
+                    }
+                )
             } else {
                 selectProductPlaceholder
             }

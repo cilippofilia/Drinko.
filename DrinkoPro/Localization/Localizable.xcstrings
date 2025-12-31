@@ -728,9 +728,6 @@
         }
       }
     },
-    "Are you sure you want to delete this product?\nYou will delete all the informations added to it." : {
-
-    },
     "Are you sure you want to delete this product? You will delete all the informations added to it." : {
       "localizations" : {
         "de" : {
@@ -1574,9 +1571,6 @@
     "Deleting this product will permanently remove all associated information. This action cannot be undone." : {
 
     },
-    "Details:" : {
-
-    },
     "Dismiss" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2418,9 +2412,6 @@
         }
       }
     },
-    "Made in:" : {
-
-    },
     "Malic Acid: " : {
       "localizations" : {
         "de" : {
@@ -2844,9 +2835,6 @@
       }
     },
     "Product Name" : {
-
-    },
-    "Product name:" : {
 
     },
     "Profile" : {
