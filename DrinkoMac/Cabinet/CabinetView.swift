@@ -37,16 +37,7 @@ struct CabinetView: View {
                 selectedProduct: $selectedProduct
             )
         } detail: {
-            if let selectedProduct, let category = selectedCategory {
-                ProductListView(
-                    product: selectedProduct,
-                    deleteAction: {
-                        deleteProduct(selectedProduct, from: category)
-                    }
-                )
-            } else {
-                selectProductPlaceholder
-            }
+            detailContent
         }
         .searchable(text: $searchText, placement: .sidebar, prompt: "Search categories")
     }
