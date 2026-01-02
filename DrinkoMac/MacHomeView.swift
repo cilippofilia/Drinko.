@@ -14,26 +14,21 @@ struct MacHomeView: View {
     var body: some View {
         @Bindable var tabVM = tabViewModel
         TabView(selection: $tabVM.selectedTab) {
-            LearnView()
-                .tabItem {
-                    Label("Learn", systemImage: MacTab.learn.rawValue)
-                }
-                .tag(MacTab.learn)
-            CocktailsView()
-                .tabItem {
-                    Label("Cocktails", systemImage: MacTab.cocktails.rawValue)
-                }
-                .tag(MacTab.cocktails)
-            CabinetView()
-                .tabItem {
-                    Label("Cabinet", systemImage: MacTab.cabinet.rawValue)
-                }
-                .tag(MacTab.cabinet)
-            Text("Replace with MacSettingsView")
-                .tabItem {
-                    Label("Settings", systemImage: MacTab.settings.rawValue)
-                }
-                .tag(MacTab.settings)
+            Tab("Learn", systemImage: "books.vertical", value: .learn) {
+                LearnView()
+            }
+
+            Tab("Cocktails", systemImage: "wineglass", value: .cocktails) {
+                CocktailsView()
+            }
+
+            Tab("Cabinet", systemImage: "cabinet", value: .cabinet) {
+                CabinetView()
+            }
+
+            Tab("Settings", systemImage: "gear", value: .settings) {
+                SettingsView()
+            }
         }
     }
 }
