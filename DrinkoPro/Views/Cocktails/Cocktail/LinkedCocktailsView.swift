@@ -16,9 +16,7 @@ struct LinkedCocktailsView: View {
             ForEach(cocktails) { cocktail in
                 NavigationLink(value: cocktail) {
                     HStack {
-                        CocktailRowView(
-                            cocktail: cocktail
-                        )
+                        CocktailRowView(cocktail: cocktail)
 
                         Image(systemName: "chevron.right")
                             .bold()

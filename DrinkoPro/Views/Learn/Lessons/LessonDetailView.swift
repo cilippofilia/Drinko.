@@ -13,7 +13,13 @@ struct LessonDetailView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
 
     var lesson: Lesson
-
+    var spacing: CGFloat {
+        #if os(iOS)
+        return sizeClass == .compact ? 10 : 20
+        #elseif os(macOS)
+        return 10
+        #endif
+    }
     var body: some View {
         ScrollView {
             if sizeClass == .compact {
@@ -22,8 +28,10 @@ struct LessonDetailView: View {
                 regularLessonView
             }
         }
+        #if os(iOS)
         .navigationTitle(lesson.title)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
     }
@@ -36,7 +44,7 @@ struct LessonDetailView: View {
                 aspectRatio: .fill
             )
 
-            VStack(spacing: 10) {
+            VStack(spacing: spacing) {
                 Text(lesson.title)
                     .font(.title.bold())
 
@@ -58,20 +66,24 @@ struct LessonDetailView: View {
                     }
                 }
             }
+            #if os(iOS)
             .frame(width: screenWidth * 0.9)
             .padding(.bottom)
+            #elseif os(macOS)
+            .padding([.horizontal, .bottom], 20)
+            #endif
         }
     }
 
     var regularLessonView: some View {
-        VStack(spacing: 20) {
+        VStack {
             AsyncImageView(
                 image: lesson.image,
                 frameHeight: imageFrameHeight,
                 aspectRatio: .fill
             )
 
-            VStack(spacing: 20) {
+            VStack(spacing: spacing) {
                 Text(lesson.title)
                     .font(.title.bold())
 
@@ -94,8 +106,12 @@ struct LessonDetailView: View {
                     }
                 }
             }
+            #if os(iOS)
             .frame(width: screenWidth * 0.7)
             .padding(.bottom)
+            #elseif os(macOS)
+            .padding([.horizontal, .bottom], 30)
+            #endif
         }
     }
 }

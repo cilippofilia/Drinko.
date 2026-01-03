@@ -14,7 +14,9 @@ struct DrinkoProApp: App {
     @State private var favorites = Favorites()
     @State private var cocktailsViewModel = CocktailsViewModel()
     @State private var lessonsViewModel = LessonsViewModel()
-
+    #if os(macOS)
+    @State private var macTabViewModel = MacTabViewModel()
+    #endif
     init() {
         try? Tips.configure()
     }
@@ -26,6 +28,9 @@ struct DrinkoProApp: App {
         .environment(favorites)
         .environment(cocktailsViewModel)
         .environment(lessonsViewModel)
-        .modelContainer(for: Category.self)
+        #if os(macOS)
+        .environment(macTabViewModel)
+        #endif
+        .modelContainer(for: [Category.self, Item.self])
     }
 }

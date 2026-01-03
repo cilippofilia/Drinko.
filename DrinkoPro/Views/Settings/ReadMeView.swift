@@ -109,9 +109,8 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
             .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
             .frame(width: sizeClass == .compact ? screenWidth * 0.9 : nil)
         }
-        .navigationBarTitle("Drinko.")
-        .scrollIndicators(.hidden, axes: .vertical)
-        .scrollBounceBehavior(.basedOnSize)
+        .navigationTitle("Drinko.")
+        .scrollIndicators(.hidden)
     }
 }
 
@@ -120,3 +119,4 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
     ReadMeView()
 }
 #endif
+

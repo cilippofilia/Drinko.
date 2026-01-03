@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 04/02/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct EditProductView: View {
@@ -26,7 +27,9 @@ struct EditProductView: View {
                 HStack {
                     TextField("ABV", text: $product.abv)
                         .frame(width: 33)
+                        #if os(iOS)
                         .keyboardType(.decimalPad)
+                        #endif
                         .focused($isFocused)
 
                     Text("% ABV")

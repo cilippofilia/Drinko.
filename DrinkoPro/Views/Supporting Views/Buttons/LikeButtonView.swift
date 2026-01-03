@@ -25,11 +25,10 @@ struct LikeButtonView: View {
             }
         }) {
             Label("Like", systemImage: favorites.contains(cocktail) ? "heart.fill" : "heart")
-                .foregroundStyle(.red)
                 .animation(.default, value: favorites.hasEffect)
                 .symbolEffect(.bounce.up, value: favorites.hasEffect)
         }
-        .buttonStyle(.plain)
+        .tint(.red)
     }
 }
 

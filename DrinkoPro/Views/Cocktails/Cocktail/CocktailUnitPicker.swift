@@ -13,13 +13,17 @@ struct CocktailUnitPicker: View {
     let units = ["ml", "oz."]
     
     var body: some View {
-        Picker("Select unit", selection: $selectedUnit) {
+        Picker("", selection: $selectedUnit) {
             ForEach(units, id: \.self) {
                 Text($0)
             }
         }
         .pickerStyle(.segmented)
+        #if os(iOS)
         .frame(width: screenWidth * (sizeClass == .compact ? 0.45 : 0.35))
+        #elseif os(macOS)
+        .padding(.horizontal, 20)
+        #endif
         .frame(maxWidth: .infinity, alignment: .center)
         .padding(.bottom)
     }

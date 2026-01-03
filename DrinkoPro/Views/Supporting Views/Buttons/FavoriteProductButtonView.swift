@@ -9,13 +9,16 @@ import SwiftUI
 
 struct FavoriteProductButtonView: View {
     let product: Item
+    let labelText: String
 
     var body: some View {
         Button(action: {
             product.isFavorite.toggle()
+            #if os(iOS)
             UINotificationFeedbackGenerator().notificationOccurred(.success)
+            #endif
         }) {
-            Label(product.isFavorite ? "Remove from Cart" : "Add to Cart", systemImage: "cart")
+            Label(labelText, systemImage: "cart")
         }
         .animation(.default, value: product.isFavorite)
     }
@@ -23,6 +26,6 @@ struct FavoriteProductButtonView: View {
 
 #if DEBUG
 #Preview {
-    FavoriteProductButtonView(product: Item(name: "Test"))
+    FavoriteProductButtonView(product: Item(name: "Test"), labelText: "test")
 }
 #endif

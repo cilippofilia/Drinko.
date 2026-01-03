@@ -8,20 +8,33 @@
 import SwiftUI
 
 struct SplashScreenView: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
-
     @State private var showHomeView = false
     @State private var angle: Double = -90
     @State private var opacity: Double = 1
     @State private var scale: CGFloat = 1
     @State private var imgOffset: CGFloat = -800
     @State private var txtOffset: CGFloat = 0
-    @State private var frameSize: CGFloat = 200
+
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) var sizeClass
+    #endif
+
+    private var frameSize: CGFloat {
+        #if os(macOS)
+        return 150
+        #else
+        return sizeClass == .compact ? 200 : 350
+        #endif
+    }
 
     var body: some View {
         Group {
             if showHomeView {
+                #if os(iOS)
                 HomeView()
+                #else
+                MacHomeView()
+                #endif
             } else {
                 animatedLogo
             }
@@ -38,21 +51,25 @@ struct SplashScreenView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(
-                        width: sizeClass == .compact ? frameSize : frameSize * 1.5,
-                        height: sizeClass == .compact ? frameSize : frameSize * 1.5
+                        width: frameSize,
+                        height: frameSize
                     )
                     .offset(y: imgOffset)
                     .opacity(opacity)
 
                 Text("Drinko.")
+                    #if os(iOS)
                     .font(.system(.largeTitle, design: .rounded))
                     .bold()
+                    .scaleEffect(sizeClass == .compact ? 1.5 : 2)
+                    #elseif os(macOS)
+                    .font(.system(size: 48, weight: .bold, design: .rounded))
+                    #endif
                     .rotation3DEffect(
                         .degrees(angle),
                         axis: (x: 0.5, y: 0.0, z: 0.0)
                     )
                     .foregroundStyle(.white)
-                    .scaleEffect(sizeClass == .compact ? 1.5 : 2)
                     .opacity(opacity)
             }
         }
