@@ -1,5 +1,5 @@
 //
-//  SettingsView.swift
+//  MacSettingsView.swift
 //  DrinkoMac
 //
 //  Created by Filippo Cilia on 18/12/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SettingsView: View {
+struct MacSettingsView: View {
     static let settingsTag: String? = "Settings"
     
     var body: some View {
@@ -16,5 +16,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    MacSettingsView()
 }

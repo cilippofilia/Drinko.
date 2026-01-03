@@ -1,5 +1,5 @@
 //
-//  LearnView.swift
+//  MacLearnView.swift
 //  DrinkoMac
 //
 //  Created by Filippo Cilia on 18/12/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LearnView: View {
+struct MacLearnView: View {
     static let learnTag: String? = "Learn"
     @Environment(LessonsViewModel.self) private var lessonsViewModel
     @State private var selectedLesson: Lesson?
@@ -58,7 +58,7 @@ struct LearnView: View {
 }
 
 #Preview {
-    LearnView()
+    MacLearnView()
         .environment(LessonsViewModel())
 }
 

@@ -15,19 +15,19 @@ struct MacHomeView: View {
         @Bindable var tabVM = tabViewModel
         TabView(selection: $tabVM.selectedTab) {
             Tab("Learn", systemImage: "books.vertical", value: .learn) {
-                LearnView()
+                MacLearnView()
             }
 
             Tab("Cocktails", systemImage: "wineglass", value: .cocktails) {
-                CocktailsView()
+                MacCocktailsView()
             }
 
             Tab("Cabinet", systemImage: "cabinet", value: .cabinet) {
-                CabinetView()
+                MacCabinetView()
             }
 
             Tab("Settings", systemImage: "gear", value: .settings) {
-                SettingsView()
+                MacSettingsView()
             }
         }
     }

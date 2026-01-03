@@ -929,6 +929,9 @@
         }
       }
     },
+    "cabinet" : {
+
+    },
     "Cabinet" : {
       "comment" : "Cabinet Tab",
       "localizations" : {

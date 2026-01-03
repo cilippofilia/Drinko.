@@ -1,5 +1,5 @@
 //
-//  CocktailsView.swift
+//  MacCocktailsView.swift
 //  DrinkoMac
 //
 //  Created by Filippo Cilia on 18/12/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CocktailsView: View {
+struct MacCocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
     @Environment(CocktailsViewModel.self) private var cocktailsViewModel
     @State private var selectedCocktail: Cocktail?
@@ -48,5 +48,5 @@ struct CocktailsView: View {
 }
 
 #Preview {
-    CocktailsView()
+    MacCocktailsView()
 }

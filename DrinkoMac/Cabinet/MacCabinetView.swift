@@ -8,7 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct CabinetView: View {
+struct MacCabinetView: View {
     static let cabinetTag: String? = "Cabinet"
     @Environment(\.modelContext) private var modelContext
 
@@ -44,7 +44,7 @@ struct CabinetView: View {
 }
 
 // MARK: VIEWS
-extension CabinetView {
+extension MacCabinetView {
     var detailContent: some View {
         Group {
             if let selectedProduct, let category = selectedCategory {
@@ -88,5 +88,5 @@ extension CabinetView {
 }
 
 #Preview {
-    CabinetView()
+    MacCabinetView()
 }
