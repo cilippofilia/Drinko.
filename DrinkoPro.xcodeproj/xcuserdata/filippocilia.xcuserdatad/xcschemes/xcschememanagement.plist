@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DrinkoMac.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>DrinkoPro.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
+		</dict>
+		<key>DrinkoProTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Promises (Playground) 1.xcscheme</key>
 		<dict>
@@ -59,6 +69,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>182B4B7E2F0D6B05007E7026</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>18F49E5F2A27B28D00862CE3</key>
 		<dict>
 			<key>primary</key>
