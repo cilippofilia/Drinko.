@@ -30,6 +30,8 @@ struct LinkedCocktailsView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LinkedCocktailsView(cocktails: [], procedure: nil)
 }
+#endif

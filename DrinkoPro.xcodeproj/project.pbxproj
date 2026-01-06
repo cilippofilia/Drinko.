@@ -67,6 +67,16 @@
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		182B4B832F0D6B05007E7026 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18F49E582A27B28D00862CE3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18F49E5F2A27B28D00862CE3;
+			remoteInfo = DrinkoPro;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCocktailButtonView.swift; sourceTree = "<group>"; };
 		180EC7202BD413BE0092AD02 /* LearnHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnHeaderView.swift; sourceTree = "<group>"; };
@@ -78,6 +88,7 @@
 		1827138B2B6576AB000D3343 /* CategoryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryHeaderView.swift; sourceTree = "<group>"; };
 		1827138D2B658293000D3343 /* ProductRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRowView.swift; sourceTree = "<group>"; };
 		182713972B685B8A000D3343 /* EditCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCategoryView.swift; sourceTree = "<group>"; };
+		182B4B7F2F0D6B05007E7026 /* DrinkoProTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkoProTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		182E43362A2B1221001675FD /* CreditsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsCardView.swift; sourceTree = "<group>"; };
 		183AE95A2A94AAC000AC156F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		183AE95E2A94AB4500AC156F /* DrinkoPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DrinkoPro.entitlements; sourceTree = "<group>"; };
@@ -183,6 +194,7 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		182B4B802F0D6B05007E7026 /* DrinkoProTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrinkoProTests; sourceTree = "<group>"; };
 		183CED602DE1BAC6005B9699 /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
 		18CABC212EF21010000A3278 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
 		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 1873BC4C2EF956590053B1E9 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
@@ -193,6 +205,14 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		182B4B7C2F0D6B05007E7026 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18CABC412EF21ED3000A3278 /* CloudKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18CABC1D2EF21010000A3278 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -338,6 +358,7 @@
 			children = (
 				18F49E622A27B28D00862CE3 /* DrinkoPro */,
 				18CABC212EF21010000A3278 /* DrinkoMac */,
+				182B4B802F0D6B05007E7026 /* DrinkoProTests */,
 				18F49E612A27B28D00862CE3 /* Products */,
 				183723C82A909AB700DBCD5D /* Frameworks */,
 			);
@@ -348,6 +369,7 @@
 			children = (
 				18F49E602A27B28D00862CE3 /* DrinkoPro.app */,
 				18CABC202EF21010000A3278 /* DrinkoMac.app */,
+				182B4B7F2F0D6B05007E7026 /* DrinkoProTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -425,6 +447,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		182B4B7E2F0D6B05007E7026 /* DrinkoProTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 182B4B852F0D6B05007E7026 /* Build configuration list for PBXNativeTarget "DrinkoProTests" */;
+			buildPhases = (
+				182B4B7B2F0D6B05007E7026 /* Sources */,
+				182B4B7C2F0D6B05007E7026 /* Frameworks */,
+				182B4B7D2F0D6B05007E7026 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				182B4B842F0D6B05007E7026 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				182B4B802F0D6B05007E7026 /* DrinkoProTests */,
+			);
+			name = DrinkoProTests;
+			packageProductDependencies = (
+			);
+			productName = DrinkoProTests;
+			productReference = 182B4B7F2F0D6B05007E7026 /* DrinkoProTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		18CABC1F2EF21010000A3278 /* DrinkoMac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18CABC282EF21012000A3278 /* Build configuration list for PBXNativeTarget "DrinkoMac" */;
@@ -485,6 +530,10 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					182B4B7E2F0D6B05007E7026 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 18F49E5F2A27B28D00862CE3;
+					};
 					18CABC1F2EF21010000A3278 = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -513,11 +562,19 @@
 			targets = (
 				18F49E5F2A27B28D00862CE3 /* DrinkoPro */,
 				18CABC1F2EF21010000A3278 /* DrinkoMac */,
+				182B4B7E2F0D6B05007E7026 /* DrinkoProTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		182B4B7D2F0D6B05007E7026 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18CABC1E2EF21010000A3278 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,6 +593,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		182B4B7B2F0D6B05007E7026 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1873BC572EF9C7C30053B1E9 /* Previewer.swift in Sources */,
+				18CABC2E2EF218BB000A3278 /* DrinkoProApp.swift in Sources */,
+				18CABC2B2EF2121F000A3278 /* SplashScreenView.swift in Sources */,
+				1873BC5B2EFA856C0053B1E9 /* FavoriteProductButtonView.swift in Sources */,
+				1873BAFA2EF878010053B1E9 /* LessonRowView.swift in Sources */,
+				1873BC472EF9562A0053B1E9 /* CocktailDetailView.swift in Sources */,
+				1873BB012EF941020053B1E9 /* LessonDetailView.swift in Sources */,
+				1873BC482EF9564E0053B1E9 /* LikeButtonView.swift in Sources */,
+				1873BC562EF9C7BD0053B1E9 /* Item.swift in Sources */,
+				1873BC492EF9564E0053B1E9 /* DrinkoButtonView.swift in Sources */,
+				1873BC582EFA80320053B1E9 /* AddCategoryView.swift in Sources */,
+				1873BC4A2EF9564E0053B1E9 /* HistoryButtonView.swift in Sources */,
+				1873BC462EF94FF50053B1E9 /* CocktailRowView.swift in Sources */,
+				1873BC5A2EFA85410053B1E9 /* EditProductView.swift in Sources */,
+				1873BC552EF9C7B90053B1E9 /* Category.swift in Sources */,
+				18CABC3C2EF21A6B000A3278 /* Cocktail.swift in Sources */,
+				1873BC692EFB12E90053B1E9 /* ProductRowView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18CABC1C2EF21010000A3278 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -607,7 +688,62 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		182B4B842F0D6B05007E7026 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
+			targetProxy = 182B4B832F0D6B05007E7026 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		182B4B862F0D6B05007E7026 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K3GFX53DY;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cilia.filippo.DrinkoProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkoPro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkoPro";
+			};
+			name = Debug;
+		};
+		182B4B872F0D6B05007E7026 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K3GFX53DY;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cilia.filippo.DrinkoProTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkoPro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkoPro";
+			};
+			name = Release;
+		};
 		18CABC292EF21012000A3278 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -856,7 +992,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -894,7 +1030,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 2.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -910,6 +1046,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		182B4B852F0D6B05007E7026 /* Build configuration list for PBXNativeTarget "DrinkoProTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				182B4B862F0D6B05007E7026 /* Debug */,
+				182B4B872F0D6B05007E7026 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		18CABC282EF21012000A3278 /* Build configuration list for PBXNativeTarget "DrinkoMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

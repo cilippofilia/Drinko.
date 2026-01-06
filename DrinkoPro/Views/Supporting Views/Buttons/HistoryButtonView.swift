@@ -30,6 +30,8 @@ struct HistoryButtonView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     HistoryButtonView(history: nil, showHistory: .constant(true), cocktail: Cocktail.example)
 }
+#endif
