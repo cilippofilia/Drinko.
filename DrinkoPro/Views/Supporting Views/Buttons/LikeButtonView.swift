@@ -33,6 +33,8 @@ struct LikeButtonView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     LikeButtonView(cocktail: Cocktail.example)
 }
+#endif

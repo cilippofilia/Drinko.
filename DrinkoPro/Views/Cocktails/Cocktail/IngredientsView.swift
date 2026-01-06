@@ -30,6 +30,8 @@ struct IngredientsView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     IngredientsView(ingredients: [], selectedUnit: "ml")
 }
+#endif

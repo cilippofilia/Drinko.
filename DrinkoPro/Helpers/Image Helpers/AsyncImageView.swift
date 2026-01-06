@@ -30,6 +30,8 @@ struct AsyncImageView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     AsyncImageView(image: "lemon", frameHeight: 200, aspectRatio: .fit)
 }
+#endif
