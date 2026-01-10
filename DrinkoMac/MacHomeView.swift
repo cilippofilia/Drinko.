@@ -8,28 +8,28 @@
 import SwiftUI
 
 struct MacHomeView: View {
-    @State private var selectedTab: String = ""
+    @State private var selectedTab: NavigationTab? = nil
 
     var body: some View {
         NavigationSplitView(
             columnVisibility: .constant(.all),
             sidebar: {
                 List(selection: $selectedTab) {
-                    Label("Learn", systemImage: "books.vertical.fill")
-                        .tag("learn")
-                    Label("Cocktails", systemImage: "wineglass.fill")
-                        .tag("cocktails")
-                    Label("Cabinet", systemImage: "cabinet.fill")
-                        .tag("cabinet")
-                    Label("Settings", systemImage: "gear")
-                        .tag("settings")
+                    ForEach(NavigationTab.allCases) { tab in
+                        Label(tab.title, systemImage: tab.systemImage)
+                            .tag(tab)
+                    }
                 }
             },
             content: {
-                Text("\(selectedTab) Content")
+                if let selectedTab = selectedTab {
+                    Text("\(selectedTab.title) Content")
+                }
             },
             detail: {
-                Text("\(selectedTab) Content Detail")
+                if let selectedTab = selectedTab {
+                    Text("\(selectedTab.title) Content Detail")
+                }
             }
         )
     }
