@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 04/02/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct EditProductView: View {
@@ -26,8 +27,10 @@ struct EditProductView: View {
                 HStack {
                     TextField("ABV", text: $product.abv)
                         .frame(width: 33)
+                        #if os(iOS)
                         .keyboardType(.decimalPad)
                         .focused($isFocused)
+                        #endif
 
                     Text("% ABV")
                     Spacer()
@@ -36,7 +39,9 @@ struct EditProductView: View {
                 HStack {
                     Image(systemName: "flag")
                     TextField("Made in", text: $product.madeIn)
+                        #if os(iOS)
                         .focused($isFocused)
+                        #endif
                 }
             }
             
@@ -69,7 +74,9 @@ struct EditProductView: View {
                     text: $product.detail,
                     axis: .vertical
                 )
+                #if os(iOS)
                 .focused($isFocused)
+                #endif
             }
             
             Section(footer: Text("By deleting the product you will be deleting every informations added to it.")) {
@@ -81,13 +88,8 @@ struct EditProductView: View {
                 }
             }
         }
+        #if os(iOS)
         .navigationTitle("Edit Product")
-        .alert("Delete product?", isPresented: $showingDeleteConfirmation) {
-            Button("Delete", role: .destructive) { delete() }
-            Button("Cancel", role: .cancel) { }
-        } message: {
-            Text("Are you sure you want to delete this product? You will delete all the informations added to it.")
-        }
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
@@ -96,6 +98,13 @@ struct EditProductView: View {
                     isFocused = false
                 }
             }
+        }
+        #endif
+        .alert("Delete product?", isPresented: $showingDeleteConfirmation) {
+            Button("Delete", role: .destructive) { delete() }
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("Are you sure you want to delete this product? You will delete all the informations added to it.")
         }
     }
     

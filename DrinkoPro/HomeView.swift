@@ -30,10 +30,12 @@ struct HomeView: View {
             Tab("Cabinet", systemImage: "cabinet", value: CabinetView.cabinetTag) {
                 CabinetView()
             }
-            
+
+            #if os(iOS)
             Tab("Settings", systemImage: "gear", value: SettingsView.settingsTag) {
                 SettingsView()
             }
+            #endif
         }
         .onAppear(perform: checkForReview)
     }

@@ -20,8 +20,10 @@ struct BookDetailView: View {
                 regularBookView
             }
         }
+        #if os(iOS)
         .navigationBarTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
 

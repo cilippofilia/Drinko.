@@ -45,6 +45,7 @@ extension CabinetView {
             }
         })
         .frame(width: screenWidth * 0.9)
+        #if os(iOS)
         .navigationTitle("Cabinet")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
@@ -55,6 +56,7 @@ extension CabinetView {
                 }
             }
         }
+        #endif
         .sheet(isPresented: $showAddCategorySheet) {
             AddCategoryView()
         }
@@ -83,6 +85,7 @@ extension CabinetView {
         .navigationDestination(for: Category.self) { category in
             EditCategoryView(category: category, navigationPath: $path)
         }
+        #if os(iOS)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
@@ -92,11 +95,12 @@ extension CabinetView {
                 }
             }
         }
+        .listStyle(InsetGroupedListStyle())
+        #endif
         .sheet(isPresented: $showAddCategorySheet) {
             AddCategoryView()
                 .presentationDetents([.medium, .large])
         }
-        .listStyle(InsetGroupedListStyle())
     }
 }
 

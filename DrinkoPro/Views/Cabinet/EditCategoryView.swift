@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 29/01/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct EditCategoryView: View {
@@ -51,8 +52,10 @@ struct EditCategoryView: View {
                 }
             }
         }
+        #if os(iOS)
         .navigationTitle("Edit Category")
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .alert("Delete Category",
                isPresented: $showingDeleteConfirmation) {
             Button("Delete", role: .destructive) { delete() }

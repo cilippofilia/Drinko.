@@ -13,7 +13,9 @@ struct FavoriteProductButtonView: View {
     var body: some View {
         Button(action: {
             product.isFavorite.toggle()
+            #if os(iOS)
             UINotificationFeedbackGenerator().notificationOccurred(.success)
+            #endif
         }) {
             Label(product.isFavorite ? "Remove from Cart" : "Add to Cart", systemImage: "cart")
         }

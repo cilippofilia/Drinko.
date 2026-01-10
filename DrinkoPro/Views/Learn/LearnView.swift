@@ -106,7 +106,9 @@ struct LearnView: View {
             .navigationDestination(for: Book.self) { book in
                 BookDetailView(book: book)
             }
+            #if os(iOS)
             .listSectionSpacing(.compact)
+            #endif
         }
     }
 }

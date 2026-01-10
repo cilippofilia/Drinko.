@@ -21,7 +21,11 @@ struct SplashScreenView: View {
     var body: some View {
         Group {
             if showHomeView {
+                #if os(macOS)
+                MacHomeView()
+                #elseif os(iOS)
                 HomeView()
+                #endif
             } else {
                 animatedLogo
             }
@@ -37,22 +41,31 @@ struct SplashScreenView: View {
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    #if os(iOS)
                     .frame(
                         width: sizeClass == .compact ? frameSize : frameSize * 1.5,
                         height: sizeClass == .compact ? frameSize : frameSize * 1.5
                     )
+                    #elseif os(macOS)
+                    .frame(width: frameSize)
+                    #endif
                     .offset(y: imgOffset)
                     .opacity(opacity)
 
                 Text("Drinko.")
-                    .font(.system(.largeTitle, design: .rounded))
-                    .bold()
+                    #if os(iOS)
+                    .font(.system(.largeTitle, weight: .bold, design: .rounded))
+                    #elseif os(macOS)
+                    .font(.system(size: 48, weight: .bold, design: .rounded))
+                    #endif
                     .rotation3DEffect(
                         .degrees(angle),
                         axis: (x: 0.5, y: 0.0, z: 0.0)
                     )
                     .foregroundStyle(.white)
+                    #if os(iOS)
                     .scaleEffect(sizeClass == .compact ? 1.5 : 2)
+                    #endif
                     .opacity(opacity)
             }
         }

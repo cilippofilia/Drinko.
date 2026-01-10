@@ -26,6 +26,38 @@
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
 		18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
+		18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
+		18A929D12F12C2C000B70219 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
+		18A929D22F12C32A00B70219 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137C2B655D78000D3343 /* Category.swift */; };
+		18A929D32F12C33F00B70219 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137B2B655D78000D3343 /* Item.swift */; };
+		18A929D42F12C69000B70219 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
+		18A929D52F12C6A900B70219 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAE2A286D2E00862CE3 /* LearnView.swift */; };
+		18A929D62F12C6BF00B70219 /* LessonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */; };
+		18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
+		18A929DC2F12C72000B70219 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
+		18A929E92F12C8E600B70219 /* CocktailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */; };
+		18A929EA2F12C8F100B70219 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
+		18A929EB2F12C8FA00B70219 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
+		18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */; };
+		18A929EF2F12C97D00B70219 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713872B65657C000D3343 /* CabinetView.swift */; };
+		18A929F02F12C98C00B70219 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18481D262C20E8120083FD5A /* AddCategoryView.swift */; };
+		18A929F32F12C9D100B70219 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713892B656F28000D3343 /* Previewer.swift */; };
+		18A929F42F12CA1C00B70219 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */; };
+		18A929FF2F12CB4100B70219 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */; };
+		18A92A002F12CC2D00B70219 /* LearnHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7202BD413BE0092AD02 /* LearnHeaderView.swift */; };
+		18A92A012F12CC3600B70219 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
+		18A92A022F12CC4100B70219 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
+		18A92A032F12CC4C00B70219 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
+		18A92A042F12CC5800B70219 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
+		18A92A052F12CC6200B70219 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */; };
+		18A92A062F12CC6D00B70219 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
+		18A92A072F12CD0B00B70219 /* DrinkoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */; };
+		18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
+		18A92A092F12CD8B00B70219 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827138B2B6576AB000D3343 /* CategoryHeaderView.swift */; };
+		18A92A0A2F12CDB300B70219 /* ProductRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827138D2B658293000D3343 /* ProductRowView.swift */; };
+		18A92A0B2F12CDBE00B70219 /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307732B6F99DD00CB94AB /* EditProductView.swift */; };
+		18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */; };
+		18A92A0F2F12CE5B00B70219 /* EditCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713972B685B8A000D3343 /* EditCategoryView.swift */; };
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
 		18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
 		18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
@@ -82,6 +114,7 @@
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVRowView.swift; sourceTree = "<group>"; };
+		18A929A82F12C13D00B70219 /* DrinkoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
 		18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContactsView.swift; sourceTree = "<group>"; };
 		18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoView.swift; sourceTree = "<group>"; };
@@ -108,6 +141,43 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		18A929D82F12C6CD00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Book.swift,
+				Lesson.swift,
+			);
+			target = 18A929A72F12C13D00B70219 /* DrinkoMac */;
+		};
+		18A929E52F12C7FA00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SwipeToActionTips.swift,
+			);
+			target = 18A929A72F12C13D00B70219 /* DrinkoMac */;
+		};
+		18A929E72F12C80D00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Samples+Ext.swift",
+			);
+			target = 18A929A72F12C13D00B70219 /* DrinkoMac */;
+		};
+		18A929EE2F12C91A00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				CocktailDetailSectionView.swift,
+				CocktailDetailsSection.swift,
+				CocktailImageHeader.swift,
+				CocktailRelatedSection.swift,
+				CocktailUnitPicker.swift,
+				HistoryView.swift,
+				IngredientsView.swift,
+				LinkedCocktailsView.swift,
+				ProcedureView.swift,
+			);
+			target = 18A929A72F12C13D00B70219 /* DrinkoMac */;
+		};
 		18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -128,15 +198,23 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		182B4B802F0D6B05007E7026 /* DrinkoProTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrinkoProTests; sourceTree = "<group>"; };
 		183CED602DE1BAC6005B9699 /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
-		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
-		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
-		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
-		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
+		18A929A92F12C13D00B70219 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
+		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 18A929EE2F12C91A00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
+		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929E52F12C7FA00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
+		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929D82F12C6CD00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
+		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929E72F12C80D00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
 		18EB4F212EEED4B100691DC2 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		182B4B7C2F0D6B05007E7026 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18A929A52F12C13D00B70219 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -259,7 +337,6 @@
 			children = (
 				18B3077A2B77843200CB94AB /* Buttons */,
 				182E43362A2B1221001675FD /* CreditsCardView.swift */,
-				1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */,
 			);
 			path = "Supporting Views";
 			sourceTree = "<group>";
@@ -280,6 +357,7 @@
 			children = (
 				18F49E622A27B28D00862CE3 /* DrinkoPro */,
 				182B4B802F0D6B05007E7026 /* DrinkoProTests */,
+				18A929A92F12C13D00B70219 /* DrinkoMac */,
 				18F49E612A27B28D00862CE3 /* Products */,
 				183723C82A909AB700DBCD5D /* Frameworks */,
 			);
@@ -290,6 +368,7 @@
 			children = (
 				18F49E602A27B28D00862CE3 /* DrinkoPro.app */,
 				182B4B7F2F0D6B05007E7026 /* DrinkoProTests.xctest */,
+				18A929A82F12C13D00B70219 /* DrinkoMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -300,6 +379,7 @@
 				183AE95E2A94AB4500AC156F /* DrinkoPro.entitlements */,
 				18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */,
 				18F49E712A286CDD00862CE3 /* HomeView.swift */,
+				1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */,
 				183CED602DE1BAC6005B9699 /* Assets */,
 				18EB4ED02EEED48B00691DC2 /* Helpers */,
 				18EB4F212EEED4B100691DC2 /* Localization */,
@@ -390,6 +470,30 @@
 			productReference = 182B4B7F2F0D6B05007E7026 /* DrinkoProTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		18A929A72F12C13D00B70219 /* DrinkoMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18A929C62F12C13E00B70219 /* Build configuration list for PBXNativeTarget "DrinkoMac" */;
+			buildPhases = (
+				18A929A42F12C13D00B70219 /* Sources */,
+				18A929A52F12C13D00B70219 /* Frameworks */,
+				18A929A62F12C13D00B70219 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				183CED602DE1BAC6005B9699 /* Assets */,
+				18A929A92F12C13D00B70219 /* DrinkoMac */,
+				18EB4ED02EEED48B00691DC2 /* Helpers */,
+			);
+			name = DrinkoMac;
+			packageProductDependencies = (
+			);
+			productName = DrinkoMac;
+			productReference = 18A929A82F12C13D00B70219 /* DrinkoMac.app */;
+			productType = "com.apple.product-type.application";
+		};
 		18F49E5F2A27B28D00862CE3 /* DrinkoPro */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18F49E6E2A27B28F00862CE3 /* Build configuration list for PBXNativeTarget "DrinkoPro" */;
@@ -430,6 +534,9 @@
 						CreatedOnToolsVersion = 26.2;
 						TestTargetID = 18F49E5F2A27B28D00862CE3;
 					};
+					18A929A72F12C13D00B70219 = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					18F49E5F2A27B28D00862CE3 = {
 						CreatedOnToolsVersion = 14.3;
 					};
@@ -454,6 +561,7 @@
 			projectRoot = "";
 			targets = (
 				18F49E5F2A27B28D00862CE3 /* DrinkoPro */,
+				18A929A72F12C13D00B70219 /* DrinkoMac */,
 				182B4B7E2F0D6B05007E7026 /* DrinkoProTests */,
 			);
 		};
@@ -461,6 +569,13 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		182B4B7D2F0D6B05007E7026 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18A929A62F12C13D00B70219 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,6 +597,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18A929A42F12C13D00B70219 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18A929FF2F12CB4100B70219 /* SettingsRowView.swift in Sources */,
+				18A929EF2F12C97D00B70219 /* CabinetView.swift in Sources */,
+				18A92A032F12CC4C00B70219 /* SuperjuiceRowView.swift in Sources */,
+				18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */,
+				18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */,
+				18A929EB2F12C8FA00B70219 /* CocktailDetailView.swift in Sources */,
+				18A929F42F12CA1C00B70219 /* LikeButtonView.swift in Sources */,
+				18A929E92F12C8E600B70219 /* CocktailRowView.swift in Sources */,
+				18A92A052F12CC6200B70219 /* LessonDetailView.swift in Sources */,
+				18A929D32F12C33F00B70219 /* Item.swift in Sources */,
+				18A92A012F12CC3600B70219 /* ABVRowView.swift in Sources */,
+				18A929F02F12C98C00B70219 /* AddCategoryView.swift in Sources */,
+				18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */,
+				18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */,
+				18A929D52F12C6A900B70219 /* LearnView.swift in Sources */,
+				18A929EA2F12C8F100B70219 /* FavoriteCocktailButtonView.swift in Sources */,
+				18A929F32F12C9D100B70219 /* Previewer.swift in Sources */,
+				18A92A092F12CD8B00B70219 /* CategoryHeaderView.swift in Sources */,
+				18A929D12F12C2C000B70219 /* DrinkoProApp.swift in Sources */,
+				18A929D42F12C69000B70219 /* HomeView.swift in Sources */,
+				18A929D62F12C6BF00B70219 /* LessonRowView.swift in Sources */,
+				18A92A0F2F12CE5B00B70219 /* EditCategoryView.swift in Sources */,
+				18A92A022F12CC4100B70219 /* ABVCalculator.swift in Sources */,
+				18A92A062F12CC6D00B70219 /* BookDetailView.swift in Sources */,
+				18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */,
+				18A92A042F12CC5800B70219 /* BookRowView.swift in Sources */,
+				18A92A0B2F12CDBE00B70219 /* EditProductView.swift in Sources */,
+				18A92A0A2F12CDB300B70219 /* ProductRowView.swift in Sources */,
+				18A929D22F12C32A00B70219 /* Category.swift in Sources */,
+				18A92A002F12CC2D00B70219 /* LearnHeaderView.swift in Sources */,
+				18A929DC2F12C72000B70219 /* Cocktail.swift in Sources */,
+				18A92A072F12CD0B00B70219 /* DrinkoButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +739,101 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrinkoPro.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrinkoPro";
+			};
+			name = Release;
+		};
+		18A929C72F12C13E00B70219 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DrinkoMac/DrinkoMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K3GFX53DY;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cilia.filippo.DrinkoMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		18A929C82F12C13E00B70219 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = DrinkoMac/DrinkoMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3K3GFX53DY;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = NO;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cilia.filippo.DrinkoMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -798,6 +1047,15 @@
 			buildConfigurations = (
 				182B4B862F0D6B05007E7026 /* Debug */,
 				182B4B872F0D6B05007E7026 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18A929C62F12C13E00B70219 /* Build configuration list for PBXNativeTarget "DrinkoMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18A929C72F12C13E00B70219 /* Debug */,
+				18A929C82F12C13E00B70219 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

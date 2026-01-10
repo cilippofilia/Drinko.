@@ -41,8 +41,10 @@ struct ABVCalculator: View {
                 VStack(spacing: 20) {
                     HStack {
                         TextField("What is the ingredient?", text: $bottles[index].name)
+                            #if os(iOS)
                             .keyboardType(.default)
                             .focused($isFocused)
+                            #endif
 
                         Button(action: {
                             removeIngredient(at: index)
@@ -56,16 +58,20 @@ struct ABVCalculator: View {
                     HStack(spacing: 20) {
                         HStack {
                             TextField("Amount?", value: $bottles[index].amount, formatter: NumberFormatter())
+                                #if os(iOS)
                                 .keyboardType(.decimalPad)
                                 .focused($isFocused)
+                                #endif
 
                             Text("ml")
                         }
 
                         HStack {
                             TextField("ABV?", value: $bottles[index].abv, formatter: NumberFormatter())
+                                #if os(iOS)
                                 .keyboardType(.decimalPad)
                                 .focused($isFocused)
+                                #endif
 
                             Text("%")
                         }

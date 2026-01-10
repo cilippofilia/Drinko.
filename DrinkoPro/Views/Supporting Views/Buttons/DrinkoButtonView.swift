@@ -18,11 +18,13 @@ struct DrinkoButtonView: View {
 
     private let cornerRadius: CGFloat = 10
 
-    internal init(title: LocalizedStringKey?,
-                  icon: String?,
-                  background: Color = .blue,
-                  foreground: Color = .white,
-                  handler: @escaping DrinkoButtonView.ActionHandler) {
+    internal init(
+        title: LocalizedStringKey?,
+        icon: String?,
+        background: Color = .blue,
+        foreground: Color = .white,
+        handler: @escaping DrinkoButtonView.ActionHandler
+    ) {
         self.title = title
         self.icon = icon
         self.background = background

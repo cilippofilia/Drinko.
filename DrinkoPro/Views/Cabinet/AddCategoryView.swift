@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 17/06/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct AddCategoryView: View {
@@ -90,8 +91,9 @@ struct AddCategoryView: View {
                     }
                 }
             }
-            .listSectionSpacing(.compact)
             .navigationTitle("Add Category")
+            #if os(iOS)
+            .listSectionSpacing(.compact)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -117,6 +119,7 @@ struct AddCategoryView: View {
                     }
                 }
             }
+            #endif
         }
     }
 }

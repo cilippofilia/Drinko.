@@ -27,9 +27,10 @@ struct CocktailDetailView: View {
             cocktailContent
         }
         .navigationTitle(cocktail.name)
-        .navigationBarTitleDisplayMode(.inline)
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
+        #if os(iOS)
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 HistoryButtonView(
@@ -42,6 +43,7 @@ struct CocktailDetailView: View {
                 LikeButtonView(cocktail: cocktail)
             }
         }
+        #endif
     }
     
     var cocktailContent: some View {
@@ -67,7 +69,9 @@ struct CocktailDetailView: View {
             }
             Spacer(minLength: 50)
         }
+        #if os(iOS)
         .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
+        #endif
     }
 
 }

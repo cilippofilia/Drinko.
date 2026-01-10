@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 27/01/2024.
 //
 
+import SwiftData
 import SwiftUI
 
 struct CategoryHeaderView: View {

@@ -45,7 +45,9 @@ struct SuperJuiceView: View {
                                 .focused($isFocused)
                         }
                     }
+                    #if os(iOS)
                     .keyboardType(.decimalPad)
+                    #endif
                 }
 
                 Section {

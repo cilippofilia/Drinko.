@@ -17,8 +17,10 @@ struct FavoriteCocktailButtonView: View {
                 favorites.remove(cocktail)
             } else {
                 favorites.add(cocktail)
+                #if os(iOS)
                 UINotificationFeedbackGenerator()
                     .notificationOccurred(.success)
+                #endif
             }
         }) {
             Label("Like", systemImage: "heart")

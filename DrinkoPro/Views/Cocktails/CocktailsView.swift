@@ -17,8 +17,10 @@ struct CocktailsView: View {
     @State private var showingSortOrder = false
     @State var path = NavigationPath()
 
+    #if os(iOS)
     var favoriteCocktailsTip = SwipeToFavoriteTip()
-
+    #endif
+    
     var body: some View {
         NavigationStack(path: $path) {
             Group {
@@ -63,7 +65,9 @@ struct CocktailsView: View {
                 ),
                 prompt: "Search Cocktails"
             )
+            #if os(iOS)
             .popoverTip(favoriteCocktailsTip)
+            #endif
             .toolbar {
                 sortButtonMenu
             }
@@ -121,11 +125,15 @@ private extension CocktailsView {
                 }
             }
         } label: {
+            #if os(iOS)
             if UIAccessibility.isVoiceOverRunning {
                 Text("Sort cocktails")
             } else {
                 Label("Sort", systemImage: "arrow.up.arrow.down")
             }
+            #elseif os(macOS)
+            Label("Sort", systemImage: "arrow.up.arrow.down")
+            #endif
         }
     }
 }

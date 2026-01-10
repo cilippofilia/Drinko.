@@ -22,8 +22,10 @@ struct LessonDetailView: View {
                 regularLessonView
             }
         }
+        #if os(iOS)
         .navigationTitle(lesson.title)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
     }
