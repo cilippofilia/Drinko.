@@ -54,7 +54,7 @@ struct SplashScreenView: View {
 
                 Text("Drinko.")
                     #if os(iOS)
-                    .font(.system(.largeTitle, weight: .bold, design: .rounded))
+                    .font(.system(.largeTitle, design: .rounded, weight: .bold))
                     #elseif os(macOS)
                     .font(.system(size: 48, weight: .bold, design: .rounded))
                     #endif

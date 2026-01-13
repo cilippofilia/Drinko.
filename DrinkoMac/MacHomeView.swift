@@ -23,12 +23,12 @@ struct MacHomeView: View {
             },
             content: {
                 if let selectedTab = selectedTab {
-                    Text("\(selectedTab.title) Content")
+                    MacContentView(selectedTab: selectedTab)
                 }
             },
             detail: {
                 if let selectedTab = selectedTab {
-                    Text("\(selectedTab.title) Content Detail")
+                    MacDetailsView(selectedTab: selectedTab)
                 }
             }
         )

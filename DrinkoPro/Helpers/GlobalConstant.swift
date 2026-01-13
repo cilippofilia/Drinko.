@@ -23,6 +23,9 @@ let screenWidth: CGFloat = UIScreen.main.bounds.width
 #elseif os(macOS)
 let screenWidth: CGFloat = 350
 #endif
+
+let lovelyText = "This app was made with ❤️ by Filippo Cilia 🇮🇹"
+
 // URLs inside the app
 let twitterURL = URL(string: "https://x.com/fcilia_dev")
 let instaURL = URL(string: "https://www.instagram.com/cilippofilia")

@@ -48,68 +48,66 @@ struct LearnView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            List {
-                // MARK: ALL LESSONS
-                ForEach(viewModel.topics, id: \.self) { topic in
-                    Section {
-                        if !isCollapsed(for: topic) {
-                            ForEach(viewModel.getLessons(for: topic)) { lesson in
-                                NavigationLink(value: lesson) {
-                                    LessonRowView(lesson: lesson)
-                                }
+        List {
+            // MARK: ALL LESSONS
+            ForEach(viewModel.topics, id: \.self) { topic in
+                Section {
+                    if !isCollapsed(for: topic) {
+                        ForEach(viewModel.getLessons(for: topic)) { lesson in
+                            NavigationLink(value: lesson) {
+                                LessonRowView(lesson: lesson)
                             }
                         }
-                    } header: {
-                        LearnHeaderView(
-                            text: topic.replacing("-", with: " ").capitalizingFirstLetter(),
-                            isCollapsed: Binding(
-                                get: { isCollapsed(for: topic) },
-                                set: { setCollapsed(for: topic, value: $0) }
-                            )
+                    }
+                } header: {
+                    LearnHeaderView(
+                        text: topic.replacing("-", with: " ").capitalizingFirstLetter(),
+                        isCollapsed: Binding(
+                            get: { isCollapsed(for: topic) },
+                            set: { setCollapsed(for: topic, value: $0) }
                         )
-                    }
+                    )
                 }
+            }
 
-                // MARK: CALCULATORS
-                Section {
-                    if !isCalculatorsCollapsed {
-                        ABVRowView()
-                        SuperjuiceRowView(juiceType: "lime")
-                        SuperjuiceRowView(juiceType: "lemon")
-                    }
-                } header: {
-                    LearnHeaderView(
-                        text: "Calculators",
-                        isCollapsed: $isCalculatorsCollapsed)
+            // MARK: CALCULATORS
+            Section {
+                if !isCalculatorsCollapsed {
+                    ABVRowView()
+                    SuperjuiceRowView(juiceType: "lime")
+                    SuperjuiceRowView(juiceType: "lemon")
                 }
+            } header: {
+                LearnHeaderView(
+                    text: "Calculators",
+                    isCollapsed: $isCalculatorsCollapsed)
+            }
 
-                // MARK: BOOKS
-                Section {
-                    if !isBooksCollapsed {
-                        ForEach(viewModel.books) { book in
-                            NavigationLink(value: book) {
-                                BookRowView(book: book)
-                            }
+            // MARK: BOOKS
+            Section {
+                if !isBooksCollapsed {
+                    ForEach(viewModel.books) { book in
+                        NavigationLink(value: book) {
+                            BookRowView(book: book)
                         }
                     }
-                } header: {
-                    LearnHeaderView(
-                        text: "Books",
-                        isCollapsed: $isBooksCollapsed)
                 }
+            } header: {
+                LearnHeaderView(
+                    text: "Books",
+                    isCollapsed: $isBooksCollapsed)
             }
-            .navigationTitle("Learn")
-            .navigationDestination(for: Lesson.self) { lesson in
-                LessonDetailView(lesson: lesson)
-            }
-            .navigationDestination(for: Book.self) { book in
-                BookDetailView(book: book)
-            }
-            #if os(iOS)
-            .listSectionSpacing(.compact)
-            #endif
         }
+        #if os(iOS)
+        .navigationTitle("Learn")
+        .navigationDestination(for: Lesson.self) { lesson in
+            LessonDetailView(lesson: lesson)
+        }
+        .navigationDestination(for: Book.self) { book in
+            BookDetailView(book: book)
+        }
+        .listSectionSpacing(.compact)
+        #endif
     }
 }
 

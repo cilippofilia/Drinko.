@@ -20,7 +20,9 @@ struct HomeView: View {
     var body: some View {
         TabView(selection: $selectedView) {
             Tab("Learn", systemImage: "books.vertical", value: LearnView.learnTag) {
-                LearnView()
+                NavigationStack {
+                    LearnView()
+                }
             }
             
             Tab("Cocktails", systemImage: "wineglass", value: CocktailsView.cocktailsTag) {
