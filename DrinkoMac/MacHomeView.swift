@@ -12,7 +12,7 @@ struct MacHomeView: View {
 
     var body: some View {
         NavigationSplitView(
-            columnVisibility: .constant(.all),
+            columnVisibility: .constant(.automatic),
             sidebar: {
                 List(selection: $selectedTab) {
                     ForEach(NavigationTab.allCases) { tab in
@@ -21,14 +21,26 @@ struct MacHomeView: View {
                     }
                 }
             },
-            content: {
-                if let selectedTab = selectedTab {
-                    MacContentView(selectedTab: selectedTab)
-                }
-            },
             detail: {
                 if let selectedTab = selectedTab {
-                    MacDetailsView(selectedTab: selectedTab)
+                    switch selectedTab {
+                    case .learn:
+                        NavigationStack {
+                            LearnView()
+                        }
+                    case .cocktails:
+                        NavigationStack {
+                            CocktailsView()
+                        }
+                    case .cabinet:
+                        NavigationStack {
+                            CabinetView()
+                        }
+                    case .settings:
+                        NavigationStack {
+                            Text("SETTINGS VIEW")
+                        }
+                    }
                 }
             }
         )
