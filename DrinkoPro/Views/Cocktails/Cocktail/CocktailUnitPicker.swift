@@ -11,9 +11,17 @@ struct CocktailUnitPicker: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     @Binding var selectedUnit: String
     let units = ["ml", "oz."]
-    
+
+    var pickerPlaceholder: String {
+        #if os(iOS)
+        "Select unit"
+        #else
+        ""
+        #endif
+    }
+
     var body: some View {
-        Picker("Select unit", selection: $selectedUnit) {
+        Picker(pickerPlaceholder, selection: $selectedUnit) {
             ForEach(units, id: \.self) {
                 Text($0)
             }

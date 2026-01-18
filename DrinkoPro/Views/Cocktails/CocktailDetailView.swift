@@ -22,6 +22,14 @@ struct CocktailDetailView: View {
 
     let cocktail: Cocktail
 
+    var toolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        .topBarTrailing
+        #elseif os(macOS)
+        .automatic
+        #endif
+    }
+
     var body: some View {
         ScrollView {
             cocktailContent
@@ -31,19 +39,19 @@ struct CocktailDetailView: View {
         .scrollBounceBehavior(.basedOnSize)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
+        #endif
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: toolbarPlacement) {
                 HistoryButtonView(
                     history: viewModel.getCocktailHistory(for: cocktail),
                     showHistory: $showHistory,
                     cocktail: cocktail
                 )
             }
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: toolbarPlacement) {
                 LikeButtonView(cocktail: cocktail)
             }
         }
-        #endif
     }
     
     var cocktailContent: some View {
@@ -71,6 +79,8 @@ struct CocktailDetailView: View {
         }
         #if os(iOS)
         .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
+        #elseif os(macOS)
+        .padding(.horizontal)
         #endif
     }
 

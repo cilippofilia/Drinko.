@@ -7,7 +7,7 @@
 		<key>DrinkoMac.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
 		<key>DrinkoPro.xcscheme_^#shared#^_</key>
 		<dict>
@@ -22,7 +22,7 @@
 		<key>DrinkoProTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Promises (Playground) 1.xcscheme</key>
 		<dict>
@@ -70,6 +70,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>182B4B7E2F0D6B05007E7026</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>18A929A72F12C13D00B70219</key>
 		<dict>
 			<key>primary</key>
 			<true/>
