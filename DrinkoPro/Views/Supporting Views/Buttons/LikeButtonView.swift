@@ -29,7 +29,9 @@ struct LikeButtonView: View {
                 .animation(.default, value: favorites.hasEffect)
                 .symbolEffect(.bounce.up, value: favorites.hasEffect)
         }
+        #if os(iOS)
         .buttonStyle(.plain)
+        #endif
     }
 }
 
