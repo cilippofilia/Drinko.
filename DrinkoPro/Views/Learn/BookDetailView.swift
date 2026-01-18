@@ -20,8 +20,8 @@ struct BookDetailView: View {
                 regularBookView
             }
         }
+        .navigationTitle(book.title)
         #if os(iOS)
-        .navigationBarTitle(book.title)
         .navigationBarTitleDisplayMode(.inline)
         #endif
         .scrollIndicators(.hidden, axes: .vertical)
@@ -45,7 +45,11 @@ struct BookDetailView: View {
                     EmptyView()
                 }
             }
+            #if os(iOS)
             .frame(width: screenWidth * 0.9)
+            #elseif os(macOS)
+            .frame(width: screenWidth)
+            #endif
             .clipped()
 
             VStack(spacing: 10) {
@@ -58,7 +62,11 @@ struct BookDetailView: View {
 
                 Text(book.summary)
             }
+            #if os(iOS)
             .frame(width: screenWidth * 0.9)
+            #elseif os(macOS)
+            .padding(.horizontal)
+            #endif
             .padding(.bottom)
         }
     }
@@ -79,7 +87,11 @@ struct BookDetailView: View {
                     EmptyView()
                 }
             }
+            #if os(iOS)
             .frame(width: screenWidth * 0.9)
+            #elseif os(macOS)
+            .frame(width: screenWidth)
+            #endif
             .clipped()
 
             VStack(spacing: 20) {
@@ -93,7 +105,11 @@ struct BookDetailView: View {
 
                 Text(book.summary)
             }
+            #if os(iOS)
             .frame(width: screenWidth * 0.9)
+            #elseif os(macOS)
+            .padding(.horizontal)
+            #endif
             .padding(.bottom)
         }
     }
