@@ -1,0 +1,80 @@
+{
+  "fill" : {
+    "solid" : "display-p3:0.20607,0.49287,0.96798,1.00000"
+  },
+  "groups" : [
+    {
+      "blur-material" : null,
+      "hidden" : false,
+      "layers" : [
+        {
+          "image-name" : "glass 2.svg",
+          "name" : "glass 2",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              155.1720727216989,
+              127
+            ]
+          }
+        }
+      ],
+      "lighting" : "individual",
+      "name" : "cocktail",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0.5
+      }
+    },
+    {
+      "blend-mode" : "normal",
+      "layers" : [
+        {
+          "fill" : {
+            "solid" : "extended-gray:0.75000,1.00000"
+          },
+          "image-name" : "Reflex 2.svg",
+          "name" : "Reflex 2",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              -154.37739239494658,
+              120.67328150965284
+            ]
+          }
+        },
+        {
+          "image-name" : "shaker 2.svg",
+          "name" : "shaker 2",
+          "position" : {
+            "scale" : 1,
+            "translation-in-points" : [
+              -143.79418344880787,
+              0
+            ]
+          }
+        }
+      ],
+      "name" : "shaker",
+      "shadow" : {
+        "kind" : "neutral",
+        "opacity" : 0.5
+      },
+      "specular" : true,
+      "translucency" : {
+        "enabled" : false,
+        "value" : 0.5
+      }
+    }
+  ],
+  "supported-platforms" : {
+    "circles" : [
+      "watchOS"
+    ],
+    "squares" : "shared"
+  }
+}

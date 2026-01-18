@@ -25,6 +25,8 @@
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
+		1899C08B2F1D398900E2D23B /* DrinkoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */; };
+		1899C08C2F1D398900E2D23B /* DrinkoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */; };
 		18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
 		18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
 		18A929D12F12C2C000B70219 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
@@ -113,6 +115,7 @@
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = DrinkoIcon.icon; sourceTree = "<group>"; };
 		18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVRowView.swift; sourceTree = "<group>"; };
 		18A929A82F12C13D00B70219 /* DrinkoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
@@ -376,6 +379,7 @@
 		18F49E622A27B28D00862CE3 /* DrinkoPro */ = {
 			isa = PBXGroup;
 			children = (
+				1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */,
 				183AE95E2A94AB4500AC156F /* DrinkoPro.entitlements */,
 				18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */,
 				18F49E712A286CDD00862CE3 /* HomeView.swift */,
@@ -579,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1899C08B2F1D398900E2D23B /* DrinkoIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +592,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */,
+				1899C08C2F1D398900E2D23B /* DrinkoIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,7 +751,7 @@
 		18A929C72F12C13E00B70219 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DrinkoMac/DrinkoMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -793,7 +799,7 @@
 		18A929C82F12C13E00B70219 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DrinkoMac/DrinkoMac.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -966,9 +972,9 @@
 		18F49E6F2A27B28F00862CE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = original;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = DrinkoPro/DrinkoPro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
@@ -1004,9 +1010,9 @@
 		18F49E702A27B28F00862CE3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = original;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = DrinkoPro/DrinkoPro.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CREATE_INFOPLIST_SECTION_IN_BINARY = NO;
