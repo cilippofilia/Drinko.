@@ -20,6 +20,14 @@ struct CabinetView: View {
         SortDescriptor(\Category.creationDate)
     ]) var categories: [Category]
 
+    var toolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        .topBarTrailing
+        #else
+        .automatic
+        #endif
+    }
+
     var body: some View {
         NavigationStack {
             if categories.isEmpty {
@@ -45,10 +53,9 @@ extension CabinetView {
             }
         })
         .frame(width: screenWidth * 0.9)
-        #if os(iOS)
         .navigationTitle("Cabinet")
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: toolbarPlacement) {
                 Button(action: {
                     showAddCategorySheet.toggle()
                 }) {
@@ -56,7 +63,6 @@ extension CabinetView {
                 }
             }
         }
-        #endif
         .sheet(isPresented: $showAddCategorySheet) {
             AddCategoryView()
         }
@@ -85,9 +91,8 @@ extension CabinetView {
         .navigationDestination(for: Category.self) { category in
             EditCategoryView(category: category, navigationPath: $path)
         }
-        #if os(iOS)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItem(placement: toolbarPlacement) {
                 Button(action: {
                     showAddCategorySheet.toggle()
                 }) {
@@ -95,6 +100,7 @@ extension CabinetView {
                 }
             }
         }
+        #if os(iOS)
         .listStyle(InsetGroupedListStyle())
         #endif
         .sheet(isPresented: $showAddCategorySheet) {
