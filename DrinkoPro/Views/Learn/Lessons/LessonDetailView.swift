@@ -22,8 +22,8 @@ struct LessonDetailView: View {
                 regularLessonView
             }
         }
-        #if os(iOS)
         .navigationTitle(lesson.title)
+        #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
         .scrollIndicators(.hidden, axes: .vertical)
@@ -60,7 +60,11 @@ struct LessonDetailView: View {
                     }
                 }
             }
+            #if os(iOS)
             .frame(width: screenWidth * 0.9)
+            #elseif os(macOS)
+            .padding(.horizontal)
+            #endif
             .padding(.bottom)
         }
     }
@@ -80,8 +84,12 @@ struct LessonDetailView: View {
                 Text(lesson.description)
                     .font(.headline)
                     .foregroundColor(.secondary)
+                    #if os(iOS)
                     .padding(.bottom)
-               
+                    #elseif os(macOS)
+                    .multilineTextAlignment(.center)
+                    #endif
+
                 VStack(alignment: .leading, spacing: 20) {
                     ForEach(lesson.body) { text in
                         VStack(alignment: .leading) {
@@ -96,7 +104,11 @@ struct LessonDetailView: View {
                     }
                 }
             }
+            #if os(iOS)
             .frame(width: screenWidth * 0.7)
+            #elseif os(macOS)
+            .padding(.horizontal)
+            #endif
             .padding(.bottom)
         }
     }

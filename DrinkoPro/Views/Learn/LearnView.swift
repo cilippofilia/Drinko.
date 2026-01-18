@@ -69,7 +69,6 @@ struct LearnView: View {
                     )
                 }
             }
-
             // MARK: CALCULATORS
             Section {
                 if !isCalculatorsCollapsed {
@@ -82,7 +81,6 @@ struct LearnView: View {
                     text: "Calculators",
                     isCollapsed: $isCalculatorsCollapsed)
             }
-
             // MARK: BOOKS
             Section {
                 if !isBooksCollapsed {
@@ -98,8 +96,8 @@ struct LearnView: View {
                     isCollapsed: $isBooksCollapsed)
             }
         }
-        #if os(iOS)
         .navigationTitle("Learn")
+        #if os(iOS)
         .listSectionSpacing(.compact)
         #endif
         .navigationDestination(for: Lesson.self) { lesson in

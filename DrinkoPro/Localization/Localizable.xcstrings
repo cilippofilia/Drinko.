@@ -32,6 +32,9 @@
     "-" : {
 
     },
+    "\"%@\" not found" : {
+
+    },
     "%" : {
       "localizations" : {
         "de" : {
@@ -149,6 +152,7 @@
       }
     },
     "%@ peels (gr)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -177,6 +181,7 @@
       }
     },
     "%@ peels in grams" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1145,6 +1150,9 @@
           }
         }
       }
+    },
+    "Clear Search" : {
+
     },
     "Cocktails" : {
       "comment" : "Cocktails Tab",
@@ -2492,6 +2500,9 @@
         }
       }
     },
+    "No cocktails match \"%@\". Try a different search term or browse all cocktails." : {
+
+    },
     "Notes" : {
       "localizations" : {
         "de" : {
@@ -3807,6 +3818,7 @@
       }
     },
     "Water (ml)" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3835,6 +3847,7 @@
       }
     },
     "Water amount in millilitres" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

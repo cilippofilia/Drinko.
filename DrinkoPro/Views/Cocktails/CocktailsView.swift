@@ -42,6 +42,21 @@ struct CocktailsView: View {
                             }
                         }
                     }
+                } else if viewModel.filteredCocktails.isEmpty {
+                    ContentUnavailableView(
+                        label: {
+                            Label("\"\(viewModel.searchText)\" not found", systemImage: "exclamationmark.magnifyingglass")
+                        },
+                        description: {
+                            Text("No cocktails match \"\(viewModel.searchText)\". Try a different search term or browse all cocktails.")
+                        },
+                        actions: {
+                            Button("Clear Search", systemImage: "xmark.circle") {
+                                viewModel.searchText = ""
+                            }
+                            .buttonStyle(.bordered)
+                        }
+                    )
                 } else {
                     List(viewModel.filteredCocktails) { cocktail in
                         NavigationLink(value: cocktail) {

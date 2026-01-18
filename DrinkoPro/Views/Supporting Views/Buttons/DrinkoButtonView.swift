@@ -49,9 +49,8 @@ struct DrinkoButtonView: View {
         .frame(height: 50)
         .foregroundColor(foreground)
         .background(background)
-        .clipShape(
-            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-        )
+        .clipShape(.rect(cornerRadius: cornerRadius, style: .continuous))
+        .buttonStyle(.plain)
     }
 }
 

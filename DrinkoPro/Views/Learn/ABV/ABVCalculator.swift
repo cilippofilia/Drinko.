@@ -53,6 +53,8 @@ struct ABVCalculator: View {
                                 .labelStyle(.iconOnly)
                                 .foregroundColor(bottles.count > 1 ? .secondary : .clear)
                         }
+                        .buttonStyle(.plain)
+                        .disabled(bottles.count == 1)
                     }
 
                     HStack(spacing: 20) {
@@ -95,10 +97,13 @@ struct ABVCalculator: View {
             pickers
 
             DrinkoButtonView(title: "Calculate", icon: "calculator") {
-                result = calculateABV()
+                if numbersOfIngredients != 1 {
+                    result = calculateABV()
+                }
             }
             .frame(width: 200)
             .padding()
+            .disabled(bottles.count == 1)
 
             VStack {
                 Text("ABV")
@@ -122,6 +127,7 @@ struct ABVCalculator: View {
         .padding(.horizontal)
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
+        #if os(iOS)
         .toolbar {
             ToolbarItemGroup(placement: .keyboard) {
                 Spacer()
@@ -131,6 +137,7 @@ struct ABVCalculator: View {
                 }
             }
         }
+        #endif
     }
         
     func calculateABV() -> Double {

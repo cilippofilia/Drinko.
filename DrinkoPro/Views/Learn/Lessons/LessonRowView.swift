@@ -38,6 +38,9 @@ struct LessonRowView: View {
                 Text(lesson.description)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                    #if os(macOS)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    #endif
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                     .truncationMode(.tail)

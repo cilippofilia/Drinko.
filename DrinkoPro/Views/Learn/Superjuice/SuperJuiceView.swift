@@ -35,19 +35,14 @@ struct SuperJuiceView: View {
             .padding(.horizontal)
 
             Form {
-                Section(header: Text(selectedMode == .peels ? "\(typeOfJuice.capitalizingFirstLetter()) peels (gr)" : "Water (ml)")) {
-                    Group {
-                        if selectedMode == .peels {
-                            TextField("\(typeOfJuice) peels in grams", text: $peels)
-                                .focused($isFocused)
-                        } else {
-                            TextField("Water amount in millilitres", text: $water)
-                                .focused($isFocused)
-                        }
-                    }
-                    #if os(iOS)
-                    .keyboardType(.decimalPad)
-                    #endif
+                Section {
+                    TextField(textfieldPlaceholder, text: selectedMode == .peels ? $peels : $water)
+                        .focused($isFocused)
+                        #if os(iOS)
+                        .keyboardType(.decimalPad)
+                        #endif
+                } header: {
+                    Text(labelText)
                 }
 
                 Section {
@@ -58,7 +53,7 @@ struct SuperJuiceView: View {
                     }
                 }
 
-                Section(footer: Text("Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed.")) {
+                Section {
                     if selectedMode == .water {
                         HStack {
                             Text("\(typeOfJuice.capitalizingFirstLetter()) peels: ")
@@ -86,7 +81,7 @@ struct SuperJuiceView: View {
                             Text("gr")
                         }
                     }
-                    
+
                     HStack {
                         Text("Water: ")
                         Spacer()
@@ -94,9 +89,16 @@ struct SuperJuiceView: View {
                             .font(.title)
                         Text("ml")
                     }
+                } footer: {
+                    Text("Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed.")
+                        .foregroundStyle(.secondary)
                 }
             }
+            #if os(macOS)
+            .padding(.horizontal)
+            #endif
             .navigationTitle("Juice Calculator")
+            #if os(iOS)
             .toolbar {
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
@@ -106,6 +108,27 @@ struct SuperJuiceView: View {
                     }
                 }
             }
+            #endif
+        }
+    }
+
+    var labelText: String {
+        return selectedMode == .peels ? "\(typeOfJuice.capitalizingFirstLetter()) peels (gr)" : "Water (ml)"
+    }
+
+    var textfieldPlaceholder: String {
+        if selectedMode == .peels {
+            #if os(iOS)
+            "\(typeOfJuice) peels in grams"
+            #else
+            ""
+            #endif
+        } else {
+            #if os(iOS)
+            "Water amount in millilitres"
+            #else
+            ""
+            #endif
         }
     }
 }
