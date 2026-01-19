@@ -20,25 +20,77 @@ struct AddCategoryView: View {
     @State private var isColorsCollapsed: Bool = false
     @State private var isSuggestedCollapsed: Bool = false
 
+    #if os(iOS)
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
     ]
+    #else
+    let colorColumns = [
+        GridItem(.adaptive(minimum: 33))
+    ]
+    #endif
+
+    var leadingToolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        .topBarLeading
+        #else
+        .automatic
+        #endif
+    }
+
+    var trailingToolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        .topBarTrailing
+        #else
+        .automatic
+        #endif
+    }
+
+    func textfieldPlaceholder(_ str: String) -> String {
+        #if os(iOS)
+        str
+        #else
+        ""
+        #endif
+    }
 
     var body: some View {
         NavigationStack {
             Form {
-                Section("Info") {
-                    TextField("Category name", text: $categoryName)
-                        .textContentType(.name)
-                        .focused($isFocused)
+                Section {
+                    TextField(
+                        textfieldPlaceholder("Category Name"),
+                        text: $categoryName
+                    )
+                    .textContentType(.name)
+                    .focused($isFocused)
+                    #if os(macOS)
+                    .overlay(alignment: .leading) {
+                        Text("Category Description")
+                            .foregroundStyle(.secondary)
+                            .opacity(categoryName.isEmpty ? 0.3 : 0)
+                            .padding(.leading)
+                    }
+                    #endif
 
                     TextField(
-                        "Category Details",
+                        textfieldPlaceholder("Category Details"),
                         text: $categoryDetails,
                         axis: .vertical
                     )
                     .multilineTextAlignment(.leading)
                     .focused($isFocused)
+                    #if os(macOS)
+                    .overlay(alignment: .leading) {
+                        Text("Category Details")
+                            .opacity(categoryDetails.isEmpty ? 0.3 : 0)
+                            .foregroundStyle(.secondary)
+                            .padding(.leading)
+                    }
+                    .padding(.bottom)
+                    #endif
+                } header: {
+                    Text("Info")
                 }
 
                 Section {
@@ -48,6 +100,9 @@ struct AddCategoryView: View {
                                 colorButton(for: color)
                             }
                         }
+                        #if os(macOS)
+                        .padding(.bottom)
+                        #endif
                     }
                 } header: {
                     HStack {
@@ -65,23 +120,24 @@ struct AddCategoryView: View {
 
                 Section {
                     if !isSuggestedCollapsed {
-                        ForEach(Category.suggestedCategories) { category in
-                            HStack {
-                                Image(systemName: "circle.fill")
-                                    .foregroundStyle(Color(category.color))
-                                Text(category.name)
+                        #if os(macOS)
+                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 8) {
+                            ForEach(Category.suggestedCategories) { category in
+                                categoryRow(for: category)
                             }
-                            .onTapGesture {
-                                modelContext.insert(category)
-                                dismiss()
-                            }
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         }
+                        #else
+                        ForEach(Category.suggestedCategories) { category in
+                            categoryRow(for: category)
+                        }
+                        #endif
                     }
                 } header: {
                     HStack {
                         Image(systemName: "chevron.down")
-                            .rotationEffect(Angle(degrees: isSuggestedCollapsed ? -90 : 0))
-                            .animation(.snappy, value: $isSuggestedCollapsed.wrappedValue)
+                            .rotationEffect(.degrees(isSuggestedCollapsed ? -90 : 0))
+                            .animation(.snappy, value: isSuggestedCollapsed)
                         Text("Suggested Categories")
                     }
                     .onTapGesture {
@@ -90,13 +146,20 @@ struct AddCategoryView: View {
                         }
                     }
                 }
+
+                #if os(macOS)
+                Spacer().frame(height: 20)
+                #endif
             }
             .navigationTitle("Add Category")
             #if os(iOS)
             .listSectionSpacing(.compact)
             .navigationBarTitleDisplayMode(.inline)
+            #elseif os(macOS)
+            .padding()
+            #endif
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: trailingToolbarPlacement) {
                     Button(action: {
                         addCategory()
                         dismiss()
@@ -104,13 +167,14 @@ struct AddCategoryView: View {
                         Text("Save")
                     }
                 }
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: leadingToolbarPlacement) {
                     Button(action: {
                         dismiss()
                     }) {
                         Text("Cancel")
                     }
                 }
+                #if os(IOS)
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
 
@@ -118,8 +182,8 @@ struct AddCategoryView: View {
                         isFocused = false
                     }
                 }
+                #endif
             }
-            #endif
         }
     }
 }
@@ -130,11 +194,11 @@ extension AddCategoryView {
         ZStack {
             Color(item)
                 .aspectRatio(1, contentMode: .fit)
-                .cornerRadius(6)
+                .clipShape(.rect(cornerRadius: 11, style: .continuous))
 
             if item == categoryColor {
                 Image(systemName: "checkmark.circle")
-                    .foregroundColor(.white)
+                    .foregroundStyle(.white)
                     .font(.title)
                     .symbolEffect(.bounce.down, value: isSelected)
             }
@@ -148,6 +212,22 @@ extension AddCategoryView {
             item == categoryColor ? [.isButton, .isSelected] : .isButton
         )
         .accessibilityLabel(LocalizedStringKey(item))
+    }
+
+    private func categoryRow(for category: Category) -> some View {
+        HStack {
+            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                .foregroundStyle(Color(category.color))
+                .frame(width: 16, height: 16)
+            Text(category.name)
+        }
+        #if os(macOS)
+        .padding(.vertical, 2)
+        #endif
+        .onTapGesture {
+            modelContext.insert(category)
+            dismiss()
+        }
     }
 
     func addCategory() {

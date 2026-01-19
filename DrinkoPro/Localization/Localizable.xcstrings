@@ -3099,6 +3099,7 @@
       }
     },
     "Select unit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
