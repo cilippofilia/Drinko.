@@ -20,14 +20,6 @@ struct CabinetView: View {
         SortDescriptor(\Category.creationDate)
     ]) var categories: [Category]
 
-    var toolbarPlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        .topBarTrailing
-        #else
-        .automatic
-        #endif
-    }
-
     var body: some View {
         NavigationStack {
             if categories.isEmpty {
@@ -54,8 +46,9 @@ extension CabinetView {
         })
         .frame(width: screenWidth * 0.9)
         .navigationTitle("Cabinet")
+        #if os(iOS)
         .toolbar {
-            ToolbarItem(placement: toolbarPlacement) {
+            ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
                     showAddCategorySheet.toggle()
                 }) {
@@ -63,6 +56,7 @@ extension CabinetView {
                 }
             }
         }
+        #endif
         .sheet(isPresented: $showAddCategorySheet) {
             AddCategoryView()
         }
@@ -71,28 +65,32 @@ extension CabinetView {
     var categoriesList: some View {
         List {
             ForEach(categories) { category in
-                Section(header: CategoryHeaderView(category: category)) {
-                    ForEach(category.products!) { product in
-                        ProductRowView(product: product)
-                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                FavoriteProductButtonView(product: product)
-                                    .tint(product.isFavorite ? .red : .blue)
-                            }
+                Section {
+                    if let products = category.products {
+                        ForEach(products) { product in
+                            ProductRowView(product: product)
+                                .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                    FavoriteProductButtonView(product: product)
+                                        .tint(product.isFavorite ? .red : .blue)
+                                }
+                        }
                     }
-
                     Button(action: {
                         addProduct(to: category)
                     }) {
                         Label("Add Product", systemImage: "plus")
                     }
+                } header: {
+                    CategoryHeaderView(category: category)
                 }
             }
         }
         .navigationDestination(for: Category.self) { category in
             EditCategoryView(category: category, navigationPath: $path)
         }
+        #if os(iOS)
         .toolbar {
-            ToolbarItem(placement: toolbarPlacement) {
+            ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
                     showAddCategorySheet.toggle()
                 }) {
@@ -100,7 +98,6 @@ extension CabinetView {
                 }
             }
         }
-        #if os(iOS)
         .listStyle(InsetGroupedListStyle())
         #endif
         .sheet(isPresented: $showAddCategorySheet) {

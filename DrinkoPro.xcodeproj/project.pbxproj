@@ -27,6 +27,7 @@
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
 		1899C08B2F1D398900E2D23B /* DrinkoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */; };
 		1899C08C2F1D398900E2D23B /* DrinkoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */; };
+		1899C0982F1FFCDD00E2D23B /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713872B65657C000D3343 /* CabinetView.swift */; };
 		18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
 		18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
 		18A929D12F12C2C000B70219 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
@@ -41,7 +42,6 @@
 		18A929EA2F12C8F100B70219 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
 		18A929EB2F12C8FA00B70219 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 		18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */; };
-		18A929EF2F12C97D00B70219 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713872B65657C000D3343 /* CabinetView.swift */; };
 		18A929F02F12C98C00B70219 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18481D262C20E8120083FD5A /* AddCategoryView.swift */; };
 		18A929F32F12C9D100B70219 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713892B656F28000D3343 /* Previewer.swift */; };
 		18A929F42F12CA1C00B70219 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */; };
@@ -611,10 +611,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A929FF2F12CB4100B70219 /* SettingsRowView.swift in Sources */,
-				18A929EF2F12C97D00B70219 /* CabinetView.swift in Sources */,
 				18A92A032F12CC4C00B70219 /* SuperjuiceRowView.swift in Sources */,
 				18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */,
 				18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */,
+				1899C0982F1FFCDD00E2D23B /* CabinetView.swift in Sources */,
 				18A929EB2F12C8FA00B70219 /* CocktailDetailView.swift in Sources */,
 				18A929F42F12CA1C00B70219 /* LikeButtonView.swift in Sources */,
 				18A929E92F12C8E600B70219 /* CocktailRowView.swift in Sources */,

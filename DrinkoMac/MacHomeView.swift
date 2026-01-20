@@ -31,7 +31,7 @@ struct MacHomeView: View {
                 }
             case .cabinet:
                 NavigationStack {
-                    CabinetView()
+                    MacCabinetView()
                 }
             case .settings:
                 NavigationStack {
