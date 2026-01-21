@@ -105,10 +105,7 @@ extension CabinetView {
                 .presentationDetents([.medium, .large])
         }
     }
-}
 
-// MARK: METHODS
-extension CabinetView {
     func addProduct(to category: Category) {
         category.products?.append(Item(name: "Product Name"))
     }

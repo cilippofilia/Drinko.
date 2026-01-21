@@ -19,18 +19,13 @@ struct MacCabinetView: View {
         SortDescriptor(\Category.creationDate)
     ]) var categories: [Category]
 
-    var toolbarPlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        .topBarTrailing
-        #else
-        .automatic
-        #endif
-    }
 
     var body: some View {
         NavigationStack(path: $path) {
             if categories.isEmpty {
-                unavailableView
+                MacCabinetUnavailableView(showAddCategorySheet: $showAddCategorySheet) {
+                    showAddCategorySheet.toggle()
+                }
             } else {
                 categoriesList
                     .navigationTitle("Cabinet")
@@ -43,50 +38,34 @@ struct MacCabinetView: View {
 }
 
 extension MacCabinetView {
-    var unavailableView: some View {
-        ContentUnavailableView(label: {
-            Label("Empty Cabinet", systemImage: "cabinet.fill")
-        }, description: {
-            Text("To start, press 'Add a category' below or the + button at the top of the view.")
-        }, actions: {
-            Button("Add a category") {
-                showAddCategorySheet.toggle()
-            }
-        })
-        .frame(width: screenWidth)
-        .navigationTitle("Cabinet")
-        .toolbar {
-            ToolbarItem(placement: toolbarPlacement) {
-                Button(action: {
-                    showAddCategorySheet.toggle()
-                }) {
-                    Label("Add category", systemImage: "plus")
-                }
-            }
-        }
-        .sheet(isPresented: $showAddCategorySheet) {
-            AddCategoryView()
-        }
-    }
 
     var categoriesList: some View {
         List {
             ForEach(categories) { category in
-                HStack {
-                    Text(category.name)
-                    Spacer()
-                    Button {
-                        path.append(category)
-                    } label: {
-                        Label("Edit", systemImage: "square.and.pencil")
-                            .labelStyle(.iconOnly)
+                Section {
+                    if let products = category.products {
+                        MacProductView(
+                            products: products,
+                            color: category.color,
+                            addProductAction: {
+                                addProduct(to: category)
+                            }
+                        )
                     }
-                    .buttonStyle(.plain)
+                } header: {
+                    MacCategoryRowView(
+                        name: category.name,
+                        color: category.color,
+                        buttonAction: {
+                            path.append(category)
+                        }
+                    )
                 }
             }
         }
+        .listStyle(.plain)
         .toolbar {
-            ToolbarItem(placement: toolbarPlacement) {
+            ToolbarItem(placement: .automatic) {
                 Button {
                     showAddCategorySheet.toggle()
                 } label: {
@@ -99,8 +78,22 @@ extension MacCabinetView {
                 .presentationDetents([.medium, .large])
         }
     }
+
+    func addProduct(to category: Category) {
+        category.products?.append(Item(name: "Product Name"))
+    }
 }
 
+#if DEBUG
 #Preview {
-    MacCabinetView()
+    do {
+        let previewer = try Previewer()
+
+        return MacCabinetView()
+        /// comment the following line to display an emptyCabinet
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }
+#endif
