@@ -5,44 +5,46 @@
 //  Created by Filippo Cilia on 21/01/2026.
 //
 
+import SwiftData
 import SwiftUI
 
 struct MacCategoryRowView: View {
-    let name: String
-    let details: String
-    let color: String
-    let buttonAction: () -> Void
+    let category: Category
 
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(name)
-                    .foregroundStyle(Color(color))
+                Text(category.name)
+                    .foregroundStyle(Color(category.color))
                     .font(.headline)
 
-                Text(details)
+                Text(category.detail)
                     .foregroundStyle(.secondary)
-                    .font(.caption)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
             Spacer()
 
-            Button {
-                buttonAction()
-            } label: {
-                Label("Edit", systemImage: "square.and.pencil")
-                    .labelStyle(.iconOnly)
+            NavigationLink(value: category) {
+                Image(systemName: "square.and.pencil")
+                    .foregroundStyle(Color(category.color))
+                    .font(.headline)
             }
-            .buttonStyle(.plain)
-            .foregroundStyle(Color(color))
-            .font(.headline)
         }
         .padding(.horizontal)
         .padding(.vertical, 4)
     }
 }
 
+#if DEBUG
 #Preview {
-    MacCategoryRowView(name: "TEST", details: "DETAILS", color: "", buttonAction: { })
+    do {
+        let previewer = try Previewer()
+
+        return MacCategoryRowView(category: previewer.category)
+            .modelContainer(previewer.container)
+    } catch {
+        return Text("Failed to create preview: \(error.localizedDescription)")
+    }
 }
+#endif

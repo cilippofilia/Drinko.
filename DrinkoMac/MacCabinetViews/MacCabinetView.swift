@@ -60,14 +60,7 @@ extension MacCabinetView {
                         Label("Add Product", systemImage: "plus")
                     }
                 } header: {
-                    MacCategoryRowView(
-                        name: category.name,
-                        details: category.detail,
-                        color: category.color,
-                        buttonAction: {
-                            showAddCategorySheet.toggle()
-                        }
-                    )
+                    MacCategoryRowView(category: category)
                 }
                 .listRowSeparator(.hidden)
             }
