@@ -10,7 +10,7 @@ import SwiftData
 import SwiftUI
 
 @Model 
-class Item {
+class Item: Hashable {
     var id = UUID()
     var name: String = "Product Name"
     var detail: String = ""

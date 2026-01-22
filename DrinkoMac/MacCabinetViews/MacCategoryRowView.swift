@@ -9,13 +9,25 @@ import SwiftUI
 
 struct MacCategoryRowView: View {
     let name: String
+    let details: String
     let color: String
     let buttonAction: () -> Void
 
     var body: some View {
         HStack {
-            Text(name)
+            VStack(alignment: .leading) {
+                Text(name)
+                    .foregroundStyle(Color(color))
+                    .font(.headline)
+
+                Text(details)
+                    .foregroundStyle(.secondary)
+                    .font(.caption)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+
             Spacer()
+
             Button {
                 buttonAction()
             } label: {
@@ -23,14 +35,14 @@ struct MacCategoryRowView: View {
                     .labelStyle(.iconOnly)
             }
             .buttonStyle(.plain)
+            .foregroundStyle(Color(color))
+            .font(.headline)
         }
-        .font(.headline)
-        .foregroundStyle(Color(color))
         .padding(.horizontal)
         .padding(.vertical, 4)
     }
 }
 
 #Preview {
-    MacCategoryRowView(name: "TEST", color: "", buttonAction: { })
+    MacCategoryRowView(name: "TEST", details: "DETAILS", color: "", buttonAction: { })
 }

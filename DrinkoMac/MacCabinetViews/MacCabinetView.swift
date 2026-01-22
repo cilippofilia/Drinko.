@@ -38,37 +38,48 @@ struct MacCabinetView: View {
 }
 
 extension MacCabinetView {
-
     var categoriesList: some View {
         List {
             ForEach(categories) { category in
                 Section {
                     if let products = category.products {
-                        MacProductView(
-                            products: products,
-                            color: category.color,
-                            addProductAction: {
-                                addProduct(to: category)
-                            }
-                        )
+                        ForEach(products) { product in
+                            ProductRowView(product: product)
+                                .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                    FavoriteProductButtonView(product: product)
+                                        .tint(product.isFavorite ? .red : .blue)
+                                }
+                        }
+                    }
+
+                    Divider()
+
+                    Button(action: {
+                        addProduct(to: category)
+                    }) {
+                        Label("Add Product", systemImage: "plus")
                     }
                 } header: {
                     MacCategoryRowView(
                         name: category.name,
+                        details: category.detail,
                         color: category.color,
                         buttonAction: {
-                            path.append(category)
+                            showAddCategorySheet.toggle()
                         }
                     )
                 }
+                .listRowSeparator(.hidden)
             }
         }
-        .listStyle(.plain)
+        .navigationDestination(for: Category.self) { category in
+            EditCategoryView(category: category, navigationPath: $path)
+        }
         .toolbar {
             ToolbarItem(placement: .automatic) {
-                Button {
+                Button(action: {
                     showAddCategorySheet.toggle()
-                } label: {
+                }) {
                     Label("Add category", systemImage: "plus")
                 }
             }

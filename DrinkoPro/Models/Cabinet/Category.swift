@@ -10,7 +10,7 @@ import Foundation
 import SwiftData
 
 @Model 
-class Category {
+class Category: Hashable {
     var id = UUID()
     var name: String = "Category Name"
     var detail: String = ""
@@ -51,6 +51,14 @@ class Category {
         self.detail = detail
         self.color = color
         self.creationDate = creationDate
+    }
+
+    static func == (lhs: Category, rhs: Category) -> Bool {
+        lhs.id == rhs.id
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }
 

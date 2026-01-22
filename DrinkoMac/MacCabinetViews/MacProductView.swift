@@ -19,16 +19,17 @@ struct MacProductView: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: 8) {
             ForEach(products) { item in
-                Text(item.name)
-                    .padding()
-                    .frame(width: 80, height: 80)
-                    .background(Color(color))
-                    .clipShape(.rect(cornerRadius: 8))
+                NavigationLink(value: item) {
+                    Text(item.name)
+                        .padding()
+                        .frame(width: 80, height: 80)
+                        .background(Color(color))
+                        .clipShape(.rect(cornerRadius: 8))
+                }
+                .buttonStyle(.plain)
             }
 
-            Button(action: {
-                addProductAction()
-            }) {
+            Button(action: addProductAction) {
                 Label("Add Product", systemImage: "plus")
                     .labelStyle(.iconOnly)
                     .frame(width: 80, height: 80)
@@ -36,14 +37,12 @@ struct MacProductView: View {
                     .clipShape(.rect(cornerRadius: 8))
             }
             .buttonStyle(.plain)
-            .contentShape(.rect)
         }
-        .padding(4)
+        .padding(.horizontal)
         .listRowSeparator(.hidden)
         .listRowInsets(EdgeInsets())
     }
 }
-
 #Preview {
     MacProductView(products: [], color: "", addProductAction: { })
 }
