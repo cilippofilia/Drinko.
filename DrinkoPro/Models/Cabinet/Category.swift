@@ -19,8 +19,8 @@ class Category: Hashable {
     
     @Relationship(deleteRule: .cascade)
     var products: [Item]? = []
-    
-    static let colors = [
+
+    private static let allColors = [
         "Dr. Indigo",
         "Dr. Magenta",
         "Dr. Purple",
@@ -40,7 +40,15 @@ class Category: Hashable {
         "Dr. Lavender",
         "Dr. Periwinkle",
     ]
-    
+
+    static let colors = allColors.filter { color in
+        #if os(macOS)
+        return color != "Dr. Indigo"
+        #else
+        return true
+        #endif
+    }
+
     init(
         name: String,
         detail: String = "",

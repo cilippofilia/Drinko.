@@ -11,8 +11,8 @@ import SwiftUI
 struct MacCabinetView: View {
     @Environment(\.modelContext) private var modelContext
 
-    @State private var path = NavigationPath()
     @State private var showAddCategorySheet: Bool = false
+    @State private var selectedCategory: Category? = nil
 
     @Query(sort: [
         SortDescriptor(\Category.name),
@@ -20,7 +20,7 @@ struct MacCabinetView: View {
     ]) var categories: [Category]
 
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationStack {
             if categories.isEmpty {
                 MacCabinetUnavailableView(
                     showAddCategorySheet: $showAddCategorySheet,
@@ -31,9 +31,6 @@ struct MacCabinetView: View {
                 categoriesList
                     .navigationTitle("Cabinet")
             }
-        }
-        .navigationDestination(for: Category.self) { category in
-            EditCategoryView(category: category, navigationPath: $path)
         }
     }
 }
@@ -61,13 +58,23 @@ extension MacCabinetView {
                         Label("Add Product", systemImage: "plus")
                     }
                 } header: {
-                    MacCategoryRowView(category: category)
+                    MacCategoryRowView(
+                        category: category,
+                        action: {
+                            selectedCategory = category
+                        }
+                    )
                 }
                 .listRowSeparator(.hidden)
             }
         }
-        .navigationDestination(for: Category.self) { category in
-            MacEditCategoryView(category: category, navigationPath: $path)
+        .sheet(isPresented: $showAddCategorySheet) {
+            AddCategoryView()
+                .presentationDetents([.medium, .large])
+        }
+        .sheet(item: $selectedCategory) { category in
+            MacEditCategoryView(category: category)
+                .presentationDetents([.medium, .large])
         }
         .toolbar {
             ToolbarItem(placement: .automatic) {
@@ -78,16 +85,28 @@ extension MacCabinetView {
                 }
             }
         }
-        .sheet(isPresented: $showAddCategorySheet) {
-            AddCategoryView()
-                .presentationDetents([.medium, .large])
+        // MARK: Button used for testing purposes
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button(
+                    "Clear All",
+                    systemImage: "trash",
+                    role: .destructive
+                ) {
+                    deleteAllCategoriesAndProducts()
+                }
+            }
         }
     }
 
     func addProduct(to category: Category) {
-        category.products?.append(Item(name: "Product Name"))
+        category.products?.append(Item(name:"Product Name"))
     }
+}
 
+// MARK: Private methods used for testing purposes
+#if DEBUG
+private extension MacCabinetView {
     private func insertMockCategories() {
         // Avoid inserting duplicates if categories already exist
         guard categories.isEmpty else { return }
@@ -103,7 +122,32 @@ extension MacCabinetView {
             #endif
         }
     }
+
+    private func deleteAllCategoriesAndProducts() {
+        do {
+            // Delete all products first
+            let productDescriptor = FetchDescriptor<Item>()
+            let allProducts = try modelContext.fetch(productDescriptor)
+            for product in allProducts {
+                modelContext.delete(product)
+            }
+
+            // Then delete all categories
+            let categoryDescriptor = FetchDescriptor<Category>()
+            let allCategories = try modelContext.fetch(categoryDescriptor)
+            for category in allCategories {
+                modelContext.delete(category)
+            }
+
+            try modelContext.save()
+        } catch {
+            #if DEBUG
+            print("Failed to delete categories and products: \(error)")
+            #endif
+        }
+    }
 }
+#endif
 
 #if DEBUG
 #Preview {

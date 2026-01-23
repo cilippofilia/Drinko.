@@ -10,7 +10,6 @@ import SwiftUI
 
 struct MacEditCategoryView: View {
     @Bindable var category: Category
-    @Binding var navigationPath: NavigationPath
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
 
@@ -59,15 +58,27 @@ struct MacEditCategoryView: View {
                 .padding(.vertical, 7)
             }
 
-            Section(footer: Text("By deleting the category you will be deleting every product inside it.")) {
-                Button(action: {
-                    showingDeleteConfirmation.toggle()
-                }) {
-                    Label("Delete Category", systemImage: "trash")
-                        .foregroundStyle(.red)
+            Section {
+                HStack {
+                    Button("Save Changes") {
+                        save()
+                    }
+
+                    Button(
+                        "Delete Category",
+                        systemImage: "trash",
+                        role: .destructive
+                    ) {
+                        showingDeleteConfirmation.toggle()
+                    }
+                    .foregroundStyle(.red)
                 }
+            } footer: {
+                Text("By deleting the category you will be deleting every product inside it.")
+                    .foregroundStyle(.secondary)
             }
         }
+        .padding()
         .navigationTitle("Edit Category")
         .alert("Delete Category",
                isPresented: $showingDeleteConfirmation) {
@@ -105,6 +116,10 @@ extension MacEditCategoryView {
         .accessibilityLabel(LocalizedStringKey(item))
     }
 
+    private func save() {
+        dismiss()
+    }
+
     func delete() {
         modelContext.delete(category)
         dismiss()
@@ -116,7 +131,7 @@ extension MacEditCategoryView {
     do {
         let previewer = try Previewer()
 
-        return MacEditCategoryView(category: previewer.category, navigationPath: .constant(NavigationPath()))
+        return MacEditCategoryView(category: previewer.category)
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

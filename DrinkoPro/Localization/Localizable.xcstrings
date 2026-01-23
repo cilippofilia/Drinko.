@@ -585,6 +585,9 @@
         }
       }
     },
+    "Add sample data" : {
+
+    },
     "Add to Cart" : {
       "localizations" : {
         "de" : {
@@ -1009,6 +1012,9 @@
         }
       }
     },
+    "Category Description" : {
+
+    },
     "Category Details" : {
       "localizations" : {
         "de" : {
@@ -1064,6 +1070,9 @@
           }
         }
       }
+    },
+    "Choose a section from the sidebar to start your mixology journey." : {
+
     },
     "Choose from Library" : {
       "extractionState" : "manual",
@@ -1150,6 +1159,9 @@
           }
         }
       }
+    },
+    "Clear All" : {
+
     },
     "Clear Search" : {
 
@@ -2869,6 +2881,9 @@
         }
       }
     },
+    "Ready to Mix?" : {
+
+    },
     "Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed." : {
       "localizations" : {
         "de" : {
@@ -3042,6 +3057,9 @@
     "Save" : {
 
     },
+    "Save Changes" : {
+
+    },
     "Search Cocktails" : {
       "localizations" : {
         "de" : {
@@ -3155,6 +3173,9 @@
           }
         }
       }
+    },
+    "SETTINGS VIEW" : {
+
     },
     "Share the app" : {
       "localizations" : {

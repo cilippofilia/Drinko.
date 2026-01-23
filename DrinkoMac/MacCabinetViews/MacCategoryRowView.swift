@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MacCategoryRowView: View {
     let category: Category
+    let action: () -> Void
 
     var body: some View {
         HStack {
@@ -25,7 +26,9 @@ struct MacCategoryRowView: View {
 
             Spacer()
 
-            NavigationLink(value: category) {
+            Button(action: {
+                action()
+            }) {
                 Image(systemName: "square.and.pencil")
                     .foregroundStyle(Color(category.color))
                     .font(.headline)
@@ -41,7 +44,7 @@ struct MacCategoryRowView: View {
     do {
         let previewer = try Previewer()
 
-        return MacCategoryRowView(category: previewer.category)
+        return MacCategoryRowView(category: previewer.category, action: { })
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

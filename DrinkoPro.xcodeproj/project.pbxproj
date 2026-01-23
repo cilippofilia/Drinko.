@@ -490,6 +490,7 @@
 				183CED602DE1BAC6005B9699 /* Assets */,
 				18A929A92F12C13D00B70219 /* DrinkoMac */,
 				18EB4ED02EEED48B00691DC2 /* Helpers */,
+				18EB4F212EEED4B100691DC2 /* Localization */,
 			);
 			name = DrinkoMac;
 			packageProductDependencies = (
