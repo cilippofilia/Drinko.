@@ -66,7 +66,7 @@ extension MacCabinetView {
             }
         }
         .navigationDestination(for: Category.self) { category in
-            EditCategoryView(category: category, navigationPath: $path)
+            MacEditCategoryView(category: category, navigationPath: $path)
         }
         .toolbar {
             ToolbarItem(placement: .automatic) {
