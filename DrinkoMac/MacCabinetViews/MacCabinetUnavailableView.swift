@@ -11,6 +11,7 @@ struct MacCabinetUnavailableView: View {
     @Binding var showAddCategorySheet: Bool
 
     let action: () -> Void
+    let testAction: () -> Void
 
     var body: some View {
         ContentUnavailableView(label: {
@@ -20,6 +21,10 @@ struct MacCabinetUnavailableView: View {
         }, actions: {
             Button("Add a category") {
                 action()
+            }
+
+            Button("Add sample data") {
+                testAction()
             }
         })
         .frame(width: screenWidth)
@@ -40,5 +45,5 @@ struct MacCabinetUnavailableView: View {
 }
 
 #Preview {
-    MacCabinetUnavailableView(showAddCategorySheet: .constant(true), action: { })
+    MacCabinetUnavailableView(showAddCategorySheet: .constant(true), action: { }, testAction: { })
 }

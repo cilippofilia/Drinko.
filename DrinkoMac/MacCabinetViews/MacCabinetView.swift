@@ -19,13 +19,14 @@ struct MacCabinetView: View {
         SortDescriptor(\Category.creationDate)
     ]) var categories: [Category]
 
-
     var body: some View {
         NavigationStack(path: $path) {
             if categories.isEmpty {
-                MacCabinetUnavailableView(showAddCategorySheet: $showAddCategorySheet) {
-                    showAddCategorySheet.toggle()
-                }
+                MacCabinetUnavailableView(
+                    showAddCategorySheet: $showAddCategorySheet,
+                    action: { showAddCategorySheet.toggle() },
+                    testAction: { insertMockCategories() }
+                )
             } else {
                 categoriesList
                     .navigationTitle("Cabinet")
@@ -86,6 +87,22 @@ extension MacCabinetView {
     func addProduct(to category: Category) {
         category.products?.append(Item(name: "Product Name"))
     }
+
+    private func insertMockCategories() {
+        // Avoid inserting duplicates if categories already exist
+        guard categories.isEmpty else { return }
+        for mock in Category.mockCategories {
+            modelContext.insert(mock)
+        }
+        do {
+            try modelContext.save()
+        } catch {
+            // In previews or test mode, saving may not be critical; log if needed
+            #if DEBUG
+            print("Failed to save mock categories: \(error)")
+            #endif
+        }
+    }
 }
 
 #if DEBUG
@@ -101,3 +118,4 @@ extension MacCabinetView {
     }
 }
 #endif
+
