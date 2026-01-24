@@ -9,10 +9,12 @@ import SwiftData
 import SwiftUI
 
 struct MacCabinetView: View {
+    static let macCabinetTag: String? = "MacCabinet"
     @Environment(\.modelContext) private var modelContext
 
     @State private var showAddCategorySheet: Bool = false
     @State private var selectedCategory: Category? = nil
+    @State private var selectedProduct: Item? = nil
 
     @Query(sort: [
         SortDescriptor(\Category.name),
@@ -42,7 +44,11 @@ extension MacCabinetView {
                 Section {
                     if let products = category.products {
                         ForEach(products) { product in
-                            ProductRowView(product: product)
+                            MacProductRowView(product: product)
+                                .contentShape(.rect)
+                                .onTapGesture {
+                                    selectedProduct = product
+                                }
                                 .swipeActions(edge: .leading, allowsFullSwipe: true) {
                                     FavoriteProductButtonView(product: product)
                                         .tint(product.isFavorite ? .red : .blue)
@@ -69,11 +75,15 @@ extension MacCabinetView {
             }
         }
         .sheet(isPresented: $showAddCategorySheet) {
-            AddCategoryView()
+            MacAddCategoryView()
                 .presentationDetents([.medium, .large])
         }
         .sheet(item: $selectedCategory) { category in
             MacEditCategoryView(category: category)
+                .presentationDetents([.medium, .large])
+        }
+        .sheet(item: $selectedProduct) { product in
+            MacEditProductView(product: product)
                 .presentationDetents([.medium, .large])
         }
         .toolbar {
@@ -86,6 +96,7 @@ extension MacCabinetView {
             }
         }
         // MARK: Button used for testing purposes
+        #if DEBUG
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button(
@@ -97,6 +108,7 @@ extension MacCabinetView {
                 }
             }
         }
+        #endif
     }
 
     func addProduct(to category: Category) {

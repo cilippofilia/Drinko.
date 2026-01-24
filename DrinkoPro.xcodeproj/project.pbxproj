@@ -27,13 +27,11 @@
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
 		1899C08B2F1D398900E2D23B /* DrinkoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */; };
 		1899C08C2F1D398900E2D23B /* DrinkoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */; };
-		1899C0982F1FFCDD00E2D23B /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713872B65657C000D3343 /* CabinetView.swift */; };
 		18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
 		18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
 		18A929D12F12C2C000B70219 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18A929D22F12C32A00B70219 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137C2B655D78000D3343 /* Category.swift */; };
 		18A929D32F12C33F00B70219 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137B2B655D78000D3343 /* Item.swift */; };
-		18A929D42F12C69000B70219 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
 		18A929D52F12C6A900B70219 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAE2A286D2E00862CE3 /* LearnView.swift */; };
 		18A929D62F12C6BF00B70219 /* LessonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */; };
 		18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
@@ -42,7 +40,6 @@
 		18A929EA2F12C8F100B70219 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
 		18A929EB2F12C8FA00B70219 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 		18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */; };
-		18A929F02F12C98C00B70219 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18481D262C20E8120083FD5A /* AddCategoryView.swift */; };
 		18A929F32F12C9D100B70219 /* Previewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713892B656F28000D3343 /* Previewer.swift */; };
 		18A929F42F12CA1C00B70219 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */; };
 		18A929FF2F12CB4100B70219 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */; };
@@ -55,11 +52,7 @@
 		18A92A062F12CC6D00B70219 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
 		18A92A072F12CD0B00B70219 /* DrinkoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */; };
 		18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
-		18A92A092F12CD8B00B70219 /* CategoryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827138B2B6576AB000D3343 /* CategoryHeaderView.swift */; };
-		18A92A0A2F12CDB300B70219 /* ProductRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827138D2B658293000D3343 /* ProductRowView.swift */; };
-		18A92A0B2F12CDBE00B70219 /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307732B6F99DD00CB94AB /* EditProductView.swift */; };
 		18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */; };
-		18A92A0F2F12CE5B00B70219 /* EditCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713972B685B8A000D3343 /* EditCategoryView.swift */; };
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
 		18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
 		18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
@@ -615,30 +608,23 @@
 				18A92A032F12CC4C00B70219 /* SuperjuiceRowView.swift in Sources */,
 				18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */,
 				18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */,
-				1899C0982F1FFCDD00E2D23B /* CabinetView.swift in Sources */,
 				18A929EB2F12C8FA00B70219 /* CocktailDetailView.swift in Sources */,
 				18A929F42F12CA1C00B70219 /* LikeButtonView.swift in Sources */,
 				18A929E92F12C8E600B70219 /* CocktailRowView.swift in Sources */,
 				18A92A052F12CC6200B70219 /* LessonDetailView.swift in Sources */,
 				18A929D32F12C33F00B70219 /* Item.swift in Sources */,
 				18A92A012F12CC3600B70219 /* ABVRowView.swift in Sources */,
-				18A929F02F12C98C00B70219 /* AddCategoryView.swift in Sources */,
 				18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */,
 				18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */,
 				18A929D52F12C6A900B70219 /* LearnView.swift in Sources */,
 				18A929EA2F12C8F100B70219 /* FavoriteCocktailButtonView.swift in Sources */,
 				18A929F32F12C9D100B70219 /* Previewer.swift in Sources */,
-				18A92A092F12CD8B00B70219 /* CategoryHeaderView.swift in Sources */,
 				18A929D12F12C2C000B70219 /* DrinkoProApp.swift in Sources */,
-				18A929D42F12C69000B70219 /* HomeView.swift in Sources */,
 				18A929D62F12C6BF00B70219 /* LessonRowView.swift in Sources */,
-				18A92A0F2F12CE5B00B70219 /* EditCategoryView.swift in Sources */,
 				18A92A022F12CC4100B70219 /* ABVCalculator.swift in Sources */,
 				18A92A062F12CC6D00B70219 /* BookDetailView.swift in Sources */,
 				18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */,
 				18A92A042F12CC5800B70219 /* BookRowView.swift in Sources */,
-				18A92A0B2F12CDBE00B70219 /* EditProductView.swift in Sources */,
-				18A92A0A2F12CDB300B70219 /* ProductRowView.swift in Sources */,
 				18A929D22F12C32A00B70219 /* Category.swift in Sources */,
 				18A92A002F12CC2D00B70219 /* LearnHeaderView.swift in Sources */,
 				18A929DC2F12C72000B70219 /* Cocktail.swift in Sources */,

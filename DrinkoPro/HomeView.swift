@@ -11,10 +11,8 @@ import SwiftUI
 struct HomeView: View {
     // AppStorage is used to keep track of how many times the app has been opened
     @AppStorage("appUsageCounter") var appUsageCounter: Int = 0
-
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
-    
     @Environment(\.requestReview) private var requestReview
 
     var body: some View {
@@ -24,20 +22,15 @@ struct HomeView: View {
                     LearnView()
                 }
             }
-            
             Tab("Cocktails", systemImage: "wineglass", value: CocktailsView.cocktailsTag) {
                 CocktailsView()
             }
-            
             Tab("Cabinet", systemImage: "cabinet", value: CabinetView.cabinetTag) {
                 CabinetView()
             }
-
-            #if os(iOS)
             Tab("Settings", systemImage: "gear", value: SettingsView.settingsTag) {
                 SettingsView()
             }
-            #endif
         }
         .onAppear(perform: checkForReview)
     }
