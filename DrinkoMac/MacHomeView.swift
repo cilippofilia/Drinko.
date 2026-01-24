@@ -35,7 +35,7 @@ struct MacHomeView: View {
                 }
             case .settings:
                 NavigationStack {
-                    SettingsView()
+                    MacSettingsView()
                 }
             case nil:
                 ContentUnavailableView(
