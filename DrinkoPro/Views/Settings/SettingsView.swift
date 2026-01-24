@@ -19,7 +19,7 @@ struct SettingsView: View {
 
                 SettingsInfoView()
             }
-            .navigationBarTitle("Settings")
+            .navigationTitle("Settings")
         }
     }
 }

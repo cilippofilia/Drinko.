@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CreditsCardView: View {
+    @Environment(\.openURL) var openURL
     @Environment(\.horizontalSizeClass) var sizeClass
 
     var name: String
@@ -15,14 +16,12 @@ struct CreditsCardView: View {
     var url: String
 
     var body: some View {
-        Button(action: {
-            UIApplication.shared.open(URL(string: url)!,
-                                      options: [:],
-                                      completionHandler: nil)
-        }) {
+        Button {
+            openURL(URL(string: url)!)
+        } label: {
             HStack(spacing: sizeClass == .compact ? 10 : 20) {
                 Image(systemName: "heart.fill")
-                    .foregroundColor(.red)
+                    .foregroundStyle(.red)
                     .imageScale(.large)
 
                 VStack(alignment: .leading) {
@@ -31,13 +30,13 @@ struct CreditsCardView: View {
 
                     Text(brief)
                         .font(.subheadline)
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                 }
 
                 Spacer()
 
                 Image(systemName: "arrow.up.forward.app")
-                    .foregroundColor(.blue)
+                    .foregroundStyle(.blue)
                     .imageScale(.large)
             }
             .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
@@ -46,8 +45,10 @@ struct CreditsCardView: View {
         .buttonStyle(.plain)
         .background(.secondary.opacity(0.2))
         .clipShape(
-            RoundedRectangle(cornerRadius: sizeClass == .compact ? 10 : 20,
-                             style: .continuous)
+            RoundedRectangle(
+                cornerRadius: sizeClass == .compact ? 10 : 20,
+                style: .continuous
+            )
         )
     }
 }

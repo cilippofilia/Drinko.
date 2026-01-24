@@ -109,7 +109,7 @@ So, are you ready to shake things up and craft some delicious drinks? Let's rais
             .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
             .frame(width: sizeClass == .compact ? screenWidth * 0.9 : nil)
         }
-        .navigationBarTitle("Drinko.")
+        .navigationTitle("Drinko.")
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
     }

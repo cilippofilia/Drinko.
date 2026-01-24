@@ -20,6 +20,12 @@
 		182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
+		183F935F2F253BC7005CF96A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA52A286D2E00862CE3 /* SettingsView.swift */; };
+		183F93602F253BDC005CF96A /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA72A286D2E00862CE3 /* ReadMeView.swift */; };
+		183F93612F253BE5005CF96A /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
+		183F93622F253BE5005CF96A /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
+		183F93632F253BE5005CF96A /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
+		183F93642F253E41005CF96A /* CreditsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182E43362A2B1221001675FD /* CreditsCardView.swift */; };
 		18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18481D262C20E8120083FD5A /* AddCategoryView.swift */; };
 		1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1879DD672AD5ED68005E2900 /* SuperjuiceRowView.swift */; };
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
@@ -608,10 +614,14 @@
 				18A92A032F12CC4C00B70219 /* SuperjuiceRowView.swift in Sources */,
 				18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */,
 				18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */,
+				183F93612F253BE5005CF96A /* SettingsPreferenceView.swift in Sources */,
+				183F93622F253BE5005CF96A /* SettingsContactsView.swift in Sources */,
+				183F93632F253BE5005CF96A /* SettingsInfoView.swift in Sources */,
 				18A929EB2F12C8FA00B70219 /* CocktailDetailView.swift in Sources */,
 				18A929F42F12CA1C00B70219 /* LikeButtonView.swift in Sources */,
 				18A929E92F12C8E600B70219 /* CocktailRowView.swift in Sources */,
 				18A92A052F12CC6200B70219 /* LessonDetailView.swift in Sources */,
+				183F935F2F253BC7005CF96A /* SettingsView.swift in Sources */,
 				18A929D32F12C33F00B70219 /* Item.swift in Sources */,
 				18A92A012F12CC3600B70219 /* ABVRowView.swift in Sources */,
 				18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */,
@@ -626,9 +636,11 @@
 				18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */,
 				18A92A042F12CC5800B70219 /* BookRowView.swift in Sources */,
 				18A929D22F12C32A00B70219 /* Category.swift in Sources */,
+				183F93602F253BDC005CF96A /* ReadMeView.swift in Sources */,
 				18A92A002F12CC2D00B70219 /* LearnHeaderView.swift in Sources */,
 				18A929DC2F12C72000B70219 /* Cocktail.swift in Sources */,
 				18A92A072F12CD0B00B70219 /* DrinkoButtonView.swift in Sources */,
+				183F93642F253E41005CF96A /* CreditsCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

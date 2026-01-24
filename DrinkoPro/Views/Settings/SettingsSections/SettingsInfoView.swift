@@ -15,23 +15,27 @@ struct SettingsInfoView: View {
                 .foregroundStyle(.secondary)
         ) {
             NavigationLink(destination: ReadMeView()) {
-                SettingsRowView(icon: "r.circle",
-                                color: .secondary,
-                                itemName: "Read me")
+                SettingsRowView(
+                    icon: "r.circle",
+                    color: .secondary,
+                    itemName: "Read me"
+                )
             }
 
-            Button(action: {
-                shareSheet(url: drinkoURL!)
-            }) {
-                SettingsRowView(icon: "square.and.arrow.up",
-                                color: .secondary,
-                                itemName: "Share the app")
+            ShareLink(item: drinkoURL!) {
+                SettingsRowView(
+                    icon: "square.and.arrow.up",
+                    color: .secondary,
+                    itemName: "Share the app"
+                )
             }
 
             HStack {
-                SettingsRowView(icon: "v.circle",
-                                color: .secondary,
-                                itemName: "Version")
+                SettingsRowView(
+                    icon: "v.circle",
+                    color: .secondary,
+                    itemName: "Version"
+                )
                 Spacer()
 
                 Text("\(getCurrentAppVersion())")
@@ -47,17 +51,6 @@ struct SettingsInfoView: View {
         let version = (appVersion as! String)
 
         return version
-    }
-
-    func shareSheet(url: URL) {
-        let activityView = UIActivityViewController(activityItems: [url], applicationActivities: nil)
-
-        let allScenes = UIApplication.shared.connectedScenes
-        let scene = allScenes.first { $0.activationState == .foregroundActive }
-
-        if let windowScene = scene as? UIWindowScene {
-            windowScene.keyWindow?.rootViewController?.present(activityView, animated: true, completion: nil)
-        }
     }
 }
 

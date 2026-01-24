@@ -5,10 +5,14 @@
 //  Created by Filippo Cilia on 20/09/2023.
 //
 
+#if os(iOS)
 import MessageUI
+#endif
 import SwiftUI
 
 struct SettingsContactsView: View {
+    @Environment(\.openURL) private var openURL
+
     @State private var showOptions = false
     @State private var email = "cilia.filippo.dev@gmail.com"
     @State private var reportBugSubject = "Bug Report"
@@ -28,10 +32,14 @@ struct SettingsContactsView: View {
                                 itemName: "Contact the developer")
             }
             .buttonStyle(PlainButtonStyle())
+            #if os(iOS)
             .disabled(!MFMailComposeViewController.canSendMail())
-            .confirmationDialog("Select an option",
-                                isPresented: $showOptions,
-                                titleVisibility: .visible) {
+            #endif
+            .confirmationDialog(
+                "Select an option",
+                isPresented: $showOptions,
+                titleVisibility: .visible
+            ) {
                 reportBug
                 requestFeature
                 otherEnquiry
@@ -47,7 +55,7 @@ private extension SettingsContactsView {
         Button("Report a bug") {
             guard let url = URL(string: "mailto:\(email)?subject=\(reportBugSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(reportBugBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
 
-            UIApplication.shared.open(url)
+            openURL(url)
         }
     }
 
@@ -55,7 +63,7 @@ private extension SettingsContactsView {
         Button("Request a Feature") {
             guard let url = URL(string: "mailto:\(email)?subject=\(requestFeatureSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(requestFeatureBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
 
-            UIApplication.shared.open(url)
+            openURL(url)
         }
     }
 
@@ -63,19 +71,21 @@ private extension SettingsContactsView {
         Button("Other Enquiry") {
             guard let url = URL(string: "mailto:\(email)?subject=\(contactDevSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(contactDevBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
 
-            UIApplication.shared.open(url)
+            openURL(url)
         }
     }
 
     var rateApp: some View {
-        Button(action: {
-            UIApplication.shared.open(rateURL!,
-                                      options: [:],
-                                      completionHandler: nil)
-        }) {
-            SettingsRowView(icon: "star.fill",
-                            color: .yellow,
-                            itemName: "Rate the app")
+        Button {
+            if let rateURL {
+                openURL(rateURL)
+            }
+        } label: {
+            SettingsRowView(
+                icon: "star.fill",
+                color: .yellow,
+                itemName: "Rate the app"
+            )
         }
         .buttonStyle(.plain)
     }

@@ -17,7 +17,7 @@ struct MacEditCategoryView: View {
     @State private var isSelected = false
 
     let colorColumns = [
-        GridItem(.adaptive(minimum: 44))
+        GridItem(.adaptive(minimum: 33))
     ]
 
     var body: some View {
@@ -55,7 +55,6 @@ struct MacEditCategoryView: View {
                         colorButton(for: color)
                     }
                 }
-                .padding(.vertical, 7)
             }
 
             Section {
@@ -73,6 +72,7 @@ struct MacEditCategoryView: View {
                     }
                     .foregroundStyle(.red)
                 }
+                .padding(.top)
             } footer: {
                 Text("By deleting the category you will be deleting every product inside it.")
                     .foregroundStyle(.secondary)

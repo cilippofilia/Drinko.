@@ -12,11 +12,9 @@ struct SettingsPreferenceView: View {
     @Environment(\.openURL) var openURL
 
     var body: some View {
-        Section(header: Text("Preferences")) {
+        Section("Preferences") {
             Button {
-                if let url = URL(string: UIApplication.openSettingsURLString) {
-                    openURL(url)
-                }
+                openURL(URL(string: "app-settings:")!)
             } label: {
                 SettingsRowView(
                     icon: "character.bubble",
