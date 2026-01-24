@@ -2768,6 +2768,9 @@
         }
       }
     },
+    "Product Name" : {
+
+    },
     "Profile" : {
       "extractionState" : "manual",
       "localizations" : {

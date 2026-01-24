@@ -21,31 +21,42 @@ struct MacEditProductView: View {
 
     var body: some View {
         Form {
-            Section {
-                TextField("Product name", text: $product.name)
-                    .focused($isFocused)
+            Section("Info") {
+                TextField("", text: $product.name)
+                    .textContentType(.name)
+                    .overlay(alignment: .leading) {
+                        Text("Product Name")
+                            .foregroundStyle(.secondary)
+                            .opacity(product.name.isEmpty ? 0.3 : 0)
+                            .padding(.leading)
+                    }
+
                 HStack {
-                    TextField("ABV", text: $product.abv)
-                        .frame(width: 33)
+                    TextField("", text: $product.abv)
+                        .frame(width: 50)
 
                     Text("% ABV")
                     Spacer()
                 }
-                
-                HStack {
-                    Image(systemName: "flag")
-                    TextField("Made in", text: $product.madeIn)
-                }
+
+                TextField("", text: $product.madeIn)
+                    .overlay(alignment: .leading) {
+                        HStack {
+                            Image(systemName: "flag")
+                            Text("Made in")
+                        }
+                        .foregroundStyle(.secondary)
+                        .opacity(product.madeIn.isEmpty ? 0.3 : 0)
+                        .padding(.leading)
+                    }
             }
             
-            Section(header: Text("Rating")) {
+            Section {
                 Toggle(isOn: $product.tried) {
                     Text("Have you tried it yet?")
                 }
 
                 HStack {
-                    Spacer()
-                    
                     ForEach(1 ..< 5 + 1) { star in
                         image(for: star)
                             .foregroundColor(star > product.rating ? Color.secondary : Color.yellow)
@@ -59,23 +70,46 @@ struct MacEditProductView: View {
                     
                     Spacer()
                 }
+            } header: {
+                Text("Rating")
+                    .padding(.top)
             }
 
-            Section(header: Text("Notes")) {
+            Section {
                 TextField(
-                    "Your notes on \(product.name)...",
+                    "",
                     text: $product.detail,
                     axis: .vertical
                 )
-            }
-            
-            Section(footer: Text("By deleting the product you will be deleting every informations added to it.")) {
-                Button(action: {
-                    showingDeleteConfirmation = true
-                }) {
-                    Label("Delete Product", systemImage: "trash")
-                        .foregroundStyle(.red)
+                .overlay(alignment: .leading) {
+                    Text("Your notes on \(product.name)...")
+                        .foregroundStyle(.secondary)
+                        .opacity(product.detail.isEmpty ? 0.3 : 0)
+                        .padding(.leading)
                 }
+            } header: {
+                Text("Notes")
+                    .padding(.top)
+            }
+
+            Section {
+                HStack {
+                    Button("Save Changes") {
+                        save()
+                    }
+
+                    Button(
+                        "Delete Category",
+                        systemImage: "trash",
+                        role: .destructive
+                    ) {
+                        showingDeleteConfirmation.toggle()
+                    }
+                    .foregroundStyle(.red)
+                }
+            } footer: {
+                Text("By deleting the category you will be deleting every product inside it.")
+                    .foregroundStyle(.secondary)
             }
         }
         .padding()
@@ -95,7 +129,11 @@ struct MacEditProductView: View {
             return onImage
         }
     }
-    
+
+    private func save() {
+        dismiss()
+    }
+
     func delete() {
         modelContext.delete(product)
         dismiss()
@@ -107,7 +145,7 @@ struct MacEditProductView: View {
     do {
         let previewer = try Previewer()
         
-        return MacEditProductView(product: Item(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", madeIn: "Poland", abv: "45", rating: 5, tried: false, creationDate: Date.now))
+        return MacEditProductView(product: Item(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", madeIn: "", abv: "45", rating: 5, tried: false, creationDate: Date.now))
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

@@ -39,7 +39,7 @@ struct MacCabinetUnavailableView: View {
             }
         }
         .sheet(isPresented: $showAddCategorySheet) {
-            AddCategoryView()
+            MacAddCategoryView()
         }
     }
 }
