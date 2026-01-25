@@ -16,6 +16,10 @@ struct MacCabinetView: View {
     @State private var selectedCategory: Category? = nil
     @State private var selectedProduct: Item? = nil
 
+    @State private var errorTitle: String = "Something went wrong"
+    @State private var errorMessage: String = ""
+    @State private var showError: Bool = false
+
     @Query(sort: [
         SortDescriptor(\Category.name),
         SortDescriptor(\Category.creationDate)
@@ -96,7 +100,6 @@ extension MacCabinetView {
             }
         }
         // MARK: Button used for testing purposes
-        #if DEBUG
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button(
@@ -108,7 +111,13 @@ extension MacCabinetView {
                 }
             }
         }
-        #endif
+        .alert(isPresented: $showError) {
+            Alert(
+                title: Text(errorTitle),
+                message: Text(errorMessage),
+                dismissButton: .cancel(Text("OK"))
+            )
+        }
     }
 
     func addProduct(to category: Category) {
@@ -117,21 +126,20 @@ extension MacCabinetView {
 }
 
 // MARK: Private methods used for testing purposes
-#if DEBUG
 private extension MacCabinetView {
     private func insertMockCategories() {
-        // Avoid inserting duplicates if categories already exist
-        guard categories.isEmpty else { return }
+        // Clear existing data first
+        deleteAllCategoriesAndProducts()
+
+        // Then insert fresh mock data
         for mock in Category.mockCategories {
             modelContext.insert(mock)
         }
         do {
             try modelContext.save()
         } catch {
-            // In previews or test mode, saving may not be critical; log if needed
-            #if DEBUG
-            print("Failed to save mock categories: \(error)")
-            #endif
+            showError.toggle()
+            errorMessage = "Please try again.\n\nFailed to save mock categories: \(error)"
         }
     }
 
@@ -153,13 +161,11 @@ private extension MacCabinetView {
 
             try modelContext.save()
         } catch {
-            #if DEBUG
-            print("Failed to delete categories and products: \(error)")
-            #endif
+            showError.toggle()
+            errorMessage = "Please try again.\n\nFailed to delete categories and products: \(error)"
         }
     }
 }
-#endif
 
 #if DEBUG
 #Preview {
