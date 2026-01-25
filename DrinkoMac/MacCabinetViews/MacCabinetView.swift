@@ -126,7 +126,7 @@ extension MacCabinetView {
 }
 
 // MARK: Private methods used for testing purposes
-private extension MacCabinetView {
+extension MacCabinetView {
     private func insertMockCategories() {
         // Clear existing data first
         deleteAllCategoriesAndProducts()
