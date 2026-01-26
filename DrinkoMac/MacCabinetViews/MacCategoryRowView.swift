@@ -1,6 +1,6 @@
 //
 //  MacCategoryRowView.swift
-//  DrinkoDesktop
+//  DrinkoMac
 //
 //  Created by Filippo Cilia on 21/01/2026.
 //

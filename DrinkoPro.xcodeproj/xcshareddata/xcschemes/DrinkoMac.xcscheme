@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "18A929A72F12C13D00B70219"
-               BuildableName = "DrinkoDesktop.app"
-               BlueprintName = "DrinkoDesktop"
+               BuildableName = "DrinkoMac.app"
+               BlueprintName = "DrinkoMac"
                ReferencedContainer = "container:DrinkoPro.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,8 +45,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18A929A72F12C13D00B70219"
-            BuildableName = "DrinkoDesktop.app"
-            BlueprintName = "DrinkoDesktop"
+            BuildableName = "DrinkoMac.app"
+            BlueprintName = "DrinkoMac"
             ReferencedContainer = "container:DrinkoPro.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "18A929A72F12C13D00B70219"
-            BuildableName = "DrinkoDesktop.app"
-            BlueprintName = "DrinkoDesktop"
+            BuildableName = "DrinkoMac.app"
+            BlueprintName = "DrinkoMac"
             ReferencedContainer = "container:DrinkoPro.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

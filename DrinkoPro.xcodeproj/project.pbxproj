@@ -116,7 +116,7 @@
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = DrinkoIcon.icon; sourceTree = "<group>"; };
 		18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVRowView.swift; sourceTree = "<group>"; };
-		18A929A82F12C13D00B70219 /* DrinkoDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18A929A82F12C13D00B70219 /* DrinkoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
 		18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContactsView.swift; sourceTree = "<group>"; };
 		18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoView.swift; sourceTree = "<group>"; };
@@ -149,21 +149,21 @@
 				Book.swift,
 				Lesson.swift,
 			);
-			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
+			target = 18A929A72F12C13D00B70219 /* DrinkoMac */;
 		};
 		18A929E52F12C7FA00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				SwipeToActionTips.swift,
 			);
-			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
+			target = 18A929A72F12C13D00B70219 /* DrinkoMac */;
 		};
 		18A929E72F12C80D00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Samples+Ext.swift",
 			);
-			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
+			target = 18A929A72F12C13D00B70219 /* DrinkoMac */;
 		};
 		18A929EE2F12C91A00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -178,7 +178,7 @@
 				LinkedCocktailsView.swift,
 				ProcedureView.swift,
 			);
-			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
+			target = 18A929A72F12C13D00B70219 /* DrinkoMac */;
 		};
 		18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
@@ -370,7 +370,7 @@
 			children = (
 				18F49E602A27B28D00862CE3 /* DrinkoPro.app */,
 				182B4B7F2F0D6B05007E7026 /* DrinkoProTests.xctest */,
-				18A929A82F12C13D00B70219 /* DrinkoDesktop.app */,
+				18A929A82F12C13D00B70219 /* DrinkoMac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -473,9 +473,9 @@
 			productReference = 182B4B7F2F0D6B05007E7026 /* DrinkoProTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		18A929A72F12C13D00B70219 /* DrinkoDesktop */ = {
+		18A929A72F12C13D00B70219 /* DrinkoMac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 18A929C62F12C13E00B70219 /* Build configuration list for PBXNativeTarget "DrinkoDesktop" */;
+			buildConfigurationList = 18A929C62F12C13E00B70219 /* Build configuration list for PBXNativeTarget "DrinkoMac" */;
 			buildPhases = (
 				18A929A42F12C13D00B70219 /* Sources */,
 				18A929A52F12C13D00B70219 /* Frameworks */,
@@ -491,11 +491,11 @@
 				18EB4ED02EEED48B00691DC2 /* Helpers */,
 				18EB4F212EEED4B100691DC2 /* Localization */,
 			);
-			name = DrinkoDesktop;
+			name = DrinkoMac;
 			packageProductDependencies = (
 			);
 			productName = DrinkoMac;
-			productReference = 18A929A82F12C13D00B70219 /* DrinkoDesktop.app */;
+			productReference = 18A929A82F12C13D00B70219 /* DrinkoMac.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18F49E5F2A27B28D00862CE3 /* DrinkoPro */ = {
@@ -565,7 +565,7 @@
 			projectRoot = "";
 			targets = (
 				18F49E5F2A27B28D00862CE3 /* DrinkoPro */,
-				18A929A72F12C13D00B70219 /* DrinkoDesktop */,
+				18A929A72F12C13D00B70219 /* DrinkoMac */,
 				182B4B7E2F0D6B05007E7026 /* DrinkoProTests */,
 			);
 		};
@@ -775,7 +775,6 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -827,7 +826,6 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1064,7 +1062,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		18A929C62F12C13E00B70219 /* Build configuration list for PBXNativeTarget "DrinkoDesktop" */ = {
+		18A929C62F12C13E00B70219 /* Build configuration list for PBXNativeTarget "DrinkoMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				18A929C72F12C13E00B70219 /* Debug */,
