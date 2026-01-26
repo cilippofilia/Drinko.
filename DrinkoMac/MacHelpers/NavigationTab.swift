@@ -1,6 +1,6 @@
 //
 //  NavigationTab.swift
-//  DrinkoMac
+//  DrinkoDesktop
 //
 //  Created by Filippo Cilia on 10/01/2026.
 //

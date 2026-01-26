@@ -1,6 +1,6 @@
 //
 //  MacCabinetUnavailableView.swift
-//  DrinkoMac
+//  DrinkoDesktop
 //
 //  Created by Filippo Cilia on 21/01/2026.
 //
