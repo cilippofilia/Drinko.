@@ -10,6 +10,7 @@ import SwiftUI
 struct LearnView: View {
     static let learnTag: String? = "Learn"
     @Environment(LessonsViewModel.self) private var viewModel
+    @State private var searchText = ""
 
     @AppStorage("basicLessonsCollapsed") private var basicLessonsCollapsed = false
     @AppStorage("barPrepsCollapsed") private var barPrepsCollapsed = false
@@ -46,57 +47,143 @@ struct LearnView: View {
         default: break
         }
     }
+    
+    private var trimmedSearchText: String {
+        searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+    
+    private var isSearching: Bool {
+        !trimmedSearchText.isEmpty
+    }
+    
+    private func filteredLessons(for topic: String) -> [Lesson] {
+        let lessons = viewModel.getLessons(for: topic)
+        guard isSearching else { return lessons }
+        return lessons.filter { lesson in
+            lesson.title.localizedCaseInsensitiveContains(trimmedSearchText) ||
+            lesson.description.localizedCaseInsensitiveContains(trimmedSearchText)
+        }
+    }
+    
+    private var filteredBooks: [Book] {
+        let books = viewModel.books
+        guard isSearching else { return books }
+        return books.filter { book in
+            book.title.localizedCaseInsensitiveContains(trimmedSearchText) ||
+            book.description.localizedCaseInsensitiveContains(trimmedSearchText) ||
+            book.author.localizedCaseInsensitiveContains(trimmedSearchText)
+        }
+    }
+    
+    private var hasSearchResults: Bool {
+        guard isSearching else { return true }
+        if !filteredBooks.isEmpty {
+            return true
+        }
+        for topic in viewModel.topics {
+            if !filteredLessons(for: topic).isEmpty {
+                return true
+            }
+        }
+        return false
+    }
 
     var body: some View {
-        List {
-            // MARK: ALL LESSONS
-            ForEach(viewModel.topics, id: \.self) { topic in
-                Section {
-                    if !isCollapsed(for: topic) {
-                        ForEach(viewModel.getLessons(for: topic)) { lesson in
-                            NavigationLink(value: lesson) {
-                                LessonRowView(lesson: lesson)
+        Group {
+            if isSearching && !hasSearchResults {
+                ContentUnavailableView(
+                    label: {
+                        Label("\"\(trimmedSearchText)\" not found", systemImage: "exclamationmark.magnifyingglass")
+                    },
+                    description: {
+                        Text("No lessons or books match \"\(trimmedSearchText)\". Try a different search term or browse all topics.")
+                    },
+                    actions: {
+                        Button("Clear Search", systemImage: "xmark.circle") {
+                            searchText = ""
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                )
+            } else {
+                List {
+                    if isSearching {
+                        // MARK: SEARCH RESULTS
+                        ForEach(viewModel.topics, id: \.self) { topic in
+                            let lessons = filteredLessons(for: topic)
+                            if !lessons.isEmpty {
+                                Section(topic.replacing("-", with: " ").capitalizingFirstLetter()) {
+                                    ForEach(lessons) { lesson in
+                                        NavigationLink(value: lesson) {
+                                            LessonRowView(lesson: lesson)
+                                        }
+                                    }
+                                }
                             }
                         }
-                    }
-                } header: {
-                    LearnHeaderView(
-                        text: topic.replacing("-", with: " ").capitalizingFirstLetter(),
-                        isCollapsed: Binding(
-                            get: { isCollapsed(for: topic) },
-                            set: { setCollapsed(for: topic, value: $0) }
-                        )
-                    )
-                }
-            }
-            // MARK: CALCULATORS
-            Section {
-                if !isCalculatorsCollapsed {
-                    ABVRowView()
-                    SuperjuiceRowView(juiceType: "lime")
-                    SuperjuiceRowView(juiceType: "lemon")
-                }
-            } header: {
-                LearnHeaderView(
-                    text: "Calculators",
-                    isCollapsed: $isCalculatorsCollapsed)
-            }
-            // MARK: BOOKS
-            Section {
-                if !isBooksCollapsed {
-                    ForEach(viewModel.books) { book in
-                        NavigationLink(value: book) {
-                            BookRowView(book: book)
+                        let books = filteredBooks
+                        if !books.isEmpty {
+                            Section("Books") {
+                                ForEach(books) { book in
+                                    NavigationLink(value: book) {
+                                        BookRowView(book: book)
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        // MARK: ALL LESSONS
+                        ForEach(viewModel.topics, id: \.self) { topic in
+                            Section {
+                                if !isCollapsed(for: topic) {
+                                    ForEach(filteredLessons(for: topic)) { lesson in
+                                        NavigationLink(value: lesson) {
+                                            LessonRowView(lesson: lesson)
+                                        }
+                                    }
+                                }
+                            } header: {
+                                LearnHeaderView(
+                                    text: topic.replacing("-", with: " ").capitalizingFirstLetter(),
+                                    isCollapsed: Binding(
+                                        get: { isCollapsed(for: topic) },
+                                        set: { setCollapsed(for: topic, value: $0) }
+                                    )
+                                )
+                            }
+                        }
+                        // MARK: CALCULATORS
+                        Section {
+                            if !isCalculatorsCollapsed {
+                                ABVRowView()
+                                SuperjuiceRowView(juiceType: "lime")
+                                SuperjuiceRowView(juiceType: "lemon")
+                            }
+                        } header: {
+                            LearnHeaderView(
+                                text: "Calculators",
+                                isCollapsed: $isCalculatorsCollapsed)
+                        }
+                        // MARK: BOOKS
+                        Section {
+                            if !isBooksCollapsed {
+                                ForEach(filteredBooks) { book in
+                                    NavigationLink(value: book) {
+                                        BookRowView(book: book)
+                                    }
+                                }
+                            }
+                        } header: {
+                            LearnHeaderView(
+                                text: "Books",
+                                isCollapsed: $isBooksCollapsed)
                         }
                     }
                 }
-            } header: {
-                LearnHeaderView(
-                    text: "Books",
-                    isCollapsed: $isBooksCollapsed)
             }
         }
         .navigationTitle("Learn")
+        .searchable(text: $searchText, placement: .automatic, prompt: "Search lessons and books")
         #if os(iOS)
         .listSectionSpacing(.compact)
         #endif

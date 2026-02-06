@@ -758,6 +758,9 @@
         }
       }
     },
+    "Books" : {
+
+    },
     "Buy: %@" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2515,6 +2518,9 @@
     "No cocktails match \"%@\". Try a different search term or browse all cocktails." : {
 
     },
+    "No lessons or books match \"%@\". Try a different search term or browse all topics." : {
+
+    },
     "Notes" : {
       "localizations" : {
         "de" : {
@@ -3093,6 +3099,9 @@
           }
         }
       }
+    },
+    "Search lessons and books" : {
+
     },
     "Select an option" : {
       "localizations" : {
