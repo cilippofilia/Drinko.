@@ -12,14 +12,16 @@ struct CocktailImageHeader: View {
     let cocktail: Cocktail
     
     var body: some View {
-        AsyncImageView(
-            image: cocktail.pic,
-            frameHeight: imageFrameHeight,
-            aspectRatio: .fit
-        )
-        .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
-        .background(Color.white)
-        .clipShape(.rect(cornerRadius: imageCornerRadius))
+        if !cocktail.id.hasPrefix("user-") {
+            AsyncImageView(
+                image: cocktail.pic,
+                frameHeight: imageFrameHeight,
+                aspectRatio: .fit
+            )
+            .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
+            .background(Color.white)
+            .clipShape(.rect(cornerRadius: imageCornerRadius))
+        }
     }
 }
 
