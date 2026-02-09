@@ -529,6 +529,9 @@
     "Add Category" : {
 
     },
+    "Add cocktails to favorites to quickly find them here." : {
+
+    },
     "Add ingredient" : {
       "localizations" : {
         "de" : {
@@ -615,6 +618,9 @@
           }
         }
       }
+    },
+    "All Cocktails" : {
+
     },
     "Amount?" : {
       "localizations" : {
@@ -1197,6 +1203,9 @@
           }
         }
       }
+    },
+    "Cocktails Only" : {
+
     },
     "Colors" : {
       "localizations" : {
@@ -1825,6 +1834,12 @@
           }
         }
       }
+    },
+    "Favorites Only" : {
+
+    },
+    "Filter" : {
+
     },
     "Garnish" : {
       "localizations" : {
@@ -2516,6 +2531,15 @@
       }
     },
     "No cocktails match \"%@\". Try a different search term or browse all cocktails." : {
+
+    },
+    "No favorite cocktails found" : {
+
+    },
+    "No favorite cocktails match \"%@\"." : {
+
+    },
+    "No favorite cocktails yet" : {
 
     },
     "No lessons or books match \"%@\". Try a different search term or browse all topics." : {
@@ -3216,6 +3240,9 @@
           }
         }
       }
+    },
+    "Shots Only" : {
+
     },
     "show less" : {
       "extractionState" : "manual",
