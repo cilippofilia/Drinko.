@@ -12,9 +12,6 @@ import UIKit
 import AppKit
 #endif
 
-let windowMinWidth: CGFloat = 750
-let windowMinHeight: CGFloat = 350
-
 let rowHeight: CGFloat = 45
 let imageCornerRadius: CGFloat = 10
 let imageFrameHeight: CGFloat = 280
@@ -25,10 +22,6 @@ let screenWidth: CGFloat = 350
 #endif
 
 let lovelyText = "This app was made with ❤️ by Filippo Cilia 🇮🇹"
-
-// URLs inside the app
-let twitterURL = URL(string: "https://x.com/fcilia_dev")
-let instaURL = URL(string: "https://www.instagram.com/cilippofilia")
 
 let drinkoURL = URL(string: "https://apps.apple.com/gb/app/drinko/id6449893371")
 let rateURL = URL(string: "itms-apps://apps.apple.com/gb/app/drinko/id6449893371?action=write-review")
