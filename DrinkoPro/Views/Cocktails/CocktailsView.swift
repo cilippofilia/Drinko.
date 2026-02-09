@@ -21,6 +21,36 @@ struct CocktailsView: View {
     var favoriteCocktailsTip = SwipeToFavoriteTip()
     #endif
 
+    private var methodOptions: [String] {
+        uniqueSorted(
+            from: viewModel.listOfAllDrinks.map(\.method),
+            fallback: ["shake & fine strain"]
+        )
+    }
+
+    private var glassOptions: [String] {
+        uniqueSorted(
+            from: viewModel.listOfAllDrinks.map(\.glass),
+            fallback: ["rock"]
+        )
+    }
+
+    private var iceOptions: [String] {
+        uniqueSorted(
+            from: viewModel.listOfAllDrinks.map(\.ice),
+            fallback: ["cubed"]
+        )
+    }
+
+    private var unitOptions: [String] {
+        uniqueSorted(
+            from: viewModel.listOfAllDrinks
+                .flatMap(\.ingredients)
+                .map(\.unit),
+            fallback: ["oz."]
+        )
+    }
+
     private var visibleCocktails: [Cocktail] {
         viewModel.filteredCocktails(filterOption: filterOption) { cocktail in
             favorites.contains(cocktail)
@@ -123,9 +153,6 @@ struct CocktailsView: View {
                 ),
                 prompt: "Search Cocktails"
             )
-            #if os(iOS)
-            .popoverTip(favoriteCocktailsTip)
-            #endif
             .toolbar {
                 #if os(iOS)
                 ToolbarItemGroup(placement: .topBarTrailing) {
@@ -141,7 +168,12 @@ struct CocktailsView: View {
             }
             .sheet(isPresented: $isPresentingCustomCocktailSheet) {
                 NavigationStack {
-                    AddCustomCocktailPlaceholderView()
+                    AddCustomCocktailView(
+                        methodOptions: methodOptions,
+                        glassOptions: glassOptions,
+                        iceOptions: iceOptions,
+                        unitOptions: unitOptions
+                    )
                 }
             }
             .task {
@@ -154,26 +186,15 @@ struct CocktailsView: View {
     }
 }
 
-private struct AddCustomCocktailPlaceholderView: View {
-    @Environment(\.dismiss) private var dismiss
-
-    var body: some View {
-        ContentUnavailableView(
-            "Create Cocktail",
-            systemImage: "wineglass",
-            description: Text("Start adding your custom recipe here.")
-        )
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button("Close") {
-                    dismiss()
-                }
-            }
-        }
-    }
-}
-
 private extension CocktailsView {
+    func uniqueSorted(from values: [String], fallback: [String]) -> [String] {
+        let cleaned = values
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        let set = Set(cleaned + fallback)
+        return set.sorted()
+    }
+
     var optionsMenu: some View {
         Menu {
             Section("Filter") {
@@ -286,6 +307,7 @@ private extension CocktailsView {
         } label: {
             Image(systemName: "plus")
         }
+        .accessibilityLabel("Create Cocktail")
     }
 }
 

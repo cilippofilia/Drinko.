@@ -677,6 +677,9 @@
         }
       }
     },
+    "Add Ingredient" : {
+
+    },
     "Add Product" : {
       "localizations" : {
         "de" : {
@@ -930,6 +933,9 @@
           }
         }
       }
+    },
+    "Basics" : {
+
     },
     "Books" : {
       "localizations" : {
@@ -1466,9 +1472,6 @@
           }
         }
       }
-    },
-    "Close" : {
-
     },
     "Cocktails" : {
       "comment" : "Cocktails Tab",
@@ -2158,6 +2161,9 @@
         }
       }
     },
+    "Extra notes (optional)" : {
+
+    },
     "Favorites Only" : {
       "localizations" : {
         "de" : {
@@ -2470,6 +2476,9 @@
           }
         }
       }
+    },
+    "Ingredient name" : {
+
     },
     "Ingredients" : {
       "comment" : "Cocktails Tab - CocktailView",
@@ -2811,6 +2820,9 @@
           }
         }
       }
+    },
+    "Name" : {
+
     },
     "Name:" : {
       "extractionState" : "manual",
@@ -3378,6 +3390,9 @@
           }
         }
       }
+    },
+    "Qty" : {
+
     },
     "Rate the app" : {
       "localizations" : {
@@ -4176,9 +4191,6 @@
         }
       }
     },
-    "Start adding your custom recipe here." : {
-
-    },
     "Suggested Categories" : {
       "localizations" : {
         "de" : {
@@ -4492,6 +4504,9 @@
           }
         }
       }
+    },
+    "Unit" : {
+
     },
     "Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink." : {
       "localizations" : {

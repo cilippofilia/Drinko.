@@ -175,6 +175,7 @@
 		18A929EE2F12C91A00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AddCustomCocktailView.swift,
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
 				CocktailImageHeader.swift,
@@ -190,6 +191,7 @@
 		18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AddCustomCocktailView.swift,
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
 				CocktailImageHeader.swift,

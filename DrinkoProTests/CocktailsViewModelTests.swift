@@ -50,6 +50,7 @@ struct CocktailsViewModelTests {
         ]
         vm.histories = []
         vm.procedures = []
+        vm.userCocktails = []
         return vm
     }
 
@@ -140,5 +141,40 @@ struct CocktailsViewModelTests {
         // Should not include itself, but include other with Vodka
         #expect(suggestions.contains(where: { $0.id == "b-50-50" }))
         #expect(suggestions.contains(where: { $0.id == base.id }) == false)
+    }
+
+    @Test("User cocktail is appended and visible in lists")
+    func addUserCocktail() async throws {
+        let vm = makeViewModel()
+        vm.addUserCocktail(
+            name: "My Custom Drink",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "Orange peel",
+            ice: "Cubed",
+            extra: "Personal recipe",
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")]
+        )
+
+        #expect(vm.userCocktails.count == 1)
+        #expect(vm.listOfAllDrinks.contains(where: { $0.name == "My Custom Drink" }))
+        #expect(vm.filteredCocktails(filterOption: .cocktailsOnly) { _ in false }.contains(where: { $0.name == "My Custom Drink" }))
+    }
+
+    @Test("Suggestions return empty when cocktail has no ingredients")
+    func suggestionsWithoutIngredients() async throws {
+        let vm = makeViewModel()
+        let noIngredientsCocktail = Cocktail(
+            id: "empty",
+            name: "Empty",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "",
+            ice: "Cubed",
+            extra: "",
+            ingredients: []
+        )
+
+        #expect(vm.getLinkedCocktails(for: noIngredientsCocktail).isEmpty)
     }
 }

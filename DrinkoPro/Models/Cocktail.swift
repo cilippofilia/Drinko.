@@ -79,11 +79,12 @@ struct Procedure: Codable, Equatable, Identifiable {
 class CocktailsViewModel {
     var listOfCocktails: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     var listOfShots: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "shots.json")
+    var userCocktails: [Cocktail] = []
     var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
     var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
 
     var listOfAllDrinks: [Cocktail] {
-        listOfCocktails + listOfShots
+        listOfCocktails + listOfShots + userCocktails
     }
     var sortOption: SortOption = .fromAtoZ
     var searchText = ""
@@ -101,7 +102,8 @@ class CocktailsViewModel {
     }
 
     func getLinkedCocktails(for cocktail: Cocktail) -> [Cocktail] {
-        getsSuggestedCocktails(with: "\(cocktail.ingredients[0].name)", from: cocktail)
+        guard let firstIngredient = cocktail.ingredients.first else { return [] }
+        return getsSuggestedCocktails(with: firstIngredient.name, from: cocktail)
     }
 
     var filteredCocktails: [Cocktail] {
@@ -125,7 +127,7 @@ class CocktailsViewModel {
         case .all:
             baseCocktails = sortedCocktails
         case .cocktailsOnly:
-            baseCocktails = sortedCocktails(in: listOfCocktails)
+            baseCocktails = sortedCocktails(in: listOfCocktails + userCocktails)
         case .shotsOnly:
             baseCocktails = sortedCocktails(in: listOfShots)
         case .favoritesOnly:
@@ -208,6 +210,38 @@ class CocktailsViewModel {
         list.shuffle()
         return Array(list.prefix(5))
     }
+
+    func addUserCocktail(
+        name: String,
+        method: String,
+        glass: String,
+        garnish: String,
+        ice: String,
+        extra: String,
+        ingredients: [Ingredient]
+    ) {
+        let newCocktail = Cocktail(
+            id: makeUserCocktailID(from: name),
+            name: name,
+            method: method,
+            glass: glass,
+            garnish: garnish,
+            ice: ice,
+            extra: extra,
+            ingredients: ingredients
+        )
+        userCocktails.append(newCocktail)
+    }
+
+    private func makeUserCocktailID(from name: String) -> String {
+        let normalizedName = name
+            .lowercased()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .replacingOccurrences(of: "[^a-z0-9]+", with: "-", options: .regularExpression)
+            .trimmingCharacters(in: CharacterSet(charactersIn: "-"))
+        let fallback = normalizedName.isEmpty ? "user-cocktail" : normalizedName
+        return "user-\(fallback)-\(UUID().uuidString.prefix(6).lowercased())"
+    }
 }
 
 extension CocktailsViewModel {
@@ -217,4 +251,10 @@ extension CocktailsViewModel {
         case shotsOnly
         case favoritesOnly
     }
+}
+
+public struct IngredientDraft {
+    var name = ""
+    var quantity = ""
+    var unit: String
 }
