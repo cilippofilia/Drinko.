@@ -11,10 +11,8 @@ import TipKit
 struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
 
-    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
-    @State private var showingSortOrder = false
     @State private var filterOption: CocktailsViewModel.FilterOption = .all
     @State var path = NavigationPath()
 
