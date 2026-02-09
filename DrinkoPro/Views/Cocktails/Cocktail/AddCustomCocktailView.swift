@@ -32,7 +32,7 @@ struct AddCustomCocktailView: View {
         iceOptions: [String],
         unitOptions: [String]
     ) {
-        let units = ["-", "oz.", "ml"]
+        let units = ["oz.", "ml"]
 
         self.methodOptions = methodOptions
         self.glassOptions = glassOptions
