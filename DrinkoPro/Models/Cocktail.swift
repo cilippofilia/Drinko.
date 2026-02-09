@@ -68,7 +68,7 @@ struct Procedure: Codable, Equatable, Identifiable {
     let procedure: [Steps]
     
     struct Steps: Codable, Equatable, Identifiable {
-        var id: String { text }
+        var id: String { "\(step)-\(text)" }
         let step: String
         let text: String
     }
@@ -82,6 +82,7 @@ class CocktailsViewModel {
     var userCocktails: [Cocktail] = []
     var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
     var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
+    var userProcedures: [Procedure] = []
 
     var listOfAllDrinks: [Cocktail] {
         listOfCocktails + listOfShots + userCocktails
@@ -98,7 +99,8 @@ class CocktailsViewModel {
     }
 
     func getCocktailProcedure(for cocktail: Cocktail) -> Procedure? {
-        return procedures.first(where: { $0.id == cocktail.id })
+        userProcedures.first(where: { $0.id == cocktail.id })
+            ?? procedures.first(where: { $0.id == cocktail.id })
     }
 
     func getLinkedCocktails(for cocktail: Cocktail) -> [Cocktail] {
@@ -218,7 +220,8 @@ class CocktailsViewModel {
         garnish: String,
         ice: String,
         extra: String,
-        ingredients: [Ingredient]
+        ingredients: [Ingredient],
+        procedureSteps: [String]
     ) {
         let newCocktail = Cocktail(
             id: makeUserCocktailID(from: name),
@@ -231,6 +234,15 @@ class CocktailsViewModel {
             ingredients: ingredients
         )
         userCocktails.append(newCocktail)
+
+        let mappedProcedureSteps = procedureSteps.enumerated().map { index, text in
+            Procedure.Steps(step: "Step \(index + 1)", text: text)
+        }
+        if !mappedProcedureSteps.isEmpty {
+            userProcedures.append(
+                Procedure(id: newCocktail.id, procedure: mappedProcedureSteps)
+            )
+        }
     }
 
     private func makeUserCocktailID(from name: String) -> String {

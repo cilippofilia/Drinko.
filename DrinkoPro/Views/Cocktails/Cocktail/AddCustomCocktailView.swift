@@ -23,6 +23,7 @@ struct AddCustomCocktailView: View {
     @State private var ice: String
     @State private var extra = ""
     @State private var ingredientDrafts: [IngredientDraft]
+    @State private var procedureDrafts: [String]
     @State private var validationMessage: String?
 
     init(
@@ -41,6 +42,7 @@ struct AddCustomCocktailView: View {
         _glass = State(initialValue: glassOptions.first ?? "rock")
         _ice = State(initialValue: iceOptions.first ?? "cubed")
         _ingredientDrafts = State(initialValue: [IngredientDraft(unit: self.unitOptions.first ?? "oz.")])
+        _procedureDrafts = State(initialValue: [""])
     }
 
     var leadingToolbarPlacement: ToolbarItemPlacement {
@@ -117,6 +119,34 @@ struct AddCustomCocktailView: View {
                 }
             }
 
+            Section("Procedure") {
+                ForEach(procedureDrafts.indices, id: \.self) { index in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Step \(index + 1)")
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(.secondary)
+
+                        TextField(
+                            "Describe this step",
+                            text: $procedureDrafts[index],
+                            axis: .vertical
+                        )
+                        .lineLimit(2...5)
+                    }
+                    .padding(.vertical, 2)
+                }
+                .onDelete { offsets in
+                    procedureDrafts.remove(atOffsets: offsets)
+                    if procedureDrafts.isEmpty {
+                        procedureDrafts.append("")
+                    }
+                }
+
+                Button("Add Step", systemImage: "plus") {
+                    procedureDrafts.append("")
+                }
+            }
+
             Section("Notes") {
                 TextField("Extra notes (optional)", text: $extra, axis: .vertical)
                     .lineLimit(3...6)
@@ -167,6 +197,10 @@ struct AddCustomCocktailView: View {
             return
         }
 
+        let procedureSteps = procedureDrafts
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+
         validationMessage = nil
         viewModel.addUserCocktail(
             name: trimmedName,
@@ -175,7 +209,8 @@ struct AddCustomCocktailView: View {
             garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
             ice: ice,
             extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
-            ingredients: ingredients
+            ingredients: ingredients,
+            procedureSteps: procedureSteps
         )
         dismiss()
     }

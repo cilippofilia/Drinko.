@@ -736,6 +736,9 @@
         }
       }
     },
+    "Add Step" : {
+
+    },
     "Add to Cart" : {
       "localizations" : {
         "de" : {
@@ -1875,6 +1878,9 @@
           }
         }
       }
+    },
+    "Describe this step" : {
+
     },
     "Dismiss" : {
       "extractionState" : "manual",
@@ -4190,6 +4196,9 @@
           }
         }
       }
+    },
+    "Step %lld" : {
+
     },
     "Suggested Categories" : {
       "localizations" : {
