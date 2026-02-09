@@ -82,6 +82,56 @@ struct CocktailsViewModelTests {
         #expect(vm.filteredCocktails.map { $0.name } == ["Z Martini"])
     }
 
+    @Test("Filter option: all")
+    func filterAll() async throws {
+        let vm = makeViewModel()
+        let result = vm.filteredCocktails(filterOption: .all) { _ in false }
+        #expect(result.map { $0.name } == ["Amaretto Sour", "B 50/50", "Z Martini"])
+    }
+
+    @Test("Filter option: cocktails only")
+    func filterCocktailsOnly() async throws {
+        let vm = makeViewModel()
+        let result = vm.filteredCocktails(filterOption: .cocktailsOnly) { _ in false }
+        #expect(result.map { $0.name } == ["Amaretto Sour", "Z Martini"])
+    }
+
+    @Test("Filter option: shots only")
+    func filterShotsOnly() async throws {
+        let vm = makeViewModel()
+        let result = vm.filteredCocktails(filterOption: .shotsOnly) { _ in false }
+        #expect(result.map { $0.name } == ["B 50/50"])
+    }
+
+    @Test("Filter option: favorites only")
+    func filterFavoritesOnly() async throws {
+        let vm = makeViewModel()
+        let favoriteIDs: Set<String> = ["b-50-50", "z-martini"]
+        let result = vm.filteredCocktails(filterOption: .favoritesOnly) { cocktail in
+            favoriteIDs.contains(cocktail.id)
+        }
+        #expect(result.map { $0.name } == ["B 50/50", "Z Martini"])
+    }
+
+    @Test("Favorites filter combines with search")
+    func filterFavoritesWithSearch() async throws {
+        let vm = makeViewModel()
+        vm.searchText = "mart"
+        let favoriteIDs: Set<String> = ["b-50-50"]
+        let result = vm.filteredCocktails(filterOption: .favoritesOnly) { cocktail in
+            favoriteIDs.contains(cocktail.id)
+        }
+        #expect(result.isEmpty)
+    }
+
+    @Test("Grouped keys respect filter option")
+    func groupedKeysWithFilter() async throws {
+        let vm = makeViewModel()
+        vm.sortOption = .byGlass
+        let keys = vm.sortedSectionKeys(filterOption: .cocktailsOnly) { _ in false }
+        #expect(keys == ["Coupe", "Rocks"])
+    }
+
     @Test("Suggested cocktails by first ingredient")
     func suggestions() async throws {
         let vm = makeViewModel()

@@ -89,16 +89,7 @@ class CocktailsViewModel {
     var searchText = ""
 
     var sortedCocktails: [Cocktail] {
-        switch sortOption {
-        case .fromAtoZ:
-            return listOfAllDrinks.sorted { $0.name < $1.name }
-        case .fromZtoA:
-            return listOfAllDrinks.sorted { $1.name < $0.name }
-        case .byGlass:
-            return listOfAllDrinks.sorted { $0.glass < $1.glass }
-        case .byIce:
-            return listOfAllDrinks.sorted { $0.ice < $1.ice }
-        }
+        sortedCocktails(in: listOfAllDrinks)
     }
 
     func getCocktailHistory(for cocktail: Cocktail) -> History? {
@@ -114,12 +105,42 @@ class CocktailsViewModel {
     }
 
     var filteredCocktails: [Cocktail] {
-        guard !searchText.isEmpty else { return sortedCocktails }
-        return sortedCocktails.filter { $0.name.localizedStandardContains(searchText) }
+        filteredCocktails(filterOption: .all) { _ in false }
     }
 
     var cocktailsGrouped: [String: [Cocktail]] {
-        let grouped = Dictionary(grouping: filteredCocktails) { cocktail in
+        groupedCocktails(filterOption: .all) { _ in false }
+    }
+    
+    var sortedSectionKeys: [String] {
+        sortedSectionKeys(filterOption: .all) { _ in false }
+    }
+
+    func filteredCocktails(
+        filterOption: FilterOption,
+        isFavorite: (Cocktail) -> Bool
+    ) -> [Cocktail] {
+        let baseCocktails: [Cocktail]
+        switch filterOption {
+        case .all:
+            baseCocktails = sortedCocktails
+        case .cocktailsOnly:
+            baseCocktails = sortedCocktails(in: listOfCocktails)
+        case .shotsOnly:
+            baseCocktails = sortedCocktails(in: listOfShots)
+        case .favoritesOnly:
+            baseCocktails = sortedCocktails.filter(isFavorite)
+        }
+
+        guard !searchText.isEmpty else { return baseCocktails }
+        return baseCocktails.filter { $0.name.localizedStandardContains(searchText) }
+    }
+
+    func groupedCocktails(
+        filterOption: FilterOption,
+        isFavorite: (Cocktail) -> Bool
+    ) -> [String: [Cocktail]] {
+        let grouped = Dictionary(grouping: filteredCocktails(filterOption: filterOption, isFavorite: isFavorite)) { cocktail in
             switch sortOption {
             case .byGlass:
                 return cocktail.glass.capitalizingFirstLetter()
@@ -133,20 +154,39 @@ class CocktailsViewModel {
                 return "#"
             }
         }
-        
-        // Sort cocktails within each section alphabetically by name
+
         return grouped.mapValues { cocktails in
             cocktails.sorted { $0.name < $1.name }
         }
     }
-    
-    var sortedSectionKeys: [String] {
-        let keys = Array(cocktailsGrouped.keys)
+
+    func sortedSectionKeys(
+        filterOption: FilterOption,
+        isFavorite: (Cocktail) -> Bool
+    ) -> [String] {
+        let keys = Array(groupedCocktails(filterOption: filterOption, isFavorite: isFavorite).keys)
         switch sortOption {
         case .fromZtoA:
             return keys.sorted(by: >)
         default:
             return keys.sorted(by: <)
+        }
+    }
+
+    private func sortedCocktails(in cocktails: [Cocktail]) -> [Cocktail] {
+        cocktails.sorted(by: currentSortComparator)
+    }
+
+    private var currentSortComparator: (Cocktail, Cocktail) -> Bool {
+        switch sortOption {
+        case .fromAtoZ:
+            return { $0.name < $1.name }
+        case .fromZtoA:
+            return { $1.name < $0.name }
+        case .byGlass:
+            return { $0.glass < $1.glass }
+        case .byIce:
+            return { $0.ice < $1.ice }
         }
     }
 
@@ -167,5 +207,14 @@ class CocktailsViewModel {
         }
         list.shuffle()
         return Array(list.prefix(5))
+    }
+}
+
+extension CocktailsViewModel {
+    enum FilterOption {
+        case all
+        case cocktailsOnly
+        case shotsOnly
+        case favoritesOnly
     }
 }

@@ -10,25 +10,67 @@ import TipKit
 
 struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
-    
-    @Environment(\.horizontalSizeClass) var sizeClass
+
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
-    @State private var showingSortOrder = false
+    @State private var filterOption: CocktailsViewModel.FilterOption = .all
     @State var path = NavigationPath()
 
     #if os(iOS)
     var favoriteCocktailsTip = SwipeToFavoriteTip()
     #endif
+
+    private var visibleCocktails: [Cocktail] {
+        viewModel.filteredCocktails(filterOption: filterOption) { cocktail in
+            favorites.contains(cocktail)
+        }
+    }
+
+    private var visibleGroupedCocktails: [String: [Cocktail]] {
+        viewModel.groupedCocktails(filterOption: filterOption) { cocktail in
+            favorites.contains(cocktail)
+        }
+    }
+
+    private var visibleSectionKeys: [String] {
+        viewModel.sortedSectionKeys(filterOption: filterOption) { cocktail in
+            favorites.contains(cocktail)
+        }
+    }
     
     var body: some View {
         NavigationStack(path: $path) {
             Group {
-                if viewModel.searchText.isEmpty {
+                if filterOption == .favoritesOnly && visibleCocktails.isEmpty {
+                    ContentUnavailableView(
+                        label: {
+                            if viewModel.searchText.isEmpty {
+                                Label("No favorite cocktails yet", systemImage: "heart.slash")
+                            } else {
+                                Label("No favorite cocktails found", systemImage: "heart.slash")
+                            }
+                        },
+                        description: {
+                            if viewModel.searchText.isEmpty {
+                                Text("Add cocktails to favorites to quickly find them here.")
+                            } else {
+                                Text("No favorite cocktails match \"\(viewModel.searchText)\".")
+                            }
+                        },
+                        actions: {
+                            if !viewModel.searchText.isEmpty {
+                                Button("Clear Search", systemImage: "xmark.circle") {
+                                    viewModel.searchText = ""
+                                }
+                                .buttonStyle(.bordered)
+                            }
+                        }
+                    )
+                } else if viewModel.searchText.isEmpty {
                     List {
-                        ForEach(viewModel.sortedSectionKeys, id: \.self) { sectionKey in
+                        ForEach(visibleSectionKeys, id: \.self) { sectionKey in
                             Section {
-                                ForEach(viewModel.cocktailsGrouped[sectionKey] ?? []) { cocktail in
+                                ForEach(visibleGroupedCocktails[sectionKey] ?? []) { cocktail in
                                     NavigationLink(value: cocktail) {
                                         CocktailRowView(cocktail: cocktail)
                                             .swipeActions(edge: .leading, allowsFullSwipe: true) {
@@ -42,7 +84,7 @@ struct CocktailsView: View {
                             }
                         }
                     }
-                } else if viewModel.filteredCocktails.isEmpty {
+                } else if visibleCocktails.isEmpty {
                     ContentUnavailableView(
                         label: {
                             Label("\"\(viewModel.searchText)\" not found", systemImage: "exclamationmark.magnifyingglass")
@@ -58,7 +100,7 @@ struct CocktailsView: View {
                         }
                     )
                 } else {
-                    List(viewModel.filteredCocktails) { cocktail in
+                    List(visibleCocktails) { cocktail in
                         NavigationLink(value: cocktail) {
                             CocktailRowView(cocktail: cocktail)
                                 .swipeActions(edge: .leading, allowsFullSwipe: true) {
@@ -84,7 +126,17 @@ struct CocktailsView: View {
             .popoverTip(favoriteCocktailsTip)
             #endif
             .toolbar {
-                sortButtonMenu
+                #if os(iOS)
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    filterButton
+                    sortButtonMenu
+                }
+                #else
+                ToolbarItemGroup(placement: .automatic) {
+                    filterButton
+                    sortButtonMenu
+                }
+                #endif
             }
             .task {
                 try? Tips.configure([
@@ -97,6 +149,56 @@ struct CocktailsView: View {
 }
 
 private extension CocktailsView {
+    var filterButton: some View {
+        Menu {
+            Button {
+                filterOption = .all
+            } label: {
+                HStack {
+                    Text("All Cocktails")
+                    if filterOption == .all {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+
+            Button {
+                filterOption = .cocktailsOnly
+            } label: {
+                HStack {
+                    Text("Cocktails Only")
+                    if filterOption == .cocktailsOnly {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+
+            Button {
+                filterOption = .shotsOnly
+            } label: {
+                HStack {
+                    Text("Shots Only")
+                    if filterOption == .shotsOnly {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+
+            Button {
+                filterOption = .favoritesOnly
+            } label: {
+                HStack {
+                    Text("Favorites Only")
+                    if filterOption == .favoritesOnly {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+        } label: {
+            Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
+        }
+    }
+
     var sortButtonMenu: some View {
         Menu {
             Button(action: {
