@@ -14,6 +14,7 @@ struct CocktailsView: View {
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
     @State private var filterOption: CocktailsViewModel.FilterOption = .all
+    @State private var isPresentingCustomCocktailSheet = false
     @State var path = NavigationPath()
 
     #if os(iOS)
@@ -128,15 +129,20 @@ struct CocktailsView: View {
             .toolbar {
                 #if os(iOS)
                 ToolbarItemGroup(placement: .topBarTrailing) {
-                    filterButton
-                    sortButtonMenu
+                    optionsMenu
+                    addCocktailButton
                 }
                 #else
                 ToolbarItemGroup(placement: .automatic) {
-                    filterButton
-                    sortButtonMenu
+                    optionsMenu
+                    addCocktailButton
                 }
                 #endif
+            }
+            .sheet(isPresented: $isPresentingCustomCocktailSheet) {
+                NavigationStack {
+                    AddCustomCocktailPlaceholderView()
+                }
             }
             .task {
                 try? Tips.configure([
@@ -148,109 +154,137 @@ struct CocktailsView: View {
     }
 }
 
-private extension CocktailsView {
-    var filterButton: some View {
-        Menu {
-            Button {
-                filterOption = .all
-            } label: {
-                HStack {
-                    Text("All Cocktails")
-                    if filterOption == .all {
-                        Image(systemName: "checkmark")
-                    }
-                }
-            }
+private struct AddCustomCocktailPlaceholderView: View {
+    @Environment(\.dismiss) private var dismiss
 
-            Button {
-                filterOption = .cocktailsOnly
-            } label: {
-                HStack {
-                    Text("Cocktails Only")
-                    if filterOption == .cocktailsOnly {
-                        Image(systemName: "checkmark")
-                    }
+    var body: some View {
+        ContentUnavailableView(
+            "Create Cocktail",
+            systemImage: "wineglass",
+            description: Text("Start adding your custom recipe here.")
+        )
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button("Close") {
+                    dismiss()
                 }
             }
-
-            Button {
-                filterOption = .shotsOnly
-            } label: {
-                HStack {
-                    Text("Shots Only")
-                    if filterOption == .shotsOnly {
-                        Image(systemName: "checkmark")
-                    }
-                }
-            }
-
-            Button {
-                filterOption = .favoritesOnly
-            } label: {
-                HStack {
-                    Text("Favorites Only")
-                    if filterOption == .favoritesOnly {
-                        Image(systemName: "checkmark")
-                    }
-                }
-            }
-        } label: {
-            Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
         }
     }
+}
 
-    var sortButtonMenu: some View {
+private extension CocktailsView {
+    var optionsMenu: some View {
         Menu {
-            Button(action: {
-                viewModel.sortOption = .fromAtoZ
-            }) {
-                HStack {
-                    Text("A > Z")
-                    if viewModel.sortOption == .fromAtoZ {
-                        Image(systemName: "checkmark")
+            Section("Filter") {
+                Button {
+                    filterOption = .all
+                } label: {
+                    HStack {
+                        Text("All Cocktails")
+                        if filterOption == .all {
+                            Image(systemName: "checkmark")
+                        }
+                    }
+                }
+
+                Button {
+                    filterOption = .cocktailsOnly
+                } label: {
+                    HStack {
+                        Text("Cocktails Only")
+                        if filterOption == .cocktailsOnly {
+                            Image(systemName: "checkmark")
+                        }
+                    }
+                }
+
+                Button {
+                    filterOption = .shotsOnly
+                } label: {
+                    HStack {
+                        Text("Shots Only")
+                        if filterOption == .shotsOnly {
+                            Image(systemName: "checkmark")
+                        }
+                    }
+                }
+
+                Button {
+                    filterOption = .favoritesOnly
+                } label: {
+                    HStack {
+                        Text("Favorites Only")
+                        if filterOption == .favoritesOnly {
+                            Image(systemName: "checkmark")
+                        }
                     }
                 }
             }
-            Button(action: {
-                viewModel.sortOption = .fromZtoA
-            }) {
-                HStack {
-                    Text("Z > A")
-                    if viewModel.sortOption == .fromZtoA {
-                        Image(systemName: "checkmark")
+
+            Section("Sort") {
+                Button(action: {
+                    viewModel.sortOption = .fromAtoZ
+                }) {
+                    HStack {
+                        Text("A > Z")
+                        if viewModel.sortOption == .fromAtoZ {
+                            Image(systemName: "checkmark")
+                        }
                     }
                 }
-            }
-            Button(action: {
-                viewModel.sortOption = .byGlass
-            }) {
-                HStack {
-                    Text("By Glass")
-                    if viewModel.sortOption == .byGlass {
-                        Image(systemName: "checkmark")
+
+                Button(action: {
+                    viewModel.sortOption = .fromZtoA
+                }) {
+                    HStack {
+                        Text("Z > A")
+                        if viewModel.sortOption == .fromZtoA {
+                            Image(systemName: "checkmark")
+                        }
                     }
                 }
-            }
-            Button(action: {
-                viewModel.sortOption = .byIce
-            }) {
-                HStack {
-                    Text("By Ice")
-                    if viewModel.sortOption == .byIce {
-                        Image(systemName: "checkmark")
+
+                Button(action: {
+                    viewModel.sortOption = .byGlass
+                }) {
+                    HStack {
+                        Text("By Glass")
+                        if viewModel.sortOption == .byGlass {
+                            Image(systemName: "checkmark")
+                        }
+                    }
+                }
+
+                Button(action: {
+                    viewModel.sortOption = .byIce
+                }) {
+                    HStack {
+                        Text("By Ice")
+                        if viewModel.sortOption == .byIce {
+                            Image(systemName: "checkmark")
+                        }
                     }
                 }
             }
         } label: {
             #if os(iOS)
             if UIAccessibility.isVoiceOverRunning {
-                Text("Sort cocktails")
+                Text("Filter and sort cocktails")
             } else {
-                Label("Sort", systemImage: "arrow.up.arrow.down")
+                Label("Options", systemImage: "line.3.horizontal.decrease.circle")
             }
             #elseif os(macOS)
-            Label("Sort", systemImage: "arrow.up.arrow.down")
+            Label("Options", systemImage: "line.3.horizontal.decrease.circle")
             #endif
+        }
+    }
+
+    var addCocktailButton: some View {
+        Button {
+            isPresentingCustomCocktailSheet = true
+        } label: {
+            Image(systemName: "plus")
         }
     }
 }
@@ -259,6 +293,8 @@ private extension CocktailsView {
 #Preview {
     NavigationStack {
         CocktailsView()
+            .environment(CocktailsViewModel())
+            .environment(Favorites())
     }
 }
 #endif
