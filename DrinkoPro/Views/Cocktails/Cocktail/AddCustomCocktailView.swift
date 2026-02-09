@@ -25,15 +25,22 @@ struct AddCustomCocktailView: View {
     @State private var ingredientDrafts: [IngredientDraft]
     @State private var validationMessage: String?
 
-    init(methodOptions: [String], glassOptions: [String], iceOptions: [String], unitOptions: [String]) {
+    init(
+        methodOptions: [String],
+        glassOptions: [String],
+        iceOptions: [String],
+        unitOptions: [String]
+    ) {
+        let units = ["oz.", "ml"]
+
         self.methodOptions = methodOptions
         self.glassOptions = glassOptions
         self.iceOptions = iceOptions
-        self.unitOptions = unitOptions
+        self.unitOptions = units
         _method = State(initialValue: methodOptions.first ?? "shake & fine strain")
         _glass = State(initialValue: glassOptions.first ?? "rock")
         _ice = State(initialValue: iceOptions.first ?? "cubed")
-        _ingredientDrafts = State(initialValue: [IngredientDraft(unit: unitOptions.first ?? "oz.")])
+        _ingredientDrafts = State(initialValue: [IngredientDraft(unit: self.unitOptions.first ?? "oz.")])
     }
 
     var leadingToolbarPlacement: ToolbarItemPlacement {
@@ -62,7 +69,8 @@ struct AddCustomCocktailView: View {
                 TextField("Name", text: $name)
                 Picker("Method", selection: $method) {
                     ForEach(methodOptions, id: \.self) { option in
-                        Text(option).tag(option)
+                        Text(option.capitalizingFirstLetter())
+                            .tag(option)
                     }
                 }
                 Picker("Glass", selection: $glass) {
