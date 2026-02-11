@@ -134,6 +134,8 @@ class CocktailsViewModel {
             baseCocktails = sortedCocktails(in: listOfShots)
         case .favoritesOnly:
             baseCocktails = sortedCocktails.filter(isFavorite)
+        case .userCreatedOnly:
+            baseCocktails = sortedCocktails(in: userCocktails)
         }
 
         guard !searchText.isEmpty else { return baseCocktails }
@@ -262,6 +264,7 @@ extension CocktailsViewModel {
         case cocktailsOnly
         case shotsOnly
         case favoritesOnly
+        case userCreatedOnly
     }
 }
 

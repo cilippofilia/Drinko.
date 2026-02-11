@@ -1646,6 +1646,9 @@
         }
       }
     },
+    "Create a cocktail to find it here." : {
+
+    },
     "Create Account" : {
       "comment" : "AuthView",
       "extractionState" : "manual",
@@ -2916,6 +2919,12 @@
         }
       }
     },
+    "No cocktails found" : {
+
+    },
+    "No cocktails match \"%@\"." : {
+
+    },
     "No cocktails match \"%@\". Try a different search term or browse all cocktails." : {
       "localizations" : {
         "de" : {
@@ -2944,7 +2953,11 @@
         }
       }
     },
+    "No custom cocktails yet" : {
+
+    },
     "No favorite cocktails found" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2973,6 +2986,7 @@
       }
     },
     "No favorite cocktails match \"%@\"." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4544,6 +4558,9 @@
           }
         }
       }
+    },
+    "User Created Only" : {
+
     },
     "Version" : {
       "localizations" : {

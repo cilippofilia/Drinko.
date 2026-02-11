@@ -72,20 +72,24 @@ struct CocktailsView: View {
     var body: some View {
         NavigationStack(path: $path) {
             Group {
-                if filterOption == .favoritesOnly && visibleCocktails.isEmpty {
+                if (filterOption == .favoritesOnly || filterOption == .userCreatedOnly) && visibleCocktails.isEmpty {
                     ContentUnavailableView(
                         label: {
-                            if viewModel.searchText.isEmpty {
+                            if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
                                 Label("No favorite cocktails yet", systemImage: "heart.slash")
+                            } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
+                                Label("No custom cocktails yet", systemImage: "plus.circle")
                             } else {
-                                Label("No favorite cocktails found", systemImage: "heart.slash")
+                                Label("No cocktails found", systemImage: "exclamationmark.magnifyingglass")
                             }
                         },
                         description: {
-                            if viewModel.searchText.isEmpty {
+                            if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
                                 Text("Add cocktails to favorites to quickly find them here.")
+                            } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
+                                Text("Create a cocktail to find it here.")
                             } else {
-                                Text("No favorite cocktails match \"\(viewModel.searchText)\".")
+                                Text("No cocktails match \"\(viewModel.searchText)\".")
                             }
                         },
                         actions: {
@@ -237,6 +241,17 @@ private extension CocktailsView {
                     HStack {
                         Text("Favorites Only")
                         if filterOption == .favoritesOnly {
+                            Image(systemName: "checkmark")
+                        }
+                    }
+                }
+
+                Button {
+                    filterOption = .userCreatedOnly
+                } label: {
+                    HStack {
+                        Text("User Created Only")
+                        if filterOption == .userCreatedOnly {
                             Image(systemName: "checkmark")
                         }
                     }

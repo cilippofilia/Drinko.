@@ -114,6 +114,25 @@ struct CocktailsViewModelTests {
         #expect(result.map { $0.name } == ["B 50/50", "Z Martini"])
     }
 
+    @Test("Filter option: user created only")
+    func filterUserCreatedOnly() async throws {
+        let vm = makeViewModel()
+        vm.userCocktails = [
+            Cocktail(
+                id: "user-custom-1",
+                name: "My Custom Drink",
+                method: "Build",
+                glass: "Rocks",
+                garnish: "Orange peel",
+                ice: "Cubed",
+                extra: "",
+                ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")]
+            )
+        ]
+        let result = vm.filteredCocktails(filterOption: .userCreatedOnly) { _ in false }
+        #expect(result.map { $0.name } == ["My Custom Drink"])
+    }
+
     @Test("Favorites filter combines with search")
     func filterFavoritesWithSearch() async throws {
         let vm = makeViewModel()
@@ -153,7 +172,8 @@ struct CocktailsViewModelTests {
             garnish: "Orange peel",
             ice: "Cubed",
             extra: "Personal recipe",
-            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")]
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")],
+            procedureSteps: ["Build over ice and stir"]
         )
 
         #expect(vm.userCocktails.count == 1)
