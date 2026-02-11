@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ProductRowView: View {
     @Environment(\.modelContext) private var modelContext
+    @ScaledMetric private var minRowHeight: CGFloat = 45
     
     let product: Item
     
@@ -22,6 +23,7 @@ struct ProductRowView: View {
                     .symbolEffect(.bounce.up, value: product.isFavorite)
                     .labelStyle(.iconOnly)
                     .padding(.trailing, 4)
+                    .accessibilityHidden(true)
 
                 VStack(alignment: .leading) {
                     Text(product.name)
@@ -56,6 +58,27 @@ struct ProductRowView: View {
                 }
             }
         }
+        .frame(minHeight: minRowHeight)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(product.name)
+        .accessibilityValue(accessibilityValue)
+    }
+
+    private var accessibilityValue: String {
+        var details = [String]()
+        if product.isFavorite {
+            details.append("Need to buy")
+        }
+        if !product.abv.isEmpty {
+            details.append("\(product.abv)% ABV")
+        }
+        if !product.madeIn.isEmpty {
+            details.append("Made in \(product.madeIn)")
+        }
+        if product.tried {
+            details.append("Rated \(product.rating) out of 5")
+        }
+        return details.joined(separator: ", ")
     }
 }
 

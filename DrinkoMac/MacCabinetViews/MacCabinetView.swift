@@ -48,15 +48,18 @@ extension MacCabinetView {
                 Section {
                     if let products = category.products {
                         ForEach(products) { product in
-                            MacProductRowView(product: product)
-                                .contentShape(.rect)
-                                .onTapGesture {
-                                    selectedProduct = product
-                                }
-                                .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                    FavoriteProductButtonView(product: product)
-                                        .tint(product.isFavorite ? .red : .blue)
-                                }
+                            Button {
+                                selectedProduct = product
+                            } label: {
+                                MacProductRowView(product: product)
+                            }
+                            .buttonStyle(.plain)
+                            .contentShape(.rect)
+                            .accessibilityHint("Opens product details.")
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                FavoriteProductButtonView(product: product)
+                                    .tint(product.isFavorite ? .red : .blue)
+                            }
                         }
                     }
 
@@ -67,6 +70,7 @@ extension MacCabinetView {
                     }) {
                         Label("Add Product", systemImage: "plus")
                     }
+                    .accessibilityHint("Adds a new product in \(category.name).")
                 } header: {
                     MacCategoryRowView(
                         category: category,
@@ -97,6 +101,7 @@ extension MacCabinetView {
                 }) {
                     Label("Add category", systemImage: "plus")
                 }
+                .accessibilityLabel("Add category")
             }
         }
         // MARK: Button used for testing purposes
@@ -109,6 +114,7 @@ extension MacCabinetView {
                 ) {
                     deleteAllCategoriesAndProducts()
                 }
+                .accessibilityHint("Removes all categories and products.")
             }
         }
         .alert(isPresented: $showError) {
@@ -180,4 +186,3 @@ extension MacCabinetView {
     }
 }
 #endif
-

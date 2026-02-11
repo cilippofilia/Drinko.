@@ -12,14 +12,17 @@ struct MacSettingsInfoView: View {
 
     var body: some View {
         Section {
-            MacSettingsRowView(
-                icon: "r.circle",
-                color: .secondary,
-                itemName: "Read me"
-            )
-            .onTapGesture {
+            Button {
                 showReadMeView.toggle()
+            } label: {
+                MacSettingsRowView(
+                    icon: "r.circle",
+                    color: .secondary,
+                    itemName: "Read me"
+                )
             }
+            .buttonStyle(.plain)
+            .accessibilityHint("Opens the app guide.")
 
             ShareLink(item: drinkoURL!) {
                 MacSettingsRowView(
@@ -40,6 +43,9 @@ struct MacSettingsInfoView: View {
                 Text("\(getCurrentAppVersion())")
                     .foregroundColor(.secondary)
             }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Version")
+            .accessibilityValue(getCurrentAppVersion())
         } header: {
             Text("Info")
                 .foregroundStyle(.secondary)

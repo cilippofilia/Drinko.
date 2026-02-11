@@ -20,6 +20,7 @@ struct FavoriteProductButtonView: View {
             Label(product.isFavorite ? "Remove from Cart" : "Add to Cart", systemImage: "cart")
         }
         .animation(.default, value: product.isFavorite)
+        .accessibilityHint(product.name)
     }
 }
 

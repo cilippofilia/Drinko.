@@ -23,6 +23,7 @@ struct CreditsCardView: View {
                 Image(systemName: "heart.fill")
                     .foregroundStyle(.red)
                     .imageScale(.large)
+                    .accessibilityHidden(true)
 
                 VStack(alignment: .leading) {
                     Text(name)
@@ -38,6 +39,7 @@ struct CreditsCardView: View {
                 Image(systemName: "arrow.up.forward.app")
                     .foregroundStyle(.blue)
                     .imageScale(.large)
+                    .accessibilityHidden(true)
             }
             .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
             .padding()
@@ -50,6 +52,10 @@ struct CreditsCardView: View {
                 style: .continuous
             )
         )
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(name)
+        .accessibilityValue(brief)
+        .accessibilityHint("Opens external link.")
     }
 }
 

@@ -23,9 +23,11 @@ struct EditProductView: View {
         Form {
             Section {
                 TextField("Product name", text: $product.name)
+                    .accessibilityLabel("Product name")
                     .focused($isFocused)
                 HStack {
                     TextField("ABV", text: $product.abv)
+                        .accessibilityLabel("Alcohol by volume")
                         .frame(width: 33)
                         #if os(iOS)
                         .keyboardType(.decimalPad)
@@ -38,7 +40,9 @@ struct EditProductView: View {
                 
                 HStack {
                     Image(systemName: "flag")
+                        .accessibilityHidden(true)
                     TextField("Made in", text: $product.madeIn)
+                        .accessibilityLabel("Made in")
                         #if os(iOS)
                         .focused($isFocused)
                         #endif
@@ -54,14 +58,18 @@ struct EditProductView: View {
                     Spacer()
                     
                     ForEach(1 ..< 5 + 1) { star in
-                        image(for: star)
-                            .foregroundColor(star > product.rating ? Color.secondary : Color.yellow)
-                            .onTapGesture {
-                                product.rating = star
-                                isAnimated.toggle()
-                            }
-                            .animation(.default, value: isAnimated)
-                            .symbolEffect(.bounce.up, value: isAnimated)
+                        Button {
+                            product.rating = star
+                            isAnimated.toggle()
+                        } label: {
+                            image(for: star)
+                                .foregroundColor(star > product.rating ? Color.secondary : Color.yellow)
+                        }
+                        .buttonStyle(.plain)
+                        .animation(.default, value: isAnimated)
+                        .symbolEffect(.bounce.up, value: isAnimated)
+                        .accessibilityLabel("Set rating to \(star)")
+                        .accessibilityAddTraits(product.rating == star ? .isSelected : [])
                     }
                     
                     Spacer()
@@ -74,6 +82,7 @@ struct EditProductView: View {
                     text: $product.detail,
                     axis: .vertical
                 )
+                .accessibilityLabel("Notes")
                 #if os(iOS)
                 .focused($isFocused)
                 #endif

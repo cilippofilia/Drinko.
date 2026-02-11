@@ -32,6 +32,8 @@ struct LikeButtonView: View {
         #if os(iOS)
         .buttonStyle(.plain)
         #endif
+        .accessibilityLabel(favorites.contains(cocktail) ? "Remove from favorites" : "Add to favorites")
+        .accessibilityHint(cocktail.name)
     }
 }
 

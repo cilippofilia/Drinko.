@@ -37,6 +37,7 @@ struct SuperJuiceView: View {
             Form {
                 Section {
                     TextField(textfieldPlaceholder, text: selectedMode == .peels ? $peels : $water)
+                        .accessibilityLabel(selectedMode == .peels ? "\(typeOfJuice.capitalizingFirstLetter()) peels in grams" : "Water in millilitres")
                         .focused($isFocused)
                         #if os(iOS)
                         .keyboardType(.decimalPad)
@@ -61,7 +62,11 @@ struct SuperJuiceView: View {
                             Text("\(Double(peels) ?? 0, specifier: "%.2f")")
                                 .font(.title)
                             Text("gr")
+                                .accessibilityHidden(true)
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel("\(typeOfJuice.capitalizingFirstLetter()) peels")
+                        .accessibilityValue("\(Double(peels) ?? 0, specifier: "%.2f") grams")
                     }
 
                     HStack {
@@ -71,6 +76,9 @@ struct SuperJuiceView: View {
                             .font(.title)
                         Text("gr")
                     }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("Citric acid")
+                    .accessibilityValue("\(citricAcid, specifier: "%.2f") grams")
 
                     if typeOfJuice == "lime" {
                         HStack {
@@ -80,6 +88,9 @@ struct SuperJuiceView: View {
                                 .font(.title)
                             Text("gr")
                         }
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel("Malic acid")
+                        .accessibilityValue("\(malicAcid, specifier: "%.2f") grams")
                     }
 
                     HStack {
@@ -89,6 +100,9 @@ struct SuperJuiceView: View {
                             .font(.title)
                         Text("ml")
                     }
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel("Water")
+                    .accessibilityValue("\(waterAmount, specifier: "%.2f") millilitres")
                 } footer: {
                     Text("Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed.")
                         .foregroundStyle(.secondary)

@@ -197,6 +197,7 @@ private extension CocktailsView {
         } label: {
             Label("Filter", systemImage: "line.3.horizontal.decrease.circle")
         }
+        .accessibilityLabel("Filter cocktails")
     }
 
     var sortButtonMenu: some View {
@@ -252,6 +253,7 @@ private extension CocktailsView {
             Label("Sort", systemImage: "arrow.up.arrow.down")
             #endif
         }
+        .accessibilityLabel("Sort cocktails")
     }
 }
 

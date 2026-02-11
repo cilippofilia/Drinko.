@@ -33,9 +33,11 @@ struct MacCategoryRowView: View {
                     .foregroundStyle(Color(category.color))
                     .font(.headline)
             }
+            .accessibilityLabel("Edit \(category.name)")
         }
         .padding(.horizontal)
         .padding(.vertical, 4)
+        .accessibilityElement(children: .contain)
     }
 }
 

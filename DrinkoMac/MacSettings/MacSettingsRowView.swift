@@ -17,9 +17,11 @@ struct MacSettingsRowView: View {
             Image(systemName: icon)
                 .foregroundColor(color)
                 .frame(minWidth: 30, minHeight: 30)
+                .accessibilityHidden(true)
 
             Text(itemName)
         }
+        .accessibilityElement(children: .combine)
     }
 }
 
