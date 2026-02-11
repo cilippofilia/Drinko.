@@ -1222,6 +1222,9 @@
         }
       }
     },
+    "Cannot Save" : {
+
+    },
     "Category Description" : {
       "localizations" : {
         "de" : {

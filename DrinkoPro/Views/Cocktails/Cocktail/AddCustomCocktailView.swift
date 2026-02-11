@@ -24,7 +24,7 @@ struct AddCustomCocktailView: View {
     @State private var extra = ""
     @State private var ingredientDrafts: [IngredientDraft]
     @State private var procedureDrafts: [String]
-    @State private var validationMessage: String?
+    @State private var alertMessage: String?
 
     init(
         methodOptions: [String],
@@ -61,8 +61,66 @@ struct AddCustomCocktailView: View {
         #endif
     }
 
-    private var canSave: Bool {
-        !name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    private var saveDisabledReason: String? {
+        if trimmedName.isEmpty {
+            return "Add a cocktail name to enable Save."
+        }
+
+        if hasInvalidIngredientDraft {
+            return "Fix ingredient fields that are missing a name or a numeric quantity."
+        }
+
+        if !hasAtLeastOneValidIngredient {
+            return "Add at least one ingredient with a numeric quantity to enable Save."
+        }
+
+        return nil
+    }
+
+    private var trimmedName: String {
+        name.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var hasAtLeastOneValidIngredient: Bool {
+        ingredientDrafts.contains { draft in
+            let trimmedName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmedName.isEmpty else { return false }
+            guard let quantity = parseQuantity(from: draft.quantity), quantity > 0 else { return false }
+            return true
+        }
+    }
+
+    private var hasInvalidIngredientDraft: Bool {
+        ingredientDrafts.contains { ingredientErrorMessage(for: $0) != nil }
+    }
+
+    private func parseQuantity(from rawValue: String) -> Double? {
+        let trimmed = rawValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        return Double(trimmed.replacingOccurrences(of: ",", with: "."))
+    }
+
+    private func ingredientErrorMessage(for draft: IngredientDraft) -> String? {
+        let trimmedName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimmedQuantity = draft.quantity.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if trimmedName.isEmpty && trimmedQuantity.isEmpty {
+            return nil
+        }
+
+        if trimmedName.isEmpty {
+            return "Add an ingredient name."
+        }
+
+        if trimmedQuantity.isEmpty {
+            return "Add a quantity."
+        }
+
+        guard let quantity = parseQuantity(from: trimmedQuantity), quantity > 0 else {
+            return "Quantity must be a number greater than 0."
+        }
+
+        return nil
     }
 
     var body: some View {
@@ -103,6 +161,12 @@ struct AddCustomCocktailView: View {
                                     Text(unit).tag(unit)
                                 }
                             }
+                        }
+
+                        if let errorMessage = ingredientErrorMessage(for: ingredientDrafts[index]) {
+                            Text(errorMessage)
+                                .font(.caption)
+                                .foregroundStyle(.red)
                         }
                     }
                     .padding(.vertical, 2)
@@ -152,17 +216,19 @@ struct AddCustomCocktailView: View {
                     .lineLimit(3...6)
             }
 
-            if let validationMessage {
-                Section {
-                    Text(validationMessage)
-                        .foregroundStyle(.red)
-                }
-            }
         }
         .navigationTitle("Create Cocktail")
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
+        .alert("Cannot Save", isPresented: Binding(
+            get: { alertMessage != nil },
+            set: { if !$0 { alertMessage = nil } }
+        )) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(alertMessage ?? "")
+        }
         .toolbar {
             ToolbarItem(placement: leadingToolbarPlacement) {
                 Button("Cancel") {
@@ -173,35 +239,27 @@ struct AddCustomCocktailView: View {
                 Button("Save") {
                     saveCocktail()
                 }
-                .disabled(!canSave)
             }
         }
     }
 
     private func saveCocktail() {
-        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmedName.isEmpty else {
-            validationMessage = "A cocktail name is required."
+        if let saveDisabledReason {
+            alertMessage = saveDisabledReason
             return
         }
 
         let ingredients = ingredientDrafts.compactMap { draft -> Ingredient? in
             let trimmedIngredientName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !trimmedIngredientName.isEmpty else { return nil }
-            guard let quantity = Double(draft.quantity.replacingOccurrences(of: ",", with: ".")), quantity > 0 else { return nil }
+            guard let quantity = parseQuantity(from: draft.quantity), quantity > 0 else { return nil }
             return Ingredient(name: trimmedIngredientName, quantity: quantity, unit: draft.unit)
-        }
-
-        guard !ingredients.isEmpty else {
-            validationMessage = "Add at least one ingredient with a valid quantity."
-            return
         }
 
         let procedureSteps = procedureDrafts
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             .filter { !$0.isEmpty }
 
-        validationMessage = nil
         viewModel.addUserCocktail(
             name: trimmedName,
             method: method,
