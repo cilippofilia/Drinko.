@@ -767,6 +767,9 @@
         }
       }
     },
+    "Add to favorites" : {
+
+    },
     "All Cocktails" : {
       "localizations" : {
         "de" : {
@@ -1949,6 +1952,9 @@
         }
       }
     },
+    "Double tap to view details." : {
+
+    },
     "Drink selection" : {
       "localizations" : {
         "de" : {
@@ -2063,6 +2069,9 @@
           }
         }
       }
+    },
+    "Edits this cocktail" : {
+
     },
     "Email" : {
       "extractionState" : "manual",
@@ -2180,6 +2189,9 @@
       }
     },
     "Extra notes (optional)" : {
+
+    },
+    "Favorite" : {
 
     },
     "Favorites Only" : {
@@ -3079,6 +3091,9 @@
         }
       }
     },
+    "Not favorite" : {
+
+    },
     "Notes" : {
       "localizations" : {
         "de" : {
@@ -3591,6 +3606,9 @@
         }
       }
     },
+    "Remove from favorites" : {
+
+    },
     "Remove like from post" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3987,6 +4005,9 @@
           }
         }
       }
+    },
+    "Shows the cocktail history" : {
+
     },
     "Sign In" : {
       "extractionState" : "manual",
