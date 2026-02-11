@@ -29,6 +29,7 @@ struct LikeButtonView: View {
                 .animation(.default, value: favorites.hasEffect)
                 .symbolEffect(.bounce.up, value: favorites.hasEffect)
         }
+        .accessibilityLabel(favorites.contains(cocktail) ? "Remove from favorites" : "Add to favorites")
         #if os(iOS)
         .buttonStyle(.plain)
         #endif

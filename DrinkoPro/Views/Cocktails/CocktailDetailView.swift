@@ -71,6 +71,7 @@ struct CocktailDetailView: View {
                         Image(systemName: "pencil.line")
                     }
                     .accessibilityLabel("Edit Cocktail")
+                    .accessibilityHint("Edits this cocktail")
                 }
             }
         }

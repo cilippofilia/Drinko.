@@ -35,7 +35,8 @@ struct LessonDetailView: View {
             AsyncImageView(
                 image: lesson.image,
                 frameHeight: imageFrameHeight,
-                aspectRatio: .fill
+                aspectRatio: .fill,
+                accessibilityLabel: "Illustration for \(lesson.title)"
             )
 
             VStack(spacing: 10) {
@@ -74,7 +75,8 @@ struct LessonDetailView: View {
             AsyncImageView(
                 image: lesson.image,
                 frameHeight: imageFrameHeight,
-                aspectRatio: .fill
+                aspectRatio: .fill,
+                accessibilityLabel: "Illustration for \(lesson.title)"
             )
 
             VStack(spacing: 20) {

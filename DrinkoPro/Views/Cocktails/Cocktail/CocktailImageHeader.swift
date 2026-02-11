@@ -16,7 +16,8 @@ struct CocktailImageHeader: View {
             AsyncImageView(
                 image: cocktail.pic,
                 frameHeight: imageFrameHeight,
-                aspectRatio: .fit
+                aspectRatio: .fit,
+                accessibilityLabel: "Photo of \(cocktail.name)"
             )
             .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
             .background(Color.white)
