@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LessonRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @ScaledMetric private var scaledRowHeight: CGFloat = rowHeight
 
     var lesson: Lesson
 
@@ -28,8 +29,9 @@ struct LessonRowView: View {
                     EmptyView()
                 }
             }
-            .frame(width: rowHeight, height: rowHeight)
+            .frame(width: scaledRowHeight, height: scaledRowHeight)
             .cornerRadius(imageCornerRadius)
+            .accessibilityHidden(true)
 
             VStack(alignment: .leading) {
                 Text(lesson.title)
@@ -46,7 +48,10 @@ struct LessonRowView: View {
                     .truncationMode(.tail)
             }
         }
-        .frame(height: rowHeight)
+        .frame(minHeight: scaledRowHeight)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(lesson.title)
+        .accessibilityValue(lesson.description)
     }
 }
 

@@ -32,6 +32,7 @@ struct MacAddCategoryView: View {
                         "",
                         text: $categoryName
                     )
+                    .accessibilityLabel("Category name")
                     .textContentType(.name)
                     .overlay(alignment: .leading) {
                         Text("Category Description")
@@ -45,6 +46,7 @@ struct MacAddCategoryView: View {
                         text: $categoryDetails,
                         axis: .vertical
                     )
+                    .accessibilityLabel("Category details")
                     .multilineTextAlignment(.leading)
                     .overlay(alignment: .leading) {
                         Text("Category Details")
@@ -67,17 +69,20 @@ struct MacAddCategoryView: View {
                         .padding(.bottom)
                     }
                 } header: {
-                    HStack {
-                        Image(systemName: "chevron.down")
-                            .rotationEffect(Angle(degrees: isColorsCollapsed ? -90 : 0))
-                            .animation(.snappy, value: $isColorsCollapsed.wrappedValue)
-                        Text("Colors")
-                    }
-                    .onTapGesture {
+                    Button {
                         withAnimation {
                             isColorsCollapsed.toggle()
                         }
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.down")
+                                .rotationEffect(Angle(degrees: isColorsCollapsed ? -90 : 0))
+                                .animation(.snappy, value: $isColorsCollapsed.wrappedValue)
+                            Text("Colors")
+                        }
                     }
+                    .buttonStyle(.plain)
+                    .accessibilityValue(isColorsCollapsed ? "Collapsed" : "Expanded")
                 }
 
                 Section {
@@ -90,17 +95,20 @@ struct MacAddCategoryView: View {
                         }
                     }
                 } header: {
-                    HStack {
-                        Image(systemName: "chevron.down")
-                            .rotationEffect(.degrees(isSuggestedCollapsed ? -90 : 0))
-                            .animation(.snappy, value: isSuggestedCollapsed)
-                        Text("Suggested Categories")
-                    }
-                    .onTapGesture {
+                    Button {
                         withAnimation {
                             isSuggestedCollapsed.toggle()
                         }
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.down")
+                                .rotationEffect(.degrees(isSuggestedCollapsed ? -90 : 0))
+                                .animation(.snappy, value: isSuggestedCollapsed)
+                            Text("Suggested Categories")
+                        }
                     }
+                    .buttonStyle(.plain)
+                    .accessibilityValue(isSuggestedCollapsed ? "Collapsed" : "Expanded")
                 }
 
                 Spacer().frame(height: 20)
@@ -131,41 +139,47 @@ struct MacAddCategoryView: View {
 // MARK: FUNCTIONS
 extension MacAddCategoryView {
     func colorButton(for item: String) -> some View {
-        ZStack {
-            Color(item)
-                .aspectRatio(1, contentMode: .fit)
-                .clipShape(.rect(cornerRadius: 11, style: .continuous))
-
-            if item == categoryColor {
-                Image(systemName: "checkmark.circle")
-                    .foregroundStyle(.white)
-                    .font(.title)
-                    .symbolEffect(.bounce.down, value: isSelected)
-            }
-        }
-        .onTapGesture {
+        Button {
             categoryColor = item
             isSelected.toggle()
+        } label: {
+            ZStack {
+                Color(item)
+                    .aspectRatio(1, contentMode: .fit)
+                    .clipShape(.rect(cornerRadius: 11, style: .continuous))
+
+                if item == categoryColor {
+                    Image(systemName: "checkmark.circle")
+                        .foregroundStyle(.white)
+                        .font(.title)
+                        .symbolEffect(.bounce.down, value: isSelected)
+                }
+            }
         }
+        .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
         .accessibilityAddTraits(
             item == categoryColor ? [.isButton, .isSelected] : .isButton
         )
-        .accessibilityLabel(LocalizedStringKey(item))
+        .accessibilityLabel("Select color \(item)")
     }
 
     private func categoryRow(for category: Category) -> some View {
-        HStack {
-            RoundedRectangle(cornerRadius: 4, style: .continuous)
-                .foregroundStyle(Color(category.color))
-                .frame(width: 16, height: 16)
-            Text(category.name)
-        }
-        .padding(.vertical, 2)
-        .onTapGesture {
+        Button {
             modelContext.insert(category)
             dismiss()
+        } label: {
+            HStack {
+                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    .foregroundStyle(Color(category.color))
+                    .frame(width: 16, height: 16)
+                    .accessibilityHidden(true)
+                Text(category.name)
+            }
         }
+        .buttonStyle(.plain)
+        .padding(.vertical, 2)
+        .accessibilityHint("Adds this category to your cabinet.")
     }
 
     func addCategory() {

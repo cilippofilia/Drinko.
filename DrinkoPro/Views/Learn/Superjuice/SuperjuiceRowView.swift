@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SuperjuiceRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
+    @ScaledMetric private var scaledRowHeight: CGFloat = rowHeight
 
     let juiceType: String
 
@@ -18,8 +19,9 @@ struct SuperjuiceRowView: View {
                 Image("\(juiceType)")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: rowHeight, height: rowHeight)
+                    .frame(width: scaledRowHeight, height: scaledRowHeight)
                     .cornerRadius(imageCornerRadius)
+                    .accessibilityHidden(true)
 
                 VStack(alignment: .leading) {
                     Text("\(juiceType.capitalizingFirstLetter()) Superjuice")
@@ -27,7 +29,8 @@ struct SuperjuiceRowView: View {
                 }
             }
         }
-        .frame(height: 45)
+        .frame(minHeight: scaledRowHeight)
+        .accessibilityHint("Opens the \(juiceType.capitalizingFirstLetter()) superjuice calculator.")
     }
 }
 

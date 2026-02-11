@@ -24,6 +24,7 @@ struct MacEditCategoryView: View {
         Form {
             Section {
                 TextField("", text: $category.name)
+                    .accessibilityLabel("Category name")
                     .textContentType(.name)
                     .overlay(alignment: .leading) {
                         Text("Category Description")
@@ -37,6 +38,7 @@ struct MacEditCategoryView: View {
                     text: $category.detail,
                     axis: .vertical
                 )
+                .accessibilityLabel("Category details")
                 .multilineTextAlignment(.leading)
                 .overlay(alignment: .leading) {
                     Text("Category Details")
@@ -93,27 +95,29 @@ struct MacEditCategoryView: View {
 // MARK: FUNCTIONS
 extension MacEditCategoryView {
     func colorButton(for item: String) -> some View {
-        ZStack {
-            Color(item)
-                .aspectRatio(1, contentMode: .fit)
-                .cornerRadius(6)
-
-            if item == category.color {
-                Image(systemName: "checkmark.circle")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .symbolEffect(.bounce.down, value: isSelected)
-            }
-        }
-        .onTapGesture {
+        Button {
             category.color = item
             isSelected.toggle()
+        } label: {
+            ZStack {
+                Color(item)
+                    .aspectRatio(1, contentMode: .fit)
+                    .cornerRadius(6)
+
+                if item == category.color {
+                    Image(systemName: "checkmark.circle")
+                        .foregroundColor(.white)
+                        .font(.title)
+                        .symbolEffect(.bounce.down, value: isSelected)
+                }
+            }
         }
+        .buttonStyle(.plain)
         .accessibilityElement(children: .ignore)
         .accessibilityAddTraits(
             item == category.color ? [.isButton, .isSelected] : .isButton
         )
-        .accessibilityLabel(LocalizedStringKey(item))
+        .accessibilityLabel("Select color \(item)")
     }
 
     private func save() {

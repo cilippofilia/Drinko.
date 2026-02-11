@@ -20,6 +20,7 @@ struct CocktailImageHeader: View {
         .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
         .background(Color.white)
         .clipShape(.rect(cornerRadius: imageCornerRadius))
+        .accessibilityLabel("Image of \(cocktail.name)")
     }
 }
 

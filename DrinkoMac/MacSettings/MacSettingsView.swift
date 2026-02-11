@@ -36,6 +36,7 @@ struct MacSettingsView: View {
                             )
                         }
                         .buttonStyle(.plain)
+                        .accessibilityHint("Opens macOS language settings.")
 
                         Text(Bundle.main.preferredLocalizations.first?.uppercased() ?? "EN")
                             .foregroundStyle(.secondary)
@@ -120,6 +121,7 @@ struct MacSettingsView: View {
             )
         }
         .buttonStyle(.plain)
+        .accessibilityHint("Opens the App Store rating page.")
     }
 }
 
