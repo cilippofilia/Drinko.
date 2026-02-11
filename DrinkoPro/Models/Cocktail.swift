@@ -247,6 +247,45 @@ class CocktailsViewModel {
         }
     }
 
+    func updateUserCocktail(
+        _ cocktail: Cocktail,
+        name: String,
+        method: String,
+        glass: String,
+        garnish: String,
+        ice: String,
+        extra: String,
+        ingredients: [Ingredient],
+        procedureSteps: [String]
+    ) {
+        guard let index = userCocktails.firstIndex(where: { $0.id == cocktail.id }) else {
+            return
+        }
+
+        let updatedCocktail = Cocktail(
+            id: cocktail.id,
+            name: name,
+            method: method,
+            glass: glass,
+            garnish: garnish,
+            ice: ice,
+            extra: extra,
+            ingredients: ingredients
+        )
+
+        userCocktails[index] = updatedCocktail
+
+        userProcedures.removeAll { $0.id == cocktail.id }
+        let mappedProcedureSteps = procedureSteps.enumerated().map { index, text in
+            Procedure.Steps(step: "Step \(index + 1)", text: text)
+        }
+        if !mappedProcedureSteps.isEmpty {
+            userProcedures.append(
+                Procedure(id: cocktail.id, procedure: mappedProcedureSteps)
+            )
+        }
+    }
+
     func deleteUserCocktail(_ cocktail: Cocktail) {
         withAnimation {
             userCocktails.removeAll { $0.id == cocktail.id }

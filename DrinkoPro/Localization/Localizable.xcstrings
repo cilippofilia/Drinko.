@@ -2033,6 +2033,9 @@
         }
       }
     },
+    "Edit Cocktail" : {
+
+    },
     "Edit Product" : {
       "localizations" : {
         "de" : {
@@ -4538,6 +4541,9 @@
       }
     },
     "Unit" : {
+
+    },
+    "Update" : {
 
     },
     "Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink." : {

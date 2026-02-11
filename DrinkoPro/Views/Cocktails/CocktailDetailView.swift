@@ -20,8 +20,10 @@ struct CocktailDetailView: View {
 
     @State private var selectedUnit = "ml"
     @State private var showDeleteConfirmation = false
+    @State private var showEditSheet = false
 
     let cocktail: Cocktail
+    @State private var cocktailID: String
 
     var toolbarPlacement: ToolbarItemPlacement {
         #if os(iOS)
@@ -31,11 +33,20 @@ struct CocktailDetailView: View {
         #endif
     }
 
+    init(cocktail: Cocktail) {
+        self.cocktail = cocktail
+        _cocktailID = State(initialValue: cocktail.id)
+    }
+
+    private var activeCocktail: Cocktail {
+        viewModel.listOfAllDrinks.first { $0.id == cocktailID } ?? cocktail
+    }
+
     var body: some View {
         ScrollView {
             cocktailContent
         }
-        .navigationTitle(cocktail.name)
+        .navigationTitle(activeCocktail.name)
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
         #if os(iOS)
@@ -44,50 +55,72 @@ struct CocktailDetailView: View {
         .toolbar {
             ToolbarItem(placement: toolbarPlacement) {
                 HistoryButtonView(
-                    history: viewModel.getCocktailHistory(for: cocktail),
+                    history: viewModel.getCocktailHistory(for: activeCocktail),
                     showHistory: $showHistory,
-                    cocktail: cocktail
+                    cocktail: activeCocktail
                 )
             }
             ToolbarItem(placement: toolbarPlacement) {
-                LikeButtonView(cocktail: cocktail)
+                LikeButtonView(cocktail: activeCocktail)
+            }
+            if isUserCreated {
+                ToolbarItem(placement: toolbarPlacement) {
+                    Button(action: {
+                        showEditSheet = true
+                    }) {
+                        Image(systemName: "pencil.line")
+                    }
+                    .accessibilityLabel("Edit Cocktail")
+                }
+            }
+        }
+        .sheet(isPresented: $showEditSheet) {
+            NavigationStack {
+                AddCustomCocktailView(
+                    methodOptions: methodOptions,
+                    glassOptions: glassOptions,
+                    iceOptions: iceOptions,
+                    unitOptions: unitOptions,
+                    editingCocktail: activeCocktail,
+                    editingProcedureSteps: editingProcedureSteps
+                )
             }
         }
     }
     
     var cocktailContent: some View {
         VStack {
-            CocktailImageHeader(cocktail: cocktail)
+            CocktailImageHeader(cocktail: activeCocktail)
             
             VStack(alignment: .leading) {
                 CocktailUnitPicker(selectedUnit: $selectedUnit)
                 
-                Text(cocktail.name)
+                Text(activeCocktail.name)
                     .font(.title.bold())
                 
                 Divider()
                 
                 CocktailDetailsSection(
-                    cocktail: cocktail,
+                    cocktail: activeCocktail,
                     selectedUnit: selectedUnit
                 )
                 
                 Divider()
 
-                if let procedure = viewModel.getCocktailProcedure(for: cocktail) {
-                    CocktailRelatedSection(cocktail: cocktail, procedure: procedure)
+                if let procedure = viewModel.getCocktailProcedure(for: activeCocktail) {
+                    CocktailRelatedSection(cocktail: activeCocktail, procedure: procedure)
 
                     Divider()
                 }
 
-                if !viewModel.getLinkedCocktails(for: cocktail).isEmpty {
+                if !viewModel.getLinkedCocktails(for: activeCocktail).isEmpty {
                     Text("You may also like")
                         .font(sizeClass == .compact ? .title3.bold() : .title.bold())
                         .padding(.vertical)
 
                     LinkedCocktailsView(
-                        cocktails: viewModel.getLinkedCocktails(for: cocktail),
-                        procedure: viewModel.getCocktailProcedure(for: cocktail)
+                        cocktails: viewModel.getLinkedCocktails(for: activeCocktail),
+                        procedure: viewModel.getCocktailProcedure(for: activeCocktail)
                     )
 
                     Divider()
@@ -115,7 +148,7 @@ struct CocktailDetailView: View {
             DeleteButtonView(
                 label: "Delete",
                 action: {
-                    viewModel.deleteUserCocktail(cocktail)
+                    viewModel.deleteUserCocktail(activeCocktail)
                     dismiss()
                 }
             )
@@ -126,7 +159,51 @@ struct CocktailDetailView: View {
     }
     
     private var isUserCreated: Bool {
-        viewModel.userCocktails.contains { $0.id == cocktail.id }
+        viewModel.userCocktails.contains { $0.id == activeCocktail.id }
+    }
+
+    private var methodOptions: [String] {
+        uniqueSorted(
+            from: viewModel.listOfAllDrinks.map(\.method),
+            fallback: ["shake & fine strain"]
+        )
+    }
+
+    private var glassOptions: [String] {
+        uniqueSorted(
+            from: viewModel.listOfAllDrinks.map(\.glass),
+            fallback: ["rock"]
+        )
+    }
+
+    private var iceOptions: [String] {
+        uniqueSorted(
+            from: viewModel.listOfAllDrinks.map(\.ice),
+            fallback: ["cubed"]
+        )
+    }
+
+    private var unitOptions: [String] {
+        uniqueSorted(
+            from: viewModel.listOfAllDrinks
+                .flatMap(\.ingredients)
+                .map(\.unit),
+            fallback: ["oz."]
+        )
+    }
+
+    private var editingProcedureSteps: [String] {
+        viewModel.getCocktailProcedure(for: activeCocktail)?
+            .procedure
+            .map(\.text) ?? []
+    }
+
+    private func uniqueSorted(from values: [String], fallback: [String]) -> [String] {
+        let cleaned = values
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        let set = Set(cleaned + fallback)
+        return set.sorted()
     }
 
 }

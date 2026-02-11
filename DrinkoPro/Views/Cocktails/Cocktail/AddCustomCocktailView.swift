@@ -15,6 +15,8 @@ struct AddCustomCocktailView: View {
     private let glassOptions: [String]
     private let iceOptions: [String]
     private let unitOptions: [String]
+    private let editingCocktail: Cocktail?
+    private let editingProcedureSteps: [String]
 
     @State private var name = ""
     @State private var method: String
@@ -30,7 +32,9 @@ struct AddCustomCocktailView: View {
         methodOptions: [String],
         glassOptions: [String],
         iceOptions: [String],
-        unitOptions: [String]
+        unitOptions: [String],
+        editingCocktail: Cocktail? = nil,
+        editingProcedureSteps: [String] = []
     ) {
         let units = ["oz.", "ml"]
 
@@ -38,11 +42,37 @@ struct AddCustomCocktailView: View {
         self.glassOptions = glassOptions
         self.iceOptions = iceOptions
         self.unitOptions = units
-        _method = State(initialValue: methodOptions.first ?? "shake & fine strain")
-        _glass = State(initialValue: glassOptions.first ?? "rock")
-        _ice = State(initialValue: iceOptions.first ?? "cubed")
-        _ingredientDrafts = State(initialValue: [IngredientDraft(unit: self.unitOptions.first ?? "oz.")])
-        _procedureDrafts = State(initialValue: [""])
+        self.editingCocktail = editingCocktail
+        self.editingProcedureSteps = editingProcedureSteps
+
+        if let editingCocktail {
+            _name = State(initialValue: editingCocktail.name)
+            _method = State(initialValue: editingCocktail.method)
+            _glass = State(initialValue: editingCocktail.glass)
+            _garnish = State(initialValue: editingCocktail.garnish)
+            _ice = State(initialValue: editingCocktail.ice)
+            _extra = State(initialValue: editingCocktail.extra)
+
+            let mappedIngredients = editingCocktail.ingredients.map {
+                IngredientDraft(name: $0.name, quantity: String($0.quantity), unit: $0.unit)
+            }
+            _ingredientDrafts = State(
+                initialValue: mappedIngredients.isEmpty
+                    ? [IngredientDraft(unit: self.unitOptions.first ?? "oz.")]
+                    : mappedIngredients
+            )
+
+            let trimmedProcedure = editingProcedureSteps
+                .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                .filter { !$0.isEmpty }
+            _procedureDrafts = State(initialValue: trimmedProcedure.isEmpty ? [""] : trimmedProcedure)
+        } else {
+            _method = State(initialValue: methodOptions.first ?? "shake & fine strain")
+            _glass = State(initialValue: glassOptions.first ?? "rock")
+            _ice = State(initialValue: iceOptions.first ?? "cubed")
+            _ingredientDrafts = State(initialValue: [IngredientDraft(unit: self.unitOptions.first ?? "oz.")])
+            _procedureDrafts = State(initialValue: [""])
+        }
     }
 
     var leadingToolbarPlacement: ToolbarItemPlacement {
@@ -217,7 +247,7 @@ struct AddCustomCocktailView: View {
             }
 
         }
-        .navigationTitle("Create Cocktail")
+        .navigationTitle(editingCocktail == nil ? "Create Cocktail" : "Edit Cocktail")
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
         #endif
@@ -236,7 +266,7 @@ struct AddCustomCocktailView: View {
                 }
             }
             ToolbarItem(placement: trailingToolbarPlacement) {
-                Button("Save") {
+                Button(editingCocktail == nil ? "Save" : "Update") {
                     saveCocktail()
                 }
             }
@@ -264,16 +294,30 @@ struct AddCustomCocktailView: View {
             extra = "-"
         }
 
-        viewModel.addUserCocktail(
-            name: trimmedName,
-            method: method,
-            glass: glass,
-            garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
-            ice: ice,
-            extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
-            ingredients: ingredients,
-            procedureSteps: procedureSteps
-        )
+        if let editingCocktail {
+            viewModel.updateUserCocktail(
+                editingCocktail,
+                name: trimmedName,
+                method: method,
+                glass: glass,
+                garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
+                ice: ice,
+                extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
+                ingredients: ingredients,
+                procedureSteps: procedureSteps
+            )
+        } else {
+            viewModel.addUserCocktail(
+                name: trimmedName,
+                method: method,
+                glass: glass,
+                garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
+                ice: ice,
+                extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
+                ingredients: ingredients,
+                procedureSteps: procedureSteps
+            )
+        }
         dismiss()
     }
 }
