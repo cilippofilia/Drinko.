@@ -23,6 +23,7 @@ struct MacEditProductView: View {
         Form {
             Section("Info") {
                 TextField("", text: $product.name)
+                    .accessibilityLabel("Product name")
                     .textContentType(.name)
                     .overlay(alignment: .leading) {
                         Text("Product Name")
@@ -33,12 +34,15 @@ struct MacEditProductView: View {
 
                 HStack {
                     TextField("", text: $product.abv)
+                        .accessibilityLabel("Alcohol by volume")
                         .frame(width: 50)
                     Text("% ABV")
+                        .accessibilityHidden(true)
                     Spacer()
                 }
 
                 TextField("", text: $product.madeIn)
+                    .accessibilityLabel("Made in")
                     .overlay(alignment: .leading) {
                         HStack {
                             Image(systemName: "flag")
@@ -57,14 +61,18 @@ struct MacEditProductView: View {
 
                 HStack {
                     ForEach(1 ..< 5 + 1) { star in
-                        image(for: star)
-                            .foregroundColor(star > product.rating ? Color.secondary : Color.yellow)
-                            .onTapGesture {
-                                product.rating = star
-                                isAnimated.toggle()
-                            }
-                            .animation(.default, value: isAnimated)
-                            .symbolEffect(.bounce.up, value: isAnimated)
+                        Button {
+                            product.rating = star
+                            isAnimated.toggle()
+                        } label: {
+                            image(for: star)
+                                .foregroundColor(star > product.rating ? Color.secondary : Color.yellow)
+                        }
+                        .buttonStyle(.plain)
+                        .animation(.default, value: isAnimated)
+                        .symbolEffect(.bounce.up, value: isAnimated)
+                        .accessibilityLabel("Set rating to \(star)")
+                        .accessibilityAddTraits(product.rating == star ? .isSelected : [])
                     }
                     
                     Spacer()
@@ -80,6 +88,7 @@ struct MacEditProductView: View {
                     text: $product.detail,
                     axis: .vertical
                 )
+                .accessibilityLabel("Notes")
                 .lineLimit(5, reservesSpace: true)
                 .overlay(alignment: .leading) {
                     Text("Your notes on \(product.name)...")
@@ -108,7 +117,7 @@ struct MacEditProductView: View {
                 }
                 .padding(.top)
             } footer: {
-                Text("By deleting the category you will be deleting every product inside it.")
+                Text("By deleting this product you will remove all the information inside it.")
                     .foregroundStyle(.secondary)
             }
         }

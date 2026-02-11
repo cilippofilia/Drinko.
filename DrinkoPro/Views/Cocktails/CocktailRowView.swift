@@ -10,7 +10,7 @@ import SwiftUI
 struct CocktailRowView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(Favorites.self) private var favorites
-    @State private var frameSize: CGFloat = 45
+    @ScaledMetric private var frameSize: CGFloat = 45
 
     var cocktail: Cocktail
 
@@ -46,6 +46,8 @@ struct CocktailRowView: View {
             }
 
             Text(cocktail.name)
+                .lineLimit(2)
+                .multilineTextAlignment(.leading)
 
             Spacer()
 

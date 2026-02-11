@@ -12,17 +12,22 @@ struct LearnHeaderView: View {
     let isCollapsed: Binding<Bool>
 
     var body: some View {
-        HStack {
-            Image(systemName: "chevron.down")
-                .rotationEffect(Angle(degrees: isCollapsed.wrappedValue ? -90 : 0))
-                .animation(.snappy, value: isCollapsed.wrappedValue)
-            Text(text)
-        }
-        .onTapGesture {
+        Button {
             withAnimation {
                 isCollapsed.wrappedValue.toggle()
             }
+        } label: {
+            HStack {
+                Image(systemName: "chevron.down")
+                    .rotationEffect(Angle(degrees: isCollapsed.wrappedValue ? -90 : 0))
+                    .animation(.snappy, value: isCollapsed.wrappedValue)
+                Text(text)
+            }
         }
+        .buttonStyle(.plain)
+        .accessibilityLabel(text)
+        .accessibilityValue(isCollapsed.wrappedValue ? "Collapsed" : "Expanded")
+        .accessibilityHint("Double tap to \(isCollapsed.wrappedValue ? "expand" : "collapse") this section.")
     }
 }
 

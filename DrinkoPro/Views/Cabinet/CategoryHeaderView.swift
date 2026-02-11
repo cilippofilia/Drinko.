@@ -26,10 +26,10 @@ struct CategoryHeaderView: View {
                 Image(systemName: "square.and.pencil")
                     .foregroundStyle(Color(category.color))
             }
+            .accessibilityLabel("Edit \(category.name)")
         }
         .fontWeight(.medium)
         .padding(.bottom, 10)
-        .accessibilityElement(children: .combine)
     }
 }
 

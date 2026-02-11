@@ -93,7 +93,7 @@ extension EditCategoryView {
         .accessibilityAddTraits(
             item == category.color ? [.isButton, .isSelected] : .isButton
         )
-        .accessibilityLabel(LocalizedStringKey(item))
+        .accessibilityLabel("Select color \(item)")
     }
 
     func delete() {

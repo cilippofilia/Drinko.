@@ -148,6 +148,7 @@ private extension CocktailsView {
                 filteredListView
             }
         }
+        .accessibilityLabel("Filter cocktails")
     }
 
     var shouldShowFilterEmptyState: Bool {
@@ -363,6 +364,7 @@ private extension CocktailsView {
             Label("Options", systemImage: "line.3.horizontal.decrease.circle")
             #endif
         }
+        .accessibilityLabel("Sort cocktails")
     }
 
     var addCocktailButton: some View {

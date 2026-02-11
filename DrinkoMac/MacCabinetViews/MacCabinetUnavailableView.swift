@@ -22,10 +22,12 @@ struct MacCabinetUnavailableView: View {
             Button("Add a category") {
                 action()
             }
+            .accessibilityHint("Creates a new category.")
 
             Button("Add sample data") {
                 testAction()
             }
+            .accessibilityHint("Adds sample categories and products.")
         })
         .frame(width: screenWidth)
         .navigationTitle("Cabinet")
@@ -36,6 +38,7 @@ struct MacCabinetUnavailableView: View {
                 }) {
                     Label("Add category", systemImage: "plus")
                 }
+                .accessibilityLabel("Add category")
             }
         }
         .sheet(isPresented: $showAddCategorySheet) {

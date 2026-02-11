@@ -27,6 +27,7 @@ struct SettingsPreferenceView: View {
                 )
             }
             .buttonStyle(.plain)
+            .accessibilityHint("Opens system language settings.")
         }
     }
 }

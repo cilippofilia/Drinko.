@@ -41,6 +41,8 @@ struct ABVCalculator: View {
                 VStack(spacing: 20) {
                     HStack {
                         TextField("What is the ingredient?", text: $bottles[index].name)
+                            .accessibilityLabel("Ingredient name")
+                            .accessibilityValue("Ingredient \(index + 1)")
                             #if os(iOS)
                             .keyboardType(.default)
                             .focused($isFocused)
@@ -55,27 +57,35 @@ struct ABVCalculator: View {
                         }
                         .buttonStyle(.plain)
                         .disabled(bottles.count == 1)
+                        .accessibilityLabel("Delete ingredient")
+                        .accessibilityValue("Ingredient \(index + 1)")
                     }
 
                     HStack(spacing: 20) {
                         HStack {
                             TextField("Amount?", value: $bottles[index].amount, formatter: NumberFormatter())
+                                .accessibilityLabel("Amount in millilitres")
+                                .accessibilityValue("Ingredient \(index + 1)")
                                 #if os(iOS)
                                 .keyboardType(.decimalPad)
                                 .focused($isFocused)
                                 #endif
 
                             Text("ml")
+                                .accessibilityHidden(true)
                         }
 
                         HStack {
                             TextField("ABV?", value: $bottles[index].abv, formatter: NumberFormatter())
+                                .accessibilityLabel("Alcohol by volume percentage")
+                                .accessibilityValue("Ingredient \(index + 1)")
                                 #if os(iOS)
                                 .keyboardType(.decimalPad)
                                 .focused($isFocused)
                                 #endif
 
                             Text("%")
+                                .accessibilityHidden(true)
                         }
                     }
                     Divider()
@@ -91,6 +101,7 @@ struct ABVCalculator: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
+            .accessibilityHint("Adds another ingredient row.")
 
             Spacer(minLength: 30)
 
@@ -115,6 +126,9 @@ struct ABVCalculator: View {
                     .font(.title)
                     .bold()
             }
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("Calculated ABV")
+            .accessibilityValue("\(result, specifier: "%.2f") percent")
 
             Text("Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink.")
                 .font(.footnote)
@@ -189,6 +203,7 @@ private extension ABVCalculator {
                         Text(method.rawValue)
                     }
                 }
+                .accessibilityLabel("Method")
             }
 
             HStack {
@@ -201,6 +216,7 @@ private extension ABVCalculator {
                         Text(serve.rawValue)
                     }
                 }
+                .accessibilityLabel("Serving")
             }
         }
     }

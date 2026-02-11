@@ -23,6 +23,9 @@ struct IngredientsView: View {
 
                     Spacer()
                 }
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(ingredient.name.capitalized)
+                .accessibilityValue("\(selectedUnit == "oz." ? ingredient.quantity : ingredient.mlQuantity, specifier: "%2g") \(selectedUnit == "oz." ? ingredient.unit : ingredient.mlUnit)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
