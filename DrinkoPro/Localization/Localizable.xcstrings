@@ -1829,6 +1829,9 @@
         }
       }
     },
+    "Delete Cocktail?" : {
+
+    },
     "Delete Product" : {
       "localizations" : {
         "de" : {
@@ -4388,6 +4391,9 @@
           }
         }
       }
+    },
+    "This will permanently remove your cocktail." : {
+
     },
     "Title" : {
       "extractionState" : "manual",

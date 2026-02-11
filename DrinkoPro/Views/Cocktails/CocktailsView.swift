@@ -14,7 +14,10 @@ struct CocktailsView: View {
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
     @State private var filterOption: CocktailsViewModel.FilterOption = .all
-    @State private var isPresentingCustomCocktailSheet = false
+    @State private var showCustomCocktailSheet = false
+    @State private var showDeleteAlert: Bool = false
+    @State private var cocktailPendingDeletion: Cocktail? = nil
+
     @State var path = NavigationPath()
 
     #if os(iOS)
@@ -71,131 +74,51 @@ struct CocktailsView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            Group {
-                if (filterOption == .favoritesOnly || filterOption == .userCreatedOnly) && visibleCocktails.isEmpty {
-                    ContentUnavailableView(
-                        label: {
-                            if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
-                                Label("No favorite cocktails yet", systemImage: "heart.slash")
-                            } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
-                                Label("No custom cocktails yet", systemImage: "plus.circle")
-                            } else {
-                                Label("No cocktails found", systemImage: "exclamationmark.magnifyingglass")
-                            }
-                        },
-                        description: {
-                            if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
-                                Text("Add cocktails to favorites to quickly find them here.")
-                            } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
-                                Text("Create a cocktail to find it here.")
-                            } else {
-                                Text("No cocktails match \"\(viewModel.searchText)\".")
-                            }
-                        },
-                        actions: {
-                            if !viewModel.searchText.isEmpty {
-                                Button("Clear Search", systemImage: "xmark.circle") {
-                                    viewModel.searchText = ""
-                                }
-                                .buttonStyle(.bordered)
-                            }
-                        }
-                    )
-                } else if viewModel.searchText.isEmpty {
-                    List {
-                        ForEach(visibleSectionKeys, id: \.self) { sectionKey in
-                            Section {
-                                ForEach(visibleGroupedCocktails[sectionKey] ?? []) { cocktail in
-                                    NavigationLink(value: cocktail) {
-                                        CocktailRowView(cocktail: cocktail)
-                                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                                FavoriteCocktailButtonView(cocktail: cocktail)
-                                                    .tint(favorites.contains(cocktail) ? .red : .blue)
-                                                if cocktail.id.hasPrefix("user-") {
-                                                    DeleteRowButtonView(action: {
-                                                        deleteUserCocktail(cocktail)
-                                                    })
-                                                }
-                                            }
-                                    }
-                                }
-                            } header: {
-                                Text(sectionKey)
-                            }
-                        }
+            contentView
+                .navigationTitle("Cocktails")
+                .navigationDestination(for: Cocktail.self) { cocktail in
+                    CocktailDetailView(cocktail: cocktail)
+                }
+                .searchable(text: searchBinding, prompt: "Search Cocktails")
+                .toolbar {
+                    #if os(iOS)
+                    ToolbarItemGroup(placement: .topBarTrailing) {
+                        optionsMenu
+                        addCocktailButton
                     }
-                } else if visibleCocktails.isEmpty {
-                    ContentUnavailableView(
-                        label: {
-                            Label("\"\(viewModel.searchText)\" not found", systemImage: "exclamationmark.magnifyingglass")
-                        },
-                        description: {
-                            Text("No cocktails match \"\(viewModel.searchText)\". Try a different search term or browse all cocktails.")
-                        },
-                        actions: {
-                            Button("Clear Search", systemImage: "xmark.circle") {
-                                viewModel.searchText = ""
-                            }
-                            .buttonStyle(.bordered)
-                        }
-                    )
-                } else {
-                    List(visibleCocktails) { cocktail in
-                        NavigationLink(value: cocktail) {
-                            CocktailRowView(cocktail: cocktail)
-                                .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                    FavoriteCocktailButtonView(cocktail: cocktail)
-                                        .tint(favorites.contains(cocktail) ? .red : .blue)
-                                    if cocktail.id.hasPrefix("user-") {
-                                        DeleteRowButtonView(action: {
-                                            deleteUserCocktail(cocktail)
-                                        })
-                                    }
-                                }
-                        }
+                    #else
+                    ToolbarItemGroup(placement: .automatic) {
+                        optionsMenu
+                        addCocktailButton
+                    }
+                    #endif
+                }
+                .sheet(isPresented: $showCustomCocktailSheet) {
+                    NavigationStack {
+                        AddCustomCocktailView(
+                            methodOptions: methodOptions,
+                            glassOptions: glassOptions,
+                            iceOptions: iceOptions,
+                            unitOptions: unitOptions
+                        )
                     }
                 }
-            }
-            .navigationTitle("Cocktails")
-            .navigationDestination(for: Cocktail.self) { cocktail in
-                CocktailDetailView(cocktail: cocktail)
-            }
-            .searchable(
-                text: Binding(
-                    get: { viewModel.searchText },
-                    set: { viewModel.searchText = $0 }
-                ),
-                prompt: "Search Cocktails"
-            )
-            .toolbar {
-                #if os(iOS)
-                ToolbarItemGroup(placement: .topBarTrailing) {
-                    optionsMenu
-                    addCocktailButton
+                .alert("Delete Cocktail?", isPresented: $showDeleteAlert) {
+                    if let cocktail = cocktailPendingDeletion {
+                        DeleteRowButtonView {
+                            viewModel.deleteUserCocktail(cocktail)
+                        }
+                    }
+                    Button("Cancel", role: .cancel) { }
+                } message: {
+                    Text("This will permanently remove your cocktail.")
                 }
-                #else
-                ToolbarItemGroup(placement: .automatic) {
-                    optionsMenu
-                    addCocktailButton
+                .task {
+                    try? Tips.configure([
+                        .displayFrequency(.immediate),
+                        .datastoreLocation(.applicationDefault)
+                    ])
                 }
-                #endif
-            }
-            .sheet(isPresented: $isPresentingCustomCocktailSheet) {
-                NavigationStack {
-                    AddCustomCocktailView(
-                        methodOptions: methodOptions,
-                        glassOptions: glassOptions,
-                        iceOptions: iceOptions,
-                        unitOptions: unitOptions
-                    )
-                }
-            }
-            .task {
-                try? Tips.configure([
-                    .displayFrequency(.immediate),
-                    .datastoreLocation(.applicationDefault)
-                ])
-            }
         }
     }
 }
@@ -207,6 +130,115 @@ private extension CocktailsView {
             .filter { !$0.isEmpty }
         let set = Set(cleaned + fallback)
         return set.sorted()
+    }
+
+    var contentView: some View {
+        Group {
+            if shouldShowFilterEmptyState {
+                filterEmptyStateView
+            } else if viewModel.searchText.isEmpty {
+                fullListView
+            } else if visibleCocktails.isEmpty {
+                searchEmptyStateView
+            } else {
+                filteredListView
+            }
+        }
+    }
+
+    var shouldShowFilterEmptyState: Bool {
+        (filterOption == .favoritesOnly || filterOption == .userCreatedOnly) && visibleCocktails.isEmpty
+    }
+
+    var searchBinding: Binding<String> {
+        Binding(
+            get: { viewModel.searchText },
+            set: { viewModel.searchText = $0 }
+        )
+    }
+
+    var filterEmptyStateView: some View {
+        ContentUnavailableView(
+            label: {
+                if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
+                    Label("No favorite cocktails yet", systemImage: "heart.slash")
+                } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
+                    Label("No custom cocktails yet", systemImage: "plus.circle")
+                } else {
+                    Label("No cocktails found", systemImage: "exclamationmark.magnifyingglass")
+                }
+            },
+            description: {
+                if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
+                    Text("Add cocktails to favorites to quickly find them here.")
+                } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
+                    Text("Create a cocktail to find it here.")
+                } else {
+                    Text("No cocktails match \"\(viewModel.searchText)\".")
+                }
+            },
+            actions: {
+                if !viewModel.searchText.isEmpty {
+                    Button("Clear Search", systemImage: "xmark.circle") {
+                        viewModel.searchText = ""
+                    }
+                    .buttonStyle(.bordered)
+                }
+            }
+        )
+    }
+
+    var fullListView: some View {
+        List {
+            ForEach(visibleSectionKeys, id: \.self) { sectionKey in
+                Section {
+                    ForEach(visibleGroupedCocktails[sectionKey] ?? []) { cocktail in
+                        cocktailRow(for: cocktail)
+                    }
+                } header: {
+                    Text(sectionKey)
+                }
+            }
+        }
+    }
+
+    var searchEmptyStateView: some View {
+        ContentUnavailableView(
+            label: {
+                Label("\"\(viewModel.searchText)\" not found", systemImage: "exclamationmark.magnifyingglass")
+            },
+            description: {
+                Text("No cocktails match \"\(viewModel.searchText)\". Try a different search term or browse all cocktails.")
+            },
+            actions: {
+                Button("Clear Search", systemImage: "xmark.circle") {
+                    viewModel.searchText = ""
+                }
+                .buttonStyle(.bordered)
+            }
+        )
+    }
+
+    var filteredListView: some View {
+        List(visibleCocktails) { cocktail in
+            cocktailRow(for: cocktail)
+        }
+    }
+
+    func cocktailRow(for cocktail: Cocktail) -> some View {
+        NavigationLink(value: cocktail) {
+            CocktailRowView(cocktail: cocktail)
+                .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                    FavoriteCocktailButtonView(cocktail: cocktail)
+                        .tint(favorites.contains(cocktail) ? .red : .blue)
+                    if cocktail.id.hasPrefix("user-") {
+                        DeleteRowButtonView(action: {
+                            cocktailPendingDeletion = cocktail
+                            showDeleteAlert = true
+                        })
+                    }
+                }
+        }
     }
 
     func deleteUserCocktail(_ cocktail: Cocktail) {
@@ -337,7 +369,7 @@ private extension CocktailsView {
 
     var addCocktailButton: some View {
         Button {
-            isPresentingCustomCocktailSheet = true
+            showCustomCocktailSheet = true
         } label: {
             Image(systemName: "plus")
         }

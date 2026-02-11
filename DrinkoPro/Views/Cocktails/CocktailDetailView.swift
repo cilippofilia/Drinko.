@@ -19,6 +19,7 @@ struct CocktailDetailView: View {
     @State private var showProcedure = false
 
     @State private var selectedUnit = "ml"
+    @State private var showDeleteConfirmation = false
 
     let cocktail: Cocktail
 
@@ -73,7 +74,32 @@ struct CocktailDetailView: View {
                 
                 Divider()
 
-                CocktailRelatedSection(cocktail: cocktail)
+                if let procedure = viewModel.getCocktailProcedure(for: cocktail) {
+                    CocktailRelatedSection(cocktail: cocktail, procedure: procedure)
+
+                    Divider()
+                }
+
+                if !viewModel.getLinkedCocktails(for: cocktail).isEmpty {
+                    Text("You may also like")
+                        .font(sizeClass == .compact ? .title3.bold() : .title.bold())
+                        .padding(.vertical)
+
+                    LinkedCocktailsView(
+                        cocktails: viewModel.getLinkedCocktails(for: cocktail),
+                        procedure: viewModel.getCocktailProcedure(for: cocktail)
+                    )
+
+                    Divider()
+                }
+
+                if isUserCreated {
+                    DeleteRowButtonView {
+                        showDeleteConfirmation = true
+                    }
+                    .buttonStyle(.bordered)
+                    .padding(.top, 8)
+                }
             }
             Spacer(minLength: 50)
         }
@@ -82,6 +108,19 @@ struct CocktailDetailView: View {
         #elseif os(macOS)
         .padding(.horizontal)
         #endif
+        .alert("Delete Cocktail?", isPresented: $showDeleteConfirmation) {
+            DeleteRowButtonView {
+                viewModel.deleteUserCocktail(cocktail)
+                dismiss()
+            }
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("This will permanently remove your cocktail.")
+        }
+    }
+    
+    private var isUserCreated: Bool {
+        viewModel.userCocktails.contains { $0.id == cocktail.id }
     }
 
 }
@@ -90,7 +129,8 @@ struct CocktailDetailView: View {
 #Preview {
     TabView {
         NavigationStack {
-            CocktailDetailView(cocktail: .example)
+            CocktailDetailView(cocktail: .userCreatedExample)
+                .environment(CocktailsViewModel())
                 .environment(Favorites())
         }
     }
