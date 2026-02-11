@@ -63,13 +63,12 @@ struct MacEditCategoryView: View {
                         save()
                     }
 
-                    Button(
-                        "Delete Category",
-                        systemImage: "trash",
-                        role: .destructive
-                    ) {
-                        showingDeleteConfirmation.toggle()
-                    }
+                    DeleteButtonView(
+                        label: "Delete Category",
+                        action: {
+                            showingDeleteConfirmation.toggle()
+                        }
+                    )
                     .foregroundStyle(.red)
                 }
                 .padding(.top)
@@ -82,7 +81,12 @@ struct MacEditCategoryView: View {
         .navigationTitle("Edit Category")
         .alert("Delete Category",
                isPresented: $showingDeleteConfirmation) {
-            Button("Delete", role: .destructive) { delete() }
+            DeleteButtonView(
+                label: "Delete",
+                action: {
+                    delete()
+                }
+            )
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("Are you sure you want to delete this category? You will also delete all the products it contains.")

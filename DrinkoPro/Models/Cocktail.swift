@@ -248,8 +248,10 @@ class CocktailsViewModel {
     }
 
     func deleteUserCocktail(_ cocktail: Cocktail) {
-        userCocktails.removeAll { $0.id == cocktail.id }
-        userProcedures.removeAll { $0.id == cocktail.id }
+        withAnimation {
+            userCocktails.removeAll { $0.id == cocktail.id }
+            userProcedures.removeAll { $0.id == cocktail.id }
+        }
     }
 
     private func makeUserCocktailID(from name: String) -> String {

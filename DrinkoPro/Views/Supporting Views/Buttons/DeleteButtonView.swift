@@ -1,5 +1,5 @@
 //
-//  DeleteRowButtonView.swift
+//  DeleteButtonView.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 11/02/2026.
@@ -7,18 +7,19 @@
 
 import SwiftUI
 
-struct DeleteRowButtonView: View {
+struct DeleteButtonView: View {
+    let label: String
     let action: () -> Void
 
     var body: some View {
         Button(role: .destructive) {
             action()
         } label: {
-            Label("Delete", systemImage: "trash")
+            Label(label, systemImage: "trash")
         }
     }
 }
 
 #Preview {
-    DeleteRowButtonView(action: { })
+    DeleteButtonView(label: "Delete", action: { })
 }

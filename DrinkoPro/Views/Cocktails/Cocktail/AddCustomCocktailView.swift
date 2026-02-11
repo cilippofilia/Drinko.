@@ -260,6 +260,10 @@ struct AddCustomCocktailView: View {
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             .filter { !$0.isEmpty }
 
+        if extra.isEmpty {
+            extra = "-"
+        }
+
         viewModel.addUserCocktail(
             name: trimmedName,
             method: method,

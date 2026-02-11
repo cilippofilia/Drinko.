@@ -94,9 +94,12 @@ struct CocktailDetailView: View {
                 }
 
                 if isUserCreated {
-                    DeleteRowButtonView {
-                        showDeleteConfirmation = true
-                    }
+                    DeleteButtonView(
+                        label: "Delete",
+                        action: {
+                            showDeleteConfirmation = true
+                        }
+                    )
                     .buttonStyle(.bordered)
                     .padding(.top, 8)
                 }
@@ -109,10 +112,13 @@ struct CocktailDetailView: View {
         .padding(.horizontal)
         #endif
         .alert("Delete Cocktail?", isPresented: $showDeleteConfirmation) {
-            DeleteRowButtonView {
-                viewModel.deleteUserCocktail(cocktail)
-                dismiss()
-            }
+            DeleteButtonView(
+                label: "Delete",
+                action: {
+                    viewModel.deleteUserCocktail(cocktail)
+                    dismiss()
+                }
+            )
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("This will permanently remove your cocktail.")

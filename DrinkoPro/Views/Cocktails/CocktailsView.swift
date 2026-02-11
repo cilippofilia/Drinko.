@@ -16,7 +16,7 @@ struct CocktailsView: View {
     @State private var filterOption: CocktailsViewModel.FilterOption = .all
     @State private var showCustomCocktailSheet = false
     @State private var showDeleteAlert: Bool = false
-    @State private var cocktailPendingDeletion: Cocktail? = nil
+    @State private var cocktailPendingDeletion: Cocktail = .userCreatedExample
 
     @State var path = NavigationPath()
 
@@ -104,11 +104,15 @@ struct CocktailsView: View {
                     }
                 }
                 .alert("Delete Cocktail?", isPresented: $showDeleteAlert) {
-                    if let cocktail = cocktailPendingDeletion {
-                        DeleteRowButtonView {
-                            viewModel.deleteUserCocktail(cocktail)
+                    DeleteButtonView(
+                        label: "Delete",
+                        action: {
+                            viewModel.deleteUserCocktail(cocktailPendingDeletion)
+                            if favorites.contains(cocktailPendingDeletion) {
+                                favorites.remove(cocktailPendingDeletion)
+                            }
                         }
-                    }
+                    )
                     Button("Cancel", role: .cancel) { }
                 } message: {
                     Text("This will permanently remove your cocktail.")
@@ -232,21 +236,15 @@ private extension CocktailsView {
                     FavoriteCocktailButtonView(cocktail: cocktail)
                         .tint(favorites.contains(cocktail) ? .red : .blue)
                     if cocktail.id.hasPrefix("user-") {
-                        DeleteRowButtonView(action: {
-                            cocktailPendingDeletion = cocktail
-                            showDeleteAlert = true
-                        })
+                        DeleteButtonView(
+                            label: "Delete",
+                            action: {
+                                cocktailPendingDeletion = cocktail
+                                showDeleteAlert = true
+                            }
+                        )
                     }
                 }
-        }
-    }
-
-    func deleteUserCocktail(_ cocktail: Cocktail) {
-        withAnimation(.easeInOut) {
-            if favorites.contains(cocktail) {
-                favorites.remove(cocktail)
-            }
-            viewModel.deleteUserCocktail(cocktail)
         }
     }
 

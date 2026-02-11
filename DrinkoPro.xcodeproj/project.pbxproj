@@ -10,8 +10,8 @@
 		180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
 		180EC7212BD413BE0092AD02 /* LearnHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EC7202BD413BE0092AD02 /* LearnHeaderView.swift */; };
 		182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
-		18263CA02F3D248200758DCC /* DeleteRowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18263C9F2F3D248200758DCC /* DeleteRowButtonView.swift */; };
-		18263CA12F3D248200758DCC /* DeleteRowButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18263C9F2F3D248200758DCC /* DeleteRowButtonView.swift */; };
+		18263CA02F3D248200758DCC /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18263C9F2F3D248200758DCC /* DeleteButtonView.swift */; };
+		18263CA12F3D248200758DCC /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18263C9F2F3D248200758DCC /* DeleteButtonView.swift */; };
 		1827137F2B655D78000D3343 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137B2B655D78000D3343 /* Item.swift */; };
 		182713802B655D78000D3343 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137C2B655D78000D3343 /* Category.swift */; };
 		182713882B65657C000D3343 /* CabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182713872B65657C000D3343 /* CabinetView.swift */; };
@@ -98,7 +98,7 @@
 		180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCocktailButtonView.swift; sourceTree = "<group>"; };
 		180EC7202BD413BE0092AD02 /* LearnHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnHeaderView.swift; sourceTree = "<group>"; };
 		1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
-		18263C9F2F3D248200758DCC /* DeleteRowButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteRowButtonView.swift; sourceTree = "<group>"; };
+		18263C9F2F3D248200758DCC /* DeleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonView.swift; sourceTree = "<group>"; };
 		1827137B2B655D78000D3343 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		1827137C2B655D78000D3343 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		182713872B65657C000D3343 /* CabinetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CabinetView.swift; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
 				18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */,
 				18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */,
-				18263C9F2F3D248200758DCC /* DeleteRowButtonView.swift */,
+				18263C9F2F3D248200758DCC /* DeleteButtonView.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -645,7 +645,7 @@
 				18A929D12F12C2C000B70219 /* DrinkoProApp.swift in Sources */,
 				18A929D62F12C6BF00B70219 /* LessonRowView.swift in Sources */,
 				18A92A022F12CC4100B70219 /* ABVCalculator.swift in Sources */,
-				18263CA02F3D248200758DCC /* DeleteRowButtonView.swift in Sources */,
+				18263CA02F3D248200758DCC /* DeleteButtonView.swift in Sources */,
 				18A92A062F12CC6D00B70219 /* BookDetailView.swift in Sources */,
 				18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */,
 				18A92A042F12CC5800B70219 /* BookRowView.swift in Sources */,
@@ -679,7 +679,7 @@
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */,
-				18263CA12F3D248200758DCC /* DeleteRowButtonView.swift in Sources */,
+				18263CA12F3D248200758DCC /* DeleteButtonView.swift in Sources */,
 				18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */,
 				1827138E2B658293000D3343 /* ProductRowView.swift in Sources */,
 				18EB4E932EEECEDC00691DC2 /* Cocktail.swift in Sources */,

@@ -80,12 +80,13 @@ struct EditProductView: View {
             }
             
             Section(footer: Text("By deleting the product you will be deleting every informations added to it.")) {
-                Button(action: {
-                    showingDeleteConfirmation = true
-                }) {
-                    Label("Delete Product", systemImage: "trash")
-                        .foregroundStyle(.red)
-                }
+                DeleteButtonView(
+                    label: "Delete Product",
+                    action: {
+                        showingDeleteConfirmation = true
+                    }
+                )
+                .foregroundStyle(.red)
             }
         }
         #if os(iOS)
@@ -101,7 +102,12 @@ struct EditProductView: View {
         }
         #endif
         .alert("Delete product?", isPresented: $showingDeleteConfirmation) {
-            Button("Delete", role: .destructive) { delete() }
+            DeleteButtonView(
+                label: "Delete",
+                action: {
+                    delete()
+                }
+            )
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("Are you sure you want to delete this product? You will delete all the informations added to it.")
