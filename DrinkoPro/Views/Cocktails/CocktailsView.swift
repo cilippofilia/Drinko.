@@ -111,6 +111,11 @@ struct CocktailsView: View {
                                             .swipeActions(edge: .leading, allowsFullSwipe: true) {
                                                 FavoriteCocktailButtonView(cocktail: cocktail)
                                                     .tint(favorites.contains(cocktail) ? .red : .blue)
+                                                if cocktail.id.hasPrefix("user-") {
+                                                    DeleteRowButtonView(action: {
+                                                        deleteUserCocktail(cocktail)
+                                                    })
+                                                }
                                             }
                                     }
                                 }
@@ -141,6 +146,11 @@ struct CocktailsView: View {
                                 .swipeActions(edge: .leading, allowsFullSwipe: true) {
                                     FavoriteCocktailButtonView(cocktail: cocktail)
                                         .tint(favorites.contains(cocktail) ? .red : .blue)
+                                    if cocktail.id.hasPrefix("user-") {
+                                        DeleteRowButtonView(action: {
+                                            deleteUserCocktail(cocktail)
+                                        })
+                                    }
                                 }
                         }
                     }
@@ -197,6 +207,15 @@ private extension CocktailsView {
             .filter { !$0.isEmpty }
         let set = Set(cleaned + fallback)
         return set.sorted()
+    }
+
+    func deleteUserCocktail(_ cocktail: Cocktail) {
+        withAnimation(.easeInOut) {
+            if favorites.contains(cocktail) {
+                favorites.remove(cocktail)
+            }
+            viewModel.deleteUserCocktail(cocktail)
+        }
     }
 
     var optionsMenu: some View {
