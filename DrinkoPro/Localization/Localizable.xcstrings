@@ -204,6 +204,12 @@
             "state" : "translated",
             "value" : "%.2f grammes"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f grammi"
+          }
         }
       }
     },
@@ -214,6 +220,12 @@
             "state" : "translated",
             "value" : "%.2f millilitres"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f millilitri"
+          }
         }
       }
     },
@@ -223,6 +235,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%.2f pourcentage"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f percento"
           }
         }
       }
@@ -263,6 +281,12 @@
             "state" : "translated",
             "value" : "%@ épluches"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ bucce"
+          }
         }
       }
     },
@@ -272,6 +296,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ épluche en grammes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ bucce in grammi"
           }
         }
       }
@@ -299,7 +329,7 @@
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ biccie"
+            "value" : "%@ bucce"
           }
         }
       }
@@ -399,6 +429,12 @@
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$2g %2$@"
+          }
+        },
+        "it" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$2g %2$@"
@@ -722,6 +758,12 @@
             "state" : "translated",
             "value" : "Ajouter un favori"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi Preferito"
+          }
         }
       }
     },
@@ -816,6 +858,12 @@
             "state" : "translated",
             "value" : "Ajouter aux favoris"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi ai preferiti"
+          }
         }
       }
     },
@@ -825,6 +873,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajoute un nouveau produit dans %@."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi un nuovo prodotto a %@"
           }
         }
       }
@@ -836,6 +890,12 @@
             "state" : "translated",
             "value" : "Ajoute une autre ligne d'ingrédients."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi una nuova"
+          }
         }
       }
     },
@@ -845,6 +905,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ajoute cette catégorie à votre armoire."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi questa categoria nel mobiletto"
           }
         }
       }
@@ -856,6 +922,12 @@
             "state" : "translated",
             "value" : "Alcool par volume"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume d’alcol"
+          }
         }
       }
     },
@@ -865,6 +937,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Taux d'alcool en volume"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volume d’alcol in percentuale"
           }
         }
       }
@@ -904,6 +982,12 @@
             "state" : "translated",
             "value" : "Montant en millilitres"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantità in millilitri"
+          }
         }
       }
     },
@@ -941,6 +1025,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Êtes-vous sûr de vouloir supprimer tous les produits et catégories?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sei sicuro di volere eliminare tutte i prodotti e categorie?"
           }
         }
       }
@@ -1123,6 +1213,12 @@
             "state" : "translated",
             "value" : "Par %@"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
         }
       }
     },
@@ -1188,6 +1284,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "En supprimant ce produit, vous supprimerez toutes les informations qu'il contient."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminando questo prodotto rimuoverai tutte le informazioni al suo interno."
           }
         }
       }
@@ -1312,6 +1414,12 @@
             "state" : "translated",
             "value" : "ABV calculé"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV estimato"
+          }
         }
       }
     },
@@ -1405,6 +1513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Détails de la catégorie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dettagli categoria"
           }
         }
       }
@@ -1558,6 +1672,12 @@
             "state" : "translated",
             "value" : "Acide citrique"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acido citrico"
+          }
         }
       }
     },
@@ -1708,6 +1828,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effondré"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Collassato"
           }
         }
       }
@@ -1891,6 +2017,12 @@
             "state" : "translated",
             "value" : "Crée une nouvelle catégorie."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea una nuova categoria"
+          }
         }
       }
     },
@@ -1988,6 +2120,12 @@
             "state" : "translated",
             "value" : "Tout supprimer"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina tutto"
+          }
         }
       }
     },
@@ -2025,6 +2163,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprimer l'ingrédient"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina Ingrediente"
           }
         }
       }
@@ -2150,6 +2294,12 @@
             "state" : "translated",
             "value" : "Appuyez deux fois pour %@ cette section."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doppio tap per %@ questa selezione."
+          }
         }
       }
     },
@@ -2215,6 +2365,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Éditer %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica %@"
           }
         }
       }
@@ -2369,6 +2525,12 @@
             "state" : "translated",
             "value" : "Agrandi"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Espanso"
+          }
         }
       }
     },
@@ -2406,6 +2568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favorite"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferito"
           }
         }
       }
@@ -2472,6 +2640,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cocktails filtrants"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtra cocktail"
           }
         }
       }
@@ -2709,6 +2883,12 @@
             "state" : "translated",
             "value" : "Image de%@"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Immagine di %@"
+          }
         }
       }
     },
@@ -2747,6 +2927,12 @@
             "state" : "translated",
             "value" : "Ingrédient %lld"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingrediente %lld"
+          }
         }
       }
     },
@@ -2756,6 +2942,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nom de l'ingrédient"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome ingrediente"
           }
         }
       }
@@ -3023,6 +3215,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Malice acide"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acido malico"
           }
         }
       }
@@ -3344,6 +3542,12 @@
             "state" : "translated",
             "value" : "Pas favori"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non favorito"
+          }
         }
       }
     },
@@ -3410,6 +3614,12 @@
             "state" : "translated",
             "value" : "Ouvre le lien externe."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri link esterno"
+          }
         }
       }
     },
@@ -3419,6 +3629,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvre les paramètres de langue macOS."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apre le impostazioni della lingua di macOS."
           }
         }
       }
@@ -3430,6 +3646,12 @@
             "state" : "translated",
             "value" : "Ouvre les détails du produit."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apre i dettagli del prodotto."
+          }
         }
       }
     },
@@ -3439,6 +3661,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvre les paramètres de langue du système."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apre le impostazioni della lingua di sistema."
           }
         }
       }
@@ -3450,6 +3678,12 @@
             "state" : "translated",
             "value" : "Ouvre le %@ calculateur de superjus."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apre il %@ calcolatore di superjuice."
+          }
         }
       }
     },
@@ -3459,6 +3693,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvre le calculateur d'alcool par volume."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apre l'alcol con il calcolatore di volume."
           }
         }
       }
@@ -3470,6 +3710,12 @@
             "state" : "translated",
             "value" : "Ouvre le guide de l'application."
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apre la guida all'app."
+          }
         }
       }
     },
@@ -3479,6 +3725,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvre la page d'évaluation de l'App Store."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apre la pagina di valutazione dell'App Store."
           }
         }
       }
@@ -3912,6 +4164,12 @@
             "state" : "translated",
             "value" : "Supprimer le favori"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rimuovi Preferito"
+          }
         }
       }
     },
@@ -3949,6 +4207,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprimer des favoris"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rimuovi dai preferiti"
           }
         }
       }
@@ -4017,6 +4281,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Supprime toutes les catégories et tous les produits."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rimuovi tutte le categorie e prodotti"
           }
         }
       }
@@ -4224,6 +4494,12 @@
             "state" : "translated",
             "value" : "Sélectionnez la couleur %@"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona colore %@"
+          }
         }
       }
     },
@@ -4234,6 +4510,12 @@
             "state" : "translated",
             "value" : "En activité"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Serve"
+          }
         }
       }
     },
@@ -4243,6 +4525,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Définir la note sur %lld"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imposta la valutazione su %lld"
           }
         }
       }
@@ -4338,6 +4626,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Afficher l'historique"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostra storia"
           }
         }
       }
@@ -5008,6 +5302,12 @@
             "state" : "translated",
             "value" : "Eau"
           }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acqua"
+          }
         }
       }
     },
@@ -5017,6 +5317,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eau en millilitres"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acqua in millilitri"
           }
         }
       }
