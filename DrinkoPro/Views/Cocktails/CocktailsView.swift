@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import TipKit
 
 struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
@@ -15,10 +14,6 @@ struct CocktailsView: View {
     @Environment(Favorites.self) private var favorites
     @State private var filterOption: CocktailsViewModel.FilterOption = .all
     @State var path = NavigationPath()
-
-    #if os(iOS)
-    var favoriteCocktailsTip = SwipeToFavoriteTip()
-    #endif
 
     private var visibleCocktails: [Cocktail] {
         viewModel.filteredCocktails(filterOption: filterOption) { cocktail in
@@ -122,9 +117,6 @@ struct CocktailsView: View {
                 ),
                 prompt: "Search Cocktails"
             )
-            #if os(iOS)
-            .popoverTip(favoriteCocktailsTip)
-            #endif
             .toolbar {
                 #if os(iOS)
                 ToolbarItemGroup(placement: .topBarTrailing) {
@@ -137,12 +129,6 @@ struct CocktailsView: View {
                     sortButtonMenu
                 }
                 #endif
-            }
-            .task {
-                try? Tips.configure([
-                    .displayFrequency(.immediate),
-                    .datastoreLocation(.applicationDefault)
-                ])
             }
         }
     }
