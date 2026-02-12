@@ -734,6 +734,7 @@
       }
     },
     "Add sample data" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -790,6 +791,9 @@
       }
     },
     "Add to favorites" : {
+
+    },
+    "Adds a new product in %@." : {
 
     },
     "Adds another ingredient row." : {
@@ -862,6 +866,9 @@
           }
         }
       }
+    },
+    "Are you sure you want to delete all products and categories?" : {
+
     },
     "Are you sure you want to delete this category? You will also delete all the products it contains." : {
       "localizations" : {
@@ -1092,6 +1099,9 @@
           }
         }
       }
+    },
+    "By deleting this product you will remove all the information inside it." : {
+
     },
     "By Glass" : {
       "localizations" : {
@@ -1757,6 +1767,9 @@
         }
       }
     },
+    "Creates a new category." : {
+
+    },
     "Delete" : {
       "localizations" : {
         "de" : {
@@ -1843,6 +1856,9 @@
           }
         }
       }
+    },
+    "Delete All" : {
+
     },
     "Delete Category" : {
       "localizations" : {
@@ -3182,6 +3198,12 @@
     "Opens external link." : {
 
     },
+    "Opens macOS language settings." : {
+
+    },
+    "Opens product details." : {
+
+    },
     "Opens system language settings." : {
 
     },
@@ -3189,6 +3211,12 @@
 
     },
     "Opens the alcohol by volume calculator." : {
+
+    },
+    "Opens the app guide." : {
+
+    },
+    "Opens the App Store rating page." : {
 
     },
     "Other Enquiry" : {
@@ -3704,6 +3732,9 @@
           }
         }
       }
+    },
+    "Removes all categories and products." : {
+
     },
     "Report a bug" : {
       "localizations" : {
