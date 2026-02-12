@@ -19,6 +19,7 @@ struct MacCabinetView: View {
     @State private var errorTitle: String = "Something went wrong"
     @State private var errorMessage: String = ""
     @State private var showError: Bool = false
+    @State private var showDeleteAlert: Bool = false
 
     @Query(sort: [
         SortDescriptor(\Category.name),
@@ -30,13 +31,22 @@ struct MacCabinetView: View {
             if categories.isEmpty {
                 MacCabinetUnavailableView(
                     showAddCategorySheet: $showAddCategorySheet,
-                    action: { showAddCategorySheet.toggle() },
-                    testAction: { insertMockCategories() }
+                    action: { showAddCategorySheet.toggle() }
                 )
             } else {
                 categoriesList
                     .navigationTitle("Cabinet")
             }
+        }
+        .alert(isPresented: $showDeleteAlert) {
+            Alert(
+                title: Text("Delete All"),
+                message: Text("Are you sure you want to delete all products and categories?"),
+                primaryButton: .destructive(Text("Delete")) {
+                    deleteAllCategoriesAndProducts()
+                },
+                secondaryButton: .cancel(Text("Cancel"))
+            )
         }
     }
 }
@@ -112,7 +122,7 @@ extension MacCabinetView {
                     systemImage: "trash",
                     role: .destructive
                 ) {
-                    deleteAllCategoriesAndProducts()
+                    showDeleteAlert = true
                 }
                 .accessibilityHint("Removes all categories and products.")
             }
@@ -133,22 +143,6 @@ extension MacCabinetView {
 
 // MARK: Private methods used for testing purposes
 extension MacCabinetView {
-    private func insertMockCategories() {
-        // Clear existing data first
-        deleteAllCategoriesAndProducts()
-
-        // Then insert fresh mock data
-        for mock in Category.mockCategories {
-            modelContext.insert(mock)
-        }
-        do {
-            try modelContext.save()
-        } catch {
-            showError.toggle()
-            errorMessage = "Please try again.\n\nFailed to save mock categories: \(error)"
-        }
-    }
-
     private func deleteAllCategoriesAndProducts() {
         do {
             // Delete all products first
