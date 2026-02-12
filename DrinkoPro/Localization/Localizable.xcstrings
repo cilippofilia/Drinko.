@@ -198,13 +198,34 @@
       }
     },
     "%.2f grams" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f grammes"
+          }
+        }
+      }
     },
     "%.2f millilitres" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f millilitres"
+          }
+        }
+      }
     },
     "%.2f percent" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f pourcentage"
+          }
+        }
+      }
     },
     "%@" : {
       "comment" : "Other strings + Generic strings",
@@ -236,10 +257,24 @@
       }
     },
     "%@ peels" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ épluches"
+          }
+        }
+      }
     },
     "%@ peels in grams" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ épluche en grammes"
+          }
+        }
+      }
     },
     "%@ peels: " : {
       "localizations" : {
@@ -360,6 +395,12 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
+            "value" : "%1$2g %2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
             "value" : "%1$2g %2$@"
           }
         }
@@ -675,7 +716,14 @@
       }
     },
     "Add Favorite" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un favori"
+          }
+        }
+      }
     },
     "Add ingredient" : {
       "localizations" : {
@@ -733,35 +781,6 @@
         }
       }
     },
-    "Add sample data" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beispieldaten hinzufügen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add sample data"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ajouter des données d'exemple"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aggiungi dati di esempio"
-          }
-        }
-      }
-    },
     "Add to Cart" : {
       "localizations" : {
         "de" : {
@@ -791,22 +810,64 @@
       }
     },
     "Add to favorites" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter aux favoris"
+          }
+        }
+      }
     },
     "Adds a new product in %@." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoute un nouveau produit dans %@."
+          }
+        }
+      }
     },
     "Adds another ingredient row." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoute une autre ligne d'ingrédients."
+          }
+        }
+      }
     },
     "Adds this category to your cabinet." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoute cette catégorie à votre armoire."
+          }
+        }
+      }
     },
     "Alcohol by volume" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alcool par volume"
+          }
+        }
+      }
     },
     "Alcohol by volume percentage" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taux d'alcool en volume"
+          }
+        }
+      }
     },
     "All Cocktails" : {
       "localizations" : {
@@ -837,7 +898,14 @@
       }
     },
     "Amount in millilitres" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montant en millilitres"
+          }
+        }
+      }
     },
     "Amount?" : {
       "localizations" : {
@@ -868,7 +936,14 @@
       }
     },
     "Are you sure you want to delete all products and categories?" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Êtes-vous sûr de vouloir supprimer tous les produits et catégories?"
+          }
+        }
+      }
     },
     "Are you sure you want to delete this category? You will also delete all the products it contains." : {
       "localizations" : {
@@ -1042,7 +1117,14 @@
       }
     },
     "By %@" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par %@"
+          }
+        }
+      }
     },
     "By deleting the category you will be deleting every product inside it." : {
       "localizations" : {
@@ -1101,7 +1183,14 @@
       }
     },
     "By deleting this product you will remove all the information inside it." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En supprimant ce produit, vous supprimerez toutes les informations qu'il contient."
+          }
+        }
+      }
     },
     "By Glass" : {
       "localizations" : {
@@ -1217,7 +1306,14 @@
       }
     },
     "Calculated ABV" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV calculé"
+          }
+        }
+      }
     },
     "Calculation Mode" : {
       "localizations" : {
@@ -1304,7 +1400,14 @@
       }
     },
     "Category details" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détails de la catégorie"
+          }
+        }
+      }
     },
     "Category Details" : {
       "localizations" : {
@@ -1449,7 +1552,14 @@
       }
     },
     "Citric acid" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Acide citrique"
+          }
+        }
+      }
     },
     "Citric Acid: " : {
       "localizations" : {
@@ -1593,7 +1703,14 @@
       }
     },
     "Collapsed" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effondré"
+          }
+        }
+      }
     },
     "Colors" : {
       "localizations" : {
@@ -1768,7 +1885,14 @@
       }
     },
     "Creates a new category." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crée une nouvelle catégorie."
+          }
+        }
+      }
     },
     "Delete" : {
       "localizations" : {
@@ -1858,7 +1982,14 @@
       }
     },
     "Delete All" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout supprimer"
+          }
+        }
+      }
     },
     "Delete Category" : {
       "localizations" : {
@@ -1889,7 +2020,14 @@
       }
     },
     "Delete ingredient" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer l'ingrédient"
+          }
+        }
+      }
     },
     "Delete Product" : {
       "localizations" : {
@@ -2006,7 +2144,14 @@
       }
     },
     "Double tap to %@ this section." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appuyez deux fois pour %@ cette section."
+          }
+        }
+      }
     },
     "Drink selection" : {
       "localizations" : {
@@ -2065,7 +2210,14 @@
       }
     },
     "Edit %@" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Éditer %@"
+          }
+        }
+      }
     },
     "Edit Category" : {
       "localizations" : {
@@ -2211,7 +2363,14 @@
       }
     },
     "Expanded" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agrandi"
+          }
+        }
+      }
     },
     "Extra" : {
       "localizations" : {
@@ -2242,7 +2401,14 @@
       }
     },
     "Favorite" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorite"
+          }
+        }
+      }
     },
     "Favorites Only" : {
       "localizations" : {
@@ -2301,7 +2467,14 @@
       }
     },
     "Filter cocktails" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktails filtrants"
+          }
+        }
+      }
     },
     "Garnish" : {
       "localizations" : {
@@ -2530,7 +2703,14 @@
       }
     },
     "Image of %@" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Image de%@"
+          }
+        }
+      }
     },
     "Info" : {
       "localizations" : {
@@ -2561,10 +2741,24 @@
       }
     },
     "Ingredient %lld" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingrédient %lld"
+          }
+        }
+      }
     },
     "Ingredient name" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de l'ingrédient"
+          }
+        }
+      }
     },
     "Ingredients" : {
       "comment" : "Cocktails Tab - CocktailView",
@@ -2824,7 +3018,14 @@
       }
     },
     "Malic acid" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Malice acide"
+          }
+        }
+      }
     },
     "Malic Acid: " : {
       "localizations" : {
@@ -3137,7 +3338,14 @@
       }
     },
     "Not favorite" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas favori"
+          }
+        }
+      }
     },
     "Notes" : {
       "localizations" : {
@@ -3196,28 +3404,84 @@
       }
     },
     "Opens external link." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre le lien externe."
+          }
+        }
+      }
     },
     "Opens macOS language settings." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre les paramètres de langue macOS."
+          }
+        }
+      }
     },
     "Opens product details." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre les détails du produit."
+          }
+        }
+      }
     },
     "Opens system language settings." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre les paramètres de langue du système."
+          }
+        }
+      }
     },
     "Opens the %@ superjuice calculator." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre le %@ calculateur de superjus."
+          }
+        }
+      }
     },
     "Opens the alcohol by volume calculator." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre le calculateur d'alcool par volume."
+          }
+        }
+      }
     },
     "Opens the app guide." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre le guide de l'application."
+          }
+        }
+      }
     },
     "Opens the App Store rating page." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre la page d'évaluation de l'App Store."
+          }
+        }
+      }
     },
     "Other Enquiry" : {
       "localizations" : {
@@ -3642,7 +3906,14 @@
       }
     },
     "Remove Favorite" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer le favori"
+          }
+        }
+      }
     },
     "Remove from Cart" : {
       "localizations" : {
@@ -3673,7 +3944,14 @@
       }
     },
     "Remove from favorites" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer des favoris"
+          }
+        }
+      }
     },
     "Remove like from post" : {
       "extractionState" : "manual",
@@ -3734,7 +4012,14 @@
       }
     },
     "Removes all categories and products." : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprime toutes les catégories et tous les produits."
+          }
+        }
+      }
     },
     "Report a bug" : {
       "localizations" : {
@@ -3933,13 +4218,34 @@
       }
     },
     "Select color %@" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sélectionnez la couleur %@"
+          }
+        }
+      }
     },
     "Serving" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En activité"
+          }
+        }
+      }
     },
     "Set rating to %lld" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Définir la note sur %lld"
+          }
+        }
+      }
     },
     "Settings" : {
       "comment" : "Settings Tab",
@@ -4027,7 +4333,14 @@
       }
     },
     "Show history" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher l'historique"
+          }
+        }
+      }
     },
     "show less" : {
       "extractionState" : "manual",
@@ -4689,10 +5002,24 @@
       }
     },
     "Water" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eau"
+          }
+        }
+      }
     },
     "Water in millilitres" : {
-
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eau en millilitres"
+          }
+        }
+      }
     },
     "Water: " : {
       "localizations" : {

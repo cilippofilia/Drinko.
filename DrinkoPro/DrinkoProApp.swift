@@ -14,7 +14,7 @@ struct DrinkoProApp: App {
     @State private var favorites = Favorites()
     @State private var cocktailsViewModel = CocktailsViewModel()
     @State private var lessonsViewModel = LessonsViewModel()
-    @Environment(\.scenePhase) private var scenePhase
+
     private let modelContainer: ModelContainer
 
     init() {
