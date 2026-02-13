@@ -85,7 +85,7 @@ struct ProductRowView: View {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
         
         return ProductRowView(product: Item(name: "Absolut Vodka", detail: "This is to test the detail section of a product", madeIn: "Portugal", abv: "43", tried: true, isFavorite: false))
             .modelContainer(previewer.container)

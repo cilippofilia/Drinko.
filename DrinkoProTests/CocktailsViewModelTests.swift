@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 06/01/2026.
 //
 
+import SwiftData
 import Testing
 @testable import DrinkoPro
 
@@ -13,6 +14,15 @@ import Testing
 struct CocktailsViewModelTests {
     private func makeViewModel() -> CocktailsViewModel {
         let vm = CocktailsViewModel()
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try! ModelContainer(
+            for: UserCreatedCocktail.self,
+            UserIngredient.self,
+            UserProcedure.self,
+            UserProcedureStep.self,
+            configurations: config
+        )
+        vm.configure(modelContext: container.mainContext)
         // Overwrite with deterministic data to avoid bundle dependencies
         vm.listOfCocktails = [
             Cocktail(
@@ -50,7 +60,6 @@ struct CocktailsViewModelTests {
         ]
         vm.histories = []
         vm.procedures = []
-        vm.userCocktails = []
         return vm
     }
 
@@ -117,18 +126,16 @@ struct CocktailsViewModelTests {
     @Test("Filter option: user created only")
     func filterUserCreatedOnly() async throws {
         let vm = makeViewModel()
-        vm.userCocktails = [
-            Cocktail(
-                id: "user-custom-1",
-                name: "My Custom Drink",
-                method: "Build",
-                glass: "Rocks",
-                garnish: "Orange peel",
-                ice: "Cubed",
-                extra: "",
-                ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")]
-            )
-        ]
+        vm.addUserCocktail(
+            name: "My Custom Drink",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "Orange peel",
+            ice: "Cubed",
+            extra: "",
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")],
+            procedureSteps: []
+        )
         let result = vm.filteredCocktails(filterOption: .userCreatedOnly) { _ in false }
         #expect(result.map { $0.name } == ["My Custom Drink"])
     }

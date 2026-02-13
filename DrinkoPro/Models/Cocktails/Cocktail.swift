@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 23/04/2023.
 //
 
+import SwiftData
 import SwiftUI
 
 struct Cocktail: Codable, Equatable, Identifiable, Hashable {
@@ -79,10 +80,12 @@ struct Procedure: Codable, Equatable, Identifiable {
 class CocktailsViewModel {
     var listOfCocktails: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
     var listOfShots: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "shots.json")
-    var userCocktails: [Cocktail] = []
+    private(set) var userCreatedCocktails: [UserCreatedCocktail] = []
+    private(set) var userCocktails: [Cocktail] = []
     var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
     var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
     var userProcedures: [Procedure] = []
+    private var modelContext: ModelContext?
 
     var listOfAllDrinks: [Cocktail] {
         listOfCocktails + listOfShots + userCocktails
@@ -92,6 +95,24 @@ class CocktailsViewModel {
 
     var sortedCocktails: [Cocktail] {
         sortedCocktails(in: listOfAllDrinks)
+    }
+
+    func configure(modelContext: ModelContext) {
+        self.modelContext = modelContext
+        loadUserCreatedCocktails()
+    }
+
+    func loadUserCreatedCocktails() {
+        guard let modelContext else { return }
+        let descriptor = FetchDescriptor<UserCreatedCocktail>(
+            sortBy: [SortDescriptor(\.creationDate, order: .reverse)]
+        )
+        do {
+            userCreatedCocktails = try modelContext.fetch(descriptor)
+            refreshUserMappings()
+        } catch {
+            print("Warning: Unable to fetch user cocktails: \(error)")
+        }
     }
 
     func getCocktailHistory(for cocktail: Cocktail) -> History? {
@@ -225,26 +246,28 @@ class CocktailsViewModel {
         ingredients: [Ingredient],
         procedureSteps: [String]
     ) {
-        let newCocktail = Cocktail(
-            id: makeUserCocktailID(from: name),
-            name: name,
+        guard let modelContext else { return }
+        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let newCocktail = UserCreatedCocktail(
+            name: trimmedName,
             method: method,
             glass: glass,
             garnish: garnish,
             ice: ice,
             extra: extra,
-            ingredients: ingredients
+            ingredients: ingredients.map {
+                UserIngredient(name: $0.name, quantity: $0.quantity, unit: $0.unit)
+            },
+            procedure: makeUserProcedure(from: procedureSteps),
+            creationDate: Date(),
+            lastUpdated: nil
         )
-        userCocktails.append(newCocktail)
-
-        let mappedProcedureSteps = procedureSteps.enumerated().map { index, text in
-            Procedure.Steps(step: "Step \(index + 1)", text: text)
+        newCocktail.ingredients?.forEach { $0.cocktail = newCocktail }
+        if let procedure = newCocktail.procedure {
+            procedure.cocktail = newCocktail
         }
-        if !mappedProcedureSteps.isEmpty {
-            userProcedures.append(
-                Procedure(id: newCocktail.id, procedure: mappedProcedureSteps)
-            )
-        }
+        modelContext.insert(newCocktail)
+        saveUserCocktails()
     }
 
     func updateUserCocktail(
@@ -258,49 +281,72 @@ class CocktailsViewModel {
         ingredients: [Ingredient],
         procedureSteps: [String]
     ) {
-        guard let index = userCocktails.firstIndex(where: { $0.id == cocktail.id }) else {
+        guard let modelContext else { return }
+        guard let existing = userCreatedCocktails.first(where: { $0.id == cocktail.id }) else {
             return
         }
 
-        let updatedCocktail = Cocktail(
-            id: cocktail.id,
-            name: name,
-            method: method,
-            glass: glass,
-            garnish: garnish,
-            ice: ice,
-            extra: extra,
-            ingredients: ingredients
-        )
-
-        userCocktails[index] = updatedCocktail
-
-        userProcedures.removeAll { $0.id == cocktail.id }
-        let mappedProcedureSteps = procedureSteps.enumerated().map { index, text in
-            Procedure.Steps(step: "Step \(index + 1)", text: text)
+        existing.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        existing.method = method
+        existing.glass = glass
+        existing.garnish = garnish
+        existing.ice = ice
+        existing.extra = extra
+        existing.lastUpdated = Date()
+        existing.ingredients = ingredients.map {
+            UserIngredient(name: $0.name, quantity: $0.quantity, unit: $0.unit)
         }
-        if !mappedProcedureSteps.isEmpty {
-            userProcedures.append(
-                Procedure(id: cocktail.id, procedure: mappedProcedureSteps)
-            )
-        }
+        existing.ingredients?.forEach { $0.cocktail = existing }
+        existing.procedure = makeUserProcedure(from: procedureSteps)
+        existing.procedure?.cocktail = existing
+        saveUserCocktails()
     }
 
     func deleteUserCocktail(_ cocktail: Cocktail) {
+        guard let modelContext else { return }
+        guard let existing = userCreatedCocktails.first(where: { $0.id == cocktail.id }) else {
+            return
+        }
         withAnimation {
-            userCocktails.removeAll { $0.id == cocktail.id }
-            userProcedures.removeAll { $0.id == cocktail.id }
+            modelContext.delete(existing)
+            saveUserCocktails()
         }
     }
 
-    private func makeUserCocktailID(from name: String) -> String {
-        let normalizedName = name
-            .lowercased()
-            .trimmingCharacters(in: .whitespacesAndNewlines)
-            .replacingOccurrences(of: "[^a-z0-9]+", with: "-", options: .regularExpression)
-            .trimmingCharacters(in: CharacterSet(charactersIn: "-"))
-        let fallback = normalizedName.isEmpty ? "user-cocktail" : normalizedName
-        return "user-\(fallback)-\(UUID().uuidString.prefix(6).lowercased())"
+    private func saveUserCocktails() {
+        guard let modelContext else { return }
+        do {
+            try modelContext.save()
+            loadUserCreatedCocktails()
+        } catch {
+            print("Warning: Unable to save user cocktails: \(error)")
+        }
+    }
+
+    private func refreshUserMappings() {
+        userCocktails = userCreatedCocktails.map { $0.cocktail }
+        userProcedures = userCreatedCocktails.compactMap { userCocktail in
+            guard let procedure = userCocktail.procedure else { return nil }
+            let sortedSteps = (procedure.steps ?? []).sorted { $0.order < $1.order }
+            let mappedSteps = sortedSteps.map { step in
+                Procedure.Steps(step: "Step \(step.order)", text: step.text)
+            }
+            guard !mappedSteps.isEmpty else { return nil }
+            return Procedure(id: userCocktail.id, procedure: mappedSteps)
+        }
+    }
+
+    private func makeUserProcedure(from steps: [String]) -> UserProcedure? {
+        let trimmed = steps
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        guard !trimmed.isEmpty else { return nil }
+        let mappedSteps = trimmed.enumerated().map { index, text in
+            UserProcedureStep(text: text, order: index + 1)
+        }
+        let procedure = UserProcedure(steps: mappedSteps)
+        procedure.steps?.forEach { $0.procedure = procedure }
+        return procedure
     }
 }
 

@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
+import SwiftData
 import SwiftUI
 import TipKit
 
@@ -13,10 +14,13 @@ struct CocktailsView: View {
 
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
+    @Environment(\.modelContext) private var modelContext
+
     @State private var filterOption: CocktailsViewModel.FilterOption = .all
-    @State private var showCustomCocktailSheet = false
+    @State private var showCreateCocktailSheet: Bool = false
     @State private var showDeleteAlert: Bool = false
     @State private var cocktailPendingDeletion: Cocktail = .userCreatedExample
+    @State private var didConfigureModelContext: Bool = false
 
     @State var path = NavigationPath()
 
@@ -93,9 +97,9 @@ struct CocktailsView: View {
                     }
                     #endif
                 }
-                .sheet(isPresented: $showCustomCocktailSheet) {
+                .sheet(isPresented: $showCreateCocktailSheet) {
                     NavigationStack {
-                        AddCustomCocktailView(
+                        AddUserCocktailView(
                             methodOptions: methodOptions,
                             glassOptions: glassOptions,
                             iceOptions: iceOptions,
@@ -116,6 +120,12 @@ struct CocktailsView: View {
                     Button("Cancel", role: .cancel) { }
                 } message: {
                     Text("This will permanently remove your cocktail.")
+                }
+                .task {
+                    if !didConfigureModelContext {
+                        viewModel.configure(modelContext: modelContext)
+                        didConfigureModelContext = true
+                    }
                 }
                 .task {
                     try? Tips.configure([
@@ -369,7 +379,7 @@ private extension CocktailsView {
 
     var addCocktailButton: some View {
         Button {
-            showCustomCocktailSheet = true
+            showCreateCocktailSheet = true
         } label: {
             Image(systemName: "plus")
         }

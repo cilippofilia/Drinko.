@@ -105,7 +105,7 @@ extension EditCategoryView {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
         
         return EditCategoryView(category: previewer.category, navigationPath: .constant(NavigationPath()))
             .modelContainer(previewer.container)
