@@ -193,6 +193,12 @@ private extension CocktailsView {
                 }
             },
             actions: {
+                if filterOption == .userCreatedOnly {
+                    Button("Clear filter", systemImage: "xmark.circle") {
+                        filterOption = .all
+                    }
+                    .buttonStyle(.bordered)
+                }
                 if !viewModel.searchText.isEmpty {
                     Button("Clear Search", systemImage: "xmark.circle") {
                         viewModel.searchText = ""

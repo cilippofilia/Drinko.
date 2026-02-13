@@ -1869,6 +1869,34 @@
         }
       }
     },
+    "Clear filter" : {
+        "localizations" : {
+          "de" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Filter löschen"
+            }
+          },
+          "en" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Clear filter"
+            }
+          },
+          "fr" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Effacer le filtre"
+            }
+          },
+          "it" : {
+            "stringUnit" : {
+              "state" : "translated",
+              "value" : "Rimuovi filtro"
+            }
+          }
+        }
+    },
     "Clear Search" : {
       "localizations" : {
         "de" : {
