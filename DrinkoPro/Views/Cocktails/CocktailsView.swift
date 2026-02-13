@@ -193,7 +193,7 @@ private extension CocktailsView {
                 }
             },
             actions: {
-                if filterOption == .userCreatedOnly {
+                if filterOption == .userCreatedOnly || filterOption == .favoritesOnly {
                     Button("Clear filter", systemImage: "xmark.circle") {
                         filterOption = .all
                     }
