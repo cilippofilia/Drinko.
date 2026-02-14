@@ -165,13 +165,15 @@ struct UserCocktailForm: View {
                 }
                 Picker("Glass", selection: $glass) {
                     ForEach(glassOptions, id: \.self) { option in
-                        Text(option.capitalizingFirstLetter()).tag(option)
+                        Text(option.capitalizingFirstLetter())
+                            .tag(option)
                     }
                 }
                 TextField("Garnish", text: $garnish)
                 Picker("Ice", selection: $ice) {
                     ForEach(iceOptions, id: \.self) { option in
-                        Text(option.capitalizingFirstLetter()).tag(option)
+                        Text(option.capitalizingFirstLetter())
+                            .tag(option)
                     }
                 }
             }
@@ -188,7 +190,8 @@ struct UserCocktailForm: View {
                                 #endif
                             Picker("Unit", selection: $ingredientDrafts[index].unit) {
                                 ForEach(unitOptions, id: \.self) { unit in
-                                    Text(unit).tag(unit)
+                                    Text(unit)
+                                        .tag(unit)
                                 }
                             }
                         }
@@ -324,4 +327,5 @@ struct UserCocktailForm: View {
 
 #Preview {
     UserCocktailForm(methodOptions: [], glassOptions: [], iceOptions: [], unitOptions: [])
+        .environment(CocktailsViewModel())
 }
