@@ -20,6 +20,7 @@ struct SettingsView: View {
                 SettingsInfoView()
             }
             .navigationTitle("Settings")
+            .scrollBounceBehavior(.basedOnSize)
         }
     }
 }
