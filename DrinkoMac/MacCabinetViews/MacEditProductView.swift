@@ -157,7 +157,7 @@ struct MacEditProductView: View {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
         
         return MacEditProductView(product: Item(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", madeIn: "", abv: "45", rating: 5, tried: false, creationDate: Date.now))
             .modelContainer(previewer.container)

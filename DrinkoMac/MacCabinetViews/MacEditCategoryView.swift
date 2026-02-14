@@ -137,7 +137,7 @@ extension MacEditCategoryView {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
 
         return MacEditCategoryView(category: previewer.category)
             .modelContainer(previewer.container)

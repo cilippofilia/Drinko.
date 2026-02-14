@@ -108,9 +108,7 @@ struct AddCategoryView: View {
                     }
                 } header: {
                     Button {
-                        withAnimation {
-                            isColorsCollapsed.toggle()
-                        }
+                        isColorsCollapsed.toggle()
                     } label: {
                         HStack {
                             Image(systemName: "chevron.down")

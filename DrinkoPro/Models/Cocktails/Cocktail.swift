@@ -307,10 +307,8 @@ class CocktailsViewModel {
         guard let existing = userCreatedCocktails.first(where: { $0.id == cocktail.id }) else {
             return
         }
-        withAnimation {
-            modelContext.delete(existing)
-            saveUserCocktails()
-        }
+        modelContext.delete(existing)
+        saveUserCocktails()
     }
 
     private func saveUserCocktails() {

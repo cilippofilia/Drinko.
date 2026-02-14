@@ -8,31 +8,29 @@
 import SwiftUI
 
 struct LearnHeaderView: View {
+    @Binding var isCollapsed: Bool
     let text: String
-    let isCollapsed: Binding<Bool>
 
     var body: some View {
         Button {
-            withAnimation {
-                isCollapsed.wrappedValue.toggle()
-            }
+            isCollapsed.toggle()
         } label: {
             HStack {
                 Image(systemName: "chevron.down")
-                    .rotationEffect(Angle(degrees: isCollapsed.wrappedValue ? -90 : 0))
-                    .animation(.snappy, value: isCollapsed.wrappedValue)
+                    .rotationEffect(Angle(degrees: isCollapsed ? -90 : 0))
+                    .animation(.snappy, value: isCollapsed)
                 Text(text)
             }
         }
         .buttonStyle(.plain)
         .accessibilityLabel(text)
-        .accessibilityValue(isCollapsed.wrappedValue ? "Collapsed" : "Expanded")
-        .accessibilityHint("Double tap to \(isCollapsed.wrappedValue ? "expand" : "collapse") this section.")
+        .accessibilityValue(isCollapsed ? "Collapsed" : "Expanded")
+        .accessibilityHint("Double tap to \(isCollapsed ? "expand" : "collapse") this section.")
     }
 }
 
 #if DEBUG
 #Preview {
-    LearnHeaderView(text: "Advanced", isCollapsed: .constant(true))
+    LearnHeaderView(isCollapsed: .constant(false), text: "Advanced")
 }
 #endif

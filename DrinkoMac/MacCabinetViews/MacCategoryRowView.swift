@@ -44,7 +44,7 @@ struct MacCategoryRowView: View {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
 
         return MacCategoryRowView(category: previewer.category, action: { })
             .modelContainer(previewer.container)
