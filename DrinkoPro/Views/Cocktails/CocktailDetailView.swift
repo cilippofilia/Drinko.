@@ -109,20 +109,22 @@ struct CocktailDetailView: View {
                 Divider()
 
                 if let procedure = viewModel.getCocktailProcedure(for: activeCocktail) {
-                    CocktailRelatedSection(cocktail: activeCocktail, procedure: procedure)
-
-                    Divider()
+                    ProcedureView(
+                        cocktail: cocktail,
+                        procedure: procedure
+                    )
+                    .padding(.top, 8)
                 }
 
                 if !viewModel.getLinkedCocktails(for: activeCocktail).isEmpty {
                     Text("You may also like")
                         .font(sizeClass == .compact ? .title3.bold() : .title.bold())
-                        .padding(.vertical)
+                        .padding(.top, 8)
 
                     LinkedCocktailsView(
-                        cocktails: viewModel.getLinkedCocktails(for: activeCocktail),
-                        procedure: viewModel.getCocktailProcedure(for: activeCocktail)
+                        cocktails: viewModel.getLinkedCocktails(for: activeCocktail)
                     )
+                    .padding(.bottom, 8)
 
                     Divider()
                 }

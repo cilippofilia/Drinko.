@@ -15,10 +15,6 @@ struct CocktailRelatedSection: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ProcedureView(
-                cocktail: cocktail,
-                procedure: procedure
-            )
         }
         .padding(.vertical)
     }

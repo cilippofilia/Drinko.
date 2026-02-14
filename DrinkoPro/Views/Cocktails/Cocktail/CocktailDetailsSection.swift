@@ -12,7 +12,7 @@ struct CocktailDetailsSection: View {
     let selectedUnit: String
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 8) {
             CocktailDetailSectionView(
                 cocktail: cocktail,
                 text: "Ingredients"
@@ -48,7 +48,7 @@ struct CocktailDetailsSection: View {
                 text: "Extra"
             )
         }
-        .padding(.vertical)
+        .padding(.vertical, 8)
     }
 }
 
