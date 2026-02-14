@@ -99,7 +99,7 @@ struct CocktailsView: View {
                 }
                 .sheet(isPresented: $showCreateCocktailSheet) {
                     NavigationStack {
-                        AddUserCocktailView(
+                        UserCocktailForm(
                             methodOptions: methodOptions,
                             glassOptions: glassOptions,
                             iceOptions: iceOptions,

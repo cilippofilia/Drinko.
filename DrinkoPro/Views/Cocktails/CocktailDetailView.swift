@@ -77,7 +77,7 @@ struct CocktailDetailView: View {
         }
         .sheet(isPresented: $showEditSheet) {
             NavigationStack {
-                AddUserCocktailView(
+                UserCocktailForm(
                     methodOptions: methodOptions,
                     glassOptions: glassOptions,
                     iceOptions: iceOptions,

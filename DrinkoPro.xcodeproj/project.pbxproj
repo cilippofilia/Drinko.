@@ -190,7 +190,6 @@
 		18A929EE2F12C91A00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				AddUserCocktailView.swift,
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
 				CocktailImageHeader.swift,
@@ -200,13 +199,13 @@
 				IngredientsView.swift,
 				LinkedCocktailsView.swift,
 				ProcedureView.swift,
+				UserCocktailForm.swift,
 			);
 			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
 		};
 		18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				AddUserCocktailView.swift,
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
 				CocktailImageHeader.swift,
@@ -216,6 +215,7 @@
 				IngredientsView.swift,
 				LinkedCocktailsView.swift,
 				ProcedureView.swift,
+				UserCocktailForm.swift,
 			);
 			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
 		};

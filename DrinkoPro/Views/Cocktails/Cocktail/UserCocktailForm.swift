@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddUserCocktailView: View {
+struct UserCocktailForm: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(CocktailsViewModel.self) private var viewModel
 
@@ -323,5 +323,5 @@ struct AddUserCocktailView: View {
 }
 
 #Preview {
-    AddUserCocktailView(methodOptions: [], glassOptions: [], iceOptions: [], unitOptions: [])
+    UserCocktailForm(methodOptions: [], glassOptions: [], iceOptions: [], unitOptions: [])
 }
