@@ -1,151 +1,122 @@
 [
-    {
-        "id":"cosmopolitan",
-        "text":"Bartending legend Dale \"King Cocktail\" DeGroff discovered the Cosmopolitan at the Fog City Diner in San Francisco in the mid-1990s. He then perfected his own recipe for the cocktail, including his signature flamed orange zest twist as a garnish, while working at the Rainbow Rooms in Manhattan.\n\nDeGroff has never claimed to have invented the Cosmopolitan. In his 2002 book \"The Craft of Cocktail\", he explains that he popularized a definitive recipe that became widely accepted as the standard.\n\nThe Cosmopolitan gained immense popularity after it was frequently shown on the television show \"Sex and the City\", with the characters often sipping Cosmos and wondering why they ever stopped drinking them. The show's influence helped the cocktail become a household name."
-    },
-    
-    {
-        "id":"espresso-martini",
-        "text":"This cocktail was invented by Dick Bradsell back in 1983 at the Soho Brasserie. Its original name was \"Vodka Espresso\", then called \"Pharmaceutical Stimulant\", and finally \"Espresso Martini\". Dick Bradsell is credited with revolutionizing the cocktail scene in London during that time, through his work at bars such as The Player, 6 Degrees, and Match, and the invention of the Bramble cocktail. The story goes that Bradsell created the drink when a young model asked for something to \"wake me up and fuck me up\". His solution was a combination of vodka, fresh espresso, coffee liqueur, and sugar, shaken into a frothy mix of bittersweet addiction."
-    },
-    
-    {
-        "id":"tommys-margarita",
-        "text":"This cocktail was created in 1988 by Julio Bermejo and named after his family's Mexican restaurant and bar in San Francisco, Tommy's. The restaurant was founded by Tomas and Elmy Bermejo in 1965 and is still a family-run establishment today, with all five of their children actively involved in its operation.\n\nThanks to his extensive knowledge of tequila and exceptional bartending skills, Julio has become a renowned figure in the drinks industry and a legend among his peers."
-    },
-    
-    {
-        "id":"zombie",
-        "text":"This cocktail, known as the Zombie, was first created in 1934 by Ernest Raymond Beaumont Gantt, who was better known as Donn the Beachcomber. Although many stories exist about the origins of the Zombie, it is likely that Donn himself was responsible for most of them.\n\nOne amusing but unlikely story is that the drink was invented for a businessman who needed help with his hangover and to get him through a tough meeting. The customer later reported back to Donn that he felt like the living dead, and said \"it made a zombie out of me\".\n\nFor many years, the recipe for the Zombie remained a mystery due to Donn's careful system of ingredient secrecy. However, thanks to the efforts of tiki revivalist Jeff \"BeachBum\" Berry, we can now make the Zombie cocktail in the comfort and safety of our own homes."
-    },
-    
-    {
-        "id":"pisco-sour",
-        "text":"The origin of this wonderful South American cocktail is somewhat unclear, as multiple people claim to have invented it. However, the most widely accepted story is that it originated in the early 1920s at the Morris Bar in Lima, Peru. The bar was owned by Victor Vaughen Morris, an American who had moved to Peru for the mining trade in 1903. The cocktail was first created as an alternative to the Whiskey Sour, a popular drink at the time.\n\nThe modern version of the cocktail was created in the late 1920s, when bartender Mario Bruige added Angostura bitters and egg white to the recipe. This new version of the cocktail quickly gained popularity and is now enjoyed all over the world."
-    },
-    
-    {
-        "id":"americano-cocktail",
-        "text":"Although it is highly likely that it originated as a variation of the Milano-Torino, there are several hypotheses about its creation. One such hypothesis dates back to 1933, suggesting that the drink was created in tribute to the boxer Primo Carnera, who was nicknamed \"the Americano\" due to his successes in the USA. According to some sources, even the political propaganda of the time promoted this association between the Italian boxer and the drink's ingredients, all of which were of Italian origin.\n\nAnother hypothesis suggests that its creation was a marketing strategy by the Martini & Rossi brand to export their vermouth to the United States."
-    },
-    
-    {
-        "id":"aperol-spritz",
-        "text":"The origin of the spritz can be traced back to the custom of the troops of the Austrian Empire stationed in the Lombard-Veneto Kingdom of mixing local wines, which had high alcohol content, with seltzer or sparkling water. The name of the drink comes from the German-Austrian verb \"spritzer\", which means \"to sprinkle\".\n\nAs a cocktail, the spritz is believed to have originated between the 1920s and 1930s in the areas around Venice and Padua, where people combined this custom with Aperol or Select to create the classic cocktail we know today."
-    },
-    
-    {
-        "id":"bellini",
-        "text":"The Bellini was first created in 1948 by Giuseppe Cipriani, the head bartender at Harry's Bar in Venice. Cipriani named the cocktail after the Venetian painter, Giovanni “il Giambellino” Bellini, because of its pink color which reminded him of the color of a tailor's toga in one of Bellini's paintings.\n\nOriginally a seasonal specialty of Harry's Bar, the Bellini quickly became a favorite of many celebrities, including Ernest Hemingway, Gianni Agnelli, Sinclair Lewis, and Orson Welles.\n\nAfter a French entrepreneur established a trade route to transport peach pulp to the US, the Bellini also gained popularity at Harry's Bar in New York. In a short period of time, it became a classic cocktail and is now enjoyed in bars around the world."
-    },
-    
-    {
-        "id":"bloody-mary",
-        "text":"The Bloody Mary cocktail was invented between the 1920s and 1930s, and there are various theories about its origin and name.\n\nOne theory is that French bartender Fernand Petiot created the drink in 1921 while working at Harry's New York Bar in Paris. Another theory suggests that it was invented in 1930 by Henry Zbikiwicz at New York's \"21 Club\", while others attribute its invention to comedian George Jessel, who was a frequent patron of the same bar.\n\nThere are different stories behind the name, but my favorite is from George Jessel's autobiography, \"The World I Live In\". Jessel recalls a particularly long night in Palm Beach in 1927, where he mixed vodka with tomato juice and spices for himself and his friends by 8 am. When he handed a glass to socialite Mary Brown Warburton, who was still in her white dress from the night before, she promptly spilled it down the front of her dress and exclaimed, \"Now you can call me Bloody Mary, George!\"."
-    },
-    
-    {
-        "id":"boulevardier",
-        "text":"The Boulevardier cocktail was created by Harry McElhone, a bartender at the New York Bar in Paris, for Erskine Gwynne, an American expatriate who also happened to be the editor of a monthly magazine called \"The Boulevardier\". This is how the drink got its name. The recipe for the cocktail was first published in Gwynne's 1927 book \"Barflies and Cocktails\".\n\nEssentially, the Boulevardier is a variation of the Negroni, but instead of using gin, it's made with bourbon. It's worth noting that the Negroni recipe wasn't published until 20 years after the Boulevardier, and in 1927, many Americans were not yet familiar with Campari, a key ingredient in both drinks."
-    },
-    
-    {
-        "id":"caipirinha",
-        "text":"Although the origin of the drink is unknown, the Caipiriña was invented by landowning farmers in the region of Piracicaba, São Paulo Brazil, during the 19th century as a local drink for “high standard” events and parties.\nCaipirinha is the strongest national cocktail of Brazil, and is imbibed in bars, restaurants, and many households throughout the country.\nIts name is the diminutive of the word “caipira” which refers to someone from the countryside."
-    },
-    
-    {
-        "id":"champagne-cocktail",
-        "text":"The origin of this drink is shrouded in mystery, dating back to what is sometimes referred to as the Iron Age of American mixology - a period between the invention of cocktails and the publication of the first cocktail book in 1862.\n\nInterestingly, the first written mention of the Champagne Cocktail appears in the book \"Panama in 1855\" by Robert Tomes, where he describes how to make it in some detail. This not only proves that Champagne Cocktails were being made prior to 1855, but also that they were made in a tumbler over crushed ice and without cognac or brandy.\n\nIt's fascinating to discover the origins of this classic cocktail, and the fact that it has been enjoyed for so long is a testament to its enduring appeal."
-    },
-    
-    {
-        "id":"clover-club",
-        "text":"The Clover Club Cocktail is a drink that was created prior to Prohibition in the United States, and takes its name from the Philadelphia men's club of the same name. The club met at the Bellevue-Stratford Hotel at the corner of South Broad and Walnut Streets in Center City. The Clover Club was established in 1896, as detailed in the 1897 book \"The Clover Club of Philadelphia\" by Mary R. Deacon.\n\nRecipes for the Clover Club Cocktail were published as early as 1917 in the book \"The Ideal Bartender\" by Thomas Bullock."
-    },
-
-    {
-        "id":"daiquiri",
-        "text":"While many vintage drinks lack documentation to prove their precise point of creation, the daiquiri's origin is backed up by an actual cocktail recipe card signed by 'Jennings Cox' in 1896. Cox, an American engineer who lived and worked in Cuba after the Spanish-American War, is believed to have invented the daiquiri after running out of gin while throwing a cocktail party. Since rum is plentiful in the country, it proved to be a convenient substitute in a punch he was serving. Unlike what is stated on his recipe card, the drink was made with limes and brown sugar. It turned out to be a huge hit, and Cox christened it the 'Daiquiri,' naming the drink after a nearby port town, which also happened to be where the U.S. first invaded Cuba during the Spanish-American War.\n\nHowever, considering the island's abundance of lime, sugar, and rum, it's likely that Cox was merely the first to pen the recipe of a cocktail that had already existed in Cuba. Not to mention that a prototype of the daiquiri had been saving the British Royal Navy from scurvy for centuries before.",
-    },
-
-    {
-        "id":"french-75",
-        "text":"One of the first recorded recipes for the French 75 comes from The Savoy Cocktail Book in 1930, but the true nature of its origin is slightly muddled. One school of thought believes that Scot Harry MacElhone, owner of Harry’s American Bar in Paris, named the drink in 1926. The inspiration for the title was apparently a 75mm Howitzer field gun used by the French and the Americans in World War I. The gun was known for its accuracy and speed, and the French 75 is said to have such a kick that it felt like being hit by just such a weapon. However, the cocktail’s history delves back further than the 1920s. Charles Dickens was known to serve his callers Tom gin and champagne cups as far back as 1867, and there are many stories from the 19th century of noble gentlemen, like the Prince of Wales, enjoying similar concoctions."
-    },
-    
-    {
-        "id":"gimlet",
-        "text":"This cocktail rose to popularity after being mentioned in the 1953 Raymond Chandler novel “The Long Goodbye” where the main character, Philip Marlowe, said “A real gimlet is half gin and half Rose’s Lime Juice and nothing else. It beats Martinis hollow”.\nHowever, the history of this drink goes back further, as it is believed to have been served to sailors in the British Royal Navy as a means of fighting scurvy. Rose’s Lime Juice was created in 1867 as a way to preserve lime juice without alcohol, and by mixing the juice with Navy Strength Gin, the gimlet was born. By the mid-20th century, the Gimlet was a popular cocktail among naval officers and in British society."
-    },
-    
-    {
-        "id":"hemingway-daiquiri",
-        "text":"The Hemingway Daiquiri originated when Ernest Hemingway entered a bar named \"El Floridita\" in Havana, Cuba, and noticed a row of frosty Daiquiris on the counter. Curious, he asked the bartender if he could try one, and the bartender obliged. Hemingway enjoyed the drink but remarked that he preferred it without the sugar and with double the amount of rum. The bartender promptly mixed a new version of the drink according to Hemingway's preferences, and it became known as the Papa Doble, or Double Frozen Daiquiri.\n\nHemingway developed a strong affinity for the drink and would often consume it in large quantities. It is said that he once drank 17 Papa Dobles in a single day, and he claimed in a letter to writer Harvey Breit that he didn't even suffer a hangover the next day. He attributed this to the cocktail's sugar-free preparation and a steak sandwich he ate.\n\nOverall, the Hemingway Daiquiri is a testament to Hemingway's love of rum and his preference for strong, uncomplicated cocktails."
-    },
-    
-    {
-        "id":"mai-tai",
-        "text":"The Mai Tai is one of the quintessential cocktails in Tiki culture. This tale began in 1944, according to Victor J. Bergeron, better known as Trader Vic. He tells the story of the day when he was serving two friends, Eastham and Carrie Guild from Tahiti, at his restaurant, \"Trader Vic\", in Oakland, California. After serving the drink to his friends, Carrie took a sip and exclaimed, \"Mai Tai-Roa Aé\", which means \"Out of this world - the best\"."
-    },
-    
-    {
-        "id":"manhattan",
-        "text":"As with many classic cocktails, the origin story of the Manhattan is shrouded in mystery. The most popular theory suggests that the recipe was invented by Dr. Iain Marshall in the early 1880s for a party hosted by Lady Randolph Churchill, the mother of Winston Churchill, at the Manhattan Club in New York. However, this theory has been debunked because Lady Randolph Churchill was pregnant and in England at the time. A more plausible story comes from the 1923 book \"Valentine's Manual of New York\", which recounts that William F. Mulhall, a bartender at New York's Hoffman House in the 1880s, claimed the Manhattan cocktail was invented by a man named Black who owned a place ten doors below Houston Street on Broadway."
-    },
-    
-    {
-        "id":"margarita",
-        "text":"The Margarita is believed to be a tequila-based version of the Daisy, a style of drink that dates back to Victorian times, as \"Margarita\" is Spanish for \"daisy\".\n\nThere are several claims about the invention and naming of the Margarita. One story suggests that Daniele Negrete created the drink as a present for his girlfriend Margarita in 1936 when he was the manager of the Graci Crespo Hotel in Puebla, Mexico. In 1944, Negrete moved to Tijuana, Mexico, and became a bartender at the Agua Caliente Racetrack, which claims to be the birthplace of the Margarita in the early 1930s.\n\nAnother story attributes the creation of the Margarita to Johnny Durlesser, head bartender of the Tail O' The Clock in Los Angeles, who was asked by Vernon Underwood, president of Young's Market Company, to create a drink using Cuervo Tequila, which the company had recently begun distributing in the 1930s. Underwood named the drink after his wife, Margaret (Margarita)."
-    },
-    
-    {
-        "id":"mimosa",
-        "text":"Brunch and mimosas just go hand in hand, and many brunch spots usually offer bottomless mimosas. Like most classic cocktails, there are a lot of legends regarding the true origins of the mimosa. The Buck’s Fizz, also made with champagne and orange juice (but with a larger quantity of the wine), was invented in 1921 at the Buck’s Club in London. Although these two cocktails have a lot in common, it is believed that four years later, in 1925, Frank Meier, a bartender at the Ritz Hotel in Paris, invented the mimosa, which uses equal parts of sparkling wine and juice."
-    },
-    
-    {
-        "id":"mint-julep",
-        "text":"The julep originally served as a medicinal tonic to soothe upset stomachs. However, as a cocktail, it gained popularity in the late 1700s in the American South and was regarded as a beverage for the elite. This was because ice and the silver cup, in which the drink is typically served, were not easily accessible to everyone.\n\nIn 1938, the mint julep was designated as the official drink of the Kentucky Derby, and since then, approximately 120,000 of these cocktails have been sold at the race each year."
-    },
-    
-    {
-        "id":"mojito",
-        "text":"Havana, Cuba, is widely considered the birthplace of the mojito, although there is some debate about its exact origin. The drink's popularity began to soar during Ernest Hemingway's time in Cuba.\n\nAccording to one theory, the original mojito was created as a medicinal drink to combat disease on the island, and its primary spirit was a type of moonshine rum. However, when pirates invaded Cuba, the drink was introduced to Sir Francis Drake, who promptly switched the moonshine with rum. The drink was initially called \"El Draque\" after Drake, but it eventually became known as the mojito that we know today."
-    },
-    
-    {
-        "id":"negroni",
-        "text":"The story of this cocktail dates back to 1919, when Count Camillo Negroni, a well-known playboy and a regular patron at the Casoni Bar in Florence, Italy, requested for a stronger version of his usual Americano cocktail. Fosco Scarselli, the bartender on duty, replaced the soda water in the recipe with gin, and thus, the Negroni was born.\n\nFun fact: Thanks to Gaz Regan, the iconic way of preparing a Negroni is to stir it with your finger, and it should always be garnished with an orange wedge or twist. It's worth noting that using a lemon as a garnish is considered a serious offense, and the punishment is to be forced to suck on Gaz Regan's Negroni stirring finger."
-    },
-    
-    {
-        "id":"old-fashioned",
-        "text":"The Old Fashioned is one of the earliest and simpler versions of cocktails, predating the development of advanced bartending techniques and recipes that emerged in the latter part of the 19th century.\n\nBy the 1860s, it became common to add orange curaçao, absinthe, and other liqueurs to the cocktail, making it more complex. As a result, patrons who preferred simpler cocktails began to request drinks similar to those made before the 1850s, referring to them as \"Old Fashioned\"."
-    },
-    
-    {
-        "id":"paloma",
-        "text":"The origin of the Paloma cocktail is shrouded in mystery, and no one knows for sure who invented it. Some credit the legendary Don Javier Delgado Corona, the owner of \"La Capilla\" bar in the town of Tequila, Jalisco, Mexico, with its creation. Don Javier is also the inventor of another tequila-based cocktail called the Batanga, which is a mix of tequila, lime juice, and Coca-Cola."
-    },
-    
-    {
-        "id":"pina-colada",
-        "text":"Piña Colada originates from San Juan, Puerto Rico, where it was created by Ramón “Monchito” Marrero at the Caribe Hilton in 1954. This refreshing cocktail is made by blending together rum, coconut cream, and pineapple juice, resulting in a fruity and delicious summer drink.\n\nIn 1978, Piña Colada was officially declared the national drink of Puerto Rico. Today, it remains one of the best cocktails to come out of the Hilton Hotel brand."
-    },
-    
-    {
-        "id":"pornstar-martini",
-        "text":"The creator of this provocative and playful cocktail is Douglas Ankrah, who made it at LAB Bar in London's Soho area. The drink is called \"tongue-in-cheek\" and is made with vanilla vodka, passion fruit, and champagne, creating a delicious and exotic balance of flavors that are easy to consume.\n\nWhat was truly unexpected was the enduring popularity of this cocktail, which has remained a favorite for nearly two decades. In fact, in 2019, it was reported as the most-ordered cocktail in the entire United Kingdom."
-    },
-    
-    {
-        "id":"whiskey-sour",
-        "text":"The first written recipe for this drink appeared in 1862 in Jerry Thomas' \"The Bartender's Guide\". However, it is highly likely that sours had existed for many decades prior, as they were very popular among sailors. Spending long months at sea put sailors at risk of malnutrition and scurvy. Citrus fruits are an effective way to combat scurvy, so ships often set sail with ample supplies of lemons, limes, and oranges for sailors to consume. Since refrigeration was not available, sailors took liquors like rum, whiskey, and gin on board to have something safe to drink during long journeys. Over time, lime and lemon were mixed with liquor and water to create a drink that would quench thirst and prevent scurvy."
-    },
-    
-    {
-        "id":"white-russian",
-        "text":"The Black Russian is a traditional cocktail that was first introduced in 1949, but it transforms into a White Russian with the addition of cream. Although neither drink has its origins in Russia, they are both named after the primary ingredient, which is vodka.\n\nAfter the release of the movie \"The Big Lebowski\" in 1998, the popularity of this cocktail skyrocketed. The main character of the movie, Jeffrey \"The Dude\" Lebowski, seems to prefer this cocktail and refers to it as \"Caucasian\" on several occasions throughout the film."
-    }
+  {
+    "id": "cosmopolitan",
+    "text": "La leyenda de la coctelería Dale \"King Cocktail\" DeGroff descubrió el Cosmopolitan en el Fog City Diner de San Francisco a mediados de los años 90. Luego perfeccionó su propia receta, incluyendo su característico twist de piel de naranja flameado como guarnición, mientras trabajaba en los Rainbow Rooms de Manhattan.\n\nDeGroff nunca afirmó haber inventado el Cosmopolitan. En su libro de 2002 \"The Craft of Cocktail\", explica que popularizó una receta definitiva que se convirtió en el estándar aceptado.\n\nEl Cosmopolitan ganó enorme popularidad tras aparecer con frecuencia en la serie \"Sex and the City\", donde los personajes solían tomar Cosmos y preguntarse por qué habían dejado de beberlos. La influencia del programa ayudó a que el cóctel se convirtiera en un nombre conocido en todos los hogares."
+  },
+  {
+    "id": "espresso-martini",
+    "text": "Este cóctel fue inventado por Dick Bradsell en 1983 en el Soho Brasserie. Su nombre original fue \"Vodka Espresso\", luego \"Pharmaceutical Stimulant\" y finalmente \"Espresso Martini\". A Bradsell se le atribuye haber revolucionado la escena de cócteles en Londres en esa época, gracias a su trabajo en bares como The Player, 6 Degrees y Match, y por la invención del cóctel Bramble. La historia cuenta que Bradsell creó la bebida cuando una joven modelo pidió algo para \"despertarme y desordenarme\". Su solución fue una combinación de vodka, espresso recién hecho, licor de café y azúcar, agitada hasta una mezcla espumosa y agridulce."
+  },
+  {
+    "id": "tommys-margarita",
+    "text": "Este cóctel fue creado en 1988 por Julio Bermejo y nombrado en honor al restaurante y bar mexicano de su familia en San Francisco, Tommy's. El restaurante fue fundado por Tomás y Elmy Bermejo en 1965 y sigue siendo un negocio familiar hoy en día, con sus cinco hijos involucrados activamente en su operación.\n\nGracias a su amplio conocimiento del tequila y a sus excepcionales habilidades como bartender, Julio se ha convertido en una figura reconocida en la industria de bebidas y una leyenda entre sus colegas."
+  },
+  {
+    "id": "zombie",
+    "text": "Este cóctel, conocido como el Zombie, fue creado por primera vez en 1934 por Ernest Raymond Beaumont Gantt, más conocido como Donn the Beachcomber. Aunque existen muchas historias sobre los orígenes del Zombie, es probable que Donn fuera responsable de la mayoría de ellas.\n\nUna historia divertida pero poco probable dice que la bebida fue inventada para un empresario que necesitaba ayuda con su resaca para pasar una reunión difícil. El cliente luego le dijo a Donn que se sentía como un muerto viviente y dijo: \"me convirtió en un zombie\".\n\nDurante muchos años, la receta del Zombie permaneció en el misterio debido al cuidadoso sistema de secretos de ingredientes de Donn. Sin embargo, gracias a los esfuerzos del revitalizador tiki Jeff \"BeachBum\" Berry, hoy podemos preparar el Zombie en la comodidad y seguridad de nuestros hogares."
+  },
+  {
+    "id": "pisco-sour",
+    "text": "El origen de este maravilloso cóctel sudamericano es algo incierto, ya que varias personas afirman haberlo inventado. Sin embargo, la historia más aceptada dice que se originó a comienzos de la década de 1920 en el Morris Bar de Lima, Perú. El bar era propiedad de Victor Vaughen Morris, un estadounidense que se mudó a Perú por el negocio minero en 1903. El cóctel se creó originalmente como alternativa al Whiskey Sour, una bebida popular en ese momento.\n\nLa versión moderna del cóctel fue creada a finales de los años 20, cuando el bartender Mario Bruige añadió bitters de Angostura y clara de huevo a la receta. Esta nueva versión ganó popularidad rápidamente y hoy se disfruta en todo el mundo."
+  },
+  {
+    "id": "americano-cocktail",
+    "text": "Aunque es muy probable que se originara como una variación del Milano-Torino, existen varias hipótesis sobre su creación. Una de ellas se remonta a 1933 y sugiere que la bebida se creó en homenaje al boxeador Primo Carnera, apodado \"el Americano\" por sus éxitos en Estados Unidos. Según algunas fuentes, incluso la propaganda política de la época promovió esta asociación entre el boxeador italiano y los ingredientes de la bebida, todos de origen italiano.\n\nOtra hipótesis sostiene que su creación fue una estrategia de marketing de la marca Martini & Rossi para exportar su vermut a Estados Unidos."
+  },
+  {
+    "id": "aperol-spritz",
+    "text": "El origen del spritz se remonta a la costumbre de las tropas del Imperio Austriaco estacionadas en el Reino Lombardo-Véneto de mezclar los vinos locales, con alta graduación, con seltz o agua con gas. El nombre de la bebida proviene del verbo germano-austriaco \"spritzer\", que significa \"rociar\".\n\nComo cóctel, se cree que el spritz se originó entre las décadas de 1920 y 1930 en las áreas de Venecia y Padua, donde la gente combinó esta costumbre con Aperol o Select para crear el clásico que conocemos hoy."
+  },
+  {
+    "id": "bellini",
+    "text": "El Bellini fue creado por primera vez en 1948 por Giuseppe Cipriani, jefe de barra del Harry's Bar en Venecia. Cipriani nombró el cóctel en honor al pintor veneciano Giovanni “il Giambellino” Bellini, por su color rosado que le recordaba el tono de la toga de un sastre en una de sus pinturas.\n\nOriginalmente una especialidad de temporada en el Harry's Bar, el Bellini se convirtió rápidamente en favorito de muchas celebridades, incluyendo Ernest Hemingway, Gianni Agnelli, Sinclair Lewis y Orson Welles.\n\nDespués de que un empresario francés estableciera una ruta comercial para transportar pulpa de melocotón a EE. UU., el Bellini también ganó popularidad en el Harry's Bar de Nueva York. En poco tiempo se convirtió en un cóctel clásico y hoy se disfruta en bares de todo el mundo."
+  },
+  {
+    "id": "bloody-mary",
+    "text": "El cóctel Bloody Mary fue inventado entre las décadas de 1920 y 1930, y existen varias teorías sobre su origen y su nombre.\n\nUna teoría dice que el bartender francés Fernand Petiot creó la bebida en 1921 mientras trabajaba en el Harry's New York Bar de París. Otra teoría sugiere que fue inventado en 1930 por Henry Zbikiwicz en el \"21 Club\" de Nueva York, mientras que otros atribuyen su creación al comediante George Jessel, quien frecuentaba el mismo bar.\n\nHay distintas historias sobre el nombre, pero mi favorita proviene de la autobiografía de George Jessel, \"The World I Live In\". Jessel recuerda una noche especialmente larga en Palm Beach en 1927, cuando mezcló vodka con zumo de tomate y especias para él y sus amigos a las 8 de la mañana. Cuando le dio un vaso a la socialité Mary Brown Warburton, aún con su vestido blanco de la noche anterior, ella lo derramó sobre el frente del vestido y exclamó: \"¡Ahora puedes llamarme Bloody Mary, George!\"."
+  },
+  {
+    "id": "boulevardier",
+    "text": "El cóctel Boulevardier fue creado por Harry McElhone, bartender del New York Bar en París, para Erskine Gwynne, un expatriado estadounidense que además era editor de una revista mensual llamada \"The Boulevardier\". De ahí proviene el nombre de la bebida. La receta se publicó por primera vez en el libro de Gwynne de 1927 \"Barflies and Cocktails\".\n\nEsencialmente, el Boulevardier es una variación del Negroni, pero en lugar de gin se hace con bourbon. Cabe destacar que la receta del Negroni no se publicó hasta 20 años después del Boulevardier, y en 1927 muchos estadounidenses aún no estaban familiarizados con el Campari, un ingrediente clave en ambas bebidas."
+  },
+  {
+    "id": "caipirinha",
+    "text": "Aunque el origen de la bebida es desconocido, la Caipiriña fue inventada por agricultores terratenientes en la región de Piracicaba, São Paulo, Brasil, durante el siglo XIX como una bebida local para eventos y fiestas de “alto nivel”.\nLa caipiriña es el cóctel nacional más fuerte de Brasil, y se consume en bares, restaurantes y hogares de todo el país.\nSu nombre es el diminutivo de la palabra “caipira”, que se refiere a alguien del campo."
+  },
+  {
+    "id": "champagne-cocktail",
+    "text": "El origen de esta bebida está envuelto en misterio y se remonta a lo que a veces se llama la Edad de Hierro de la mixología estadounidense: un período entre la invención de los cócteles y la publicación del primer libro de cócteles en 1862.\n\nCuriosamente, la primera mención escrita del Champagne Cocktail aparece en el libro \"Panama in 1855\" de Robert Tomes, donde describe cómo prepararlo con cierto detalle. Esto no solo prueba que los Champagne Cocktails se hacían antes de 1855, sino también que se preparaban en un vaso tipo tumbler sobre hielo picado y sin coñac ni brandy.\n\nEs fascinante descubrir los orígenes de este cóctel clásico, y el hecho de que se haya disfrutado durante tanto tiempo es un testimonio de su atractivo perdurable."
+  },
+  {
+    "id": "clover-club",
+    "text": "El Clover Club Cocktail es una bebida creada antes de la Ley Seca en Estados Unidos y toma su nombre del club masculino de Filadelfia del mismo nombre. El club se reunía en el Hotel Bellevue-Stratford, en la esquina de South Broad y Walnut Streets en Center City. El Clover Club fue establecido en 1896, como se detalla en el libro de 1897 \"The Clover Club of Philadelphia\" de Mary R. Deacon.\n\nLas recetas del Clover Club Cocktail se publicaron tan temprano como en 1917 en el libro \"The Ideal Bartender\" de Thomas Bullock."
+  },
+  {
+    "id": "daiquiri",
+    "text": "Aunque a muchos tragos vintage les falta documentación que pruebe su origen exacto, el daiquiri cuenta con una tarjeta de receta firmada por “Jennings Cox” en 1896. Cox, un ingeniero estadounidense que vivió y trabajó en Cuba después de la Guerra Hispano-Estadounidense, se cree que inventó el daiquiri al quedarse sin gin mientras organizaba una fiesta. Dado que el ron era abundante en el país, resultó un sustituto conveniente en un punch que estaba sirviendo. A diferencia de lo que se indica en su tarjeta, la bebida se preparó con limas y azúcar moreno. Fue un gran éxito, y Cox la bautizó “Daiquiri”, nombrándola por un puerto cercano, que además fue donde EE. UU. invadió Cuba por primera vez durante la Guerra Hispano-Estadounidense.\n\nSin embargo, considerando la abundancia de lima, azúcar y ron en la isla, es probable que Cox solo haya sido el primero en escribir la receta de un cóctel que ya existía en Cuba. Sin mencionar que un prototipo del daiquiri llevaba siglos salvando a la Marina Real Británica del escorbuto."
+  },
+  {
+    "id": "french-75",
+    "text": "Una de las primeras recetas registradas del French 75 proviene de The Savoy Cocktail Book de 1930, pero su verdadero origen es algo confuso. Una teoría sostiene que Scot Harry MacElhone, dueño del Harry’s American Bar en París, nombró la bebida en 1926. La inspiración habría sido el cañón Howitzer de 75 mm usado por franceses y estadounidenses en la Primera Guerra Mundial, conocido por su precisión y velocidad. Se decía que el French 75 tenía un golpe similar. Sin embargo, la historia del cóctel se remonta más allá de los años 20. Charles Dickens era conocido por servir a sus visitantes Tom gin y champagne cups ya en 1867, y existen muchas historias del siglo XIX de nobles caballeros, como el Príncipe de Gales, disfrutando brebajes similares."
+  },
+  {
+    "id": "gimlet",
+    "text": "Este cóctel se popularizó tras ser mencionado en la novela de 1953 de Raymond Chandler “The Long Goodbye”, donde el personaje principal, Philip Marlowe, dijo: “Un gimlet de verdad es mitad gin y mitad Rose’s Lime Juice y nada más. Deja a los Martinis en ridículo”.\nSin embargo, la historia de esta bebida es anterior, ya que se cree que se servía a los marineros de la Marina Real Británica como forma de combatir el escorbuto. El Rose’s Lime Juice fue creado en 1867 para preservar el jugo de lima sin alcohol, y al mezclarlo con gin Navy Strength nació el gimlet. A mediados del siglo XX, el Gimlet era un cóctel popular entre oficiales navales y en la sociedad británica."
+  },
+  {
+    "id": "hemingway-daiquiri",
+    "text": "El Hemingway Daiquiri se originó cuando Ernest Hemingway entró en un bar llamado \"El Floridita\" en La Habana, Cuba, y vio una fila de Daiquiris helados en la barra. Curioso, le preguntó al bartender si podía probar uno, y este accedió. A Hemingway le gustó la bebida, pero comentó que la prefería sin azúcar y con el doble de ron. El bartender preparó entonces una nueva versión según sus preferencias, que se conoció como Papa Doble, o Double Frozen Daiquiri.\n\nHemingway desarrolló una gran afinidad por la bebida y solía consumirla en grandes cantidades. Se dice que una vez tomó 17 Papa Dobles en un solo día, y afirmó en una carta al escritor Harvey Breit que ni siquiera tuvo resaca al día siguiente. Lo atribuyó a la preparación sin azúcar y a un sándwich de bistec que había comido.\n\nEn conjunto, el Hemingway Daiquiri es un testimonio del amor de Hemingway por el ron y su preferencia por cócteles fuertes y sin complicaciones."
+  },
+  {
+    "id": "mai-tai",
+    "text": "El Mai Tai es uno de los cócteles más emblemáticos de la cultura tiki. Esta historia comenzó en 1944, según Victor J. Bergeron, más conocido como Trader Vic. Él cuenta que un día estaba sirviendo a dos amigos, Eastham y Carrie Guild de Tahití, en su restaurante \"Trader Vic\" en Oakland, California. Tras servirles la bebida, Carrie dio un sorbo y exclamó: \"Mai Tai-Roa Aé\", que significa \"Fuera de este mundo, lo mejor\"."
+  },
+  {
+    "id": "manhattan",
+    "text": "Como muchos cócteles clásicos, el origen del Manhattan está envuelto en misterio. La teoría más popular sugiere que la receta fue inventada por el Dr. Iain Marshall a principios de la década de 1880 para una fiesta organizada por Lady Randolph Churchill, madre de Winston Churchill, en el Manhattan Club de Nueva York. Sin embargo, esta teoría fue desacreditada porque Lady Randolph Churchill estaba embarazada y en Inglaterra en esa época. Una historia más plausible proviene del libro de 1923 \"Valentine's Manual of New York\", que relata que William F. Mulhall, bartender del Hoffman House de Nueva York en la década de 1880, afirmó que el cóctel Manhattan fue inventado por un hombre llamado Black que tenía un local diez puertas más abajo en la calle Houston, en Broadway."
+  },
+  {
+    "id": "margarita",
+    "text": "Se cree que la Margarita es una versión basada en tequila del Daisy, un estilo de bebida que data de la época victoriana, ya que \"Margarita\" es la palabra española para \"daisy\".\n\nHay varias versiones sobre su invención y su nombre. Una historia sugiere que Daniele Negrete creó la bebida como regalo para su novia Margarita en 1936 cuando era gerente del Hotel Graci Crespo en Puebla, México. En 1944, Negrete se mudó a Tijuana y se convirtió en bartender del Agua Caliente Racetrack, que afirma ser el lugar de nacimiento de la Margarita a principios de los años 30.\n\nOtra historia atribuye la creación de la Margarita a Johnny Durlesser, jefe de barra del Tail O' The Clock en Los Ángeles, quien fue solicitado por Vernon Underwood, presidente de Young's Market Company, para crear una bebida con Cuervo Tequila, que la compañía había comenzado a distribuir en los años 30. Underwood nombró la bebida por su esposa, Margaret (Margarita)."
+  },
+  {
+    "id": "mimosa",
+    "text": "El brunch y las mimosas van de la mano, y muchos lugares de brunch suelen ofrecer mimosas ilimitadas. Como la mayoría de los cócteles clásicos, hay muchas leyendas sobre los verdaderos orígenes de la mimosa. El Buck’s Fizz, también hecho con champán y zumo de naranja (pero con mayor cantidad de vino), fue inventado en 1921 en el Buck’s Club de Londres. Aunque ambos cócteles tienen mucho en común, se cree que cuatro años después, en 1925, Frank Meier, bartender del Hotel Ritz en París, inventó la mimosa, que usa partes iguales de vino espumoso y zumo."
+  },
+  {
+    "id": "mint-julep",
+    "text": "El julep originalmente se servía como tónico medicinal para calmar el estómago. Sin embargo, como cóctel, ganó popularidad a finales de 1700 en el sur de Estados Unidos y se consideraba una bebida para la élite. Esto se debía a que el hielo y la copa de plata en la que se suele servir no eran fácilmente accesibles para todos.\n\nEn 1938, el mint julep fue designado como la bebida oficial del Kentucky Derby, y desde entonces se venden aproximadamente 120.000 de estos cócteles en la carrera cada año."
+  },
+  {
+    "id": "mojito",
+    "text": "La Habana, Cuba, es ampliamente considerada el lugar de nacimiento del mojito, aunque existe cierto debate sobre su origen exacto. La popularidad de la bebida se disparó durante la estancia de Ernest Hemingway en Cuba.\n\nSegún una teoría, el mojito original se creó como una bebida medicinal para combatir enfermedades en la isla, y su destilado principal era una especie de ron clandestino. Sin embargo, cuando los piratas invadieron Cuba, la bebida fue introducida a Sir Francis Drake, quien sustituyó ese ron por ron regular. La bebida se llamó inicialmente \"El Draque\" por Drake, pero con el tiempo se convirtió en el mojito que conocemos hoy."
+  },
+  {
+    "id": "negroni",
+    "text": "La historia de este cóctel se remonta a 1919, cuando el conde Camillo Negroni, un conocido playboy y cliente habitual del Casoni Bar en Florencia, Italia, pidió una versión más fuerte de su habitual Americano. Fosco Scarselli, el bartender de turno, sustituyó el agua con gas por gin, y así nació el Negroni.\n\nDato curioso: gracias a Gaz Regan, la forma icónica de preparar un Negroni es removerlo con el dedo, y siempre debe guarnecerse con un gajo o twist de naranja. Vale la pena señalar que usar limón como guarnición se considera una ofensa grave y el castigo es verse obligado a chupar el dedo con el que Gaz Regan remueve su Negroni."
+  },
+  {
+    "id": "old-fashioned",
+    "text": "El Old Fashioned es una de las versiones más antiguas y simples de los cócteles, anterior al desarrollo de técnicas avanzadas de coctelería y recetas que surgieron en la segunda mitad del siglo XIX.\n\nPara la década de 1860, se volvió común añadir curaçao de naranja, absenta y otros licores al cóctel, haciéndolo más complejo. Como resultado, los clientes que preferían cócteles más simples comenzaron a pedir bebidas similares a las de antes de 1850, refiriéndose a ellas como “Old Fashioned”."
+  },
+  {
+    "id": "paloma",
+    "text": "El origen del cóctel Paloma está envuelto en misterio, y nadie sabe con certeza quién lo inventó. Algunos atribuyen su creación al legendario Don Javier Delgado Corona, dueño del bar \"La Capilla\" en la ciudad de Tequila, Jalisco, México. Don Javier también es el inventor de otro cóctel a base de tequila llamado Batanga, una mezcla de tequila, zumo de lima y Coca-Cola."
+  },
+  {
+    "id": "pina-colada",
+    "text": "La Piña Colada se originó en San Juan, Puerto Rico, donde fue creada por Ramón “Monchito” Marrero en el Caribe Hilton en 1954. Este cóctel refrescante se prepara mezclando ron, crema de coco y zumo de piña, dando como resultado una bebida veraniega, frutal y deliciosa.\n\nEn 1978, la Piña Colada fue declarada oficialmente bebida nacional de Puerto Rico. Hoy sigue siendo uno de los mejores cócteles surgidos de la marca Hilton Hotel."
+  },
+  {
+    "id": "pornstar-martini",
+    "text": "El creador de este cóctel provocativo y divertido es Douglas Ankrah, quien lo preparó en el LAB Bar del Soho londinense. La bebida se describe como “tongue-in-cheek” y se hace con vodka de vainilla, maracuyá y champán, creando un equilibrio delicioso y exótico de sabores fáciles de beber.\n\nLo verdaderamente inesperado es la popularidad duradera de este cóctel, que se ha mantenido como favorito durante casi dos décadas. De hecho, en 2019 se informó que era el cóctel más pedido en todo el Reino Unido."
+  },
+  {
+    "id": "whiskey-sour",
+    "text": "La primera receta escrita de esta bebida apareció en 1862 en \"The Bartender's Guide\" de Jerry Thomas. Sin embargo, es muy probable que los sours existieran desde décadas antes, ya que eran muy populares entre los marineros. Pasar largos meses en el mar ponía a los marineros en riesgo de desnutrición y escorbuto. Los cítricos son una forma eficaz de combatir el escorbuto, por lo que los barcos solían zarpar con abundantes limones, limas y naranjas para consumo de los marineros. Como no había refrigeración, los marineros llevaban licores como ron, whiskey y gin para tener algo seguro que beber durante los viajes largos. Con el tiempo, la lima y el limón se mezclaron con licor y agua para crear una bebida que calmara la sed y evitara el escorbuto."
+  },
+  {
+    "id": "white-russian",
+    "text": "El Black Russian es un cóctel tradicional que se introdujo por primera vez en 1949, pero se transforma en un White Russian con la adición de crema. Aunque ninguna de las dos bebidas se originó en Rusia, ambas llevan ese nombre por su ingrediente principal: el vodka.\n\nTras el estreno de la película \"The Big Lebowski\" en 1998, la popularidad de este cóctel se disparó. El personaje principal, Jeffrey \"The Dude\" Lebowski, parece preferir este cóctel y se refiere a él como \"Caucasian\" en varias ocasiones a lo largo de la película."
+  }
 ]
