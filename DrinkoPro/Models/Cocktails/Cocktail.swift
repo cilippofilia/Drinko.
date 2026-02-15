@@ -281,7 +281,6 @@ class CocktailsViewModel {
         ingredients: [Ingredient],
         procedureSteps: [String]
     ) {
-        guard let modelContext else { return }
         guard let existing = userCreatedCocktails.first(where: { $0.id == cocktail.id }) else {
             return
         }
