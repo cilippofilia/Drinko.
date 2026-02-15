@@ -144,11 +144,11 @@ struct LearnView: View {
                                 }
                             } header: {
                                 LearnHeaderView(
-                                    text: topic.replacing("-", with: " ").capitalizingFirstLetter(),
                                     isCollapsed: Binding(
                                         get: { isCollapsed(for: topic) },
                                         set: { setCollapsed(for: topic, value: $0) }
-                                    )
+                                    ),
+                                    text: topic.replacing("-", with: " ").capitalizingFirstLetter()
                                 )
                             }
                         }
@@ -161,8 +161,9 @@ struct LearnView: View {
                             }
                         } header: {
                             LearnHeaderView(
-                                text: "Calculators",
-                                isCollapsed: $isCalculatorsCollapsed)
+                                isCollapsed: $isCalculatorsCollapsed,
+                                text: "Calculators"
+                            )
                         }
                         // MARK: BOOKS
                         Section {
@@ -175,8 +176,9 @@ struct LearnView: View {
                             }
                         } header: {
                             LearnHeaderView(
-                                text: "Books",
-                                isCollapsed: $isBooksCollapsed)
+                                isCollapsed: $isBooksCollapsed,
+                                text: "Books"
+                            )
                         }
                     }
                 }

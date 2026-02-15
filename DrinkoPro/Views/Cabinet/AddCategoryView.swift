@@ -108,9 +108,7 @@ struct AddCategoryView: View {
                     }
                 } header: {
                     Button {
-                        withAnimation {
-                            isColorsCollapsed.toggle()
-                        }
+                        isColorsCollapsed.toggle()
                     } label: {
                         HStack {
                             Image(systemName: "chevron.down")
@@ -256,7 +254,7 @@ extension AddCategoryView {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
 
         return AddCategoryView()
             .modelContainer(previewer.container)

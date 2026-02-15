@@ -11,9 +11,10 @@ struct AsyncImageView: View {
     let image: String
     let frameHeight: CGFloat
     let aspectRatio: ContentMode
+    let accessibilityLabel: String? = nil
 
     var body: some View {
-        AsyncImage(url: URL(string: image)) { state in
+        let content = AsyncImage(url: URL(string: image)) { state in
             switch state {
             case .empty:
                 ProgressView()
@@ -27,6 +28,13 @@ struct AsyncImageView: View {
         }
         .frame(height: frameHeight)
         .clipped()
+        .accessibilityElement(children: .ignore)
+
+        if let accessibilityLabel {
+            content.accessibilityLabel(Text(accessibilityLabel))
+        } else {
+            content.accessibilityHidden(true)
+        }
     }
 }
 

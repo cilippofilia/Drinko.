@@ -89,12 +89,13 @@ struct EditProductView: View {
             }
             
             Section(footer: Text("By deleting the product you will be deleting every informations added to it.")) {
-                Button(action: {
-                    showingDeleteConfirmation = true
-                }) {
-                    Label("Delete Product", systemImage: "trash")
-                        .foregroundStyle(.red)
-                }
+                DeleteButtonView(
+                    label: "Delete Product",
+                    action: {
+                        showingDeleteConfirmation = true
+                    }
+                )
+                .foregroundStyle(.red)
             }
         }
         #if os(iOS)
@@ -110,7 +111,12 @@ struct EditProductView: View {
         }
         #endif
         .alert("Delete product?", isPresented: $showingDeleteConfirmation) {
-            Button("Delete", role: .destructive) { delete() }
+            DeleteButtonView(
+                label: "Delete",
+                action: {
+                    delete()
+                }
+            )
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("Are you sure you want to delete this product? You will delete all the informations added to it.")
@@ -134,7 +140,7 @@ struct EditProductView: View {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
         
         return EditProductView(product: Item(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", madeIn: "Poland", abv: "45", rating: 5, tried: false, creationDate: Date.now))
             .modelContainer(previewer.container)

@@ -110,7 +110,7 @@ extension CabinetView {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
         
         return CabinetView()
         /// comment the following line to display an emptyCabinet

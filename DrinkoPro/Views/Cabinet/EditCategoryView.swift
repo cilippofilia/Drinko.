@@ -44,12 +44,13 @@ struct EditCategoryView: View {
             }
 
             Section(footer: Text("By deleting the category you will be deleting every product inside it.")) {
-                Button(action: {
-                    showingDeleteConfirmation.toggle()
-                }) {
-                    Label("Delete Category", systemImage: "trash")
-                        .foregroundStyle(.red)
-                }
+                DeleteButtonView(
+                    label: "Delete Category",
+                    action: {
+                        showingDeleteConfirmation.toggle()
+                    }
+                )
+                .foregroundStyle(.red)
             }
         }
         #if os(iOS)
@@ -58,7 +59,10 @@ struct EditCategoryView: View {
         #endif
         .alert("Delete Category",
                isPresented: $showingDeleteConfirmation) {
-            Button("Delete", role: .destructive) { delete() }
+            DeleteButtonView(
+                label: "Delete",
+                action: { delete() }
+            )
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("Are you sure you want to delete this category? You will also delete all the products it contains.")
@@ -101,7 +105,7 @@ extension EditCategoryView {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
         
         return EditCategoryView(category: previewer.category, navigationPath: .constant(NavigationPath()))
             .modelContainer(previewer.container)

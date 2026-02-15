@@ -1,5 +1,5 @@
 //
-//  Previewer.swift
+//  CabinetPreviewerPreviewer.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 27/01/2024.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @MainActor
-struct Previewer {
+struct CabinetPreviewerPreviewer {
     let container: ModelContainer
     
     let category: Category

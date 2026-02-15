@@ -170,7 +170,7 @@ extension MacCabinetView {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
 
         return MacCabinetView()
         /// comment the following line to display an emptyCabinet

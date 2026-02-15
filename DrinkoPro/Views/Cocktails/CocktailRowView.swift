@@ -20,12 +20,14 @@ struct CocktailRowView: View {
                 Image(systemName: "wineglass")
                     .imageScale(.large)
                     .frame(maxWidth: frameSize)
+                    .accessibilityHidden(true)
             } else if cocktail.glass == "coffee mug" || cocktail.glass == "julep cup" {
                 Image("julep")
                     .resizable()
                     .scaledToFit()
                     .padding(10)
                     .frame(width: frameSize)
+                    .accessibilityHidden(true)
             } else if cocktail.glass == "shot" {
                 Image("shot")
                     .resizable()
@@ -33,12 +35,14 @@ struct CocktailRowView: View {
                     .padding(10)
                     .frame(width: frameSize)
                     .scaleEffect(CGSize(width: 0.6, height: 0.6))
+                    .accessibilityHidden(true)
             } else {
                 Image(cocktail.image)
                     .resizable()
                     .scaledToFit()
                     .padding(10)
                     .frame(width: frameSize)
+                    .accessibilityHidden(true)
             }
 
             Text(cocktail.name)
@@ -53,10 +57,11 @@ struct CocktailRowView: View {
                 .symbolEffect(.bounce.up, value: favorites.hasEffect)
                 .accessibilityHidden(true)
         }
-        .frame(minHeight: frameSize)
+        .frame(height: frameSize)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(cocktail.name)
-        .accessibilityValue(favorites.contains(cocktail) ? "Favorite" : "Not favorite")
+        .accessibilityLabel(Text(cocktail.name))
+        .accessibilityHint(Text("Double tap to view details."))
+        .accessibilityValue(favorites.contains(cocktail) ? Text("Favorite") : Text("Not favorite"))
     }
 }
 

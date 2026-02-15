@@ -22,6 +22,9 @@ struct DrinkoProApp: App {
             modelContainer = try ModelContainer(
                 for: Category.self,
                 Item.self,
+                UserCreatedCocktail.self,
+                UserIngredient.self,
+                UserProcedure.self,
                 configurations: config
             )
         } catch {

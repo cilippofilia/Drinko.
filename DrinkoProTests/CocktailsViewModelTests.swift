@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 06/01/2026.
 //
 
+import SwiftData
 import Testing
 @testable import DrinkoPro
 
@@ -13,6 +14,15 @@ import Testing
 struct CocktailsViewModelTests {
     private func makeViewModel() -> CocktailsViewModel {
         let vm = CocktailsViewModel()
+        let config = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try! ModelContainer(
+            for: UserCreatedCocktail.self,
+            UserIngredient.self,
+            UserProcedure.self,
+            UserProcedureStep.self,
+            configurations: config
+        )
+        vm.configure(modelContext: container.mainContext)
         // Overwrite with deterministic data to avoid bundle dependencies
         vm.listOfCocktails = [
             Cocktail(
@@ -113,6 +123,23 @@ struct CocktailsViewModelTests {
         #expect(result.map { $0.name } == ["B 50/50", "Z Martini"])
     }
 
+    @Test("Filter option: user created only")
+    func filterUserCreatedOnly() async throws {
+        let vm = makeViewModel()
+        vm.addUserCocktail(
+            name: "My Custom Drink",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "Orange peel",
+            ice: "Cubed",
+            extra: "",
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")],
+            procedureSteps: []
+        )
+        let result = vm.filteredCocktails(filterOption: .userCreatedOnly) { _ in false }
+        #expect(result.map { $0.name } == ["My Custom Drink"])
+    }
+
     @Test("Favorites filter combines with search")
     func filterFavoritesWithSearch() async throws {
         let vm = makeViewModel()
@@ -140,5 +167,172 @@ struct CocktailsViewModelTests {
         // Should not include itself, but include other with Vodka
         #expect(suggestions.contains(where: { $0.id == "b-50-50" }))
         #expect(suggestions.contains(where: { $0.id == base.id }) == false)
+    }
+
+    @Test("User cocktail is appended and visible in lists")
+    func addUserCocktail() async throws {
+        let vm = makeViewModel()
+        vm.addUserCocktail(
+            name: "My Custom Drink",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "Orange peel",
+            ice: "Cubed",
+            extra: "Personal recipe",
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")],
+            procedureSteps: ["Build over ice and stir"]
+        )
+
+        #expect(vm.userCocktails.count == 1)
+        #expect(vm.listOfAllDrinks.contains(where: { $0.name == "My Custom Drink" }))
+        #expect(vm.filteredCocktails(filterOption: .cocktailsOnly) { _ in false }.contains(where: { $0.name == "My Custom Drink" }))
+    }
+
+    @Test("Suggestions return empty when cocktail has no ingredients")
+    func suggestionsWithoutIngredients() async throws {
+        let vm = makeViewModel()
+        let noIngredientsCocktail = Cocktail(
+            id: "empty",
+            name: "Empty",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "",
+            ice: "Cubed",
+            extra: "",
+            ingredients: []
+        )
+
+        #expect(vm.getLinkedCocktails(for: noIngredientsCocktail).isEmpty)
+    }
+
+    @Test("User procedure overrides bundled procedure")
+    func userProcedurePreferred() async throws {
+        let vm = makeViewModel()
+        let cocktail = vm.listOfCocktails[0]
+        vm.procedures = [
+            Procedure(id: cocktail.id, procedure: [Procedure.Steps(step: "Step 1", text: "Bundled")])
+        ]
+        vm.userProcedures = [
+            Procedure(id: cocktail.id, procedure: [Procedure.Steps(step: "Step 1", text: "User")])
+        ]
+
+        let procedure = vm.getCocktailProcedure(for: cocktail)
+        #expect(procedure?.procedure.first?.text == "User")
+    }
+
+    @Test("Update user cocktail replaces data and procedure")
+    func updateUserCocktail() async throws {
+        let vm = makeViewModel()
+        vm.addUserCocktail(
+            name: "First",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "",
+            ice: "Cubed",
+            extra: "",
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")],
+            procedureSteps: ["Original step"]
+        )
+
+        guard let created = vm.userCocktails.first else {
+            #expect(false)
+            return
+        }
+
+        vm.updateUserCocktail(
+            created,
+            name: "Updated",
+            method: "Shake",
+            glass: "Coupe",
+            garnish: "Lemon",
+            ice: "None",
+            extra: "",
+            ingredients: [Ingredient(name: "Vodka", quantity: 1.0, unit: "oz.")],
+            procedureSteps: ["New step 1", "New step 2"]
+        )
+
+        let updated = vm.userCocktails.first
+        #expect(updated?.name == "Updated")
+        #expect(updated?.glass == "Coupe")
+
+        let procedure = vm.getCocktailProcedure(for: updated!)
+        #expect(procedure?.procedure.count == 2)
+        #expect(procedure?.procedure.first?.text == "New step 1")
+    }
+
+    @Test("Update user cocktail clears procedure when steps empty")
+    func updateUserCocktailClearsProcedure() async throws {
+        let vm = makeViewModel()
+        vm.addUserCocktail(
+            name: "First",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "",
+            ice: "Cubed",
+            extra: "",
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")],
+            procedureSteps: ["Original step"]
+        )
+
+        guard let created = vm.userCocktails.first else {
+            #expect(false)
+            return
+        }
+
+        vm.updateUserCocktail(
+            created,
+            name: "Updated",
+            method: "Shake",
+            glass: "Coupe",
+            garnish: "",
+            ice: "None",
+            extra: "",
+            ingredients: [Ingredient(name: "Vodka", quantity: 1.0, unit: "oz.")],
+            procedureSteps: []
+        )
+
+        #expect(vm.getCocktailProcedure(for: created) == nil)
+    }
+
+    @Test("Delete user cocktail removes cocktail and procedure")
+    func deleteUserCocktail() async throws {
+        let vm = makeViewModel()
+        vm.addUserCocktail(
+            name: "To Delete",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "",
+            ice: "Cubed",
+            extra: "",
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")],
+            procedureSteps: ["Step 1"]
+        )
+
+        guard let created = vm.userCocktails.first else {
+            #expect(false)
+            return
+        }
+
+        vm.deleteUserCocktail(created)
+        #expect(vm.userCocktails.isEmpty)
+        #expect(vm.userProcedures.isEmpty)
+    }
+
+    @Test("User cocktail id is namespaced")
+    func userCocktailIDPrefix() async throws {
+        let vm = makeViewModel()
+        vm.addUserCocktail(
+            name: "Custom",
+            method: "Build",
+            glass: "Rocks",
+            garnish: "",
+            ice: "Cubed",
+            extra: "",
+            ingredients: [Ingredient(name: "Gin", quantity: 2.0, unit: "oz.")],
+            procedureSteps: []
+        )
+
+        let id = vm.userCocktails.first?.id ?? ""
+        #expect(id.hasPrefix("user-"))
     }
 }

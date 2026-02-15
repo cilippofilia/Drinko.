@@ -36,7 +36,7 @@ struct CategoryHeaderView: View {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
         
         return CategoryHeaderView(category: previewer.category)
             .modelContainer(previewer.container)

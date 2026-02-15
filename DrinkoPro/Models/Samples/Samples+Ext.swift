@@ -37,6 +37,34 @@ extension Cocktail {
                 unit: "dashes")
         ]
     )
+
+    static let userCreatedExample = Cocktail(
+        id: "user-sunset-fizz-abcdef",
+        name: "Sunset Fizz",
+        method: "shake & strain",
+        glass: "highball",
+        garnish: "orange peel",
+        ice: "cubes",
+        extra: "top with soda",
+        ingredients: [
+            Ingredient(
+                name: "light rum",
+                quantity: 1.5,
+                unit: "oz."),
+            Ingredient(
+                name: "lime juice",
+                quantity: 0.75,
+                unit: "oz."),
+            Ingredient(
+                name: "simple syrup",
+                quantity: 0.5,
+                unit: "oz."),
+            Ingredient(
+                name: "soda water",
+                quantity: 3,
+                unit: "oz.")
+        ]
+    )
 #endif
 }
 

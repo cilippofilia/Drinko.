@@ -107,13 +107,12 @@ struct MacEditProductView: View {
                         save()
                     }
 
-                    Button(
-                        "Delete Product",
-                        systemImage: "trash",
-                        role: .destructive
-                    ) {
-                        showingDeleteConfirmation.toggle()
-                    }
+                    DeleteButtonView(
+                        label: "Delete Category",
+                        action: {
+                            showingDeleteConfirmation.toggle()
+                        }
+                    )
                     .foregroundStyle(.red)
                 }
                 .padding(.top)
@@ -125,7 +124,12 @@ struct MacEditProductView: View {
         .padding()
         .navigationTitle("Edit Product")
         .alert("Delete product?", isPresented: $showingDeleteConfirmation) {
-            Button("Delete", role: .destructive) { delete() }
+            DeleteButtonView(
+                label: "Delete",
+                action: {
+                    delete()
+                }
+            )
             Button("Cancel", role: .cancel) { }
         } message: {
             Text("Are you sure you want to delete this product? You will delete all the informations added to it.")
@@ -153,7 +157,7 @@ struct MacEditProductView: View {
 #if DEBUG
 #Preview {
     do {
-        let previewer = try Previewer()
+        let previewer = try CabinetPreviewerPreviewer()
         
         return MacEditProductView(product: Item(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", madeIn: "", abv: "45", rating: 5, tried: false, creationDate: Date.now))
             .modelContainer(previewer.container)

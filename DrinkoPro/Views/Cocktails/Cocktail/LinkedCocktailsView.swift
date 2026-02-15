@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LinkedCocktailsView: View {
     let cocktails: [Cocktail]
-    let procedure: Procedure?
 
     var body: some View {
         Group {
@@ -34,6 +33,6 @@ struct LinkedCocktailsView: View {
 
 #if DEBUG
 #Preview {
-    LinkedCocktailsView(cocktails: [], procedure: nil)
+    LinkedCocktailsView(cocktails: [])
 }
 #endif
