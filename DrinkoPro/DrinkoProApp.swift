@@ -25,6 +25,7 @@ struct DrinkoProApp: App {
                 UserCreatedCocktail.self,
                 UserIngredient.self,
                 UserProcedure.self,
+                UserProcedureStep.self,
                 configurations: config
             )
         } catch {

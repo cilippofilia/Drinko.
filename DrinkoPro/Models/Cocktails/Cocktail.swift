@@ -97,6 +97,7 @@ class CocktailsViewModel {
         sortedCocktails(in: listOfAllDrinks)
     }
 
+    @MainActor
     func configure(modelContext: ModelContext) {
         self.modelContext = modelContext
         loadUserCreatedCocktails()
