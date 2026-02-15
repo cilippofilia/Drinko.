@@ -1,0 +1,72 @@
+[
+  {
+    "id": "liquid-intelligence",
+    "title": "Liquid Intelligence",
+    "description": "El arte y la ciencia del cóctel perfecto",
+    "summary": "\"Liquid Intelligence\" de Dave Arnold es una exploración cautivadora de la ciencia de los cócteles y la mixología. Arnold revela los secretos detrás de bebidas excepcionales, incorporando principios de física y química en sus recetas y técnicas innovadoras. Este libro es imprescindible para quienes aspiran a la mixología, ya que ofrece una perspectiva única sobre el arte de crear libaciones extraordinarias.",
+    "author": "Dave Arnold"
+  },
+  {
+    "id": "the-curious-bartender-volume-1",
+    "title": "The Curious Bartender v1",
+    "description": "La artesanía y la alquimia de crear el cóctel perfecto",
+    "summary": "\"The Curious Bartender v1\" de Tristan Stephenson es una guía inmersiva que explora el mundo de la mixología, ofreciendo una introducción completa a los destilados, las técnicas y las recetas de cócteles. Con datos históricos y consejos expertos, este libro es un recurso valioso tanto para bartenders en formación como para entusiastas de los cócteles que buscan mejorar sus habilidades y conocimientos.",
+    "author": "Tristan Stephenson"
+  },
+  {
+    "id": "the-curious-bartender-volume-2",
+    "title": "The Curious Bartender v2",
+    "description": "El nuevo testamento de los cócteles",
+    "summary": "\"The Curious Bartender v2\" de Tristan Stephenson es una exploración atractiva e informativa de la mixología. Este libro ofrece una guía completa para elaborar cócteles excepcionales, profundizando en la historia, las técnicas y el arte del oficio. Con descripciones cautivadoras, recetas innovadoras y consejos prácticos, es imprescindible para los entusiastas de los cócteles y los mixólogos en formación.",
+    "author": "Tristan Stephenson"
+  },
+  {
+    "id": "smugglers-cove",
+    "title": "Smuggler's Cove",
+    "description": "Cócteles exóticos, ron y el culto tiki",
+    "summary": "\"Smuggler's Cove\" de Martin Cate con Rebecca Cate es un libro cautivador que explora la historia y el atractivo de la cultura tiki. Los autores comparten recetas de cócteles, revelan secretos ocultos y llevan al lector a un viaje por el encantador mundo de los bares tiki, ofreciendo una escapada refrescante a un reino de delicias tropicales.",
+    "author": "Martin Cate w/Rebecca Cate"
+  },
+  {
+    "id": "shrubs",
+    "title": "Shrubs",
+    "description": "Una bebida old fashioned para tiempos modernos",
+    "summary": "\"Shrubs\" de Michael Dietsch es una guía completa que se adentra en el fascinante mundo de los shrubs, explorando su historia, sabores y usos diversos. Con énfasis en el arte de la mixología, este libro revela los secretos para crear bebidas a base de shrubs irresistibles y refrescantes. Michael Dietsch, experto en el oficio del cóctel, presenta una colección de recetas y técnicas innovadoras para elaborar preparaciones únicas. El lector emprende un viaje para descubrir el proceso de conservar frutas, hierbas y especias en siropes infusionados con vinagre, dando como resultado sabores ácidos y complejos. Desde combinaciones clásicas de shrubs hasta mezclas experimentales, el libro ofrece una amplia variedad de opciones para deleitar el paladar.",
+    "author": "Michael Dietsch"
+  },
+  {
+    "id": "tiki",
+    "title": "Tiki",
+    "description": "Cócteles tropicales modernos",
+    "summary": "\"Tiki\" de Shannon Mustipher es una exploración cautivadora del mundo de los cócteles tropicales, profundizando en la historia, los sabores y la importancia cultural de las bebidas tiki. Desde los orígenes de la cultura tiki hasta técnicas expertas de mixología, este libro inspira a los lectores a abrazar la creatividad y la comunidad detrás de estas vibrantes libaciones. Es una lectura imprescindible para los entusiastas de los cócteles que buscan un viaje inmersivo en el arte tiki.",
+    "author": "Shannon Mustipher"
+  },
+  {
+    "id": "cocktail-codex",
+    "title": "Cocktail Codex",
+    "description": "Fundamentos - Fórmulas - Evolución",
+    "summary": "\"Cocktail Codex\" es la biblia del mixólogo que desvela los secretos para crear cócteles perfectos. Escrito por los expertos Alex Day, Nick Fauchald y David Kaplan, el libro profundiza en la ciencia y el arte de la mixología, pero lo mantiene deliciosamente simple. En su núcleo, \"Cocktail Codex\" sostiene que todos los cócteles provienen de solo seis recetas raíz: Old Fashioned, Martini, Daiquiri, Sidecar, Whiskey Highball y Flip. Domínalas y tendrás las llaves para desbloquear infinitas posibilidades. Tanto si eres un novato que agita su primer Daiquiri como un profesional que quiere elevar su Martini, este libro es una guía indispensable para agitar, remover y disfrutar el camino hacia la excelencia coctelera.",
+    "author": "Alex Day, Nick Fauchald, and David Kaplan"
+  },
+  {
+    "id": "bartender-manual",
+    "title": "Meehan's Bartender Manual",
+    "description": "Fundamentos - Fórmulas - Evolución",
+    "summary": "En \"Meehan's Bartender Manual\", el veterano mixólogo Jim Meehan te lleva en un viaje apasionante por el arte y la ciencia de la coctelería. Más que una colección de recetas, esta guía integral funciona como una clase magistral del oficio, mezclando contexto histórico, técnicas expertas y los matices de la mixología en un manual imprescindible tanto para bartenders en formación como para profesionales. Meehan profundiza en lo esencial: desde montar una barra profesional hasta dominar la química de un cóctel perfecto. Salpicado de anécdotas personales y visuales cautivadores, el libro va más allá de la coctelera y el colador, explorando el storytelling y la hospitalidad que hacen de la coctelería un oficio duradero. Estés detrás de la barra o seas un entusiasta, \"Meehan's Bartender Manual\" es tu kit todo en uno para crear no solo grandes cócteles, sino experiencias inolvidables.",
+    "author": "Jim Meehan"
+  },
+  {
+    "id": "aviary-book",
+    "title": "The Aviary",
+    "description": "Libro de cócteles",
+    "summary": "\"The Aviary\" es un festín visual y sensorial para entusiastas de los cócteles y mixólogos curiosos. Creado por Grant Achatz y Nick Kokonas, las mentes detrás del mundialmente reconocido restaurante Alinea, este libro es un viaje vanguardista por el arte de preparar bebidas. Trasciende los libros tradicionales de cócteles al no limitarse a listar recetas, sino sumergirse en la ciencia, la técnica y la teatralidad de la mixología moderna.\n\nEl libro es una guía completa que abre un nuevo mundo de sabores y sensaciones. Con fotografía impactante, invita a explorar un abanico de sabores y texturas que quizá nunca imaginaste en un vaso. Ya sea una bebida que parece una obra de arte o una que involucra los cinco sentidos, \"The Aviary\" es una experiencia transformadora.\n\nDesde espumas caprichosas hasta esculturas de hielo intrincadas, los cócteles no son solo bebidas; son experiencias multisensoriales. Esto no es solo un libro; es una aventura hacia un mundo rompedor de innovación en la preparación de bebidas. Perfecto para el bartender casero atrevido o el profesional que busca revolucionar su oficio, \"The Aviary\" es una adición esencial a la biblioteca de cualquiera fascinado por lo que es posible en un vaso.",
+    "author": "Grant Achatz, Nick Kokonas, Allen Hemberger"
+  },
+  {
+    "id": "wild-mixology",
+    "title": "Wild Mixology",
+    "description": "Una guía para recolectar cócteles naturales",
+    "summary": "\"Wild Mixology: A Guide to Foraging Natural Cocktails\" es tu guía definitiva para elevar tu mixología usando ingredientes de la naturaleza. Imagina tomar un cóctel infusionado con frutos del bosque recolectados a mano, hierbas cultivadas en casa y flores silvestres: puedes vivir esto y más, en tu propio patio. Este libro sirve como un mapa del tesoro para recolectores y entusiastas de los cócteles, ofreciendo un viaje por bosques, campos e incluso paisajes urbanos para encontrar las combinaciones botánicas perfectas para tus destilados. De lo rústico a lo refinado, cada página revela los secretos para crear bebidas que no solo saben divinas, sino que también te conectan con la tierra. Ideal para quienes aman una copa aventurera, \"Wild Mixology\" es más que un libro de cócteles; es un llamado a explorar el mundo indómito, un sorbo a la vez. ¡Salud por tu próxima aventura salvaje en un vaso!",
+    "author": "Wood-Ing, Valeria Margherita Mosca, Massimo Bottura"
+  }
+]

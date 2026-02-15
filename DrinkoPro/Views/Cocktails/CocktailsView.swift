@@ -7,7 +7,6 @@
 
 import SwiftData
 import SwiftUI
-import TipKit
 
 struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
@@ -23,10 +22,6 @@ struct CocktailsView: View {
     @State private var didConfigureModelContext: Bool = false
 
     @State var path = NavigationPath()
-
-    #if os(iOS)
-    var favoriteCocktailsTip = SwipeToFavoriteTip()
-    #endif
 
     private var methodOptions: [String] {
         uniqueSorted(
@@ -126,12 +121,6 @@ struct CocktailsView: View {
                         viewModel.configure(modelContext: modelContext)
                         didConfigureModelContext = true
                     }
-                }
-                .task {
-                    try? Tips.configure([
-                        .displayFrequency(.immediate),
-                        .datastoreLocation(.applicationDefault)
-                    ])
                 }
         }
     }

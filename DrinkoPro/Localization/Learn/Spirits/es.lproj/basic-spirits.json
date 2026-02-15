@@ -1,0 +1,255 @@
+[
+  {
+    "id": "vodka",
+    "title": "Vodka",
+    "description": "¿Se puede hacer vodka con cualquier cosa?",
+    "body": [
+      {
+        "heading": "Elaboración del vodka",
+        "content": "Aunque el vodka puede elaborarse a partir de distintos ingredientes, no todos son ideales para crear destilados de alta calidad."
+      },
+      {
+        "heading": "Ingredientes para elaborar vodka",
+        "content": "El vodka, un destilado transparente, se obtiene de materias primas ricas en almidón o azúcar. Los materiales más comunes incluyen patatas, melaza de remolacha azucarera y cereales."
+      },
+      {
+        "heading": "Raíces históricas del vodka",
+        "content": "Los orígenes del vodka se remontan a las regiones cerealistas de Rusia occidental, Bielorrusia, Lituania, Ucrania y Polonia. En conjunto, estas naciones forman el célebre “cinturón del vodka” por sus altos niveles de consumo y producción."
+      },
+      {
+        "heading": "Percepción de neutralidad",
+        "content": "Aunque a menudo se considera un “destilado neutro”, las distintas materias primas aportan perfiles de sabor diversos al vodka. A continuación te contaré los matices sutiles del vodka; muy útil para tener en cuenta al elegir un vodka para tus martinis."
+      },
+      {
+        "heading": "Perfiles de sabor distintivos",
+        "content": ""
+      },
+      {
+        "heading": "Trigo",
+        "content": "Aporta notas sutiles de anís, pimienta y cáscara de limón."
+      },
+      {
+        "heading": "Centeno",
+        "content": "Resalta una dulzura de frutos secos, que recuerda al pan de centeno y a las nueces de Brasil."
+      },
+      {
+        "heading": "Maíz",
+        "content": "Ofrece una esencia mantecosa similar al maíz tierno."
+      },
+      {
+        "heading": "Cebada",
+        "content": "Contiene notas de pan, un ligero toque de frutos secos y dulzor que recuerda al brioche."
+      },
+      {
+        "heading": "Patata",
+        "content": "Conocido por su textura cremosa, sabor más pleno y notas vegetales."
+      }
+    ]
+  },
+  {
+    "id": "gin",
+    "title": "Gin",
+    "description": "El destilado botánico con una rica historia y un perfil de sabor versátil.",
+    "body": [
+      {
+        "heading": "Elaboración de la ginebra",
+        "content": "La ginebra es un destilado que requiere un proceso en dos etapas. Primero necesitas una buena base de “destilado neutro” (es decir, vodka) y luego puedes aromatizar esa base mediante una segunda destilación con semillas, bayas, raíces, frutas, hierbas y especias, conocidas en conjunto como “botánicos”. Cada marca tiene sus propias proporciones de botánicos y todas las ginebras son únicas y diferentes, aunque para llamarse gin deben tener un sabor dominante a enebro."
+      },
+      {
+        "heading": "Estilos y tipos de ginebra",
+        "content": ""
+      },
+      {
+        "heading": "Cold Compounded Gin",
+        "content": "Conocidas como “bathtub gins”, se aromatizan con extractos, esencias y/o por infusión/maceración sin destilación."
+      },
+      {
+        "heading": "London Dry Gin",
+        "content": "Originalmente un estilo, hoy es una categoría legal. Por desgracia, no describe mucho más allá de que es seca. A pesar del nombre, pueden producirse en cualquier parte del mundo."
+      },
+      {
+        "heading": "New Western Dry Gin",
+        "content": "Es un término poco utilizado que incluye las ginebras que se alejan del enebro dominante, definidas sobre todo por el equilibrio cuidadoso de sabores de apoyo."
+      },
+      {
+        "heading": "Old Tom Gin",
+        "content": "Suele describirse como un estilo dulce de ginebra, popular en los siglos XVIII y XIX debido a la purificación limitada del destilado. El sabor áspero de esas ginebras se enmascaraba con aromatizantes y/o con regaliz y, más tarde, con azúcar."
+      }
+    ]
+  },
+  {
+    "id": "rum",
+    "title": "Ron",
+    "description": "El destilado dulce y complejo con un toque tropical y un legado centenario.",
+    "body": [
+      {
+        "heading": "Elaboración del ron",
+        "content": "El ron es un destilado elaborado fermentando y luego destilando melaza de caña de azúcar o jugo de caña. En la mayoría de los casos se produce a partir de melaza, salvo en las Antillas francesas y Brasil, donde se utiliza jugo fresco de caña para producir, respectivamente, Rhum Agricole y Cachaça."
+      },
+      {
+        "heading": "Proceso de destilación",
+        "content": "El proceso de destilación varía entre productores. Los alambiques de columna múltiple se usan comúnmente para reducir impurezas y crear un ron más ligero. Alternativamente, el uso de alambique de olla o de una sola columna da como resultado un ron más pesado."
+      },
+      {
+        "heading": "Tipos de ron",
+        "content": ""
+      },
+      {
+        "heading": "Ron “ligero”",
+        "content": "El ron “ligero”, embotellado justo después de la destilación, se caracteriza por su color y sabor. Se usa habitualmente en cócteles refrescantes como mojitos y daiquiris. Algunas marcas lo añejan para aportar más frescura."
+      },
+      {
+        "heading": "Ron “dorado”",
+        "content": "Los rones “dorados” equilibran las variedades claras y oscuras. Obtienen su color del añejamiento en barricas de madera, a veces usadas para coñac o whisky. Algunos pueden usar caramelo para oscurecer el tono."
+      },
+      {
+        "heading": "Ron “oscuro”",
+        "content": "Los rones “oscuros” tienen sabores ricos e intensos. A menudo se usan como “floater” en cócteles por efecto visual, y se disfrutan mejor como un buen whisky o coñac."
+      },
+      {
+        "heading": "Ron “overproof”",
+        "content": "Los rones “overproof”, con un ABV superior al 50%, aportan un toque funky a los cócteles tiki. Pueden ir de claros a oscuros en color."
+      },
+      {
+        "heading": "Ron “con sabor” o “especiado”",
+        "content": "Los rones “con sabor” o “especiados” se explican por sí mismos. Por lo general son más dulces y ofrecen versatilidad en cócteles. ¿Has probado alguna vez un mojito de ron de coco?"
+      },
+      {
+        "heading": "Haz tu propio ron “con sabor” o “especiado”",
+        "content": "Cada marca tiene su receta única. Si quieres crear la tuya, empieza con una botella de tu ron preferido y añade los sabores que desees. Es recomendable comenzar con una cantidad pequeña, como 300 ml o 10 oz, y una cantidad específica de aromatizante, por ejemplo 100 gramos de nibs de cacao. Prueba a diario y cuela cuando logres el sabor deseado. Este método permite ajustes: solo añade más del mismo ron para alargarlo hasta conseguir la mezcla perfecta de aromas y sabores. Recuerda documentar cada paso para poder recrear tu receta final fácilmente.\n\nEste proceso puede aplicarse a cualquier otro destilado; el método en cuestión se llama Infusión en Frío, lo que significa que no se aplica calor para infusionar sabores."
+      }
+    ]
+  },
+  {
+    "id": "mezcal",
+    "title": "Tequila y Mezcal",
+    "description": "Destilados únicos y ricos en cultura de México, con sabores e historias distintas.",
+    "body": [
+      {
+        "heading": "Orígenes del tequila",
+        "content": "La producción de vino ritual a partir de jugo de agave se remonta a los aztecas alrededor del 250-300 d. C. Cuando los soldados de Cortés llegaron a México en 1519, descubrieron que este jugo podía destilarse, lo que dio lugar a la producción de un pseudo-tequila en menos de una década."
+      },
+      {
+        "heading": "Proceso de elaboración del tequila",
+        "content": "El tequila se elabora en la región de Jalisco, México. La planta de agave se trocea, se cuece al vapor y se extrae el jugo. Se añade levadura natural para fermentar. Para llamarse tequila, este líquido fermentado debe someterse a dos destilaciones."
+      },
+      {
+        "heading": "Tipos y añejamiento del tequila",
+        "content": ""
+      },
+      {
+        "heading": "Mixto",
+        "content": "Mixto (o Mixed) es un tequila que contiene al menos un 51% de agave, siendo el resto destilados industriales."
+      },
+      {
+        "heading": "Pura",
+        "content": "Pura (o Pure) es un tequila elaborado con 100% destilado de agave azul."
+      },
+      {
+        "heading": "Blanco",
+        "content": "Blanco (o White/Silver) es un tequila claro añejado un máximo de 60 días."
+      },
+      {
+        "heading": "Oro",
+        "content": "Oro (o Gold) es un tequila similar al blanco pero con saborizantes y/o colorantes, generalmente caramelo."
+      },
+      {
+        "heading": "Reposado",
+        "content": "Reposado (o Rested) es un tequila añejado en barricas de roble de 60 días a 1 año. Esto le da un ligero color dorado y notas de madera, vainilla y otros matices extraídos de la barrica."
+      },
+      {
+        "heading": "Añejo",
+        "content": "Añejo (o Aged) es un tequila añejado por un mínimo de 1 año y hasta 10 años. Este proceso le da un color dorado más intenso y sabores más marcados de madera, vainilla y otros matices extraídos de la barrica."
+      },
+      {
+        "heading": "Historia y proceso del mezcal",
+        "content": "El mezcal se elabora desde el siglo XVI a partir del jugo extraído de la cocción del corazón del maguey, un tipo de agave. Los aztecas lo usaban para hacer pulque, una bebida dulce similar a la cerveza consumida en ceremonias religiosas. A diferencia del tequila, para dar al mezcal su sabor ahumado la planta se asa. Luego se prensa con piedra para extraer la pulpa, se macera en agua pura con la adición de levadura y se deja fermentar varios días. El líquido fermentado se destila y se embotella."
+      }
+    ]
+  },
+  {
+    "id": "cognac",
+    "title": "Brandy y Coñac",
+    "description": "Dos destilados sofisticados y de gran sabor producidos al destilar vino, cada uno con un origen y proceso de envejecimiento distinto.",
+    "body": [
+      {
+        "heading": "Panorama del brandy",
+        "content": "El brandy, producido por destilación de vino, suele disfrutarse como digestivo después de la cena. Algunos brandies se añejan en barricas de madera para aportar carácter y color, mientras que otros usan colorante caramelo para imitar el envejecimiento o combinan ambos métodos."
+      },
+      {
+        "heading": "Coñac: una distinción francesa",
+        "content": "El coñac, un tipo de brandy francés, se produce exclusivamente en la región de la pequeña ciudad de “Cognac”. La región consta de 6 subregiones que aportan vinos para destilar. Para obtener la denominación oficial, el vino destinado a coñac debe someterse a doble destilación antes del 31 de marzo. El proceso suele comenzar a finales de noviembre, y se necesitan 9 litros de vino para producir 1 litro de coñac en unas 11 horas."
+      },
+      {
+        "heading": "Categorías de coñac",
+        "content": ""
+      },
+      {
+        "heading": "V.S. (Very Special) / 3 estrellas",
+        "content": "Añejado entre 2 años y medio y 4 años y medio."
+      },
+      {
+        "heading": "V.S.O.P. (Very Special Old Pale)",
+        "content": "Nombrado por la Casa Hennessy, con el componente más joven añejado al menos 4 años y medio."
+      },
+      {
+        "heading": "Napoleón",
+        "content": "Envejecido legalmente al menos 6,5 años, comúnmente más tiempo."
+      },
+      {
+        "heading": "X.O. (Extra Old)",
+        "content": "Término acuñado originalmente por Maurice Hennessy para coñacs añejados entre 15 y 20 años."
+      }
+    ]
+  },
+  {
+    "id": "pisco",
+    "title": "Pisco",
+    "description": "El brandy claro elaborado con uvas, originario de Perú y Chile, con un perfil de sabor suave y aromático",
+    "body": [
+      {
+        "heading": "Origen y significado del pisco",
+        "content": "El pisco, un brandy de uva transparente de Perú y Chile, toma su nombre de la palabra quechua “pishku”, que significa “pájaro”, en referencia a la localidad donde se produjo por primera vez y a su abundancia de aves."
+      },
+      {
+        "heading": "Métodos tradicionales de producción",
+        "content": "Hoy en día, el pisco se elabora con técnicas tradicionales transmitidas de generación en generación. Las uvas se seleccionan cuidadosamente y se recolectan a mano, y la destilación se centra en preservar los sabores y aromas naturales de la uva."
+      },
+      {
+        "heading": "Importancia cultural",
+        "content": "En Perú y Chile, el pisco tiene gran relevancia cultural y se celebra con festivales, música, danza e incluso un debate nacional sobre su origen. Ambos países lo reivindican como su destilado nacional."
+      },
+      {
+        "heading": "Perfil de sabor único",
+        "content": "El pisco ofrece un perfil de sabor distintivo y complejo, que se disfruta solo, en cócteles clásicos como el Pisco Sour o en diversos combinados, lo que lo convierte en una opción tentadora para los amantes de los destilados."
+      }
+    ]
+  },
+  {
+    "id": "whiskey",
+    "title": "Whisky y Whiskey",
+    "description": "Destilados diversos y complejos con variaciones de todo el mundo, todos compartiendo un proceso común de destilación de granos fermentados.",
+    "body": [
+      {
+        "heading": "Scotch Whisky",
+        "content": "Se elabora de forma similar a otros whiskies, pero con un proceso ligeramente más complejo. El grano debe ser exclusivamente cebada. Una vez cosechada, la cebada se maltea: se remoja en agua durante 1-2 días y se deja germinar parcialmente. Luego se seca en un horno para detener la germinación y desarrollar sabor. Para darle el característico sabor ahumado, la cebada se seca en un horno calentado con turba."
+      },
+      {
+        "heading": "Scotch Grain y Blended Whisky",
+        "content": "El Scotch Grain Whisky puede elaborarse con trigo, maíz, centeno u otros cereales. Se destila al menos dos veces en alambique de columna, luego se añeja un mínimo de tres años en Escocia y se reduce con agua a un mínimo de 40% ABV. Este whisky se usa para mezclar con whiskies de malta y crear Scotch Blended Whisky, o simplemente Scotch."
+      },
+      {
+        "heading": "Irish Whiskey",
+        "content": "Para este tipo de whiskey se usan granos malteados y sin maltear, que se secan con calor. La mezcla se fermenta hasta alrededor de 8% ABV y se destila tres veces hasta 85% ABV. Debe envejecer al menos tres años en barricas de roble en Irlanda y, pasado ese período, se mezcla durante al menos 2 años antes de reducir su graduación y embotellarlo."
+      },
+      {
+        "heading": "American Whiskey",
+        "content": "Se producen de forma similar a otros whiskies, pero con rasgos y métodos distintivos. Los whiskies estadounidenses usan principalmente maíz y centeno en lugar de cebada. La receta de granos se llama “mash bill”, que se cocina a presión con una mezcla de agua y levadura. En este punto se puede añadir hasta un 25% de mosto de lotes anteriores, lo que se denomina “sour mash” para garantizar consistencia entre lotes. Este “sour mash” se fermenta en una cerveza y se destila al menos dos veces. Luego se añeja durante varios años en barricas nuevas de roble americano carbonizado, que aportan dulzor y ligeras notas ahumadas."
+      },
+      {
+        "heading": "Bourbon Whiskey",
+        "content": "Este whiskey puede elaborarse exclusivamente en EE. UU. por ley y solo si se produce en Kentucky puede llamarse Kentucky Bourbon. La mayor parte del mosto debe ser maíz, y el resto puede ser una mezcla de trigo, centeno y cebada. Durante la destilación no puede superar el 80% ABV, y luego se diluye a 63% ABV antes de añejarse al menos dos años en barricas nuevas de roble."
+      }
+    ]
+  }
+]

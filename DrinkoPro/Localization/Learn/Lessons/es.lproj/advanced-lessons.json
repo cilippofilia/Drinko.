@@ -1,0 +1,48 @@
+[
+  {
+    "id": "fatwashing",
+    "title": "Fat-washing de destilados",
+    "description": "Qué es el fat-washing y qué puedes lograr con ello.",
+    "body": [
+      {
+        "heading": "Introducción",
+        "content": "El fat-washing es una técnica usada para añadir sabores salados a los destilados, aportando una complejidad sedosa que no se consigue con métodos tradicionales de infusión."
+      },
+      {
+        "heading": "¿Qué ocurre?",
+        "content": "Este proceso, que se ve a menudo en bares y restaurantes de alta gama, es una especie de alquimia que infunde la esencia de sustancias grasas en el alcohol. El método consiste en “lavar” un destilado con una grasa elegida —ya sea mantequilla, bacon o incluso aceite de oliva— y luego congelarlo para solidificar la grasa y retirarla, dejando solo los sabores deseados."
+      },
+      {
+        "heading": "¿El resultado?",
+        "content": "Un destilado con una sensación en boca aterciopelada y matices ricos que pueden elevar los cócteles a otra dimensión. Imagina un whiskey ahumado con un toque de bacon, perfecto para un Old Fashioned robusto, o una ginebra cítrica con las sutilezas cremosas del aceite de coco, lista para dar un giro tropical a tu martini.\n\nEl fat-washing no solo ejemplifica la ingeniosidad culinaria, también ofrece a los mixólogos un lienzo para la creatividad. El proceso respeta la integridad del destilado base mientras añade complejidad, lo que lo convierte en una técnica favorita para creadores de cócteles artesanales que desean sorprender y deleitar los sentidos de sus clientes."
+      },
+      {
+        "heading": "Algunas notas más",
+        "content": "Es importante recordar que el fat-washing no trata solo de sabor; es un proceso transformador que juega con la textura y el aroma, creando una experiencia multisensorial. La interacción entre el olor y el gusto, junto con una sedosidad inesperada, convierte a los destilados lavados en grasa en una exploración novedosa para el bebedor curioso y en una herramienta para el bartender visionario.\n\nA medida que el movimiento de cócteles artesanales sigue abrazando técnicas tradicionales y modernas, el fat-washing destaca como una manera innovadora de personalizar y refinar la esencia de una bebida. Es narración en un vaso, donde cada sorbo revela capas de sabor e invita a un viaje sensorial tan imaginativo como delicioso."
+      }
+    ]
+  },
+  {
+    "id": "milk-clarification",
+    "title": "Clarificación con leche",
+    "description": "Cuajos, textura y sensaciones aterciopeladas",
+    "body": [
+      {
+        "heading": "Introducción",
+        "content": "La clarificación con leche es una técnica fascinante de mixología que se remonta al siglo XVIII, cuando el milk punch dominaba la escena. Este proceso aparentemente alquímico implica cuajar la leche para eliminar impurezas de un cóctel, dando como resultado una bebida sorprendentemente clara y suave al paladar."
+      },
+      {
+        "heading": "El proceso",
+        "content": "El proceso comienza con la adición de una mezcla ácida —normalmente una combinación de jugo cítrico y un destilado— a leche tibia. El ácido hace que la leche se corte, separando el suero de los cuajos. Luego, la mezcla del cóctel se filtra lentamente a través de los cuajos, que actúan como un filtro. Con el tiempo, los cuajos atrapan muchos de los elementos más pesados que pueden causar turbidez y aspereza en la bebida."
+      },
+      {
+        "heading": "Resultado y beneficios",
+        "content": "Lo que emerge al final es una revelación: un cóctel no solo visualmente impecable, sino también aterciopelado en textura, con una complejidad de sabor matizada y limpia. La clarificación con leche suaviza los bordes de los destilados, atenúa la acidez e integra los componentes de una manera que el simple mezclado o el batido no pueden lograr."
+      },
+      {
+        "heading": "Relevancia moderna",
+        "content": "A pesar de sus raíces históricas, la clarificación con leche se siente moderna, una mezcla perfecta de ciencia culinaria y arte del cóctel. Es un método que exige paciencia y precisión, pero para quienes se adentran en sus detalles, el resultado es una experiencia de cóctel absolutamente trascendente."
+      }
+    ]
+  }
+]

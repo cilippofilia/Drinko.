@@ -41,8 +41,6 @@
 		18883A862ACC71F400FC78C7 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		188E93C02A4C1E0E001691E6 /* BookRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93BF2A4C1E0E001691E6 /* BookRowView.swift */; };
 		188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
-		1899C08B2F1D398900E2D23B /* DrinkoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */; };
-		1899C08C2F1D398900E2D23B /* DrinkoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */; };
 		18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */; };
 		18A929D02F12C2B500B70219 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
 		18A929D12F12C2C000B70219 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
@@ -129,7 +127,6 @@
 		18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperJuiceView.swift; sourceTree = "<group>"; };
 		188E93BF2A4C1E0E001691E6 /* BookRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRowView.swift; sourceTree = "<group>"; };
 		188E93CB2A4C260E001691E6 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
-		1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = DrinkoIcon.icon; sourceTree = "<group>"; };
 		18A8C8202B1C866E0052F0B4 /* ABVRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABVRowView.swift; sourceTree = "<group>"; };
 		18A929A82F12C13D00B70219 /* DrinkoDesktop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoDesktop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
@@ -170,13 +167,6 @@
 			membershipExceptions = (
 				Book.swift,
 				Lesson.swift,
-			);
-			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
-		};
-		18A929E52F12C7FA00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				SwipeToActionTips.swift,
 			);
 			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
 		};
@@ -226,7 +216,7 @@
 		183CED602DE1BAC6005B9699 /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
 		18A929A92F12C13D00B70219 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (180DEDF62F27B3D1003562F3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
 		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 18A929EE2F12C91A00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
-		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929E52F12C7FA00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
+		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
 		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929D82F12C6CD00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
 		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929E72F12C80D00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
 		18EB4F212EEED4B100691DC2 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
@@ -415,7 +405,6 @@
 		18F49E622A27B28D00862CE3 /* DrinkoPro */ = {
 			isa = PBXGroup;
 			children = (
-				1899C08A2F1D398900E2D23B /* DrinkoIcon.icon */,
 				183AE95E2A94AB4500AC156F /* DrinkoPro.entitlements */,
 				18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */,
 				18F49E712A286CDD00862CE3 /* HomeView.swift */,
@@ -593,6 +582,7 @@
 				de,
 				fr,
 				Base,
+				es,
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
@@ -620,7 +610,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1899C08B2F1D398900E2D23B /* DrinkoIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +618,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */,
-				1899C08C2F1D398900E2D23B /* DrinkoIcon.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,7 +785,7 @@
 		18A929C72F12C13E00B70219 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoDebug;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				AUTOMATION_APPLE_EVENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = DrinkoMac/DrinkoMac.entitlements;
@@ -1044,7 +1032,7 @@
 		18F49E6F2A27B28F00862CE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoDebug;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = DrinkoPro/DrinkoPro.entitlements;

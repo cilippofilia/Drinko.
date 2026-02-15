@@ -15,6 +15,12 @@
             "value" : ""
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ""
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -38,6 +44,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "-"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "-"
@@ -71,6 +83,12 @@
             "value" : "\"%@\" not found"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "\"%@\" no encontrado"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -94,6 +112,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%"
@@ -127,6 +151,12 @@
             "value" : "% ABV"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "% ABV"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -150,6 +180,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%.2f"
@@ -183,6 +219,12 @@
             "value" : "%.2f %%"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f %%"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -203,6 +245,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%.2f Gramm"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f gramos"
           }
         },
         "fr" : {
@@ -227,6 +275,12 @@
             "value" : "%.2f Milliliter"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f mililitros"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -247,6 +301,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%.2f Prozent"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%.2f por ciento"
           }
         },
         "fr" : {
@@ -278,6 +338,12 @@
             "value" : "%@"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -300,6 +366,12 @@
             "value" : "%@ Schalen"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ cáscaras"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -320,6 +392,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Schalen in Gramm"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ cáscaras en gramos"
           }
         },
         "fr" : {
@@ -350,6 +428,12 @@
             "value" : "%@ peels: "
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ cáscaras: "
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -373,6 +457,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ Superjuice"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ Superjuice"
@@ -408,6 +498,12 @@
             "value" : "%@:"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@:"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -431,6 +527,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2g"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%2g"
@@ -464,6 +566,12 @@
             "value" : "%1$2g %2$@"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$2g %2$@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -487,6 +595,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld"
@@ -520,6 +634,12 @@
             "value" : "© %@"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "© %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -543,6 +663,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A > Z"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "A > Z"
@@ -576,6 +702,12 @@
             "value" : "ABV"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -604,6 +736,12 @@
             "value" : "ABV Calculator"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculadora de ABV"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -630,6 +768,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ABV?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿ABV?"
           }
         },
         "fr" : {
@@ -661,6 +805,12 @@
             "value" : "Account"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuenta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -687,6 +837,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Add a category"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir una categoría"
           }
         },
         "fr" : {
@@ -717,6 +873,12 @@
             "value" : "Add Category"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir categoría"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -743,6 +905,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Add Category"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir categoría"
           }
         },
         "fr" : {
@@ -773,6 +941,12 @@
             "value" : "Add cocktails to favorites to quickly find them here."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade cócteles a favoritos para encontrarlos rápidamente aquí."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -793,6 +967,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favorit hinzufügen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir favorito"
           }
         },
         "fr" : {
@@ -823,6 +1003,12 @@
             "value" : "Add ingredient"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir ingrediente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -837,9 +1023,6 @@
         }
       }
     },
-    "Add Ingredient" : {
-
-    },
     "Add Product" : {
       "localizations" : {
         "de" : {
@@ -852,6 +1035,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Add Product"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir producto"
           }
         },
         "fr" : {
@@ -868,9 +1057,6 @@
         }
       }
     },
-    "Add Step" : {
-
-    },
     "Add to Cart" : {
       "localizations" : {
         "de" : {
@@ -883,6 +1069,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Add to Cart"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir al carrito"
           }
         },
         "fr" : {
@@ -907,6 +1099,12 @@
             "value" : "Zu Favoriten hinzufügen"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir a favoritos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -927,6 +1125,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fügt ein neues Produkt in %@ hinzu."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade un nuevo producto en %@."
           }
         },
         "fr" : {
@@ -951,6 +1155,12 @@
             "value" : "Fügt eine weitere Zutatenzeile hinzu."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade otra fila de ingredientes."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -971,6 +1181,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fügt diese Kategorie Ihrem Schrank hinzu."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade esta categoría a tu armario."
           }
         },
         "fr" : {
@@ -995,6 +1211,12 @@
             "value" : "Alkoholgehalt nach Volumen"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alcohol por volumen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1015,6 +1237,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alkoholgehalt nach Volumen in Prozent"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Porcentaje de alcohol por volumen"
           }
         },
         "fr" : {
@@ -1045,6 +1273,12 @@
             "value" : "All Cocktails"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todos los cócteles"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1065,6 +1299,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Menge in Millilitern"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantidad en mililitros"
           }
         },
         "fr" : {
@@ -1095,6 +1335,12 @@
             "value" : "Amount?"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Cantidad?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1115,6 +1361,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sind Sie sicher, dass Sie alle Produkte und Kategorien löschen möchten?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Seguro que quieres eliminar todos los productos y categorías?"
           }
         },
         "fr" : {
@@ -1143,6 +1395,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Are you sure you want to delete this category? You will also delete all the products it contains."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Seguro que quieres eliminar esta categoría? También eliminarás todos los productos que contiene."
           }
         },
         "fr" : {
@@ -1174,6 +1432,12 @@
             "value" : "Are you sure you want to delete this post?"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Seguro que quieres eliminar esta publicación?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1200,6 +1464,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Are you sure you want to delete this product? You will delete all the informations added to it."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Seguro que quieres eliminar este producto? Eliminarás toda la información añadida."
           }
         },
         "fr" : {
@@ -1231,6 +1501,12 @@
             "value" : "Are you sure you want to delete your account? This action is not reversible."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Seguro que quieres eliminar tu cuenta? Esta acción no es reversible."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1245,9 +1521,6 @@
         }
       }
     },
-    "Basics" : {
-
-    },
     "Books" : {
       "localizations" : {
         "de" : {
@@ -1260,6 +1533,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Books"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Libros"
           }
         },
         "fr" : {
@@ -1291,6 +1570,12 @@
             "value" : "Buy: %@"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprar: %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1311,6 +1596,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Von %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por %@"
           }
         },
         "fr" : {
@@ -1341,6 +1632,12 @@
             "value" : "By deleting the category you will be deleting every product inside it."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al eliminar la categoría, eliminarás todos los productos que contiene."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1369,6 +1666,12 @@
             "value" : "By deleting the product you will be deleting every informations added to it."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al eliminar el producto, eliminarás toda la información añadida."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1389,6 +1692,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Durch Löschen dieses Produkts entfernen Sie alle darin enthaltenen Informationen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al eliminar este producto, eliminarás toda la información que contiene."
           }
         },
         "fr" : {
@@ -1419,6 +1728,12 @@
             "value" : "By Glass"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por vaso"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1445,6 +1760,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "By Ice"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por hielo"
           }
         },
         "fr" : {
@@ -1476,6 +1797,12 @@
             "value" : "Cabinet"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Armario"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1504,6 +1831,12 @@
             "value" : "Calculate"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calcular"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1524,6 +1857,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Berechneter Alkoholgehalt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABV calculado"
           }
         },
         "fr" : {
@@ -1554,6 +1893,12 @@
             "value" : "Calculation Mode"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modo de cálculo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1582,6 +1927,12 @@
             "value" : "Cancel"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1596,9 +1947,6 @@
         }
       }
     },
-    "Cannot Save" : {
-
-    },
     "Category Description" : {
       "localizations" : {
         "de" : {
@@ -1611,6 +1959,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Category Description"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción de la categoría"
           }
         },
         "fr" : {
@@ -1633,6 +1987,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kategoriedetails"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles de la categoría"
           }
         },
         "fr" : {
@@ -1663,6 +2023,12 @@
             "value" : "Category Details"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles de la categoría"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1691,6 +2057,12 @@
             "value" : "Category name"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de la categoría"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1717,6 +2089,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Choose a section from the sidebar to start your mixology journey."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige una sección en la barra lateral para empezar tu viaje de mixología."
           }
         },
         "fr" : {
@@ -1748,6 +2126,12 @@
             "value" : "Choose from Library"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir de la biblioteca"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1777,6 +2161,12 @@
             "value" : "Choose Image"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegir imagen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1797,6 +2187,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zitronensäure"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ácido cítrico"
           }
         },
         "fr" : {
@@ -1827,6 +2223,12 @@
             "value" : "Citric Acid: "
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ácido cítrico: "
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1855,6 +2257,12 @@
             "value" : "Clear All"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar todo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1869,34 +2277,6 @@
         }
       }
     },
-    "Clear filter" : {
-        "localizations" : {
-          "de" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "Filter löschen"
-            }
-          },
-          "en" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "Clear filter"
-            }
-          },
-          "fr" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "Effacer le filtre"
-            }
-          },
-          "it" : {
-            "stringUnit" : {
-              "state" : "translated",
-              "value" : "Rimuovi filtro"
-            }
-          }
-        }
-    },
     "Clear Search" : {
       "localizations" : {
         "de" : {
@@ -1909,6 +2289,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clear Search"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar búsqueda"
           }
         },
         "fr" : {
@@ -1940,6 +2326,12 @@
             "value" : "Cocktails"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cócteles"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1968,6 +2360,12 @@
             "value" : "Cocktails Only"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo cócteles"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1988,6 +2386,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eingeklappt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colapsado"
           }
         },
         "fr" : {
@@ -2018,6 +2422,12 @@
             "value" : "Colors"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colores"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2046,6 +2456,12 @@
             "value" : "Contact the developer"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contactar al desarrollador"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2072,6 +2488,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contacts"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contactos"
           }
         },
         "fr" : {
@@ -2103,6 +2525,12 @@
             "value" : "Content"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contenido"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2116,9 +2544,6 @@
           }
         }
       }
-    },
-    "Create a cocktail to find it here." : {
-
     },
     "Create Account" : {
       "comment" : "AuthView",
@@ -2136,6 +2561,12 @@
             "value" : "Create Account"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear cuenta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2150,9 +2581,6 @@
         }
       }
     },
-    "Create Cocktail" : {
-
-    },
     "Create Post" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2166,6 +2594,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Create Post"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear publicación"
           }
         },
         "fr" : {
@@ -2190,6 +2624,12 @@
             "value" : "Erstellt eine neue Kategorie."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea una nueva categoría."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2204,6 +2644,9 @@
         }
       }
     },
+    "DEBUG" : {
+
+    },
     "Delete" : {
       "localizations" : {
         "de" : {
@@ -2216,6 +2659,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Delete"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
           }
         },
         "fr" : {
@@ -2248,6 +2697,12 @@
             "value" : "Delete Account"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar cuenta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2277,6 +2732,12 @@
             "value" : "Delete account?"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar cuenta?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2297,6 +2758,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alles löschen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar todo"
           }
         },
         "fr" : {
@@ -2327,6 +2794,12 @@
             "value" : "Delete Category"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar categoría"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2341,15 +2814,18 @@
         }
       }
     },
-    "Delete Cocktail?" : {
-
-    },
     "Delete ingredient" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zutat löschen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar ingrediente"
           }
         },
         "fr" : {
@@ -2380,6 +2856,12 @@
             "value" : "Delete Product"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar producto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2408,6 +2890,12 @@
             "value" : "Delete product?"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar producto?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2422,9 +2910,6 @@
         }
       }
     },
-    "Describe this step" : {
-
-    },
     "Dismiss" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2438,6 +2923,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dismiss"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar"
           }
         },
         "fr" : {
@@ -2469,6 +2960,12 @@
             "value" : "Done"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2491,6 +2988,12 @@
             "value" : "Doppeltippen, um diesen Abschnitt zu %@."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toca dos veces para %@ esta sección."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2505,9 +3008,6 @@
         }
       }
     },
-    "Double tap to view details." : {
-
-    },
     "Drink selection" : {
       "localizations" : {
         "de" : {
@@ -2520,6 +3020,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Drink selection"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selección de bebidas"
           }
         },
         "fr" : {
@@ -2550,6 +3056,12 @@
             "value" : "Drinko."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2570,6 +3082,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ bearbeiten"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar %@"
           }
         },
         "fr" : {
@@ -2600,6 +3118,12 @@
             "value" : "Edit Category"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar categoría"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2614,9 +3138,6 @@
         }
       }
     },
-    "Edit Cocktail" : {
-
-    },
     "Edit Product" : {
       "localizations" : {
         "de" : {
@@ -2629,6 +3150,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Edit Product"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar producto"
           }
         },
         "fr" : {
@@ -2645,9 +3172,6 @@
         }
       }
     },
-    "Edits this cocktail" : {
-
-    },
     "Email" : {
       "extractionState" : "manual",
       "generatesSymbol" : false,
@@ -2662,6 +3186,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Email"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correo electrónico"
           }
         },
         "fr" : {
@@ -2693,6 +3223,12 @@
             "value" : "Email:"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correo electrónico:"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2721,6 +3257,12 @@
             "value" : "Empty Cabinet"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Armario vacío"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2741,6 +3283,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ausgeklappt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Expandido"
           }
         },
         "fr" : {
@@ -2771,6 +3319,12 @@
             "value" : "Extra"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Extra"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2785,15 +3339,18 @@
         }
       }
     },
-    "Extra notes (optional)" : {
-
-    },
     "Favorite" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favorit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorito"
           }
         },
         "fr" : {
@@ -2824,6 +3381,12 @@
             "value" : "Favorites Only"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo favoritos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2852,6 +3415,12 @@
             "value" : "Filter"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2866,15 +3435,18 @@
         }
       }
     },
-    "Filter and sort cocktails" : {
-
-    },
     "Filter cocktails" : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cocktails filtern"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filtrar cócteles"
           }
         },
         "fr" : {
@@ -2903,6 +3475,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Garnish"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarnición"
           }
         },
         "fr" : {
@@ -2934,6 +3512,12 @@
             "value" : "Get Unlimited Products"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obtén productos ilimitados"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2962,6 +3546,12 @@
             "value" : "Glass"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaso"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2985,6 +3575,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "gr"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "gr"
@@ -3018,6 +3614,12 @@
             "value" : "Have you tried it yet?"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Ya lo has probado?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3046,6 +3648,12 @@
             "value" : "History"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Historial"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3072,6 +3680,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ice"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hielo"
           }
         },
         "fr" : {
@@ -3103,6 +3717,12 @@
             "value" : "Image"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imagen"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3118,12 +3738,17 @@
       }
     },
     "Image of %@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bild von %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imagen de %@"
           }
         },
         "fr" : {
@@ -3154,6 +3779,12 @@
             "value" : "Info"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Información"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3176,6 +3807,12 @@
             "value" : "Zutat %lld"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingrediente %lld"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3196,6 +3833,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zutatenname"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del ingrediente"
           }
         },
         "fr" : {
@@ -3227,6 +3870,12 @@
             "value" : "Ingredients"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ingredientes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3255,6 +3904,12 @@
             "value" : "Juice Calculator"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calculadora de jugo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3281,6 +3936,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Language"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idioma"
           }
         },
         "fr" : {
@@ -3312,6 +3973,12 @@
             "value" : "Learn"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aprender"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3338,6 +4005,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Like"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Me gusta"
           }
         },
         "fr" : {
@@ -3369,6 +4042,12 @@
             "value" : "Like the post"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dar me gusta a la publicación"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3396,6 +4075,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liked posts"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Publicaciones con me gusta"
           }
         },
         "fr" : {
@@ -3427,6 +4112,12 @@
             "value" : "Loading..."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargando..."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3455,6 +4146,12 @@
             "value" : "Made in"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hecho en"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3475,6 +4172,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Äpfelsäure"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ácido málico"
           }
         },
         "fr" : {
@@ -3505,6 +4208,12 @@
             "value" : "Malic Acid: "
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ácido málico: "
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3531,6 +4240,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Method"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Método"
           }
         },
         "fr" : {
@@ -3561,6 +4276,12 @@
             "value" : "ml"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ml"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3575,9 +4296,6 @@
         }
       }
     },
-    "Name" : {
-
-    },
     "Name:" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3591,6 +4309,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Name:"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre:"
           }
         },
         "fr" : {
@@ -3619,6 +4343,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Need to buy"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Necesita comprar"
           }
         },
         "fr" : {
@@ -3650,6 +4380,12 @@
             "value" : "New Post"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva publicación"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3664,12 +4400,6 @@
         }
       }
     },
-    "No cocktails found" : {
-
-    },
-    "No cocktails match \"%@\"." : {
-
-    },
     "No cocktails match \"%@\". Try a different search term or browse all cocktails." : {
       "localizations" : {
         "de" : {
@@ -3682,6 +4412,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No cocktails match \"%@\". Try a different search term or browse all cocktails."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay cócteles que coincidan con \"%@\". Prueba con otro término de búsqueda o explora todos los cócteles."
           }
         },
         "fr" : {
@@ -3698,11 +4434,7 @@
         }
       }
     },
-    "No custom cocktails yet" : {
-
-    },
     "No favorite cocktails found" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3714,6 +4446,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No favorite cocktails found"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se encontraron cócteles favoritos"
           }
         },
         "fr" : {
@@ -3731,7 +4469,6 @@
       }
     },
     "No favorite cocktails match \"%@\"." : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3743,6 +4480,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "No favorite cocktails match \"%@\"."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay cócteles favoritos que coincidan con \"%@\"."
           }
         },
         "fr" : {
@@ -3773,6 +4516,12 @@
             "value" : "No favorite cocktails yet"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay cócteles favoritos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3801,6 +4550,12 @@
             "value" : "No lessons or books match \"%@\". Try a different search term or browse all topics."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay lecciones ni libros que coincidan con \"%@\". Prueba con otro término de búsqueda o explora todos los temas."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3821,6 +4576,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kein Favorit"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No favorito"
           }
         },
         "fr" : {
@@ -3851,6 +4612,12 @@
             "value" : "Notes"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3879,6 +4646,12 @@
             "value" : "OK"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3899,6 +4672,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Öffnet externen Link."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre un enlace externo."
           }
         },
         "fr" : {
@@ -3923,6 +4702,12 @@
             "value" : "Öffnet die macOS-Spracheinstellungen."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la configuración de idioma de macOS."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3943,6 +4728,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Öffnet Produktdetails."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre los detalles del producto."
           }
         },
         "fr" : {
@@ -3967,6 +4758,12 @@
             "value" : "Öffnet die Systemeinstellungen für die Sprache."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la configuración de idioma del sistema."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3987,6 +4784,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Öffnet den %@-Superjuice-Rechner."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la calculadora de superjuice %@."
           }
         },
         "fr" : {
@@ -4011,6 +4814,12 @@
             "value" : "Öffnet den Alkoholgehalt-Rechner."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la calculadora de alcohol por volumen."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4031,6 +4840,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Öffnet den App-Leitfaden."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la guía de la app."
           }
         },
         "fr" : {
@@ -4055,6 +4870,12 @@
             "value" : "Öffnet die Bewertungsseite im App Store."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre la página de valoración en App Store."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4069,9 +4890,6 @@
         }
       }
     },
-    "Options" : {
-
-    },
     "Other Enquiry" : {
       "localizations" : {
         "de" : {
@@ -4084,6 +4902,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Other Enquiry"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otra consulta"
           }
         },
         "fr" : {
@@ -4115,6 +4939,12 @@
             "value" : "Password"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contraseña"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4141,6 +4971,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Photos & Videos"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotos y vídeos"
           }
         },
         "fr" : {
@@ -4171,6 +5007,12 @@
             "value" : "Pick the method"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige el método"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4197,6 +5039,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pick the serving"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige el servicio"
           }
         },
         "fr" : {
@@ -4227,6 +5075,12 @@
             "value" : "Preferences"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferencias"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4253,6 +5107,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Procedure"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Procedimiento"
           }
         },
         "fr" : {
@@ -4283,6 +5143,12 @@
             "value" : "Product name"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del producto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4309,6 +5175,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Product Name"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del producto"
           }
         },
         "fr" : {
@@ -4340,6 +5212,12 @@
             "value" : "Profile"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perfil"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4354,9 +5232,6 @@
         }
       }
     },
-    "Qty" : {
-
-    },
     "Rate the app" : {
       "localizations" : {
         "de" : {
@@ -4369,6 +5244,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rate the app"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valorar la app"
           }
         },
         "fr" : {
@@ -4399,6 +5280,12 @@
             "value" : "Rating"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valoración"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4425,6 +5312,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Read me"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Léeme"
           }
         },
         "fr" : {
@@ -4455,6 +5348,12 @@
             "value" : "Ready to Mix?"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Listo para mezclar?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4483,6 +5382,12 @@
             "value" : "Remember to add the juice of the peeled fruits used to make superjuice. The final volume will be a bit higher than the water volume displayed."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recuerda añadir el jugo de las frutas peladas usadas para hacer superjuice. El volumen final será un poco mayor que el volumen de agua mostrado."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4503,6 +5408,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Favorit entfernen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar favorito"
           }
         },
         "fr" : {
@@ -4533,6 +5444,12 @@
             "value" : "Remove from Cart"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar del carrito"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4553,6 +5470,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aus Favoriten entfernen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar de favoritos"
           }
         },
         "fr" : {
@@ -4584,6 +5507,12 @@
             "value" : "Remove like from post."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar me gusta de la publicación"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4613,6 +5542,12 @@
             "value" : "Remove Photo"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar foto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4633,6 +5568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entfernt alle Kategorien und Produkte."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina todas las categorías y productos."
           }
         },
         "fr" : {
@@ -4663,6 +5604,12 @@
             "value" : "Report a bug"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reportar un error"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4689,6 +5636,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Request a Feature"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solicitar una función"
           }
         },
         "fr" : {
@@ -4719,6 +5672,12 @@
             "value" : "Save"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4745,6 +5704,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Save Changes"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar cambios"
           }
         },
         "fr" : {
@@ -4775,6 +5740,12 @@
             "value" : "Search Cocktails"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar cócteles"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4801,6 +5772,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Search lessons and books"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar lecciones y libros"
           }
         },
         "fr" : {
@@ -4831,6 +5808,12 @@
             "value" : "Select an option"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona una opción"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4851,6 +5834,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Farbe %@ auswählen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona el color %@"
           }
         },
         "fr" : {
@@ -4875,6 +5864,12 @@
             "value" : "Serviert"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servicio"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4895,6 +5890,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bewertung auf %lld setzen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Establecer la valoración en %lld"
           }
         },
         "fr" : {
@@ -4926,6 +5927,12 @@
             "value" : "Settings"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4952,6 +5959,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Share the app"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir la app"
           }
         },
         "fr" : {
@@ -4982,6 +5995,12 @@
             "value" : "Shots Only"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo chupitos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5002,6 +6021,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verlauf anzeigen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar historial"
           }
         },
         "fr" : {
@@ -5033,6 +6058,12 @@
             "value" : "show less"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mostrar menos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5060,6 +6091,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "show more"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "mostrar más"
           }
         },
         "fr" : {
@@ -5091,6 +6128,12 @@
             "value" : "Sign In"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar sesión"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5120,6 +6163,12 @@
             "value" : "Sign Out"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar sesión"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5145,6 +6194,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Social"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Social"
@@ -5179,6 +6234,12 @@
             "value" : "Sorry, there was an error loading the store. Please try again later."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo sentimos, hubo un error al cargar la tienda. Por favor, inténtalo de nuevo más tarde."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5207,6 +6268,12 @@
             "value" : "Sort"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordenar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5233,6 +6300,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sort cocktails"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordenar cócteles"
           }
         },
         "fr" : {
@@ -5265,6 +6338,12 @@
             "value" : "Sort Cocktails"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ordenar cócteles"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5293,6 +6372,12 @@
             "value" : "Special thanks to:"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agradecimientos especiales a:"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5307,9 +6392,6 @@
         }
       }
     },
-    "Step %lld" : {
-
-    },
     "Suggested Categories" : {
       "localizations" : {
         "de" : {
@@ -5322,6 +6404,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suggested Categories"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Categorías sugeridas"
           }
         },
         "fr" : {
@@ -5339,6 +6427,7 @@
       }
     },
     "Swipe right" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5350,6 +6439,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Swipe right"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desliza a la derecha"
           }
         },
         "fr" : {
@@ -5381,6 +6476,12 @@
             "value" : "Take Photo"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tomar foto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5408,6 +6509,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Thank you!"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Gracias!"
           }
         },
         "fr" : {
@@ -5439,6 +6546,12 @@
             "value" : "Thank you! Your request is pending approval, but you can carry on using the app in the meantime."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Gracias! Tu solicitud está pendiente de aprobación, pero puedes seguir usando la app mientras tanto."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5468,6 +6581,12 @@
             "value" : "This app was made with ❤️ by Filippo Cilia 🇮🇹"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta app fue hecha con ❤️ por Filippo Cilia 🇮🇹"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5482,9 +6601,6 @@
         }
       }
     },
-    "This will permanently remove your cocktail." : {
-
-    },
     "Title" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -5498,6 +6614,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Title"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Título"
           }
         },
         "fr" : {
@@ -5515,6 +6637,7 @@
       }
     },
     "To mark your favorite cocktails" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5526,6 +6649,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "To mark your favorite cocktails"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para marcar tus cócteles favoritos"
           }
         },
         "fr" : {
@@ -5556,6 +6685,12 @@
             "value" : "To start, press 'Add a category' below or the + button at the top of the view."
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para empezar, pulsa 'Añadir una categoría' abajo o el botón + en la parte superior de la vista."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5582,6 +6717,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Translations"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Traducciones"
           }
         },
         "fr" : {
@@ -5613,6 +6754,12 @@
             "value" : "Try Again"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Intentar de nuevo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5627,12 +6774,6 @@
         }
       }
     },
-    "Unit" : {
-
-    },
-    "Update" : {
-
-    },
     "Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink." : {
       "localizations" : {
         "de" : {
@@ -5645,6 +6786,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Use 'Built in the glass' and 'served up' to calculate the ABV of your own batches. Those two combined will not add any dilution to the drink."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usa 'Construido en el vaso' y 'servido' para calcular el ABV de tus propios lotes. Esos dos combinados no añadirán ninguna dilución a la bebida."
           }
         },
         "fr" : {
@@ -5661,9 +6808,6 @@
         }
       }
     },
-    "User Created Only" : {
-
-    },
     "Version" : {
       "localizations" : {
         "de" : {
@@ -5676,6 +6820,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Version"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versión"
           }
         },
         "fr" : {
@@ -5700,6 +6850,12 @@
             "value" : "Wasser"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agua"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5720,6 +6876,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Wasser in Millilitern"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agua en mililitros"
           }
         },
         "fr" : {
@@ -5748,6 +6910,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Water: "
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Agua: "
           }
         },
         "fr" : {
@@ -5779,6 +6947,12 @@
             "value" : "Welcome to the exciting world of cocktails! This app is your ultimate guide to crafting the perfect drink, whether you're a seasoned bartender or just starting as a home enthusiast. It's a perfect blend of my personal experience behind the bar, insights from friends and colleagues, and information collected from reliable sources on the internet and various books.\n\nBut, let's face it, taste is subjective, and there's no one-size-fits-all approach to making cocktails. However, this app will be your trusty companion to help you discover new recipes, perfect your favorites, and even create your signature cocktail.\n\nFrom refreshing tropical blends to sophisticated sips, we've got you covered. You'll find everything from classic cocktails to modern twists, so get ready to impress your guests with your newfound mixology skills.\n\nBut, at the end of the day, the most important thing is that you enjoy the cocktail sitting in front of you. So, use this app as a guideline, experiment with different ingredients and techniques, and most importantly, have fun! Who knows, you might even uncover some professional bartending tips and tricks along the way.\n\nSo, are you ready to shake things up and craft some delicious drinks? Let's raise a glass and cheers to endless possibilities!"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Bienvenido al emocionante mundo de los cócteles! Esta app es tu guía definitiva para preparar la bebida perfecta, tanto si eres un bartender con experiencia como si estás empezando como aficionado en casa. Es una mezcla perfecta de mi experiencia personal detrás de la barra, las ideas de amigos y colegas y la información recopilada de fuentes fiables en internet y de varios libros.\n\nPero, seamos honestos, el gusto es subjetivo y no existe un enfoque único para hacer cócteles. Sin embargo, esta app será tu compañera de confianza para ayudarte a descubrir nuevas recetas, perfeccionar tus favoritas e incluso crear tu cóctel de autor.\n\nDesde mezclas tropicales refrescantes hasta sorbos sofisticados, lo tenemos cubierto. Encontrarás de todo, desde cócteles clásicos hasta giros modernos, así que prepárate para impresionar a tus invitados con tus nuevas habilidades de mixología.\n\nPero, al final del día, lo más importante es que disfrutes el cóctel que tienes delante. Así que usa esta app como guía, experimenta con distintos ingredientes y técnicas y, lo más importante, ¡diviértete! Quién sabe, quizá descubras algunos trucos y consejos profesionales de bartending por el camino.\n\nEntonces, ¿estás listo para agitar las cosas y preparar deliciosas bebidas? ¡Levantemos la copa y brindemos por las infinitas posibilidades!"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5807,6 +6981,12 @@
             "value" : "What is the ingredient?"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Cuál es el ingrediente?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5831,6 +7011,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "X (Twitter)"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "X (Twitter)"
@@ -5864,6 +7050,12 @@
             "value" : "You may also like"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "También te puede gustar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5892,6 +7084,12 @@
             "value" : "Your notes on %@"
           }
         },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tus notas sobre %@..."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5915,6 +7113,12 @@
           }
         },
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Z > A"
+          }
+        },
+        "es" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Z > A"

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "simple-syrup",
+    "title": "Sirope simple",
+    "description": "Veamos cómo hacer sirope simple, sirope rico y cuándo es mejor usarlos",
+    "body": [
+      {
+        "heading": "Sirope simple y sirope rico",
+        "content": "El sirope simple es una mezcla de partes iguales de agua y azúcar por peso (1:1), mientras que el sirope rico se hace con 2 partes de azúcar por 1 parte de agua (2:1)."
+      },
+      {
+        "heading": "Cómo preparar sirope simple",
+        "content": "Para hacer sirope simple, pon el azúcar en un recipiente y añade agua caliente, removiendo hasta que el líquido quede transparente. También puedes mezclar el azúcar y el agua con agua fría, pero tardará más en disolverse el azúcar. Este método funciona con todo tipo de azúcar, incluyendo blanco, moreno, demerara, golden, muscovado y turbinado."
+      },
+      {
+        "heading": "Conservación y uso",
+        "content": "Cuando el sirope esté listo, deja que se enfríe, embotéllalo y etiquétalo con el tipo de azúcar, la proporción utilizada y la fecha de elaboración. Guárdalo en la nevera durante más de un mes. La mayoría de los cócteles piden sirope porque el azúcar granulada no se disuelve por completo al remover, agitar o “throw”. En bebidas como el old fashioned, mojito o caipiriña, que originalmente llevan azúcar granulada, queda a tu elección usar azúcar o sirope. Sin embargo, usar azúcar granulada hará que el dulzor del cóctel evolucione con el tiempo, lo que puede no ser deseable. Con sirope tendrás más control sobre el dulzor y será más fácil replicar exactamente el mismo perfil de sabor."
+      }
+    ]
+  },
+  {
+    "id": "honey",
+    "title": "Siropes de miel, agave y vainilla",
+    "description": "Aprende a usar estos siropes densos y algunos datos interesantes",
+    "body": [
+      {
+        "heading": "Importancia de los siropes en los cócteles",
+        "content": "Los siropes son un componente clave en la coctelería, y es esencial prepararlos bien para lograr la consistencia y el sabor deseados. Es importante diluir los siropes densos con agua en una proporción de 1:1 o 2:1 para evitar la cristalización."
+      },
+      {
+        "heading": "Sirope de miel",
+        "content": "El sirope de miel es un ingrediente básico en muchos cócteles, especialmente con whiskies. La proporción recomendada es 3:1 con agua caliente. Dura más de un mes, y la refrigeración puede prolongar su vida útil."
+      },
+      {
+        "heading": "Sirope de agave",
+        "content": "El sirope de agave es versátil y combina bien con tequilas y café. Rebájalo con una proporción 2:1 de agua caliente, embotéllalo y guárdalo en la nevera por más de un mes."
+      },
+      {
+        "heading": "Sirope de vainilla",
+        "content": "El sirope de vainilla, genial para cócteles, complementa el café y los sabores frutales. Puedes comprarlo o prepararlo infusionando una vaina de vainilla en sirope simple. Reutiliza la vaina varias veces para aportar sabor."
+      }
+    ]
+  },
+  {
+    "id": "fruity-syrups",
+    "title": "Siropes con sabor a frutos rojos",
+    "description": "Hablemos de cómo puedes hacer tus propios siropes frutales.",
+    "body": [
+      {
+        "heading": "Ventajas de los siropes caseros",
+        "content": "Los siropes caseros superan a las marcas comerciales con sabores más frescos y naturales. Controla el sabor, evita estabilizantes y crea mezclas únicas de frutas, hierbas y especias."
+      },
+      {
+        "heading": "Dos métodos recomendados",
+        "content": ""
+      },
+      {
+        "heading": "Fruta, azúcar y mortero",
+        "content": "Combina pesos iguales de fruta y azúcar en un tarro, machaca suavemente y deja reposar entre 8 y 12 horas (o más si es necesario). Disuelve el azúcar con un peso igual de agua tibia, cuela y embotella."
+      },
+      {
+        "heading": "Licuar frutas",
+        "content": "Licúa partes iguales de fruta, azúcar y agua. Usar agua a temperatura ambiente da un sabor más fresco, mientras que el agua caliente da un sabor a fruta más cocida. Cuela y embotella el sirope."
+      },
+      {
+        "heading": "Vida útil y conservación",
+        "content": "Estos siropes tienen una vida útil corta de alrededor de una o dos semanas en refrigeración. Se puede extender a un mes añadiendo un chorrito de vodka. Experimenta con distintas frutas, hierbas y especias para delicias caseras."
+      }
+    ]
+  },
+  {
+    "id": "other-syrups",
+    "title": "Sirope de jengibre y sirope triple",
+    "description": "¡Acompáñame a explorar dos siropes únicos y aprende a prepararlos desde cero!",
+    "body": [
+      {
+        "heading": "Sirope de jengibre",
+        "content": "Crear sirope de jengibre con el método de Jeff Morganthaler es sencillo: licúa partes iguales de agua caliente, azúcar y jengibre pelado o sin pelar. Cuela los sólidos con una gasa, una bolsa para leche vegetal o una camiseta de algodón blanca sin teñir (desechable por las manchas). Desinfecta la tela antes y después de usarla."
+      },
+      {
+        "heading": "Sirope triple",
+        "content": "El mixólogo Dale DeGroff creó el complejo sirope triple para realzar los cócteles. El sirope simple carece de complejidad en los sours, mientras que el sirope de miel es demasiado intenso. Combina partes iguales de sirope simple (1:1), 1/2 parte de sirope de agave y 1/4 de sirope de miel. Ajusta las proporciones al gusto. Ejemplo de receta: 400 ml de sirope simple, 200 ml de sirope de agave, 100 ml de sirope de miel."
+      }
+    ]
+  },
+  {
+    "id": "grenadine",
+    "title": "Sirope de granadina",
+    "description": "¿Qué granadina ofrece la mejor relación tiempo/dinero?",
+    "body": [
+      {
+        "heading": "Granadina casera",
+        "content": "Para obtener el mejor sirope de granada en sabor, se recomienda hacerlo desde cero. Usa 950 ml de zumo de granada orgánico, 600 g de azúcar y 35 ml de zumo de limón. Cocina a fuego medio-bajo durante 45-60 min hasta que espese."
+      },
+      {
+        "heading": "Preparación del sirope",
+        "content": "Combina 950 ml de zumo de granada y 600 g de azúcar a fuego bajo. Remueve hasta que el azúcar se disuelva. Añade 180 ml de melaza y mezcla bien. Embotella, etiqueta y refrigera hasta por dos semanas. Como alternativa, las opciones comerciales de buena calidad ofrecen una mayor vida útil."
+      }
+    ]
+  }
+]

@@ -7,7 +7,6 @@
 
 import SwiftData
 import SwiftUI
-import TipKit
 
 @main
 struct DrinkoProApp: App {
@@ -18,7 +17,6 @@ struct DrinkoProApp: App {
     private let modelContainer: ModelContainer
 
     init() {
-        try? Tips.configure()
         do {
             let config = ModelConfiguration(cloudKitDatabase: .automatic)
             modelContainer = try ModelContainer(
