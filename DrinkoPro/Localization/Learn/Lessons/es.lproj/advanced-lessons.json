@@ -1,49 +1,48 @@
 [
-    {
-        "id":"fatwashing",
-        "title":"Fat-washing spirits",
-        "description":"What is fat-washing and what can you achieve with it.",
-        "body": [
-            {
-                "heading":"Introduction",
-                "content":"Fat-washing is a technique used to add savory flavors to spirits, giving a luscious complexity that can't be achieved through traditional infusion methods."
-            },
-            {
-                "heading":"What happening?",
-                "content":"This process, often seen in high-end bars and restaurants, is a kind of alchemy that infuses the essence of fatty substances into alcohol. The method involves \"washing\" a spirit with a chosen fat – be it butter, bacon, or even olive oil – then freezing it to solidify the fat for removal, leaving behind only the desired flavors."
-            },
-            {
-                "heading":"The result?",
-                "content":"A spirit that carries a velvety mouthfeel and rich undertones that can elevate cocktails to a new dimension. Imagine a smoky whiskey with a hint of bacon, perfect for a robust Old Fashioned, or a citrussy gin touched by the creamy subtleties of coconut oil, ready to bring a tropical twist to your martini.\n\nFat-washing not only exemplifies culinary ingenuity but also offers mixologists a canvas for creativity. The process respects the base spirit's integrity while layering complexity, making it a darling technique for craft cocktail creators who are eager to surprise and indulge the senses of their guests."
-            },
-            {
-                "heading":"Some other notes",
-                "content":"It's important to note that fat-washing isn't simply about flavor; it's a transformative process that plays with texture and aroma, creating a multi-sensory experience. The interplay of scent and taste, coupled with an often unexpected silkiness, makes fat-washed spirits a novel exploration for the curious drinker and a tool for the visionary bartender.\n\nAs the craft cocktail movement continues to embrace traditional and modern techniques, fat-washing stands out as an innovative way to personalize and refine the essence of a drink. It is storytelling in a glass, where each sip reveals layers of flavor, inviting a journey through the senses that is as imaginative as it is delightful."
-            }
-        ]
-    },
-
-    {
-         "id": "milk-clarification",
-         "title": "Milk clarification",
-         "description": "Curds, texture, and velvety feelings",
-         "body": [
-             {
-                 "heading": "Introduction",
-                 "content": "Milk clarification is a fascinating mixology technique that harkens back to the 18th century, a time when milk punch ruled the cocktail scene. This seemingly alchemical process involves the curdling of milk to remove impurities from a cocktail, resulting in a drink that is strikingly clear and smooth on the palate."
-             },
-             {
-                 "heading": "The Process",
-                 "content": "The process starts with the addition of an acidic mixture—typically a combination of citrus juice and a spirit—to warm milk. The acid causes the milk to curdle, separating the whey from the curds. The cocktail mixture is then slowly strained through the curds, which act as a filter. Over time, the curds capture many of the heavier elements that can cause cloudiness and harshness in the drink."
-             },
-             {
-                 "heading": "Result and Benefits",
-                 "content": "What emerges on the other side is a revelation — a cocktail that's not only visually pristine but also texturally velvety, with a complexity of flavor that is both nuanced and clean. Milk clarification softens the edges of the spirits, mellows the acidity, and integrates the components in a way that simple mixing or shaking cannot achieve."
-             },
-             {
-                 "heading": "Modern Relevance",
-                 "content": "Despite its historical roots, milk clarification feels modern, a perfect blend of culinary science and cocktail artistry. It's a method that demands patience and precision, but for those willing to delve into its intricacies, the result is a cocktail experience that's utterly transcendent."
-             }
-         ]
-     }
- ]
+  {
+    "id": "fatwashing",
+    "title": "Fat-washing de destilados",
+    "description": "Qué es el fat-washing y qué puedes lograr con ello.",
+    "body": [
+      {
+        "heading": "Introducción",
+        "content": "El fat-washing es una técnica usada para añadir sabores salados a los destilados, aportando una complejidad sedosa que no se consigue con métodos tradicionales de infusión."
+      },
+      {
+        "heading": "¿Qué ocurre?",
+        "content": "Este proceso, que se ve a menudo en bares y restaurantes de alta gama, es una especie de alquimia que infunde la esencia de sustancias grasas en el alcohol. El método consiste en “lavar” un destilado con una grasa elegida —ya sea mantequilla, bacon o incluso aceite de oliva— y luego congelarlo para solidificar la grasa y retirarla, dejando solo los sabores deseados."
+      },
+      {
+        "heading": "¿El resultado?",
+        "content": "Un destilado con una sensación en boca aterciopelada y matices ricos que pueden elevar los cócteles a otra dimensión. Imagina un whiskey ahumado con un toque de bacon, perfecto para un Old Fashioned robusto, o una ginebra cítrica con las sutilezas cremosas del aceite de coco, lista para dar un giro tropical a tu martini.\n\nEl fat-washing no solo ejemplifica la ingeniosidad culinaria, también ofrece a los mixólogos un lienzo para la creatividad. El proceso respeta la integridad del destilado base mientras añade complejidad, lo que lo convierte en una técnica favorita para creadores de cócteles artesanales que desean sorprender y deleitar los sentidos de sus clientes."
+      },
+      {
+        "heading": "Algunas notas más",
+        "content": "Es importante recordar que el fat-washing no trata solo de sabor; es un proceso transformador que juega con la textura y el aroma, creando una experiencia multisensorial. La interacción entre el olor y el gusto, junto con una sedosidad inesperada, convierte a los destilados lavados en grasa en una exploración novedosa para el bebedor curioso y en una herramienta para el bartender visionario.\n\nA medida que el movimiento de cócteles artesanales sigue abrazando técnicas tradicionales y modernas, el fat-washing destaca como una manera innovadora de personalizar y refinar la esencia de una bebida. Es narración en un vaso, donde cada sorbo revela capas de sabor e invita a un viaje sensorial tan imaginativo como delicioso."
+      }
+    ]
+  },
+  {
+    "id": "milk-clarification",
+    "title": "Clarificación con leche",
+    "description": "Cuajos, textura y sensaciones aterciopeladas",
+    "body": [
+      {
+        "heading": "Introducción",
+        "content": "La clarificación con leche es una técnica fascinante de mixología que se remonta al siglo XVIII, cuando el milk punch dominaba la escena. Este proceso aparentemente alquímico implica cuajar la leche para eliminar impurezas de un cóctel, dando como resultado una bebida sorprendentemente clara y suave al paladar."
+      },
+      {
+        "heading": "El proceso",
+        "content": "El proceso comienza con la adición de una mezcla ácida —normalmente una combinación de jugo cítrico y un destilado— a leche tibia. El ácido hace que la leche se corte, separando el suero de los cuajos. Luego, la mezcla del cóctel se filtra lentamente a través de los cuajos, que actúan como un filtro. Con el tiempo, los cuajos atrapan muchos de los elementos más pesados que pueden causar turbidez y aspereza en la bebida."
+      },
+      {
+        "heading": "Resultado y beneficios",
+        "content": "Lo que emerge al final es una revelación: un cóctel no solo visualmente impecable, sino también aterciopelado en textura, con una complejidad de sabor matizada y limpia. La clarificación con leche suaviza los bordes de los destilados, atenúa la acidez e integra los componentes de una manera que el simple mezclado o el batido no pueden lograr."
+      },
+      {
+        "heading": "Relevancia moderna",
+        "content": "A pesar de sus raíces históricas, la clarificación con leche se siente moderna, una mezcla perfecta de ciencia culinaria y arte del cóctel. Es un método que exige paciencia y precisión, pero para quienes se adentran en sus detalles, el resultado es una experiencia de cóctel absolutamente trascendente."
+      }
+    ]
+  }
+]

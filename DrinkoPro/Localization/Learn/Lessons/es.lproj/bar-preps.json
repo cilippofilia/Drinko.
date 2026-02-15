@@ -1,348 +1,349 @@
 [
-    {
-        "id": "lemon-juice",
-        "title": "Lemon Juice",
-        "description": "When life gives you lemons, make lemon juice for your cocktails!",
-        "body": [
-            {
-                "heading": "Lemons are vibrant and versatile citrus fruits known for their tangy flavor and refreshing aroma. Among the many uses of lemons in the culinary world, one of the most popular and essential applications is extracting their juice to create the zesty elixir - lemon juice.",
-                "content":""
-            },
-            {
-                "heading": "The Essence of Lemons",
-                "content": "Lemons, with their bright yellow hue and acidic taste, are a staple ingredient in cocktail preparation. Their versatility extends beyond flavor; their zest is prized for its aromatic oils, enhancing the sensory experience of drinks. Whether as a garnish, flavor enhancer, or primary ingredient, lemons play a vital role in mixology and contribute to balanced cocktails."
-            },
-            {
-                "heading": "Extraction and Uses",
-                "content": "Extracting lemon juice is a straightforward process. Begin by cutting a small part off the top and bottom of the lemon, then halve it and use a citrus press or a Mexican Elbow to extract the juice. Squeeze as many lemons as needed to achieve your desired volume, keeping in mind that an average lemon contains approximately 50 to 60 milliliters (1.75 to 2 ounces) of juice. After extraction, strain the juice through a fine mesh strainer to remove any pulp before storing it in bottles or airtight containers."
-            },
-            {
-                "heading": "Tips and Recommendations",
-                "content": "For optimal results, use freshly squeezed lemon juice to capture its vibrant flavor and aroma. Prior to cutting and juicing, roll the lemons on a countertop to extract the maximum amount of juice. Store any remaining lemon juice in bottles or airtight containers in the refrigerator to preserve its freshness and flavor."
-            }
-        ]
-    },
-    {
-        "id": "lime-juice",
-        "title": "Lime Juice",
-        "description": "When life gives you limes... you are safe from getting scurvy",
-        "body": [
-            {
-                "heading": "Limes, with their vibrant green hue and tangy taste, are citrus fruits renowned for their versatility in culinary applications, particularly in mixology. Among their many uses, extracting lime juice stands out as a key ingredient in various cocktails and dishes, offering a zesty and refreshing touch.",
-                "content":""
-            },
-            {
-                "heading": "The Essence of Limes",
-                "content": "Limes are a fundamental element in mixology, providing a burst of citrusy flavor and aroma to cocktails. Beyond taste, their zest is prized for the aromatic oils that intensify the sensory experience. Whether as a garnish, a flavor enhancer, or a primary ingredient, limes hold a pivotal place in creating well-balanced and lively drinks."
-            },
-            {
-                "heading": "Extraction and Uses",
-                "content": "Extracting lime juice is a straightforward process. Start by rolling the lime on a countertop to loosen its juices. Cut it in half and use a citrus press to extract the juice efficiently. On average, a lime yields about 30 to 40 milliliters (approximately 1 to 1.5 ounces) of juice. Once extracted, strain the juice through a fine mesh strainer to remove any pulp before incorporating it into cocktails, dressings, or marinades."
-            },
-            {
-                "heading": "Tips and Recommendations",
-                "content": "For optimal results, choose limes that feel heavy and have smooth skin, indicating juiciness. Before cutting, roll the lime on a hard surface, applying gentle pressure to release more juice. To extract maximum juice, immerse it in warm water or leave at room temperature for a couple of hours before juicing. Store any remaining lemon juice in bottles or airtight containers in the refrigerator to preserve its freshness and flavor."
-            }
-        ]
-    },
-    {
-        "id": "super-juice",
-        "title": "Super Juice Technique for Citrus",
-        "description": "Unlock more juice, flavor, and sustainability with Super Juice for your cocktails!",
-        "body": [
-            {
-                "heading": "Discover a game-changing method to extract up to 8 times more juice from a single citrus while reducing waste and enhancing cocktail flavors. Embracing sustainability and cost-effectiveness, Super Juice, pioneered by Nickle Morris, a bartender and owner of Expo Cocktail Bar in Louisville, Kentucky, combines innovative techniques to create a longer-lasting, flavor-rich juice.",
-                "content": ""
-            },
-            {
-                "heading": "The Genius of Super Juice",
-                "content": "Super Juice revolutionizes citrus usage in mixology, elevating sustainability and cost efficiency. By blending citrus peels with citric (and malic for lime and orange) acid according to a specific formula, the resulting 'oleo citrate' adds acidity and intensified citrus essence to the juice. This method, inspired by Nickle Morris and refined with elements from Dave Arnold's acid formula, enhances the flavor profile of cocktails."
-            },
-            {
-                "heading": "Crafting Super Juice",
-                "content": "To create Super Juice, start by peeling the chosen citrus fruit and weighing the peels. Combine the peels with the appropriate amount of citric (and malic for lime and orange) acid in a jar. After shaking the mixture, let it sit for up to two hours to produce 'oleo citrate.' Next, transfer the entire contents, including the peels, to a blender, add water, and rinse the jar thoroughly with water to extract all the oleo citrate. Juice the citrus and blend the juice with the mixture for about 30 seconds. Strain the resulting blend through a fine mesh strainer, bottle it, and store in the fridge for use within 2 weeks."
-            },
-            {
-                "heading": "Superjuice Calculators",
-                "content": "Explore the calculators section within this app to optimize this recipe's potential. Say goodbye to pen-and-paper calculations and let the calculator determine the precise water and acid measurements required based on the peel's weight. Alternatively, input your desired liquid quantity, and the calculator will provide the necessary grams of peels and acids to achieve your goal!"
-            }
-        ]
-    },
-    {
-        "id": "mise-en-place",
-        "title": "Mise en place",
-        "description": "Mise en place, a French term meaning 'everything in its place,' is a fundamental practice in the bartending world",
-        "body": [
-            {
-                "heading": "Mise en place is the backbone of efficient bartending, ensuring a smooth and streamlined workflow. It encompasses a range of activities, from organizing ingredients to setting up workstations, ultimately contributing to bartenders' ability to consistently deliver high-quality drinks.",
-                "content": ""
-            },
-            {
-                "heading": "Organizing Ingredients",
-                "content": "Mise en place begins with the careful gathering and arrangement of all essential components required for crafting cocktails. This includes mixers, garnishes, fresh and/or dry fruits, herbs, bitters, ice, batches, home-made syrups, and any other crucial elements specific to the cocktails or drinks being served. Fruit sections of stations should be prepared ahead of busy service to ensure fast and smooth preparation."
-            },
-            {
-                "heading": "Prepping Garnishes",
-                "content": "Attention to detail extends to the preparation of garnishes. Bartenders pre-cut fruits, peel citrus, slice peels, and prepare mint, twists, or wedges in advance. This meticulous preparation ensures that garnishes are readily available and add an elegant touch to each drink."
-            },
-            {
-                "heading": "Setting Up Tools",
-                "content": "Arranging and ensuring the availability of essential bar tools is crucial. Shakers, strainers, jiggers, muddlers, spoons, knives, cutting boards, and various glassware must be organized and within easy reach to facilitate a swift and efficient cocktail-making process."
-            },
-            {
-                "heading": "Ice Preparation",
-                "content": "Ice plays a pivotal role in cocktails. Bartenders meticulously prepare an ample supply of ice, whether cubed, crushed, or in blocks, according to specific drink requirements. Quality ice ensures proper chilling and dilution, vital aspects of cocktail crafting."
-            },
-            {
-                "heading": "Organizing Workstations",
-                "content": "Mise en place involves setting up designated work areas or stations in the bar. These spaces are meticulously organized, ensuring cleanliness and having all necessary ingredients and items within easy reach. Organized workstations enable efficient work and maintain a seamless workflow. A key rule for smoother service is 'Don't put it down; Put it away', ensuring a tidy station and minimizing risks and revenue loss."
-            },
-            {
-                "heading": "Measuring and Portioning",
-                "content": "Attention to detail extends to pre-measuring certain ingredients like syrups or creating batched mixes. These measured portions expedite drink-making during busy periods, ensuring consistency and prompt service without compromising on quality."
-            },
-            {
-                "heading": "Benefits of Mise en place",
-                "content": "A well-prepared mise en place offers numerous benefits to bartenders and the bar service as a whole. It enhances efficiency, reduces wastage, ensures drink consistency, and creates an organized, stress-free work environment. Accessibility and organization allow bartenders to focus on crafting exceptional cocktails and delivering excellent customer service."
-            }
-        ]
-    },
-    {
-        "id": "lemon-lime-wedges",
-        "title": "Lemon and Lime Wedges",
-        "description": "Guide on cutting lemons and limes into wedges.",
-        "body": [
-            {
-                "heading": "When preparing lemons and limes for wedges, it's essential to cut them properly to maintain their shape and freshness. Here's a step-by-step guide:",
-                "content": ""
-            },
-            {
-                "heading": "Preparation",
-                "content": "Think of the lemon or lime as having north and south poles (stem end and blossom end) and an equator (the widest center part). Begin by slicing off about 1/8 inch from each nub of the poles. Be cautious not to cut too deeply, as it may affect the wedge shape."
-            },
-            {
-                "heading": "Cutting Process",
-                "content": "1. Cut the fruit in half lengthwise through the poles.\n2. Place both halves face down on the cutting board.\n3. Cut at a 45-degree angle to create three wedges from each half.\n4. Repeat the process with the other half.\n\nBased on the size on the lemon or lime the number of wedges that you can get out of it can vary; You should get at least 6 to 8 wedges per lime or lemon."
-            },
-            {
-                "heading": "Removing Seeds",
-                "content": "If there are numerous seeds, make a slight additional cut along the apex of the triangle formed by the wedge. This action will allow the seeds to be easily brushed away with a swipe of the knife blade."
-            },
-            {
-                "heading": "Storage",
-                "content": "Cut lemons can stay fresh for up to two days, while cut limes might oxidize and turn brown at the edges overnight."
-            }
-        ]
-    },
-    {
-        "id": "citrus-slices",
-        "title": "Citrus Slices: Lemons and Oranges",
-        "description": "Guide on cutting citrus into slices",
-        "body": [
-            {
-                "heading": "When preparing citrus fruits like lemons, oranges or grapefruits for slices, it's crucial to cut them properly to maintain their shape and freshness. Here's a step-by-step guide:",
-                "content": ""
-            },
-            {
-                "heading": "Preparation",
-                "content": "For lemons and oranges, think of them having north and south poles (stem end and blossom end) and an equator (the widest center part). Start by slicing a bit off from each nub of the poles, enough to start exposing a bit of flesh."
-            },
-            {
-                "heading": "Cutting Process",
-                "content": "1. Cut the fruit in half lengthwise through the poles.\n2. Place both halves face down on the cutting board.\n3. Then cut crosswise into round slices about 1/4 to 1/3 inch (0.5 mm or 0.8 mm) thick.\n4. Repeat the process with the other half."
-            },
-            {
-                "heading": "Storage",
-                "content": "Cut lemons can stay fresh for up to two days. Cut oranges and grapefruits are best enjoyed fresh but can be refrigerated for a day or two."
-            }
-        ]
-    },
-    {
-        "id": "lemon-orange-twists",
-        "title": "Lemon and Orange Twists",
-        "description": "Guide on extracting lemon or orange oil for drink enhancement through proper twists",
-        "body": [
-            {
-                "heading": "Utilizing the essence of lemon or orange oil in drinks can elevate their aroma and flavor significantly. Here's a comprehensive guide on extracting citrus oil for a delightful drinking experience",
-                "content": ""
-            },
-            {
-                "heading": "Importance of Citrus Oil",
-                "content": "The minute drops of lemon or orange oil extracted from a proper twist can dramatically enhance the drink's aroma and taste. Floating atop the drink, these oils subtly announce freshness and wholesomeness to your customers. Moreover, the oil in citrus peels can be flamed for added effect and slightly change the aroma of the oils."
-            },
-            {
-                "heading": "Choosing the Right Peel",
-                "content": "For optimal oil extraction, it's crucial to use firm and fresh lemons or oranges. Depleted oils won't yield the desired effect or intense flavor."
-            },
-            {
-                "heading": "Extracting the Twist",
-                "content": "If experienced with knives, use a paring or fruit knife to cut a thin oval-shaped peel from the top of the fruit. The peel should display yellow or orange all around, with minimal white pith visible at the center."
-            },
-            {
-                "heading": "Alternative Technique",
-                "content": "If uncomfortable with knives, consider using a Y shaped peeler. Glide the blade just under the surface, turning the fruit into the blade to create a continuous spiral peel. With practice, you can prepare enough twists for multiple drinks in less than 20 seconds. Trim any ragged edges with a knife once peeled."
-            },
-            {
-                "heading": "Safety Note",
-                "content": "Sharp tools are involved in these techniques. Exercise caution and opt for safer equipment, like a peeler, to avoid accidents."
-            }
-        ]
-    },
-    {
-        "id": "flaming-twists",
-        "title": "Flaming Twists",
-        "description": "A guide to creating a pyrotechnical display using the oil present in lemon and orange skin for a dazzling effect",
-        "body": [
-            {
-                "heading": "Transform your gathering with a stunning pyrotechnical display using the oils present in fresh lemon and orange skins.\nHere's a step-by-step guide:",
-                "content": ""
-            },
-            {
-                "heading": "Choosing the Right Fruit",
-                "content": "Select firm and fresh lemons or oranges to ensure an adequate amount of oil is present in the skin for flaming."
-            },
-            {
-                "heading": "Preparation",
-                "content": "Hold the twist of the fruit as if holding an eggshell, avoiding premature squeezing that might expel the oil. Grip the twist by the sides, not the ends, between thumb and forefinger with the skin side facing down toward the drink."
-            },
-            {
-                "heading": "Flaming the Oil",
-                "content": "1. Hold a lit match, or a lighter, in one hand and the twist in the other, positioning it about 10 cm (4 inches) above the drink.\n2. Without squeezing the twist, hold the match closer to the twist between the drink and the twist.\n3. Snap the twist sharply, propelling the oil through the lit match and onto the surface of the drink."
-            },
-            {
-                "heading": "Cautionary Measures",
-                "content": "Ensure you hold the twist far enough from the drink to prevent a smoky film from forming on the glass or the drink's surface."
-            }
-        ]
-    },
-    {
-        "id": "store-garnishes",
-        "title": "Garnish Storage Guidelines",
-        "description": "Guidelines for storing various garnishes to maintain freshness",
-        "body": [
-            {
-                "heading": "Proper storage of garnishes is crucial to preserve their freshness and quality. The following are advises and they can be adapted.",
-                "content": ""
-            },
-            {
-                "heading": "Limes",
-                "content": "Cut limes tend to oxidize rapidly and should be discarded by the day's end to avoid deterioration. It's advisable not to over-cut them. If you cut limes during the evening you can keep them for the following morning."
-            },
-            {
-                "heading": "Lemons",
-                "content": "Cut lemons have a longer shelf life, lasting up to two days when covered with a damp bar cloth and refrigerated."
-            },
-            {
-                "heading": "Orange Slices",
-                "content": "Inspect orange slices by day's end; if they're still in good condition, cover them with a damp bar cloth and refrigerate overnight."
-            },
-            {
-                "heading": "Orange and Lemon Twists",
-                "content": "Twists from oranges and lemons should be discarded at the end of the shift to maintain freshness."
-            },
-            {
-                "heading": "Peeled fruits",
-                "content": "If by the end of the night you find yourself with lots of peeled but uncut fruit I would suggest to use cut them first in the morning or to put them in a dehydrator. This way you can still use them as dry fruits."
-            },
-            {
-                "heading": "Sliced fruits past two days",
-                "content": "Same suggestion for peeled fruits apply to any sliced fruit (lemons, oranges, grapefruits, pineapples, kiwis, bananas, etc.). Instead of throwing them away, you can actually find plenty of ways to recycle them."
-            },
-            {
-                "heading": "Mint",
-                "content": "Mint leaves stay fresh when stored between damp paper towels in the refrigerator. The sprigs should be kept in a glass with water and the end of the stem should be cut a tiny bit every day. Remember to remove any wilted or brown sprigs as they should be discarded."
-            }
-        ]
-    },
-    {
-        "id": "mint",
-        "title": "Mint",
-        "description": "Tips and guidelines for handling mint",
-        "body": [
-            {
-                "heading": "When choosing mint, it's important to consider its freshness and suitability for different uses.",
-                "content": ""
-            },
-            {
-                "heading": "Choosing the Right Mint",
-                "content": "When selecting mint, opt for springy, young varieties. Spearmint leaves are ideal for garnishing due to their good shape and durability. Avoid elephant ear mint with large floppy leaves as they may appear wilted on top of a drink."
-            },
-            {
-                "heading": "Preparing Mint for Garnish",
-                "content": "To prepare mint for garnishing, cut the stalks to about a 5-inch stem with leaves at the top. The top half, usually the attractive new growth or sprigs, will be used for garnishing the drink. The leaves on the lower stalk and the removed stalk can be used for shaking or bruising in the drink. Store mint in water in the refrigerator, but don't keep it overnight. Instead, wrap it in a paper towel and place it in a Ziploc bag."
-            },
-            {
-                "heading": "Using Mint in Drinks",
-                "content": "After muddling or shaking mint in a drink (and if you shake it, shake it gently so that it doesn’t disintegrate and make the drink bitter), fine strain the cocktail to remove floating bits of mint. When muddling, aim to bruise the leaves (rather than shred them) to extract flavor. A mint garnish on top of a drink should look generous and bushy, should be served with a straw so the mint aromas can come through via taste and smell."
-            }
-        ]
-    },
-    {
-        "id": "cocktail_olives",
-        "title": "Cocktail Olives",
-        "description": "Tips for selecting and using olives in cocktails",
-        "body": [
-            {
-                "heading": "Cocktail olives are a crucial component for Martini enthusiasts and for people that like their bloody maries with plenty of garnishes.",
-                "content": ""
-            },
-            {
-                "heading": "Choosing the right olives",
-                "content": "For a Martini, opt for small pitted Spanish cocktail olives like Manzanilla without pimento. Finding good quality ones might be challenging, as the ideal olives are hard to come by. Some drinkers prefer giant olives due to the trend of oversized martini glasses, but this is not traditional. Stocking two sizes of olives is advisable, but regardless of size, ensuring they are kept cold is essential."
-            },
-            {
-                "heading": "How many olives on a stick?",
-                "content": "Determining the ideal number of olives on a stick for a martini is subjective, but there's a traditional guideline worth considering. Martinis are historically regarded as strong, business-oriented drinks often served to individuals during business lunches, initially accompanied by three olives. The absence of ice in a martini makes it a time-sensitive cocktail, best enjoyed when extremely cold. How can you savor it optimally? Simply put, aim to finish your martini in three sips, savoring each while complementing the experience with an olive."
-            }
-        ]
-    },
-    {
-        "id": "speedrail-setup",
-        "title": "Speed Rail Setup",
-        "description": "Essentials of Speed Rail and Proper Stocking",
-        "body": [
-            {
-                "heading": "Let's delve into a crucial piece of equipment highly valuable to bartenders. Positioned right in front of the ice-well in most cases, the speed rail is fundamental for ensuring swift service.",
-                "content": ""
-            },{
-                "heading": "Basics and Setup",
-                "content": "A speed rail typically houses the most frequently used spirits, sugars, juices, and batches. Sometimes, it includes a shaker filled with water to keep bar spoons or muddlers ready to be used. The speed-rail should always be tailored around sales; if your bar sells more spirits and mixers than cocktails, prioritize spirits in the speed rail. The same principle applies to signature cocktails; having pre-batched versions can expedite service, especially if they're readily accessible on the speed rail."
-            },
-            {
-                "heading": "Tips and Tricks",
-                "content": "In my opinion, your speed rail should always feature your highest-selling house spirits like Vodka, Gin, and Rum. For bars serving cocktails, consider having bottles of lime and/or lemon juice at all times. Also, consider the display arrangement of bottles behind the bar. If they're mirrored behind each station, allocate more space in the speed rail for signature cocktail batches and other preparations. Alternatively, if the bar is organized horizontally by product type, adapt the speed rail accordingly to ensure easy access from each station. For example, if the house whiskey is on the far side of the bar, placing a bottle in the speed rail can optimize efficiency. This logic applies to other products as well."
-            }
-        ]
-    },
-    {
-        "id": "bitters",
-        "title": "Bitters",
-        "description": "An overview of bitters, an essential but often overlooked ingredient in classic cocktails",
-        "body": [
-            {
-                "heading": "Bitters, once on the brink of extinction, are now making a robust comeback as a crucial component of classic cocktails. Here's a detailed look at their significance and types:",
-                "content": ""
-            },
-            {
-                "heading": "Introduction to Bitters",
-                "content": "Bitters, steeped with various barks, roots, flowers, and more in alcohol, were nearly lost but are now making a healthy resurgence. They offer a liquid too bitter to drink straight but play a pivotal role when used cautiously in cocktails."
-            },
-            {
-                "heading": "Function in Cocktails",
-                "content": "Contrary to expectations, 1 to 3 dashes of bitters per drink don't impart bitterness. Instead, they harmonize flavors, often unnoticed in a well-balanced drink but sorely missed in their absence. They are more commonly used in spirit-based drinks with fortified wines and liqueurs than those with sour components like citrus."
-            },
-            {
-                "heading": "Types of Common Bitters",
-                "content": "1. Angostura Bitters: Originating from Trinidad, this versatile brand, with a complex flavor profile built upon a rum base, complements strong flavors like rye whiskey, dark rum, and gin.\n2. Peychaud’s Bitters: Displaying black-cherry-and-anise notes, Peychaud’s bitters blend well with cognac and whiskey.\n3. Orange Bitters: Marrying orange-peel tang with a bitter edge, these bitters are crucial in classics like the Dry Martini. Brands like Fee’s West Indian, Regans’ Orange No 6, Angostura Orange, and The Bitter Truth offer varied profiles, enhancing different cocktails."
-            },
-            {
-                "heading": "Exploring Diverse Options",
-                "content": "While the classic trio of Angostura, Peychaud’s, and Orange bitters remains essential, the market now offers a plethora of new options, including fascinating varieties from The Bitter Truth. Forward-thinking bars stock multiple kinds, signaling their commitment to craft cocktails."
-            },
-            {
-                "heading": "Visibility and Significance",
-                "content": "Placing bitters visibly signals a bar's readiness to craft serious cocktails. While some drinks favor specific brands, experimenting with different bitters can elevate mixology to new heights."
-            }
-        ]
-    }
+  {
+    "id": "lemon-juice",
+    "title": "Zumo de limón",
+    "description": "Cuando la vida te da limones, ¡haz zumo de limón para tus cócteles!",
+    "body": [
+      {
+        "heading": "Los limones son cítricos vibrantes y versátiles, conocidos por su sabor ácido y aroma refrescante. Entre sus muchos usos culinarios, uno de los más populares y esenciales es extraer su jugo para crear el elixir ácido: el zumo de limón.",
+        "content": ""
+      },
+      {
+        "heading": "La esencia del limón",
+        "content": "Los limones, con su tono amarillo brillante y sabor ácido, son un ingrediente básico en la preparación de cócteles. Su versatilidad va más allá del sabor: su ralladura es apreciada por sus aceites aromáticos, que intensifican la experiencia sensorial de las bebidas. Ya sea como guarnición, potenciador de sabor o ingrediente principal, los limones son clave en la mixología y contribuyen a cócteles equilibrados."
+      },
+      {
+        "heading": "Extracción y usos",
+        "content": "Extraer zumo de limón es un proceso sencillo. Comienza cortando una pequeña porción de la parte superior e inferior del limón, luego pártelo por la mitad y usa un exprimidor cítrico o un “Mexican Elbow” para extraer el jugo. Exprime tantos limones como necesites para alcanzar el volumen deseado, teniendo en cuenta que un limón promedio contiene aproximadamente 50 a 60 ml (1,75 a 2 onzas) de jugo. Tras la extracción, cuela el jugo con un colador de malla fina para eliminar la pulpa antes de guardarlo en botellas o recipientes herméticos."
+      },
+      {
+        "heading": "Consejos y recomendaciones",
+        "content": "Para mejores resultados, usa zumo de limón recién exprimido para captar su sabor y aroma vibrantes. Antes de cortar y exprimir, rueda los limones sobre la encimera para extraer la máxima cantidad de jugo. Guarda el zumo restante en botellas o recipientes herméticos en la nevera para preservar su frescura y sabor."
+      }
+    ]
+  },
+  {
+    "id": "lime-juice",
+    "title": "Zumo de lima",
+    "description": "Cuando la vida te da limas... estás a salvo del escorbuto",
+    "body": [
+      {
+        "heading": "Las limas, con su tono verde vibrante y sabor ácido, son cítricos conocidos por su versatilidad en la cocina, especialmente en la mixología. Entre sus muchos usos, extraer zumo de lima destaca como ingrediente clave en diversos cócteles y platos, ofreciendo un toque fresco y ácido.",
+        "content": ""
+      },
+      {
+        "heading": "La esencia de la lima",
+        "content": "Las limas son fundamentales en la mixología, aportando un golpe de sabor cítrico y aroma a los cócteles. Más allá del sabor, su ralladura es apreciada por sus aceites aromáticos que intensifican la experiencia sensorial. Ya sea como guarnición, potenciador de sabor o ingrediente principal, las limas ocupan un lugar central en la creación de bebidas equilibradas y vivas."
+      },
+      {
+        "heading": "Extracción y usos",
+        "content": "Extraer zumo de lima es sencillo. Comienza rodando la lima sobre la encimera para soltar los jugos. Córtala por la mitad y usa un exprimidor cítrico para extraer el jugo de forma eficiente. En promedio, una lima rinde unos 30 a 40 ml (aprox. 1 a 1,5 onzas) de jugo. Una vez extraído, cuela el jugo con un colador de malla fina para eliminar la pulpa antes de incorporarlo en cócteles, aderezos o marinadas."
+      },
+      {
+        "heading": "Consejos y recomendaciones",
+        "content": "Para mejores resultados, elige limas que se sientan pesadas y tengan la piel lisa, lo que indica jugosidad. Antes de cortar, rueda la lima sobre una superficie dura aplicando una presión suave para liberar más jugo. Para extraer el máximo, sumérgela en agua tibia o déjala a temperatura ambiente un par de horas antes de exprimir. Guarda el zumo restante en botellas o recipientes herméticos en la nevera para preservar su frescura y sabor."
+      }
+    ]
+  },
+  {
+    "id": "super-juice",
+    "title": "Técnica de Super Juice para cítricos",
+    "description": "Obtén más jugo, sabor y sostenibilidad con Super Juice para tus cócteles",
+    "body": [
+      {
+        "heading": "Descubre un método revolucionario para extraer hasta 8 veces más jugo de un solo cítrico, reduciendo el desperdicio y potenciando el sabor de tus cócteles. Con un enfoque en sostenibilidad y ahorro, el Super Juice, ideado por Nickle Morris, bartender y dueño de Expo Cocktail Bar en Louisville, Kentucky, combina técnicas innovadoras para crear un jugo más duradero y lleno de sabor.",
+        "content": ""
+      },
+      {
+        "heading": "El genio del Super Juice",
+        "content": "El Super Juice revoluciona el uso de cítricos en la mixología, elevando la sostenibilidad y la eficiencia de costos. Al mezclar las cáscaras con ácido cítrico (y málico para lima y naranja) según una fórmula específica, el “oleo citrate” resultante añade acidez e intensifica la esencia cítrica del jugo. Este método, inspirado por Nickle Morris y refinado con elementos de la fórmula ácida de Dave Arnold, mejora el perfil de sabor de los cócteles."
+      },
+      {
+        "heading": "Cómo preparar Super Juice",
+        "content": "Para crear Super Juice, empieza pelando el cítrico elegido y pesando las cáscaras. Combina las cáscaras con la cantidad adecuada de ácido cítrico (y málico para lima y naranja) en un tarro. Tras agitar la mezcla, déjala reposar hasta dos horas para producir “oleo citrate”. Luego, transfiere todo el contenido —incluidas las cáscaras— a una licuadora, añade agua y enjuaga bien el tarro con agua para extraer todo el oleo citrate. Exprime el cítrico y mezcla el jugo con la preparación durante unos 30 segundos. Cuela el resultado con un colador de malla fina, embotella y guarda en la nevera para usar en un máximo de 2 semanas."
+      },
+      {
+        "heading": "Calculadoras de Superjuice",
+        "content": "Explora la sección de calculadoras en esta app para optimizar el potencial de esta receta. Olvídate de cálculos a mano y deja que la calculadora determine las medidas exactas de agua y ácidos según el peso de la cáscara. Alternativamente, introduce la cantidad de líquido deseada y la calculadora te dará los gramos de cáscaras y ácidos necesarios para alcanzar tu objetivo."
+      }
+    ]
+  },
+  {
+    "id": "mise-en-place",
+    "title": "Mise en place",
+    "description": "Mise en place, un término francés que significa “todo en su lugar”, es una práctica fundamental en el mundo de la coctelería",
+    "body": [
+      {
+        "heading": "El mise en place es la columna vertebral de una coctelería eficiente, garantizando un flujo de trabajo fluido y ordenado. Abarca desde organizar ingredientes hasta preparar estaciones de trabajo, contribuyendo a que los bartenders puedan servir bebidas de alta calidad de forma constante.",
+        "content": ""
+      },
+      {
+        "heading": "Organización de ingredientes",
+        "content": "El mise en place comienza con la recopilación y organización cuidadosa de todos los componentes esenciales para preparar cócteles. Esto incluye mixers, guarniciones, frutas frescas y/o secas, hierbas, bitters, hielo, batches, siropes caseros y cualquier otro elemento crucial específico de los cócteles o bebidas que se van a servir. Las secciones de fruta deben prepararse antes del servicio intenso para asegurar rapidez y fluidez."
+      },
+      {
+        "heading": "Preparación de guarniciones",
+        "content": "La atención al detalle se extiende a la preparación de guarniciones. Los bartenders pre-cortan frutas, pelan cítricos, cortan pieles y preparan menta, twists o gajos con antelación. Esta preparación meticulosa asegura que las guarniciones estén listas y aporten un toque elegante a cada bebida."
+      },
+      {
+        "heading": "Preparación de herramientas",
+        "content": "Organizar y asegurar la disponibilidad de las herramientas esenciales del bar es clave. Cocteleras, coladores, jiggers, muddlers, cucharas, cuchillos, tablas de cortar y cristalería deben estar ordenados y al alcance para facilitar un proceso rápido y eficiente."
+      },
+      {
+        "heading": "Preparación del hielo",
+        "content": "El hielo juega un papel fundamental en los cócteles. Los bartenders preparan meticulosamente una provisión abundante de hielo, ya sea en cubos, picado o en bloques, según los requisitos de cada bebida. El hielo de calidad asegura el enfriado y la dilución adecuados, aspectos vitales en la coctelería."
+      },
+      {
+        "heading": "Organización de estaciones",
+        "content": "El mise en place implica configurar áreas o estaciones designadas en el bar. Estos espacios se organizan cuidadosamente, garantizando limpieza y que todos los ingredientes e instrumentos estén al alcance. Las estaciones ordenadas permiten trabajar con eficiencia y mantener un flujo de trabajo sin interrupciones. Una regla clave para un servicio más fluido es: “No lo dejes; guárdalo”, lo que asegura orden y minimiza riesgos y pérdidas."
+      },
+      {
+        "heading": "Medición y porcionado",
+        "content": "La atención al detalle incluye premedir ciertos ingredientes como siropes o preparar mezclas en batch. Estas porciones medidas aceleran la preparación durante los momentos de mayor demanda, garantizando consistencia y servicio rápido sin sacrificar calidad."
+      },
+      {
+        "heading": "Beneficios del mise en place",
+        "content": "Un mise en place bien preparado ofrece numerosos beneficios a bartenders y al servicio del bar en general. Mejora la eficiencia, reduce desperdicio, asegura consistencia en las bebidas y crea un entorno de trabajo organizado y sin estrés. La accesibilidad y la organización permiten al bartender centrarse en crear cócteles excepcionales y ofrecer un servicio excelente."
+      }
+    ]
+  },
+  {
+    "id": "lemon-lime-wedges",
+    "title": "Gajos de limón y lima",
+    "description": "Guía para cortar limones y limas en gajos.",
+    "body": [
+      {
+        "heading": "Al preparar limones y limas en gajos, es esencial cortarlos correctamente para mantener su forma y frescura. Aquí tienes una guía paso a paso:",
+        "content": ""
+      },
+      {
+        "heading": "Preparación",
+        "content": "Piensa en el limón o la lima como si tuviera polos norte y sur (extremos del tallo y la flor) y un ecuador (la parte central más ancha). Empieza cortando aproximadamente 3 mm de cada extremo. Ten cuidado de no cortar demasiado profundo, ya que puede afectar la forma del gajo."
+      },
+      {
+        "heading": "Proceso de corte",
+        "content": "1. Corta la fruta por la mitad a lo largo, pasando por los polos.\n2. Coloca ambas mitades con la parte plana hacia abajo sobre la tabla.\n3. Corta en un ángulo de 45 grados para crear tres gajos de cada mitad.\n4. Repite el proceso con la otra mitad.\n\nSegún el tamaño del limón o la lima, el número de gajos puede variar; deberías obtener al menos de 6 a 8 gajos por fruta."
+      },
+      {
+        "heading": "Retirar las semillas",
+        "content": "Si hay muchas semillas, haz un pequeño corte adicional a lo largo del vértice del triángulo formado por el gajo. Esto permitirá retirar las semillas fácilmente con un movimiento de la hoja del cuchillo."
+      },
+      {
+        "heading": "Conservación",
+        "content": "Los limones cortados pueden mantenerse frescos hasta dos días, mientras que las limas cortadas pueden oxidarse y ponerse marrones en los bordes de un día para otro."
+      }
+    ]
+  },
+  {
+    "id": "citrus-slices",
+    "title": "Rodajas de cítricos: limón y naranja",
+    "description": "Guía para cortar cítricos en rodajas",
+    "body": [
+      {
+        "heading": "Al preparar cítricos como limones, naranjas o pomelos en rodajas, es crucial cortarlos correctamente para mantener su forma y frescura. Aquí tienes una guía paso a paso:",
+        "content": ""
+      },
+      {
+        "heading": "Preparación",
+        "content": "Para limones y naranjas, piensa en polos norte y sur (extremo del tallo y de la flor) y un ecuador (la parte más ancha del centro). Comienza cortando un poco de cada extremo, lo suficiente para dejar asomar un poco de pulpa."
+      },
+      {
+        "heading": "Proceso de corte",
+        "content": "1. Corta la fruta por la mitad a lo largo pasando por los polos.\n2. Coloca ambas mitades con la parte plana hacia abajo en la tabla.\n3. Luego corta transversalmente en rodajas de unos 1/4 a 1/3 de pulgada (0,5 mm o 0,8 mm) de grosor.\n4. Repite el proceso con la otra mitad."
+      },
+      {
+        "heading": "Conservación",
+        "content": "Los limones cortados pueden mantenerse frescos hasta dos días. Las naranjas y los pomelos cortados se disfrutan mejor frescos, pero pueden refrigerarse uno o dos días."
+      }
+    ]
+  },
+  {
+    "id": "lemon-orange-twists",
+    "title": "Twists de limón y naranja",
+    "description": "Guía para extraer el aceite de limón o naranja y realzar bebidas con twists",
+    "body": [
+      {
+        "heading": "Aprovechar la esencia del aceite de limón o naranja en las bebidas puede elevar significativamente su aroma y sabor. Aquí tienes una guía completa para extraer el aceite cítrico y disfrutar de una experiencia más deliciosa:",
+        "content": ""
+      },
+      {
+        "heading": "Importancia del aceite cítrico",
+        "content": "Las diminutas gotas de aceite extraídas de un twist bien hecho pueden realzar de forma notable el aroma y el sabor de la bebida. Flotando sobre el cóctel, estos aceites anuncian frescura y limpieza. Además, el aceite de las cáscaras puede flamearse para aportar un efecto extra y cambiar ligeramente el aroma."
+      },
+      {
+        "heading": "Elegir la piel correcta",
+        "content": "Para una extracción óptima, es crucial usar limones o naranjas firmes y frescos. Las frutas con aceites agotados no darán el efecto ni el sabor intenso deseado."
+      },
+      {
+        "heading": "Extraer el twist",
+        "content": "Si tienes experiencia con cuchillos, usa un cuchillo pequeño para cortar una piel ovalada y fina de la parte superior de la fruta. La piel debe verse amarilla o naranja por todos lados, con el mínimo de parte blanca visible en el centro."
+      },
+      {
+        "heading": "Técnica alternativa",
+        "content": "Si no te sientes cómodo con cuchillos, considera usar un pelador en forma de Y. Desliza la hoja justo bajo la superficie, girando la fruta contra la hoja para crear una tira continua. Con práctica, puedes preparar twists para varias bebidas en menos de 20 segundos. Recorta los bordes irregulares con un cuchillo una vez pelado."
+      },
+      {
+        "heading": "Nota de seguridad",
+        "content": "Estas técnicas implican herramientas afiladas. Ten precaución y opta por equipos más seguros, como un pelador, para evitar accidentes."
+      }
+    ]
+  },
+  {
+    "id": "flaming-twists",
+    "title": "Twists flameados",
+    "description": "Guía para crear un efecto pirotécnico usando el aceite de la piel de limón y naranja",
+    "body": [
+      {
+        "heading": "Convierte tu reunión en un espectáculo usando los aceites presentes en la piel fresca de limón y naranja.\nAquí tienes una guía paso a paso:",
+        "content": ""
+      },
+      {
+        "heading": "Elegir la fruta correcta",
+        "content": "Elige limones o naranjas firmes y frescos para asegurar que haya suficiente aceite en la piel para el flameado."
+      },
+      {
+        "heading": "Preparación",
+        "content": "Sujeta el twist como si fuera una cáscara de huevo, evitando apretar antes de tiempo para no expulsar el aceite. Agarra el twist por los lados, no por los extremos, entre el pulgar y el índice, con la parte de la piel hacia abajo apuntando al cóctel."
+      },
+      {
+        "heading": "Flamear el aceite",
+        "content": "1. Sostén un fósforo encendido o un mechero en una mano y el twist en la otra, colocándolo a unos 10 cm (4 pulgadas) por encima de la bebida.\n2. Sin apretar el twist, acerca el fósforo entre la bebida y el twist.\n3. Haz un gesto rápido y firme con el twist, expulsando el aceite a través de la llama hacia la superficie del cóctel."
+      },
+      {
+        "heading": "Medidas de precaución",
+        "content": "Asegúrate de sostener el twist lo suficientemente lejos de la bebida para evitar que se forme una película ahumada en el vaso o en la superficie."
+      }
+    ]
+  },
+  {
+    "id": "store-garnishes",
+    "title": "Guía de conservación de guarniciones",
+    "description": "Pautas para almacenar guarniciones y mantener su frescura",
+    "body": [
+      {
+        "heading": "El almacenamiento adecuado de guarniciones es crucial para conservar su frescura y calidad. Las siguientes son recomendaciones y pueden adaptarse.",
+        "content": ""
+      },
+      {
+        "heading": "Limas",
+        "content": "Las limas cortadas se oxidan rápidamente y deben desecharse al final del día para evitar deterioro. Es aconsejable no cortarlas en exceso. Si cortas limas durante la noche, puedes conservarlas para la mañana siguiente."
+      },
+      {
+        "heading": "Limones",
+        "content": "Los limones cortados tienen una vida útil mayor, hasta dos días, cuando se cubren con un paño húmedo de bar y se refrigeran."
+      },
+      {
+        "heading": "Rodajas de naranja",
+        "content": "Inspecciona las rodajas al final del día; si siguen en buen estado, cúbrelas con un paño húmedo de bar y refrigéralas durante la noche."
+      },
+      {
+        "heading": "Twists de naranja y limón",
+        "content": "Los twists de naranja y limón deben desecharse al final del turno para mantener la frescura."
+      },
+      {
+        "heading": "Frutas peladas",
+        "content": "Si al final de la noche te quedan muchas frutas peladas pero sin cortar, te sugiero cortarlas a primera hora o ponerlas en un deshidratador. Así podrás seguir usándolas como fruta deshidratada."
+      },
+      {
+        "heading": "Frutas cortadas con más de dos días",
+        "content": "La misma recomendación para frutas peladas aplica a cualquier fruta cortada (limones, naranjas, pomelos, piñas, kiwis, plátanos, etc.). En lugar de tirarlas, puedes encontrar muchas formas de reutilizarlas."
+      },
+      {
+        "heading": "Menta",
+        "content": "Las hojas de menta se mantienen frescas si se almacenan entre servilletas de papel húmedas en la nevera. Las ramas deben guardarse en un vaso con agua y se debe cortar un poquito el extremo del tallo cada día. Recuerda retirar las ramas marchitas o marrones, ya que deben desecharse."
+      }
+    ]
+  },
+  {
+    "id": "mint",
+    "title": "Menta",
+    "description": "Consejos y pautas para manejar la menta",
+    "body": [
+      {
+        "heading": "Al elegir menta, es importante considerar su frescura y su idoneidad para diferentes usos.",
+        "content": ""
+      },
+      {
+        "heading": "Elegir la menta adecuada",
+        "content": "Al seleccionar menta, opta por variedades jóvenes y elásticas. Las hojas de hierbabuena (spearmint) son ideales para guarniciones por su buena forma y durabilidad. Evita la menta de hoja grande tipo “oreja de elefante”, ya que puede verse mustia encima de una bebida."
+      },
+      {
+        "heading": "Preparar menta para guarnición",
+        "content": "Para preparar menta como guarnición, corta los tallos dejando unos 12-13 cm con hojas en la parte superior. La mitad superior, normalmente el brote nuevo más atractivo, se usará para decorar la bebida. Las hojas del tallo inferior y el tallo cortado pueden usarse para agitar o machacar en la bebida. Guarda la menta en agua en la nevera, pero no la dejes de un día para otro. En su lugar, envuélvela en papel de cocina y colócala en una bolsa tipo Ziploc."
+      },
+      {
+        "heading": "Usar menta en bebidas",
+        "content": "Después de macerar o agitar menta en una bebida (y si la agitas, hazlo suavemente para que no se desintegre y amargue), cuela finamente el cóctel para eliminar trozos flotantes. Al macerar, busca moretar las hojas (en lugar de triturarlas) para extraer sabor. La guarnición de menta sobre una bebida debe verse generosa y frondosa, y debe servirse con una pajita para que los aromas de la menta lleguen al gusto y al olfato."
+      }
+    ]
+  },
+  {
+    "id": "cocktail_olives",
+    "title": "Aceitunas para cóctel",
+    "description": "Consejos para seleccionar y usar aceitunas en cócteles",
+    "body": [
+      {
+        "heading": "Las aceitunas para cóctel son un componente clave para los amantes del Martini y para quienes disfrutan de sus bloody mary con abundantes guarniciones.",
+        "content": ""
+      },
+      {
+        "heading": "Elegir las aceitunas correctas",
+        "content": "Para un Martini, elige aceitunas de cóctel españolas pequeñas y sin hueso, como Manzanilla, sin pimiento. Encontrar buenas puede ser difícil, ya que las ideales no abundan. Algunos bebedores prefieren aceitunas gigantes debido a la tendencia de copas de martini sobredimensionadas, pero esto no es tradicional. Es recomendable tener dos tamaños, pero independientemente del tamaño, es esencial mantenerlas frías."
+      },
+      {
+        "heading": "¿Cuántas aceitunas en un palillo?",
+        "content": "Determinar el número ideal de aceitunas en un palillo para un martini es subjetivo, pero hay una guía tradicional que vale la pena considerar. Históricamente, los martinis se consideran bebidas fuertes y orientadas a negocios, a menudo servidas en almuerzos de trabajo, inicialmente acompañadas por tres aceitunas. La ausencia de hielo hace que el martini sea una bebida sensible al tiempo, que se disfruta mejor muy fría. ¿Cómo saborearlo de forma óptima? En resumen: intenta terminar tu martini en tres sorbos, disfrutando cada uno y complementando la experiencia con una aceituna."
+      }
+    ]
+  },
+  {
+    "id": "speedrail-setup",
+    "title": "Configuración del speed rail",
+    "description": "Elementos esenciales del speed rail y un stock adecuado",
+    "body": [
+      {
+        "heading": "Profundicemos en una pieza de equipo crucial y muy valiosa para los bartenders. Situado justo delante del pozo de hielo en la mayoría de los casos, el speed rail es fundamental para garantizar un servicio rápido.",
+        "content": ""
+      },
+      {
+        "heading": "Fundamentos y configuración",
+        "content": "Un speed rail suele contener los destilados, azúcares, jugos y batches de uso más frecuente. A veces incluye una coctelera con agua para mantener cucharas o muddlers listos para usar. El speed rail debe adaptarse siempre a las ventas: si tu bar vende más destilados y mezcladores que cócteles, prioriza destilados. Lo mismo aplica a los cócteles de la casa; tener versiones pre-batcheadas puede agilizar el servicio, especialmente si están a mano en el speed rail."
+      },
+      {
+        "heading": "Consejos y trucos",
+        "content": "En mi opinión, el speed rail debería incluir siempre tus destilados de casa más vendidos, como Vodka, Gin y Ron. Para bares que sirven cócteles, considera tener botellas de zumo de lima y/o limón siempre disponibles. También piensa en la disposición de las botellas detrás de la barra. Si están espejadas detrás de cada estación, asigna más espacio en el speed rail para batches de cócteles y otras preparaciones. Si la barra está organizada horizontalmente por tipo de producto, adapta el speed rail para asegurar acceso fácil desde cada estación. Por ejemplo, si el whiskey de la casa está al otro lado, poner una botella en el speed rail optimiza la eficiencia. Esta lógica aplica también a otros productos."
+      }
+    ]
+  },
+  {
+    "id": "bitters",
+    "title": "Bitters",
+    "description": "Un vistazo a los bitters, un ingrediente esencial pero a menudo olvidado en los cócteles clásicos",
+    "body": [
+      {
+        "heading": "Los bitters, que estuvieron al borde de la extinción, han vuelto con fuerza como un componente clave de los cócteles clásicos. Aquí tienes una mirada detallada a su importancia y tipos:",
+        "content": ""
+      },
+      {
+        "heading": "Introducción a los bitters",
+        "content": "Los bitters, macerados con cortezas, raíces, flores y más en alcohol, casi desaparecieron, pero hoy viven un saludable resurgimiento. Son demasiado amargos para beberlos solos, pero juegan un papel crucial cuando se usan con moderación en cócteles."
+      },
+      {
+        "heading": "Función en los cócteles",
+        "content": "Contrario a lo que se piensa, 1 a 3 dashes de bitters por bebida no aportan amargor. En cambio, armonizan sabores, a menudo pasan desapercibidos en una bebida bien equilibrada pero se notan muchísimo cuando faltan. Se usan más comúnmente en bebidas basadas en destilados con vinos fortificados y licores que en aquellas con componentes ácidos como los cítricos."
+      },
+      {
+        "heading": "Tipos de bitters comunes",
+        "content": "1. Angostura Bitters: originarios de Trinidad, esta marca versátil, con un perfil complejo sobre base de ron, complementa sabores fuertes como whiskey de centeno, ron oscuro y ginebra.\n2. Peychaud’s Bitters: con notas de cereza negra y anís, combinan bien con coñac y whiskey.\n3. Orange Bitters: combinan el toque cítrico de la cáscara de naranja con un amargor sutil y son cruciales en clásicos como el Dry Martini. Marcas como Fee’s West Indian, Regans’ Orange No 6, Angostura Orange y The Bitter Truth ofrecen perfiles variados que realzan distintos cócteles."
+      },
+      {
+        "heading": "Explorando opciones diversas",
+        "content": "Si bien el trío clásico de Angostura, Peychaud’s y Orange bitters sigue siendo esencial, el mercado ofrece ahora muchas opciones nuevas, incluidas variedades fascinantes de The Bitter Truth. Los bares con visión de futuro almacenan varios tipos, señal de compromiso con la coctelería artesanal."
+      },
+      {
+        "heading": "Visibilidad e importancia",
+        "content": "Colocar los bitters a la vista señala que el bar está listo para elaborar cócteles serios. Aunque algunas bebidas favorecen marcas específicas, experimentar con distintos bitters puede elevar la mixología a nuevas alturas."
+      }
+    ]
+  }
 ]

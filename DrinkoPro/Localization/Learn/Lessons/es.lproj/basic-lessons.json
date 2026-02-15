@@ -1,205 +1,198 @@
 [
-    {
-        "id": "equipment",
-        "title": "Equipment",
-        "description": "Not really sure what to buy online?\nLet's talk about it.",
-        "body": [
-            {
-                "heading": "I want to emphasize that you do not need all the essential equipment immediately. However, I can assist you by selecting the right tools to start making extraordinary cocktails.",
-                "content": ""
-            },
-            {
-                "heading": "Cocktail shakers",
-                "content": "When purchasing a shaker, there are two main factors to consider: the style and the material it's made of (metal, stainless steel, plastic, etc.). The two most commonly found shakers are the 'Cobbler shaker,' which has three pieces, and the 'Boston shaker,' which has two pieces. I highly recommend the 'Boston shaker' because it's easy to use with one hand, making it look and sound good. Not only is it the most popular choice for professional bartenders because it's more effective with straining, but it's also easier to find spare parts for it due to its quality."
-            },
-            {
-                "heading": "Strainers",
-                "content": "There are three different types of strainers: 'Julep,' 'Hawthorn,' which prevents the chunks of ice from falling into the cocktail glass, and the fine strainer. The fine strainer (or tea strainer) catches all the small shards that come through. My preferred strainer is called the 'Calabrese Hawthorn strainer,' which is versatile and mainly used in combination with the fine strainer."
-            },
-            {
-                "heading": "Jiggers",
-                "content": "The jigger set I like to use consists of two vessels, each a double cone. The smaller one usually measures 25 ml and has marks on the inside for 15 ml, and the larger one measures 50 ml and has a mark for 35 ml.",
-            },
-            {
-                "heading": "Bar spoon",
-                "content": "Bar spoons are useful for mixing and layering mixed drinks, which works best when the stirring technique is very smooth. They can also measure small amounts of liquids, usually around 5 ml, and fish cherries or olives out of the jar."
-            },
-            {
-                "heading":"Other tools",
-                "content":"Muddler: Get a good one to smash fruits at the bottom of a glass, or alternatively, you can use the flat surface at the top of the bar spoon if it has one.\nPeeler: If you don't already have one at home, get a good 'Y' peeler and avoid flexible and thin materials. I have destroyed one while peeling a firm lemon, and it sliced my finger badly.\nKnives and cutting board: You can pretty much use any good sharp knife, and any kind of chopping board will do the job.\nJuicer: If you don't already have one at home, I would recommend buying a 'Mexican elbow' for lemons, which you can also use to squeeze limes.\nMixing glass: They are quite expensive and not essential. You can easily use one of the two tins of the cocktail shaker and avoid a big expense."
-            }
-        ],
-    },
-    
-    {
-        "id": "shake",
-        "title": "How to shake cocktails",
-        "description": "Learn why you should shake cocktails and much, much more!",
-        "body": [
-            {
-                "heading": "Shaking a cocktail is one of the quickest ways to chill it. The liquid is rapidly distributed throughout the shaker and ice, which speeds up thermal exchange between the two. In this article, I will explain why the faster you shake, the faster the cocktail chills.",
-                "content": ""
-            },
-            {
-                "heading":"Shake, shake, shake...",
-                "content":"Generally, a cocktail should be shaken for about 8 to 10 seconds. Shaking it for longer will have little impact on the final result, and it will waste energy. A vigorous shake will create a layer of ice around the shaker. Once you achieve this layer, you can stop shaking, indicating that the liquid inside has reached the coldest possible point, around -5° C. The shaking technique and ice shape are not that important, but you should never shake with crushed ice.\n\nShaking also adds aeration to cocktails. The ice traps small bubbles of air inside the liquid, which affects the tactile experience of the cocktail and the way the flavors are perceived. However, keep in mind that shaking will make the drink cloudy, regardless of how clear the ingredients are."
-            },
-            {
-                "heading":"Fine straining",
-                "content":"After shaking a cocktail, you should always double strain it to remove the ice shards and any floating bits of fruits, seeds, or pulp. This will make the drink smoother.\n\nWhen making a cocktail, pour all the ingredients into the small tin of the shaker and then fill it with ice. Put the big tin on top, turn it upside-down, and twist both tins in opposite directions. Generally, the small tin can hold up to two cocktails, depending on the amount of liquid per cocktail. After shaking, you can hit the shaker on the side an inch below the rim to break the seal. This takes practice, so don’t worry if it doesn’t work the first time."
-            },
-            {
-                "heading":"Pro tips",
-                "content":"Put the cheapest ingredients in first to minimize wastage, and if you need to make an uneven number of cocktails, you can evenly split the extra one between the two shaker sets and then pour evenly into the glasses.\n\nFinally, remember that cocktails served without ice have a short life span. You can either drink them quickly or chill the glass before using it.\n\nTo recap, shake the cocktail vigorously for 8-10 seconds with ice cubes, and shaking will chill, dilute, and aerate the drink."
-            }
-        ],
-        "hasVideo": true,
-        "videoURL": "https://www.youtube.com/watch?v=lRtJwgZINIk",
-        "videoID": "lRtJwgZINIk"
-    },
-    
-    {
-        "id": "stir",
-        "title": "How to stir cocktails",
-        "description": "Why do you stir certain cocktails instead of shaking them?",
-        "body": [
-            {
-                "heading":"The reason why we stir cocktails, like Martinis, is because it yields a visually and taste-wise appealing end result. When you stir a cocktail, you have much more control over the dilution of the ice. However, it's important to remember that science says, 'ice will melt with heat, which is taken from the drink'. Therefore, once you reach that frosty effect outside your mixing glass, almost nothing will change, and all your effort will go to waste.",
-                "content": ""
-            },
-            {
-                "heading":"Advantages",
-                "content":"A stirred cocktail will keep all your ingredients clear, since there will be no air bubbles trapped inside it. This also means that the flavors of the ingredients will be more prominent. The stirring technique does not impact the outcome of the cocktail, but a good technique will make you look professional. Grab a nice long bar spoon and put it close to the mixing glass, smoothly let it rotate between your fingers, and against the glass in a circular path. When stirred, the temperature of the cocktail will drop around 0°C in under 10 seconds, but it will take you more than 40 seconds to reach the same temperature of a shaken cocktail."
-            },
-            {
-                "heading":"Set up",
-                "content":"The most commonly used practice is to pour all the ingredients inside the mixing glass (cheapest ingredients first) and then add ice and stir. Chilling the mixing glass first is a good practice, but not essential."
-            },
-            {
-                "heading":"Pro tips",
-                "content":"Cocktails served without ice have a short lifespan. You can either drink them fast or chill the glass before serving. This will give you a little more time to enjoy it.\n\nA good stir takes twice as long as washing your hands. So, you can practice your muscle memory by singing:\n\tHappy birthday\n\tI will survive - just the chorus\n\tAfrica - just the chorus"
-            },
-            {
-                "heading":"Quick recap",
-                "content":"Stir with a consistent pace for about 40 seconds.\nAlways chill the glass if the cocktail is served without any ice.\nStirring will highlight your ingredients - quality is key.\nStirred cocktails work best with clear liquids."
-            }
-        ],
-        "hasVideo": true,
-        "videoURL": "https://www.youtube.com/watch?v=2MB9DilgEKM",
-        "videoID": "2MB9DilgEKM"
-        
-    },
-    
-    {
-        "id": "churn",
-        "title": "How to churn & build in",
-        "description": "Two super simple techniques that you should never fail!",
-        "body": [
-            {
-                "heading": "Churning is a powerful and easy technique that involves vigorously mixing all the ingredients in a glass with crushed ice to instantly chill the cocktail, provide dilution, and create a cohesive flavor profile. While it's often associated with mojitos, it can be used with any cocktail.",
-                "content": ""
-            },
-            {
-                "heading":"Churn baby churn",
-                "content":"To set up, simply add all the ingredients to the glass, fill it with crushed ice, and use a bar spoon to powerfully mix the ingredients for 8-10 seconds. Top with more crushed ice, as desired."
-            },
-            {
-                "heading":"Pro tips",
-                "content":"- Keep your ice fresh and well-crushed\n- Avoid churning fizzy ingredients\n- Use a powerful mixing motion with your bar spoon\n- Ensure that solid ingredients are evenly distributed throughout the glass"
-            },
-            {
-                "heading":"Build it!",
-                "content":"Another technique is 'Build in', which involves pouring all the ingredients directly into a glass over ice. For cocktails with sparkling ingredients, avoid pouring them directly onto the ice to prevent them from floating to the top. If this happens, gently stir the cocktail to incorporate all the ingredients.\n\nTo build a cocktail, add all the ingredients to the glass in order of price, and then add ice. If the cocktail contains sparkling ingredients, top it up and pour it over the liquid to avoid floating."
-            }
-        ],
-        "hasVideo": true,
-        "videoURL": "https://www.youtube.com/watch?v=At82bYuY0yw",
-        "videoID": "At82bYuY0yw"
-    },
-    
-    {
-        "id": "throw",
-        "title": "How to throw cocktails",
-        "description": "Why a Bloody Mary is better thrown than shaken?",
-        "body": [
-            {
-                "heading": "This technique is one of the few that you can actually have fun with just by trying it with water. It involves throwing the liquid from one tin to the other, which chills the cocktail and gives it dilution and texture.",
-                "content": ""
-            },
-            {
-                "heading":"Yea but... why?",
-                "content":"The reason why it is the best technique for Bloody Marys is that it gets most of the characteristics of a shaken cocktail without creating a thick, bitter foam on top (shaking tomato juice can create foam, and with all the seasoning in a Bloody Mary, it can become unpleasant)."
-            },
-            {
-                "heading":"Set up",
-                "content":"Hold the big tin with ice and liquid inside with one hand and lock the ice at the bottom of the tin with your strainer, using whichever way is most comfortable for you. Pour the liquid from one tin to the other constantly until the liquid reaches the desired dilution (this will be more noticeable with thick juices like tomato juice)."
-            },
-            {
-                "heading":"Pro tips",
-                "content":"- Practice this technique with water first.\n- Use either a 'Calabrese Hawthorn' or a 'Julep Strainer'."
-            }
-        ],
-        "hasVideo": true,
-        "videoURL": "https://www.youtube.com/watch?v=T_DEm_2kXWk",
-        "videoID": "T_DEm_2kXWk"
-    },
-    
-    {
-        "id": "egg-shake",
-        "title": "Shaking egg white",
-        "description": "Let’s dive into the world of foamy drinks",
-        "body": [
-            {
-                "heading":"Discover the world of foamy cocktails with these two techniques.",
-                "content":""
-            },
-            {
-                "heading":"Foaming agent",
-                "content":"Egg white is the best ingredient to use for creating the perfect foam, but there are alternatives available for those who are vegan."
-            },
-            {
-                "heading":"Safety first",
-                "content":"Despite concerns about safety, using egg white in cocktails is generally considered safe because it comes into contact with spirits and citric juice, which help kill bacteria."
-            },
-            {
-                "heading":"Dry Shake",
-                "content":"The 'Dry Shake' technique involves vigorously shaking ingredients in a cocktail shaker without ice for around 20-30 seconds. This ensures that the egg white combines well with the other ingredients and results in a thick, frothy foam that adds a velvety texture to the cocktail. After the 'Dry Shake', ice is added, and the mixture is shaken briefly before being fine-strained into the glass."
-            },
-            {
-                "heading":"Reverse Dry Shake",
-                "content":"The 'Reverse Dry Shake' technique is the same as the 'Dry Shake' but in reverse. First, the ingredients are shaken with ice, then the mixture is fine-strained into the shaker, and finally, the egg white is added and shaken vigorously to create a thick foam."
-            },
-            {
-                "heading":"Pro tips",
-                "content":"- Always crack the egg in a separate tin when using egg whites, just in case the yolk is off or the shell breaks.\n- When using alternatives like aquafaba (chickpea water), use around 25-30 ml.\n- Check the recommended measurements for other alternatives on the bottle, such as Mrs. Better Bitter Miraculous Foamer.\n- There is no 'right' technique, so try both and choose your favorite."
-            },
-            {
-                "heading":"Summary",
-                "content":"- These techniques require two shakes.\n- Always shake vigorously when using egg white.\n- Always fine-strain the cocktail after shaking it with ice."
-            }
-        ],
-        "hasVideo": true,
-        "videoURL": "https://youtu.be/5QQ0cDGohA0",
-        "videoID": "5QQ0cDGohA0"
-    },
-    
-    {
-        "id": "different-containers",
-        "title": "No equipment?",
-        "description": "Did you forget to bring shakers and strainers with you? Let’s see some alternatives",
-        "body": [
-            {
-                "heading":"It's always handy to bring your shakers and strainers with you, but let's be honest, most of the time it's not practical. However, you can easily mix your cocktails in the glass with ice and be done with it.\n\nNow, let's explore some alternatives to using a shaker.",
-                "content": ""
-            },
-            {
-                "heading":"Shaker:",
-                "content":"An empty jam jar is a very useful substitute for a shaker (who doesn't have one lying around?). Mix your ingredients in the jar, fill it with ice, and shake. Since the jar will be full of ice and there will be little surface for the ice to smash against, you will avoid most of the ice cracking while shaking. There's no need to fine strain it; you can simply open the jar and drink out of it! Other useful items for holding cocktail ingredients include an empty spice jar, a protein shaker, or an empty ice cream container. Get creative and use whatever you think is best!"
-            },
-            {
-                "heading":"Jigger:",
-                "content":"Don't have a jigger on hand? No problem! Since you're not selling your cocktails, you can free pour and choose how much booze you want in your drink. However, an easy alternative to a jigger is an espresso mug or a hard boiled egg holder, or anything else that you know roughly how much liquid it can hold.\n\nWith these alternatives, you can mix up a great cocktail even without all the fancy equipment!"
-            }
-        ]
-    }
+  {
+    "id": "equipment",
+    "title": "Equipo",
+    "description": "¿No sabes bien qué comprar online?\nHablemos de ello.",
+    "body": [
+      {
+        "heading": "Quiero enfatizar que no necesitas todo el equipo esencial de inmediato. Sin embargo, puedo ayudarte a elegir las herramientas adecuadas para empezar a hacer cócteles extraordinarios.",
+        "content": ""
+      },
+      {
+        "heading": "Cocteleras",
+        "content": "Al comprar una coctelera, hay dos factores principales a considerar: el estilo y el material del que está hecha (metal, acero inoxidable, plástico, etc.). Las dos más comunes son la “Cobbler shaker”, de tres piezas, y la “Boston shaker”, de dos piezas. Recomiendo mucho la “Boston shaker” porque es fácil de usar con una mano y se ve y suena bien. Además de ser la opción más popular entre bartenders profesionales por su filtrado más efectivo, también es más fácil encontrar repuestos gracias a su calidad."
+      },
+      {
+        "heading": "Coladores",
+        "content": "Hay tres tipos de coladores: el “Julep”, el “Hawthorn” (que evita que caigan trozos de hielo en el vaso) y el colador fino. El colador fino (o de té) atrapa los fragmentos pequeños que pasan. Mi colador preferido es el “Calabrese Hawthorn”, que es versátil y se usa principalmente junto con el colador fino."
+      },
+      {
+        "heading": "Jiggers",
+        "content": "El set de jiggers que me gusta usar consta de dos recipientes, cada uno con forma de doble cono. El pequeño suele medir 25 ml y tiene marcas interiores de 15 ml, y el grande mide 50 ml y tiene una marca de 35 ml."
+      },
+      {
+        "heading": "Cuchara de bar",
+        "content": "Las cucharas de bar son útiles para mezclar y estratificar bebidas, lo que funciona mejor cuando la técnica de removido es muy suave. También pueden medir pequeñas cantidades de líquido, normalmente alrededor de 5 ml, y sacar cerezas u aceitunas de un frasco."
+      },
+      {
+        "heading": "Otras herramientas",
+        "content": "Muddler: consigue uno bueno para machacar fruta en el fondo del vaso; alternativamente, puedes usar la superficie plana en la parte superior de la cuchara de bar si la tiene.\nPelador: si no tienes uno en casa, consigue un buen pelador en forma de “Y” y evita materiales flexibles y finos. Yo rompí uno pelando un limón firme y me cortó el dedo bastante.\nCuchillos y tabla de cortar: puedes usar cualquier cuchillo bien afilado, y cualquier tipo de tabla servirá.\nExprimidor: si no tienes uno en casa, te recomiendo comprar un “Mexican elbow” para limones, que también sirve para exprimir limas.\nVaso mezclador: suelen ser bastante caros y no son esenciales. Puedes usar fácilmente una de las dos latas de la coctelera y evitar un gasto grande."
+      }
+    ]
+  },
+  {
+    "id": "shake",
+    "title": "Cómo agitar cócteles",
+    "description": "Aprende por qué debes agitar cócteles y mucho, mucho más",
+    "body": [
+      {
+        "heading": "Agitar un cóctel es una de las formas más rápidas de enfriarlo. El líquido se distribuye rápidamente por la coctelera y el hielo, acelerando el intercambio térmico entre ambos. En este artículo explicaré por qué cuanto más rápido agitas, más rápido se enfría el cóctel.",
+        "content": ""
+      },
+      {
+        "heading": "Shake, shake, shake...",
+        "content": "En general, un cóctel debe agitarse entre 8 y 10 segundos. Agitarlo más tiempo tendrá poco impacto en el resultado final y solo desperdiciará energía. Un agitado enérgico crea una capa de hielo alrededor de la coctelera. Cuando consigas esa capa, puedes detenerte: indica que el líquido ha alcanzado el punto más frío posible, alrededor de -5 °C. La técnica y la forma del hielo no son tan importantes, pero nunca debes agitar con hielo picado.\n\nAgitar también airea los cócteles. El hielo atrapa pequeñas burbujas de aire en el líquido, lo que afecta la sensación en boca y la percepción de los sabores. Sin embargo, ten en cuenta que agitar hará que la bebida quede turbia, independientemente de lo claros que sean los ingredientes."
+      },
+      {
+        "heading": "Doble colado",
+        "content": "Después de agitar un cóctel, siempre debes colarlo dos veces para eliminar fragmentos de hielo y cualquier resto de fruta, semillas o pulpa. Esto hace que la bebida sea más suave.\n\nPara preparar un cóctel, vierte todos los ingredientes en la lata pequeña de la coctelera y luego llénala de hielo. Coloca la lata grande encima, dale la vuelta y gira ambas latas en direcciones opuestas. En general, la lata pequeña puede contener hasta dos cócteles, dependiendo de la cantidad de líquido por cóctel. Tras agitar, puedes golpear la coctelera en un lateral a unos 2-3 cm por debajo del borde para romper el sello. Esto requiere práctica, así que no te preocupes si no sale a la primera."
+      },
+      {
+        "heading": "Consejos pro",
+        "content": "Pon primero los ingredientes más baratos para minimizar desperdicio, y si necesitas preparar un número impar de cócteles, divide el extra en partes iguales entre dos cocteleras y luego sirve en los vasos de manera uniforme.\n\nPor último, recuerda que los cócteles servidos sin hielo tienen una vida útil corta. Puedes beberlos rápido o enfriar el vaso antes de usarlo.\n\nEn resumen: agita vigorosamente 8-10 segundos con cubos de hielo; agitar enfría, diluye y airea la bebida."
+      }
+    ],
+    "hasVideo": true,
+    "videoURL": "https://www.youtube.com/watch?v=lRtJwgZINIk",
+    "videoID": "lRtJwgZINIk"
+  },
+  {
+    "id": "stir",
+    "title": "Cómo remover cócteles",
+    "description": "¿Por qué se remueven ciertos cócteles en lugar de agitarlos?",
+    "body": [
+      {
+        "heading": "La razón por la que removemos cócteles, como los Martinis, es que produce un resultado visual y gustativamente más atractivo. Al remover, tienes mucho más control sobre la dilución del hielo. Sin embargo, recuerda que la ciencia dice: “el hielo se derrite con el calor, que proviene de la bebida”. Por lo tanto, una vez que logras ese efecto escarchado por fuera del vaso mezclador, casi nada cambiará y todo el esfuerzo extra será en vano.",
+        "content": ""
+      },
+      {
+        "heading": "Ventajas",
+        "content": "Un cóctel removido mantiene todos los ingredientes claros, ya que no quedan burbujas de aire atrapadas. Esto también significa que los sabores serán más prominentes. La técnica de removido no cambia el resultado, pero una buena técnica te hará ver profesional. Toma una cuchara de bar larga y colócala cerca del vaso mezclador, deja que rote suavemente entre los dedos y contra el vidrio en un movimiento circular. Al remover, la temperatura del cóctel baja a alrededor de 0 °C en menos de 10 segundos, pero te llevará más de 40 segundos alcanzar la misma temperatura que un cóctel agitado."
+      },
+      {
+        "heading": "Montaje",
+        "content": "Lo más común es verter todos los ingredientes en el vaso mezclador (primero los más baratos), luego añadir hielo y remover. Enfriar el vaso mezclador antes es una buena práctica, pero no es esencial."
+      },
+      {
+        "heading": "Consejos pro",
+        "content": "Los cócteles servidos sin hielo tienen una vida útil corta. Puedes beberlos rápido o enfriar el vaso antes de servir. Así tendrás un poco más de tiempo para disfrutarlos.\n\nUn buen removido dura el doble que lavarte las manos. Puedes practicar la memoria muscular cantando:\n\tCumpleaños feliz\n\tI Will Survive - solo el estribillo\n\tAfrica - solo el estribillo"
+      },
+      {
+        "heading": "Resumen rápido",
+        "content": "Remueve a un ritmo constante durante unos 40 segundos.\nEnfría siempre el vaso si el cóctel se sirve sin hielo.\nRemover realza tus ingredientes: la calidad es clave.\nLos cócteles removidos funcionan mejor con líquidos claros."
+      }
+    ],
+    "hasVideo": true,
+    "videoURL": "https://www.youtube.com/watch?v=2MB9DilgEKM",
+    "videoID": "2MB9DilgEKM"
+  },
+  {
+    "id": "churn",
+    "title": "Cómo churnar y construir",
+    "description": "Dos técnicas súper simples que nunca deben fallarte",
+    "body": [
+      {
+        "heading": "El churning es una técnica potente y fácil que consiste en mezclar vigorosamente todos los ingredientes en un vaso con hielo picado para enfriar al instante el cóctel, aportar dilución y crear un perfil de sabor cohesivo. Aunque se asocia a menudo con el mojito, puede usarse con cualquier cóctel.",
+        "content": ""
+      },
+      {
+        "heading": "Churn baby churn",
+        "content": "Para prepararlo, simplemente añade todos los ingredientes al vaso, llénalo de hielo picado y usa una cuchara de bar para mezclar enérgicamente durante 8-10 segundos. Completa con más hielo picado si lo deseas."
+      },
+      {
+        "heading": "Consejos pro",
+        "content": "- Mantén el hielo fresco y bien picado\n- Evita churnar ingredientes con gas\n- Usa un movimiento potente con la cuchara de bar\n- Asegúrate de que los ingredientes sólidos se distribuyan de forma uniforme"
+      },
+      {
+        "heading": "¡Constrúyelo!",
+        "content": "Otra técnica es “Build in”, que consiste en verter todos los ingredientes directamente en un vaso sobre hielo. Para cócteles con ingredientes con gas, evita verterlos directamente sobre el hielo para que no floten arriba. Si ocurre, remueve suavemente el cóctel para integrar los ingredientes.\n\nPara construir un cóctel, añade todos los ingredientes al vaso en orden de precio y luego agrega el hielo. Si el cóctel contiene ingredientes con gas, completa y vierte sobre el líquido para evitar que flote."
+      }
+    ],
+    "hasVideo": true,
+    "videoURL": "https://www.youtube.com/watch?v=At82bYuY0yw",
+    "videoID": "At82bYuY0yw"
+  },
+  {
+    "id": "throw",
+    "title": "Cómo throwear cócteles",
+    "description": "¿Por qué un Bloody Mary es mejor “throweado” que agitado?",
+    "body": [
+      {
+        "heading": "Esta técnica es de las pocas con las que puedes divertirte incluso practicando con agua. Consiste en verter el líquido de una lata a otra, lo que enfría el cóctel y aporta dilución y textura.",
+        "content": ""
+      },
+      {
+        "heading": "Sí, pero... ¿por qué?",
+        "content": "La razón por la que es la mejor técnica para los Bloody Mary es que consigue la mayoría de las características de un cóctel agitado sin crear una espuma espesa y amarga en la parte superior (agitar jugo de tomate puede generar espuma y, con todo el condimento de un Bloody Mary, puede resultar desagradable)."
+      },
+      {
+        "heading": "Montaje",
+        "content": "Sujeta la lata grande con hielo y líquido con una mano y bloquea el hielo en el fondo de la lata con el colador, de la manera que te resulte más cómoda. Vierte el líquido de una lata a otra de forma constante hasta alcanzar la dilución deseada (esto se nota más con jugos espesos como el de tomate)."
+      },
+      {
+        "heading": "Consejos pro",
+        "content": "- Practica esta técnica primero con agua.\n- Usa un “Calabrese Hawthorn” o un “Julep Strainer”."
+      }
+    ],
+    "hasVideo": true,
+    "videoURL": "https://www.youtube.com/watch?v=T_DEm_2kXWk",
+    "videoID": "T_DEm_2kXWk"
+  },
+  {
+    "id": "egg-shake",
+    "title": "Agitar clara de huevo",
+    "description": "Entremos en el mundo de los cócteles espumosos",
+    "body": [
+      {
+        "heading": "Descubre el mundo de los cócteles espumosos con estas dos técnicas.",
+        "content": ""
+      },
+      {
+        "heading": "Agente espumante",
+        "content": "La clara de huevo es el mejor ingrediente para crear una espuma perfecta, pero hay alternativas para quienes son veganos."
+      },
+      {
+        "heading": "Seguridad ante todo",
+        "content": "A pesar de las dudas sobre seguridad, usar clara de huevo en cócteles se considera generalmente seguro porque entra en contacto con destilados y jugo cítrico, que ayudan a matar bacterias."
+      },
+      {
+        "heading": "Dry Shake",
+        "content": "La técnica “Dry Shake” consiste en agitar vigorosamente los ingredientes en una coctelera sin hielo durante unos 20-30 segundos. Esto asegura que la clara se combine bien con los demás ingredientes y resulte una espuma espesa y cremosa que añade una textura aterciopelada al cóctel. Después del “Dry Shake”, se añade hielo y se agita brevemente antes de colar finamente en el vaso."
+      },
+      {
+        "heading": "Reverse Dry Shake",
+        "content": "La técnica “Reverse Dry Shake” es igual que la “Dry Shake” pero al revés. Primero se agitan los ingredientes con hielo, luego se cuela finamente la mezcla en la coctelera y finalmente se añade la clara y se agita con fuerza para crear una espuma espesa."
+      },
+      {
+        "heading": "Consejos pro",
+        "content": "- Rompe el huevo en una lata aparte cuando uses claras, por si la yema está mal o se rompe la cáscara.\n- Si usas alternativas como aquafaba (agua de garbanzos), usa alrededor de 25-30 ml.\n- Revisa las medidas recomendadas en la botella para otras alternativas, como Mrs. Better Bitter Miraculous Foamer.\n- No hay una técnica “correcta”, prueba ambas y elige tu favorita."
+      },
+      {
+        "heading": "Resumen",
+        "content": "- Estas técnicas requieren dos agitados.\n- Siempre agita con fuerza cuando uses clara de huevo.\n- Siempre cuela finamente el cóctel después de agitarlo con hielo."
+      }
+    ],
+    "hasVideo": true,
+    "videoURL": "https://youtu.be/5QQ0cDGohA0",
+    "videoID": "5QQ0cDGohA0"
+  },
+  {
+    "id": "different-containers",
+    "title": "¿Sin equipo?",
+    "description": "¿Olvidaste llevar cocteleras y coladores? Veamos algunas alternativas",
+    "body": [
+      {
+        "heading": "Siempre es útil llevar cocteleras y coladores, pero seamos honestos: la mayoría de las veces no es práctico. Aun así, puedes mezclar tus cócteles directamente en el vaso con hielo y listo.\n\nAhora, veamos algunas alternativas a una coctelera.",
+        "content": ""
+      },
+      {
+        "heading": "Coctelera:",
+        "content": "Un tarro vacío de mermelada es un sustituto muy útil (¿quién no tiene uno por ahí?). Mezcla los ingredientes en el tarro, llénalo de hielo y agita. Como el tarro estará lleno de hielo y habrá poca superficie contra la que el hielo choque, evitarás la mayoría de los golpes y fracturas del hielo al agitar. No hace falta colarlo finamente; ¡puedes abrir el tarro y beber directamente! Otros objetos útiles son un frasco de especias vacío, un shaker de proteína o un envase vacío de helado. ¡Sé creativo y usa lo que te parezca mejor!"
+      },
+      {
+        "heading": "Jigger:",
+        "content": "¿No tienes jigger a mano? ¡No pasa nada! Como no estás vendiendo tus cócteles, puedes servir “a ojo” y elegir cuánto alcohol quieres en tu bebida. Sin embargo, una alternativa sencilla a un jigger es una taza de espresso o un portahuevo cocido, o cualquier cosa de la que sepas aproximadamente cuánto líquido puede contener.\n\nCon estas alternativas, puedes preparar un gran cóctel incluso sin todo el equipo sofisticado."
+      }
+    ]
+  }
 ]
