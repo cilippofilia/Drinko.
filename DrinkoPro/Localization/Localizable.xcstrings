@@ -2158,6 +2158,9 @@
         }
       }
     },
+    "DEBUG" : {
+
+    },
     "Delete" : {
       "localizations" : {
         "de" : {
