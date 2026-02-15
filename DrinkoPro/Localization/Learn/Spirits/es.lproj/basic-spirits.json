@@ -1,261 +1,255 @@
 [
-    {
-        "id": "vodka",
-        "title": "Vodka",
-        "description": "Can vodka be made from anything?",
-        "body": [
-            {
-                "heading": "Crafting Vodka",
-                "content": "While vodka can be crafted from various ingredients, not all are ideal for creating top-quality spirits."
-            },
-            {
-                "heading": "Ingredients for Vodka Making",
-                "content": "Vodka, a clear spirit, is derived from sources abundant in starch or sugar. Commonly used materials include potatoes, sugar beet molasses, and cereal grains."
-            },
-            {
-                "heading": "Vodka's Historical Roots",
-                "content": "The origins of vodka trace back to the grain-growing regions of western Russia, Belarus, Lithuania, Ukraine, and Poland. These nations collectively form the renowned 'Vodka Belt' due to their high rates of consumption and production."
-            },
-            {
-                "heading": "Perception of Neutrality",
-                "content": "Although often regarded as a 'neutral spirit,' the varied raw ingredients contribute diverse flavor profiles to vodka. I will tell you below the subtle flavors of vodka below; Very useful to keep in mind when picking a vodka for your martinis."
-            },
-            {
-                "heading": "Distinct Flavor Profiles",
-                "content": ""
-            },
-            {
-                "heading": "Wheat",
-                "content": "Imparts subtle aniseed, pepper, and lemon zest flavors."
-            },
-            {
-                "heading": "Rye",
-                "content": "Brings out nutty sweetness, reminiscent of rye bread and Brazil nuts."
-            },
-            {
-                "heading": "Maize or Corn",
-                "content": "Offers a buttery essence akin to fresh corn on the cob."
-            },
-            {
-                "heading": "Barley",
-                "content": "Contains notes of bread, light nuttiness, and sweetness resembling brioche."
-            },
-            {
-                "heading": "Potato",
-                "content": "Known for its creamy texture, fuller flavor, and hints of vegetables."
-            }
-        ]
-    },
-
-    {
-        "id": "gin",
-        "title": "Gin",
-        "description": "The botanical-infused spirit with a rich history and versatile flavor profile.",
-        "body": [
-            {
-                "heading": "Crafting Gin",
-                "content": "Gin is a spirit that requires a two-stage process to be produced. First, you need a good quality base of 'neutral spirit' (in other words, vodka), and then you can flavour this base through a second distillation with seeds, berries, roots, fruits, herbs, and spices, collectively known as 'botanicals.' Every gin brand has its own ratios of botanicals, and all gins are unique and different, even though, to be called gin, it's required to have a dominant juniper flavour."
-            },
-            {
-                "heading": "Styles and Types of Gin",
-                "content": ""
-            },
-            {
-                "heading": "Cold Compounded Gin",
-                "content": "Commonly known as 'bathtub gins,' they are flavoured with extracts, essences, and/or by infusion/maceration without distillation."
-            },
-            {
-                "heading": "London Dry Gin",
-                "content": "Originally a style, but now a legal category, unfortunately, it doesn't describe much about the gin other than being dry. Despite the name, they can be produced anywhere in the world."
-            },
-            {
-                "heading": "New Western Dry Gin",
-                "content": "This is a loose term that is not used much; it includes all the gins that shift away from the overabundant juniper flavour, mostly defined by the careful inclusion and balance of supporting flavours."
-            },
-            {
-                "heading": "Old Tom Gin",
-                "content": "Often described as a sweet style of gin, they were mostly popular in the 18th and 19th centuries due to the limited purification of the spirit. The rough taste of those gins was masked by flavouring and/or sweetening with liquorice, and later, with sugar."
-            }
-        ]
-    },
-
-    {
-      "id": "rum",
-      "title": "Rum",
-      "description": "The sweet and complex spirit with a tropical flair and centuries-old legacy.",
-      "body": [
-          {
-              "heading": "Crafting Rum",
-              "content": "Rum is a spirit made by fermenting and then distilling sugarcane molasses or sugarcane juice. In most cases, it is produced from molasses, except in the French West Indies and Brazil, where fresh sugarcane juice is used to respectively produce Rhum Agricole and Cachaca."
-          },
-          {
-              "heading": "Distillation Process",
-              "content": "The distillation process varies among producers. Multiple column stills are commonly used to reduce impurities and create a lighter rum. Alternatively, using a pot still or a single column still results in a heavier rum."
-          },
-          {
-              "heading": "Types of Rums",
-              "content": ""
-          },
-          {
-              "heading": "'Light' Rum",
-              "content": "'Light' rum, bottled straight after distillation, is characterized by its color and flavor. It's commonly used in refreshing cocktails like mojitos and daiquiris. Some brands age it for enhanced freshness."
-          },
-          {
-              "heading": "'Golden' Rum",
-              "content": "'Golden' rums strike a balance between light and dark varieties. They gain their color from aging in wooden casks, sometimes used for cognac or whiskey. Some may use caramel to darken the hue."
-          },
-          {
-              "heading": "'Dark' Rum",
-              "content": "'Dark' rums boast rich, intense flavors. Often used as a floater in cocktails for visual appeal, they're best appreciated similarly to fine whiskey or cognac."
-          },
-          {
-              "heading": "'Overproof' Rum",
-              "content": "'Overproof' rums, with an ABV above 50%, add a funky twist to tiki cocktails. They can range from light to dark in color."
-          },
-          {
-              "heading": "'Flavored' or 'Spiced' Rum",
-              "content": "'Flavored' or 'spiced' rums are self-explanatory. Generally sweeter, they offer versatility in cocktails. Have you ever tried a coconut rum mojito?"
-          },
-          {
-              "heading": "Make your own 'Flavored' or 'Spiced' Rum",
-              "content": "Each brand has its unique recipe. If you're keen on creating your own, start by getting a bottle of your preferred rum and adding the flavors you desire. It's advisable to begin with a small quantity, like 300 ml or 10 oz., and a specific amount of flavoring, such as 100 grams of cacao nibs. Taste it daily and strain it once you achieve your desired flavor. This method allows for adjustments—simply add more of the same rum to extend it until you reach the perfect blend of aromas and flavors. Remember to document every step so you can recreate your final recipe easily.\n\n This process can be applied to any other spirit; the method in question is called Cold Infusion - meaning that there will be no heat applied to infuse flavors."
-          }
-      ]
-    },
-
-    {
-        "id": "mezcal",
-        "title": "Tequila & Mezcal",
-        "description": "Unique, culturally-rich spirits from Mexico with distinct flavors and histories.",
-        "body": [
-            {
-                "heading": "Tequila's Origins",
-                "content": "The production of ritual wine from agave juice dates back to the Aztecs around 250-300 AD. When Cortes' soldiers arrived in Mexico in 1519, they discovered that this juice could be distilled, leading to the production of a pseudo-tequila within a decade."
-            },
-            {
-                "heading": "Tequila Making Process",
-                "content": "Tequila is made in Mexico's Jalisco region. The agave plant is diced, steamed, and the juice extracted. Natural yeast is added for fermentation. To be called tequila, this fermented liquid undergoes two rounds of distillation."
-            },
-            {
-                "heading": "Types and Aging of Tequila",
-                "content": ""
-            },
-            {
-                "heading": "Mixto",
-                "content": "Mixto (or Mixed) is a tequila that contains at least 51% agave, with the remainder being industrial spirits."
-            },
-            {
-                "heading": "Pura",
-                "content": "Pura (or Pure)is a tequila that is made with 100% blue agave distillate."
-            },
-            {
-                "heading": "Blanco",
-                "content": "Blanco (or White/Silver) is s clear tequila aged for a maximum of 60 days."
-            },
-            {
-                "heading": "Oro",
-                "content": "Oro (or Gold) is a teqila similar to blanco but with flavoring and/or coloring, usually caramel."
-            },
-            {
-                "heading": "Reposado",
-                "content": "Reposado (or Rested) is a tequila aged in oak casks for 60 days to 1 year. This gives it a slight golden color and hints of wood, vanilla and other notes extracted from the oak cask."
-            },
-            {
-                "heading": "Anejo",
-                "content": "Anejo (or Aged) is a tequila aged for a minimum of 1 year and up to 10 years. This aging process gives to the tequila a stronger golden color and stronger flavors of wood, vanilla, and other notes extracted from the oak cask."
-            },
-            {
-                "heading": "Mezcal's History and Process",
-                "content": "Mezcal has been made since the 16th century from the juice extracted from the cooking of the heart of the Maguey Plant, a type of agave plant. The Aztecs used it to make Pulque, a sweet beer-like drink consumed during religious ceremonies. Unlike tequila, to give mezcal its smoky flavor, the plant is roasted. Then it is stone-pressed to extract the pulp, steeped in pure water with the addition of yeast, and left to ferment for several days. The fermented liquid is then distilled and bottled."
-            }
-        ]
-    },
-
-    {
-        "id": "cognac",
-        "title": "Brandy & Cognac",
-        "description": "Two sophisticated and richly flavored spirits produced by distilling wine, each with a distinct origin and aging process.",
-        "body": [
-            {
-                "heading": "Brandy Overview",
-                "content": "Brandy, produced by distilling wine, is often enjoyed as an after-dinner digestif. Some brandies are aged in wooden casks for character and color, while others use caramel coloring to imitate aging or employ a combination of both methods."
-            },
-            {
-                "heading": "Cognac: A French Distinction",
-                "content": "Cognac, a type of French Brandy, is exclusively made in the region of the small town 'Cognac.' The region comprises 6 sub-regions that provide wines for distillation. To acquire the official appellation, the wine used for Cognac must undergo double distillation by March 31st. The distillation process typically begins around late November, requiring 9 liters of wine to produce 1 liter of Cognac over approximately 11 hours."
-            },
-            {
-                "heading": "Categories of Cognac",
-                "content": ""
-            },
-            {
-                "heading": "V.S. (Very Special) / 3 stars",
-                "content": "Aged between 2 1/2 and 4 1/2 years."
-            },
-            {
-                "heading": "V.S.O.P. (Very Special Old Pale)",
-                "content": "Named after the Hennessy House, with the youngest element aged at least 4 1/2 years."
-            },
-            {
-                "heading": "Napoleon",
-                "content": "Legally aged for at leat 6.5 years, commonly aged longer."
-            },
-            {
-                "heading": "X.O. (Extra Old)",
-                "content": "Originally coined by Maurice Hennessy for Cognacs aged between 15 and 20 years."
-            }
-        ]
-    },
-
-    {
-      "id": "pisco",
-      "title": "Pisco",
-      "description": "The clear brandy made from grapes, originating from Peru and Chile with a smooth, aromatic flavor profile",
-      "body": [
-        {
-          "heading": "Pisco's Origin and Meaning",
-          "content": "Pisco, a clear grape brandy from Peru and Chile, derives its name from the Quechuan word 'pishku', meaning 'bird', referencing the town where it was first produced and its abundance of birds."
-        },
-        {
-          "heading": "Traditional Production Methods",
-          "content": "Today, Pisco is crafted using traditional techniques passed down through generations. Carefully selected grapes are hand-harvested, and the distillation process focuses on preserving the natural flavors and aromas of the grapes."
-        },
-        {
-          "heading": "Cultural Significance",
-          "content": "In Peru and Chile, Pisco holds cultural importance and is celebrated through festivals, music, dance, and even a national debate over its origin. Both countries claim it as their national spirit."
-        },
-        {
-          "heading": "Unique Flavor Profile",
-          "content": "Pisco offers a distinctive and complex flavor profile, enjoyed neat, in classic cocktails like the Pisco Sour, or in various mixed drinks, making it an enticing choice for spirits enthusiasts."
-        }
-      ]
-    },
-
-    {
-      "id": "whiskey",
-      "title": "Whisky & Whiskey",
-      "description": "The diverse and complex spirits with variations from around the world, all sharing a common process of distilling fermented grains.",
-      "body": [
-        {
-          "heading": "Scotch Whisky",
-          "content": "It is made similarly to other whiskies, but with a slightly more complex process. The grain must be barley and barley only. Once harvested, the barley is malted, which means it is soaked in water for 1-2 days and allowed to partially germinate. The barley is then dried in a kiln to stop the germination process and develop flavor. To give Scotch Whisky its characteristic smoky flavor, the barley is dried in a kiln heated by peat fire."
-        },
-        {
-          "heading": "Scotch Grain & Blended Whisky",
-          "content": "Scotch Grain Whisky can be made with wheat, corn, rye or other cereals. It is distilled at least two times using a column still, then aged for at least three years in Scotland and reduced with water to a minimum of 40% ABV. This whiskey is used for blending with malt whiskies to create Scottish Blended Whisky, or simply Scotch."
-        },
-        {
-          "heading": "Irish Whiskey",
-          "content": "For this type of whiskey, malted and un-malted grains are used, which are heat-dried. The mixture is then fermented to around 8% ABV, and distilled three times to 85% ABV. It must be aged for a minimum of three years in oak casks in Ireland, and after that period it is blended for at least 2 years before the ABV is reduced to lower the strength and bottled."
-        },
-        {
-          "heading": "American Whiskey",
-          "content": "These are produced similarly to other whiskies but have some distinct features and methods. American Whiskies use predominantly corn and rye instead of barley. The recipe of different grains is called “mash bill,” which is pressure cooked with a mixture of water and yeast. At this point, almost 25% of the mash from previous batches can be added, which is referred to as “sour mash” to ensure consistency of character throughout the batches. This “sour mash” is then fermented into beer and distilled at least twice. The whiskey is then aged for several years in new charred American oak barrels, which impart sweetness and light smoky flavors to the whiskey."
-        },
-        {
-          "heading": "Bourbon Whiskey",
-          "content": "This kind of whiskey can be made exclusively in the US by law and only if it is made in Kentucky can be called Kentucky Bourbon. The majority of the mash must be corn, and the rest can be a mix of wheat, rye, and barley. During distillation, it cannot go over 80% ABV, and then it gets diluted to 63% ABV before aging for at least two years in brand new oak barrels."
-        }
-      ]
-    }
+  {
+    "id": "vodka",
+    "title": "Vodka",
+    "description": "¿Se puede hacer vodka con cualquier cosa?",
+    "body": [
+      {
+        "heading": "Elaboración del vodka",
+        "content": "Aunque el vodka puede elaborarse a partir de distintos ingredientes, no todos son ideales para crear destilados de alta calidad."
+      },
+      {
+        "heading": "Ingredientes para elaborar vodka",
+        "content": "El vodka, un destilado transparente, se obtiene de materias primas ricas en almidón o azúcar. Los materiales más comunes incluyen patatas, melaza de remolacha azucarera y cereales."
+      },
+      {
+        "heading": "Raíces históricas del vodka",
+        "content": "Los orígenes del vodka se remontan a las regiones cerealistas de Rusia occidental, Bielorrusia, Lituania, Ucrania y Polonia. En conjunto, estas naciones forman el célebre “cinturón del vodka” por sus altos niveles de consumo y producción."
+      },
+      {
+        "heading": "Percepción de neutralidad",
+        "content": "Aunque a menudo se considera un “destilado neutro”, las distintas materias primas aportan perfiles de sabor diversos al vodka. A continuación te contaré los matices sutiles del vodka; muy útil para tener en cuenta al elegir un vodka para tus martinis."
+      },
+      {
+        "heading": "Perfiles de sabor distintivos",
+        "content": ""
+      },
+      {
+        "heading": "Trigo",
+        "content": "Aporta notas sutiles de anís, pimienta y cáscara de limón."
+      },
+      {
+        "heading": "Centeno",
+        "content": "Resalta una dulzura de frutos secos, que recuerda al pan de centeno y a las nueces de Brasil."
+      },
+      {
+        "heading": "Maíz",
+        "content": "Ofrece una esencia mantecosa similar al maíz tierno."
+      },
+      {
+        "heading": "Cebada",
+        "content": "Contiene notas de pan, un ligero toque de frutos secos y dulzor que recuerda al brioche."
+      },
+      {
+        "heading": "Patata",
+        "content": "Conocido por su textura cremosa, sabor más pleno y notas vegetales."
+      }
+    ]
+  },
+  {
+    "id": "gin",
+    "title": "Gin",
+    "description": "El destilado botánico con una rica historia y un perfil de sabor versátil.",
+    "body": [
+      {
+        "heading": "Elaboración de la ginebra",
+        "content": "La ginebra es un destilado que requiere un proceso en dos etapas. Primero necesitas una buena base de “destilado neutro” (es decir, vodka) y luego puedes aromatizar esa base mediante una segunda destilación con semillas, bayas, raíces, frutas, hierbas y especias, conocidas en conjunto como “botánicos”. Cada marca tiene sus propias proporciones de botánicos y todas las ginebras son únicas y diferentes, aunque para llamarse gin deben tener un sabor dominante a enebro."
+      },
+      {
+        "heading": "Estilos y tipos de ginebra",
+        "content": ""
+      },
+      {
+        "heading": "Cold Compounded Gin",
+        "content": "Conocidas como “bathtub gins”, se aromatizan con extractos, esencias y/o por infusión/maceración sin destilación."
+      },
+      {
+        "heading": "London Dry Gin",
+        "content": "Originalmente un estilo, hoy es una categoría legal. Por desgracia, no describe mucho más allá de que es seca. A pesar del nombre, pueden producirse en cualquier parte del mundo."
+      },
+      {
+        "heading": "New Western Dry Gin",
+        "content": "Es un término poco utilizado que incluye las ginebras que se alejan del enebro dominante, definidas sobre todo por el equilibrio cuidadoso de sabores de apoyo."
+      },
+      {
+        "heading": "Old Tom Gin",
+        "content": "Suele describirse como un estilo dulce de ginebra, popular en los siglos XVIII y XIX debido a la purificación limitada del destilado. El sabor áspero de esas ginebras se enmascaraba con aromatizantes y/o con regaliz y, más tarde, con azúcar."
+      }
+    ]
+  },
+  {
+    "id": "rum",
+    "title": "Ron",
+    "description": "El destilado dulce y complejo con un toque tropical y un legado centenario.",
+    "body": [
+      {
+        "heading": "Elaboración del ron",
+        "content": "El ron es un destilado elaborado fermentando y luego destilando melaza de caña de azúcar o jugo de caña. En la mayoría de los casos se produce a partir de melaza, salvo en las Antillas francesas y Brasil, donde se utiliza jugo fresco de caña para producir, respectivamente, Rhum Agricole y Cachaça."
+      },
+      {
+        "heading": "Proceso de destilación",
+        "content": "El proceso de destilación varía entre productores. Los alambiques de columna múltiple se usan comúnmente para reducir impurezas y crear un ron más ligero. Alternativamente, el uso de alambique de olla o de una sola columna da como resultado un ron más pesado."
+      },
+      {
+        "heading": "Tipos de ron",
+        "content": ""
+      },
+      {
+        "heading": "Ron “ligero”",
+        "content": "El ron “ligero”, embotellado justo después de la destilación, se caracteriza por su color y sabor. Se usa habitualmente en cócteles refrescantes como mojitos y daiquiris. Algunas marcas lo añejan para aportar más frescura."
+      },
+      {
+        "heading": "Ron “dorado”",
+        "content": "Los rones “dorados” equilibran las variedades claras y oscuras. Obtienen su color del añejamiento en barricas de madera, a veces usadas para coñac o whisky. Algunos pueden usar caramelo para oscurecer el tono."
+      },
+      {
+        "heading": "Ron “oscuro”",
+        "content": "Los rones “oscuros” tienen sabores ricos e intensos. A menudo se usan como “floater” en cócteles por efecto visual, y se disfrutan mejor como un buen whisky o coñac."
+      },
+      {
+        "heading": "Ron “overproof”",
+        "content": "Los rones “overproof”, con un ABV superior al 50%, aportan un toque funky a los cócteles tiki. Pueden ir de claros a oscuros en color."
+      },
+      {
+        "heading": "Ron “con sabor” o “especiado”",
+        "content": "Los rones “con sabor” o “especiados” se explican por sí mismos. Por lo general son más dulces y ofrecen versatilidad en cócteles. ¿Has probado alguna vez un mojito de ron de coco?"
+      },
+      {
+        "heading": "Haz tu propio ron “con sabor” o “especiado”",
+        "content": "Cada marca tiene su receta única. Si quieres crear la tuya, empieza con una botella de tu ron preferido y añade los sabores que desees. Es recomendable comenzar con una cantidad pequeña, como 300 ml o 10 oz, y una cantidad específica de aromatizante, por ejemplo 100 gramos de nibs de cacao. Prueba a diario y cuela cuando logres el sabor deseado. Este método permite ajustes: solo añade más del mismo ron para alargarlo hasta conseguir la mezcla perfecta de aromas y sabores. Recuerda documentar cada paso para poder recrear tu receta final fácilmente.\n\nEste proceso puede aplicarse a cualquier otro destilado; el método en cuestión se llama Infusión en Frío, lo que significa que no se aplica calor para infusionar sabores."
+      }
+    ]
+  },
+  {
+    "id": "mezcal",
+    "title": "Tequila y Mezcal",
+    "description": "Destilados únicos y ricos en cultura de México, con sabores e historias distintas.",
+    "body": [
+      {
+        "heading": "Orígenes del tequila",
+        "content": "La producción de vino ritual a partir de jugo de agave se remonta a los aztecas alrededor del 250-300 d. C. Cuando los soldados de Cortés llegaron a México en 1519, descubrieron que este jugo podía destilarse, lo que dio lugar a la producción de un pseudo-tequila en menos de una década."
+      },
+      {
+        "heading": "Proceso de elaboración del tequila",
+        "content": "El tequila se elabora en la región de Jalisco, México. La planta de agave se trocea, se cuece al vapor y se extrae el jugo. Se añade levadura natural para fermentar. Para llamarse tequila, este líquido fermentado debe someterse a dos destilaciones."
+      },
+      {
+        "heading": "Tipos y añejamiento del tequila",
+        "content": ""
+      },
+      {
+        "heading": "Mixto",
+        "content": "Mixto (o Mixed) es un tequila que contiene al menos un 51% de agave, siendo el resto destilados industriales."
+      },
+      {
+        "heading": "Pura",
+        "content": "Pura (o Pure) es un tequila elaborado con 100% destilado de agave azul."
+      },
+      {
+        "heading": "Blanco",
+        "content": "Blanco (o White/Silver) es un tequila claro añejado un máximo de 60 días."
+      },
+      {
+        "heading": "Oro",
+        "content": "Oro (o Gold) es un tequila similar al blanco pero con saborizantes y/o colorantes, generalmente caramelo."
+      },
+      {
+        "heading": "Reposado",
+        "content": "Reposado (o Rested) es un tequila añejado en barricas de roble de 60 días a 1 año. Esto le da un ligero color dorado y notas de madera, vainilla y otros matices extraídos de la barrica."
+      },
+      {
+        "heading": "Añejo",
+        "content": "Añejo (o Aged) es un tequila añejado por un mínimo de 1 año y hasta 10 años. Este proceso le da un color dorado más intenso y sabores más marcados de madera, vainilla y otros matices extraídos de la barrica."
+      },
+      {
+        "heading": "Historia y proceso del mezcal",
+        "content": "El mezcal se elabora desde el siglo XVI a partir del jugo extraído de la cocción del corazón del maguey, un tipo de agave. Los aztecas lo usaban para hacer pulque, una bebida dulce similar a la cerveza consumida en ceremonias religiosas. A diferencia del tequila, para dar al mezcal su sabor ahumado la planta se asa. Luego se prensa con piedra para extraer la pulpa, se macera en agua pura con la adición de levadura y se deja fermentar varios días. El líquido fermentado se destila y se embotella."
+      }
+    ]
+  },
+  {
+    "id": "cognac",
+    "title": "Brandy y Coñac",
+    "description": "Dos destilados sofisticados y de gran sabor producidos al destilar vino, cada uno con un origen y proceso de envejecimiento distinto.",
+    "body": [
+      {
+        "heading": "Panorama del brandy",
+        "content": "El brandy, producido por destilación de vino, suele disfrutarse como digestivo después de la cena. Algunos brandies se añejan en barricas de madera para aportar carácter y color, mientras que otros usan colorante caramelo para imitar el envejecimiento o combinan ambos métodos."
+      },
+      {
+        "heading": "Coñac: una distinción francesa",
+        "content": "El coñac, un tipo de brandy francés, se produce exclusivamente en la región de la pequeña ciudad de “Cognac”. La región consta de 6 subregiones que aportan vinos para destilar. Para obtener la denominación oficial, el vino destinado a coñac debe someterse a doble destilación antes del 31 de marzo. El proceso suele comenzar a finales de noviembre, y se necesitan 9 litros de vino para producir 1 litro de coñac en unas 11 horas."
+      },
+      {
+        "heading": "Categorías de coñac",
+        "content": ""
+      },
+      {
+        "heading": "V.S. (Very Special) / 3 estrellas",
+        "content": "Añejado entre 2 años y medio y 4 años y medio."
+      },
+      {
+        "heading": "V.S.O.P. (Very Special Old Pale)",
+        "content": "Nombrado por la Casa Hennessy, con el componente más joven añejado al menos 4 años y medio."
+      },
+      {
+        "heading": "Napoleón",
+        "content": "Envejecido legalmente al menos 6,5 años, comúnmente más tiempo."
+      },
+      {
+        "heading": "X.O. (Extra Old)",
+        "content": "Término acuñado originalmente por Maurice Hennessy para coñacs añejados entre 15 y 20 años."
+      }
+    ]
+  },
+  {
+    "id": "pisco",
+    "title": "Pisco",
+    "description": "El brandy claro elaborado con uvas, originario de Perú y Chile, con un perfil de sabor suave y aromático",
+    "body": [
+      {
+        "heading": "Origen y significado del pisco",
+        "content": "El pisco, un brandy de uva transparente de Perú y Chile, toma su nombre de la palabra quechua “pishku”, que significa “pájaro”, en referencia a la localidad donde se produjo por primera vez y a su abundancia de aves."
+      },
+      {
+        "heading": "Métodos tradicionales de producción",
+        "content": "Hoy en día, el pisco se elabora con técnicas tradicionales transmitidas de generación en generación. Las uvas se seleccionan cuidadosamente y se recolectan a mano, y la destilación se centra en preservar los sabores y aromas naturales de la uva."
+      },
+      {
+        "heading": "Importancia cultural",
+        "content": "En Perú y Chile, el pisco tiene gran relevancia cultural y se celebra con festivales, música, danza e incluso un debate nacional sobre su origen. Ambos países lo reivindican como su destilado nacional."
+      },
+      {
+        "heading": "Perfil de sabor único",
+        "content": "El pisco ofrece un perfil de sabor distintivo y complejo, que se disfruta solo, en cócteles clásicos como el Pisco Sour o en diversos combinados, lo que lo convierte en una opción tentadora para los amantes de los destilados."
+      }
+    ]
+  },
+  {
+    "id": "whiskey",
+    "title": "Whisky y Whiskey",
+    "description": "Destilados diversos y complejos con variaciones de todo el mundo, todos compartiendo un proceso común de destilación de granos fermentados.",
+    "body": [
+      {
+        "heading": "Scotch Whisky",
+        "content": "Se elabora de forma similar a otros whiskies, pero con un proceso ligeramente más complejo. El grano debe ser exclusivamente cebada. Una vez cosechada, la cebada se maltea: se remoja en agua durante 1-2 días y se deja germinar parcialmente. Luego se seca en un horno para detener la germinación y desarrollar sabor. Para darle el característico sabor ahumado, la cebada se seca en un horno calentado con turba."
+      },
+      {
+        "heading": "Scotch Grain y Blended Whisky",
+        "content": "El Scotch Grain Whisky puede elaborarse con trigo, maíz, centeno u otros cereales. Se destila al menos dos veces en alambique de columna, luego se añeja un mínimo de tres años en Escocia y se reduce con agua a un mínimo de 40% ABV. Este whisky se usa para mezclar con whiskies de malta y crear Scotch Blended Whisky, o simplemente Scotch."
+      },
+      {
+        "heading": "Irish Whiskey",
+        "content": "Para este tipo de whiskey se usan granos malteados y sin maltear, que se secan con calor. La mezcla se fermenta hasta alrededor de 8% ABV y se destila tres veces hasta 85% ABV. Debe envejecer al menos tres años en barricas de roble en Irlanda y, pasado ese período, se mezcla durante al menos 2 años antes de reducir su graduación y embotellarlo."
+      },
+      {
+        "heading": "American Whiskey",
+        "content": "Se producen de forma similar a otros whiskies, pero con rasgos y métodos distintivos. Los whiskies estadounidenses usan principalmente maíz y centeno en lugar de cebada. La receta de granos se llama “mash bill”, que se cocina a presión con una mezcla de agua y levadura. En este punto se puede añadir hasta un 25% de mosto de lotes anteriores, lo que se denomina “sour mash” para garantizar consistencia entre lotes. Este “sour mash” se fermenta en una cerveza y se destila al menos dos veces. Luego se añeja durante varios años en barricas nuevas de roble americano carbonizado, que aportan dulzor y ligeras notas ahumadas."
+      },
+      {
+        "heading": "Bourbon Whiskey",
+        "content": "Este whiskey puede elaborarse exclusivamente en EE. UU. por ley y solo si se produce en Kentucky puede llamarse Kentucky Bourbon. La mayor parte del mosto debe ser maíz, y el resto puede ser una mezcla de trigo, centeno y cebada. Durante la destilación no puede superar el 80% ABV, y luego se diluye a 63% ABV antes de añejarse al menos dos años en barricas nuevas de roble."
+      }
+    ]
+  }
 ]
