@@ -9,6 +9,34 @@ import Foundation
 
 // MARK: COCKTAIL
 extension Cocktail {
+    static let userCreatedExample = Cocktail(
+        id: "user-sunset-fizz-abcdef",
+        name: "Sunset Fizz",
+        method: "shake & strain",
+        glass: "highball",
+        garnish: "orange peel",
+        ice: "cubes",
+        extra: "top with soda",
+        ingredients: [
+            Ingredient(
+                name: "light rum",
+                quantity: 1.5,
+                unit: "oz."),
+            Ingredient(
+                name: "lime juice",
+                quantity: 0.75,
+                unit: "oz."),
+            Ingredient(
+                name: "simple syrup",
+                quantity: 0.5,
+                unit: "oz."),
+            Ingredient(
+                name: "soda water",
+                quantity: 3,
+                unit: "oz.")
+        ]
+    )
+
 #if DEBUG
     static let example = Cocktail(
         id: "mojito",
@@ -35,34 +63,6 @@ extension Cocktail {
                 name: "angostura bitters",
                 quantity: 4,
                 unit: "dashes")
-        ]
-    )
-
-    static let userCreatedExample = Cocktail(
-        id: "user-sunset-fizz-abcdef",
-        name: "Sunset Fizz",
-        method: "shake & strain",
-        glass: "highball",
-        garnish: "orange peel",
-        ice: "cubes",
-        extra: "top with soda",
-        ingredients: [
-            Ingredient(
-                name: "light rum",
-                quantity: 1.5,
-                unit: "oz."),
-            Ingredient(
-                name: "lime juice",
-                quantity: 0.75,
-                unit: "oz."),
-            Ingredient(
-                name: "simple syrup",
-                quantity: 0.5,
-                unit: "oz."),
-            Ingredient(
-                name: "soda water",
-                quantity: 3,
-                unit: "oz.")
         ]
     )
 #endif
