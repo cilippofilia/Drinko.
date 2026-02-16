@@ -57,6 +57,16 @@ struct Ingredient: Codable, Equatable, Identifiable, Hashable {
     var mlUnit: String {
         UnitConverter.unitLabel(for: unit, convertingTo: "ml")
     }
+
+    @MainActor
+    func convertedQuantity(to targetUnit: String) -> Double {
+        UnitConverter.convert(quantity, from: unit, to: targetUnit)
+    }
+
+    @MainActor
+    func convertedUnit(to targetUnit: String) -> String {
+        UnitConverter.unitLabel(for: unit, convertingTo: targetUnit)
+    }
 }
 
 struct History: Codable, Equatable, Identifiable {

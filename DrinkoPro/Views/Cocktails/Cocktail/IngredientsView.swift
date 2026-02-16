@@ -15,9 +15,9 @@ struct IngredientsView: View {
         VStack(alignment: .leading, spacing: 10) {
             ForEach(ingredients) { ingredient in
                 HStack {
-                    Text(selectedUnit == "oz." ? "\(ingredient.quantity, specifier: "%2g")" : "\(ingredient.mlQuantity, specifier: "%2g")")
+                    Text(ingredient.convertedQuantity(to: selectedUnit), format: .number.precision(.fractionLength(0...2)))
 
-                    Text(selectedUnit == "oz." ? ingredient.unit : ingredient.mlUnit)
+                    Text(ingredient.convertedUnit(to: selectedUnit))
 
                     Text(ingredient.name.capitalized)
 
@@ -25,7 +25,7 @@ struct IngredientsView: View {
                 }
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel(ingredient.name.capitalized)
-                .accessibilityValue("\(selectedUnit == "oz." ? ingredient.quantity : ingredient.mlQuantity, specifier: "%2g") \(selectedUnit == "oz." ? ingredient.unit : ingredient.mlUnit)")
+                .accessibilityValue("\(ingredient.convertedQuantity(to: selectedUnit), specifier: "%2g") \(ingredient.convertedUnit(to: selectedUnit))")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }

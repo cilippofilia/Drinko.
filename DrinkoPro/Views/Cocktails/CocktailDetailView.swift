@@ -92,7 +92,9 @@ struct CocktailDetailView: View {
             CocktailImageHeader(cocktail: activeCocktail)
             
             VStack(alignment: .leading) {
-                CocktailUnitPicker(selectedUnit: $selectedUnit)
+                if !viewModel.isUserCreated(activeCocktail) {
+                    CocktailUnitPicker(selectedUnit: $selectedUnit)
+                }
                 
                 Text(activeCocktail.name)
                     .font(.title.bold())
