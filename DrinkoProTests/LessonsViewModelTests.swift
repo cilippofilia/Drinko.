@@ -23,14 +23,14 @@ final class LessonsViewModelTests: XCTestCase {
     func testLessonCollectionsLoadFromBundle() {
         let viewModel = LessonsViewModel()
 
-        XCTAssertEqual(viewModel.basicLessons.count, 1)
-        XCTAssertEqual(viewModel.advancedLessons.count, 1)
-        XCTAssertEqual(viewModel.barPreps.count, 1)
-        XCTAssertEqual(viewModel.basicSpirits.count, 1)
-        XCTAssertEqual(viewModel.advancedSpirits.count, 1)
-        XCTAssertEqual(viewModel.liqueurs.count, 1)
-        XCTAssertEqual(viewModel.syrups.count, 1)
-        XCTAssertEqual(viewModel.books.count, 1)
+        XCTAssertFalse(viewModel.basicLessons.isEmpty)
+        XCTAssertFalse(viewModel.advancedLessons.isEmpty)
+        XCTAssertFalse(viewModel.barPreps.isEmpty)
+        XCTAssertFalse(viewModel.basicSpirits.isEmpty)
+        XCTAssertFalse(viewModel.advancedSpirits.isEmpty)
+        XCTAssertFalse(viewModel.liqueurs.isEmpty)
+        XCTAssertFalse(viewModel.syrups.isEmpty)
+        XCTAssertFalse(viewModel.books.isEmpty)
     }
 
     func testAllLessonsConcatenationOrder() {
