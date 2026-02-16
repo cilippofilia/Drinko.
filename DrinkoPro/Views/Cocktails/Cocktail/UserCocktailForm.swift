@@ -195,7 +195,7 @@ struct UserCocktailForm: View {
                 ForEach(ingredientDrafts.indices, id: \.self) { index in
                     VStack(alignment: .leading, spacing: 8) {
                         TextField("Ingredient name", text: $ingredientDrafts[index].name)
-
+                        Divider()
                         HStack {
                             TextField("Qty", text: $ingredientDrafts[index].quantity)
                                 #if os(iOS)
