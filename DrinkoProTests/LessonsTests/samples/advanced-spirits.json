@@ -1,0 +1,13 @@
+[
+  {
+    "id": "advanced-spirits-1",
+    "title": "Advanced Spirits One",
+    "description": "Advanced spirits description.",
+    "body": [
+      {
+        "heading": "Aging",
+        "content": "Advanced spirits content."
+      }
+    ]
+  }
+]

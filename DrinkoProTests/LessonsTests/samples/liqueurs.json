@@ -1,0 +1,13 @@
+[
+  {
+    "id": "liqueurs-1",
+    "title": "Liqueurs One",
+    "description": "Liqueurs description.",
+    "body": [
+      {
+        "heading": "Flavor",
+        "content": "Liqueurs content."
+      }
+    ]
+  }
+]

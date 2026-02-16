@@ -1,0 +1,13 @@
+[
+  {
+    "id": "bar-preps-1",
+    "title": "Bar Prep One",
+    "description": "Bar prep description.",
+    "body": [
+      {
+        "heading": "Setup",
+        "content": "Bar prep content."
+      }
+    ]
+  }
+]

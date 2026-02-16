@@ -1,0 +1,13 @@
+[
+  {
+    "id": "basic-spirits-1",
+    "title": "Basic Spirits One",
+    "description": "Basic spirits description.",
+    "body": [
+      {
+        "heading": "Spirit",
+        "content": "Basic spirits content."
+      }
+    ]
+  }
+]

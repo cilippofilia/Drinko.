@@ -1,0 +1,13 @@
+[
+  {
+    "id": "syrups-1",
+    "title": "Syrups One",
+    "description": "Syrups description.",
+    "body": [
+      {
+        "heading": "Base",
+        "content": "Syrups content."
+      }
+    ]
+  }
+]

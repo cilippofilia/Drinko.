@@ -1,0 +1,13 @@
+[
+  {
+    "id": "basic-1",
+    "title": "Basics One",
+    "description": "Basic lesson description.",
+    "body": [
+      {
+        "heading": "Overview",
+        "content": "Basic lesson content."
+      }
+    ]
+  }
+]

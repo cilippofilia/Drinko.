@@ -1,0 +1,13 @@
+[
+  {
+    "id": "advanced-1",
+    "title": "Advanced One",
+    "description": "Advanced lesson description.",
+    "body": [
+      {
+        "heading": "Technique",
+        "content": "Advanced lesson content."
+      }
+    ]
+  }
+]
