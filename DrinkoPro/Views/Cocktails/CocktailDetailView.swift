@@ -12,8 +12,6 @@ struct CocktailDetailView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
-    
-    var units = ["ml", "oz."]
 
     @State private var showHistory = false
     @State private var showProcedure = false
@@ -39,7 +37,7 @@ struct CocktailDetailView: View {
     }
 
     private var activeCocktail: Cocktail {
-        viewModel.listOfAllDrinks.first { $0.id == cocktailID } ?? cocktail
+        viewModel.cocktail(withID: cocktailID, fallback: cocktail)
     }
 
     var body: some View {
@@ -63,7 +61,7 @@ struct CocktailDetailView: View {
             ToolbarItem(placement: toolbarPlacement) {
                 LikeButtonView(cocktail: activeCocktail)
             }
-            if isUserCreated {
+            if viewModel.isUserCreated(activeCocktail) {
                 ToolbarItem(placement: toolbarPlacement) {
                     Button(action: {
                         showEditSheet = true
@@ -78,12 +76,12 @@ struct CocktailDetailView: View {
         .sheet(isPresented: $showEditSheet) {
             NavigationStack {
                 UserCocktailForm(
-                    methodOptions: methodOptions,
-                    glassOptions: glassOptions,
-                    iceOptions: iceOptions,
-                    unitOptions: unitOptions,
+                    methodOptions: viewModel.methodOptions(),
+                    glassOptions: viewModel.glassOptions(),
+                    iceOptions: viewModel.iceOptions(),
+                    unitOptions: viewModel.unitOptions(),
                     editingCocktail: activeCocktail,
-                    editingProcedureSteps: editingProcedureSteps
+                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail)
                 )
             }
         }
@@ -129,7 +127,7 @@ struct CocktailDetailView: View {
                     Divider()
                 }
 
-                if isUserCreated {
+                if viewModel.isUserCreated(activeCocktail) {
                     DeleteButtonView(
                         label: "Delete",
                         action: {
@@ -160,55 +158,6 @@ struct CocktailDetailView: View {
             Text("This will permanently remove your cocktail.")
         }
     }
-    
-    private var isUserCreated: Bool {
-        viewModel.userCocktails.contains { $0.id == activeCocktail.id }
-    }
-
-    private var methodOptions: [String] {
-        uniqueSorted(
-            from: viewModel.listOfAllDrinks.map(\.method),
-            fallback: ["shake & fine strain"]
-        )
-    }
-
-    private var glassOptions: [String] {
-        uniqueSorted(
-            from: viewModel.listOfAllDrinks.map(\.glass),
-            fallback: ["rock"]
-        )
-    }
-
-    private var iceOptions: [String] {
-        uniqueSorted(
-            from: viewModel.listOfAllDrinks.map(\.ice),
-            fallback: ["cubed"]
-        )
-    }
-
-    private var unitOptions: [String] {
-        uniqueSorted(
-            from: viewModel.listOfAllDrinks
-                .flatMap(\.ingredients)
-                .map(\.unit),
-            fallback: ["oz."]
-        )
-    }
-
-    private var editingProcedureSteps: [String] {
-        viewModel.getCocktailProcedure(for: activeCocktail)?
-            .procedure
-            .map(\.text) ?? []
-    }
-
-    private func uniqueSorted(from values: [String], fallback: [String]) -> [String] {
-        let cleaned = values
-            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-            .filter { !$0.isEmpty }
-        let set = Set(cleaned + fallback)
-        return set.sorted()
-    }
-
 }
 
 #if DEBUG

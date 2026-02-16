@@ -23,36 +23,6 @@ struct CocktailsView: View {
 
     @State var path = NavigationPath()
 
-    private var methodOptions: [String] {
-        uniqueSorted(
-            from: viewModel.listOfAllDrinks.map(\.method),
-            fallback: ["shake & fine strain"]
-        )
-    }
-
-    private var glassOptions: [String] {
-        uniqueSorted(
-            from: viewModel.listOfAllDrinks.map(\.glass),
-            fallback: ["rock"]
-        )
-    }
-
-    private var iceOptions: [String] {
-        uniqueSorted(
-            from: viewModel.listOfAllDrinks.map(\.ice),
-            fallback: ["cubed"]
-        )
-    }
-
-    private var unitOptions: [String] {
-        uniqueSorted(
-            from: viewModel.listOfAllDrinks
-                .flatMap(\.ingredients)
-                .map(\.unit),
-            fallback: ["oz."]
-        )
-    }
-
     private var visibleCocktails: [Cocktail] {
         viewModel.filteredCocktails(filterOption: filterOption) { cocktail in
             favorites.contains(cocktail)
@@ -95,10 +65,10 @@ struct CocktailsView: View {
                 .sheet(isPresented: $showCreateCocktailSheet) {
                     NavigationStack {
                         UserCocktailForm(
-                            methodOptions: methodOptions,
-                            glassOptions: glassOptions,
-                            iceOptions: iceOptions,
-                            unitOptions: unitOptions
+                            methodOptions: viewModel.methodOptions(),
+                            glassOptions: viewModel.glassOptions(),
+                            iceOptions: viewModel.iceOptions(),
+                            unitOptions: viewModel.unitOptions()
                         )
                     }
                 }
@@ -127,14 +97,6 @@ struct CocktailsView: View {
 }
 
 private extension CocktailsView {
-    func uniqueSorted(from values: [String], fallback: [String]) -> [String] {
-        let cleaned = values
-            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-            .filter { !$0.isEmpty }
-        let set = Set(cleaned + fallback)
-        return set.sorted()
-    }
-
     var contentView: some View {
         Group {
             if shouldShowFilterEmptyState {

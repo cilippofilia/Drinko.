@@ -97,6 +97,41 @@ class CocktailsViewModel {
         sortedCocktails(in: listOfAllDrinks)
     }
 
+    func cocktail(withID id: String, fallback: Cocktail) -> Cocktail {
+        listOfAllDrinks.first { $0.id == id } ?? fallback
+    }
+
+    func isUserCreated(_ cocktail: Cocktail) -> Bool {
+        userCocktails.contains { $0.id == cocktail.id }
+    }
+
+    func methodOptions(fallback: [String] = ["shake & fine strain"]) -> [String] {
+        uniqueSorted(from: listOfAllDrinks.map(\.method), fallback: fallback)
+    }
+
+    func glassOptions(fallback: [String] = ["rock"]) -> [String] {
+        uniqueSorted(from: listOfAllDrinks.map(\.glass), fallback: fallback)
+    }
+
+    func iceOptions(fallback: [String] = ["cubed"]) -> [String] {
+        uniqueSorted(from: listOfAllDrinks.map(\.ice), fallback: fallback)
+    }
+
+    func unitOptions(fallback: [String] = ["oz.", "ml"]) -> [String] {
+        uniqueSorted(
+            from: listOfAllDrinks
+                .flatMap(\.ingredients)
+                .map(\.unit),
+            fallback: fallback
+        )
+    }
+
+    func procedureSteps(for cocktail: Cocktail) -> [String] {
+        getCocktailProcedure(for: cocktail)?
+            .procedure
+            .map(\.text) ?? []
+    }
+
     @MainActor
     func configure(modelContext: ModelContext) {
         self.modelContext = modelContext
@@ -345,6 +380,14 @@ class CocktailsViewModel {
         let procedure = UserProcedure(steps: mappedSteps)
         procedure.steps?.forEach { $0.procedure = procedure }
         return procedure
+    }
+
+    private func uniqueSorted(from values: [String], fallback: [String]) -> [String] {
+        let cleaned = values
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty }
+        let set = Set(cleaned + fallback)
+        return set.sorted()
     }
 }
 

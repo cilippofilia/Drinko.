@@ -36,25 +36,10 @@ struct UserCocktailForm: View {
         editingCocktail: Cocktail? = nil,
         editingProcedureSteps: [String] = []
     ) {
-        let units = [
-            "oz.",
-            "ml",
-            "barspoon",
-            "dash",
-            "dashes",
-            "drops",
-            "handful",
-            "heavy pinch",
-            "large handful",
-            "leaves",
-            "slices",
-            "wedges"
-        ]
-
         self.methodOptions = methodOptions
         self.glassOptions = glassOptions
         self.iceOptions = iceOptions
-        self.unitOptions = units
+        self.unitOptions = unitOptions
         self.editingCocktail = editingCocktail
         self.editingProcedureSteps = editingProcedureSteps
 
