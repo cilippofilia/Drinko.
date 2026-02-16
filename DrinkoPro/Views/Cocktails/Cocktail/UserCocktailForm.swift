@@ -43,112 +43,22 @@ struct UserCocktailForm: View {
         self.editingCocktail = editingCocktail
         self.editingProcedureSteps = editingProcedureSteps
 
-        if let editingCocktail {
-            _name = State(initialValue: editingCocktail.name)
-            _method = State(initialValue: editingCocktail.method)
-            _glass = State(initialValue: editingCocktail.glass)
-            _garnish = State(initialValue: editingCocktail.garnish)
-            _ice = State(initialValue: editingCocktail.ice)
-            _extra = State(initialValue: editingCocktail.extra)
-
-            let mappedIngredients = editingCocktail.ingredients.map {
-                IngredientDraft(name: $0.name, quantity: String($0.quantity), unit: $0.unit)
-            }
-            _ingredientDrafts = State(
-                initialValue: mappedIngredients.isEmpty
-                    ? [IngredientDraft(unit: self.unitOptions.first ?? "oz.")]
-                    : mappedIngredients
-            )
-
-            let trimmedProcedure = editingProcedureSteps
-                .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
-                .filter { !$0.isEmpty }
-            _procedureDrafts = State(initialValue: trimmedProcedure.isEmpty ? [""] : trimmedProcedure)
-        } else {
-            _method = State(initialValue: methodOptions.first ?? "shake & fine strain")
-            _glass = State(initialValue: glassOptions.first ?? "rock")
-            _ice = State(initialValue: iceOptions.first ?? "cubed")
-            _ingredientDrafts = State(initialValue: [IngredientDraft(unit: self.unitOptions.first ?? "oz.")])
-            _procedureDrafts = State(initialValue: [""])
-        }
-    }
-
-    var leadingToolbarPlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        .topBarLeading
-        #elseif os(macOS)
-        .automatic
-        #endif
-    }
-
-    var trailingToolbarPlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        .topBarTrailing
-        #elseif os(macOS)
-        .automatic
-        #endif
-    }
-
-    private var saveDisabledReason: String? {
-        if trimmedName.isEmpty {
-            return "Add a cocktail name to enable Save."
-        }
-
-        if hasInvalidIngredientDraft {
-            return "Fix ingredient fields that are missing a name or a numeric quantity."
-        }
-
-        if !hasAtLeastOneValidIngredient {
-            return "Add at least one ingredient with a numeric quantity to enable Save."
-        }
-
-        return nil
-    }
-
-    private var trimmedName: String {
-        name.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-
-    private var hasAtLeastOneValidIngredient: Bool {
-        ingredientDrafts.contains { draft in
-            let trimmedName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !trimmedName.isEmpty else { return false }
-            guard let quantity = parseQuantity(from: draft.quantity), quantity > 0 else { return false }
-            return true
-        }
-    }
-
-    private var hasInvalidIngredientDraft: Bool {
-        ingredientDrafts.contains { ingredientErrorMessage(for: $0) != nil }
-    }
-
-    private func parseQuantity(from rawValue: String) -> Double? {
-        let trimmed = rawValue.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return nil }
-        return Double(trimmed.replacingOccurrences(of: ",", with: "."))
-    }
-
-    private func ingredientErrorMessage(for draft: IngredientDraft) -> String? {
-        let trimmedName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
-        let trimmedQuantity = draft.quantity.trimmingCharacters(in: .whitespacesAndNewlines)
-
-        if trimmedName.isEmpty && trimmedQuantity.isEmpty {
-            return nil
-        }
-
-        if trimmedName.isEmpty {
-            return "Add an ingredient name."
-        }
-
-        if trimmedQuantity.isEmpty {
-            return "Add a quantity."
-        }
-
-        guard let quantity = parseQuantity(from: trimmedQuantity), quantity > 0 else {
-            return "Quantity must be a number greater than 0."
-        }
-
-        return nil
+        let initialState = Self.makeInitialState(
+            methodOptions: methodOptions,
+            glassOptions: glassOptions,
+            iceOptions: iceOptions,
+            unitOptions: unitOptions,
+            editingCocktail: editingCocktail,
+            editingProcedureSteps: editingProcedureSteps
+        )
+        _name = State(initialValue: initialState.name)
+        _method = State(initialValue: initialState.method)
+        _glass = State(initialValue: initialState.glass)
+        _garnish = State(initialValue: initialState.garnish)
+        _ice = State(initialValue: initialState.ice)
+        _extra = State(initialValue: initialState.extra)
+        _ingredientDrafts = State(initialValue: initialState.ingredientDrafts)
+        _procedureDrafts = State(initialValue: initialState.procedureDrafts)
     }
 
     var body: some View {
@@ -273,6 +183,114 @@ struct UserCocktailForm: View {
             }
         }
     }
+}
+
+// MARK: HELPER PROPERTIES
+extension UserCocktailForm {
+    var leadingToolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        .topBarLeading
+        #elseif os(macOS)
+        .automatic
+        #endif
+    }
+
+    var trailingToolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        .topBarTrailing
+        #elseif os(macOS)
+        .automatic
+        #endif
+    }
+
+    private var saveDisabledReason: String? {
+        if trimmedName.isEmpty {
+            return "Add a cocktail name to enable Save."
+        }
+
+        if hasInvalidIngredientDraft {
+            return "Fix ingredient fields that are missing a name or a numeric quantity."
+        }
+
+        if !hasAtLeastOneValidIngredient {
+            return "Add at least one ingredient with a numeric quantity to enable Save."
+        }
+
+        return nil
+    }
+
+    private var trimmedName: String {
+        name.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var hasAtLeastOneValidIngredient: Bool {
+        ingredientDrafts.contains { draft in
+            let trimmedName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmedName.isEmpty else { return false }
+            guard let quantity = parseQuantity(from: draft.quantity), quantity > 0 else { return false }
+            return true
+        }
+    }
+
+    private var hasInvalidIngredientDraft: Bool {
+        ingredientDrafts.contains { ingredientErrorMessage(for: $0) != nil }
+    }
+}
+
+// MARK: HELPER METHODS
+extension UserCocktailForm {
+    private static func makeInitialState(
+        methodOptions: [String],
+        glassOptions: [String],
+        iceOptions: [String],
+        unitOptions: [String],
+        editingCocktail: Cocktail?,
+        editingProcedureSteps: [String]
+    ) -> (
+        name: String,
+        method: String,
+        glass: String,
+        garnish: String,
+        ice: String,
+        extra: String,
+        ingredientDrafts: [IngredientDraft],
+        procedureDrafts: [String]
+    ) {
+        if let editingCocktail {
+            let mappedIngredients = editingCocktail.ingredients.map {
+                IngredientDraft(name: $0.name, quantity: String($0.quantity), unit: $0.unit)
+            }
+            let ingredientDrafts = mappedIngredients.isEmpty
+                ? [IngredientDraft(unit: unitOptions.first ?? "oz.")]
+                : mappedIngredients
+            let trimmedProcedure = editingProcedureSteps
+                .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                .filter { !$0.isEmpty }
+            let procedureDrafts = trimmedProcedure.isEmpty ? [""] : trimmedProcedure
+
+            return (
+                name: editingCocktail.name,
+                method: editingCocktail.method,
+                glass: editingCocktail.glass,
+                garnish: editingCocktail.garnish,
+                ice: editingCocktail.ice,
+                extra: editingCocktail.extra,
+                ingredientDrafts: ingredientDrafts,
+                procedureDrafts: procedureDrafts
+            )
+        }
+
+        return (
+            name: "",
+            method: methodOptions.first ?? "shake & fine strain",
+            glass: glassOptions.first ?? "rock",
+            garnish: "",
+            ice: iceOptions.first ?? "cubed",
+            extra: "",
+            ingredientDrafts: [IngredientDraft(unit: unitOptions.first ?? "oz.")],
+            procedureDrafts: [""]
+        )
+    }
 
     private func saveCocktail() {
         if let saveDisabledReason {
@@ -320,6 +338,35 @@ struct UserCocktailForm: View {
             )
         }
         dismiss()
+    }
+
+    private func parseQuantity(from rawValue: String) -> Double? {
+        let trimmed = rawValue.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        return Double(trimmed.replacingOccurrences(of: ",", with: "."))
+    }
+
+    private func ingredientErrorMessage(for draft: IngredientDraft) -> String? {
+        let trimmedName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimmedQuantity = draft.quantity.trimmingCharacters(in: .whitespacesAndNewlines)
+
+        if trimmedName.isEmpty && trimmedQuantity.isEmpty {
+            return nil
+        }
+
+        if trimmedName.isEmpty {
+            return "Add an ingredient name."
+        }
+
+        if trimmedQuantity.isEmpty {
+            return "Add a quantity."
+        }
+
+        guard let quantity = parseQuantity(from: trimmedQuantity), quantity > 0 else {
+            return "Quantity must be a number greater than 0."
+        }
+
+        return nil
     }
 }
 
