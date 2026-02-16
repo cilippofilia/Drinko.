@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cocktail-1",
+    "name": "Alpha",
+    "method": "Stir",
+    "glass": "Coupe",
+    "garnish": "Lime",
+    "ice": "None",
+    "extra": "",
+    "ingredients": [
+      {
+        "name": "Lime Juice",
+        "quantity": 1.0,
+        "unit": "oz."
+      },
+      {
+        "name": "Gin",
+        "quantity": 2.0,
+        "unit": "oz."
+      }
+    ]
+  },
+  {
+    "id": "cocktail-2",
+    "name": "Martini",
+    "method": "Stir",
+    "glass": "Highball",
+    "garnish": "Olive",
+    "ice": "None",
+    "extra": "",
+    "ingredients": [
+      {
+        "name": "Lime Juice",
+        "quantity": 0.5,
+        "unit": "oz."
+      },
+      {
+        "name": "Vermouth",
+        "quantity": 1.0,
+        "unit": "oz."
+      }
+    ]
+  }
+]

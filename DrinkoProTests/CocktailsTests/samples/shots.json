@@ -1,0 +1,18 @@
+[
+  {
+    "id": "shot-1",
+    "name": "Shot Z",
+    "method": "Shake",
+    "glass": "Shot",
+    "garnish": "",
+    "ice": "None",
+    "extra": "",
+    "ingredients": [
+      {
+        "name": "Tequila",
+        "quantity": 1.5,
+        "unit": "oz."
+      }
+    ]
+  }
+]

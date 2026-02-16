@@ -1,0 +1,11 @@
+[
+  {
+    "id": "cocktail-1",
+    "procedure": [
+      {
+        "step": "Step 1",
+        "text": "Combine ingredients."
+      }
+    ]
+  }
+]
