@@ -27,14 +27,12 @@ struct UnitConverter {
     
     /// Converts ounces to milliliters with standard bartending conversions
     private static func convertOzToMl(_ quantity: Double) -> Double {
-        let measurement = Measurement(value: quantity, unit: UnitVolume.fluidOunces)
-        return measurement.converted(to: .milliliters).value
+        quantity * 30.0
     }
 
     /// Converts milliliters to ounces with standard bartending conversions
     private static func convertMlToOz(_ quantity: Double) -> Double {
-        let measurement = Measurement(value: quantity, unit: UnitVolume.milliliters)
-        return measurement.converted(to: .fluidOunces).value
+        quantity / 30.0
     }
     
     /// Returns the appropriate unit label based on conversion

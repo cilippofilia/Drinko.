@@ -10,14 +10,22 @@ import SwiftUI
 struct IngredientsView: View {
     let ingredients: [Ingredient]
     let selectedUnit: String
+    let showsOriginalUnits: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             ForEach(ingredients) { ingredient in
-                HStack {
-                    Text(ingredient.convertedQuantity(to: selectedUnit), format: .number.precision(.fractionLength(0...2)))
+                let quantity = showsOriginalUnits
+                    ? ingredient.quantity
+                    : ingredient.convertedQuantity(to: selectedUnit)
+                let unit = showsOriginalUnits
+                    ? ingredient.unit
+                    : ingredient.convertedUnit(to: selectedUnit)
 
-                    Text(ingredient.convertedUnit(to: selectedUnit))
+                HStack {
+                    Text(quantity, format: .number.precision(.fractionLength(0...2)))
+
+                    Text(unit)
 
                     Text(ingredient.name.capitalized)
 
@@ -25,7 +33,7 @@ struct IngredientsView: View {
                 }
                 .accessibilityElement(children: .ignore)
                 .accessibilityLabel(ingredient.name.capitalized)
-                .accessibilityValue("\(ingredient.convertedQuantity(to: selectedUnit), specifier: "%2g") \(ingredient.convertedUnit(to: selectedUnit))")
+                .accessibilityValue("\(quantity, specifier: "%2g") \(unit)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
@@ -35,6 +43,6 @@ struct IngredientsView: View {
 
 #if DEBUG
 #Preview {
-    IngredientsView(ingredients: [], selectedUnit: "ml")
+    IngredientsView(ingredients: [], selectedUnit: "ml", showsOriginalUnits: false)
 }
 #endif

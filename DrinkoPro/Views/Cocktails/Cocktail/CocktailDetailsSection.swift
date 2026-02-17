@@ -10,6 +10,7 @@ import SwiftUI
 struct CocktailDetailsSection: View {
     let cocktail: Cocktail
     let selectedUnit: String
+    let showsOriginalUnits: Bool
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -20,7 +21,8 @@ struct CocktailDetailsSection: View {
             
             IngredientsView(
                 ingredients: cocktail.ingredients,
-                selectedUnit: selectedUnit
+                selectedUnit: selectedUnit,
+                showsOriginalUnits: showsOriginalUnits
             )
 
             CocktailDetailSectionView(
@@ -54,6 +56,6 @@ struct CocktailDetailsSection: View {
 
 #if DEBUG
 #Preview {
-    CocktailDetailsSection(cocktail: .example, selectedUnit: "ml")
+    CocktailDetailsSection(cocktail: .example, selectedUnit: "ml", showsOriginalUnits: false)
 }
 #endif

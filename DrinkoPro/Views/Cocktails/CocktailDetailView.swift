@@ -103,7 +103,8 @@ struct CocktailDetailView: View {
                 
                 CocktailDetailsSection(
                     cocktail: activeCocktail,
-                    selectedUnit: selectedUnit
+                    selectedUnit: selectedUnit,
+                    showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
                 )
                 
                 Divider()
