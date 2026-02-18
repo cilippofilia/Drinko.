@@ -33,15 +33,16 @@ struct MacSettingsInfoView: View {
             }
             .buttonStyle(.plain)
 
-            HStack {
+            LabeledContent {
+                Text("\(getCurrentAppVersion())")
+                    .foregroundColor(.secondary)
+                    .padding(.trailing)
+            } label: {
                 MacSettingsRowView(
                     icon: "v.circle",
                     color: .secondary,
                     itemName: "Version"
                 )
-
-                Text("\(getCurrentAppVersion())")
-                    .foregroundColor(.secondary)
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Version")
@@ -70,8 +71,6 @@ struct MacSettingsInfoView: View {
 
 #if DEBUG
 #Preview {
-    Form {
-        MacSettingsInfoView()
-    }
+    MacSettingsInfoView()
 }
 #endif

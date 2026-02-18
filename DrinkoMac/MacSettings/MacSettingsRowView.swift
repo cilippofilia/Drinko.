@@ -13,13 +13,13 @@ struct MacSettingsRowView: View {
     var itemName: LocalizedStringKey
 
     var body: some View {
-        HStack {
-            Image(systemName: icon)
-                .foregroundColor(color)
-                .frame(minWidth: 30, minHeight: 30)
-                .accessibilityHidden(true)
-
+        Label {
             Text(itemName)
+        } icon: {
+            Image(systemName: icon)
+                .foregroundStyle(color)
+                .imageScale(.large)
+                .accessibilityHidden(true)
         }
         .accessibilityElement(children: .combine)
     }

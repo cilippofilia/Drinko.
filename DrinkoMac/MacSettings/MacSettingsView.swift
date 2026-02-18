@@ -11,37 +11,36 @@ struct MacSettingsView: View {
     @Environment(\.openURL) var openURL
 
     @State private var showOptions = false
-    @State private var email = "cilia.filippo.dev@gmail.com"
-    @State private var reportBugSubject = "Bug Report"
-    @State private var reportBugBody = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
-    @State private var requestFeatureSubject = "Featuristic idea"
-    @State private var requestFeatureBody = ""
-    @State private var contactDevSubject = ""
-    @State private var contactDevBody = ""
+    private let email = "cilia.filippo.dev@gmail.com"
+    private let reportBugSubject = "Bug Report"
+    private let reportBugBody = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
+    private let requestFeatureSubject = "Featuristic idea"
+    private let requestFeatureBody = ""
+    private let contactDevSubject = ""
+    private let contactDevBody = ""
 
     static let settingsTag: String? = "Settings"
 
     var body: some View {
+        let languageCode = Bundle.main.preferredLocalizations.first?.uppercased() ?? "EN"
+
         NavigationStack {
             Form {
                 Section {
-                    HStack {
+                    LabeledContent {
+                        Text(languageCode)
+                            .foregroundStyle(.secondary)
+                            .padding(.trailing)
+                    } label: {
                         Button {
-                            openURL(URL(string: "x-apple.systempreferences:com.apple.Localization-Settings")!)
+                            if let url = URL(string: "x-apple.systempreferences:com.apple.Localization-Settings") {
+                                openURL(url)
+                            }
                         } label: {
-                            MacSettingsRowView(
-                                icon: "character.bubble",
-                                color: .primary,
-                                itemName: "Language"
-                            )
+                            MacSettingsRowView(icon: "character.bubble", color: .primary, itemName: "Language")
                         }
                         .buttonStyle(.plain)
                         .accessibilityHint("Opens macOS language settings.")
-
-                        Text(Bundle.main.preferredLocalizations.first?.uppercased() ?? "EN")
-                            .foregroundStyle(.secondary)
-
-                        Spacer()
                     }
                 } header: {
                     Text("Preferences")
@@ -49,14 +48,10 @@ struct MacSettingsView: View {
                 }
 
                 Section {
-                    Button(action: {
+                    Button {
                         showOptions = true
-                    }) {
-                        MacSettingsRowView(
-                            icon: "envelope",
-                            color: .primary,
-                            itemName: "Contact the developer"
-                        )
+                    } label: {
+                        MacSettingsRowView(icon: "envelope", color: .primary, itemName: "Contact the developer")
                     }
                     .buttonStyle(.plain)
                     .confirmationDialog(
@@ -64,64 +59,56 @@ struct MacSettingsView: View {
                         isPresented: $showOptions,
                         titleVisibility: .visible
                     ) {
-                        reportBug
-                        requestFeature
-                        otherEnquiry
+                        Button("Report a bug") {
+                            openMail(subject: reportBugSubject, body: reportBugBody)
+                        }
+
+                        Button("Request a Feature") {
+                            openMail(subject: requestFeatureSubject, body: requestFeatureBody)
+                        }
+
+                        Button("Other Enquiry") {
+                            openMail(subject: contactDevSubject, body: contactDevBody)
+                        }
                     }
 
-                    rateApp
+                    Button {
+                        if let rateURL {
+                            openURL(rateURL)
+                        }
+                    } label: {
+                        MacSettingsRowView(
+                            icon: "star.fill",
+                            color: .yellow,
+                            itemName: "Rate the app"
+                        )
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityHint("Opens the App Store rating page.")
                 } header: {
-                    Text("Contacts")
+                    Text("Support")
                         .foregroundStyle(.secondary)
                 }
 
                 MacSettingsInfoView()
             }
-            .padding()
+            .formStyle(.grouped)
             .navigationTitle("Settings")
-
-            Spacer()
         }
     }
 
-    var reportBug: some View {
-        Button("Report a bug") {
-            guard let url = URL(string: "mailto:\(email)?subject=\(reportBugSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(reportBugBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
+    private func openMail(subject: String, body: String) {
+        var components = URLComponents()
+        components.scheme = "mailto"
+        components.path = email
+        components.queryItems = [
+            URLQueryItem(name: "subject", value: subject),
+            URLQueryItem(name: "body", value: body)
+        ]
 
+        if let url = components.url {
             openURL(url)
         }
-    }
-
-    var requestFeature: some View {
-        Button("Request a Feature") {
-            guard let url = URL(string: "mailto:\(email)?subject=\(requestFeatureSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(requestFeatureBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
-
-            openURL(url)
-        }
-    }
-
-    var otherEnquiry: some View {
-        Button("Other Enquiry") {
-            guard let url = URL(string: "mailto:\(email)?subject=\(contactDevSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(contactDevBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
-
-            openURL(url)
-        }
-    }
-
-    var rateApp: some View {
-        Button {
-            if let rateURL {
-                openURL(rateURL)
-            }
-        } label: {
-            MacSettingsRowView(
-                icon: "star.fill",
-                color: .yellow,
-                itemName: "Rate the app"
-            )
-        }
-        .buttonStyle(.plain)
-        .accessibilityHint("Opens the App Store rating page.")
     }
 }
 
