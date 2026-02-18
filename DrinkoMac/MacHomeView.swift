@@ -19,6 +19,11 @@ struct MacHomeView: View {
                         .tag(tab)
                 }
             }
+            .navigationSplitViewColumnWidth(
+                min: 140,
+                ideal: 180,
+                max: 220
+            )
         } detail: {
             switch selectedTab {
             case .learn:

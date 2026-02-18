@@ -36,6 +36,12 @@ struct DrinkoProApp: App {
     var body: some Scene {
         WindowGroup {
             SplashScreenView()
+            #if os(macOS)
+                .frame(
+                    minWidth: 720,
+                    minHeight: 480
+                )
+            #endif
         }
         .environment(favorites)
         .environment(cocktailsViewModel)
