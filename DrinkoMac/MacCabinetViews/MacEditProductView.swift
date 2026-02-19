@@ -90,11 +90,12 @@ struct MacEditProductView: View {
                 )
                 .accessibilityLabel("Notes")
                 .lineLimit(5, reservesSpace: true)
-                .overlay(alignment: .leading) {
+                .overlay(alignment: .topLeading) {
                     Text("Your notes on \(product.name)...")
                         .foregroundStyle(.secondary)
                         .opacity(product.detail.isEmpty ? 0.3 : 0)
                         .padding(.leading)
+                        .padding(.top, 4)
                 }
             } header: {
                 Text("Notes")
