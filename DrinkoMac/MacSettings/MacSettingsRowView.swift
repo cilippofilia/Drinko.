@@ -18,9 +18,10 @@ struct MacSettingsRowView: View {
         } icon: {
             Image(systemName: icon)
                 .foregroundStyle(color)
-                .imageScale(.large)
                 .accessibilityHidden(true)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .contentShape(.rect)
         .accessibilityElement(children: .combine)
     }
 }
