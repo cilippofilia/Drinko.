@@ -162,6 +162,13 @@
 			);
 			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
 		};
+		1835C7E02F47A9F400C04884 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MacCocktails/MacAddUserCocktailForm.swift,
+			);
+			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
+		};
 		18A929D82F12C6CD00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -214,7 +221,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		182B4B802F0D6B05007E7026 /* DrinkoProTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = DrinkoProTests; sourceTree = "<group>"; };
 		183CED602DE1BAC6005B9699 /* Assets */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Assets; sourceTree = "<group>"; };
-		18A929A92F12C13D00B70219 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (180DEDF62F27B3D1003562F3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
+		18A929A92F12C13D00B70219 /* DrinkoMac */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1835C7E02F47A9F400C04884 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 180DEDF62F27B3D1003562F3 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoMac; sourceTree = "<group>"; };
 		18EB4EBA2EEED46500691DC2 /* Cocktail */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 18A929EE2F12C91A00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Cocktail; sourceTree = "<group>"; };
 		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
 		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929D82F12C6CD00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };

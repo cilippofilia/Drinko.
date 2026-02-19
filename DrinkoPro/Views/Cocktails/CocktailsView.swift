@@ -40,7 +40,15 @@ struct CocktailsView: View {
             favorites.contains(cocktail)
         }
     }
-    
+
+    private var toolbarPlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        return .topBarTrailing
+        #else
+        return .automatic
+        #endif
+    }
+
     var body: some View {
         NavigationStack(path: $path) {
             contentView
@@ -50,19 +58,13 @@ struct CocktailsView: View {
                 }
                 .searchable(text: searchBinding, prompt: "Search Cocktails")
                 .toolbar {
-                    #if os(iOS)
-                    ToolbarItemGroup(placement: .topBarTrailing) {
+                    ToolbarItemGroup(placement: toolbarPlacement) {
                         optionsMenu
                         addCocktailButton
                     }
-                    #else
-                    ToolbarItemGroup(placement: .automatic) {
-                        optionsMenu
-                        addCocktailButton
-                    }
-                    #endif
                 }
                 .sheet(isPresented: $showCreateCocktailSheet) {
+                    #if os(iOS)
                     NavigationStack {
                         UserCocktailForm(
                             methodOptions: viewModel.methodOptions(),
@@ -71,6 +73,14 @@ struct CocktailsView: View {
                             unitOptions: viewModel.unitOptions()
                         )
                     }
+                    #else
+                    MacAddUserCocktailForm(
+                        methodOptions: viewModel.methodOptions(),
+                        glassOptions: viewModel.glassOptions(),
+                        iceOptions: viewModel.iceOptions(),
+                        unitOptions: viewModel.unitOptions()
+                    )
+                    #endif
                 }
                 .alert("Delete Cocktail?", isPresented: $showDeleteAlert) {
                     DeleteButtonView(
