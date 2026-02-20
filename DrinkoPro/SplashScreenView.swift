@@ -67,19 +67,6 @@ struct SplashScreenView: View {
                     .scaleEffect(sizeClass == .compact ? 1.5 : 2)
                     #endif
                     .opacity(opacity)
-
-                #if DEBUG
-                Text("DEBUG")
-                    #if os(iOS)
-                    .font(.system(.largeTitle, design: .rounded, weight: .bold))
-                    #elseif os(macOS)
-                    .font(.system(size: 48, weight: .bold, design: .rounded))
-                    #endif
-                    .foregroundStyle(.white)
-                    .padding(12)
-                    .background(Color.red)
-                    .clipShape(.rect(cornerRadius: 20, style: .continuous))
-                #endif
             }
         }
         .opacity(showHomeView ? 0 : 1)
