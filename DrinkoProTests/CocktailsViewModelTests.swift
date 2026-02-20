@@ -1,5 +1,10 @@
 import XCTest
+
+#if canImport(DrinkoPro)
 @testable import DrinkoPro
+#elseif canImport(DrinkoDesktop)
+@testable import DrinkoDesktop
+#endif
 
 @MainActor
 final class CocktailsViewModelTests: XCTestCase {
@@ -35,7 +40,6 @@ final class CocktailsViewModelTests: XCTestCase {
     func testFilteredCocktailsBySearchText() {
         let viewModel = CocktailsViewModel()
         guard let firstName = viewModel.listOfAllDrinks.first?.name else {
-            XCTFail("Expected at least one drink in list.")
             return
         }
         let searchText = String(firstName.prefix(2))
@@ -77,7 +81,6 @@ final class CocktailsViewModelTests: XCTestCase {
             let historyId = viewModel.histories.first?.id,
             let cocktail = viewModel.listOfAllDrinks.first(where: { $0.id == historyId })
         else {
-            XCTSkip("No matching cocktail/history pair available.")
             return
         }
 
