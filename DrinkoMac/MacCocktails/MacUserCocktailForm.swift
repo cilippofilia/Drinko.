@@ -1,5 +1,5 @@
 //
-//  MacAddUserCocktailForm.swift
+//  MacUserCocktailForm.swift
 //  DrinkoPro
 //
 //  Created by Filippo Cilia on 19/02/2026.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MacAddUserCocktailForm: View {
+struct MacUserCocktailForm: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(CocktailsViewModel.self) private var viewModel
 
@@ -64,148 +64,10 @@ struct MacAddUserCocktailForm: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section("Basics") {
-                    TextField("", text: $name)
-                        .accessibilityLabel("Cocktail name")
-                        .textContentType(.name)
-                        .overlay(alignment: .leading) {
-                            Text("Cocktail name")
-                                .foregroundStyle(.secondary)
-                                .opacity(name.isEmpty ? 0.3 : 0)
-                                .padding(.leading)
-                        }
-
-                    Picker("Method", selection: $method) {
-                        ForEach(methodOptions, id: \.self) { option in
-                            Text(option.capitalizingFirstLetter())
-                                .tag(option)
-                        }
-                    }
-                    Picker("Glass", selection: $glass) {
-                        ForEach(glassOptions, id: \.self) { option in
-                            Text(option.capitalizingFirstLetter())
-                                .tag(option)
-                        }
-                    }
-                    TextField("", text: $garnish)
-                        .accessibilityLabel("Garnish")
-                        .textContentType(.name)
-                        .overlay(alignment: .leading) {
-                            Text("Garnish")
-                                .foregroundStyle(.secondary)
-                                .opacity(garnish.isEmpty ? 0.3 : 0)
-                                .padding(.leading)
-                        }
-
-                    Picker("Ice", selection: $ice) {
-                        ForEach(iceOptions, id: \.self) { option in
-                            Text(option.capitalizingFirstLetter())
-                                .tag(option)
-                        }
-                    }
-                }
-
-                Section("Ingredients") {
-                    ForEach(ingredientDrafts.indices, id: \.self) { index in
-                        VStack(alignment: .leading) {
-                            TextField("", text: $ingredientDrafts[index].name)
-                                .accessibilityLabel("Ingredient name")
-                                .textContentType(.name)
-                                .overlay(alignment: .leading) {
-                                    Text("Ingredient name")
-                                        .foregroundStyle(.secondary)
-                                        .opacity(ingredientDrafts[index].name.isEmpty ? 0.3 : 0)
-                                        .padding(.leading)
-                                }
-                            Divider()
-                            HStack {
-                                TextField("", text: $ingredientDrafts[index].quantity)
-                                    .accessibilityLabel("Quantity")
-                                    .textContentType(.name)
-                                    .overlay(alignment: .leading) {
-                                        Text("Quantity")
-                                            .foregroundStyle(.secondary)
-                                            .opacity(ingredientDrafts[index].quantity.isEmpty ? 0.3 : 0)
-                                            .padding(.leading)
-                                    }
-
-                                Picker("Unit", selection: $ingredientDrafts[index].unit) {
-                                    ForEach(unitOptions, id: \.self) { unit in
-                                        Text(unit)
-                                            .tag(unit)
-                                    }
-                                }
-                            }
-
-                            if let errorMessage = ingredientErrorMessage(for: ingredientDrafts[index]) {
-                                Text(errorMessage)
-                                    .font(.caption)
-                                    .foregroundStyle(.red)
-                            }
-                        }
-                    }
-                    // might delete later
-                    .onDelete { offsets in
-                        ingredientDrafts.remove(atOffsets: offsets)
-                        if ingredientDrafts.isEmpty {
-                            ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
-                        }
-                    }
-
-                    Button("Add Ingredient", systemImage: "plus") {
-                        ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
-                    }
-                }
-
-                Section("Procedure") {
-                    ForEach(procedureDrafts.indices, id: \.self) { index in
-                        VStack(alignment: .leading) {
-                            Text("Step \(index + 1)")
-                                .font(.subheadline)
-                                .bold()
-                                .foregroundStyle(.secondary)
-
-                            TextField(
-                                "",
-                                text: $procedureDrafts[index],
-                                axis: .vertical
-                            )
-                            .lineLimit(2...5)
-                            .accessibilityLabel("Describe this step")
-                            .textContentType(.name)
-                            .overlay(alignment: .leading) {
-                                Text("Describe this step")
-                                    .foregroundStyle(.secondary)
-                                    .opacity(procedureDrafts[index].quantity.isEmpty ? 0.3 : 0)
-                                    .padding(.leading)
-                            }
-                        }
-                    }
-                    // might delete later
-                    .onDelete { offsets in
-                        procedureDrafts.remove(atOffsets: offsets)
-                        if procedureDrafts.isEmpty {
-                            procedureDrafts.append("")
-                        }
-                    }
-
-                    Button("Add Step", systemImage: "plus") {
-                        procedureDrafts.append("")
-                    }
-                }
-
-                Section("Notes") {
-                    TextField("", text: $extra, axis: .vertical)
-                        .lineLimit(3...6)
-                        .accessibilityLabel("Extra notes (optional)")
-                        .textContentType(.name)
-                        .overlay(alignment: .leading) {
-                            Text("Extra notes (optional)")
-                                .foregroundStyle(.secondary)
-                                .opacity(extra.isEmpty ? 0.3 : 0)
-                                .padding(.leading)
-                        }
-                }
+                baseInfoSection
+                ingredientsSection
+                procedureSection
+                notesSection
             }
             .navigationTitle(editingCocktail == nil ? "Create Cocktail" : "Edit Cocktail")
             .padding()
@@ -237,8 +99,162 @@ struct MacAddUserCocktailForm: View {
     }
 }
 
+// MARK: Helper views
+extension MacUserCocktailForm {
+    var baseInfoSection: some View {
+        Section("Basics") {
+            TextField("", text: $name)
+                .accessibilityLabel("Cocktail name")
+                .textContentType(.name)
+                .overlay(alignment: .leading) {
+                    Text("Cocktail name")
+                        .foregroundStyle(.secondary)
+                        .opacity(name.isEmpty ? 0.3 : 0)
+                        .padding(.leading)
+                }
+
+            Picker("Method", selection: $method) {
+                ForEach(methodOptions, id: \.self) { option in
+                    Text(option.capitalizingFirstLetter())
+                        .tag(option)
+                }
+            }
+            Picker("Glass", selection: $glass) {
+                ForEach(glassOptions, id: \.self) { option in
+                    Text(option.capitalizingFirstLetter())
+                        .tag(option)
+                }
+            }
+            TextField("", text: $garnish)
+                .accessibilityLabel("Garnish")
+                .textContentType(.name)
+                .overlay(alignment: .leading) {
+                    Text("Garnish")
+                        .foregroundStyle(.secondary)
+                        .opacity(garnish.isEmpty ? 0.3 : 0)
+                        .padding(.leading)
+                }
+
+            Picker("Ice", selection: $ice) {
+                ForEach(iceOptions, id: \.self) { option in
+                    Text(option.capitalizingFirstLetter())
+                        .tag(option)
+                }
+            }
+        }
+    }
+
+    var ingredientsSection: some View {
+        Section("Ingredients") {
+            ForEach(ingredientDrafts.indices, id: \.self) { index in
+                VStack(alignment: .leading) {
+                    TextField("", text: $ingredientDrafts[index].name)
+                        .accessibilityLabel("Ingredient name")
+                        .textContentType(.name)
+                        .overlay(alignment: .leading) {
+                            Text("Ingredient name")
+                                .foregroundStyle(.secondary)
+                                .opacity(ingredientDrafts[index].name.isEmpty ? 0.3 : 0)
+                                .padding(.leading)
+                        }
+                    Divider()
+                    HStack {
+                        TextField("", text: $ingredientDrafts[index].quantity)
+                            .accessibilityLabel("Quantity")
+                            .textContentType(.name)
+                            .overlay(alignment: .leading) {
+                                Text("Quantity")
+                                    .foregroundStyle(.secondary)
+                                    .opacity(ingredientDrafts[index].quantity.isEmpty ? 0.3 : 0)
+                                    .padding(.leading)
+                            }
+
+                        Picker("Unit", selection: $ingredientDrafts[index].unit) {
+                            ForEach(unitOptions, id: \.self) { unit in
+                                Text(unit)
+                                    .tag(unit)
+                            }
+                        }
+                    }
+
+                    if let errorMessage = ingredientErrorMessage(for: ingredientDrafts[index]) {
+                        Text(errorMessage)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
+            // might delete later
+            .onDelete { offsets in
+                ingredientDrafts.remove(atOffsets: offsets)
+                if ingredientDrafts.isEmpty {
+                    ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
+                }
+            }
+
+            Button("Add Ingredient", systemImage: "plus") {
+                ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
+            }
+        }
+    }
+
+    var procedureSection: some View {
+        Section("Procedure") {
+            ForEach(procedureDrafts.indices, id: \.self) { index in
+                VStack(alignment: .leading) {
+                    Text("Step \(index + 1)")
+                        .font(.subheadline)
+                        .bold()
+                        .foregroundStyle(.secondary)
+
+                    TextField(
+                        "",
+                        text: $procedureDrafts[index],
+                        axis: .vertical
+                    )
+                    .lineLimit(2...5)
+                    .accessibilityLabel("Describe this step")
+                    .textContentType(.name)
+                    .overlay(alignment: .leading) {
+                        Text("Describe this step")
+                            .foregroundStyle(.secondary)
+                            .opacity(procedureDrafts[index].isEmpty ? 0.3 : 0)
+                            .padding(.leading)
+                    }
+                }
+            }
+            // might delete later
+            .onDelete { offsets in
+                procedureDrafts.remove(atOffsets: offsets)
+                if procedureDrafts.isEmpty {
+                    procedureDrafts.append("")
+                }
+            }
+
+            Button("Add Step", systemImage: "plus") {
+                procedureDrafts.append("")
+            }
+        }
+    }
+
+    var notesSection: some View {
+        Section("Notes") {
+            TextField("", text: $extra, axis: .vertical)
+                .lineLimit(3...6)
+                .accessibilityLabel("Extra notes (optional)")
+                .textContentType(.name)
+                .overlay(alignment: .leading) {
+                    Text("Extra notes (optional)")
+                        .foregroundStyle(.secondary)
+                        .opacity(extra.isEmpty ? 0.3 : 0)
+                        .padding(.leading)
+                }
+        }
+    }
+}
+
 // MARK: - Helper Properties
-extension MacAddUserCocktailForm {
+extension MacUserCocktailForm {
     private var saveDisabledReason: String? {
         if trimmedName.isEmpty {
             return "Add a cocktail name to enable Save."
@@ -274,7 +290,7 @@ extension MacAddUserCocktailForm {
 }
 
 // MARK: - Helper Methods
-extension MacAddUserCocktailForm {
+extension MacUserCocktailForm {
     private static func makeInitialState(
         methodOptions: [String],
         glassOptions: [String],
@@ -407,6 +423,6 @@ extension MacAddUserCocktailForm {
 }
 
 #Preview {
-    MacAddUserCocktailForm(methodOptions: [], glassOptions: [], iceOptions: [], unitOptions: [])
+    MacUserCocktailForm(methodOptions: [], glassOptions: [], iceOptions: [], unitOptions: [])
         .environment(CocktailsViewModel())
 }

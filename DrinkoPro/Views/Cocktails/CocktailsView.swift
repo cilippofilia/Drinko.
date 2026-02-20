@@ -74,7 +74,7 @@ struct CocktailsView: View {
                         )
                     }
                     #else
-                    MacAddUserCocktailForm(
+                    MacUserCocktailForm(
                         methodOptions: viewModel.methodOptions(),
                         glassOptions: viewModel.glassOptions(),
                         iceOptions: viewModel.iceOptions(),

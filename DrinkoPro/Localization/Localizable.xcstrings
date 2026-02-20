@@ -2189,6 +2189,9 @@
         }
       }
     },
+    "Category Name" : {
+
+    },
     "Choose a section from the sidebar to start your mixology journey." : {
       "localizations" : {
         "de" : {
@@ -2450,6 +2453,9 @@
           }
         }
       }
+    },
+    "Cocktail name" : {
+
     },
     "Cocktails" : {
       "comment" : "Cocktails Tab",
@@ -2841,6 +2847,7 @@
       }
     },
     "DEBUG" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5819,6 +5826,9 @@
           }
         }
       }
+    },
+    "Quantity" : {
+
     },
     "Rate the app" : {
       "localizations" : {

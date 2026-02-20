@@ -165,7 +165,7 @@
 		1835C7E02F47A9F400C04884 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				MacCocktails/MacAddUserCocktailForm.swift,
+				MacCocktails/MacUserCocktailForm.swift,
 			);
 			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
 		};

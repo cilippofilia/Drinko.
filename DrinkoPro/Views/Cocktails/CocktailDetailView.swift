@@ -98,7 +98,8 @@ struct CocktailDetailView: View {
                 
                 Text(activeCocktail.name)
                     .font(.title.bold())
-                
+                    .padding(.top, viewModel.isUserCreated(activeCocktail) ? 8 : 0)
+
                 Divider()
                 
                 CocktailDetailsSection(
