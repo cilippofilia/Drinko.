@@ -114,7 +114,6 @@ extension MacCabinetView {
                 .accessibilityLabel("Add category")
             }
         }
-        // MARK: Button used for testing purposes
         .toolbar {
             ToolbarItem(placement: .automatic) {
                 Button(

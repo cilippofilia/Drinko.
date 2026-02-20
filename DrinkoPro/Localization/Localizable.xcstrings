@@ -1085,6 +1085,9 @@
         }
       }
     },
+    "Add Samples" : {
+
+    },
     "Add Step" : {
       "localizations" : {
         "de" : {
@@ -1230,6 +1233,9 @@
           }
         }
       }
+    },
+    "Adds sample categories and products." : {
+
     },
     "Adds this category to your cabinet." : {
       "localizations" : {
@@ -6090,6 +6096,9 @@
         }
       }
     },
+    "Remove Ingredient" : {
+
+    },
     "Remove like from post" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -6159,6 +6168,9 @@
           }
         }
       }
+    },
+    "Remove Step" : {
+
     },
     "Removes all categories and products." : {
       "localizations" : {
