@@ -71,7 +71,6 @@ struct MacUserCocktailForm: View {
                     notesSection
                 }
                 .padding()
-                
             }
             .navigationTitle(editingCocktail == nil ? "Create Cocktail" : "Edit Cocktail")
             .scrollBounceBehavior(.basedOnSize)
@@ -145,6 +144,7 @@ extension MacUserCocktailForm {
                         .tag(option)
                 }
             }
+            .padding(.bottom)
         }
     }
 
@@ -188,56 +188,43 @@ extension MacUserCocktailForm {
                     }
                 }
             }
-            // might delete later
-            .onDelete { offsets in
-                ingredientDrafts.remove(atOffsets: offsets)
-                if ingredientDrafts.isEmpty {
+
+            HStack {
+                Button("Add Ingredient", systemImage: "plus") {
                     ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
                 }
+                Button("Remove Ingredient", systemImage: "minus") {
+                    removeLastIngredient()
+                }
+                .disabled(ingredientDrafts.count <= 1)
             }
-
-            Button("Add Ingredient", systemImage: "plus") {
-                ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
-            }
+            .padding(.bottom)
         }
     }
 
     var procedureSection: some View {
         Section("Procedure") {
             ForEach(procedureDrafts.indices, id: \.self) { index in
-                VStack(alignment: .leading) {
-                    Text("Step \(index + 1)")
-                        .font(.subheadline)
-                        .bold()
-                        .foregroundStyle(.secondary)
-
-                    TextField(
-                        "",
-                        text: $procedureDrafts[index],
-                        axis: .vertical
-                    )
-                    .lineLimit(2...5)
-                    .accessibilityLabel("Describe this step")
-                    .textContentType(.name)
-                    .overlay(alignment: .leading) {
-                        Text("Describe this step")
-                            .foregroundStyle(.secondary)
-                            .opacity(procedureDrafts[index].isEmpty ? 0.3 : 0)
-                            .padding(.leading)
-                    }
-                }
+                TextField(
+                    "Step \(index + 1)",
+                    text: $procedureDrafts[index],
+                    axis: .vertical
+                )
+                .lineLimit(2...5)
+                .accessibilityLabel("Describe this step")
+                .textContentType(.name)
             }
-            // might delete later
-            .onDelete { offsets in
-                procedureDrafts.remove(atOffsets: offsets)
-                if procedureDrafts.isEmpty {
+
+            HStack {
+                Button("Add Step", systemImage: "plus") {
                     procedureDrafts.append("")
                 }
+                Button("Remove Step", systemImage: "minus") {
+                    removeLastProcedureStep()
+                }
+                .disabled(procedureDrafts.count <= 1)
             }
-
-            Button("Add Step", systemImage: "plus") {
-                procedureDrafts.append("")
-            }
+            .padding(.bottom)
         }
     }
 
@@ -247,12 +234,14 @@ extension MacUserCocktailForm {
                 .lineLimit(3...6)
                 .accessibilityLabel("Extra notes (optional)")
                 .textContentType(.name)
-                .overlay(alignment: .leading) {
+                .overlay(alignment: .topLeading) {
                     Text("Extra notes (optional)")
                         .foregroundStyle(.secondary)
                         .opacity(extra.isEmpty ? 0.3 : 0)
                         .padding(.leading)
+                        .padding(.top, 4)
                 }
+                .padding(.bottom)
         }
     }
 }
@@ -400,6 +389,26 @@ extension MacUserCocktailForm {
         let trimmed = rawValue.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return nil }
         return Double(trimmed.replacing(",", with: "."))
+    }
+
+    private func removeLastIngredient() {
+        if !ingredientDrafts.isEmpty {
+            ingredientDrafts.removeLast()
+        }
+
+        if ingredientDrafts.isEmpty {
+            ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
+        }
+    }
+
+    private func removeLastProcedureStep() {
+        if !procedureDrafts.isEmpty {
+            procedureDrafts.removeLast()
+        }
+
+        if procedureDrafts.isEmpty {
+            procedureDrafts.append("")
+        }
     }
 
     private func ingredientErrorMessage(for draft: IngredientDraft) -> String? {
