@@ -75,6 +75,7 @@ struct CocktailDetailView: View {
         }
         .sheet(isPresented: $showEditSheet) {
             NavigationStack {
+                #if os(iOS)
                 UserCocktailForm(
                     methodOptions: viewModel.methodOptions(),
                     glassOptions: viewModel.glassOptions(),
@@ -83,6 +84,16 @@ struct CocktailDetailView: View {
                     editingCocktail: activeCocktail,
                     editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail)
                 )
+                #else
+                MacUserCocktailForm(
+                    methodOptions: viewModel.methodOptions(),
+                    glassOptions: viewModel.glassOptions(),
+                    iceOptions: viewModel.iceOptions(),
+                    unitOptions: viewModel.unitOptions(),
+                    editingCocktail: activeCocktail,
+                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail)
+                )
+                #endif
             }
         }
     }
@@ -138,6 +149,7 @@ struct CocktailDetailView: View {
                             showDeleteConfirmation = true
                         }
                     )
+                    .foregroundStyle(.red)
                     .buttonStyle(.bordered)
                     .padding(.top, 8)
                 }

@@ -106,7 +106,7 @@ struct MacUserCocktailForm: View {
 extension MacUserCocktailForm {
     var baseInfoSection: some View {
         Section("Basics") {
-            TextField("", text: $name)
+            TextField(name.isEmpty ? "" : "Name", text: $name)
                 .accessibilityLabel("Cocktail name")
                 .textContentType(.name)
                 .overlay(alignment: .leading) {
@@ -128,7 +128,7 @@ extension MacUserCocktailForm {
                         .tag(option)
                 }
             }
-            TextField("", text: $garnish)
+            TextField(garnish.isEmpty ? "" : "Garnish", text: $garnish)
                 .accessibilityLabel("Garnish")
                 .textContentType(.name)
                 .overlay(alignment: .leading) {
@@ -152,26 +152,32 @@ extension MacUserCocktailForm {
         Section("Ingredients") {
             ForEach(ingredientDrafts.indices, id: \.self) { index in
                 VStack(alignment: .leading) {
-                    TextField("", text: $ingredientDrafts[index].name)
-                        .accessibilityLabel("Ingredient name")
-                        .textContentType(.name)
-                        .overlay(alignment: .leading) {
-                            Text("Ingredient name")
-                                .foregroundStyle(.secondary)
-                                .opacity(ingredientDrafts[index].name.isEmpty ? 0.3 : 0)
-                                .padding(.leading)
-                        }
+                    TextField(
+                        ingredientDrafts[index].name.isEmpty ? "" : "Ingredient name",
+                        text: $ingredientDrafts[index].name
+                    )
+                    .accessibilityLabel("Ingredient name")
+                    .textContentType(.name)
+                    .overlay(alignment: .leading) {
+                        Text("Ingredient name")
+                            .foregroundStyle(.secondary)
+                            .opacity(ingredientDrafts[index].name.isEmpty ? 0.3 : 0)
+                            .padding(.leading)
+                    }
 
                     HStack {
-                        TextField("", text: $ingredientDrafts[index].quantity)
-                            .accessibilityLabel("Quantity")
-                            .textContentType(.name)
-                            .overlay(alignment: .leading) {
-                                Text("Quantity")
-                                    .foregroundStyle(.secondary)
-                                    .opacity(ingredientDrafts[index].quantity.isEmpty ? 0.3 : 0)
-                                    .padding(.leading)
-                            }
+                        TextField(
+                            ingredientDrafts[index].quantity.isEmpty ? "" : "Quantity",
+                            text: $ingredientDrafts[index].quantity
+                        )
+                        .accessibilityLabel("Quantity")
+                        .textContentType(.name)
+                        .overlay(alignment: .leading) {
+                            Text("Quantity")
+                                .foregroundStyle(.secondary)
+                                .opacity(ingredientDrafts[index].quantity.isEmpty ? 0.3 : 0)
+                                .padding(.leading)
+                        }
 
                         Picker("Unit", selection: $ingredientDrafts[index].unit) {
                             ForEach(unitOptions, id: \.self) { unit in
@@ -187,6 +193,7 @@ extension MacUserCocktailForm {
                             .foregroundStyle(.red)
                     }
                 }
+                .padding(.bottom, 8)
             }
 
             HStack {
@@ -213,6 +220,7 @@ extension MacUserCocktailForm {
                 .lineLimit(2...5)
                 .accessibilityLabel("Describe this step")
                 .textContentType(.name)
+                .padding(.bottom, 8)
             }
 
             HStack {
@@ -230,18 +238,22 @@ extension MacUserCocktailForm {
 
     var notesSection: some View {
         Section("Notes") {
-            TextField("", text: $extra, axis: .vertical)
-                .lineLimit(3...6)
-                .accessibilityLabel("Extra notes (optional)")
-                .textContentType(.name)
-                .overlay(alignment: .topLeading) {
-                    Text("Extra notes (optional)")
-                        .foregroundStyle(.secondary)
-                        .opacity(extra.isEmpty ? 0.3 : 0)
-                        .padding(.leading)
-                        .padding(.top, 4)
-                }
-                .padding(.bottom)
+            TextField(
+                extra.isEmpty ? "" : "Extra",
+                text: $extra,
+                axis: .vertical
+            )
+            .lineLimit(3...6)
+            .accessibilityLabel("Extra notes (optional)")
+            .textContentType(.name)
+            .overlay(alignment: .topLeading) {
+                Text("Extra notes (optional)")
+                    .foregroundStyle(.secondary)
+                    .opacity(extra.isEmpty ? 0.3 : 0)
+                    .padding(.leading)
+                    .padding(.top, 4)
+            }
+            .padding(.bottom)
         }
     }
 }
