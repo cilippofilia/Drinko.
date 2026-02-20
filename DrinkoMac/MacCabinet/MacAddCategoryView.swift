@@ -35,7 +35,7 @@ struct MacAddCategoryView: View {
                     .accessibilityLabel("Category name")
                     .textContentType(.name)
                     .overlay(alignment: .leading) {
-                        Text("Category Description")
+                        Text("Category Name")
                             .foregroundStyle(.secondary)
                             .opacity(categoryName.isEmpty ? 0.3 : 0)
                             .padding(.leading)

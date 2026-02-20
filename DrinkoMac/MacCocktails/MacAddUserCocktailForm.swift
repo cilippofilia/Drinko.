@@ -65,7 +65,16 @@ struct MacAddUserCocktailForm: View {
         NavigationStack {
             Form {
                 Section("Basics") {
-                    TextField("Name", text: $name)
+                    TextField("", text: $name)
+                        .accessibilityLabel("Cocktail name")
+                        .textContentType(.name)
+                        .overlay(alignment: .leading) {
+                            Text("Cocktail name")
+                                .foregroundStyle(.secondary)
+                                .opacity(name.isEmpty ? 0.3 : 0)
+                                .padding(.leading)
+                        }
+
                     Picker("Method", selection: $method) {
                         ForEach(methodOptions, id: \.self) { option in
                             Text(option.capitalizingFirstLetter())
@@ -78,7 +87,16 @@ struct MacAddUserCocktailForm: View {
                                 .tag(option)
                         }
                     }
-                    TextField("Garnish", text: $garnish)
+                    TextField("", text: $garnish)
+                        .accessibilityLabel("Garnish")
+                        .textContentType(.name)
+                        .overlay(alignment: .leading) {
+                            Text("Garnish")
+                                .foregroundStyle(.secondary)
+                                .opacity(garnish.isEmpty ? 0.3 : 0)
+                                .padding(.leading)
+                        }
+
                     Picker("Ice", selection: $ice) {
                         ForEach(iceOptions, id: \.self) { option in
                             Text(option.capitalizingFirstLetter())
@@ -90,10 +108,27 @@ struct MacAddUserCocktailForm: View {
                 Section("Ingredients") {
                     ForEach(ingredientDrafts.indices, id: \.self) { index in
                         VStack(alignment: .leading) {
-                            TextField("Ingredient name", text: $ingredientDrafts[index].name)
+                            TextField("", text: $ingredientDrafts[index].name)
+                                .accessibilityLabel("Ingredient name")
+                                .textContentType(.name)
+                                .overlay(alignment: .leading) {
+                                    Text("Ingredient name")
+                                        .foregroundStyle(.secondary)
+                                        .opacity(ingredientDrafts[index].name.isEmpty ? 0.3 : 0)
+                                        .padding(.leading)
+                                }
                             Divider()
                             HStack {
-                                TextField("Qty", text: $ingredientDrafts[index].quantity)
+                                TextField("", text: $ingredientDrafts[index].quantity)
+                                    .accessibilityLabel("Quantity")
+                                    .textContentType(.name)
+                                    .overlay(alignment: .leading) {
+                                        Text("Quantity")
+                                            .foregroundStyle(.secondary)
+                                            .opacity(ingredientDrafts[index].quantity.isEmpty ? 0.3 : 0)
+                                            .padding(.leading)
+                                    }
+
                                 Picker("Unit", selection: $ingredientDrafts[index].unit) {
                                     ForEach(unitOptions, id: \.self) { unit in
                                         Text(unit)
@@ -109,6 +144,7 @@ struct MacAddUserCocktailForm: View {
                             }
                         }
                     }
+                    // might delete later
                     .onDelete { offsets in
                         ingredientDrafts.remove(atOffsets: offsets)
                         if ingredientDrafts.isEmpty {
@@ -130,13 +166,22 @@ struct MacAddUserCocktailForm: View {
                                 .foregroundStyle(.secondary)
 
                             TextField(
-                                "Describe this step",
+                                "",
                                 text: $procedureDrafts[index],
                                 axis: .vertical
                             )
                             .lineLimit(2...5)
+                            .accessibilityLabel("Describe this step")
+                            .textContentType(.name)
+                            .overlay(alignment: .leading) {
+                                Text("Describe this step")
+                                    .foregroundStyle(.secondary)
+                                    .opacity(procedureDrafts[index].quantity.isEmpty ? 0.3 : 0)
+                                    .padding(.leading)
+                            }
                         }
                     }
+                    // might delete later
                     .onDelete { offsets in
                         procedureDrafts.remove(atOffsets: offsets)
                         if procedureDrafts.isEmpty {
@@ -150,8 +195,16 @@ struct MacAddUserCocktailForm: View {
                 }
 
                 Section("Notes") {
-                    TextField("Extra notes (optional)", text: $extra, axis: .vertical)
+                    TextField("", text: $extra, axis: .vertical)
                         .lineLimit(3...6)
+                        .accessibilityLabel("Extra notes (optional)")
+                        .textContentType(.name)
+                        .overlay(alignment: .leading) {
+                            Text("Extra notes (optional)")
+                                .foregroundStyle(.secondary)
+                                .opacity(extra.isEmpty ? 0.3 : 0)
+                                .padding(.leading)
+                        }
                 }
             }
             .navigationTitle(editingCocktail == nil ? "Create Cocktail" : "Edit Cocktail")
