@@ -63,38 +63,42 @@ struct MacUserCocktailForm: View {
 
     var body: some View {
         NavigationStack {
-            Form {
-                baseInfoSection
-                ingredientsSection
-                procedureSection
-                notesSection
+            ScrollView {
+                Form {
+                    baseInfoSection
+                    ingredientsSection
+                    procedureSection
+                    notesSection
+                }
+                .padding()
+                
             }
             .navigationTitle(editingCocktail == nil ? "Create Cocktail" : "Edit Cocktail")
-            .padding()
-            .alert("Cannot Save", isPresented: Binding(
-                get: { alertMessage != nil },
-                set: { if !$0 { alertMessage = nil } }
-            )) {
-                Button("OK", role: .cancel) { }
-            } message: {
-                Text(alertMessage ?? "")
-            }
-            .toolbar {
-                ToolbarItem(placement: .automatic) {
-                    Button(action: {
-                        saveCocktail()
-                    }) {
-                        Text(editingCocktail == nil ? "Save" : "Update")
-                    }
-                }
-                ToolbarItem(placement: .automatic) {
-                    Button(action: {
-                        dismiss()
-                    }) {
-                        Text("Cancel")
-                    }
+            .scrollBounceBehavior(.basedOnSize)
+        }
+        .toolbar {
+            ToolbarItem(placement: .automatic) {
+                Button(action: {
+                    saveCocktail()
+                }) {
+                    Text(editingCocktail == nil ? "Save" : "Update")
                 }
             }
+            ToolbarItem(placement: .automatic) {
+                Button(action: {
+                    dismiss()
+                }) {
+                    Text("Cancel")
+                }
+            }
+        }
+        .alert("Cannot Save", isPresented: Binding(
+            get: { alertMessage != nil },
+            set: { if !$0 { alertMessage = nil } }
+        )) {
+            Button("OK", role: .cancel) { }
+        } message: {
+            Text(alertMessage ?? "")
         }
     }
 }
@@ -157,7 +161,7 @@ extension MacUserCocktailForm {
                                 .opacity(ingredientDrafts[index].name.isEmpty ? 0.3 : 0)
                                 .padding(.leading)
                         }
-                    Divider()
+
                     HStack {
                         TextField("", text: $ingredientDrafts[index].quantity)
                             .accessibilityLabel("Quantity")
