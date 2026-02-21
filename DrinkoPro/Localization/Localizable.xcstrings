@@ -1085,9 +1085,6 @@
         }
       }
     },
-    "Add Samples" : {
-
-    },
     "Add Step" : {
       "localizations" : {
         "de" : {
@@ -1233,9 +1230,6 @@
           }
         }
       }
-    },
-    "Adds sample categories and products." : {
-
     },
     "Adds this category to your cabinet." : {
       "localizations" : {
@@ -1418,6 +1412,7 @@
       }
     },
     "Are you sure you want to delete all products and categories?" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2365,6 +2360,7 @@
       }
     },
     "Clear All" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2987,6 +2983,7 @@
       }
     },
     "Delete All" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6173,6 +6170,7 @@
 
     },
     "Removes all categories and products." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

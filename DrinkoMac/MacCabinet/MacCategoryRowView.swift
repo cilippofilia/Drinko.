@@ -18,10 +18,8 @@ struct MacCategoryRowView: View {
                 Text(category.name)
                     .foregroundStyle(Color(category.color))
                     .font(.headline)
-                if category.detail.isEmpty == false {
-                    Text(category.detail)
+                Text(category.detail)
                         .foregroundStyle(.secondary)
-                }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 

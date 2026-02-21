@@ -28,12 +28,6 @@ struct MacCabinetUnavailableView: View {
                 action()
             }
             .accessibilityHint("Creates a new category.")
-
-            // TODO: Remove before merge
-            Button("Add Samples", systemImage: "sparkles") {
-                addSampleData()
-            }
-            .accessibilityHint("Adds sample categories and products.")
         })
         .frame(width: screenWidth)
         .navigationTitle("Cabinet")

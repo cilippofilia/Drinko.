@@ -38,16 +38,6 @@ struct MacCabinetView: View {
                     .navigationTitle("Cabinet")
             }
         }
-        .alert(isPresented: $showDeleteAlert) {
-            Alert(
-                title: Text("Delete All"),
-                message: Text("Are you sure you want to delete all products and categories?"),
-                primaryButton: .destructive(Text("Delete")) {
-                    deleteAllCategoriesAndProducts()
-                },
-                secondaryButton: .cancel(Text("Cancel"))
-            )
-        }
     }
 }
 
@@ -114,18 +104,6 @@ extension MacCabinetView {
                 .accessibilityLabel("Add category")
             }
         }
-        .toolbar {
-            ToolbarItem(placement: .automatic) {
-                Button(
-                    "Clear All",
-                    systemImage: "trash",
-                    role: .destructive
-                ) {
-                    showDeleteAlert = true
-                }
-                .accessibilityHint("Removes all categories and products.")
-            }
-        }
         .alert(isPresented: $showError) {
             Alert(
                 title: Text(errorTitle),
@@ -142,28 +120,6 @@ extension MacCabinetView {
 
 // MARK: Private methods used for testing purposes
 extension MacCabinetView {
-    private func deleteAllCategoriesAndProducts() {
-        do {
-            // Delete all products first
-            let productDescriptor = FetchDescriptor<Item>()
-            let allProducts = try modelContext.fetch(productDescriptor)
-            for product in allProducts {
-                modelContext.delete(product)
-            }
-
-            // Then delete all categories
-            let categoryDescriptor = FetchDescriptor<Category>()
-            let allCategories = try modelContext.fetch(categoryDescriptor)
-            for category in allCategories {
-                modelContext.delete(category)
-            }
-
-            try modelContext.save()
-        } catch {
-            showError.toggle()
-            errorMessage = "Please try again.\n\nFailed to delete categories and products: \(error)"
-        }
-    }
 }
 
 #if DEBUG
