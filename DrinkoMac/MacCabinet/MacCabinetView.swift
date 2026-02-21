@@ -20,6 +20,7 @@ struct MacCabinetView: View {
     @State private var errorMessage: String = ""
     @State private var showError: Bool = false
     @State private var showDeleteAlert: Bool = false
+    @State private var categoryPendingDeletion: Category? = nil
 
     @Query(sort: [
         SortDescriptor(\Category.name),
@@ -74,8 +75,12 @@ extension MacCabinetView {
                 } header: {
                     MacCategoryRowView(
                         category: category,
-                        action: {
+                        editAction: {
                             selectedCategory = category
+                        },
+                        deleteAction: {
+                            categoryPendingDeletion = category
+                            showDeleteAlert = true
                         }
                     )
                 }
@@ -111,6 +116,18 @@ extension MacCabinetView {
                 dismissButton: .cancel(Text("OK"))
             )
         }
+        .alert(isPresented: $showDeleteAlert) {
+            Alert(
+                title: Text("Delete Category"),
+                message: Text("Delete \"\(categoryPendingDeletion?.name ?? "Category")\" and all its products?"),
+                primaryButton: .destructive(Text("Delete")) {
+                    if let categoryPendingDeletion {
+                        deleteCategory(categoryPendingDeletion)
+                    }
+                },
+                secondaryButton: .cancel(Text("Cancel"))
+            )
+        }
     }
 
     func addProduct(to category: Category) {
@@ -120,6 +137,19 @@ extension MacCabinetView {
 
 // MARK: Private methods used for testing purposes
 extension MacCabinetView {
+    private func deleteCategory(_ category: Category) {
+        do {
+            modelContext.delete(category)
+            try modelContext.save()
+        } catch {
+            errorTitle = "Unable to Delete Category"
+            errorMessage = "Please try again.\n\nFailed to delete category: \(error)"
+            showError = true
+        }
+
+        categoryPendingDeletion = nil
+        showDeleteAlert = false
+    }
 }
 
 #if DEBUG
