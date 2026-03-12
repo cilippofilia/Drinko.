@@ -142,6 +142,10 @@ Drinko/
 - **macOS**: 14.0 or later (for macOS version)
 - **Swift**: 5.9 or later
 
+## 🚦 Release Checklist
+
+See `RELEASE_CHECKLIST.md`.
+
 ---
 
 ## 🚀 Getting Started

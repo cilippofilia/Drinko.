@@ -14,7 +14,9 @@ struct SettingsPreferenceView: View {
     var body: some View {
         Section("Preferences") {
             Button {
-                openURL(URL(string: "app-settings:")!)
+                if let settingsURL = URL(string: "app-settings:") {
+                    openURL(settingsURL)
+                }
             } label: {
                 SettingsRowView(
                     icon: "character.bubble",
