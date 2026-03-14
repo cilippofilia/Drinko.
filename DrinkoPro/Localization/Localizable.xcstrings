@@ -1411,35 +1411,6 @@
         }
       }
     },
-    "Are you sure you want to delete all products and categories?" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sind Sie sicher, dass Sie alle Produkte und Kategorien löschen möchten?"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "¿Seguro que quieres eliminar todos los productos y categorías?"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Êtes-vous sûr de vouloir supprimer tous les produits et catégories?"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sei sicuro di volere eliminare tutte i prodotti e categorie?"
-          }
-        }
-      }
-    },
     "Are you sure you want to delete this category? You will also delete all the products it contains." : {
       "localizations" : {
         "de" : {
@@ -2191,7 +2162,32 @@
       }
     },
     "Category Name" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kategoriename"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre de la categoría"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de la catégorie"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome Categoria"
+          }
+        }
+      }
     },
     "Choose a section from the sidebar to start your mixology journey." : {
       "localizations" : {
@@ -2359,41 +2355,6 @@
         }
       }
     },
-    "Clear All" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alles löschen"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clear All"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Borrar todo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tout effacer"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancella tutto"
-          }
-        }
-      }
-    },
     "Clear filter" : {
       "localizations" : {
         "de" : {
@@ -2457,7 +2418,32 @@
       }
     },
     "Cocktail name" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Name des Cocktails"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del cóctel"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom du cocktail"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nome del cocktail"
+          }
+        }
+      }
     },
     "Cocktails" : {
       "comment" : "Cocktails Tab",
@@ -2848,35 +2834,6 @@
         }
       }
     },
-    "DEBUG" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DEBUG"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DEBUG"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DEBUG"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "DEBUG"
-          }
-        }
-      }
-    },
     "Delete" : {
       "localizations" : {
         "de" : {
@@ -2912,10 +2869,60 @@
       }
     },
     "Delete \"%@\" and all its products?" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen Sie “%@” und alle seine Produkte?"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar “%@“ y todos sus productos?"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer “%@“ et tous ses produits ?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina “%@\" e tutti i suoi prodotti?"
+          }
+        }
+      }
     },
     "Delete %@" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elimina %@"
+          }
+        }
+      }
     },
     "Delete Account" : {
       "extractionState" : "manual",
@@ -2984,35 +2991,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminare l'account?"
-          }
-        }
-      }
-    },
-    "Delete All" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alles löschen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eliminar todo"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tout supprimer"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elimina tutto"
           }
         }
       }
@@ -4170,35 +4148,6 @@
         }
       }
     },
-    "Image of %@" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bild von %@"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Imagen de %@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Image de%@"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Immagine di %@"
-          }
-        }
-      }
-    },
     "Info" : {
       "localizations" : {
         "de" : {
@@ -4976,76 +4925,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ancora nessun cocktail personalizzato"
-          }
-        }
-      }
-    },
-    "No favorite cocktails found" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine Favoriten-Cocktails gefunden"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No favorite cocktails found"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No se encontraron cócteles favoritos"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun cocktail favori trouvé"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nessun cocktail preferito trovato"
-          }
-        }
-      }
-    },
-    "No favorite cocktails match \"%@\"." : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kein Favoriten-Cocktail entspricht \"%@\"."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No favorite cocktails match \"%@\"."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No hay cócteles favoritos que coincidan con \"%@\"."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aucun cocktail favori ne correspond à \"%@\"."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nessun cocktail preferito corrisponde a \"%@\"."
           }
         }
       }
@@ -5837,7 +5716,32 @@
       }
     },
     "Quantity" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menge"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantidad"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantité"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantità"
+          }
+        }
+      }
     },
     "Rate the app" : {
       "localizations" : {
@@ -6100,7 +6004,32 @@
       }
     },
     "Remove Ingredient" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inhaltsstoff entfernen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar el ingrediente"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer l'ingrédient"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rimuovi Ingrediente"
+          }
+        }
+      }
     },
     "Remove like from post" : {
       "extractionState" : "manual",
@@ -6173,33 +6102,29 @@
       }
     },
     "Remove Step" : {
-
-    },
-    "Removes all categories and products." : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Entfernt alle Kategorien und Produkte."
+            "value" : "Schritt entfernen"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Elimina todas las categorías y productos."
+            "value" : "Eliminar paso"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Supprime toutes les catégories et tous les produits."
+            "value" : "Étape de suppression"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rimuovi tutte le categorie e prodotti"
+            "value" : "Rimuovi Step"
           }
         }
       }
@@ -7069,39 +6994,29 @@
       }
     },
     "Support" : {
-
-    },
-    "Swipe right" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wische nach rechts"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Swipe right"
+            "value" : "Unterstützung"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Desliza a la derecha"
+            "value" : "Apoyo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Balayez vers la droite"
+            "value" : "Soutien"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trascina verso destra"
+            "value" : "Supporto"
           }
         }
       }
@@ -7305,41 +7220,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Titolo"
-          }
-        }
-      }
-    },
-    "To mark your favorite cocktails" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zum Markieren Ihrer Lieblingscocktails"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "To mark your favorite cocktails"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Para marcar tus cócteles favoritos"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pour marquer vos cocktails préférés"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Per marchiare i tuoi cocktail preferiti"
           }
         }
       }
