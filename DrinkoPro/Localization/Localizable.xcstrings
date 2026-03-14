@@ -2911,6 +2911,12 @@
         }
       }
     },
+    "Delete \"%@\" and all its products?" : {
+
+    },
+    "Delete %@" : {
+
+    },
     "Delete Account" : {
       "extractionState" : "manual",
       "generatesSymbol" : false,
