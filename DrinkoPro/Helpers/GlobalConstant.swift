@@ -21,7 +21,5 @@ let screenWidth: CGFloat = UIScreen.main.bounds.width
 let screenWidth: CGFloat = 350
 #endif
 
-let lovelyText = "This app was made with ❤️ by Filippo Cilia 🇮🇹"
-
 let drinkoURL = URL(string: "https://apps.apple.com/gb/app/drinko/id6449893371")
 let rateURL = URL(string: "itms-apps://apps.apple.com/gb/app/drinko/id6449893371?action=write-review")

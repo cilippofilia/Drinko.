@@ -10,9 +10,7 @@ import SwiftUI
 struct SettingsInfoView: View {
     var body: some View {
         Section(
-            header: Text("Info").foregroundStyle(.secondary),
-            footer: Text(lovelyText)
-                .foregroundStyle(.secondary)
+            header: Text("Info").foregroundStyle(.secondary)
         ) {
             NavigationLink(destination: ReadMeView()) {
                 SettingsRowView(
