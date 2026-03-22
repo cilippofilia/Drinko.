@@ -46,7 +46,7 @@ Keep track of your ingredients like a professional:
 - **Visual Organization**: Color-coded categories for easy identification
 
 ### ⚙️ Settings & Localization
-- **Multi-language Support**: Fully localized in 4 languages
+- **Multi-language Support**: Fully localized in 5 languages
   - 🇬🇧 English
   - 🇮🇹 Italian
   - 🇪🇸 Spanish
@@ -192,6 +192,7 @@ The app supports multiple languages with automatic language switching based on d
 
 - 🇬🇧 **English** (Base)
 - 🇮🇹 **Italian**
+- 🇪🇸 **Spanish**
 - 🇫🇷 **French**
 - 🇩🇪 **German**
 
@@ -232,8 +233,8 @@ This project is proprietary software. All rights reserved.
 
 **Filippo Cilia**
 
-- Twitter: [@the_drinko_app](https://x.com/the_drinko_app)
-- Instagram: [@drinko_app](https://www.instagram.com/drinko_app)
+- X: [@fcilia_dev](https://x.com/fcilia_dev)
+- Instagram: [@cilippofilia](https://www.instagram.com/cilippofilia)
 - App Store: [Download Drinko](https://apps.apple.com/gb/app/drinko/id6449893371)
 
 ---
@@ -252,7 +253,7 @@ Found a bug or have a suggestion?
 
 - **In-App**: Use the feedback feature in Settings
 - **Email**: Contact through the app's Settings section
-- **Social Media**: Reach out on [Twitter](https://x.com/the_drinko_app) or [Instagram](https://www.instagram.com/drinko_app)
+- **Social Media**: Reach out on [X](https://x.com/fcilia_dev) or [Instagram](https://www.instagram.com/cilippofilia)
 
 ---
 
