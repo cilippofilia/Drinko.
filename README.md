@@ -1,4 +1,4 @@
-# Professional cocktails at home
+# Drinko: Professional cocktails at home
 
 ## 📖 About
 
