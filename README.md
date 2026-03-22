@@ -1,266 +1,133 @@
-# Drinko: Professional cocktails at home
+# Drinko: Cocktail recipes, bartending lessons, and a home bar cabinet
 
-## 📖 About
+## About
 
-Whether you're a newbie cocktail enthusiast, aspiring bartender, or simply looking to up your mixology game, **Drinko** is your ultimate guide to the world of bartending. From the basics to advanced techniques, you'll learn practical tips to craft delicious cocktails at home.
+Drinko is a SwiftUI app for learning bartending, browsing classic cocktails, and keeping track of the ingredients you already have at home.
 
-Drinko brings together classic cocktail recipes, bartending education, ingredient tracking, and your own custom recipes in one place. Let's shake things up and get started on your cocktail-making journey.
+The app combines three core workflows in one project:
 
----
+- Learn bartending techniques, spirits, syrups, and prep fundamentals.
+- Browse a built-in cocktail library with search, sorting, favorites, and detailed drink pages.
+- Manage a personal cabinet with SwiftData-backed categories and products that can sync through CloudKit.
 
-## ✨ Features
+Drinko also supports custom cocktails, built-in oz/ml conversion, and a macOS target for selected app flows.
 
-### 🎓 Learn Section
-Master the art of mixology with comprehensive educational content:
-- **Interactive Lessons**: Step-by-step guides covering basic to advanced techniques
-- **Technique Guides**: Clear explanations for foundational bartending skills
-- **Spirit Guides**: Deep dives into different spirits, liqueurs, and syrups
-- **Calculators**: ABV calculator and Superjuice calculator for precise measurements
-- **Reference Books**: Curated collection of bartending resources
-- **Collapsible Sections**: Organized content for easy navigation
+## Features
 
-### 🍸 Cocktails Section
-Explore an extensive collection of over **130 cocktails**:
-- **Comprehensive Database**: Cocktails and shots with detailed recipes
-- **Custom Recipes**: Add your own recipes alongside the built-in collection
-- **Smart Search**: Quickly find your favorite drinks
-- **Multiple Sort Options**: Sort by name (A-Z, Z-A), glass type, or ice preference
-- **Favorites System**: Swipe to favorite and never lose track of your go-to drinks
-- **Detailed Views**: Complete information including:
-  - Full ingredient lists with precise measurements
-  - Step-by-step preparation procedures
-  - Historical context and origins
-  - Suggested similar cocktails
-  - Glassware and garnish recommendations
+### Learn
 
-### 🗄️ Cabinet Section
-Keep track of your ingredients like a professional:
-- **Category Management**: Organize ingredients by type (Vodkas, Gins, Whiskeys, Rums, Tequilas, Cognacs, Liqueurs, Juices, Syrups)
-- **Product Tracking**: Detailed product information including:
-  - Name, details, and origin
-  - ABV (Alcohol By Volume)
-  - Personal ratings
-  - "Tried" status tracking
-  - Favorite products
-- **Cloud Sync**: Seamlessly sync your cabinet across all your devices using CloudKit
-- **Visual Organization**: Color-coded categories for easy identification
+- Topic-based lessons for bartending basics, bar prep, spirits, liqueurs, advanced lessons, and syrups.
+- Reference books section.
+- Built-in calculators for ABV and super juice.
+- Search across lessons and books.
 
-### ⚙️ Settings & Localization
-- **Multi-language Support**: Fully localized in 5 languages
-  - 🇬🇧 English
-  - 🇮🇹 Italian
-  - 🇪🇸 Spanish
-  - 🇫🇷 French
-  - 🇩🇪 German
-- **Feedback System**: Built-in email composer for bug reports and feedback
-- **App Preferences**: Customize your experience
-- **App Information**: Version details and credits
+### Cocktails
 
-### 🎨 Additional Features
-- **Beautiful UI**: Modern, native SwiftUI design optimized for iPhone and iPad
-- **Smooth Animations**: Polished user experience with thoughtful animations
-- **Accessibility**: VoiceOver support and accessibility features
-- **In-App Purchases**: Support for tip jar and premium features
-- **App Store Integration**: Smart review prompts based on usage
+- Built-in library of cocktails and shots loaded from bundled JSON data.
+- Search using localized matching.
+- Sorting by name, glass, or ice style.
+- Filters for all drinks, cocktails only, shots only, favorites, and user-created drinks.
+- Detailed cocktail pages with ingredients, method, history, procedure, and related cocktails.
+- Create and delete custom cocktails.
+- Save favorite cocktails locally.
+- Convert ingredient measurements between ounces and milliliters.
 
----
+### Cabinet
 
-## 🛠️ Tech Stack
+- Create ingredient categories and add products to each category.
+- Mark products as favorites.
+- Persist cabinet data with SwiftData.
+- CloudKit-backed model configuration for syncing supported data across devices.
 
-### Core Technologies
-- **Swift 5.9+**: Modern Swift with latest language features
-- **SwiftUI**: Declarative UI framework for building native interfaces
-- **iOS 17.0+**: Latest iOS features and APIs
+### Settings
 
-### Frameworks & Libraries
+- Contact flows for bug reports, feature requests, and general feedback.
+- In-app rating shortcut.
+- Localized app copy and built-in README/about screen.
 
-| Framework | Purpose | Usage |
-|-----------|---------|-------|
-| **SwiftData** | Data Persistence | Local storage for Cabinet items (categories and products) |
-| **CloudKit** | Cloud Sync | Sync Cabinet data across multiple devices |
-| **Combine** | Reactive Programming | Handle async events for in-app purchases |
-| **TipKit** | User Guidance | In-app tips and onboarding hints |
-| **StoreKit** | In-App Purchases | Support for tip jar and premium features |
-| **MessageUI** | Communication | Direct feedback and bug reporting from within the app |
+## Tech Stack
 
-### Design Tools
-- **Figma**: Design and prototyping
-- **Shots.so**: App screenshots and marketing materials
+- SwiftUI for the UI
+- SwiftData for local persistence
+- CloudKit for sync-backed model storage
+- StoreKit for review prompts
+- MessageUI for email-based feedback on iOS
+- Swift Testing and XCTest for unit coverage
 
-### Development Tools
-- **Xcode**: Primary IDE
-- **Git/GitHub**: Version control and collaboration
+## Project Structure
 
----
-
-## 🏗️ Architecture
-
-### Project Structure
-
-```
+```text
 Drinko/
-├── DrinkoPro/              # Main iOS app
-│   ├── Models/            # Data models (Category, Item)
-│   ├── Views/             # SwiftUI views organized by feature
-│   │   ├── Cabinet/       # Cabinet feature views
-│   │   ├── Cocktails/     # Cocktails feature views
-│   │   ├── Learn/         # Learn feature views
-│   │   ├── Settings/      # Settings views
-│   │   └── Supporting Views/
-│   ├── CoreData/          # Data model definitions
-│   └── Utilities/         # Helpers and localizations
-│
-├── DrinkoProMac/          # macOS version
-│   └── View/              # macOS-specific views
-│
-└── Shared/                # Shared code and resources
-    ├── Models/            # Shared models (Cocktail, Lesson, Book)
-    ├── Views/             # Shared SwiftUI components
-    ├── Helpers/           # Utility functions
-    ├── Assets.xcassets/   # Images and icons
-    └── Utilities/         # JSON data files
+├── DrinkoPro/          # Main app target and shared source
+│   ├── Assets/
+│   ├── Helpers/
+│   ├── Localization/
+│   ├── Models/
+│   └── Views/
+├── DrinkoMac/          # macOS-specific views and flows
+├── DrinkoProTests/     # Unit tests
+├── docs/               # App Store and product documentation
+└── DrinkoPro.xcodeproj
 ```
 
-### Design Patterns
+The main app surface is organized around four tabs: `Learn`, `Cocktails`, `Cabinet`, and `Settings`.
 
-- **MVVM (Model-View-ViewModel)**: Separation of business logic and UI
-- **Observable Pattern**: Using `@Observable` for reactive state management
-- **NavigationStack**: Modern navigation with type-safe routing
-- **Dependency Injection**: Environment objects for shared state (Favorites)
+## Requirements
 
-### Data Flow
+- Xcode with iOS 18 and macOS 15 SDK support
+- iOS 18+
+- macOS 15+
 
-1. **Cocktails Data**: Loaded from JSON files in bundle at runtime
-2. **Cabinet Data**: Persisted locally with SwiftData, synced via CloudKit
-3. **Favorites**: Stored in UserDefaults with JSON encoding
-4. **Settings**: User preferences stored in UserDefaults
+The checked-in Xcode project currently uses iOS 18 deployment settings for the app target and macOS 15 deployment settings for the Mac target.
 
----
-
-## 📋 Requirements
-
-- **Xcode**: 15.0 or later
-- **iOS**: 17.0 or later
-- **macOS**: 14.0 or later (for macOS version)
-- **Swift**: 5.9 or later
-
-## 📈 App Store ASO
-
-App Store metadata, localized copy, keyword notes, and screenshot messaging live in `docs/app-store-aso-sheet.md`.
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-1. Install [Xcode](https://developer.apple.com/xcode/) from the App Store
-2. Ensure you have an Apple Developer account (for device testing and CloudKit)
-
-### Installation
+## Getting Started
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/Drinko.git
-   cd Drinko
-   ```
+
+```bash
+git clone <your-fork-or-repo-url>
+cd Drinko
+```
 
 2. Open the project in Xcode:
-   ```bash
-   open DrinkoPro.xcodeproj
-   ```
 
-3. Select your target device or simulator
+```bash
+open DrinkoPro.xcodeproj
+```
 
-4. Build and run (⌘R)
+3. Select the `DrinkoPro` scheme for iOS, or the Mac target if you want to run the desktop build.
 
-### CloudKit Setup
+4. Build and run from Xcode.
 
-To enable CloudKit sync for the Cabinet feature:
+## Development Notes
 
-1. Open the project in Xcode
-2. Select the `DrinkoPro` target
-3. Go to "Signing & Capabilities"
-4. Ensure CloudKit is enabled
-5. Configure your CloudKit container in the Apple Developer portal
+- The cocktail library, histories, procedures, lessons, books, and other reference content are bundled as JSON resources.
+- User-created cocktails are stored through SwiftData models.
+- Favorites are stored locally in `UserDefaults`.
+- CloudKit capability is enabled in the project entitlements, so running sync features on your own team may require your own signing setup.
 
----
+## Tests
 
-## 🌍 Localization
+Unit tests live in `DrinkoProTests` and currently cover:
 
-The app supports multiple languages with automatic language switching based on device settings:
+- cocktail data loading, filtering, grouping, and linking behavior
+- lesson loading and topic organization
+- unit conversion logic for oz/ml ingredient amounts
 
-- 🇬🇧 **English** (Base)
-- 🇮🇹 **Italian**
-- 🇪🇸 **Spanish**
-- 🇫🇷 **French**
-- 🇩🇪 **German**
+Run them from Xcode’s test action for the active scheme.
 
-Localization files are located in:
-- `DrinkoPro/Utilities/Localizables/`
-- `Shared/Utilities/Localizable.xcstrings`
+## Documentation
 
-Want to help translate Drinko into more languages? Get in touch through the Settings section in the app!
+App Store metadata, localized copy, and screenshot messaging live in [`docs/app-store-aso-sheet.md`](docs/app-store-aso-sheet.md).
 
----
+## Author
 
-## 🤝 Contributing
-
-Contributions are welcome! If you'd like to contribute:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Areas for Contribution
-
-- 🌍 **Translations**: Help translate the app into more languages
-- 🐛 **Bug Reports**: Report issues through the app's Settings section
-- 💡 **Feature Ideas**: Share your ideas for new features
-- 📖 **Documentation**: Improve code documentation and README
-
----
-
-## 📝 License
-
-This project is proprietary software. All rights reserved.
-
----
-
-## 👤 Author
-
-**Filippo Cilia**
+Filippo Cilia
 
 - X: [@fcilia_dev](https://x.com/fcilia_dev)
 - Instagram: [@cilippofilia](https://www.instagram.com/cilippofilia)
-- App Store: [Download Drinko](https://apps.apple.com/gb/app/drinko/id6449893371)
+- App Store: [Drinko](https://apps.apple.com/gb/app/drinko/id6449893371)
 
----
+## License
 
-## 🙏 Acknowledgments
-
-- All the cocktail enthusiasts and bartenders who inspired this project
-- The SwiftUI community for excellent resources and examples
-- Beta testers and users who provided valuable feedback
-
----
-
-## 📞 Support
-
-Found a bug or have a suggestion? 
-
-- **In-App**: Use the feedback feature in Settings
-- **Email**: Contact through the app's Settings section
-- **Social Media**: Reach out on [X](https://x.com/fcilia_dev) or [Instagram](https://www.instagram.com/cilippofilia)
-
----
-
-<div align="center">
-  
-  Made with ❤️ and 🍹 using SwiftUI
-  
-  [Download on the App Store](https://apps.apple.com/gb/app/drinko/id6449893371)
-  
-</div>
+This project is proprietary software. All rights reserved.
