@@ -143,10 +143,6 @@ Drinko/
 - **macOS**: 14.0 or later (for macOS version)
 - **Swift**: 5.9 or later
 
-## 🚦 Release Checklist
-
-See `RELEASE_CHECKLIST.md`.
-
 ## 📈 App Store ASO
 
 App Store metadata, localized copy, keyword notes, and screenshot messaging live in `docs/app-store-aso-sheet.md`.
