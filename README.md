@@ -49,6 +49,7 @@ Keep track of your ingredients like a professional:
 - **Multi-language Support**: Fully localized in 4 languages
   - 🇬🇧 English
   - 🇮🇹 Italian
+  - 🇪🇸 Spanish
   - 🇫🇷 French
   - 🇩🇪 German
 - **Feedback System**: Built-in email composer for bug reports and feedback
