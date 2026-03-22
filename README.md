@@ -2,9 +2,9 @@
 
 ## 📖 About
 
-Whether you're a newbie cocktail enthusiast, aspiring bartender, or simply looking to up your mixology game, **Drinko** is your ultimate guide to the world of bartending. From the basics to advanced techniques, you'll learn insider tips and tricks to craft delicious, Instagram-worthy cocktails. 
+Whether you're a newbie cocktail enthusiast, aspiring bartender, or simply looking to up your mixology game, **Drinko** is your ultimate guide to the world of bartending. From the basics to advanced techniques, you'll learn practical tips to craft delicious cocktails at home.
 
-Drinko is your one-stop-shop for everything you need to know about the most famous cocktails, their history, and how to make them like a pro. Let's shake things up and get started on your cocktail-making journey!
+Drinko brings together classic cocktail recipes, bartending education, ingredient tracking, and your own custom recipes in one place. Let's shake things up and get started on your cocktail-making journey.
 
 ---
 
@@ -13,7 +13,7 @@ Drinko is your one-stop-shop for everything you need to know about the most famo
 ### 🎓 Learn Section
 Master the art of mixology with comprehensive educational content:
 - **Interactive Lessons**: Step-by-step guides covering basic to advanced techniques
-- **Video Examples**: Visual demonstrations for all techniques
+- **Technique Guides**: Clear explanations for foundational bartending skills
 - **Spirit Guides**: Deep dives into different spirits, liqueurs, and syrups
 - **Calculators**: ABV calculator and Superjuice calculator for precise measurements
 - **Reference Books**: Curated collection of bartending resources
@@ -22,6 +22,7 @@ Master the art of mixology with comprehensive educational content:
 ### 🍸 Cocktails Section
 Explore an extensive collection of over **130 cocktails**:
 - **Comprehensive Database**: Cocktails and shots with detailed recipes
+- **Custom Recipes**: Add your own recipes alongside the built-in collection
 - **Smart Search**: Quickly find your favorite drinks
 - **Multiple Sort Options**: Sort by name (A-Z, Z-A), glass type, or ice preference
 - **Favorites System**: Swipe to favorite and never lose track of your go-to drinks
@@ -145,6 +146,10 @@ Drinko/
 ## 🚦 Release Checklist
 
 See `RELEASE_CHECKLIST.md`.
+
+## 📈 App Store ASO
+
+App Store metadata, localized copy, keyword notes, and screenshot messaging live in `docs/app-store-aso-sheet.md`.
 
 ---
 
