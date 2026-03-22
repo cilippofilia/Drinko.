@@ -73,27 +73,30 @@ struct EditCategoryView: View {
 // MARK: FUNCTIONS
 extension EditCategoryView {
     func colorButton(for item: String) -> some View {
-        ZStack {
-            Color(item)
-                .aspectRatio(1, contentMode: .fit)
-                .cornerRadius(6)
-
-            if item == category.color {
-                Image(systemName: "checkmark.circle")
-                    .foregroundColor(.white)
-                    .font(.title)
-                    .symbolEffect(.bounce.down, value: isSelected)
-            }
-        }
-        .onTapGesture {
+        Button {
             category.color = item
             isSelected.toggle()
+        } label: {
+            ZStack {
+                Color(item)
+                    .aspectRatio(1, contentMode: .fit)
+                    .clipShape(.rect(cornerRadius: 6, style: .continuous))
+
+                if item == category.color {
+                    Image(systemName: "checkmark.circle")
+                        .foregroundStyle(.white)
+                        .font(.title)
+                        .symbolEffect(.bounce.down, value: isSelected)
+                }
+            }
         }
+        .buttonStyle(.plain)
+        .contentShape(.rect)
         .accessibilityElement(children: .ignore)
-        .accessibilityAddTraits(
-            item == category.color ? [.isButton, .isSelected] : .isButton
-        )
-        .accessibilityLabel("Select color \(item)")
+        .accessibilityLabel("\(item) color")
+        .accessibilityValue(item == category.color ? "Selected" : "Not selected")
+        .accessibilityHint("Selects this color for the category.")
+        .accessibilityAddTraits(item == category.color ? .isSelected : [])
     }
 
     func delete() {

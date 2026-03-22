@@ -31,8 +31,7 @@ struct FavoriteCocktailButtonView: View {
         .accessibilityLabel(favorites.contains(cocktail) ? "Remove from favorites" : "Add to favorites")
         .animation(.default, value: favorites.hasEffect)
         .symbolEffect(.bounce.up, value: favorites.hasEffect)
-        .accessibilityLabel(favorites.contains(cocktail) ? "Remove from favorites" : "Add to favorites")
-        .accessibilityHint(cocktail.name)
+        .accessibilityValue(cocktail.name)
     }
 }
 

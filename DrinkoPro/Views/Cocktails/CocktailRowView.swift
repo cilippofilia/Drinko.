@@ -45,10 +45,16 @@ struct CocktailRowView: View {
                     .accessibilityHidden(true)
             }
 
-            Text(cocktail.name)
-                .lineLimit(2)
-                .multilineTextAlignment(.leading)
-
+            VStack(alignment: .leading, spacing: 4) {
+                Text(cocktail.name)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                if cocktail.id.hasPrefix("user-") {
+                    Text("Created by you")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+            }
             Spacer()
 
             Image(systemName: favorites.contains(cocktail) ? "heart.fill" : "heart")

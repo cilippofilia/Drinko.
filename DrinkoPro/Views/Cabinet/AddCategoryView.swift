@@ -197,27 +197,30 @@ struct AddCategoryView: View {
 // MARK: FUNCTIONS
 extension AddCategoryView {
     func colorButton(for item: String) -> some View {
-        ZStack {
-            Color(item)
-                .aspectRatio(1, contentMode: .fit)
-                .clipShape(.rect(cornerRadius: 11, style: .continuous))
-
-            if item == categoryColor {
-                Image(systemName: "checkmark.circle")
-                    .foregroundStyle(.white)
-                    .font(.title)
-                    .symbolEffect(.bounce.down, value: isSelected)
-            }
-        }
-        .onTapGesture {
+        Button {
             categoryColor = item
             isSelected.toggle()
+        } label: {
+            ZStack {
+                Color(item)
+                    .aspectRatio(1, contentMode: .fit)
+                    .clipShape(.rect(cornerRadius: 11, style: .continuous))
+
+                if item == categoryColor {
+                    Image(systemName: "checkmark.circle")
+                        .foregroundStyle(.white)
+                        .font(.title)
+                        .symbolEffect(.bounce.down, value: isSelected)
+                }
+            }
         }
+        .buttonStyle(.plain)
+        .contentShape(.rect)
         .accessibilityElement(children: .ignore)
-        .accessibilityAddTraits(
-            item == categoryColor ? [.isButton, .isSelected] : .isButton
-        )
-        .accessibilityLabel("Select color \(item)")
+        .accessibilityLabel("\(item) color")
+        .accessibilityValue(item == categoryColor ? "Selected" : "Not selected")
+        .accessibilityHint("Selects this color for the category.")
+        .accessibilityAddTraits(item == categoryColor ? .isSelected : [])
     }
 
     private func categoryRow(for category: Category) -> some View {

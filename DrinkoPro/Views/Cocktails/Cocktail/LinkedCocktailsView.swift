@@ -23,6 +23,7 @@ struct LinkedCocktailsView: View {
                             .bold()
                             .imageScale(.small)
                             .foregroundStyle(.secondary)
+                            .accessibilityHidden(true)
                     }
                 }
                 .buttonStyle(.plain)
