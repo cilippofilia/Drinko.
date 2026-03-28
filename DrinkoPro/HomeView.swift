@@ -56,6 +56,6 @@ struct HomeView: View {
 #if DEBUG
 #Preview {
     HomeView()
-        .environment(Favorites())
+        .drinkoPreviewEnvironment()
 }
 #endif

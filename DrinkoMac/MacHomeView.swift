@@ -55,4 +55,5 @@ struct MacHomeView: View {
 
 #Preview {
     MacHomeView()
+        .drinkoPreviewEnvironment()
 }

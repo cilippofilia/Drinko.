@@ -358,8 +358,7 @@ private extension CocktailsView {
 #Preview {
     NavigationStack {
         CocktailsView()
-            .environment(CocktailsViewModel())
-            .environment(Favorites())
+            .drinkoPreviewEnvironment()
     }
 }
 #endif

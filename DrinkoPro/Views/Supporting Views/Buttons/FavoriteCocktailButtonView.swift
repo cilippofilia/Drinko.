@@ -38,5 +38,6 @@ struct FavoriteCocktailButtonView: View {
 #if DEBUG
 #Preview {
     FavoriteCocktailButtonView(cocktail: .example)
+        .drinkoPreviewEnvironment()
 }
 #endif

@@ -201,5 +201,6 @@ struct LearnView: View {
 #if DEBUG
 #Preview {
     LearnView()
+        .drinkoPreviewEnvironment()
 }
 #endif

@@ -6,6 +6,10 @@
 //
 
 import Foundation
+#if DEBUG
+import SwiftData
+import SwiftUI
+#endif
 
 // MARK: COCKTAIL
 extension Cocktail {
@@ -155,3 +159,83 @@ extension Book {
     )
 #endif
 }
+
+#if DEBUG
+@MainActor
+enum PreviewSupport {
+    static let modelContainer: ModelContainer = {
+        let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
+        let container = try! ModelContainer(
+            for: Category.self,
+            Item.self,
+            UserCreatedCocktail.self,
+            UserIngredient.self,
+            UserProcedure.self,
+            UserProcedureStep.self,
+            configurations: configuration
+        )
+
+        let category = Category(
+            name: "Vodka",
+            detail: "Taste like water",
+            color: "Dr. Blue",
+            creationDate: .now
+        )
+        let product = Item(
+            name: "Absolut",
+            detail: "Made from potatoes",
+            madeIn: "Poland",
+            abv: "40"
+        )
+        product.category = category
+        category.products = [product]
+
+        let ingredient = UserIngredient(name: "Rum", quantity: 2.0, unit: "oz.")
+        let steps = [
+            UserProcedureStep(text: "Do nothing, shake", order: 1),
+            UserProcedureStep(text: "Then do something", order: 2),
+            UserProcedureStep(text: "Still continue to do nothing", order: 3)
+        ]
+        let procedure = UserProcedure(steps: steps)
+        let userCocktail = UserCreatedCocktail(
+            id: "user-created-preview",
+            name: "Aperum",
+            method: "shake",
+            glass: "rock",
+            garnish: "No",
+            ice: "Cubed",
+            extra: "-",
+            ingredients: [ingredient],
+            procedure: procedure,
+            creationDate: .now,
+            lastUpdated: .now
+        )
+
+        container.mainContext.insert(category)
+        container.mainContext.insert(userCocktail)
+
+        return container
+    }()
+
+    static let favorites = Favorites()
+
+    static let cocktailsViewModel: CocktailsViewModel = {
+        let viewModel = CocktailsViewModel()
+        viewModel.configure(modelContext: modelContainer.mainContext)
+        return viewModel
+    }()
+
+    static let lessonsViewModel = LessonsViewModel()
+}
+
+extension View {
+    @MainActor
+    func drinkoPreviewEnvironment() -> some View {
+        self
+            .environment(PreviewSupport.favorites)
+            .environment(PreviewSupport.cocktailsViewModel)
+            .environment(PreviewSupport.lessonsViewModel)
+            .modelContainer(PreviewSupport.modelContainer)
+    }
+}
+#endif

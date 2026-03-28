@@ -100,5 +100,6 @@ struct SplashScreenView: View {
 #if DEBUG
 #Preview {
     SplashScreenView()
+        .drinkoPreviewEnvironment()
 }
 #endif
