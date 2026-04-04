@@ -45,16 +45,16 @@ struct ReadMeView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
-                        CreditsCardView(name: "Danil Nevsky 🍸",
+                        CreditsCardView(name: "Danil Nevsky",
                                         brief: "Instagram: @cocktailman",
                                         url: "https://instagram.com/cocktailman")
-                        CreditsCardView(name: "Christopher Lowder 🍸",
+                        CreditsCardView(name: "Christopher Lowder",
                                         brief: "Instagram: @getlowdernow",
                                         url: "https://instagram.com/getlowdernow")
-                        CreditsCardView(name: "Kevin Kos 🍸",
+                        CreditsCardView(name: "Kevin Kos",
                                         brief: "Instagram: @kevin_kos",
                                         url: "https://www.instagram.com/kevin_kos")
-                        CreditsCardView(name: "Filippo Cilia 🍸",
+                        CreditsCardView(name: "Filippo Cilia",
                                         brief: "Instagram: @cilippofilia",
                                         url: "https://instagram.com/cilippofilia")
                     }
@@ -65,30 +65,33 @@ struct ReadMeView: View {
                     
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
-                        CreditsCardView(name: "Difford's Guide 🍸",
+                        CreditsCardView(name: "Difford's Guide",
                                         brief: "For discerning drinkers.",
                                         url: "https://www.diffordsguide.com")
-                        CreditsCardView(name: "Simone Colombatto 🎥",
+                        CreditsCardView(name: "Simone Colombatto",
                                         brief: "Instagram: @simonkol_",
                                         url: "https://instagram.com/simonkol_")
-                        CreditsCardView(name: "The Beer Corner 🍺",
+                        CreditsCardView(name: "The Beer Corner",
                                         brief: "Instagram: @thebeercornercantu",
                                         url: "https://instagram.com/thebeercornercantu")
                     }
                     
-                    Text("Translations")
+                    Text("Translations & UI Design")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
                               spacing: sizeClass == .compact ? 10 : 20) {
-                        CreditsCardView(name: "Filippo Cilia 🇮🇹",
+                        CreditsCardView(name: "Alex Trubacs",
+                                        brief: "X (Twitter): @actlikeacrazy",
+                                        url: "https://instagram.com/actlikeacrazy")
+                        CreditsCardView(name: "Filippo Cilia",
                                         brief: "Instagram: @cilippofilia",
                                         url: "https://instagram.com/cilippofilia")
-                        CreditsCardView(name: "Arthur 🇫🇷",
+                        CreditsCardView(name: "Arthur",
                                         brief: "X (Twitter): @AriOS_app",
                                         url: "https://x.com/arios_app")
-                        CreditsCardView(name: "Nicolas 🇩🇪",
+                        CreditsCardView(name: "Nicolas",
                                         brief: "X (Twitter): @theduodev",
                                         url: "https://x.com/theduodev")
                     }

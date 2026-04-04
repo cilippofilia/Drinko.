@@ -11,6 +11,7 @@ import SwiftUI
 struct CocktailsView: View {
     static let cocktailsTag: String? = "Cocktails"
 
+    @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
     @Environment(\.modelContext) private var modelContext
@@ -101,6 +102,10 @@ struct CocktailsView: View {
                         viewModel.configure(modelContext: modelContext)
                         didConfigureModelContext = true
                     }
+                    openPendingCocktailIfNeeded()
+                }
+                .onChange(of: appNavigationModel.pendingCocktailID, initial: true) { _, _ in
+                    openPendingCocktailIfNeeded()
                 }
         }
     }
@@ -351,6 +356,15 @@ private extension CocktailsView {
             Image(systemName: "plus")
         }
         .accessibilityLabel("Create Cocktail")
+    }
+
+    @MainActor
+    func openPendingCocktailIfNeeded() {
+        guard let cocktailID = appNavigationModel.consumePendingCocktailID() else { return }
+        guard let cocktail = viewModel.listOfAllDrinks.first(where: { $0.id == cocktailID }) else { return }
+
+        path = NavigationPath()
+        path.append(cocktail)
     }
 }
 

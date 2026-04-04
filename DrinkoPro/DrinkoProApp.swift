@@ -13,6 +13,7 @@ struct DrinkoProApp: App {
     @State private var favorites = Favorites()
     @State private var cocktailsViewModel = CocktailsViewModel()
     @State private var lessonsViewModel = LessonsViewModel()
+    @State private var appNavigationModel = AppNavigationModel()
 
     private let modelContainer: ModelContainer
 
@@ -42,10 +43,14 @@ struct DrinkoProApp: App {
                     minHeight: 480
                 )
             #endif
+            .onOpenURL { url in
+                appNavigationModel.handle(url: url)
+            }
         }
         .environment(favorites)
         .environment(cocktailsViewModel)
         .environment(lessonsViewModel)
+        .environment(appNavigationModel)
         .modelContainer(modelContainer)
     }
 }

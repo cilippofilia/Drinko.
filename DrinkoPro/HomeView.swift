@@ -9,6 +9,7 @@ import StoreKit
 import SwiftUI
 
 struct HomeView: View {
+    @Environment(AppNavigationModel.self) private var appNavigationModel
     // AppStorage is used to keep track of how many times the app has been opened
     @AppStorage("appUsageCounter") var appUsageCounter: Int = 0
     // SceneStorage is used to keep track of what tab was last used before closing the app
@@ -16,7 +17,7 @@ struct HomeView: View {
     @Environment(\.requestReview) private var requestReview
 
     var body: some View {
-        TabView(selection: $selectedView) {
+        TabView(selection: selectedViewBinding) {
             Tab("Learn", systemImage: "books.vertical", value: LearnView.learnTag) {
                 NavigationStack {
                     LearnView()
@@ -50,6 +51,18 @@ struct HomeView: View {
             if appUsageCounter > 103 { appUsageCounter = 0 }
             requestReview()
         }
+    }
+
+    private var selectedViewBinding: Binding<String?> {
+        Binding(
+            get: {
+                appNavigationModel.selectedTab ?? selectedView
+            },
+            set: { newValue in
+                selectedView = newValue
+                appNavigationModel.selectedTab = newValue
+            }
+        )
     }
 }
 
