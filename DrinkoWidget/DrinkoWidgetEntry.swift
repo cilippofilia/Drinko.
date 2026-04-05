@@ -12,7 +12,7 @@ import WidgetKit
 // can render the same "daily pick" consistently.
 struct DrinkoWidgetEntry: TimelineEntry {
     let date: Date
-    let cocktail: DrinkoWidgetCocktail
+    let cocktail: WidgetCocktail
     let imageData: Data?
 
     var deepLinkURL: URL? {

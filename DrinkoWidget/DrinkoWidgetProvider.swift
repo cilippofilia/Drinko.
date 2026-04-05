@@ -13,7 +13,16 @@ struct DrinkoWidgetProvider: TimelineProvider {
     func placeholder(in context: Context) -> DrinkoWidgetEntry {
         DrinkoWidgetEntry(
             date: .now,
-            cocktail: DrinkoWidgetCatalog.sampleCocktail,
+            cocktail: .init(
+                id: "test-id",
+                name: "Test Name",
+                method: "",
+                glass: "",
+                garnish: "",
+                ice: "",
+                extra: "",
+                ingredients: []
+            ),
             imageData: nil
         )
     }
@@ -36,8 +45,8 @@ struct DrinkoWidgetProvider: TimelineProvider {
     }
 
     private func makeEntry(for date: Date) -> DrinkoWidgetEntry {
-        let cocktails = DrinkoWidgetCatalog.loadCocktails()
-        let cocktail = DrinkoWidgetCatalog.cocktailOfTheDay(from: cocktails, on: date)
+        let cocktails = Bundle.main.decode([WidgetCocktail].self, from: "cocktails.json")
+        let cocktail = cocktails.randomElement() ?? cocktails[0]
         let imageData = DrinkoWidgetImageStore.imageData(for: cocktail)
         return DrinkoWidgetEntry(date: date, cocktail: cocktail, imageData: imageData)
     }

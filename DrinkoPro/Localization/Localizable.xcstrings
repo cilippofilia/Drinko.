@@ -2902,6 +2902,12 @@
         }
       }
     },
+    "Daily Pick" : {
+
+    },
+    "Daily Pick:" : {
+
+    },
     "Delete" : {
       "localizations" : {
         "de" : {
@@ -3248,6 +3254,9 @@
           }
         }
       }
+    },
+    "Discover a new daily cocktail pick from Drinko." : {
+
     },
     "Dismiss" : {
       "extractionState" : "manual",
@@ -5844,6 +5853,9 @@
           }
         }
       }
+    },
+    "Random Cocktail" : {
+
     },
     "Rate the app" : {
       "localizations" : {

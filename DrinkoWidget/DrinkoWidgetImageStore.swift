@@ -8,7 +8,7 @@
 import Foundation
 
 enum DrinkoWidgetImageStore {
-    static func imageData(for cocktail: DrinkoWidgetCocktail) -> Data? {
+    static func imageData(for cocktail: WidgetCocktail) -> Data? {
         guard let imageURL = cocktail.imageURL else { return nil }
 
         let cacheURL = cachedFileURL(for: cocktail, remoteURL: imageURL)
@@ -26,7 +26,7 @@ enum DrinkoWidgetImageStore {
         return data
     }
 
-    private static func cachedFileURL(for cocktail: DrinkoWidgetCocktail, remoteURL: URL) -> URL {
+    private static func cachedFileURL(for cocktail: WidgetCocktail, remoteURL: URL) -> URL {
         let fileExtension = remoteURL.pathExtension.isEmpty ? "jpg" : remoteURL.pathExtension
         return URL.cachesDirectory
             .appending(path: "DrinkoWidget")

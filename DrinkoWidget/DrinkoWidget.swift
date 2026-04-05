@@ -17,7 +17,7 @@ struct DrinkoWidget: Widget {
         StaticConfiguration(kind: kind, provider: DrinkoWidgetProvider()) { entry in
             DrinkoWidgetView(entry: entry)
         }
-        .configurationDisplayName("Random Cocktail")
+        .configurationDisplayName("Cocktail of the Day")
         .description("Discover a new daily cocktail pick from Drinko.")
         .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
     }

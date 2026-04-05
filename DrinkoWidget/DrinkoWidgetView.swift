@@ -36,28 +36,28 @@ struct DrinkoWidgetView: View {
 }
 
 private struct DrinkoWidgetSmallView: View {
-    let cocktail: DrinkoWidgetCocktail
+    let cocktail: WidgetCocktail
     let imageData: Data?
 
     var body: some View {
         ZStack {
             Text(cocktail.name)
-                .font(.system(size: 36, weight: .heavy))
+                .font(.system(size: 36, weight: .heavy, design: .serif))
                 .fontWidth(.expanded)
-                .foregroundStyle(.black)
-                .lineLimit(2)
+                .foregroundStyle(.black.gradient)
+                .lineLimit(3)
                 .minimumScaleFactor(0.5)
                 .frame(maxHeight: .infinity, alignment: .top)
 
             WidgetRenderedImage(imageData: imageData)
-                .scaleEffect(2.3)
-                .offset(y: 85)
+                .scaleEffect(1.25)
+                .frame(maxHeight: .infinity, alignment: .bottom)
         }
     }
 }
 
 private struct DrinkoWidgetMediumView: View {
-    let cocktail: DrinkoWidgetCocktail
+    let cocktail: WidgetCocktail
     let imageData: Data?
 
     var body: some View {
@@ -73,25 +73,6 @@ private struct DrinkoWidgetMediumView: View {
                     .foregroundStyle(.black)
                     .multilineTextAlignment(.leading)
                     .lineLimit(3)
-
-                ForEach(cocktail.ingredients, id: \.name) { ingredient in
-                    HStack(spacing: 0) {
-                        Group {
-                            Text(ingredient.quantity)
-                                .padding(.trailing, 2)
-                            Text(ingredient.unit)
-                                .padding(.trailing, 5)
-                        }
-                        .font(.subheadline)
-
-                        Text(ingredient.name)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .font(.subheadline)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-
-                        Spacer()
-                    }
-                }
             }
         }
         .overlay(alignment: .topLeading) {
@@ -103,7 +84,7 @@ private struct DrinkoWidgetMediumView: View {
 }
 
 private struct DrinkoWidgetLargeView: View {
-    let cocktail: DrinkoWidgetCocktail
+    let cocktail: WidgetCocktail
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -133,18 +114,6 @@ private struct DrinkoWidgetLargeView: View {
     }
 }
 
-private struct WidgetPlaceholderView: View {
-    var body: some View {
-        Rectangle()
-            .fill(.fill.quaternary)
-            .overlay {
-                Image(systemName: "wineglass")
-                    .font(.largeTitle)
-                    .foregroundStyle(.secondary)
-            }
-    }
-}
-
 private struct WidgetRenderedImage: View {
     let imageData: Data?
 
@@ -154,38 +123,6 @@ private struct WidgetRenderedImage: View {
             Image(uiImage: uiImage)
                 .resizable()
                 .scaledToFit()
-        } else {
-            WidgetPlaceholderView()
         }
     }
-}
-
-#Preview("Small", as: .systemSmall) {
-    DrinkoWidget()
-} timeline: {
-    DrinkoWidgetEntry(
-        date: .now,
-        cocktail: DrinkoWidgetCatalog.sampleCocktail,
-        imageData: nil
-    )
-}
-
-#Preview("Medium", as: .systemMedium) {
-    DrinkoWidget()
-} timeline: {
-    DrinkoWidgetEntry(
-        date: .now,
-        cocktail: DrinkoWidgetCatalog.sampleCocktail,
-        imageData: nil
-    )
-}
-
-#Preview("Large", as: .systemLarge) {
-    DrinkoWidget()
-} timeline: {
-    DrinkoWidgetEntry(
-        date: .now,
-        cocktail: DrinkoWidgetCatalog.sampleCocktail,
-        imageData: nil
-    )
 }
