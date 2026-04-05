@@ -68,7 +68,9 @@ struct MacCabinetUnavailableView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     MacCabinetUnavailableView(showAddCategorySheet: .constant(true), action: { })
         .drinkoPreviewEnvironment()
 }
+#endif

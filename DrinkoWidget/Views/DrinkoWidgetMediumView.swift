@@ -14,27 +14,55 @@ struct DrinkoWidgetMediumView: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            Color.red
+            ZStack {
+                VStack {
+                    Text("Cocktail")
+                    HStack {
+                        Text("of")
+                        Spacer()
+                        Text("the")
+                    }
+                }
+                .textCase(.uppercase)
+                .font(.system(size: 36, weight: .heavy, design: .serif))
+                .foregroundStyle(.black.gradient)
+                .lineLimit(3)
+                .minimumScaleFactor(0.8)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
-            Color.yellow
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                WidgetRenderedImage(imageData: imageData)
+                    .frame(maxHeight: .infinity, alignment: .bottom)
+
+                HStack {
+                    Text("D")
+                    Spacer()
+                    Text("a")
+                    Spacer()
+                    Text("y")
+                }
+            }
+
+            VStack(alignment: .leading, spacing: 4) {
+                Text(cocktail.name)
+                    .font(.headline)
+                    .foregroundStyle(.black.gradient)
+                    .lineLimit(3)
+
+                ForEach(cocktail.ingredients.prefix(6)) { ingredient in
+                    Text(ingredient.name.capitalized)
+                        .font(.caption)
+                }
+
+                if cocktail.ingredients.count > 6 {
+                    Text("see more...")
+                        .foregroundStyle(.secondary)
+                        .font(.caption)
+                        .padding(.top, 2)
+                }
+            }
+            .minimumScaleFactor(0.8)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-//        HStack {
-//            WidgetRenderedImage(imageData: imageData)
-//                .frame(maxWidth: .infinity, alignment: .bottom)
-//                .scaleEffect(2)
-//                .offset(y: 50)
-//
-//            VStack(alignment: .leading) {
-//                Text(cocktail.name)
-//                    .bold()
-//                    .foregroundStyle(.black)
-//                    .multilineTextAlignment(.leading)
-//                    .lineLimit(3)
-//            }
-//        }
     }
 }
 

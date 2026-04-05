@@ -15,7 +15,6 @@ struct DrinkoWidgetSmallView: View {
         ZStack {
             Text(cocktail.name)
                 .font(.system(size: 36, weight: .heavy, design: .serif))
-                .fontWidth(.expanded)
                 .foregroundStyle(.black.gradient)
                 .lineLimit(3)
                 .minimumScaleFactor(0.5)

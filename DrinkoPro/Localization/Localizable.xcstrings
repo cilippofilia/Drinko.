@@ -688,6 +688,9 @@
         }
       }
     },
+    "a" : {
+
+    },
     "A > Z" : {
       "localizations" : {
         "de" : {
@@ -2451,6 +2454,9 @@
         }
       }
     },
+    "Cocktail" : {
+
+    },
     "Cocktail name" : {
       "localizations" : {
         "de" : {
@@ -2905,10 +2911,7 @@
         }
       }
     },
-    "Daily Pick" : {
-
-    },
-    "Daily Pick:" : {
+    "D" : {
 
     },
     "Delete" : {
@@ -5173,6 +5176,9 @@
         }
       }
     },
+    "of" : {
+
+    },
     "OK" : {
       "localizations" : {
         "de" : {
@@ -6447,6 +6453,9 @@
         }
       }
     },
+    "see more..." : {
+
+    },
     "Select an option" : {
       "localizations" : {
         "de" : {
@@ -7308,6 +7317,9 @@
         }
       }
     },
+    "the" : {
+
+    },
     "This app was made with ❤️ by Filippo Cilia 🇮🇹" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7857,6 +7869,9 @@
           }
         }
       }
+    },
+    "y" : {
+
     },
     "You may also like" : {
       "localizations" : {
