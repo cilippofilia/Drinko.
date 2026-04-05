@@ -13,16 +13,7 @@ struct DrinkoWidgetProvider: TimelineProvider {
     func placeholder(in context: Context) -> DrinkoWidgetEntry {
         DrinkoWidgetEntry(
             date: .now,
-            cocktail: .init(
-                id: "test-id",
-                name: "Test Name",
-                method: "",
-                glass: "",
-                garnish: "",
-                ice: "",
-                extra: "",
-                ingredients: []
-            ),
+            cocktail: DrinkoWidgetCatalog.nullCocktail,
             imageData: nil
         )
     }

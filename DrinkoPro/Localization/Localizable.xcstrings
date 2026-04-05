@@ -2479,6 +2479,9 @@
         }
       }
     },
+    "Cocktail of the Day" : {
+
+    },
     "Cocktails" : {
       "comment" : "Cocktails Tab",
       "localizations" : {
@@ -5853,9 +5856,6 @@
           }
         }
       }
-    },
-    "Random Cocktail" : {
-
     },
     "Rate the app" : {
       "localizations" : {
