@@ -1,11 +1,11 @@
 //
-//  DrinkoWidgetCatalog.swift
-//  DrinkoWidget
+//  WidgetCocktail.swift
+//  DrinkoPro
 //
-//  Created by Filippo Cilia on 04/04/2026.
+//  Created by Filippo Cilia on 4/5/26.
 //
 
-import Foundation
+import SwiftUI
 
 // The widget only needs a lightweight read-only model, so it decodes a small
 // subset of the cocktail JSON instead of pulling in the full app view model.
@@ -38,26 +38,4 @@ struct WidgetIngredient: Codable, Equatable, Identifiable, Hashable {
     let name: String
     let quantity: Double
     let unit: String
-}
-
-enum DrinkoWidgetCatalog {
-    static func nextRefreshDate(
-        after date: Date = .now,
-        calendar: Calendar = .current
-    ) -> Date {
-        let startOfDay = calendar.startOfDay(for: date)
-        return calendar.date(byAdding: .day, value: 1, to: startOfDay)
-            ?? date.addingTimeInterval(86_400)
-    }
-
-    static let nullCocktail: WidgetCocktail = .init(
-        id: "test-id",
-        name: "Test Name",
-        method: "",
-        glass: "",
-        garnish: "",
-        ice: "",
-        extra: "",
-        ingredients: []
-    )
 }

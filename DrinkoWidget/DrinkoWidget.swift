@@ -19,6 +19,6 @@ struct DrinkoWidget: Widget {
         }
         .configurationDisplayName("Cocktail of the Day")
         .description("Discover a new daily cocktail pick from Drinko.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

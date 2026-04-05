@@ -89,7 +89,6 @@
 		18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 		1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A1000023A4F000100000001 /* DrinkoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1A1000153A4F000100000001 /* DrinkoPro/Localization/Cocktail/cocktails.json in Resources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* DrinkoPro/Localization/Cocktail/cocktails.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,7 +175,6 @@
 		18F49EB72A286D2E00862CE3 /* CocktailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailsView.swift; sourceTree = "<group>"; };
 		18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
 		1A1000023A4F000100000001 /* DrinkoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DrinkoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A1000163A4F000100000001 /* DrinkoPro/Localization/Cocktail/cocktails.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DrinkoPro/Localization/Cocktail/cocktails.json; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -435,14 +433,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		18BE4DC72F8178EE00473582 /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				1A1000163A4F000100000001 /* DrinkoPro/Localization/Cocktail/cocktails.json */,
-			);
-			name = "Recovered References";
-			sourceTree = "<group>";
-		};
 		18F49E572A27B28D00862CE3 = {
 			isa = PBXGroup;
 			children = (
@@ -452,7 +442,6 @@
 				18A929A92F12C13D00B70219 /* DrinkoMac */,
 				18F49E612A27B28D00862CE3 /* Products */,
 				183723C82A909AB700DBCD5D /* Frameworks */,
-				18BE4DC72F8178EE00473582 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -720,7 +709,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A1000153A4F000100000001 /* DrinkoPro/Localization/Cocktail/cocktails.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
