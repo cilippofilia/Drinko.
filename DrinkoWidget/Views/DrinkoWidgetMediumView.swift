@@ -17,11 +17,21 @@ struct DrinkoWidgetMediumView: View {
             ZStack {
                 VStack {
                     Text("Cocktail")
+                    Spacer()
                     HStack {
                         Text("of")
                         Spacer()
                         Text("the")
                     }
+                    Spacer()
+                    HStack {
+                        Text("D")
+                        Spacer()
+                        Text("a")
+                        Spacer()
+                        Text("y")
+                    }
+                    .opacity(0)
                 }
                 .textCase(.uppercase)
                 .font(.system(size: 36, weight: .heavy, design: .serif))
@@ -33,13 +43,32 @@ struct DrinkoWidgetMediumView: View {
                 WidgetRenderedImage(imageData: imageData)
                     .frame(maxHeight: .infinity, alignment: .bottom)
 
-                HStack {
-                    Text("D")
+                VStack {
+                    Text("Cocktail")
+                        .opacity(0)
                     Spacer()
-                    Text("a")
+                    HStack {
+                        Text("of")
+                        Spacer()
+                        Text("the")
+                    }
+                    .opacity(0)
                     Spacer()
-                    Text("y")
+                    HStack {
+                        Text("D")
+                        Spacer()
+                        Text("a")
+                        Spacer()
+                        Text("y")
+                    }
                 }
+                .textCase(.uppercase)
+                .font(.system(size: 36, weight: .heavy, design: .serif))
+                .foregroundStyle(.black.gradient)
+                .lineLimit(3)
+                .minimumScaleFactor(0.8)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+
             }
 
             VStack(alignment: .leading, spacing: 4) {
