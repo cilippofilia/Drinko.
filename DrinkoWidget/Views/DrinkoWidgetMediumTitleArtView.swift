@@ -41,7 +41,7 @@ struct DrinkoWidgetMediumTitleArtView: View {
         .font(.system(size: 36, weight: .heavy, design: .serif))
         .foregroundStyle(.black.gradient)
         .lineLimit(3)
-        .minimumScaleFactor(0.8)
+        .minimumScaleFactor(0.6)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
 }
