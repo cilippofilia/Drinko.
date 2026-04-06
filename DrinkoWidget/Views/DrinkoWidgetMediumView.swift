@@ -45,7 +45,8 @@ struct DrinkoWidgetMediumView: View {
                 }
             }
             .minimumScaleFactor(0.8)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.leading, 4)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }
     }
 }

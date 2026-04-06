@@ -196,6 +196,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Bundle-Decodable.swift",
+				"String-Ext.swift",
 			);
 			target = 1A1000093A4F000100000001 /* DrinkoWidget */;
 		};

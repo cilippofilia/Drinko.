@@ -30,6 +30,8 @@ enum DrinkoWidgetCatalog {
             .init(name: "Spirit 2", quantity: 30.0, unit: "ml"),
             .init(name: "Sour stuff 1", quantity: 15.0, unit: "ml"),
             .init(name: "Sweet stuff 1", quantity: 15.0, unit: "ml"),
+            .init(name: "Mistery ingr. 1", quantity: 5.0, unit: "ml"),
+            .init(name: "Mistery ingr. 2", quantity: 5.0, unit: "ml"),
             .init(name: "Some weird ingredient", quantity: 3.0, unit: "barspoons")
         ]
     )

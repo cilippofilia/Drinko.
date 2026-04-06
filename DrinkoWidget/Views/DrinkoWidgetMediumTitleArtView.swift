@@ -42,6 +42,6 @@ struct DrinkoWidgetMediumTitleArtView: View {
         .foregroundStyle(.black.gradient)
         .lineLimit(3)
         .minimumScaleFactor(0.8)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
     }
 }

@@ -37,7 +37,13 @@ struct DrinkoWidgetProvider: TimelineProvider {
 
     private func makeEntry(for date: Date) -> DrinkoWidgetEntry {
         let cocktails = Bundle.main.decode([WidgetCocktail].self, from: "cocktails.json")
-        let cocktail = cocktails.randomElement() ?? cocktails[0]
+
+        // Calculate a unique integer for the given day since the start of the calendar era.
+        // Modding by the cocktail count cycles through all cocktails evenly,
+        // ensuring a different cocktail is shown each day without any persistence.
+        let dayIndex = Calendar.current.ordinality(of: .day, in: .era, for: date) ?? 0
+        let cocktail = cocktails[dayIndex % cocktails.count]
+
         let imageData = DrinkoWidgetImageStore.imageData(for: cocktail)
         return DrinkoWidgetEntry(date: date, cocktail: cocktail, imageData: imageData)
     }
