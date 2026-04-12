@@ -39,7 +39,7 @@ struct DrinkoWidgetMediumView: View {
 
                 if cocktail.ingredients.count > visibleIngredientCount {
                     Text("see more...")
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(.gray)
                         .font(.caption)
                         .padding(.top, 2)
                 }
