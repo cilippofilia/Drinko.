@@ -34,7 +34,7 @@ struct DrinkoWidgetMediumTitleArtView: View {
                 Text("D")
                 Spacer()
                 Text("a")
-                    .foregroundStyle(colorScheme == .dark ? Color.black: Color.clear)
+                    .foregroundStyle(colorScheme == .dark ? Color.black: Color.primary)
                 Spacer()
                 Text("y")
             }
