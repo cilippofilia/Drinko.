@@ -29,6 +29,6 @@ struct DrinkoWidgetView: View {
         }
         // The entire widget opens the matching cocktail detail when tapped.
         .widgetURL(entry.deepLinkURL)
-        .containerBackground(.white, for: .widget)
+        .containerBackground(.background, for: .widget)
     }
 }

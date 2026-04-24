@@ -28,13 +28,13 @@ struct DrinkoWidgetMediumView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(cocktail.name)
                     .font(.headline)
-                    .foregroundStyle(.black.gradient)
+                    .foregroundStyle(.primary)
                     .lineLimit(3)
 
                 ForEach(cocktail.ingredients.prefix(visibleIngredientCount)) { ingredient in
                     Text(ingredient.name.capitalized)
                         .font(.caption)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.primary)
                 }
 
                 if cocktail.ingredients.count > visibleIngredientCount {
@@ -57,7 +57,7 @@ struct DrinkoWidgetMediumView_Previews: PreviewProvider {
             cocktail: DrinkoWidgetCatalog.nullCocktail,
             imageData: nil
         )
-        .containerBackground(.white, for: .widget)
+        .containerBackground(.background, for: .widget)
         .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

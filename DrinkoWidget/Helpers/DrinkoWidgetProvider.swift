@@ -41,7 +41,7 @@ struct DrinkoWidgetProvider: TimelineProvider {
         // Calculate a unique integer for the given day since the start of the calendar era.
         // Modding by the cocktail count cycles through all cocktails evenly,
         // ensuring a different cocktail is shown each day without any persistence.
-        let dayIndex = Calendar.current.ordinality(of: .day, in: .era, for: date) ?? 0
+        let dayIndex = Calendar.autoupdatingCurrent.ordinality(of: .day, in: .era, for: date) ?? 0
         let cocktail = cocktails[dayIndex % cocktails.count]
 
         let imageData = DrinkoWidgetImageStore.imageData(for: cocktail)
