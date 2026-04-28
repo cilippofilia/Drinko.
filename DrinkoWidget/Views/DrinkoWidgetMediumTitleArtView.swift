@@ -14,6 +14,10 @@ struct DrinkoWidgetMediumTitleArtView: View {
     let hiddenMiddleRow: Bool
     let hiddenBottomRow: Bool
 
+    var shadowColor: Color {
+        colorScheme == .dark ? .primary.opacity(0.85) : Color.clear
+    }
+
     var body: some View {
         VStack {
             Text("Cocktail")
@@ -34,7 +38,11 @@ struct DrinkoWidgetMediumTitleArtView: View {
                 Text("D")
                 Spacer()
                 Text("a")
-                    .foregroundStyle(colorScheme == .dark ? Color.black: Color.primary)
+                    .foregroundStyle(colorScheme == .dark ? Color.black : Color.primary)
+                    .shadow(color: shadowColor, radius: 1, x: -2, y: 0)
+                    .shadow(color: shadowColor, radius: 1, x: 2, y: 0)
+                    .shadow(color: shadowColor, radius: 1, x: 0, y: -2)
+                    .shadow(color: shadowColor, radius: 1, x: 0, y: 2)
                 Spacer()
                 Text("y")
             }
