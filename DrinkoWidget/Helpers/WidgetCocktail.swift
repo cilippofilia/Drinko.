@@ -22,7 +22,7 @@ struct WidgetCocktail: Codable, Equatable, Identifiable, Hashable {
 
     var pic: String {
         if id == "augie-march" {
-            "https://raw.githubusercontent.com/cilippofilia/drinko-cocktail-pics/main/manhattan-img.png"
+            "https://raw.githubusercontent.com/cilippofilia/drinko-clear-cocktail-pics/main/manhattan-img.png"
         } else {
             "https://raw.githubusercontent.com/cilippofilia/drinko-clear-cocktail-pics/main/\(id)-img.png"
         }

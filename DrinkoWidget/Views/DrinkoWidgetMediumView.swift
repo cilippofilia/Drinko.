@@ -28,13 +28,13 @@ struct DrinkoWidgetMediumView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(cocktail.name)
                     .font(.headline)
-                    .foregroundStyle(.primary)
+                    .foregroundStyle(.black)
                     .lineLimit(3)
 
                 ForEach(cocktail.ingredients.prefix(visibleIngredientCount)) { ingredient in
                     Text(ingredient.name.capitalized)
                         .font(.caption)
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(.black)
                 }
 
                 if cocktail.ingredients.count > visibleIngredientCount {
