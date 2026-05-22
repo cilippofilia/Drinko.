@@ -1,0 +1,21 @@
+Drinko: Cocktail Recipes
+========================
+
+Drinko helps you make better cocktails at home with classic recipes, bartending tutorials, and a smart cabinet to track ingredients.
+
+Explore 100+ classic cocktail recipes, learn essential bartending techniques, save your favorites, add your own recipes, and see what you already have in your cabinet before you shop.
+
+Drinko is built for beginners and cocktail enthusiasts who want to mix with more confidence, improve their technique, and stay organized behind the bar.
+
+---
+About the Developer
+Filippo Cilia is a product-focused app developer who ships independently. They learn by building and improving real products over time, and prioritise usability and clarity in everything they build. Filippo's first app is Drinko: Cocktail Recipes, which was released on June 2023 and been evolving since.
+
+---
+Press Contact
+Name: Filippo Cilia
+Email: cilia.filippo@icloud.com
+
+Launch Date: January 1, 2026
+
+App Store: https://apps.apple.com/app/id6449893371
