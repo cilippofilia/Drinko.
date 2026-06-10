@@ -23,7 +23,6 @@ A prioritized list of enhancements for Drinko. Items move from **Next** to **Now
 ## Later — engagement & content
 
 - [ ] **TipKit adoption** — contextual tips for under-discovered features (oz/ml converter, favorites swipe, Cabinet)
-- [ ] **Lesson videos** — the `Lesson` model already has `hasVideo`/`videoURL` flags, but no player is implemented
 - [ ] **Tags & spirit-base filtering** — filter cocktails by base spirit (gin, whiskey, rum…) and add a "surprise me" random pick
 - [ ] **Shareable cocktail cards** — render a recipe card with `ImageRenderer` and share it
 - [ ] **Photos for user-created cocktails**
