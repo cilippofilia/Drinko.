@@ -23,10 +23,10 @@ struct DrinkoWidgetView: View {
                 DrinkoWidgetSmallView(cocktail: entry.cocktail, imageData: entry.imageData)
                     .containerBackground(.background, for: .widget)
             case .systemMedium:
-                DrinkoWidgetMediumView(cocktail: entry.cocktail, imageData: entry.imageData)
+                DrinkoWidgetMediumView(cocktail: entry.cocktail, imageData: entry.imageData, showsIngredients: entry.showsIngredients)
                     .containerBackground(.white, for: .widget)
             default:
-                DrinkoWidgetMediumView(cocktail: entry.cocktail, imageData: entry.imageData)
+                DrinkoWidgetMediumView(cocktail: entry.cocktail, imageData: entry.imageData, showsIngredients: entry.showsIngredients)
                     .containerBackground(.white, for: .widget)
             }
         }

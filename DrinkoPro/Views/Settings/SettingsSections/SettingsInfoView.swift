@@ -20,6 +20,16 @@ struct SettingsInfoView: View {
                 )
             }
 
+            #if os(iOS)
+            NavigationLink(destination: WidgetTutorialView()) {
+                SettingsRowView(
+                    icon: "widget.medium",
+                    color: .secondary,
+                    itemName: "Add a Widget"
+                )
+            }
+            #endif
+
             ShareLink(item: drinkoURL!) {
                 SettingsRowView(
                     icon: "square.and.arrow.up",

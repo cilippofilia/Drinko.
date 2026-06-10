@@ -7,44 +7,65 @@
 
 import WidgetKit
 
-struct DrinkoWidgetProvider: TimelineProvider {
+struct DrinkoWidgetProvider: AppIntentTimelineProvider {
+    typealias Configuration = CocktailWidgetConfigurationIntent
+
     // The placeholder is what users see in the gallery before real data loads.
     // It should be instant and use a representative sample model.
     func placeholder(in context: Context) -> DrinkoWidgetEntry {
         DrinkoWidgetEntry(
             date: .now,
             cocktail: DrinkoWidgetCatalog.nullCocktail,
-            imageData: nil
+            imageData: nil,
+            showsIngredients: true
         )
     }
 
     // Snapshot is the fast path WidgetKit uses for previews and transient loads.
     // We compute the same daily cocktail here so previews match the real widget.
-    func getSnapshot(in context: Context, completion: @escaping (DrinkoWidgetEntry) -> Void) {
-        completion(makeEntry(for: .now))
+    func snapshot(for configuration: Configuration, in context: Context) async -> DrinkoWidgetEntry {
+        await makeEntry(for: .now, configuration: configuration)
     }
 
     // The real timeline rotates once per day. Every size uses the same entry,
     // then WidgetKit asks again at the next day boundary.
-    func getTimeline(in context: Context, completion: @escaping (Timeline<DrinkoWidgetEntry>) -> Void) {
+    func timeline(for configuration: Configuration, in context: Context) async -> Timeline<DrinkoWidgetEntry> {
         let currentDate = Date.now
-        let timeline = Timeline(
-            entries: [makeEntry(for: currentDate)],
+        let entry = await makeEntry(for: currentDate, configuration: configuration)
+        return Timeline(
+            entries: [entry],
             policy: .after(DrinkoWidgetCatalog.nextRefreshDate(after: currentDate))
         )
-        completion(timeline)
     }
 
-    private func makeEntry(for date: Date) -> DrinkoWidgetEntry {
+    private func makeEntry(for date: Date, configuration: Configuration) async -> DrinkoWidgetEntry {
         let cocktails = Bundle.main.decode([WidgetCocktail].self, from: "cocktails.json")
+        let shots = Bundle.main.decode([WidgetCocktail].self, from: "shots.json")
 
-        // Calculate a unique integer for the given day since the start of the calendar era.
-        // Modding by the cocktail count cycles through all cocktails evenly,
-        // ensuring a different cocktail is shown each day without any persistence.
-        let dayIndex = Calendar.autoupdatingCurrent.ordinality(of: .day, in: .era, for: date) ?? 0
-        let cocktail = cocktails[dayIndex % cocktails.count]
+        let favoriteIDs = loadFavoriteIDs()
+        let pool = DrinkoWidgetCatalog.pool(
+            for: configuration.source.widgetDrinkSource,
+            cocktails: cocktails,
+            shots: shots,
+            favoriteIDs: favoriteIDs
+        )
 
+        let cocktail = DrinkoWidgetCatalog.dailyPick(from: pool, on: date) ?? DrinkoWidgetCatalog.nullCocktail
         let imageData = DrinkoWidgetImageStore.imageData(for: cocktail)
-        return DrinkoWidgetEntry(date: date, cocktail: cocktail, imageData: imageData)
+
+        return DrinkoWidgetEntry(
+            date: date,
+            cocktail: cocktail,
+            imageData: imageData,
+            showsIngredients: configuration.showsIngredients
+        )
+    }
+
+    private func loadFavoriteIDs() -> Set<String> {
+        guard let data = AppGroup.defaults.data(forKey: AppGroup.favoritesKey),
+              let ids = try? JSONDecoder().decode(Set<String>.self, from: data) else {
+            return []
+        }
+        return ids
     }
 }

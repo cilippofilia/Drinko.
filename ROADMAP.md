@@ -4,12 +4,12 @@ A prioritized list of enhancements for Drinko. Items move from **Next** to **Now
 
 ## Now
 
-- [ ] **Configurable widget** — convert "Cocktail of the Day" from `StaticConfiguration` to `AppIntentConfiguration` so users can long-press → Edit Widget:
+- [x] **Configurable widget** — convert "Cocktail of the Day" from `StaticConfiguration` to `AppIntentConfiguration` so users can long-press → Edit Widget:
   - Content source: All Drinks / Cocktails Only / Shots Only / Favorites Only
   - Show/hide the ingredients list on the medium widget
   - Requires an App Group so the widget can read favorites
-- [ ] **Widget tutorial** — step-by-step "Add a Widget" guide in Settings, shown once automatically after a few app opens
-- [ ] **Fix widget deployment target** — the widget extension targets a newer iOS than the app, making it invisible on older devices
+- [x] **Widget tutorial** — step-by-step "Add a Widget" guide in Settings, shown once automatically after a few app opens
+- [x] **Fix widget deployment target** — the widget extension targets a newer iOS than the app, making it invisible on older devices
 
 ## Next — high-impact features
 

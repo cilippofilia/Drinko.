@@ -70,6 +70,7 @@
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
 		18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
 		18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
+		1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* WidgetTutorialView.swift */; };
 		18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307732B6F99DD00CB94AB /* EditProductView.swift */; };
 		18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */; };
 		18EB4E932EEECEDC00691DC2 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
@@ -154,6 +155,7 @@
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
 		18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContactsView.swift; sourceTree = "<group>"; };
 		18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoView.swift; sourceTree = "<group>"; };
+		1A1000163A4F000100000001 /* WidgetTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTutorialView.swift; sourceTree = "<group>"; };
 		18B307732B6F99DD00CB94AB /* EditProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductView.swift; sourceTree = "<group>"; };
 		18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductButtonView.swift; sourceTree = "<group>"; };
 		18CABC402EF21ED3000A3278 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -197,6 +199,7 @@
 			membershipExceptions = (
 				"Bundle-Decodable.swift",
 				"String-Ext.swift",
+				AppGroup.swift,
 			);
 			target = 1A1000093A4F000100000001 /* DrinkoWidget */;
 		};
@@ -251,8 +254,18 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				DrinkoWidget.entitlements,
 			);
 			target = 1A1000093A4F000100000001 /* DrinkoWidget */;
+		};
+		1A1000153A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Helpers/DrinkoWidgetCatalog.swift,
+				Helpers/WidgetCocktail.swift,
+				Helpers/WidgetDrinkSource.swift,
+			);
+			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -265,7 +278,7 @@
 		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929D82F12C6CD00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
 		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929E72F12C80D00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
 		18EB4F212EEED4B100691DC2 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
-		1A1000053A4F000100000001 /* DrinkoWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1A1000143A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoWidget; sourceTree = "<group>"; };
+		1A1000053A4F000100000001 /* DrinkoWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1A1000143A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 1A1000153A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoWidget; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -502,6 +515,7 @@
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
 				189EEA1F2ABBA59900D67806 /* SettingsSections */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
+				1A1000163A4F000100000001 /* WidgetTutorialView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -777,6 +791,7 @@
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
 				18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */,
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
+				1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */,
 				1827138C2B6576AB000D3343 /* CategoryHeaderView.swift in Sources */,
 				1821590E2F3EA342002C1046 /* UserCocktailPreviewer.swift in Sources */,
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
@@ -849,7 +864,7 @@
 				DEVELOPMENT_TEAM = 3K3GFX53DY;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cilia.filippo.DrinkoProTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -876,7 +891,7 @@
 				DEVELOPMENT_TEAM = 3K3GFX53DY;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = cilia.filippo.DrinkoProTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1218,13 +1233,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = DrinkoWidget/DrinkoWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3K3GFX53DY;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DrinkoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DrinkoWidget;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro.DrinkoWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1244,13 +1260,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = DrinkoWidget/DrinkoWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3K3GFX53DY;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = DrinkoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DrinkoWidget;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 2.5;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro.DrinkoWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";

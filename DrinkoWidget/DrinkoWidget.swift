@@ -13,8 +13,14 @@ struct DrinkoWidget: Widget {
     let kind = "DrinkoWidget"
 
     var body: some WidgetConfiguration {
-        // This widget has no per-instance settings, so a static configuration is enough.
-        StaticConfiguration(kind: kind, provider: DrinkoWidgetProvider()) { entry in
+        // Lets users pick a content source and toggle ingredients via "Edit Widget".
+        // Reusing the same `kind` means already-placed widgets migrate in place
+        // with the configuration's default values.
+        AppIntentConfiguration(
+            kind: kind,
+            intent: CocktailWidgetConfigurationIntent.self,
+            provider: DrinkoWidgetProvider()
+        ) { entry in
             DrinkoWidgetView(entry: entry)
         }
         .configurationDisplayName("Cocktail of the Day")

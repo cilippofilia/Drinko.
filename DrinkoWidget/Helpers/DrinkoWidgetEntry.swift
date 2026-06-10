@@ -14,6 +14,7 @@ struct DrinkoWidgetEntry: TimelineEntry {
     let date: Date
     let cocktail: WidgetCocktail
     let imageData: Data?
+    let showsIngredients: Bool
 
     var deepLinkURL: URL? {
         URL(string: "drinko://cocktail/\(cocktail.id)")

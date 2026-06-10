@@ -69,6 +69,9 @@
         }
       }
     },
+    ": " : {
+
+    },
     "\"%@\" not found" : {
       "localizations" : {
         "de" : {
@@ -725,6 +728,9 @@
         }
       }
     },
+    "A button appears in the top corner of the screen while the apps are jiggling." : {
+
+    },
     "ABV" : {
       "localizations" : {
         "de" : {
@@ -896,6 +902,9 @@
         }
       }
     },
+    "Add a Widget" : {
+
+    },
     "Add category" : {
       "localizations" : {
         "de" : {
@@ -997,6 +1006,9 @@
           }
         }
       }
+    },
+    "Add Drinko's \"Cocktail of the Day\" widget to your Home Screen for daily inspiration, right at a glance." : {
+
     },
     "Add Favorite" : {
       "localizations" : {
@@ -1385,6 +1397,9 @@
           }
         }
       }
+    },
+    "All Drinks" : {
+
     },
     "Amount in millilitres" : {
       "localizations" : {
@@ -2330,6 +2345,9 @@
         }
       }
     },
+    "Choose what kind of drink to feature and whether to show its ingredients." : {
+
+    },
     "Citric acid" : {
       "localizations" : {
         "de" : {
@@ -2911,6 +2929,9 @@
         }
       }
     },
+    "Customize it" : {
+
+    },
     "D" : {
 
     },
@@ -3423,6 +3444,9 @@
           }
         }
       }
+    },
+    "Drink Source" : {
+
     },
     "Drinko." : {
       "localizations" : {
@@ -5568,6 +5592,9 @@
         }
       }
     },
+    "Pick a size and add it" : {
+
+    },
     "Pick the method" : {
       "localizations" : {
         "de" : {
@@ -5669,6 +5696,9 @@
           }
         }
       }
+    },
+    "Press and hold an empty area until the apps start to jiggle." : {
+
     },
     "Procedure" : {
       "localizations" : {
@@ -6419,6 +6449,9 @@
         }
       }
     },
+    "Search for Drinko" : {
+
+    },
     "Search lessons and books" : {
       "localizations" : {
         "de" : {
@@ -6745,6 +6778,9 @@
         }
       }
     },
+    "Show" : {
+
+    },
     "Show history" : {
       "localizations" : {
         "de" : {
@@ -6772,6 +6808,9 @@
           }
         }
       }
+    },
+    "Show Ingredients" : {
+
     },
     "show less" : {
       "extractionState" : "manual",
@@ -7212,6 +7251,9 @@
         }
       }
     },
+    "Swipe between the small and medium widgets, then tap Add Widget." : {
+
+    },
     "Take Photo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7246,6 +7288,9 @@
           }
         }
       }
+    },
+    "Tap the Edit button, then Add Widget" : {
+
     },
     "Thank you!" : {
       "extractionState" : "manual",
@@ -7452,6 +7497,12 @@
         }
       }
     },
+    "Touch and hold the Home Screen" : {
+
+    },
+    "Touch and hold the widget, then choose Edit Widget to change the drink source or show and hide ingredients." : {
+
+    },
     "Translations" : {
       "localizations" : {
         "de" : {
@@ -7523,6 +7574,9 @@
           }
         }
       }
+    },
+    "Type \"Drinko\" in the search field to find the widget." : {
+
     },
     "Unit" : {
       "localizations" : {
