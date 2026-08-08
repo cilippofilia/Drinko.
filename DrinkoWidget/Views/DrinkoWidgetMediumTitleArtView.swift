@@ -6,10 +6,9 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct DrinkoWidgetMediumTitleArtView: View {
-    @Environment(\.colorScheme) var colorScheme
-
     let hiddenTopRow: Bool
     let hiddenMiddleRow: Bool
     let hiddenBottomRow: Bool
@@ -41,7 +40,8 @@ struct DrinkoWidgetMediumTitleArtView: View {
         }
         .textCase(.uppercase)
         .font(.system(size: 36, weight: .heavy, design: .serif))
-        .foregroundStyle(.black)
+        .foregroundStyle(Color.primary.gradient)
+        .widgetAccentable()
         .lineLimit(3)
         .minimumScaleFactor(0.6)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)

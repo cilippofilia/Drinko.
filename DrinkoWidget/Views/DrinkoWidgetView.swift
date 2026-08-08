@@ -21,15 +21,13 @@ struct DrinkoWidgetView: View {
             switch family {
             case .systemSmall:
                 DrinkoWidgetSmallView(cocktail: entry.cocktail, imageData: entry.imageData)
-                    .containerBackground(.background, for: .widget)
             case .systemMedium:
                 DrinkoWidgetMediumView(cocktail: entry.cocktail, imageData: entry.imageData, showsIngredients: entry.showsIngredients)
-                    .containerBackground(.white, for: .widget)
             default:
                 DrinkoWidgetMediumView(cocktail: entry.cocktail, imageData: entry.imageData, showsIngredients: entry.showsIngredients)
-                    .containerBackground(.white, for: .widget)
             }
         }
+        .containerBackground(.background, for: .widget)
         // The entire widget opens the matching cocktail detail when tapped.
         .widgetURL(entry.deepLinkURL)
 

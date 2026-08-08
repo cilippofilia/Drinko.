@@ -107,6 +107,11 @@ struct CocktailsView: View {
                 .onChange(of: appNavigationModel.pendingCocktailID, initial: true) { _, _ in
                     openPendingCocktailIfNeeded()
                 }
+                #if os(iOS)
+                .safeAreaInset(edge: .bottom) {
+                    CrossPromoBannerView()
+                }
+                #endif
         }
     }
 }

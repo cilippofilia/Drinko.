@@ -11,6 +11,7 @@ import SwiftUI
 struct AddCategoryView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
+    @Environment(CrossPromoSignal.self) private var crossPromoSignal
     @FocusState private var isFocused: Bool
     @State private var categoryName = ""
     @State private var categoryDetails = ""
@@ -251,6 +252,7 @@ extension AddCategoryView {
             creationDate: Date.now
         )
         modelContext.insert(category)
+        crossPromoSignal.bump()
     }
 }
 
@@ -260,6 +262,7 @@ extension AddCategoryView {
         let previewer = try CabinetPreviewerPreviewer()
 
         return AddCategoryView()
+            .environment(CrossPromoSignal())
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

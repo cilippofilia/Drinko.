@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct DrinkoWidgetSmallView: View {
     let cocktail: WidgetCocktail
@@ -16,6 +17,7 @@ struct DrinkoWidgetSmallView: View {
             Text(cocktail.name)
                 .font(.system(size: 36, weight: .heavy, design: .serif))
                 .foregroundStyle(.primary)
+                .widgetAccentable()
                 .lineLimit(3)
                 .minimumScaleFactor(0.5)
                 .frame(maxHeight: .infinity, alignment: .top)
@@ -24,5 +26,13 @@ struct DrinkoWidgetSmallView: View {
                 .scaleEffect(1.25)
                 .frame(maxHeight: .infinity, alignment: .bottom)
         }
+    }
+}
+
+struct DrinkoWidgetSmallView_Previews: PreviewProvider {
+    static var previews: some View {
+        DrinkoWidgetSmallView(cocktail: DrinkoWidgetCatalog.nullCocktail, imageData: nil)
+            .containerBackground(.background, for: .widget)
+            .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

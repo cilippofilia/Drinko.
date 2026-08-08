@@ -29,19 +29,20 @@ struct DrinkoWidgetMediumView: View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(cocktail.name)
                     .font(.headline)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color.primary.gradient)
+                    .widgetAccentable()
                     .lineLimit(3)
 
                 if showsIngredients {
                     ForEach(cocktail.ingredients.prefix(visibleIngredientCount)) { ingredient in
                         Text(ingredient.name.capitalized)
                             .font(.caption)
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.secondary)
                     }
 
                     if cocktail.ingredients.count > visibleIngredientCount {
                         Text("see more...")
-                            .foregroundStyle(.gray)
+                            .foregroundStyle(.tertiary)
                             .font(.caption)
                             .padding(.top, 2)
                     }
@@ -65,9 +66,13 @@ private struct DrinkoWidgetDetailRow: View {
     let value: String
 
     var body: some View {
-        (Text(label) + Text(": ") + Text(value.capitalized))
-            .font(.caption)
-            .foregroundStyle(.black)
+        HStack(spacing: 4) {
+            Text(label)
+                .foregroundStyle(.secondary)
+            Text(value.capitalized)
+                .foregroundStyle(.primary)
+        }
+        .font(.caption)
     }
 }
 

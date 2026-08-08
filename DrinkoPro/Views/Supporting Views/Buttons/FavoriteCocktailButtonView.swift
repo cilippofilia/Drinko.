@@ -9,6 +9,9 @@ import SwiftUI
 
 struct FavoriteCocktailButtonView: View {
     @Environment(Favorites.self) private var favorites
+    #if os(iOS)
+    @Environment(CrossPromoSignal.self) private var crossPromoSignal
+    #endif
     let cocktail: Cocktail
 
     var body: some View {
@@ -20,6 +23,7 @@ struct FavoriteCocktailButtonView: View {
                 #if os(iOS)
                 UINotificationFeedbackGenerator()
                     .notificationOccurred(.success)
+                crossPromoSignal.bump()
                 #endif
             }
         }) {

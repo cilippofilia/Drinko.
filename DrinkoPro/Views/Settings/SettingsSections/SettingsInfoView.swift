@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct SettingsInfoView: View {
+    #if os(iOS)
+    @Environment(RemoveAdsStore.self) private var removeAdsStore
+
+    @State private var showRemoveAdsPaywall = false
+    #endif
+
     var body: some View {
         Section(
             header: Text("Info").foregroundStyle(.secondary)
@@ -23,10 +29,25 @@ struct SettingsInfoView: View {
             #if os(iOS)
             NavigationLink(destination: WidgetTutorialView()) {
                 SettingsRowView(
-                    icon: "widget.medium",
+                    icon: "widget.small.badge.plus",
                     color: .secondary,
                     itemName: "Add a Widget"
                 )
+            }
+
+            Button {
+                showRemoveAdsPaywall = true
+            } label: {
+                SettingsRowView(
+                    icon: removeAdsStore.isAdsRemoved ? "checkmark.seal.fill" : "nosign",
+                    color: .secondary,
+                    itemName: removeAdsStore.isAdsRemoved ? "Ads Removed" : "Remove Ads"
+                )
+            }
+            .buttonStyle(.plain)
+            .sheet(isPresented: $showRemoveAdsPaywall) {
+                CrossPromoRemoveAdsInfoView()
+                    .presentationDetents([.medium])
             }
             #endif
 

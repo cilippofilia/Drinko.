@@ -14,6 +14,10 @@ struct DrinkoProApp: App {
     @State private var cocktailsViewModel = CocktailsViewModel()
     @State private var lessonsViewModel = LessonsViewModel()
     @State private var appNavigationModel = AppNavigationModel()
+    #if os(iOS)
+    @State private var removeAdsStore = RemoveAdsStore()
+    @State private var crossPromoSignal = CrossPromoSignal()
+    #endif
 
     private let modelContainer: ModelContainer
 
@@ -51,6 +55,10 @@ struct DrinkoProApp: App {
         .environment(cocktailsViewModel)
         .environment(lessonsViewModel)
         .environment(appNavigationModel)
+        #if os(iOS)
+        .environment(removeAdsStore)
+        .environment(crossPromoSignal)
+        #endif
         .modelContainer(modelContainer)
     }
 }

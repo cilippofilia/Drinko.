@@ -11,6 +11,9 @@ import SwiftUI
 struct CabinetView: View {
     static let cabinetTag: String? = "Cabinet"
     @Environment(\.modelContext) private var modelContext
+    #if os(iOS)
+    @Environment(CrossPromoSignal.self) private var crossPromoSignal
+    #endif
 
     @State private var path = NavigationPath()
     @State private var showAddCategorySheet: Bool = false
@@ -28,6 +31,9 @@ struct CabinetView: View {
                 categoriesList
                     .navigationTitle("Cabinet")
             }
+        }
+        .safeAreaInset(edge: .bottom) {
+            CrossPromoBannerView()
         }
     }
 }
@@ -104,6 +110,9 @@ extension CabinetView {
 
     func addProduct(to category: Category) {
         category.products?.append(Item(name: "Product Name"))
+        #if os(iOS)
+        crossPromoSignal.bump()
+        #endif
     }
 }
 
@@ -115,6 +124,8 @@ extension CabinetView {
         return CabinetView()
         /// comment the following line to display an emptyCabinet
             .modelContainer(previewer.container)
+            .environment(RemoveAdsStore())
+            .environment(CrossPromoSignal())
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }

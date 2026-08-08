@@ -70,7 +70,6 @@
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
 		18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
 		18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
-		1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* WidgetTutorialView.swift */; };
 		18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307732B6F99DD00CB94AB /* EditProductView.swift */; };
 		18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */; };
 		18EB4E932EEECEDC00691DC2 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
@@ -90,6 +89,8 @@
 		18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 		1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A1000023A4F000100000001 /* DrinkoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* WidgetTutorialView.swift */; };
+		957ACF8A027FDFD7F7E6C834 /* Billboard in Frameworks */ = {isa = PBXBuildFile; productRef = 1011E9542E9A75FF8932A3A6 /* Billboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,13 +156,13 @@
 		18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPreferenceView.swift; sourceTree = "<group>"; };
 		18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContactsView.swift; sourceTree = "<group>"; };
 		18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsInfoView.swift; sourceTree = "<group>"; };
-		1A1000163A4F000100000001 /* WidgetTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTutorialView.swift; sourceTree = "<group>"; };
 		18B307732B6F99DD00CB94AB /* EditProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProductView.swift; sourceTree = "<group>"; };
 		18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductButtonView.swift; sourceTree = "<group>"; };
 		18CABC402EF21ED3000A3278 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
 		18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryButtonView.swift; sourceTree = "<group>"; };
 		18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
+		18F1A3F6A4C9794685440EB6 /* Drinko.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Drinko.storekit; sourceTree = "<group>"; };
 		18F49E602A27B28D00862CE3 /* DrinkoPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrinkoPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		18F49EB72A286D2E00862CE3 /* CocktailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailsView.swift; sourceTree = "<group>"; };
 		18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
 		1A1000023A4F000100000001 /* DrinkoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DrinkoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A1000163A4F000100000001 /* WidgetTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTutorialView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -197,9 +199,9 @@
 		189C3B4F2F82A9C4009DFB47 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				AppGroup.swift,
 				"Bundle-Decodable.swift",
 				"String-Ext.swift",
-				AppGroup.swift,
 			);
 			target = 1A1000093A4F000100000001 /* DrinkoWidget */;
 		};
@@ -254,7 +256,6 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
-				DrinkoWidget.entitlements,
 			);
 			target = 1A1000093A4F000100000001 /* DrinkoWidget */;
 		};
@@ -278,7 +279,8 @@
 		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929D82F12C6CD00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
 		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929E72F12C80D00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
 		18EB4F212EEED4B100691DC2 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
-		1A1000053A4F000100000001 /* DrinkoWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1A1000143A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 1A1000153A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoWidget; sourceTree = "<group>"; };
+		1A1000053A4F000100000001 /* DrinkoWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1A1000153A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 1A1000143A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoWidget; sourceTree = "<group>"; };
+		555AEC541E168772A096ACA1 /* CrossPromo */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CrossPromo; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */,
+				957ACF8A027FDFD7F7E6C834 /* Billboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +453,7 @@
 		18F49E572A27B28D00862CE3 = {
 			isa = PBXGroup;
 			children = (
+				18F1A3F6A4C9794685440EB6 /* Drinko.storekit */,
 				18F49E622A27B28D00862CE3 /* DrinkoPro */,
 				1A1000053A4F000100000001 /* DrinkoWidget */,
 				182B4B802F0D6B05007E7026 /* DrinkoProTests */,
@@ -516,6 +520,7 @@
 				189EEA1F2ABBA59900D67806 /* SettingsSections */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
 				1A1000163A4F000100000001 /* WidgetTutorialView.swift */,
+				555AEC541E168772A096ACA1 /* CrossPromo */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -613,9 +618,11 @@
 				18EB4EDC2EEED49E00691DC2 /* Learn */,
 				18EB4EE12EEED4A800691DC2 /* Samples */,
 				18EB4F212EEED4B100691DC2 /* Localization */,
+				555AEC541E168772A096ACA1 /* CrossPromo */,
 			);
 			name = DrinkoPro;
 			packageProductDependencies = (
+				1011E9542E9A75FF8932A3A6 /* Billboard */,
 			);
 			productName = DrinkoPro;
 			productReference = 18F49E602A27B28D00862CE3 /* DrinkoPro.app */;
@@ -684,6 +691,7 @@
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
+				21EA0DF6DC4F7D77B5F12320 /* XCRemoteSwiftPackageReference "Billboard" */,
 			);
 			productRefGroup = 18F49E612A27B28D00862CE3 /* Products */;
 			projectDirPath = "";
@@ -1332,6 +1340,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21EA0DF6DC4F7D77B5F12320 /* XCRemoteSwiftPackageReference "Billboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hiddevdploeg/Billboard";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1011E9542E9A75FF8932A3A6 /* Billboard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21EA0DF6DC4F7D77B5F12320 /* XCRemoteSwiftPackageReference "Billboard" */;
+			productName = Billboard;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 18F49E582A27B28D00862CE3 /* Project object */;
 }

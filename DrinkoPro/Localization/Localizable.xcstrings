@@ -69,9 +69,6 @@
         }
       }
     },
-    ": " : {
-
-    },
     "\"%@\" not found" : {
       "localizations" : {
         "de" : {
@@ -656,6 +653,9 @@
           }
         }
       }
+    },
+    "•" : {
+
     },
     "© %@" : {
       "localizations" : {
@@ -1307,6 +1307,12 @@
           }
         }
       }
+    },
+    "Ads" : {
+
+    },
+    "Ads Removed" : {
+
     },
     "Alcohol by volume" : {
       "localizations" : {
@@ -5700,6 +5706,9 @@
     "Press and hold an empty area until the apps start to jiggle." : {
 
     },
+    "Privacy Policy" : {
+
+    },
     "Procedure" : {
       "localizations" : {
         "de" : {
@@ -6063,6 +6072,9 @@
         }
       }
     },
+    "Remove Ads" : {
+
+    },
     "Remove Favorite" : {
       "localizations" : {
         "de" : {
@@ -6346,6 +6358,9 @@
           }
         }
       }
+    },
+    "Restore Purchase" : {
+
     },
     "Save" : {
       "localizations" : {
@@ -7292,6 +7307,9 @@
     "Tap the Edit button, then Add Widget" : {
 
     },
+    "Terms of Use" : {
+
+    },
     "Thank you!" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -7362,7 +7380,13 @@
         }
       }
     },
+    "Thanks for your support — you won't see these cross-promo ads again." : {
+
+    },
     "the" : {
+
+    },
+    "These occasional promos are for my other apps. Remove them for good with a small one-time purchase." : {
 
     },
     "This app was made with ❤️ by Filippo Cilia 🇮🇹" : {
