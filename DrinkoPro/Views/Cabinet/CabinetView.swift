@@ -25,15 +25,19 @@ struct CabinetView: View {
 
     var body: some View {
         NavigationStack {
-            if categories.isEmpty {
-                unavailableView
-            } else {
-                categoriesList
-                    .navigationTitle("Cabinet")
+            Group {
+                if categories.isEmpty {
+                    unavailableView
+                } else {
+                    categoriesList
+                        .navigationTitle("Cabinet")
+                }
             }
-        }
-        .safeAreaInset(edge: .bottom) {
-            CrossPromoBannerView()
+            #if os(iOS)
+            .safeAreaInset(edge: .bottom) {
+                CrossPromoBannerView()
+            }
+            #endif
         }
     }
 }
