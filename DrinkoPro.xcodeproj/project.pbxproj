@@ -90,7 +90,7 @@
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 		1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A1000023A4F000100000001 /* DrinkoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* WidgetTutorialView.swift */; };
-		957ACF8A027FDFD7F7E6C834 /* Billboard in Frameworks */ = {isa = PBXBuildFile; productRef = 1011E9542E9A75FF8932A3A6 /* Billboard */; };
+		707CAC9A8FC301251AA712CD /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46A63D3F09AE9C5D83692BEA /* PrivateAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */,
-				957ACF8A027FDFD7F7E6C834 /* Billboard in Frameworks */,
+				707CAC9A8FC301251AA712CD /* PrivateAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -622,7 +622,7 @@
 			);
 			name = DrinkoPro;
 			packageProductDependencies = (
-				1011E9542E9A75FF8932A3A6 /* Billboard */,
+				46A63D3F09AE9C5D83692BEA /* PrivateAds */,
 			);
 			productName = DrinkoPro;
 			productReference = 18F49E602A27B28D00862CE3 /* DrinkoPro.app */;
@@ -691,7 +691,7 @@
 			);
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
-				21EA0DF6DC4F7D77B5F12320 /* XCRemoteSwiftPackageReference "Billboard" */,
+				0135DADFEF620B720582BCAA /* XCLocalSwiftPackageReference "PrivateAds" */,
 			);
 			productRefGroup = 18F49E612A27B28D00862CE3 /* Products */;
 			projectDirPath = "";
@@ -1341,22 +1341,18 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		21EA0DF6DC4F7D77B5F12320 /* XCRemoteSwiftPackageReference "Billboard" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hiddevdploeg/Billboard";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.0;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		0135DADFEF620B720582BCAA /* XCLocalSwiftPackageReference "PrivateAds" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../Other/PrivateAds;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1011E9542E9A75FF8932A3A6 /* Billboard */ = {
+		46A63D3F09AE9C5D83692BEA /* PrivateAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 21EA0DF6DC4F7D77B5F12320 /* XCRemoteSwiftPackageReference "Billboard" */;
-			productName = Billboard;
+			package = 0135DADFEF620B720582BCAA /* XCLocalSwiftPackageReference "PrivateAds" */;
+			productName = PrivateAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

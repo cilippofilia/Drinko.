@@ -6,7 +6,7 @@
 import Foundation
 
 /// Bumped on notable user actions (favoriting a cocktail or product, creating a user cocktail,
-/// or adding a cabinet category) so `HomeView` can show a Billboard cross-promo interstitial
+/// or adding a cabinet category) so `HomeView` can show a PrivateAds cross-promo interstitial
 /// every 3rd bump, regardless of which tab the action happened in.
 @MainActor
 @Observable

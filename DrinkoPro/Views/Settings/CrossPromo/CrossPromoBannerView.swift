@@ -3,7 +3,7 @@
 //  DrinkoPro
 //
 
-import Billboard
+import PrivateAds
 import SwiftUI
 
 /// A persistent ambient banner ad for Filippo Cilia's other apps, refreshed each time this view
@@ -11,26 +11,21 @@ import SwiftUI
 struct CrossPromoBannerView: View {
     @Environment(RemoveAdsStore.self) private var removeAdsStore
 
-    @State private var ad: BillboardAd?
+    @State private var ad: Ad?
     @State private var showRemoveAdsPaywall = false
 
     var body: some View {
         Group {
             if removeAdsStore.isAdsRemoved == false, let ad {
-                BillboardBannerView(advert: ad, config: .crossPromo, hideDismissButtonAndTimer: true)
-                    .overlay(alignment: .topTrailing) {
-                        Button("Remove Ads", systemImage: "xmark") {
-                            showRemoveAdsPaywall = true
-                        }
-                        .labelStyle(.iconOnly)
-                        .font(.caption.bold())
-                        .foregroundStyle(.white)
-                        .padding(6)
-                        .background(.black.opacity(0.45), in: .circle)
-                        .buttonStyle(.plain)
-                        .padding(8)
+                AdBannerView(
+                    advert: ad,
+                    config: .crossPromo,
+                    hideDismissButtonAndTimer: true,
+                    cornerButton: .init(label: "Remove Ads") {
+                        showRemoveAdsPaywall = true
                     }
-                    .padding()
+                )
+                .padding()
             }
         }
         .task {
@@ -44,10 +39,10 @@ struct CrossPromoBannerView: View {
 
     private func refreshAd() async {
         guard removeAdsStore.isAdsRemoved == false else { return }
-        guard let url = BillboardConfiguration.crossPromo.adsJSONURL else { return }
-        ad = try? await BillboardViewModel.fetchRandomAd(
+        guard let url = AdConfiguration.crossPromo.adsJSONURL else { return }
+        ad = try? await AdStore.fetchRandomAd(
             from: url,
-            excludedIDs: BillboardConfiguration.crossPromo.excludedIDs
+            excludedIDs: AdConfiguration.crossPromo.excludedIDs
         )
     }
 }

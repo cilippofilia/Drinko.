@@ -6,7 +6,7 @@
 import StoreKit
 import SwiftUI
 
-/// Billboard's interstitial always offers a "Remove Ads" button that opens a paywall. This is
+/// PrivateAds's interstitial always offers a "Remove Ads" button that opens a paywall. This is
 /// that paywall: a one-time, non-consumable purchase that silences the cross-promo ads for good.
 /// `ProductView`'s `.compact` style supplies the purchase button sized for exactly one product;
 /// Restore Purchase and the legal links are pinned in a bottom safe-area inset, mirroring the

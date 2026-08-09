@@ -5,7 +5,7 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
-import Billboard
+import PrivateAds
 import StoreKit
 import SwiftUI
 
@@ -22,7 +22,7 @@ struct HomeView: View {
     @Environment(\.requestReview) private var requestReview
 
     @State private var showingWidgetTutorial = false
-    @State private var interstitialAd: BillboardAd?
+    @State private var interstitialAd: Ad?
 
     var body: some View {
         TabView(selection: selectedViewBinding) {
@@ -54,14 +54,14 @@ struct HomeView: View {
                     }
             }
         }
-        // A Billboard cross-promo ad every 3rd interaction bump (favoriting a cocktail or
+        // A PrivateAds cross-promo ad every 3rd interaction bump (favoriting a cocktail or
         // product, creating a user cocktail, or adding a cabinet category — see
         // `CrossPromoSignal`). Lives here rather than on any one tab since the triggering
         // action can happen from Cocktails or Cabinet; `.fullScreenCover` presents over the
         // whole window regardless of which tab is active. Fetched directly (rather than via
-        // Billboard's own `.showBillboard(when:)`) so a failed fetch can't get the trigger stuck.
+        // PrivateAds's own `.showAd(when:)`) so a failed fetch can't get the trigger stuck.
         .fullScreenCover(item: $interstitialAd) { ad in
-            BillboardView(advert: ad, config: .crossPromo) {
+            AdView(advert: ad, config: .crossPromo) {
                 CrossPromoRemoveAdsInfoView()
             }
         }
@@ -78,10 +78,10 @@ struct HomeView: View {
 
     private func refreshInterstitialAd() async {
         guard removeAdsStore.isAdsRemoved == false else { return }
-        guard let url = BillboardConfiguration.crossPromo.adsJSONURL else { return }
-        interstitialAd = try? await BillboardViewModel.fetchRandomAd(
+        guard let url = AdConfiguration.crossPromo.adsJSONURL else { return }
+        interstitialAd = try? await AdStore.fetchRandomAd(
             from: url,
-            excludedIDs: BillboardConfiguration.crossPromo.excludedIDs
+            excludedIDs: AdConfiguration.crossPromo.excludedIDs
         )
     }
 
