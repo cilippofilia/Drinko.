@@ -15,11 +15,11 @@ struct SettingsContactsView: View {
 
     @State private var showOptions = false
     @State private var email = "cilia.filippo.dev@gmail.com"
-    @State private var reportBugSubject = "Bug Report"
+    @State private var reportBugSubject = "Drinko: Bug Report"
     @State private var reportBugBody = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
-    @State private var requestFeatureSubject = "Featuristic idea"
+    @State private var requestFeatureSubject = "Drinko: Featuristic idea"
     @State private var requestFeatureBody = ""
-    @State private var contactDevSubject = ""
+    @State private var contactDevSubject = "Drinko: Enquiry"
     @State private var contactDevBody = ""
 
     var body: some View {

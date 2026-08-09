@@ -12,11 +12,11 @@ struct MacSettingsView: View {
 
     @State private var showOptions = false
     private let email = "cilia.filippo.dev@gmail.com"
-    private let reportBugSubject = "Bug Report"
+    private let reportBugSubject = "Drinko: Bug Report"
     private let reportBugBody = "Please provide as many details about the bug you encountered as possible - and include screenshots if possible."
-    private let requestFeatureSubject = "Featuristic idea"
+    private let requestFeatureSubject = "Drinko: Featuristic idea"
     private let requestFeatureBody = ""
-    private let contactDevSubject = ""
+    private let contactDevSubject = "Drinko: Enquiry"
     private let contactDevBody = ""
 
     static let settingsTag: String? = "Settings"
