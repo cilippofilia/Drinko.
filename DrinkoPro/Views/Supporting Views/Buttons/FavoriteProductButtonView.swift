@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FavoriteProductButtonView: View {
-    #if os(iOS)
+    #if os(iOS) || os(macOS)
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     #endif
     let product: Item
@@ -18,6 +18,8 @@ struct FavoriteProductButtonView: View {
             product.isFavorite.toggle()
             #if os(iOS)
             UINotificationFeedbackGenerator().notificationOccurred(.success)
+            #endif
+            #if os(iOS) || os(macOS)
             if product.isFavorite {
                 crossPromoSignal.bump()
             }
@@ -33,7 +35,7 @@ struct FavoriteProductButtonView: View {
 #if DEBUG
 #Preview {
     FavoriteProductButtonView(product: Item(name: "Test"))
-        #if os(iOS)
+        #if os(iOS) || os(macOS)
         .environment(CrossPromoSignal())
         #endif
 }

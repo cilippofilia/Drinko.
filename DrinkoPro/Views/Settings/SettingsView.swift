@@ -34,5 +34,6 @@ struct SettingsView: View {
 #Preview {
     SettingsView()
         .environment(Favorites())
+        .environment(RemoveAdsStore())
 }
 #endif

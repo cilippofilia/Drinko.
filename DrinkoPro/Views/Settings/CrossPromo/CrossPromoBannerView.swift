@@ -25,6 +25,11 @@ struct CrossPromoBannerView: View {
                         showRemoveAdsPaywall = true
                     }
                 )
+                #if os(macOS)
+                // Matches the readable width `.formStyle(.grouped)` gives Mac list/form rows,
+                // instead of stretching edge-to-edge across the whole detail pane.
+                .frame(maxWidth: 700)
+                #endif
                 .padding()
             }
         }

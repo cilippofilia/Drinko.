@@ -91,6 +91,7 @@
 		1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A1000023A4F000100000001 /* DrinkoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* WidgetTutorialView.swift */; };
 		707CAC9A8FC301251AA712CD /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46A63D3F09AE9C5D83692BEA /* PrivateAds */; };
+		83B280FAABED409EB5308FD3 /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 0C77A31298F24D9982F446D7 /* PrivateAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +296,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83B280FAABED409EB5308FD3 /* PrivateAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,9 +592,11 @@
 				18A929A92F12C13D00B70219 /* DrinkoMac */,
 				18EB4ED02EEED48B00691DC2 /* Helpers */,
 				18EB4F212EEED4B100691DC2 /* Localization */,
+				555AEC541E168772A096ACA1 /* CrossPromo */,
 			);
 			name = DrinkoDesktop;
 			packageProductDependencies = (
+				0C77A31298F24D9982F446D7 /* PrivateAds */,
 			);
 			productName = DrinkoMac;
 			productReference = 18A929A82F12C13D00B70219 /* DrinkoDesktop.app */;
@@ -1186,7 +1190,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1224,7 +1228,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1249,7 +1253,7 @@
 				INFOPLIST_FILE = DrinkoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DrinkoWidget;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro.DrinkoWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1276,7 +1280,7 @@
 				INFOPLIST_FILE = DrinkoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DrinkoWidget;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro.DrinkoWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1346,13 +1350,18 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cilippofilia/PrivateAds.git";
 			requirement = {
-				kind = branch;
 				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C77A31298F24D9982F446D7 /* PrivateAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0135DADFEF620B720582BCAA /* XCRemoteSwiftPackageReference "PrivateAds" */;
+			productName = PrivateAds;
+		};
 		46A63D3F09AE9C5D83692BEA /* PrivateAds */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0135DADFEF620B720582BCAA /* XCRemoteSwiftPackageReference "PrivateAds" */;

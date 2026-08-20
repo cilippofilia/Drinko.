@@ -5,11 +5,16 @@
 //  Created by Filippo Cilia on 10/01/2026.
 //
 
+import PrivateAds
 import SwiftUI
 
 struct MacHomeView: View {
+    @Environment(CrossPromoSignal.self) private var crossPromoSignal
+    @Environment(RemoveAdsStore.self) private var removeAdsStore
+
     @State private var selectedTab: NavigationTab? = nil
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
+    @State private var interstitialAd: Ad?
 
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
@@ -50,6 +55,29 @@ struct MacHomeView: View {
                 )
             }
         }
+        .sheet(item: $interstitialAd) { ad in
+            AdView(advert: ad, config: .crossPromo) {
+                CrossPromoRemoveAdsInfoView()
+            }
+        }
+        .onChange(of: crossPromoSignal.count) { _, newValue in
+            guard removeAdsStore.isAdsRemoved == false, newValue > 0, newValue.isMultiple(of: 3) else { return }
+            Task { await refreshInterstitialAd() }
+        }
+        // Dismiss an ad the user is mid-way through if they buy "Remove Ads" from its own paywall.
+        .onChange(of: removeAdsStore.isAdsRemoved) { _, isAdsRemoved in
+            guard isAdsRemoved else { return }
+            interstitialAd = nil
+        }
+    }
+
+    private func refreshInterstitialAd() async {
+        guard removeAdsStore.isAdsRemoved == false else { return }
+        guard let url = AdConfiguration.crossPromo.adsJSONURL else { return }
+        interstitialAd = try? await AdStore.fetchRandomAd(
+            from: url,
+            excludedIDs: AdConfiguration.crossPromo.excludedIDs
+        )
     }
 }
 

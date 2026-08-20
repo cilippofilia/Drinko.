@@ -195,7 +195,7 @@ struct LearnView: View {
         .navigationDestination(for: Book.self) { book in
             BookDetailView(book: book)
         }
-        #if os(iOS)
+        #if os(iOS) || os(macOS)
         .safeAreaInset(edge: .bottom) {
             CrossPromoBannerView()
         }

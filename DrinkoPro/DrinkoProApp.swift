@@ -14,7 +14,7 @@ struct DrinkoProApp: App {
     @State private var cocktailsViewModel = CocktailsViewModel()
     @State private var lessonsViewModel = LessonsViewModel()
     @State private var appNavigationModel = AppNavigationModel()
-    #if os(iOS)
+    #if os(iOS) || os(macOS)
     @State private var removeAdsStore = RemoveAdsStore()
     @State private var crossPromoSignal = CrossPromoSignal()
     #endif
@@ -55,7 +55,7 @@ struct DrinkoProApp: App {
         .environment(cocktailsViewModel)
         .environment(lessonsViewModel)
         .environment(appNavigationModel)
-        #if os(iOS)
+        #if os(iOS) || os(macOS)
         .environment(removeAdsStore)
         .environment(crossPromoSignal)
         #endif

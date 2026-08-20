@@ -10,6 +10,7 @@ import SwiftUI
 struct MacUserCocktailForm: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(CocktailsViewModel.self) private var viewModel
+    @Environment(CrossPromoSignal.self) private var crossPromoSignal
 
     private let methodOptions: [String]
     private let glassOptions: [String]
@@ -393,6 +394,7 @@ extension MacUserCocktailForm {
                 ingredients: ingredients,
                 procedureSteps: procedureSteps
             )
+            crossPromoSignal.bump()
         }
         dismiss()
     }
@@ -450,4 +452,5 @@ extension MacUserCocktailForm {
 #Preview {
     MacUserCocktailForm(methodOptions: [], glassOptions: [], iceOptions: [], unitOptions: [])
         .environment(CocktailsViewModel())
+        .environment(CrossPromoSignal())
 }

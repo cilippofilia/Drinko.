@@ -94,6 +94,9 @@ struct MacSettingsView: View {
             }
             .formStyle(.grouped)
             .navigationTitle("Settings")
+            .safeAreaInset(edge: .bottom) {
+                CrossPromoBannerView()
+            }
         }
     }
 
@@ -116,5 +119,6 @@ struct MacSettingsView: View {
 #Preview {
     MacSettingsView()
         .environment(Favorites())
+        .environment(RemoveAdsStore())
 }
 #endif

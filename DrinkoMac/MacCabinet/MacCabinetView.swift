@@ -29,14 +29,19 @@ struct MacCabinetView: View {
 
     var body: some View {
         NavigationStack {
-            if categories.isEmpty {
-                MacCabinetUnavailableView(
-                    showAddCategorySheet: $showAddCategorySheet,
-                    action: { showAddCategorySheet.toggle() }
-                )
-            } else {
-                categoriesList
-                    .navigationTitle("Cabinet")
+            Group {
+                if categories.isEmpty {
+                    MacCabinetUnavailableView(
+                        showAddCategorySheet: $showAddCategorySheet,
+                        action: { showAddCategorySheet.toggle() }
+                    )
+                } else {
+                    categoriesList
+                        .navigationTitle("Cabinet")
+                }
+            }
+            .safeAreaInset(edge: .bottom) {
+                CrossPromoBannerView()
             }
         }
     }

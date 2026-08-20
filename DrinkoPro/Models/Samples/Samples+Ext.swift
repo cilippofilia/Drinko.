@@ -227,7 +227,7 @@ enum PreviewSupport {
 
     static let lessonsViewModel = LessonsViewModel()
 
-    #if os(iOS)
+    #if os(iOS) || os(macOS)
     static let removeAdsStore = RemoveAdsStore()
     static let crossPromoSignal = CrossPromoSignal()
     #endif
@@ -240,7 +240,7 @@ extension View {
             .environment(PreviewSupport.favorites)
             .environment(PreviewSupport.cocktailsViewModel)
             .environment(PreviewSupport.lessonsViewModel)
-            #if os(iOS)
+            #if os(iOS) || os(macOS)
             .environment(PreviewSupport.removeAdsStore)
             .environment(PreviewSupport.crossPromoSignal)
             #endif
