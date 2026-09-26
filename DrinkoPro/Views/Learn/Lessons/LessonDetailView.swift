@@ -60,12 +60,7 @@ struct LessonDetailView: View {
                     }
                 }
             }
-            #if os(iOS)
-            .frame(width: screenWidth * 0.9)
-            #elseif os(macOS)
-            .padding(.horizontal)
-            #endif
-            .padding(.bottom)
+            .padding([.horizontal, .bottom])
         }
     }
 
@@ -104,12 +99,7 @@ struct LessonDetailView: View {
                     }
                 }
             }
-            #if os(iOS)
-            .frame(width: screenWidth * 0.7)
-            #elseif os(macOS)
-            .padding(.horizontal)
-            #endif
-            .padding(.bottom)
+            .padding([.horizontal, .bottom])
         }
     }
 }

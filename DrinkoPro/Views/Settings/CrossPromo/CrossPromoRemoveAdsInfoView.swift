@@ -74,7 +74,7 @@ struct CrossPromoRemoveAdsInfoView: View {
                     .padding()
             }
             .onInAppPurchaseCompletion { _, result in
-                if case .success(.success(_)) = result {
+                if case .success(.success) = result {
                     dismiss()
                 }
             }

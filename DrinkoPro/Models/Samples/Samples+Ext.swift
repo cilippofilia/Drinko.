@@ -213,11 +213,13 @@ enum PreviewSupport {
 
         container.mainContext.insert(category)
         container.mainContext.insert(userCocktail)
+        try? container.mainContext.save()
 
         return container
     }()
 
     static let favorites = Favorites()
+    static let appNavigationModel = AppNavigationModel()
 
     static let cocktailsViewModel: CocktailsViewModel = {
         let viewModel = CocktailsViewModel()
@@ -238,6 +240,7 @@ extension View {
     func drinkoPreviewEnvironment() -> some View {
         self
             .environment(PreviewSupport.favorites)
+            .environment(PreviewSupport.appNavigationModel)
             .environment(PreviewSupport.cocktailsViewModel)
             .environment(PreviewSupport.lessonsViewModel)
             #if os(iOS) || os(macOS)

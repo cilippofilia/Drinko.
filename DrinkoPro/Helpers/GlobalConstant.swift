@@ -15,9 +15,7 @@ import AppKit
 let rowHeight: CGFloat = 45
 let imageCornerRadius: CGFloat = 10
 let imageFrameHeight: CGFloat = 280
-#if os(iOS)
-let screenWidth: CGFloat = UIScreen.main.bounds.width
-#elseif os(macOS)
+#if os(macOS)
 let screenWidth: CGFloat = 350
 #endif
 

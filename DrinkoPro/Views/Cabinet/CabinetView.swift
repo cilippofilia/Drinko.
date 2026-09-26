@@ -54,7 +54,6 @@ extension CabinetView {
                 showAddCategorySheet.toggle()
             }
         })
-        .frame(width: screenWidth * 0.9)
         .navigationTitle("Cabinet")
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

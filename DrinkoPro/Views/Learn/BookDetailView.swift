@@ -45,9 +45,7 @@ struct BookDetailView: View {
                     EmptyView()
                 }
             }
-            #if os(iOS)
-            .frame(width: screenWidth * 0.9)
-            #elseif os(macOS)
+            #if os(macOS)
             .frame(width: screenWidth)
             #endif
             .clipped()
@@ -62,9 +60,7 @@ struct BookDetailView: View {
 
                 Text(book.summary)
             }
-            #if os(iOS)
-            .frame(width: screenWidth * 0.9)
-            #elseif os(macOS)
+            #if os(macOS)
             .padding(.horizontal)
             #endif
             .padding(.bottom)
@@ -87,9 +83,7 @@ struct BookDetailView: View {
                     EmptyView()
                 }
             }
-            #if os(iOS)
-            .frame(width: screenWidth * 0.9)
-            #elseif os(macOS)
+            #if os(macOS)
             .frame(width: screenWidth)
             #endif
             .clipped()
@@ -105,9 +99,7 @@ struct BookDetailView: View {
 
                 Text(book.summary)
             }
-            #if os(iOS)
-            .frame(width: screenWidth * 0.9)
-            #elseif os(macOS)
+            #if os(macOS)
             .padding(.horizontal)
             #endif
             .padding(.bottom)

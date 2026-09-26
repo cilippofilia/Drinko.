@@ -91,5 +91,6 @@ struct SettingsInfoView: View {
     Form {
         SettingsInfoView()
     }
+    .drinkoPreviewEnvironment()
 }
 #endif

@@ -156,9 +156,7 @@ struct CocktailDetailView: View {
             }
             Spacer(minLength: 50)
         }
-        #if os(iOS)
-        .frame(width: screenWidth * (sizeClass == .compact ? 0.9 : 0.7))
-        #elseif os(macOS)
+        #if os(macOS)
         .padding(.horizontal)
         #endif
         .alert("Delete Cocktail?", isPresented: $showDeleteConfirmation) {

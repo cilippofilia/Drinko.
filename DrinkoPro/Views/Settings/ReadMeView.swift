@@ -98,7 +98,6 @@ struct ReadMeView: View {
                 }
             }
             .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
-            .frame(width: sizeClass == .compact ? screenWidth * 0.9 : nil)
         }
         .navigationTitle("Drinko.")
         .scrollIndicators(.hidden, axes: .vertical)

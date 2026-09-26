@@ -88,7 +88,7 @@
 		18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */; };
 		18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
-		1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1A1000023A4F000100000001 /* DrinkoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A1000023A4F000100000001 /* DrinkoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* WidgetTutorialView.swift */; };
 		707CAC9A8FC301251AA712CD /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46A63D3F09AE9C5D83692BEA /* PrivateAds */; };
 		83B280FAABED409EB5308FD3 /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 0C77A31298F24D9982F446D7 /* PrivateAds */; };
@@ -112,15 +112,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1A1000043A4F000100000001 /* Embed App Extensions */ = {
+		1A1000043A4F000100000001 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed App Extensions */,
+				1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -609,7 +609,7 @@
 				18F49E5C2A27B28D00862CE3 /* Sources */,
 				18F49E5D2A27B28D00862CE3 /* Frameworks */,
 				18F49E5E2A27B28D00862CE3 /* Resources */,
-				1A1000043A4F000100000001 /* Embed App Extensions */,
+				1A1000043A4F000100000001 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -663,7 +663,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 2620;
-				LastUpgradeCheck = 2630;
+				LastUpgradeCheck = 2710;
 				TargetAttributes = {
 					182B4B7E2F0D6B05007E7026 = {
 						CreatedOnToolsVersion = 26.2;
@@ -1180,6 +1180,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrinkoPro/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1218,6 +1219,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrinkoPro/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

@@ -3193,6 +3193,7 @@
       }
     },
     "Delete Product" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
