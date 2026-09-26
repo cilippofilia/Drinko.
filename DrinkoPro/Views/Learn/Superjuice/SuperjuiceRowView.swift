@@ -14,19 +14,17 @@ struct SuperjuiceRowView: View {
     let juiceType: String
 
     var body: some View {
-        NavigationLink(destination: SuperJuiceView(typeOfJuice: juiceType)) {
-            HStack(spacing: sizeClass == .compact ? 10 : 20) {
-                Image("\(juiceType)")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: scaledRowHeight, height: scaledRowHeight)
-                    .cornerRadius(imageCornerRadius)
-                    .accessibilityHidden(true)
+        HStack(spacing: sizeClass == .compact ? 10 : 20) {
+            Image("\(juiceType)")
+                .resizable()
+                .scaledToFill()
+                .frame(width: scaledRowHeight, height: scaledRowHeight)
+                .cornerRadius(imageCornerRadius)
+                .accessibilityHidden(true)
 
-                VStack(alignment: .leading) {
-                    Text("\(juiceType.capitalizingFirstLetter()) Superjuice")
-                        .font(.headline)
-                }
+            VStack(alignment: .leading) {
+                Text("\(juiceType.capitalizingFirstLetter()) Superjuice")
+                    .font(.headline)
             }
         }
         .frame(minHeight: scaledRowHeight)

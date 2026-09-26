@@ -11,6 +11,7 @@ struct LearnView: View {
     static let learnTag: String? = "Learn"
     @Environment(LessonsViewModel.self) private var viewModel
     @State private var searchText = ""
+    @State private var selection: Selection?
 
     @AppStorage("basicLessonsCollapsed") private var basicLessonsCollapsed = false
     @AppStorage("barPrepsCollapsed") private var barPrepsCollapsed = false
@@ -89,6 +90,38 @@ struct LearnView: View {
     }
 
     var body: some View {
+        NavigationSplitView {
+            sidebar
+        } detail: {
+            if let selection {
+                detailView(for: selection)
+                    // Recreate the detail so per-page state (e.g. calculator inputs) resets on a new selection.
+                    .id(selection)
+            } else {
+                ContentUnavailableView(
+                    "Select a Topic",
+                    systemImage: "books.vertical",
+                    description: Text("Choose a lesson, calculator or book to start learning.")
+                )
+            }
+        }
+    }
+
+    @ViewBuilder
+    private func detailView(for selection: Selection) -> some View {
+        switch selection {
+        case .lesson(let lesson):
+            LessonDetailView(lesson: lesson)
+        case .book(let book):
+            BookDetailView(book: book)
+        case .abvCalculator:
+            ABVCalculator()
+        case .superjuice(let juiceType):
+            SuperJuiceView(typeOfJuice: juiceType)
+        }
+    }
+
+    private var sidebar: some View {
         Group {
             if isSearching && !hasSearchResults {
                 ContentUnavailableView(
@@ -106,7 +139,7 @@ struct LearnView: View {
                     }
                 )
             } else {
-                List {
+                List(selection: $selection) {
                     if isSearching {
                         // MARK: SEARCH RESULTS
                         ForEach(viewModel.topics, id: \.self) { topic in
@@ -114,9 +147,8 @@ struct LearnView: View {
                             if !lessons.isEmpty {
                                 Section(topic.replacing("-", with: " ").capitalizingFirstLetter()) {
                                     ForEach(lessons) { lesson in
-                                        NavigationLink(value: lesson) {
-                                            LessonRowView(lesson: lesson)
-                                        }
+                                        LessonRowView(lesson: lesson)
+                                            .tag(Selection.lesson(lesson))
                                     }
                                 }
                             }
@@ -125,9 +157,8 @@ struct LearnView: View {
                         if !books.isEmpty {
                             Section("Books") {
                                 ForEach(books) { book in
-                                    NavigationLink(value: book) {
-                                        BookRowView(book: book)
-                                    }
+                                    BookRowView(book: book)
+                                        .tag(Selection.book(book))
                                 }
                             }
                         }
@@ -137,9 +168,8 @@ struct LearnView: View {
                             Section {
                                 if !isCollapsed(for: topic) {
                                     ForEach(filteredLessons(for: topic)) { lesson in
-                                        NavigationLink(value: lesson) {
-                                            LessonRowView(lesson: lesson)
-                                        }
+                                        LessonRowView(lesson: lesson)
+                                            .tag(Selection.lesson(lesson))
                                     }
                                 }
                             } header: {
@@ -156,8 +186,11 @@ struct LearnView: View {
                         Section {
                             if !isCalculatorsCollapsed {
                                 ABVRowView()
+                                    .tag(Selection.abvCalculator)
                                 SuperjuiceRowView(juiceType: "lime")
+                                    .tag(Selection.superjuice("lime"))
                                 SuperjuiceRowView(juiceType: "lemon")
+                                    .tag(Selection.superjuice("lemon"))
                             }
                         } header: {
                             LearnHeaderView(
@@ -169,9 +202,8 @@ struct LearnView: View {
                         Section {
                             if !isBooksCollapsed {
                                 ForEach(filteredBooks) { book in
-                                    NavigationLink(value: book) {
-                                        BookRowView(book: book)
-                                    }
+                                    BookRowView(book: book)
+                                        .tag(Selection.book(book))
                                 }
                             }
                         } header: {
@@ -189,12 +221,6 @@ struct LearnView: View {
         #if os(iOS)
         .listSectionSpacing(.compact)
         #endif
-        .navigationDestination(for: Lesson.self) { lesson in
-            LessonDetailView(lesson: lesson)
-        }
-        .navigationDestination(for: Book.self) { book in
-            BookDetailView(book: book)
-        }
         #if os(iOS) || os(macOS)
         .safeAreaInset(edge: .bottom) {
             CrossPromoBannerView()

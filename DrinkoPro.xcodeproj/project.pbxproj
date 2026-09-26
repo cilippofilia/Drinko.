@@ -47,6 +47,7 @@
 		18A929D22F12C32A00B70219 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137C2B655D78000D3343 /* Category.swift */; };
 		18A929D32F12C33F00B70219 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1827137B2B655D78000D3343 /* Item.swift */; };
 		18A929D52F12C6A900B70219 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAE2A286D2E00862CE3 /* LearnView.swift */; };
+		18A0C5E22F77A00100D1E0A1 /* LearnView+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C5E12F77A00100D1E0A1 /* LearnView+Selection.swift */; };
 		18A929D62F12C6BF00B70219 /* LessonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */; };
 		18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
 		18A929DC2F12C72000B70219 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
@@ -83,6 +84,7 @@
 		18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */; };
 		18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA72A286D2E00862CE3 /* ReadMeView.swift */; };
 		18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAE2A286D2E00862CE3 /* LearnView.swift */; };
+		18A0C5E32F77A00100D1E0A1 /* LearnView+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C5E12F77A00100D1E0A1 /* LearnView+Selection.swift */; };
 		18F49EC42A286D2E00862CE3 /* LessonRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */; };
 		18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */; };
 		18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */; };
@@ -173,6 +175,7 @@
 		18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		18F49EA72A286D2E00862CE3 /* ReadMeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeView.swift; sourceTree = "<group>"; };
 		18F49EAE2A286D2E00862CE3 /* LearnView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnView.swift; sourceTree = "<group>"; };
+		18A0C5E12F77A00100D1E0A1 /* LearnView+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LearnView+Selection.swift"; sourceTree = "<group>"; };
 		18F49EAF2A286D2E00862CE3 /* LessonRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonRowView.swift; sourceTree = "<group>"; };
 		18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LessonDetailView.swift; sourceTree = "<group>"; };
 		18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailRowView.swift; sourceTree = "<group>"; };
@@ -531,6 +534,7 @@
 			isa = PBXGroup;
 			children = (
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
+				18A0C5E12F77A00100D1E0A1 /* LearnView+Selection.swift */,
 				18883A832ACC70C400FC78C7 /* Lessons */,
 				18883A842ACC718200FC78C7 /* Calculators */,
 				188E93BC2A4C1DF6001691E6 /* Books */,
@@ -773,6 +777,7 @@
 				18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */,
 				18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */,
 				18A929D52F12C6A900B70219 /* LearnView.swift in Sources */,
+				18A0C5E22F77A00100D1E0A1 /* LearnView+Selection.swift in Sources */,
 				182159082F3EA2CC002C1046 /* UserIngredient.swift in Sources */,
 				18A929EA2F12C8F100B70219 /* FavoriteCocktailButtonView.swift in Sources */,
 				18A929F32F12C9D100B70219 /* CabinetPreviewer.swift in Sources */,
@@ -801,6 +806,7 @@
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
 				182157692F3E7DC5002C1046 /* UserCreatedCocktail.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
+				18A0C5E32F77A00100D1E0A1 /* LearnView+Selection.swift in Sources */,
 				18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */,
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
 				1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */,

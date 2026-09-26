@@ -27,9 +27,7 @@ struct HomeView: View {
     var body: some View {
         TabView(selection: selectedViewBinding) {
             Tab("Learn", systemImage: "books.vertical", value: LearnView.learnTag) {
-                NavigationStack {
-                    LearnView()
-                }
+                LearnView()
             }
             Tab("Cocktails", systemImage: "wineglass", value: CocktailsView.cocktailsTag) {
                 CocktailsView()
