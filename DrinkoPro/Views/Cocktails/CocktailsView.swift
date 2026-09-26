@@ -114,7 +114,14 @@ struct CocktailsView: View {
                 #endif
         } detail: {
             if let selectedCocktail {
-                CocktailDetailView(cocktail: selectedCocktail)
+                NavigationStack {
+                    CocktailDetailView(cocktail: selectedCocktail)
+                        .navigationDestination(for: Cocktail.self) { cocktail in
+                            CocktailDetailView(cocktail: cocktail)
+                        }
+                }
+                // Reset pushed "You may also like" pages when the sidebar selection changes.
+                .id(selectedCocktail.id)
             } else {
                 ContentUnavailableView(
                     "Select a Cocktail",

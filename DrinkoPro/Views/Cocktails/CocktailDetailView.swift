@@ -21,7 +21,6 @@ struct CocktailDetailView: View {
     @State private var showEditSheet = false
 
     let cocktail: Cocktail
-    @State private var cocktailID: String
 
     var toolbarPlacement: ToolbarItemPlacement {
         #if os(iOS)
@@ -31,13 +30,8 @@ struct CocktailDetailView: View {
         #endif
     }
 
-    init(cocktail: Cocktail) {
-        self.cocktail = cocktail
-        _cocktailID = State(initialValue: cocktail.id)
-    }
-
     private var activeCocktail: Cocktail {
-        viewModel.cocktail(withID: cocktailID, fallback: cocktail)
+        viewModel.cocktail(withID: cocktail.id, fallback: cocktail)
     }
 
     var body: some View {
