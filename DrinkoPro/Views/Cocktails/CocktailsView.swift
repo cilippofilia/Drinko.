@@ -22,7 +22,7 @@ struct CocktailsView: View {
     @State private var cocktailPendingDeletion: Cocktail = .userCreatedExample
     @State private var didConfigureModelContext: Bool = false
 
-    @State var path = NavigationPath()
+    @State private var selectedCocktail: Cocktail?
 
     private var visibleCocktails: [Cocktail] {
         viewModel.filteredCocktails(filterOption: filterOption) { cocktail in
@@ -51,12 +51,9 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        NavigationStack(path: $path) {
+        NavigationSplitView {
             contentView
                 .navigationTitle("Cocktails")
-                .navigationDestination(for: Cocktail.self) { cocktail in
-                    CocktailDetailView(cocktail: cocktail)
-                }
                 .searchable(text: searchBinding, prompt: "Search Cocktails")
                 .toolbar {
                     ToolbarItemGroup(placement: toolbarPlacement) {
@@ -91,6 +88,9 @@ struct CocktailsView: View {
                             if favorites.contains(cocktailPendingDeletion) {
                                 favorites.remove(cocktailPendingDeletion)
                             }
+                            if selectedCocktail == cocktailPendingDeletion {
+                                selectedCocktail = nil
+                            }
                         }
                     )
                     Button("Cancel", role: .cancel) { }
@@ -112,6 +112,16 @@ struct CocktailsView: View {
                     CrossPromoBannerView()
                 }
                 #endif
+        } detail: {
+            if let selectedCocktail {
+                CocktailDetailView(cocktail: selectedCocktail)
+            } else {
+                ContentUnavailableView(
+                    "Select a Cocktail",
+                    systemImage: "wineglass",
+                    description: Text("Choose a cocktail to see its details.")
+                )
+            }
         }
     }
 }
@@ -181,7 +191,7 @@ private extension CocktailsView {
     }
 
     var fullListView: some View {
-        List {
+        List(selection: $selectedCocktail) {
             ForEach(visibleSectionKeys, id: \.self) { sectionKey in
                 Section {
                     ForEach(visibleGroupedCocktails[sectionKey] ?? []) { cocktail in
@@ -212,28 +222,29 @@ private extension CocktailsView {
     }
 
     var filteredListView: some View {
-        List(visibleCocktails) { cocktail in
-            cocktailRow(for: cocktail)
+        List(selection: $selectedCocktail) {
+            ForEach(visibleCocktails) { cocktail in
+                cocktailRow(for: cocktail)
+            }
         }
     }
 
     func cocktailRow(for cocktail: Cocktail) -> some View {
-        NavigationLink(value: cocktail) {
-            CocktailRowView(cocktail: cocktail)
-                .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                    FavoriteCocktailButtonView(cocktail: cocktail)
-                        .tint(favorites.contains(cocktail) ? .red : .blue)
-                    if cocktail.id.hasPrefix("user-") {
-                        DeleteButtonView(
-                            label: "Delete",
-                            action: {
-                                cocktailPendingDeletion = cocktail
-                                showDeleteAlert = true
-                            }
-                        )
-                    }
+        CocktailRowView(cocktail: cocktail)
+            .tag(cocktail)
+            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                FavoriteCocktailButtonView(cocktail: cocktail)
+                    .tint(favorites.contains(cocktail) ? .red : .blue)
+                if cocktail.id.hasPrefix("user-") {
+                    DeleteButtonView(
+                        label: "Delete",
+                        action: {
+                            cocktailPendingDeletion = cocktail
+                            showDeleteAlert = true
+                        }
+                    )
                 }
-        }
+            }
     }
 
     var optionsMenu: some View {
@@ -368,16 +379,13 @@ private extension CocktailsView {
         guard let cocktailID = appNavigationModel.consumePendingCocktailID() else { return }
         guard let cocktail = viewModel.listOfAllDrinks.first(where: { $0.id == cocktailID }) else { return }
 
-        path = NavigationPath()
-        path.append(cocktail)
+        selectedCocktail = cocktail
     }
 }
 
 #if DEBUG
 #Preview {
-    NavigationStack {
-        CocktailsView()
-            .drinkoPreviewEnvironment()
-    }
+    CocktailsView()
+        .drinkoPreviewEnvironment()
 }
 #endif

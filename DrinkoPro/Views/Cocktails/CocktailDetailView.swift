@@ -156,9 +156,9 @@ struct CocktailDetailView: View {
             }
             Spacer(minLength: 50)
         }
-        #if os(macOS)
         .padding(.horizontal)
-        #endif
+        .frame(maxWidth: 700)
+        .frame(maxWidth: .infinity)
         .alert("Delete Cocktail?", isPresented: $showDeleteConfirmation) {
             DeleteButtonView(
                 label: "Delete",

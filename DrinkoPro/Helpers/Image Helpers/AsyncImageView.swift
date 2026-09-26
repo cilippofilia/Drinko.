@@ -27,6 +27,7 @@ struct AsyncImageView: View {
             }
         }
         .frame(height: frameHeight)
+        .frame(minWidth: 0, maxWidth: .infinity)
         .clipped()
         .accessibilityElement(children: .ignore)
 

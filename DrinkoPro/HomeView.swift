@@ -41,6 +41,7 @@ struct HomeView: View {
                 SettingsView()
             }
         }
+        .tabViewStyle(.sidebarAdaptable)
         .onAppear(perform: checkForReview)
         .sheet(isPresented: $showingWidgetTutorial) {
             NavigationStack {
@@ -126,6 +127,7 @@ struct HomeView: View {
 #if DEBUG
 #Preview {
     HomeView()
+        .tabViewStyle(.sidebarAdaptable)
         .drinkoPreviewEnvironment()
 }
 #endif
