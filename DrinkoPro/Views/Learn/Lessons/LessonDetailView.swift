@@ -14,12 +14,45 @@ struct LessonDetailView: View {
 
     var lesson: Lesson
 
+    private var isCompact: Bool { sizeClass == .compact }
+
     var body: some View {
         ScrollView {
-            if sizeClass == .compact {
-                compactLessonView
-            } else {
-                regularLessonView
+            VStack(spacing: isCompact ? nil : 20) {
+                AsyncImageView(
+                    image: lesson.image,
+                    frameHeight: imageFrameHeight,
+                    aspectRatio: .fill
+                )
+
+                VStack(spacing: isCompact ? 10 : 20) {
+                    Text(lesson.title)
+                        .font(.title.bold())
+
+                    Text(lesson.description)
+                        .font(.headline)
+                        .foregroundStyle(.secondary)
+                        #if os(iOS)
+                        .padding(.bottom, isCompact ? 0 : nil)
+                        #elseif os(macOS)
+                        .multilineTextAlignment(isCompact ? .leading : .center)
+                        #endif
+
+                    VStack(alignment: .leading, spacing: isCompact ? nil : 20) {
+                        ForEach(lesson.body) { text in
+                            VStack(alignment: .leading, spacing: isCompact ? 10 : nil) {
+                                Text(text.heading)
+                                    .font(text.heading.count < 50 ? .headline : .body)
+
+                                if text.content != "" {
+                                    Text(text.content)
+                                }
+                            }
+                            .padding(.vertical, 10)
+                        }
+                    }
+                }
+                .padding([.horizontal, .bottom])
             }
         }
         .navigationTitle(lesson.title)
@@ -28,79 +61,6 @@ struct LessonDetailView: View {
         #endif
         .scrollIndicators(.hidden, axes: .vertical)
         .scrollBounceBehavior(.basedOnSize)
-    }
-
-    var compactLessonView: some View {
-        VStack {
-            AsyncImageView(
-                image: lesson.image,
-                frameHeight: imageFrameHeight,
-                aspectRatio: .fill
-            )
-
-            VStack(spacing: 10) {
-                Text(lesson.title)
-                    .font(.title.bold())
-
-                Text(lesson.description)
-                    .font(.headline)
-                    .foregroundColor(.secondary)
-
-                VStack(alignment: .leading) {
-                    ForEach(lesson.body) { text in
-                        VStack(alignment: .leading, spacing: 10) {
-                            Text(text.heading)
-                                .font(text.heading.count < 50 ? .headline : .body)
-                            
-                            if text.content != "" {
-                                Text(text.content)
-                            }
-                        }
-                        .padding(.vertical, 10)
-                    }
-                }
-            }
-            .padding([.horizontal, .bottom])
-        }
-    }
-
-    var regularLessonView: some View {
-        VStack(spacing: 20) {
-            AsyncImageView(
-                image: lesson.image,
-                frameHeight: imageFrameHeight,
-                aspectRatio: .fill
-            )
-
-            VStack(spacing: 20) {
-                Text(lesson.title)
-                    .font(.title.bold())
-
-                Text(lesson.description)
-                    .font(.headline)
-                    .foregroundColor(.secondary)
-                    #if os(iOS)
-                    .padding(.bottom)
-                    #elseif os(macOS)
-                    .multilineTextAlignment(.center)
-                    #endif
-
-                VStack(alignment: .leading, spacing: 20) {
-                    ForEach(lesson.body) { text in
-                        VStack(alignment: .leading) {
-                            Text(text.heading)
-                                .font(text.heading.count < 50 ? .headline : .body)
-
-                            if text.content != "" {
-                                Text(text.content)
-                            }
-                        }
-                        .padding(.vertical, 10)
-                    }
-                }
-            }
-            .padding([.horizontal, .bottom])
-        }
     }
 }
 

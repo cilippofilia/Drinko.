@@ -15,31 +15,18 @@ struct LessonRowView: View {
 
     var body: some View {
         HStack(spacing: sizeClass == .compact ? 10 : 20) {
-            AsyncImage(url: URL(string: lesson.image)) { state in
-                switch state {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                case .failure:
-                    ImageFailedToLoad()
-                @unknown default:
-                    EmptyView()
-                }
-            }
+            CachedRemoteImage(url: URL(string: lesson.image), contentMode: .fill)
             .frame(width: scaledRowHeight, height: scaledRowHeight)
-            .cornerRadius(imageCornerRadius)
+            .clipShape(.rect(cornerRadius: imageCornerRadius))
             .accessibilityHidden(true)
 
             VStack(alignment: .leading) {
                 Text(lesson.title)
                     .font(.headline)
-                
+
                 Text(lesson.description)
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .foregroundStyle(.secondary)
                     #if os(macOS)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     #endif

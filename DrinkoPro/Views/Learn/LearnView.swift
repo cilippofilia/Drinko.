@@ -52,41 +52,21 @@ struct LearnView: View {
     private var trimmedSearchText: String {
         searchText.trimmingCharacters(in: .whitespacesAndNewlines)
     }
-    
+
     private var isSearching: Bool {
         !trimmedSearchText.isEmpty
     }
-    
+
     private func filteredLessons(for topic: String) -> [Lesson] {
-        let lessons = viewModel.getLessons(for: topic)
-        guard isSearching else { return lessons }
-        return lessons.filter { lesson in
-            lesson.title.localizedCaseInsensitiveContains(trimmedSearchText) ||
-            lesson.description.localizedCaseInsensitiveContains(trimmedSearchText)
-        }
+        viewModel.filteredLessons(for: topic, matching: searchText)
     }
-    
+
     private var filteredBooks: [Book] {
-        let books = viewModel.books
-        guard isSearching else { return books }
-        return books.filter { book in
-            book.title.localizedCaseInsensitiveContains(trimmedSearchText) ||
-            book.description.localizedCaseInsensitiveContains(trimmedSearchText) ||
-            book.author.localizedCaseInsensitiveContains(trimmedSearchText)
-        }
+        viewModel.filteredBooks(matching: searchText)
     }
-    
+
     private var hasSearchResults: Bool {
-        guard isSearching else { return true }
-        if !filteredBooks.isEmpty {
-            return true
-        }
-        for topic in viewModel.topics {
-            if !filteredLessons(for: topic).isEmpty {
-                return true
-            }
-        }
-        return false
+        viewModel.hasResults(matching: searchText)
     }
 
     var body: some View {

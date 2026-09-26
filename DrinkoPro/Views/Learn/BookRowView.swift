@@ -15,23 +15,10 @@ struct BookRowView: View {
 
     var body: some View {
         HStack(spacing: sizeClass == .compact ? 10 : 20) {
-            AsyncImage(url: URL(string: book.image)) { state in
-                switch state {
-                case .empty:
-                    ProgressView()
-                case .success(let image):
-                    image
-                        .resizable()
-                        .scaledToFill()
-                case .failure:
-                    ImageFailedToLoad()
-                @unknown default:
-                    EmptyView()
-                }
-            }
+            CachedRemoteImage(url: URL(string: book.image), contentMode: .fill)
             .frame(width: scaledRowHeight,
                    height: scaledRowHeight)
-            .cornerRadius(imageCornerRadius)
+            .clipShape(.rect(cornerRadius: imageCornerRadius))
             .accessibilityHidden(true)
 
             VStack(alignment: .leading) {
@@ -40,7 +27,7 @@ struct BookRowView: View {
 
                 Text("© \(book.author)")
                     .font(.subheadline)
-                    .foregroundColor(.secondary)
+                    .foregroundStyle(.secondary)
             }
         }
         .frame(minHeight: scaledRowHeight)

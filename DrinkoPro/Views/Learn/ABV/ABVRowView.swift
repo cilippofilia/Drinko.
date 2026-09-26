@@ -15,7 +15,7 @@ struct ABVRowView: View {
         HStack(spacing: sizeClass == .compact ? 10 : 20) {
             Image("abv")
                 .frame(width: scaledRowHeight, height: scaledRowHeight)
-                .cornerRadius(imageCornerRadius)
+                .clipShape(.rect(cornerRadius: imageCornerRadius))
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading) {

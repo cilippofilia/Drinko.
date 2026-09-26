@@ -11,21 +11,10 @@ struct AsyncImageView: View {
     let image: String
     let frameHeight: CGFloat
     let aspectRatio: ContentMode
-    let accessibilityLabel: String? = nil
+    var accessibilityLabel: String?
 
     var body: some View {
-        let content = AsyncImage(url: URL(string: image)) { state in
-            switch state {
-            case .empty:
-                ProgressView()
-            case .success(let image):
-                ImageSuccesful(image: image, aspectRatio: aspectRatio)
-            case .failure:
-                ImageFailedToLoad()
-            @unknown default:
-                EmptyView()
-            }
-        }
+        let content = CachedRemoteImage(url: URL(string: image), contentMode: aspectRatio)
         .frame(height: frameHeight)
         .frame(minWidth: 0, maxWidth: .infinity)
         .clipped()

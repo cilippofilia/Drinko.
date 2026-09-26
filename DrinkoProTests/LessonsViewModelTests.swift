@@ -60,4 +60,78 @@ final class LessonsViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.getLessons(for: "syrups"), viewModel.syrups)
         XCTAssertTrue(viewModel.getLessons(for: "unknown-topic").isEmpty)
     }
+
+    func testFilteredLessonsWithEmptyQueryReturnsEverything() {
+        let viewModel = LessonsViewModel()
+
+        XCTAssertEqual(viewModel.filteredLessons(for: "basic-lessons", matching: ""), viewModel.basicLessons)
+        XCTAssertEqual(viewModel.filteredLessons(for: "basic-lessons", matching: "   "), viewModel.basicLessons)
+    }
+
+    func testFilteredLessonsMatchesTitleOrDescriptionCaseInsensitively() throws {
+        let viewModel = LessonsViewModel()
+        let lesson = try XCTUnwrap(viewModel.basicLessons.first)
+
+        let byTitle = viewModel.filteredLessons(for: "basic-lessons", matching: lesson.title.uppercased())
+        XCTAssertTrue(byTitle.contains(lesson))
+
+        let byDescriptionFragment = String(lesson.description.prefix(4))
+        let byDescription = viewModel.filteredLessons(for: "basic-lessons", matching: byDescriptionFragment)
+        XCTAssertTrue(byDescription.contains(lesson))
+    }
+
+    func testFilteredLessonsWithNoMatchReturnsEmpty() {
+        let viewModel = LessonsViewModel()
+
+        XCTAssertTrue(
+            viewModel.filteredLessons(for: "basic-lessons", matching: "zzzzz-no-such-lesson-zzzzz").isEmpty
+        )
+    }
+
+    func testFilteredBooksWithEmptyQueryReturnsEverything() {
+        let viewModel = LessonsViewModel()
+
+        XCTAssertEqual(viewModel.filteredBooks(matching: ""), viewModel.books)
+        XCTAssertEqual(viewModel.filteredBooks(matching: "  "), viewModel.books)
+    }
+
+    func testFilteredBooksMatchesTitleDescriptionOrAuthor() throws {
+        let viewModel = LessonsViewModel()
+        let book = try XCTUnwrap(viewModel.books.first)
+
+        XCTAssertTrue(viewModel.filteredBooks(matching: book.title.uppercased()).contains(book))
+        XCTAssertTrue(viewModel.filteredBooks(matching: book.author).contains(book))
+    }
+
+    func testFilteredBooksWithNoMatchReturnsEmpty() {
+        let viewModel = LessonsViewModel()
+
+        XCTAssertTrue(viewModel.filteredBooks(matching: "zzzzz-no-such-book-zzzzz").isEmpty)
+    }
+
+    func testHasResultsIsTrueForEmptyQuery() {
+        let viewModel = LessonsViewModel()
+
+        XCTAssertTrue(viewModel.hasResults(matching: ""))
+    }
+
+    func testHasResultsIsTrueWhenABookMatches() throws {
+        let viewModel = LessonsViewModel()
+        let book = try XCTUnwrap(viewModel.books.first)
+
+        XCTAssertTrue(viewModel.hasResults(matching: book.title))
+    }
+
+    func testHasResultsIsTrueWhenALessonMatches() throws {
+        let viewModel = LessonsViewModel()
+        let lesson = try XCTUnwrap(viewModel.basicLessons.first)
+
+        XCTAssertTrue(viewModel.hasResults(matching: lesson.title))
+    }
+
+    func testHasResultsIsFalseWhenNothingMatches() {
+        let viewModel = LessonsViewModel()
+
+        XCTAssertFalse(viewModel.hasResults(matching: "zzzzz-no-such-content-zzzzz"))
+    }
 }

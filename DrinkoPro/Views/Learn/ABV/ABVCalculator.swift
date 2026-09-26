@@ -53,7 +53,7 @@ struct ABVCalculator: View {
                         }) {
                             Label("Delete", systemImage: "xmark.circle")
                                 .labelStyle(.iconOnly)
-                                .foregroundColor(bottles.count > 1 ? .secondary : .clear)
+                                .foregroundStyle(bottles.count > 1 ? Color.secondary : Color.clear)
                         }
                         .buttonStyle(.plain)
                         .disabled(bottles.count == 1)

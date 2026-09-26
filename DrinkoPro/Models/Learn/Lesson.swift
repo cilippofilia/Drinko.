@@ -62,9 +62,9 @@ class LessonsViewModel {
             return basicLessons
         case "advanced-lessons":
             return advancedLessons
-        case "bar-preps": 
+        case "bar-preps":
             return barPreps
-        case "basic-spirits": 
+        case "basic-spirits":
             return basicSpirits
         case "advanced-spirits":
             return advancedSpirits
@@ -72,8 +72,52 @@ class LessonsViewModel {
             return liqueurs
         case "syrups":
             return syrups
-        default: 
+        default:
             return []
         }
+    }
+
+    /// Returns the lessons for `topic` whose title or description match `query`.
+    ///
+    /// Whitespace is trimmed from `query`; an empty (or whitespace-only) query returns every
+    /// lesson for that topic unfiltered.
+    func filteredLessons(for topic: String, matching query: String) -> [Lesson] {
+        let lessons = getLessons(for: topic)
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedQuery.isEmpty else { return lessons }
+
+        return lessons.filter { lesson in
+            lesson.title.localizedStandardContains(trimmedQuery) ||
+            lesson.description.localizedStandardContains(trimmedQuery)
+        }
+    }
+
+    /// Returns the books whose title, description or author match `query`.
+    ///
+    /// Whitespace is trimmed from `query`; an empty (or whitespace-only) query returns every book
+    /// unfiltered.
+    func filteredBooks(matching query: String) -> [Book] {
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedQuery.isEmpty else { return books }
+
+        return books.filter { book in
+            book.title.localizedStandardContains(trimmedQuery) ||
+            book.description.localizedStandardContains(trimmedQuery) ||
+            book.author.localizedStandardContains(trimmedQuery)
+        }
+    }
+
+    /// Whether any lesson (across all topics) or book matches `query`.
+    ///
+    /// An empty (or whitespace-only) query always returns `true`.
+    func hasResults(matching query: String) -> Bool {
+        let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedQuery.isEmpty else { return true }
+
+        if !filteredBooks(matching: query).isEmpty {
+            return true
+        }
+
+        return topics.contains { !filteredLessons(for: $0, matching: query).isEmpty }
     }
 }

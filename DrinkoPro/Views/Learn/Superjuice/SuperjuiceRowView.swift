@@ -19,7 +19,7 @@ struct SuperjuiceRowView: View {
                 .resizable()
                 .scaledToFill()
                 .frame(width: scaledRowHeight, height: scaledRowHeight)
-                .cornerRadius(imageCornerRadius)
+                .clipShape(.rect(cornerRadius: imageCornerRadius))
                 .accessibilityHidden(true)
 
             VStack(alignment: .leading) {
