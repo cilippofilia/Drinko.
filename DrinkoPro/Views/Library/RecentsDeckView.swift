@@ -18,6 +18,12 @@ struct RecentsDeckView<Item: Hashable>: View {
 
     @State private var frontIndex = 0
     @State private var dragOffset: CGFloat = 0
+    /// Locked for the lifetime of a single drag, so a gesture that starts vertical can't
+    /// later be reinterpreted as horizontal (or vice versa) as the finger wanders.
+    @State private var dragAxis: Axis?
+    /// `true` once the current (or just-ended) drag was recognized as a horizontal swipe,
+    /// so the front card's own `Button` action knows to ignore the resulting tap/release.
+    @State private var didDrag = false
 
     /// How far (including predicted momentum) a drag must travel to send the card to the back.
     private let swipeThreshold: CGFloat = 100
@@ -77,6 +83,12 @@ struct RecentsDeckView<Item: Hashable>: View {
         let tilt: Double = reduceMotion ? 0 : (isFront ? Double(dragOffset / 20) : Double(peekDirection) * 4)
 
         return Button {
+            // A swipe can end with the front card's bounds under the touch-up point
+            // (it tracks the drag via `.offset`); don't let that register as a tap.
+            guard !didDrag else {
+                didDrag = false
+                return
+            }
             onOpen(item)
         } label: {
             LibraryCardView(model: cardModel(item), isSelected: false)
@@ -99,13 +111,29 @@ struct RecentsDeckView<Item: Hashable>: View {
     private var swipeGesture: some Gesture {
         DragGesture(minimumDistance: 20)
             .onChanged { value in
-                // Only clearly horizontal drags move the deck, so vertical scrolling keeps working.
-                guard !reduceMotion, abs(value.translation.width) > abs(value.translation.height) else { return }
-                dragOffset = value.translation.width
+                // Decide the axis once, on the first change, and stick with it for this
+                // drag: a vertical scroll that starts on the deck must keep scrolling even
+                // if the finger briefly wanders sideways, and vice versa.
+                if dragAxis == nil {
+                    didDrag = false
+                    let translation = value.translation
+                    dragAxis = abs(translation.width) > 1.5 * abs(translation.height) ? .horizontal : .vertical
+                }
+
+                // A vertical drag isn't a swipe: ignore the rest of this gesture so the
+                // enclosing scroll view keeps tracking it (no offset, no advance).
+                guard dragAxis == .horizontal else { return }
+
+                didDrag = true
+                if !reduceMotion {
+                    dragOffset = value.translation.width
+                }
             }
             .onEnded { value in
-                let isHorizontal = abs(value.translation.width) > abs(value.translation.height)
-                let shouldAdvance = isHorizontal && abs(value.predictedEndTranslation.width) > swipeThreshold
+                defer { dragAxis = nil }
+                guard dragAxis == .horizontal else { return }
+
+                let shouldAdvance = abs(value.predictedEndTranslation.width) > swipeThreshold
 
                 if reduceMotion {
                     if shouldAdvance {
