@@ -79,10 +79,7 @@ struct SettingsInfoView: View {
 
     // Get current Version of the App function
     func getCurrentAppVersion() -> String {
-        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"]
-        let version = (appVersion as! String)
-
-        return version
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }
 }
 

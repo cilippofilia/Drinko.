@@ -10,7 +10,12 @@ import SwiftUI
 // EXTENSION ON BUNDLE
 // load JSON from a BUNDLE; FIND > OPEN > DECODE > RETURN
 extension Bundle {
-    func decode<T: Decodable>(_ type: T.Type, from file: String, dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate, keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) -> T {
+    func decode<T: Decodable>(
+        _ type: T.Type,
+        from file: String,
+        dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
+        keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
+    ) -> T {
 
         guard let url = self.url(forResource: file, withExtension: nil) else {
             print("Error: Failed to locate \(file) in bundle.")

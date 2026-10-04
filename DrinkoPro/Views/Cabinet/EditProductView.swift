@@ -123,8 +123,8 @@ struct EditProductView: View {
         }
     }
     
-    func image(for n: Int) -> Image {
-        if n > product.rating {
+    func image(for star: Int) -> Image {
+        if star > product.rating {
             return offImage ?? onImage
         } else {
             return onImage
@@ -142,8 +142,24 @@ struct EditProductView: View {
     do {
         let previewer = try CabinetPreviewerPreviewer()
         
-        return EditProductView(product: Item(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", madeIn: "Poland", abv: "45", rating: 5, tried: false, creationDate: Date.now))
-            .modelContainer(previewer.container)
+        return EditProductView(
+            product: Item(
+                name: "Absolut Vodka",
+                detail: """
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore \
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut \
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse \
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in \
+                    culpa qui officia deserunt mollit anim id est laborum.
+                    """,
+                madeIn: "Poland",
+                abv: "45",
+                rating: 5,
+                tried: false,
+                creationDate: Date.now
+            )
+        )
+        .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }

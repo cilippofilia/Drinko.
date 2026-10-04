@@ -134,7 +134,7 @@ final class CocktailsViewModelTests: XCTestCase {
         )
         let viewModel = CocktailsViewModel()
         viewModel.configure(modelContext: container.mainContext)
-        viewModel.addUserCocktail(
+        viewModel.addUserCocktail(UserCocktailDetails(
             name: "House Special",
             method: "shake & fine strain",
             glass: "coupe",
@@ -143,7 +143,7 @@ final class CocktailsViewModelTests: XCTestCase {
             extra: "",
             ingredients: [Ingredient(name: "Rum", quantity: 2, unit: "oz.")],
             procedureSteps: []
-        )
+        ))
         self.container = container
         return viewModel
     }

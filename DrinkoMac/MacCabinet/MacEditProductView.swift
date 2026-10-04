@@ -137,8 +137,8 @@ struct MacEditProductView: View {
         }
     }
     
-    func image(for n: Int) -> Image {
-        if n > product.rating {
+    func image(for star: Int) -> Image {
+        if star > product.rating {
             return offImage ?? onImage
         } else {
             return onImage
@@ -160,8 +160,18 @@ struct MacEditProductView: View {
     do {
         let previewer = try CabinetPreviewerPreviewer()
         
-        return MacEditProductView(product: Item(name: "Absolut Vodka", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", madeIn: "", abv: "45", rating: 5, tried: false, creationDate: Date.now))
-            .modelContainer(previewer.container)
+        return MacEditProductView(
+            product: Item(
+                name: "Absolut Vodka",
+                detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                madeIn: "",
+                abv: "45",
+                rating: 5,
+                tried: false,
+                creationDate: Date.now
+            )
+        )
+        .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")
     }

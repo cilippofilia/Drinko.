@@ -305,29 +305,20 @@ class CocktailsViewModel {
         return Array(list.prefix(5))
     }
 
-    func addUserCocktail(
-        name: String,
-        method: String,
-        glass: String,
-        garnish: String,
-        ice: String,
-        extra: String,
-        ingredients: [Ingredient],
-        procedureSteps: [String]
-    ) {
+    func addUserCocktail(_ details: UserCocktailDetails) {
         guard let modelContext else { return }
-        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimmedName = details.name.trimmingCharacters(in: .whitespacesAndNewlines)
         let newCocktail = UserCreatedCocktail(
             name: trimmedName,
-            method: method,
-            glass: glass,
-            garnish: garnish,
-            ice: ice,
-            extra: extra,
-            ingredients: ingredients.map {
+            method: details.method,
+            glass: details.glass,
+            garnish: details.garnish,
+            ice: details.ice,
+            extra: details.extra,
+            ingredients: details.ingredients.map {
                 UserIngredient(name: $0.name, quantity: $0.quantity, unit: $0.unit)
             },
-            procedure: makeUserProcedure(from: procedureSteps),
+            procedure: makeUserProcedure(from: details.procedureSteps),
             creationDate: Date(),
             lastUpdated: nil
         )
@@ -339,33 +330,23 @@ class CocktailsViewModel {
         saveUserCocktails()
     }
 
-    func updateUserCocktail(
-        _ cocktail: Cocktail,
-        name: String,
-        method: String,
-        glass: String,
-        garnish: String,
-        ice: String,
-        extra: String,
-        ingredients: [Ingredient],
-        procedureSteps: [String]
-    ) {
+    func updateUserCocktail(_ cocktail: Cocktail, with details: UserCocktailDetails) {
         guard let existing = userCreatedCocktails.first(where: { $0.id == cocktail.id }) else {
             return
         }
 
-        existing.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        existing.method = method
-        existing.glass = glass
-        existing.garnish = garnish
-        existing.ice = ice
-        existing.extra = extra
+        existing.name = details.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        existing.method = details.method
+        existing.glass = details.glass
+        existing.garnish = details.garnish
+        existing.ice = details.ice
+        existing.extra = details.extra
         existing.lastUpdated = Date()
-        existing.ingredients = ingredients.map {
+        existing.ingredients = details.ingredients.map {
             UserIngredient(name: $0.name, quantity: $0.quantity, unit: $0.unit)
         }
         existing.ingredients?.forEach { $0.cocktail = existing }
-        existing.procedure = makeUserProcedure(from: procedureSteps)
+        existing.procedure = makeUserProcedure(from: details.procedureSteps)
         existing.procedure?.cocktail = existing
         saveUserCocktails()
     }

@@ -249,16 +249,7 @@ extension UserCocktailForm {
         unitOptions: [String],
         editingCocktail: Cocktail?,
         editingProcedureSteps: [String]
-    ) -> (
-        name: String,
-        method: String,
-        glass: String,
-        garnish: String,
-        ice: String,
-        extra: String,
-        ingredientDrafts: [IngredientDraft],
-        procedureDrafts: [String]
-    ) {
+    ) -> UserCocktailFormState {
         if let editingCocktail {
             let mappedIngredients = editingCocktail.ingredients.map {
                 IngredientDraft(name: $0.name, quantity: String($0.quantity), unit: $0.unit)
@@ -271,7 +262,7 @@ extension UserCocktailForm {
                 .filter { !$0.isEmpty }
             let procedureDrafts = trimmedProcedure.isEmpty ? [""] : trimmedProcedure
 
-            return (
+            return UserCocktailFormState(
                 name: editingCocktail.name,
                 method: editingCocktail.method,
                 glass: editingCocktail.glass,
@@ -283,7 +274,7 @@ extension UserCocktailForm {
             )
         }
 
-        return (
+        return UserCocktailFormState(
             name: "",
             method: methodOptions.first ?? "shake & fine strain",
             glass: glassOptions.first ?? "rock",
@@ -316,29 +307,21 @@ extension UserCocktailForm {
             extra = "-"
         }
 
+        let details = UserCocktailDetails(
+            name: trimmedName,
+            method: method,
+            glass: glass,
+            garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
+            ice: ice,
+            extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
+            ingredients: ingredients,
+            procedureSteps: procedureSteps
+        )
+
         if let editingCocktail {
-            viewModel.updateUserCocktail(
-                editingCocktail,
-                name: trimmedName,
-                method: method,
-                glass: glass,
-                garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
-                ice: ice,
-                extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
-                ingredients: ingredients,
-                procedureSteps: procedureSteps
-            )
+            viewModel.updateUserCocktail(editingCocktail, with: details)
         } else {
-            viewModel.addUserCocktail(
-                name: trimmedName,
-                method: method,
-                glass: glass,
-                garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
-                ice: ice,
-                extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
-                ingredients: ingredients,
-                procedureSteps: procedureSteps
-            )
+            viewModel.addUserCocktail(details)
             #if os(iOS)
             crossPromoSignal.bump()
             #endif

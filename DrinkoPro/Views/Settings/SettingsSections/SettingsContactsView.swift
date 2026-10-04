@@ -51,27 +51,33 @@ struct SettingsContactsView: View {
 }
 
 private extension SettingsContactsView {
+    func openMail(subject: String, body: String) {
+        guard let url = URL(string: "mailto:\(email)?subject=\(percentEncoded(subject))&body=\(percentEncoded(body))") else {
+            return
+        }
+
+        openURL(url)
+    }
+
+    func percentEncoded(_ text: String) -> String {
+        text.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
+    }
+
     var reportBug: some View {
         Button("Report a bug") {
-            guard let url = URL(string: "mailto:\(email)?subject=\(reportBugSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(reportBugBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
-
-            openURL(url)
+            openMail(subject: reportBugSubject, body: reportBugBody)
         }
     }
 
     var requestFeature: some View {
         Button("Request a Feature") {
-            guard let url = URL(string: "mailto:\(email)?subject=\(requestFeatureSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(requestFeatureBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
-
-            openURL(url)
+            openMail(subject: requestFeatureSubject, body: requestFeatureBody)
         }
     }
 
     var otherEnquiry: some View {
         Button("Other Enquiry") {
-            guard let url = URL(string: "mailto:\(email)?subject=\(contactDevSubject.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")&body=\(contactDevBody.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? "")") else { return }
-
-            openURL(url)
+            openMail(subject: contactDevSubject, body: contactDevBody)
         }
     }
 
