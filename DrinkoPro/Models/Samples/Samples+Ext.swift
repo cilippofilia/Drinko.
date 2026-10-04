@@ -272,6 +272,7 @@ enum PreviewSupport {
     }()
 
     static let lessonsViewModel = LessonsViewModel()
+    static let recentsStore = RecentsStore(defaults: UserDefaults(suiteName: "PreviewRecents") ?? .standard)
 
     #if os(iOS) || os(macOS)
     static let removeAdsStore = RemoveAdsStore()
@@ -287,6 +288,7 @@ extension View {
             .environment(PreviewSupport.appNavigationModel)
             .environment(PreviewSupport.cocktailsViewModel)
             .environment(PreviewSupport.lessonsViewModel)
+            .environment(PreviewSupport.recentsStore)
             #if os(iOS) || os(macOS)
             .environment(PreviewSupport.removeAdsStore)
             .environment(PreviewSupport.crossPromoSignal)
