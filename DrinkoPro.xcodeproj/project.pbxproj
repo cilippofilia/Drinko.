@@ -243,7 +243,9 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Book.swift,
+				LearnTopic.swift,
 				Lesson.swift,
+				LessonsViewModel.swift,
 			);
 			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
 		};

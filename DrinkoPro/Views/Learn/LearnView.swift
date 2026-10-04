@@ -122,7 +122,7 @@ struct LearnView: View {
                 List(selection: $selection) {
                     if isSearching {
                         // MARK: SEARCH RESULTS
-                        ForEach(viewModel.topics, id: \.self) { topic in
+                        ForEach(viewModel.topics.map(\.id), id: \.self) { topic in
                             let lessons = filteredLessons(for: topic)
                             if !lessons.isEmpty {
                                 Section(topic.replacing("-", with: " ").capitalizingFirstLetter()) {
@@ -144,7 +144,7 @@ struct LearnView: View {
                         }
                     } else {
                         // MARK: ALL LESSONS
-                        ForEach(viewModel.topics, id: \.self) { topic in
+                        ForEach(viewModel.topics.map(\.id), id: \.self) { topic in
                             Section {
                                 if !isCollapsed(for: topic) {
                                     ForEach(filteredLessons(for: topic)) { lesson in
