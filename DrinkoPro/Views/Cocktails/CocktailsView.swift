@@ -15,6 +15,7 @@ struct CocktailsView: View {
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
     @Environment(\.modelContext) private var modelContext
+    @Environment(RecentsStore.self) private var recentsStore
 
     @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
     @State private var filterOption: CocktailsViewModel.FilterOption = .all
@@ -24,6 +25,9 @@ struct CocktailsView: View {
     @State private var didConfigureModelContext: Bool = false
 
     @State private var selectedCocktail: Cocktail?
+    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
+    @AppStorage(LibraryLayout.storageKey) private var layout: LibraryLayout = .list
+    @AppStorage("cocktailsCollapsedSections") private var collapsedSections = CollapsedSections()
 
     private var visibleCocktails: [Cocktail] {
         viewModel.filteredCocktails(filterOption: filterOption, source: listSource) { cocktail in
@@ -31,14 +35,8 @@ struct CocktailsView: View {
         }
     }
 
-    private var visibleGroupedCocktails: [String: [Cocktail]] {
-        viewModel.groupedCocktails(filterOption: filterOption, source: listSource) { cocktail in
-            favorites.contains(cocktail)
-        }
-    }
-
-    private var visibleSectionKeys: [String] {
-        viewModel.sortedSectionKeys(filterOption: filterOption, source: listSource) { cocktail in
+    private var visibleSections: [LibrarySection<Cocktail>] {
+        viewModel.librarySections(filterOption: filterOption, source: listSource) { cocktail in
             favorites.contains(cocktail)
         }
     }
@@ -56,13 +54,14 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        NavigationSplitView {
+        NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
             contentView
                 .navigationTitle("Cocktails")
                 .searchable(text: searchBinding, prompt: "Search Cocktails")
                 .toolbar {
                     ToolbarItemGroup(placement: toolbarPlacement) {
                         optionsMenu
+                        LibraryLayoutToggle(layout: $layout)
                         addCocktailButton
                     }
                 }
@@ -152,12 +151,32 @@ private extension CocktailsView {
         Group {
             if shouldShowFilterEmptyState {
                 filterEmptyStateView
-            } else if viewModel.searchText.isEmpty {
-                fullListView
-            } else if visibleCocktails.isEmpty {
+            } else if !viewModel.searchText.isEmpty && visibleCocktails.isEmpty {
                 searchEmptyStateView
             } else {
-                filteredListView
+                LibraryView(
+                    recentsTitle: String(localized: "Last Viewed"),
+                    recents: viewModel.recentItems(from: recentsStore.ids(in: .cocktails)),
+                    sections: visibleSections,
+                    selection: selectedCocktail,
+                    isSearching: !viewModel.searchText.isEmpty,
+                    collapsedSections: $collapsedSections,
+                    layout: layout,
+                    onSelect: select,
+                    cardModel: { viewModel.cardModel(for: $0) },
+                    contextMenu: { cocktail in
+                        FavoriteCocktailButtonView(cocktail: cocktail)
+                        if cocktail.id.hasPrefix("user-") {
+                            DeleteButtonView(
+                                label: "Delete",
+                                action: {
+                                    cocktailPendingDeletion = cocktail
+                                    showDeleteAlert = true
+                                }
+                            )
+                        }
+                    }
+                )
             }
         }
         .accessibilityLabel("Filter cocktails")
@@ -215,20 +234,6 @@ private extension CocktailsView {
         )
     }
 
-    var fullListView: some View {
-        List(selection: $selectedCocktail) {
-            ForEach(visibleSectionKeys, id: \.self) { sectionKey in
-                Section {
-                    ForEach(visibleGroupedCocktails[sectionKey] ?? []) { cocktail in
-                        cocktailRow(for: cocktail)
-                    }
-                } header: {
-                    Text(sectionKey)
-                }
-            }
-        }
-    }
-
     var searchEmptyStateView: some View {
         ContentUnavailableView(
             label: {
@@ -244,32 +249,6 @@ private extension CocktailsView {
                 .buttonStyle(.bordered)
             }
         )
-    }
-
-    var filteredListView: some View {
-        List(selection: $selectedCocktail) {
-            ForEach(visibleCocktails) { cocktail in
-                cocktailRow(for: cocktail)
-            }
-        }
-    }
-
-    func cocktailRow(for cocktail: Cocktail) -> some View {
-        CocktailRowView(cocktail: cocktail)
-            .tag(cocktail)
-            .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                FavoriteCocktailButtonView(cocktail: cocktail)
-                    .tint(favorites.contains(cocktail) ? .red : .blue)
-                if cocktail.id.hasPrefix("user-") {
-                    DeleteButtonView(
-                        label: "Delete",
-                        action: {
-                            cocktailPendingDeletion = cocktail
-                            showDeleteAlert = true
-                        }
-                    )
-                }
-            }
     }
 
     var optionsMenu: some View {
@@ -352,7 +331,14 @@ private extension CocktailsView {
         guard let cocktailID = appNavigationModel.consumePendingCocktailID() else { return }
         guard let cocktail = viewModel.listOfAllDrinks.first(where: { $0.id == cocktailID }) else { return }
 
+        select(cocktail)
+    }
+
+    /// Opens `cocktail` in the detail column, pushing it on compact widths, and records it as recent.
+    func select(_ cocktail: Cocktail) {
         selectedCocktail = cocktail
+        preferredCompactColumn = .detail
+        recentsStore.record(cocktail.id, in: .cocktails)
     }
 }
 
