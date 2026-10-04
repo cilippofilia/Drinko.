@@ -1,0 +1,83 @@
+import Foundation
+import SwiftUI
+import Testing
+@testable import DrinkoPro
+
+@MainActor
+@Suite("Cocktails library content")
+struct CocktailsLibraryTests {
+    private func userCocktail(glass: String) -> Cocktail {
+        Cocktail(
+            id: "user-test-\(glass)",
+            name: "Mine",
+            method: "stir",
+            glass: glass,
+            garnish: "-",
+            ice: "-",
+            extra: "-",
+            ingredients: []
+        )
+    }
+
+    @Test(arguments: [SortOption.fromAtoZ, .fromZtoA, .byGlass, .byIce])
+    func sectionsMatchExistingGrouping(sortOption: SortOption) {
+        let viewModel = CocktailsViewModel()
+        viewModel.sortOption = sortOption
+
+        let sections = viewModel.librarySections(filterOption: .all) { _ in false }
+        let keys = viewModel.sortedSectionKeys(filterOption: .all) { _ in false }
+        let grouped = viewModel.groupedCocktails(filterOption: .all) { _ in false }
+
+        #expect(sections.map(\.id) == keys)
+        #expect(sections.map(\.title) == keys)
+        #expect(sections.map(\.items) == keys.map { grouped[$0] ?? [] })
+    }
+
+    @Test func sectionsRespectFilterAndSource() {
+        let viewModel = CocktailsViewModel()
+        let sections = viewModel.librarySections(filterOption: .shotsOnly, source: .appOnly) { _ in false }
+        let shotIDs = Set(viewModel.listOfShots.map(\.id))
+
+        #expect(!sections.isEmpty)
+        #expect(sections.flatMap(\.items).allSatisfy { shotIDs.contains($0.id) })
+    }
+
+    @Test func searchKeepsGrouping() throws {
+        let viewModel = CocktailsViewModel()
+        let first = try #require(viewModel.listOfCocktails.first)
+        viewModel.searchText = first.name
+
+        let sections = viewModel.librarySections(filterOption: .all) { _ in false }
+        #expect(sections.flatMap(\.items).contains(first))
+        #expect(sections.map(\.id) == viewModel.sortedSectionKeys(filterOption: .all) { _ in false })
+    }
+
+    @Test func appCocktailCardIsTitleOnlyRemotePhoto() throws {
+        let viewModel = CocktailsViewModel()
+        let cocktail = try #require(viewModel.listOfCocktails.first)
+        let model = viewModel.cardModel(for: cocktail)
+
+        #expect(model.title == cocktail.name)
+        #expect(model.subtitle == nil)
+        #expect(model.progress == nil)
+        #expect(model.image == .remote(URL(string: cocktail.pic)))
+        #expect(model.imageContentMode == .fit)
+    }
+
+    @Test func userCocktailCardsUseGlassArtwork() {
+        let viewModel = CocktailsViewModel()
+        #expect(viewModel.cardModel(for: userCocktail(glass: "wine")).image == .symbol("wineglass"))
+        #expect(viewModel.cardModel(for: userCocktail(glass: "julep cup")).image == .asset("julep"))
+        #expect(viewModel.cardModel(for: userCocktail(glass: "coffee mug")).image == .asset("julep"))
+        #expect(viewModel.cardModel(for: userCocktail(glass: "coupe")).image == .asset("coupe"))
+    }
+
+    @Test func recentItemsDropUnknownIDs() throws {
+        let viewModel = CocktailsViewModel()
+        let first = try #require(viewModel.listOfCocktails.first)
+        let shot = try #require(viewModel.listOfShots.first)
+
+        let items = viewModel.recentItems(from: [shot.id, "user-deleted", first.id])
+        #expect(items == [shot, first])
+    }
+}

@@ -114,6 +114,8 @@
 		D1C5B0022F00000000000002 /* CocktailFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000002 /* CocktailFilterSection.swift */; };
 		D1C5B0032F00000000000001 /* CocktailListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000001 /* CocktailListSource.swift */; };
 		D1C5B0032F00000000000002 /* CocktailFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000002 /* CocktailFilterSection.swift */; };
+		D1C5B0022F00000000000006 /* CocktailsViewModel+Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */; };
+		D1C5B0032F00000000000006 /* CocktailsViewModel+Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -213,6 +215,7 @@
 		1A1000163A4F000100000001 /* WidgetTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTutorialView.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000001 /* CocktailListSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListSource.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000002 /* CocktailFilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailFilterSection.swift; sourceTree = "<group>"; };
+		D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailsViewModel+Library.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -367,6 +370,7 @@
 				182159062F3EA2CC002C1046 /* UserIngredient.swift */,
 				182159092F3EA2E7002C1046 /* UserProcedure.swift */,
 				1821590C2F3EA342002C1046 /* UserCocktailPreviewer.swift */,
+				D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */,
 			);
 			path = Cocktails;
 			sourceTree = "<group>";
@@ -825,6 +829,7 @@
 				18A92A012F12CC3600B70219 /* ABVRowView.swift in Sources */,
 				18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */,
 				D1C5B0022F00000000000002 /* CocktailFilterSection.swift in Sources */,
+				D1C5B0022F00000000000006 /* CocktailsViewModel+Library.swift in Sources */,
 				18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */,
 				18A929D52F12C6A900B70219 /* LearnView.swift in Sources */,
 				1858F96A3068702A0016B2DD /* Bottle.swift in Sources */,
@@ -883,6 +888,7 @@
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				D1C5B0032F00000000000002 /* CocktailFilterSection.swift in Sources */,
+				D1C5B0032F00000000000006 /* CocktailsViewModel+Library.swift in Sources */,
 				18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */,
 				18263CA12F3D248200758DCC /* DeleteButtonView.swift in Sources */,
 				18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */,
