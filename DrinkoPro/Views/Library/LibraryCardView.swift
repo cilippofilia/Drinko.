@@ -8,7 +8,6 @@ import SwiftUI
 /// One item in a library section's grid layout. Also used for the recents deck.
 struct LibraryCardView: View {
     let model: LibraryCardModel
-    let isSelected: Bool
 
     /// How far above the text the blur starts fading in.
     @ScaledMetric private var blurFadeHeight: CGFloat = 48
@@ -78,11 +77,6 @@ struct LibraryCardView: View {
             RoundedRectangle(cornerRadius: libraryCardCornerRadius)
                 .strokeBorder(.separator, lineWidth: 1)
         }
-        .overlay {
-            RoundedRectangle(cornerRadius: libraryCardCornerRadius)
-                .strokeBorder(.tint, lineWidth: 2)
-                .opacity(isSelected ? 1 : 0)
-        }
         .shadow(color: .black.opacity(0.08), radius: 4, y: 2)
         .contentShape(.rect(cornerRadius: libraryCardCornerRadius))
     }
@@ -91,11 +85,8 @@ struct LibraryCardView: View {
 #if DEBUG
 #Preview {
     HStack(alignment: .top) {
-        LibraryCardView(
-            model: LibraryCardModel(title: "Ice", subtitle: "Why ice matters more than you think.", image: .symbol("cube"), imageContentMode: .fit, progress: 0.3),
-            isSelected: true
-        )
-        LibraryCardView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true), isSelected: false)
+        LibraryCardView(model: LibraryCardModel(title: "Ice", subtitle: "Why ice matters more than you think.", image: .symbol("cube"), imageContentMode: .fit, progress: 0.3))
+        LibraryCardView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true))
     }
     .padding()
 }

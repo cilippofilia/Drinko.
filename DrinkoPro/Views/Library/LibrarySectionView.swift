@@ -36,7 +36,7 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
                             LibraryItemButton(isSelected: selection == item) {
                                 onSelect(item)
                             } label: {
-                                LibraryRowView(model: cardModel(item), isSelected: selection == item)
+                                LibraryRowView(model: cardModel(item))
                             } contextMenu: {
                                 contextMenu(item)
                             }
@@ -55,7 +55,7 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
                             LibraryItemButton(isSelected: selection == item) {
                                 onSelect(item)
                             } label: {
-                                LibraryCardView(model: cardModel(item), isSelected: selection == item)
+                                LibraryCardView(model: cardModel(item))
                             } contextMenu: {
                                 contextMenu(item)
                             }

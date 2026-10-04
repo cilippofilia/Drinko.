@@ -10,7 +10,6 @@ struct LibraryRowView: View {
     @ScaledMetric private var thumbnailSize: CGFloat = 56
 
     let model: LibraryCardModel
-    let isSelected: Bool
 
     var body: some View {
         HStack {
@@ -45,11 +44,6 @@ struct LibraryRowView: View {
             }
         }
         .padding()
-        .background {
-            if isSelected {
-                Rectangle().fill(.tint.opacity(0.15))
-            }
-        }
         .contentShape(.rect)
     }
 }
@@ -57,11 +51,8 @@ struct LibraryRowView: View {
 #if DEBUG
 #Preview {
     VStack(spacing: 0) {
-        LibraryRowView(
-            model: LibraryCardModel(title: "Ice", subtitle: "Why ice matters more than you think.", image: .symbol("cube"), imageContentMode: .fit, progress: 0.5),
-            isSelected: true
-        )
-        LibraryRowView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true), isSelected: false)
+        LibraryRowView(model: LibraryCardModel(title: "Ice", subtitle: "Why ice matters more than you think.", image: .symbol("cube"), imageContentMode: .fit, progress: 0.5))
+        LibraryRowView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true))
     }
 }
 #endif
