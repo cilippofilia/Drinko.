@@ -71,8 +71,7 @@ extension LessonsViewModel {
             LibraryCardModel(
                 title: String(localized: "ABV Calculator"),
                 subtitle: String(localized: "Work out the alcohol by volume of any drink."),
-                image: .asset("abv"),
-                imageContentMode: .fit
+                image: .asset("abv")
             )
         case .superjuice(let juiceType):
             LibraryCardModel(

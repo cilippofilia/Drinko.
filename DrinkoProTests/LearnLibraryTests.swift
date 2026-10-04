@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 import Testing
 @testable import DrinkoPro
 
@@ -66,6 +67,7 @@ struct LearnLibraryTests {
         #expect(viewModel.cardModel(for: .book(book)).subtitle == "© \(book.author)")
 
         #expect(viewModel.cardModel(for: .abvCalculator).image == .asset("abv"))
+        #expect(viewModel.cardModel(for: .abvCalculator).imageContentMode == .fill)
         #expect(viewModel.cardModel(for: .superjuice("lemon")).image == .asset("lemon"))
     }
 }
