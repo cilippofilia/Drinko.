@@ -2462,7 +2462,32 @@
 
     },
     "Choose a lesson, calculator or book to start learning." : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle eine Lektion, einen Rechner oder ein Buch, um mit dem Lernen zu beginnen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige una lección, calculadora o libro para empezar a aprender."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez une leçon, un calculateur ou un livre pour commencer à apprendre."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli una lezione, un calcolatore o un libro per iniziare a imparare."
+          }
+        }
+      }
     },
     "Choose a section from the sidebar to start your mixology journey." : {
       "localizations" : {
@@ -6939,7 +6964,32 @@
 
     },
     "Select a Topic" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Thema auswählen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona un tema"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez un sujet"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona un argomento"
+          }
+        }
+      }
     },
     "Select an option" : {
       "localizations" : {
