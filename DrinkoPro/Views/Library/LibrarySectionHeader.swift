@@ -30,7 +30,14 @@ struct LibrarySectionHeader: View {
         .accessibilityLabel(title)
         .accessibilityAddTraits(.isHeader)
         .accessibilityValue(isEnabled ? (isCollapsed ? "Collapsed" : "Expanded") : "")
-        .accessibilityHint(isEnabled ? "Double tap to \(isCollapsed ? "expand" : "collapse") this section." : "")
+        .accessibilityHint(hint)
+    }
+
+    /// Two whole literal strings (rather than one with an interpolated word) so each
+    /// reads naturally once translated.
+    private var hint: String {
+        guard isEnabled else { return "" }
+        return isCollapsed ? "Double tap to expand this section." : "Double tap to collapse this section."
     }
 }
 
