@@ -24,6 +24,10 @@ struct RecentsDeckView<Item: Hashable>: View {
     /// `true` once the current (or just-ended) drag was recognized as a horizontal swipe,
     /// so the front card's own `Button` action knows to ignore the resulting tap/release.
     @State private var didDrag = false
+    /// The current drag's starting point. `onChanged` compares against this (rather than
+    /// relying on `onEnded`, which SwiftUI never calls for a cancelled gesture, e.g. one a
+    /// parent scroll view takes over) to detect that a new drag has begun and reset state.
+    @State private var dragStartLocation: CGPoint?
 
     /// How far (including predicted momentum) a drag must travel to send the card to the back.
     private let swipeThreshold: CGFloat = 100
@@ -85,10 +89,9 @@ struct RecentsDeckView<Item: Hashable>: View {
         return Button {
             // A swipe can end with the front card's bounds under the touch-up point
             // (it tracks the drag via `.offset`); don't let that register as a tap.
-            guard !didDrag else {
-                didDrag = false
-                return
-            }
+            // `didDrag` is also cleared, asynchronously, from the gesture's `onEnded`, so
+            // this guard only needs to protect the same touch-up that set it.
+            guard !didDrag else { return }
             onOpen(item)
         } label: {
             LibraryCardView(model: cardModel(item), isSelected: false)
@@ -111,11 +114,19 @@ struct RecentsDeckView<Item: Hashable>: View {
     private var swipeGesture: some Gesture {
         DragGesture(minimumDistance: 20)
             .onChanged { value in
+                // Detect a new drag by its starting point rather than by `dragAxis == nil`:
+                // SwiftUI never calls `onEnded` for a gesture a parent view takes over (e.g.
+                // a vertical scroll), so that's the only reliable "this is a fresh gesture" signal.
+                if dragStartLocation != value.startLocation {
+                    dragStartLocation = value.startLocation
+                    dragAxis = nil
+                    didDrag = false
+                }
+
                 // Decide the axis once, on the first change, and stick with it for this
                 // drag: a vertical scroll that starts on the deck must keep scrolling even
                 // if the finger briefly wanders sideways, and vice versa.
                 if dragAxis == nil {
-                    didDrag = false
                     let translation = value.translation
                     dragAxis = abs(translation.width) > 1.5 * abs(translation.height) ? .horizontal : .vertical
                 }
@@ -130,7 +141,15 @@ struct RecentsDeckView<Item: Hashable>: View {
                 }
             }
             .onEnded { value in
-                defer { dragAxis = nil }
+                defer {
+                    dragAxis = nil
+                    dragStartLocation = nil
+                    // Deferred to the next main-actor turn: the Button's own tap action (if
+                    // this release also triggers it) runs synchronously with this callback and
+                    // must still see `didDrag == true`; only a later, separate tap should see
+                    // it cleared.
+                    Task { @MainActor in didDrag = false }
+                }
                 guard dragAxis == .horizontal else { return }
 
                 let shouldAdvance = abs(value.predictedEndTranslation.width) > swipeThreshold
