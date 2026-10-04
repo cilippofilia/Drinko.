@@ -23,6 +23,8 @@ struct DrinkoProApp: App {
     private let modelContainer: ModelContainer
 
     init() {
+        LearnCollapseMigration.runIfNeeded()
+
         do {
             let config = ModelConfiguration(cloudKitDatabase: .automatic)
             modelContainer = try ModelContainer(
