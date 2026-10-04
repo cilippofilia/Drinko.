@@ -15,6 +15,7 @@ import AppKit
 let rowHeight: CGFloat = 45
 let imageCornerRadius: CGFloat = 10
 let imageFrameHeight: CGFloat = 280
+let libraryCardCornerRadius: CGFloat = 16
 #if os(macOS)
 let screenWidth: CGFloat = 350
 #endif

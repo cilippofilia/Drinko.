@@ -312,6 +312,7 @@
 		18EB4ED02EEED48B00691DC2 /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (189C3B4F2F82A9C4009DFB47 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
 		18EB4EDC2EEED49E00691DC2 /* Learn */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929D82F12C6CD00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Learn; sourceTree = "<group>"; };
 		18EB4EE12EEED4A800691DC2 /* Samples */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (18A929E72F12C80D00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Samples; sourceTree = "<group>"; };
+		5B229FB4AA21888363C91437 /* Library */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Library; sourceTree = "<group>"; };
 		18EB4F212EEED4B100691DC2 /* Localization */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Localization; sourceTree = "<group>"; };
 		1A1000053A4F000100000001 /* DrinkoWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (1A1000153A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 1A1000143A4F000100000001 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DrinkoWidget; sourceTree = "<group>"; };
 		555AEC541E168772A096ACA1 /* CrossPromo */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = CrossPromo; sourceTree = "<group>"; };
@@ -552,6 +553,7 @@
 				182713862B65656C000D3343 /* Cabinet */,
 				18F49EA42A286D2E00862CE3 /* Settings */,
 				18B449CD2A8764C300F52B1B /* Supporting Views */,
+				5B229FB4AA21888363C91437 /* Library */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -637,6 +639,7 @@
 				18EB4ED02EEED48B00691DC2 /* Helpers */,
 				18EB4F212EEED4B100691DC2 /* Localization */,
 				555AEC541E168772A096ACA1 /* CrossPromo */,
+				5B229FB4AA21888363C91437 /* Library */,
 			);
 			name = DrinkoDesktop;
 			packageProductDependencies = (
@@ -667,6 +670,7 @@
 				18EB4EE12EEED4A800691DC2 /* Samples */,
 				18EB4F212EEED4B100691DC2 /* Localization */,
 				555AEC541E168772A096ACA1 /* CrossPromo */,
+				5B229FB4AA21888363C91437 /* Library */,
 			);
 			name = DrinkoPro;
 			packageProductDependencies = (
