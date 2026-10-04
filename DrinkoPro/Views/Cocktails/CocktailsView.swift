@@ -166,7 +166,7 @@ private extension CocktailsView {
                     collapsedSections: $collapsedSections,
                     layout: layout,
                     onSelect: select,
-                    cardModel: { viewModel.cardModel(for: $0) },
+                    cardModel: { viewModel.cardModel(for: $0, isFavorite: favorites.contains($0)) },
                     contextMenu: { cocktail in
                         FavoriteCocktailButtonView(cocktail: cocktail)
                         if cocktail.id.hasPrefix("user-") {

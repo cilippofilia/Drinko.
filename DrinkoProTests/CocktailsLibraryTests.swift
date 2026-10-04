@@ -64,6 +64,14 @@ struct CocktailsLibraryTests {
         #expect(model.imageContentMode == .fit)
     }
 
+    @Test func cardShowsFavoriteOnlyWhenFavorited() throws {
+        let viewModel = CocktailsViewModel()
+        let cocktail = try #require(viewModel.listOfCocktails.first)
+
+        #expect(viewModel.cardModel(for: cocktail).isFavorite == false)
+        #expect(viewModel.cardModel(for: cocktail, isFavorite: true).isFavorite)
+    }
+
     @Test func userCocktailCardsUseGlassArtwork() {
         let viewModel = CocktailsViewModel()
         #expect(viewModel.cardModel(for: userCocktail(glass: "wine")).image == .symbol("wineglass"))

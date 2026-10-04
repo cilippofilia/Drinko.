@@ -39,6 +39,10 @@ struct LibraryRowView: View {
             }
             .multilineTextAlignment(.leading)
             .frame(maxWidth: .infinity, alignment: .leading)
+
+            if model.isFavorite {
+                LibraryFavoriteBadge()
+            }
         }
         .padding()
         .background {
@@ -57,7 +61,7 @@ struct LibraryRowView: View {
             model: LibraryCardModel(title: "Ice", subtitle: "Why ice matters more than you think.", image: .symbol("cube"), imageContentMode: .fit, progress: 0.5),
             isSelected: true
         )
-        LibraryRowView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit), isSelected: false)
+        LibraryRowView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true), isSelected: false)
     }
 }
 #endif

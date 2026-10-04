@@ -65,6 +65,12 @@ struct LibraryCardView: View {
                     titleHeight = height
                 }
             }
+            .overlay(alignment: .topTrailing) {
+                if model.isFavorite {
+                    LibraryFavoriteBadge()
+                        .padding()
+                }
+            }
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.background.secondary)
         .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
@@ -89,7 +95,7 @@ struct LibraryCardView: View {
             model: LibraryCardModel(title: "Ice", subtitle: "Why ice matters more than you think.", image: .symbol("cube"), imageContentMode: .fit, progress: 0.3),
             isSelected: true
         )
-        LibraryCardView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit), isSelected: false)
+        LibraryCardView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true), isSelected: false)
     }
     .padding()
 }

@@ -20,9 +20,10 @@ extension CocktailsViewModel {
         }
     }
 
-    /// Display data for a cocktail: title only, photo for app cocktails, glass artwork for the user's own.
-    func cardModel(for cocktail: Cocktail) -> LibraryCardModel {
-        LibraryCardModel(title: cocktail.name, image: libraryImage(for: cocktail), imageContentMode: .fit)
+    /// Display data for a cocktail: title only, photo for app cocktails, glass artwork for the user's own,
+    /// and a heart when it's a favorite.
+    func cardModel(for cocktail: Cocktail, isFavorite: Bool = false) -> LibraryCardModel {
+        LibraryCardModel(title: cocktail.name, image: libraryImage(for: cocktail), imageContentMode: .fit, isFavorite: isFavorite)
     }
 
     /// Maps stored recent IDs back to cocktails, keeping order and dropping deleted ones.
