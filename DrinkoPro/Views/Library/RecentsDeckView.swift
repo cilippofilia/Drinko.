@@ -5,7 +5,8 @@
 
 import SwiftUI
 
-/// The "Last Read" / "Last Viewed" carousel: up to three stacked cards that swipe like a deck.
+/// The "Last Read" / "Last Viewed" carousel: up to six stacked cards that swipe like a deck.
+/// Only the front card and the two behind it are visible.
 ///
 /// Swiping sends the front card to the back. Tapping the front card opens it.
 struct RecentsDeckView<Item: Hashable>: View {
@@ -85,6 +86,14 @@ struct RecentsDeckView<Item: Hashable>: View {
         // Second card peeks right, third peeks left.
         let peekDirection: CGFloat = position == 1 ? 1 : (position == 2 ? -1 : 0)
         let tilt: Double = reduceMotion ? 0 : (isFront ? Double(dragOffset / 20) : Double(peekDirection) * 4)
+        // The front card casts a deeper shadow so it reads as sitting above the peeking cards.
+        // Cards buried further back (hidden behind the front one) get none, so their
+        // shadows don't stack up around the front card's edges.
+        let shadowRadius: CGFloat = switch position {
+        case 0: 16
+        case 1, 2: 6
+        default: 0
+        }
 
         return Button {
             // A swipe can end with the front card's bounds under the touch-up point
@@ -95,6 +104,11 @@ struct RecentsDeckView<Item: Hashable>: View {
             onOpen(item)
         } label: {
             LibraryCardView(model: cardModel(item), isSelected: false)
+                .overlay {
+                    RoundedRectangle(cornerRadius: libraryCardCornerRadius)
+                        .strokeBorder(.separator, lineWidth: 1)
+                }
+                .shadow(color: .black.opacity(isFront ? 0.25 : 0.12), radius: shadowRadius, y: shadowRadius / 2)
         }
         .buttonStyle(.plain)
         .containerRelativeFrame(.horizontal) { length, _ in

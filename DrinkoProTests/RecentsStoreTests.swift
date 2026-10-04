@@ -33,12 +33,12 @@ struct RecentsStoreTests {
         #expect(store.ids(in: .learn) == ["a", "b"])
     }
 
-    @Test func keepsAtMostThree() throws {
+    @Test func keepsAtMostSix() throws {
         let store = RecentsStore(defaults: try makeDefaults())
-        for id in ["a", "b", "c", "d"] {
+        for id in ["a", "b", "c", "d", "e", "f", "g"] {
             store.record(id, in: .cocktails)
         }
-        #expect(store.ids(in: .cocktails) == ["d", "c", "b"])
+        #expect(store.ids(in: .cocktails) == ["g", "f", "e", "d", "c", "b"])
     }
 
     @Test func namespacesAreIsolated() throws {
@@ -57,8 +57,8 @@ struct RecentsStoreTests {
 
     @Test func truncatesOverlongStoredLists() throws {
         let defaults = try makeDefaults()
-        defaults.set(["a", "b", "c", "d", "e"], forKey: "recents.learn")
-        #expect(RecentsStore(defaults: defaults).ids(in: .learn) == ["a", "b", "c"])
+        defaults.set(["a", "b", "c", "d", "e", "f", "g", "h"], forKey: "recents.learn")
+        #expect(RecentsStore(defaults: defaults).ids(in: .learn) == ["a", "b", "c", "d", "e", "f"])
     }
 
     @Test func removeDropsTheIDFromItsNamespace() throws {
