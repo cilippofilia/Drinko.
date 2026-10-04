@@ -5,8 +5,8 @@
 
 import SwiftUI
 
-/// The "Last Read" / "Last Viewed" carousel: up to six stacked cards that swipe like a deck.
-/// Only the front card and the two behind it are visible.
+/// The "Last Read" / "Last Viewed" carousel: up to five stacked cards that swipe like a deck,
+/// with the cards behind the front one fanning out alternately to the right and left.
 ///
 /// Swiping sends the front card to the back. Tapping the front card opens it.
 struct RecentsDeckView<Item: Hashable>: View {
@@ -83,17 +83,12 @@ struct RecentsDeckView<Item: Hashable>: View {
 
     private func deckCard(for item: Item, at position: Int) -> some View {
         let isFront = position == 0
-        // Second card peeks right, third peeks left.
-        let peekDirection: CGFloat = position == 1 ? 1 : (position == 2 ? -1 : 0)
-        let tilt: Double = reduceMotion ? 0 : (isFront ? Double(dragOffset / 20) : Double(peekDirection) * 4)
+        let peekSteps = CGFloat(RecentsDeckLayout.peekSteps(forPosition: position))
+        let tilt: Double = reduceMotion ? 0 : (isFront ? Double(dragOffset / 20) : Double(peekSteps) * 4)
+        // Each step further back is smaller, so the outer pair reads as sitting behind the inner pair.
+        let scale = 1 - 0.1 * abs(peekSteps)
         // The front card casts a deeper shadow so it reads as sitting above the peeking cards.
-        // Cards buried further back (hidden behind the front one) get none, so their
-        // shadows don't stack up around the front card's edges.
-        let shadowRadius: CGFloat = switch position {
-        case 0: 16
-        case 1, 2: 6
-        default: 0
-        }
+        let shadowRadius: CGFloat = isFront ? 16 : 6
 
         return Button {
             // A swipe can end with the front card's bounds under the touch-up point
@@ -110,9 +105,9 @@ struct RecentsDeckView<Item: Hashable>: View {
         .containerRelativeFrame(.horizontal) { length, _ in
             length * 0.6
         }
-        .scaleEffect(isFront ? 1 : 0.9)
+        .scaleEffect(scale)
         .visualEffect { content, proxy in
-            content.offset(x: proxy.size.width * 0.3 * peekDirection)
+            content.offset(x: proxy.size.width * 0.2 * peekSteps)
         }
         .offset(x: isFront && !reduceMotion ? dragOffset : 0)
         .rotationEffect(.degrees(tilt))

@@ -16,7 +16,7 @@ final class RecentsStore {
     }
 
     /// How many recent items each namespace keeps.
-    static let capacity = 6
+    static let capacity = 5
 
     @ObservationIgnored private let defaults: UserDefaults
     private var idsByNamespace: [Namespace: [String]] = [:]

@@ -24,4 +24,9 @@ struct RecentsDeckLayoutTests {
         #expect(RecentsDeckLayout.previousFront(0, count: 0) == 0)
         #expect(RecentsDeckLayout.position(ofIndex: 0, frontIndex: 0, count: 0) == 0)
     }
+
+    @Test func peekStepsAlternateRightThenLeftAndMoveOutward() {
+        let steps = (0..<5).map { RecentsDeckLayout.peekSteps(forPosition: $0) }
+        #expect(steps == [0, 1, -1, 2, -2])
+    }
 }
