@@ -25,8 +25,33 @@ struct RecentsDeckLayoutTests {
         #expect(RecentsDeckLayout.position(ofIndex: 0, frontIndex: 0, count: 0) == 0)
     }
 
-    @Test func peekStepsAlternateRightThenLeftAndMoveOutward() {
-        let steps = (0..<5).map { RecentsDeckLayout.peekSteps(forPosition: $0) }
-        #expect(steps == [0, 1, -1, 2, -2])
+    @Test func offsetsPutNextCardsRightAndPreviousCardsLeft() {
+        let offsets = (0..<5).map { RecentsDeckLayout.offset(ofIndex: $0, frontIndex: 0, count: 5) }
+        #expect(offsets == [0, 1, 2, -2, -1])
+    }
+
+    @Test func offsetsFollowTheFrontCardAndWrap() {
+        let offsets = (0..<5).map { RecentsDeckLayout.offset(ofIndex: $0, frontIndex: 3, count: 5) }
+        #expect(offsets == [2, -2, -1, 0, 1])
+    }
+
+    @Test func evenDeckPutsTheExtraCardOnTheRight() {
+        let offsets = (0..<4).map { RecentsDeckLayout.offset(ofIndex: $0, frontIndex: 0, count: 4) }
+        #expect(offsets == [0, 1, 2, -1])
+    }
+
+    @Test func emptyDeckOffsetIsZero() {
+        #expect(RecentsDeckLayout.offset(ofIndex: 0, frontIndex: 0, count: 0) == 0)
+    }
+
+    @Test func oddDeckFansOutSymmetrically() {
+        let steps = [0, 1, 2, -2, -1].map { RecentsDeckLayout.fanSteps(forOffset: $0, count: 5) }
+        #expect(steps == [0, 1, 2, -2, -1])
+    }
+
+    @Test func evenDeckTucksTheExtraCardBehindTheFront() {
+        let steps = [0, 1, 2, -1].map { RecentsDeckLayout.fanSteps(forOffset: $0, count: 4) }
+        #expect(steps == [0, 1, 0, -1])
+        #expect(RecentsDeckLayout.fanSteps(forOffset: 1, count: 2) == 0)
     }
 }

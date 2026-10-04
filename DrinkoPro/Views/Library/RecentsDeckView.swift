@@ -5,10 +5,11 @@
 
 import SwiftUI
 
-/// The "Last Read" / "Last Viewed" carousel: up to five stacked cards that swipe like a deck,
-/// with the cards behind the front one fanning out alternately to the right and left.
+/// The "Last Read" / "Last Viewed" carousel: up to five stacked cards, with the next cards
+/// peeking out on the right and the previous ones on the left.
 ///
-/// Swiping sends the front card to the back. Tapping the front card opens it.
+/// Swiping left brings in the next card, swiping right the previous one; the deck loops.
+/// Tapping the front card opens it.
 struct RecentsDeckView<Item: Hashable>: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
@@ -30,7 +31,7 @@ struct RecentsDeckView<Item: Hashable>: View {
     /// parent scroll view takes over) to detect that a new drag has begun and reset state.
     @State private var dragStartLocation: CGPoint?
 
-    /// How far (including predicted momentum) a drag must travel to send the card to the back.
+    /// How far (including predicted momentum) a drag must travel to switch to the neighboring card.
     private let swipeThreshold: CGFloat = 100
 
     var body: some View {
@@ -41,8 +42,8 @@ struct RecentsDeckView<Item: Hashable>: View {
 
             ZStack {
                 ForEach(Array(items.enumerated()), id: \.element) { index, item in
-                    let position = RecentsDeckLayout.position(ofIndex: index, frontIndex: frontIndex, count: items.count)
-                    deckCard(for: item, at: position)
+                    let offset = RecentsDeckLayout.offset(ofIndex: index, frontIndex: frontIndex, count: items.count)
+                    deckCard(for: item, at: offset)
                 }
             }
             .frame(maxWidth: .infinity)
@@ -81,14 +82,17 @@ struct RecentsDeckView<Item: Hashable>: View {
         return Text("\(title), \(frontIndex + 1) of \(items.count), \(cardModel(frontItem).title)")
     }
 
-    private func deckCard(for item: Item, at position: Int) -> some View {
-        let isFront = position == 0
-        let peekSteps = CGFloat(RecentsDeckLayout.peekSteps(forPosition: position))
-        let tilt: Double = reduceMotion ? 0 : (isFront ? Double(dragOffset / 20) : Double(peekSteps) * 4)
-        // Each step further back is smaller, so the outer pair reads as sitting behind the inner pair.
-        let scale = 1 - 0.1 * abs(peekSteps)
+    /// - Parameter offset: The card's place relative to the front card; see `RecentsDeckLayout.offset`.
+    private func deckCard(for item: Item, at offset: Int) -> some View {
+        let isFront = offset == 0
+        let steps = CGFloat(RecentsDeckLayout.fanSteps(forOffset: offset, count: items.count))
+        let isTucked = !isFront && steps == 0
+        let tilt: Double = reduceMotion ? 0 : (isFront ? Double(dragOffset / 20) : Double(steps) * 2)
+        // Each step further from the front is smaller, so the outer pair reads as sitting
+        // behind the inner pair (and a tucked card stays hidden behind the front one).
+        let scale = 1 - 0.08 * CGFloat(abs(offset))
         // The front card casts a deeper shadow so it reads as sitting above the peeking cards.
-        let shadowRadius: CGFloat = isFront ? 16 : 6
+        let shadowRadius: CGFloat = isFront ? 16 : (isTucked ? 0 : 6)
 
         return Button {
             // A swipe can end with the front card's bounds under the touch-up point
@@ -101,17 +105,17 @@ struct RecentsDeckView<Item: Hashable>: View {
             LibraryCardView(model: cardModel(item), isSelected: false)
                 .shadow(color: .black.opacity(isFront ? 0.25 : 0.12), radius: shadowRadius, y: shadowRadius / 2)
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.deckCard)
         .containerRelativeFrame(.horizontal) { length, _ in
             length * 0.6
         }
         .scaleEffect(scale)
         .visualEffect { content, proxy in
-            content.offset(x: proxy.size.width * 0.2 * peekSteps)
+            content.offset(x: proxy.size.width * 0.2 * steps)
         }
         .offset(x: isFront && !reduceMotion ? dragOffset : 0)
         .rotationEffect(.degrees(tilt))
-        .zIndex(Double(items.count - position))
+        .zIndex(Double(items.count - abs(offset)))
         .allowsHitTesting(isFront)
         .simultaneousGesture(isFront ? swipeGesture : nil)
     }
@@ -157,20 +161,22 @@ struct RecentsDeckView<Item: Hashable>: View {
                 }
                 guard dragAxis == .horizontal else { return }
 
-                let shouldAdvance = abs(value.predictedEndTranslation.width) > swipeThreshold
+                // Swiping left pulls in the card on the right (the next one); swiping right
+                // pulls in the card on the left (the previous one).
+                let travel = value.predictedEndTranslation.width
+                let newFrontIndex: Int? = if travel < -swipeThreshold {
+                    RecentsDeckLayout.nextFront(frontIndex, count: items.count)
+                } else if travel > swipeThreshold {
+                    RecentsDeckLayout.previousFront(frontIndex, count: items.count)
+                } else {
+                    nil
+                }
 
-                if reduceMotion {
-                    if shouldAdvance {
-                        frontIndex = RecentsDeckLayout.nextFront(frontIndex, count: items.count)
+                withAnimation(reduceMotion ? nil : .spring(duration: 0.4)) {
+                    if let newFrontIndex {
+                        frontIndex = newFrontIndex
                     }
                     dragOffset = 0
-                } else {
-                    withAnimation(.spring(duration: 0.4)) {
-                        if shouldAdvance {
-                            frontIndex = RecentsDeckLayout.nextFront(frontIndex, count: items.count)
-                        }
-                        dragOffset = 0
-                    }
                 }
             }
     }
