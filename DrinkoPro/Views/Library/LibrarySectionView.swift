@@ -40,6 +40,7 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
                             } contextMenu: {
                                 contextMenu(item)
                             }
+                            .buttonStyle(.plain)
 
                             if item != section.items.last {
                                 Divider()
@@ -59,6 +60,7 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
                             } contextMenu: {
                                 contextMenu(item)
                             }
+                            .buttonStyle(.libraryCard)
                         }
                     }
                 }

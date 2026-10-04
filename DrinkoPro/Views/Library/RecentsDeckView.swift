@@ -105,7 +105,7 @@ struct RecentsDeckView<Item: Hashable>: View {
             LibraryCardView(model: cardModel(item))
                 .shadow(color: .black.opacity(isFront ? 0.25 : 0.12), radius: shadowRadius, y: shadowRadius / 2)
         }
-        .buttonStyle(.deckCard)
+        .buttonStyle(.libraryCard)
         .containerRelativeFrame(.horizontal) { length, _ in
             length * 0.6
         }

@@ -77,8 +77,15 @@ struct LibraryCardView: View {
             RoundedRectangle(cornerRadius: libraryCardCornerRadius)
                 .strokeBorder(.separator, lineWidth: 1)
         }
+        // Flatten the stacked image, blur and text into one layer, so system effects that
+        // dim or fade the card (like the context menu's long-press highlight) don't turn
+        // the individual layers see-through.
+        .compositingGroup()
         .shadow(color: .black.opacity(0.08), radius: 4, y: 2)
         .contentShape(.rect(cornerRadius: libraryCardCornerRadius))
+        #if os(iOS)
+        .contentShape(.contextMenuPreview, .rect(cornerRadius: libraryCardCornerRadius))
+        #endif
     }
 }
 
