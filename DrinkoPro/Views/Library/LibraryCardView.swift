@@ -20,15 +20,17 @@ struct LibraryCardView: View {
                 .clipped()
 
             VStack(alignment: .leading) {
+                // Reserve both lines even for short text so every card in the grid
+                // (and the recents deck) has the same height.
                 Text(model.title)
                     .font(.headline)
-                    .lineLimit(2)
+                    .lineLimit(2, reservesSpace: true)
 
                 if let subtitle = model.subtitle {
                     Text(subtitle)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
-                        .lineLimit(2)
+                        .lineLimit(2, reservesSpace: true)
                 }
 
                 if let progress = model.progress {
@@ -43,9 +45,14 @@ struct LibraryCardView: View {
         .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
         .overlay {
             RoundedRectangle(cornerRadius: libraryCardCornerRadius)
+                .strokeBorder(.separator, lineWidth: 1)
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: libraryCardCornerRadius)
                 .strokeBorder(.tint, lineWidth: 2)
                 .opacity(isSelected ? 1 : 0)
         }
+        .shadow(color: .black.opacity(0.08), radius: 4, y: 2)
         .contentShape(.rect(cornerRadius: libraryCardCornerRadius))
     }
 }

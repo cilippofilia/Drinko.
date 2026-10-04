@@ -104,10 +104,6 @@ struct RecentsDeckView<Item: Hashable>: View {
             onOpen(item)
         } label: {
             LibraryCardView(model: cardModel(item), isSelected: false)
-                .overlay {
-                    RoundedRectangle(cornerRadius: libraryCardCornerRadius)
-                        .strokeBorder(.separator, lineWidth: 1)
-                }
                 .shadow(color: .black.opacity(isFront ? 0.25 : 0.12), radius: shadowRadius, y: shadowRadius / 2)
         }
         .buttonStyle(.plain)
