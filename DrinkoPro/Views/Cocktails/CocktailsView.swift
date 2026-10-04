@@ -92,8 +92,10 @@ struct CocktailsView: View {
                             if favorites.contains(cocktailPendingDeletion) {
                                 favorites.remove(cocktailPendingDeletion)
                             }
+                            recentsStore.remove(cocktailPendingDeletion.id, in: .cocktails)
                             if selectedCocktail == cocktailPendingDeletion {
                                 selectedCocktail = nil
+                                preferredCompactColumn = .sidebar
                             }
                         }
                     )
@@ -118,6 +120,7 @@ struct CocktailsView: View {
                     }
                     if let selectedCocktail, !visibleCocktails.contains(selectedCocktail) {
                         self.selectedCocktail = nil
+                        preferredCompactColumn = .sidebar
                     }
                 }
                 #if os(iOS) || os(macOS)

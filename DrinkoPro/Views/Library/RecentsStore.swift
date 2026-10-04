@@ -44,6 +44,14 @@ final class RecentsStore {
         defaults.set(ids, forKey: Self.key(for: namespace))
     }
 
+    /// Removes `id` from `namespace`, if present. Used e.g. when a user-created item is deleted.
+    func remove(_ id: String, in namespace: Namespace) {
+        var ids = ids(in: namespace)
+        ids.removeAll { $0 == id }
+        idsByNamespace[namespace] = ids
+        defaults.set(ids, forKey: Self.key(for: namespace))
+    }
+
     private static func key(for namespace: Namespace) -> String {
         "recents.\(namespace.rawValue)"
     }

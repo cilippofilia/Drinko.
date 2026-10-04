@@ -60,4 +60,37 @@ struct RecentsStoreTests {
         defaults.set(["a", "b", "c", "d", "e"], forKey: "recents.learn")
         #expect(RecentsStore(defaults: defaults).ids(in: .learn) == ["a", "b", "c"])
     }
+
+    @Test func removeDropsTheIDFromItsNamespace() throws {
+        let store = RecentsStore(defaults: try makeDefaults())
+        store.record("a", in: .cocktails)
+        store.record("b", in: .cocktails)
+        store.remove("a", in: .cocktails)
+        #expect(store.ids(in: .cocktails) == ["b"])
+    }
+
+    @Test func removeIsANoOpWhenIDIsNotPresent() throws {
+        let store = RecentsStore(defaults: try makeDefaults())
+        store.record("a", in: .cocktails)
+        store.remove("missing", in: .cocktails)
+        #expect(store.ids(in: .cocktails) == ["a"])
+    }
+
+    @Test func removeDoesNotAffectOtherNamespaces() throws {
+        let store = RecentsStore(defaults: try makeDefaults())
+        store.record("a", in: .learn)
+        store.record("a", in: .cocktails)
+        store.remove("a", in: .cocktails)
+        #expect(store.ids(in: .learn) == ["a"])
+        #expect(store.ids(in: .cocktails).isEmpty)
+    }
+
+    @Test func removePersistsAcrossInstances() throws {
+        let defaults = try makeDefaults()
+        let store = RecentsStore(defaults: defaults)
+        store.record("a", in: .cocktails)
+        store.record("b", in: .cocktails)
+        store.remove("a", in: .cocktails)
+        #expect(RecentsStore(defaults: defaults).ids(in: .cocktails) == ["b"])
+    }
 }
