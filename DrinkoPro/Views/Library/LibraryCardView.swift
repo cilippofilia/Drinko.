@@ -10,36 +10,61 @@ struct LibraryCardView: View {
     let model: LibraryCardModel
     let isSelected: Bool
 
+    /// How far above the text the blur starts fading in.
+    @ScaledMetric private var blurFadeHeight: CGFloat = 48
+    /// The measured height of the title block, so the blur covers exactly the text plus the fade.
+    @State private var titleHeight: CGFloat = 0
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Color.clear
-                .aspectRatio(4 / 3, contentMode: .fit)
-                .overlay {
-                    LibraryImageView(image: model.image, contentMode: model.imageContentMode)
+        // A fixed aspect ratio keeps every card the same height however the text wraps.
+        Color.clear
+            .aspectRatio(4 / 5, contentMode: .fit)
+            .overlay {
+                LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
+            }
+            .overlay {
+                // A blurred, lightly washed-out copy of the image fades in behind the title,
+                // so it melts into the photo's white backdrop with no visible edge or tint.
+                LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
+                    .blur(radius: 12, opaque: true)
+                    .overlay(.white.opacity(0.6))
+                    .mask(alignment: .bottom) {
+                        VStack(spacing: 0) {
+                            LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
+                                .frame(height: blurFadeHeight)
+                            Color.black
+                                .frame(height: titleHeight)
+                        }
+                    }
+            }
+            .overlay(alignment: .bottom) {
+                VStack(alignment: .leading) {
+                    Text(model.title)
+                        .font(.headline)
+                        .lineLimit(2)
+
+                    if let subtitle = model.subtitle {
+                        Text(subtitle)
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                            .lineLimit(2)
+                    }
+
+                    if let progress = model.progress {
+                        LibraryProgressBar(progress: progress)
+                    }
                 }
-                .clipped()
-
-            VStack(alignment: .leading) {
-                // Reserve both lines even for short text so every card in the grid
-                // (and the recents deck) has the same height.
-                Text(model.title)
-                    .font(.headline)
-                    .lineLimit(2, reservesSpace: true)
-
-                if let subtitle = model.subtitle {
-                    Text(subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2, reservesSpace: true)
-                }
-
-                if let progress = model.progress {
-                    LibraryProgressBar(progress: progress)
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                // The backdrop is always light, so keep the text dark in Dark Mode too.
+                .environment(\.colorScheme, .light)
+                .onGeometryChange(for: CGFloat.self) { proxy in
+                    proxy.size.height
+                } action: { height in
+                    titleHeight = height
                 }
             }
-            .multilineTextAlignment(.leading)
-            .padding()
-        }
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.background.secondary)
         .clipShape(.rect(cornerRadius: libraryCardCornerRadius))

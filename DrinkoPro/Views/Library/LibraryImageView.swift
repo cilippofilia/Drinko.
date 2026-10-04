@@ -10,12 +10,15 @@ import SwiftUI
 struct LibraryImageView: View {
     let image: LibraryImage
     let contentMode: ContentMode
+    /// Insets a fitted remote photo within its white backdrop so it sits smaller in the frame.
+    var insetsFittedPhoto = false
 
     var body: some View {
         Group {
             switch image {
             case .remote(let url):
                 CachedRemoteImage(url: url, contentMode: contentMode)
+                    .padding(.all, remotePhotoPadding)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(.white)
             case .asset(let name):
@@ -43,6 +46,11 @@ struct LibraryImageView: View {
         }
         .clipped()
         .accessibilityHidden(true)
+    }
+
+    /// `nil` applies the system default padding; `0` leaves the photo edge to edge.
+    private var remotePhotoPadding: CGFloat? {
+        insetsFittedPhoto && contentMode == .fit ? nil : 0
     }
 }
 
