@@ -26,8 +26,8 @@ struct LibraryCardView: View {
                 // A blurred, lightly washed-out copy of the image fades in behind the title,
                 // so it melts into the photo's white backdrop with no visible edge or tint.
                 LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
-                    .blur(radius: 12, opaque: true)
-                    .overlay(.white.opacity(0.6))
+                    .blur(radius: 6, opaque: true)
+                    .overlay(.white.opacity(0.4))
                     .mask(alignment: .bottom) {
                         VStack(spacing: 0) {
                             LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
