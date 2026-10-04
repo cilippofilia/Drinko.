@@ -10,6 +10,8 @@ import SwiftUI
 struct MacSettingsView: View {
     @Environment(\.openURL) var openURL
 
+    @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
+
     @State private var showOptions = false
     private let email = "cilia.filippo.dev@gmail.com"
     private let reportBugSubject = "Drinko: Bug Report"
@@ -42,6 +44,16 @@ struct MacSettingsView: View {
                         .buttonStyle(.plain)
                         .accessibilityHint("Opens macOS language settings.")
                     }
+
+                    Picker(selection: $listSource) {
+                        ForEach(CocktailListSource.allCases) { source in
+                            Text(source.title)
+                                .tag(source)
+                        }
+                    } label: {
+                        MacSettingsRowView(icon: "list.bullet", color: .primary, itemName: "Cocktail List")
+                    }
+                    .accessibilityHint("Chooses which cocktails appear in the Cocktails list.")
                 } header: {
                     Text("Preferences")
                         .foregroundStyle(.secondary)

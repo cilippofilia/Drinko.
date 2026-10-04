@@ -187,22 +187,42 @@ class CocktailsViewModel {
         sortedSectionKeys(filterOption: .all) { _ in false }
     }
 
+    /// The filters that can return results for the given source. For example,
+    /// user-created cocktails are never shots, so "Shots Only" is hidden when
+    /// the list only shows the user's cocktails.
+    func availableFilterOptions(for source: CocktailListSource) -> [FilterOption] {
+        switch source {
+        case .userAndApp:
+            [.all, .cocktailsOnly, .shotsOnly, .favoritesOnly, .userCreatedOnly]
+        case .appOnly:
+            [.all, .cocktailsOnly, .shotsOnly, .favoritesOnly]
+        case .userOnly:
+            [.all, .favoritesOnly]
+        }
+    }
+
     func filteredCocktails(
         filterOption: FilterOption,
+        source: CocktailListSource = .userAndApp,
         isFavorite: (Cocktail) -> Bool
     ) -> [Cocktail] {
+        // Narrow to the chosen source first, then apply the filter within it.
+        let appCocktails = source.includesAppCocktails ? listOfCocktails : []
+        let appShots = source.includesAppCocktails ? listOfShots : []
+        let ownCocktails = source.includesUserCocktails ? userCocktails : []
+
         let baseCocktails: [Cocktail]
         switch filterOption {
         case .all:
-            baseCocktails = sortedCocktails
+            baseCocktails = sortedCocktails(in: appCocktails + appShots + ownCocktails)
         case .cocktailsOnly:
-            baseCocktails = sortedCocktails(in: listOfCocktails + userCocktails)
+            baseCocktails = sortedCocktails(in: appCocktails + ownCocktails)
         case .shotsOnly:
-            baseCocktails = sortedCocktails(in: listOfShots)
+            baseCocktails = sortedCocktails(in: appShots)
         case .favoritesOnly:
-            baseCocktails = sortedCocktails.filter(isFavorite)
+            baseCocktails = sortedCocktails(in: appCocktails + appShots + ownCocktails).filter(isFavorite)
         case .userCreatedOnly:
-            baseCocktails = sortedCocktails(in: userCocktails)
+            baseCocktails = sortedCocktails(in: ownCocktails)
         }
 
         guard !searchText.isEmpty else { return baseCocktails }
@@ -211,9 +231,11 @@ class CocktailsViewModel {
 
     func groupedCocktails(
         filterOption: FilterOption,
+        source: CocktailListSource = .userAndApp,
         isFavorite: (Cocktail) -> Bool
     ) -> [String: [Cocktail]] {
-        let grouped = Dictionary(grouping: filteredCocktails(filterOption: filterOption, isFavorite: isFavorite)) { cocktail in
+        let cocktails = filteredCocktails(filterOption: filterOption, source: source, isFavorite: isFavorite)
+        let grouped = Dictionary(grouping: cocktails) { cocktail in
             switch sortOption {
             case .byGlass:
                 return cocktail.glass.capitalizingFirstLetter()
@@ -235,9 +257,10 @@ class CocktailsViewModel {
 
     func sortedSectionKeys(
         filterOption: FilterOption,
+        source: CocktailListSource = .userAndApp,
         isFavorite: (Cocktail) -> Bool
     ) -> [String] {
-        let keys = Array(groupedCocktails(filterOption: filterOption, isFavorite: isFavorite).keys)
+        let keys = Array(groupedCocktails(filterOption: filterOption, source: source, isFavorite: isFavorite).keys)
         switch sortOption {
         case .fromZtoA:
             return keys.sorted(by: >)

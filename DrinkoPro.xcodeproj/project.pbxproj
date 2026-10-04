@@ -106,6 +106,10 @@
 		1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* WidgetTutorialView.swift */; };
 		707CAC9A8FC301251AA712CD /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46A63D3F09AE9C5D83692BEA /* PrivateAds */; };
 		83B280FAABED409EB5308FD3 /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 0C77A31298F24D9982F446D7 /* PrivateAds */; };
+		D1C5B0022F00000000000001 /* CocktailListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000001 /* CocktailListSource.swift */; };
+		D1C5B0022F00000000000002 /* CocktailFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000002 /* CocktailFilterSection.swift */; };
+		D1C5B0032F00000000000001 /* CocktailListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000001 /* CocktailListSource.swift */; };
+		D1C5B0032F00000000000002 /* CocktailFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000002 /* CocktailFilterSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +205,8 @@
 		18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
 		1A1000023A4F000100000001 /* DrinkoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DrinkoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1000163A4F000100000001 /* WidgetTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTutorialView.swift; sourceTree = "<group>"; };
+		D1C5B0012F00000000000001 /* CocktailListSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListSource.swift; sourceTree = "<group>"; };
+		D1C5B0012F00000000000002 /* CocktailFilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailFilterSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -344,6 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */,
+				D1C5B0012F00000000000001 /* CocktailListSource.swift */,
 				182157682F3E7DC5002C1046 /* UserCreatedCocktail.swift */,
 				182159062F3EA2CC002C1046 /* UserIngredient.swift */,
 				182159092F3EA2E7002C1046 /* UserProcedure.swift */,
@@ -570,6 +577,7 @@
 			isa = PBXGroup;
 			children = (
 				18F49EB72A286D2E00862CE3 /* CocktailsView.swift */,
+				D1C5B0012F00000000000002 /* CocktailFilterSection.swift */,
 				18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */,
 				18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */,
 				18EB4EBA2EEED46500691DC2 /* Cocktail */,
@@ -801,6 +809,7 @@
 				18A929D32F12C33F00B70219 /* Item.swift in Sources */,
 				18A92A012F12CC3600B70219 /* ABVRowView.swift in Sources */,
 				18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */,
+				D1C5B0022F00000000000002 /* CocktailFilterSection.swift in Sources */,
 				18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */,
 				18A929D52F12C6A900B70219 /* LearnView.swift in Sources */,
 				1858F96A3068702A0016B2DD /* Bottle.swift in Sources */,
@@ -822,6 +831,7 @@
 				183F93602F253BDC005CF96A /* ReadMeView.swift in Sources */,
 				18A92A002F12CC2D00B70219 /* LearnHeaderView.swift in Sources */,
 				18A929DC2F12C72000B70219 /* Cocktail.swift in Sources */,
+				D1C5B0022F00000000000001 /* CocktailListSource.swift in Sources */,
 				18A92A072F12CD0B00B70219 /* DrinkoButtonView.swift in Sources */,
 				183F93642F253E41005CF96A /* CreditsCardView.swift in Sources */,
 			);
@@ -855,11 +865,13 @@
 				18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */,
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
+				D1C5B0032F00000000000002 /* CocktailFilterSection.swift in Sources */,
 				18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */,
 				18263CA12F3D248200758DCC /* DeleteButtonView.swift in Sources */,
 				18A8C8212B1C866E0052F0B4 /* ABVRowView.swift in Sources */,
 				1827138E2B658293000D3343 /* ProductRowView.swift in Sources */,
 				18EB4E932EEECEDC00691DC2 /* Cocktail.swift in Sources */,
+				D1C5B0032F00000000000001 /* CocktailListSource.swift in Sources */,
 				182713802B655D78000D3343 /* Category.swift in Sources */,
 				1879DD682AD5ED68005E2900 /* SuperjuiceRowView.swift in Sources */,
 				182713982B685B8A000D3343 /* EditCategoryView.swift in Sources */,
@@ -999,7 +1011,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1060,7 +1072,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 15.6;
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1233,7 +1245,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1272,7 +1284,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.6;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1297,7 +1309,7 @@
 				INFOPLIST_FILE = DrinkoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DrinkoWidget;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 2.6;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro.DrinkoWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -1324,7 +1336,7 @@
 				INFOPLIST_FILE = DrinkoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DrinkoWidget;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 2.6;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = me.cilia.filippo.DrinkoPro.DrinkoWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

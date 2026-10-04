@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsPreferenceView: View {
+    @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
+
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.openURL) var openURL
 
@@ -30,6 +32,23 @@ struct SettingsPreferenceView: View {
             }
             .buttonStyle(.plain)
             .accessibilityHint("Opens system language settings.")
+
+            Picker(selection: $listSource) {
+                ForEach(CocktailListSource.allCases) { source in
+                    Text(source.title)
+                        .tag(source)
+                }
+            } label: {
+                SettingsRowView(
+                    icon: "list.bullet",
+                    color: .secondary,
+                    itemName: "Cocktail List"
+                )
+            }
+            #if os(iOS)
+            .pickerStyle(.navigationLink)
+            #endif
+            .accessibilityHint("Chooses which cocktails appear in the Cocktails list.")
         }
     }
 }

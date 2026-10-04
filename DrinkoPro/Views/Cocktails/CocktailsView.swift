@@ -16,6 +16,7 @@ struct CocktailsView: View {
     @Environment(Favorites.self) private var favorites
     @Environment(\.modelContext) private var modelContext
 
+    @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
     @State private var filterOption: CocktailsViewModel.FilterOption = .all
     @State private var showCreateCocktailSheet: Bool = false
     @State private var showDeleteAlert: Bool = false
@@ -25,21 +26,25 @@ struct CocktailsView: View {
     @State private var selectedCocktail: Cocktail?
 
     private var visibleCocktails: [Cocktail] {
-        viewModel.filteredCocktails(filterOption: filterOption) { cocktail in
+        viewModel.filteredCocktails(filterOption: filterOption, source: listSource) { cocktail in
             favorites.contains(cocktail)
         }
     }
 
     private var visibleGroupedCocktails: [String: [Cocktail]] {
-        viewModel.groupedCocktails(filterOption: filterOption) { cocktail in
+        viewModel.groupedCocktails(filterOption: filterOption, source: listSource) { cocktail in
             favorites.contains(cocktail)
         }
     }
 
     private var visibleSectionKeys: [String] {
-        viewModel.sortedSectionKeys(filterOption: filterOption) { cocktail in
+        viewModel.sortedSectionKeys(filterOption: filterOption, source: listSource) { cocktail in
             favorites.contains(cocktail)
         }
+    }
+
+    private var availableFilterOptions: [CocktailsViewModel.FilterOption] {
+        viewModel.availableFilterOptions(for: listSource)
     }
 
     private var toolbarPlacement: ToolbarItemPlacement {
@@ -107,6 +112,15 @@ struct CocktailsView: View {
                 .onChange(of: appNavigationModel.pendingCocktailID, initial: true) { _, _ in
                     openPendingCocktailIfNeeded()
                 }
+                .onChange(of: listSource) { _, _ in
+                    // Drop a filter or selection the new source can no longer show.
+                    if !availableFilterOptions.contains(filterOption) {
+                        filterOption = .all
+                    }
+                    if let selectedCocktail, !visibleCocktails.contains(selectedCocktail) {
+                        self.selectedCocktail = nil
+                    }
+                }
                 #if os(iOS) || os(macOS)
                 .safeAreaInset(edge: .bottom) {
                     CrossPromoBannerView()
@@ -150,7 +164,11 @@ private extension CocktailsView {
     }
 
     var shouldShowFilterEmptyState: Bool {
-        (filterOption == .favoritesOnly || filterOption == .userCreatedOnly) && visibleCocktails.isEmpty
+        (filterOption == .favoritesOnly || showsOnlyUserCocktails) && visibleCocktails.isEmpty
+    }
+
+    var showsOnlyUserCocktails: Bool {
+        filterOption == .userCreatedOnly || listSource == .userOnly
     }
 
     var searchBinding: Binding<String> {
@@ -165,7 +183,7 @@ private extension CocktailsView {
             label: {
                 if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
                     Label("No favorite cocktails yet", systemImage: "heart.slash")
-                } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
+                } else if showsOnlyUserCocktails && viewModel.searchText.isEmpty {
                     Label("No custom cocktails yet", systemImage: "plus.circle")
                 } else {
                     Label("No cocktails found", systemImage: "exclamationmark.magnifyingglass")
@@ -174,7 +192,7 @@ private extension CocktailsView {
             description: {
                 if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
                     Text("Add cocktails to favorites to quickly find them here.")
-                } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
+                } else if showsOnlyUserCocktails && viewModel.searchText.isEmpty {
                     Text("Create a cocktail to find it here.")
                 } else {
                     Text("No cocktails match \"\(viewModel.searchText)\".")
@@ -256,62 +274,10 @@ private extension CocktailsView {
 
     var optionsMenu: some View {
         Menu {
-            Section("Filter") {
-                Button {
-                    filterOption = .all
-                } label: {
-                    HStack {
-                        Text("All Cocktails")
-                        if filterOption == .all {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button {
-                    filterOption = .cocktailsOnly
-                } label: {
-                    HStack {
-                        Text("Cocktails Only")
-                        if filterOption == .cocktailsOnly {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button {
-                    filterOption = .shotsOnly
-                } label: {
-                    HStack {
-                        Text("Shots Only")
-                        if filterOption == .shotsOnly {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button {
-                    filterOption = .favoritesOnly
-                } label: {
-                    HStack {
-                        Text("Favorites Only")
-                        if filterOption == .favoritesOnly {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button {
-                    filterOption = .userCreatedOnly
-                } label: {
-                    HStack {
-                        Text("User Created Only")
-                        if filterOption == .userCreatedOnly {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-            }
+            CocktailFilterSection(
+                filterOption: $filterOption,
+                availableOptions: availableFilterOptions
+            )
 
             Section("Sort") {
                 Button(action: {
