@@ -39,11 +39,28 @@ struct LibraryModelTests {
         #expect(!sections.isCollapsed("syrups", whileSearching: false))
     }
 
-    @Test func layoutTogglesAndUsesSharedKey() {
+    @Test func layoutToggles() {
         #expect(LibraryLayout.list.toggled == .grid)
         #expect(LibraryLayout.grid.toggled == .list)
-        #expect(LibraryLayout.storageKey == "libraryLayout")
         #expect(LibraryLayout(rawValue: "garbage") == nil)
+    }
+
+    @Test func eachLibraryHasItsOwnLayoutKey() {
+        #expect(LibraryLayout.learnStorageKey != LibraryLayout.cocktailsStorageKey)
+        #expect(LibraryLayout.learnStorageKey != LibraryLayout.legacyStorageKey)
+        #expect(LibraryLayout.cocktailsStorageKey != LibraryLayout.legacyStorageKey)
+    }
+
+    @Test func initialLayoutCarriesOverTheOldSharedChoice() throws {
+        let suiteName = "test-layout-\(UUID().uuidString)"
+        let defaults = try #require(UserDefaults(suiteName: suiteName))
+        defer { defaults.removePersistentDomain(forName: suiteName) }
+
+        #expect(LibraryLayout.initial(in: defaults) == .list)
+        defaults.set("grid", forKey: LibraryLayout.legacyStorageKey)
+        #expect(LibraryLayout.initial(in: defaults) == .grid)
+        defaults.set("garbage", forKey: LibraryLayout.legacyStorageKey)
+        #expect(LibraryLayout.initial(in: defaults) == .list)
     }
 
     @Test func cardModelDefaultsHaveNoSubtitleOrProgress() {

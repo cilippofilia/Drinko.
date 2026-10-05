@@ -26,7 +26,7 @@ struct CocktailsView: View {
 
     @State private var selectedCocktail: Cocktail?
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
-    @AppStorage(LibraryLayout.storageKey) private var layout: LibraryLayout = .list
+    @AppStorage(LibraryLayout.cocktailsStorageKey) private var layout: LibraryLayout = .initial()
     @AppStorage("cocktailsCollapsedSections") private var collapsedSections = CollapsedSections()
 
     private var visibleCocktails: [Cocktail] {

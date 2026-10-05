@@ -5,7 +5,7 @@
 
 import SwiftUI
 
-/// Toolbar button that switches every library between list and grid layouts.
+/// Toolbar button that switches a library between list and grid layouts.
 struct LibraryLayoutToggle: View {
     @Binding var layout: LibraryLayout
 

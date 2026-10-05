@@ -17,7 +17,7 @@ struct LearnView: View {
     @State private var selection: Selection?
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
 
-    @AppStorage(LibraryLayout.storageKey) private var layout: LibraryLayout = .list
+    @AppStorage(LibraryLayout.learnStorageKey) private var layout: LibraryLayout = .initial()
     @AppStorage("learnCollapsedSections") private var collapsedSections = CollapsedSections()
 
     private var trimmedSearchText: String {
