@@ -53,15 +53,25 @@ struct CocktailsView: View {
         #endif
     }
 
+    private var layoutTogglePlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        return .topBarLeading
+        #else
+        return .automatic
+        #endif
+    }
+
     var body: some View {
         NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
             contentView
                 .navigationTitle("Cocktails")
                 .searchable(text: searchBinding, prompt: "Search Cocktails")
                 .toolbar {
+                    ToolbarItem(placement: layoutTogglePlacement) {
+                        LibraryLayoutToggle(layout: $layout)
+                    }
                     ToolbarItemGroup(placement: toolbarPlacement) {
                         optionsMenu
-                        LibraryLayoutToggle(layout: $layout)
                         addCocktailButton
                     }
                 }

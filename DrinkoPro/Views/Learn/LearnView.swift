@@ -28,6 +28,14 @@ struct LearnView: View {
         !trimmedSearchText.isEmpty
     }
 
+    private var layoutTogglePlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        return .topBarLeading
+        #else
+        return .automatic
+        #endif
+    }
+
     var body: some View {
         NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
             Group {
@@ -66,7 +74,7 @@ struct LearnView: View {
             .navigationTitle("Learn")
             .searchable(text: $searchText, placement: .automatic, prompt: "Search lessons and books")
             .toolbar {
-                ToolbarItem {
+                ToolbarItem(placement: layoutTogglePlacement) {
                     LibraryLayoutToggle(layout: $layout)
                 }
             }
