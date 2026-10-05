@@ -2351,7 +2351,7 @@
     },
     {
         "id": "americano-cocktail",
-        "name": "Americano (cocktail)",
+        "name": "Americano",
         "method": "build + quick stir",
         "glass": "collins",
         "garnish": "orange slice",
