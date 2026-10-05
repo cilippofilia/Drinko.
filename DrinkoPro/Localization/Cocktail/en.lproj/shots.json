@@ -72,30 +72,7 @@
             }
         ]
     },
-    
-    {
-        "id":"irish-car-bomb",
-        "name":"Irish Car Bomb",
-        "method":"build & drop it",
-        "glass":"shot",
-        "garnish":"-",
-        "ice":"-",
-        "extra":"Build the shot and drop it in half a glass of Guinness",
-        
-        "ingredients":[
-            {
-                "name":"Jameson",
-                "quantity":0.5,
-                "unit":"oz."
-            },
-            {
-                "name":"Bailey's",
-                "quantity":0.5,
-                "unit":"oz."
-            }
-        ]
-    },
-    
+
     {
         "id":"kamikaze",
         "name":"Kamikaze",

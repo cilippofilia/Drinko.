@@ -74,29 +74,6 @@
     },
     
     {
-        "id":"irish-car-bomb",
-        "name":"Irish Car Bomb",
-        "method":"build & drop it",
-        "glass":"shot",
-        "garnish":"-",
-        "ice":"-",
-        "extra":"Prepara lo shot e lascialo cadere in mezzo bicchiere di Guinness",
-        
-        "ingredients":[
-            {
-                "name":"Jameson",
-                "quantity":0.5,
-                "unit":"oz."
-            },
-            {
-                "name":"Bailey's",
-                "quantity":0.5,
-                "unit":"oz."
-            }
-        ]
-    },
-    
-    {
         "id":"kamikaze",
         "name":"Kamikaze",
         "method":"build",

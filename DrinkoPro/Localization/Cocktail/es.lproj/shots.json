@@ -68,27 +68,6 @@
     ]
   },
   {
-    "id": "irish-car-bomb",
-    "name": "Irish Car Bomb",
-    "method": "construir y dejar caer",
-    "glass":"shot",
-    "garnish": "-",
-    "ice": "-",
-    "extra": "Construye el chupito y déjalo caer en media pinta de Guinness",
-    "ingredients": [
-      {
-        "name": "Jameson",
-        "quantity": 0.5,
-        "unit": "oz."
-      },
-      {
-        "name": "Bailey's",
-        "quantity": 0.5,
-        "unit": "oz."
-      }
-    ]
-  },
-  {
     "id": "kamikaze",
     "name": "Kamikaze",
     "method": "construir",
