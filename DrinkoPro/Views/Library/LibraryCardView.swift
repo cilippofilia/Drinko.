@@ -11,8 +11,6 @@ struct LibraryCardView: View {
     /// Shows the title in a Liquid Glass pill instead of on a blurred band, as on the recents deck.
     /// The pill style leaves out the subtitle.
     var showsTitlePill = false
-    /// Whether the title pill uses Liquid Glass. Turn it off while the card is rotated in 3D.
-    var titlePillUsesGlass = true
 
     /// How far above the text the blur starts fading in.
     @ScaledMetric private var blurFadeHeight: CGFloat = 48
@@ -47,7 +45,7 @@ struct LibraryCardView: View {
             .overlay(alignment: .bottom) {
                 VStack(alignment: .leading) {
                     if showsTitlePill {
-                        LibraryTitlePill(title: model.title, font: .headline, usesGlass: titlePillUsesGlass)
+                        LibraryTitlePill(title: model.title, font: .headline)
                     } else {
                         Text(model.title)
                             .font(.headline)
@@ -67,7 +65,8 @@ struct LibraryCardView: View {
                 }
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
+                // The title pill sits closer to the corner, so its own corners stay concentric with the card's.
+                .padding(.all, showsTitlePill ? LibraryTitlePill.cornerInset : nil)
                 // The backdrop is always light, so keep the text dark in Dark Mode too.
                 .environment(\.colorScheme, .light)
                 .onGeometryChange(for: CGFloat.self) { proxy in
@@ -85,6 +84,7 @@ struct LibraryCardView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.background.secondary)
         .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
+        .containerShape(.rect(cornerRadius: libraryCardCornerRadius))
         .overlay {
             RoundedRectangle(cornerRadius: libraryCardCornerRadius)
                 .strokeBorder(.separator, lineWidth: 1)

@@ -100,10 +100,12 @@ struct CocktailDetailView: View {
                     // User cocktails have no header image, so their name stays in the text below.
                     if !viewModel.isUserCreated(activeCocktail) {
                         LibraryTitlePill(title: activeCocktail.name)
-                            .padding()
+                            .padding(LibraryTitlePill.cornerInset)
                             .accessibilityAddTraits(.isHeader)
                     }
                 }
+                // Lets the title pill's corners follow the header image's.
+                .containerShape(.rect(cornerRadius: libraryCardCornerRadius))
 
             VStack(alignment: .leading) {
                 if viewModel.isUserCreated(activeCocktail) {

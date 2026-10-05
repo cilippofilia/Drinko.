@@ -16,7 +16,7 @@ struct CocktailImageHeader: View {
             StickerImageView(url: stickerURL, tint: MainSpirit(ingredients: cocktail.ingredients)?.colorName)
                 .frame(height: imageFrameHeight)
                 .frame(maxWidth: .infinity)
-                .clipShape(.rect(cornerRadius: imageCornerRadius))
+                .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
                 .accessibilityHidden(true)
         } else if !cocktail.id.hasPrefix("user-") {
             AsyncImageView(
@@ -25,7 +25,7 @@ struct CocktailImageHeader: View {
                 aspectRatio: .fit
             )
             .background(Color.white)
-            .clipShape(.rect(cornerRadius: imageCornerRadius))
+            .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
         }
     }
 }
