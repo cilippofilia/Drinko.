@@ -12,7 +12,13 @@ struct CocktailImageHeader: View {
     let cocktail: Cocktail
     
     var body: some View {
-        if !cocktail.id.hasPrefix("user-") {
+        if let stickerURL = cocktail.stickerURL {
+            StickerImageView(url: stickerURL)
+                .frame(height: imageFrameHeight)
+                .frame(maxWidth: .infinity)
+                .clipShape(.rect(cornerRadius: imageCornerRadius))
+                .accessibilityHidden(true)
+        } else if !cocktail.id.hasPrefix("user-") {
             AsyncImageView(
                 image: cocktail.pic,
                 frameHeight: imageFrameHeight,

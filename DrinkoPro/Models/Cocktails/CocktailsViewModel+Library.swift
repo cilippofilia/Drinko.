@@ -20,8 +20,8 @@ extension CocktailsViewModel {
         }
     }
 
-    /// Display data for a cocktail: title only, photo for app cocktails, glass artwork for the user's own,
-    /// and a heart when it's a favorite.
+    /// Display data for a cocktail: title only, a sticker for app cocktails (or a photo for the
+    /// few without one), glass artwork for the user's own, and a heart when it's a favorite.
     func cardModel(for cocktail: Cocktail, isFavorite: Bool = false) -> LibraryCardModel {
         LibraryCardModel(title: cocktail.name, image: libraryImage(for: cocktail), imageContentMode: .fit, isFavorite: isFavorite)
     }
@@ -34,6 +34,9 @@ extension CocktailsViewModel {
 
     private func libraryImage(for cocktail: Cocktail) -> LibraryImage {
         guard cocktail.id.hasPrefix("user-") else {
+            if let stickerURL = cocktail.stickerURL {
+                return .sticker(stickerURL)
+            }
             return .remote(URL(string: cocktail.pic))
         }
 

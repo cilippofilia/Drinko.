@@ -52,7 +52,7 @@ struct CocktailsLibraryTests {
         #expect(sections.map(\.id) == viewModel.sortedSectionKeys(filterOption: .all) { _ in false })
     }
 
-    @Test func appCocktailCardIsTitleOnlyRemotePhoto() throws {
+    @Test func appCocktailCardIsTitleOnlySticker() throws {
         let viewModel = CocktailsViewModel()
         let cocktail = try #require(viewModel.listOfCocktails.first)
         let model = viewModel.cardModel(for: cocktail)
@@ -60,7 +60,7 @@ struct CocktailsLibraryTests {
         #expect(model.title == cocktail.name)
         #expect(model.subtitle == nil)
         #expect(model.progress == nil)
-        #expect(model.image == .remote(URL(string: cocktail.pic)))
+        #expect(model.image == .sticker(cocktail.stickerURL))
         #expect(model.imageContentMode == .fit)
     }
 

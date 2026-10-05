@@ -14,7 +14,8 @@ struct LibraryRowView: View {
     var body: some View {
         HStack {
             VStack {
-                LibraryImageView(image: model.image, contentMode: model.imageContentMode)
+                // Stickers stand on their own in a row, so they can fill the whole thumbnail.
+                LibraryImageView(image: model.image, contentMode: model.imageContentMode, showsStickerBackdrop: false)
                     .frame(width: thumbnailSize, height: thumbnailSize)
                     .clipShape(.rect(cornerRadius: imageCornerRadius))
 
