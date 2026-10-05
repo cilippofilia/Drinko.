@@ -355,17 +355,17 @@
         "ingredients":[
             {
                 "name":"Liqueur d'amaretto",
-                "quantity":0.75,
+                "quantity":0.5,
                 "unit":"oz."
             },
             {
                 "name":"Cognac",
-                "quantity":0.75,
+                "quantity":0.5,
                 "unit":"oz."
             },
             {
                 "name":"Liqueur de crème irlandaise",
-                "quantity":0.75,
+                "quantity":0.5,
                 "unit":"oz."
             }
         ]
@@ -382,17 +382,17 @@
         "ingredients":[
             {
                 "name":"Liqueur de café",
-                "quantity":0.75,
+                "quantity":0.5,
                 "unit":"oz."
             },
             {
                 "name":"Liqueur de crème irlandaise",
-                "quantity":0.75,
+                "quantity":0.5,
                 "unit":"oz."
             },
             {
                 "name":"Vodka",
-                "quantity":0.75,
+                "quantity":0.5,
                 "unit":"oz."
             }
         ]
@@ -430,12 +430,17 @@
 
         "ingredients":[
             {
-                "name":"Grand Marnier",
-                "quantity":1,
+                "name":"Liqueur Galliano",
+                "quantity":0.5,
                 "unit":"oz."
             },
             {
-                "name":"Tequila reposado",
+                "name":"Liqueur de noisette",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Liqueur de crème irlandaise",
                 "quantity":0.5,
                 "unit":"oz."
             }
@@ -539,7 +544,7 @@
             },
             {
                 "name":"London Dry Gin",
-                "quantity":0.25,
+                "quantity":0.5,
                 "unit":"oz."
             }
         ]
@@ -627,7 +632,7 @@
     },
     {
         "id":"peanut-butter-jelly",
-        "name":"Peanut Butter Jelly",
+        "name":"Peanut Butter & Jelly",
         "method":"shaker et filtrer finement",
         "glass":"shot",
         "garnish":"-",
@@ -1038,6 +1043,28 @@
             {
                 "name":"Jagermeister",
                 "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"ferrari-shot",
+        "name":"Ferrari Shot",
+        "method": "shaker et filtrer finement",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Fernet Branca",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Campari",
+                "quantity":0.75,
                 "unit":"oz."
             }
         ]

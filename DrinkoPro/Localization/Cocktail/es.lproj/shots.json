@@ -348,17 +348,17 @@
       "ingredients":[
           {
               "name":"Licor de amaretto",
-              "quantity":0.75,
+              "quantity":0.5,
               "unit":"oz."
           },
           {
               "name":"Coñac",
-              "quantity":0.75,
+              "quantity":0.5,
               "unit":"oz."
           },
           {
               "name":"Licor de crema irlandesa",
-              "quantity":0.75,
+              "quantity":0.5,
               "unit":"oz."
           }
       ]
@@ -375,17 +375,17 @@
       "ingredients":[
           {
               "name":"Licor de café",
-              "quantity":0.75,
+              "quantity":0.5,
               "unit":"oz."
           },
           {
               "name":"Licor de crema irlandesa",
-              "quantity":0.75,
+              "quantity":0.5,
               "unit":"oz."
           },
           {
               "name":"Vodka",
-              "quantity":0.75,
+              "quantity":0.5,
               "unit":"oz."
           }
       ]
@@ -423,12 +423,17 @@
 
       "ingredients":[
           {
-              "name":"Grand Marnier",
-              "quantity":1,
+              "name":"Licor Galliano",
+              "quantity":0.5,
               "unit":"oz."
           },
           {
-              "name":"Tequila reposado",
+              "name":"Licor de avellana",
+              "quantity":0.5,
+              "unit":"oz."
+          },
+          {
+              "name":"Licor de crema irlandesa",
               "quantity":0.5,
               "unit":"oz."
           }
@@ -532,7 +537,7 @@
           },
           {
               "name":"London Dry Gin",
-              "quantity":0.25,
+              "quantity":0.5,
               "unit":"oz."
           }
       ]
@@ -620,7 +625,7 @@
   },
   {
       "id":"peanut-butter-jelly",
-      "name":"Peanut Butter Jelly",
+      "name":"Peanut Butter & Jelly",
       "method":"agitar y colar fino",
       "glass":"shot",
       "garnish":"-",
@@ -1031,6 +1036,28 @@
           {
               "name":"Jagermeister",
               "quantity":0.25,
+              "unit":"oz."
+          }
+      ]
+  },
+  {
+      "id":"ferrari-shot",
+      "name":"Ferrari Shot",
+      "method": "agitar y colar fino",
+      "glass":"shot",
+      "garnish":"-",
+      "ice":"-",
+      "extra":"-",
+
+      "ingredients":[
+          {
+              "name":"Fernet Branca",
+              "quantity":0.75,
+              "unit":"oz."
+          },
+          {
+              "name":"Campari",
+              "quantity":0.75,
               "unit":"oz."
           }
       ]
