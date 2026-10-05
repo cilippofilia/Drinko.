@@ -5,8 +5,9 @@
 
 import SwiftUI
 
-/// The "Last Read" / "Last Viewed" carousel: up to five stacked cards, with the next cards
-/// peeking out on the right and the previous ones on the left.
+/// The "Last Read" / "Last Viewed" carousel: up to nine cards around the outside of an
+/// upright drum, with the next cards turning away on the right and the previous ones on the left.
+/// Five show at once; the rest wait round the back and turn into view as you swipe.
 ///
 /// Swiping left brings in the next card, swiping right the previous one; the deck loops.
 /// Tapping the front card opens it.
@@ -85,39 +86,53 @@ struct RecentsDeckView<Item: Hashable>: View {
     /// - Parameter offset: The card's place relative to the front card; see `RecentsDeckLayout.offset`.
     private func deckCard(for item: Item, at offset: Int) -> some View {
         let isFront = offset == 0
-        let steps = CGFloat(RecentsDeckLayout.fanSteps(forOffset: offset, count: items.count))
-        let isTucked = !isFront && steps == 0
-        let tilt: Double = reduceMotion ? 0 : (isFront ? Double(dragOffset / 20) : Double(steps) * 2)
-        // Each step further from the front is smaller, so the outer pair reads as sitting
-        // behind the inner pair (and a tucked card stays hidden behind the front one).
-        let scale = 1 - 0.08 * CGFloat(abs(offset))
-        // The front card casts a deeper shadow so it reads as sitting above the peeking cards.
-        let shadowRadius: CGFloat = isFront ? 16 : (isTucked ? 0 : 6)
+        let steps = RecentsDeckLayout.drumSteps(forOffset: offset, count: items.count)
+        let visibility = RecentsDeckLayout.drumVisibility(
+            forSteps: steps,
+            dragProgress: dragProgress,
+            count: items.count
+        )
+        // The cards sit around the outside of an upright drum; dragging turns the drum.
+        let angle = RecentsDeckLayout.drumAngle(forSteps: steps, dragProgress: dragProgress)
+        let radians = angle * .pi / 180
+        // How much the card faces the viewer: 1 at the front, 0 edge-on at the drum's side.
+        let facing = cos(radians)
+        // Cards further round the drum are further away, so smaller and in shadow.
+        let scale = 0.8 + 0.2 * facing
+        let shadowRadius: CGFloat = 6 + 10 * facing
 
         return Button {
-            // A swipe can end with the front card's bounds under the touch-up point
-            // (it tracks the drag via `.offset`); don't let that register as a tap.
-            // `didDrag` is also cleared, asynchronously, from the gesture's `onEnded`, so
-            // this guard only needs to protect the same touch-up that set it.
+            // A swipe can end with the front card's bounds under the touch-up point; don't
+            // let that register as a tap. `didDrag` is also cleared, asynchronously, from
+            // the gesture's `onEnded`, so this guard only needs to protect the same
+            // touch-up that set it.
             guard !didDrag else { return }
             onOpen(item)
         } label: {
             LibraryCardView(model: cardModel(item))
-                .shadow(color: .black.opacity(isFront ? 0.25 : 0.12), radius: shadowRadius, y: shadowRadius / 2)
+                .brightness(-0.25 * (1 - facing))
+                .shadow(color: .black.opacity(0.12 + 0.13 * facing), radius: shadowRadius, y: shadowRadius / 2)
         }
         .buttonStyle(.libraryCard)
         .containerRelativeFrame(.horizontal) { length, _ in
-            length * 0.6
+            length * 0.5
         }
+        .rotation3DEffect(.degrees(-angle), axis: (x: 0, y: 1, z: 0), perspective: 0.3)
         .scaleEffect(scale)
         .visualEffect { content, proxy in
-            content.offset(x: proxy.size.width * 0.2 * steps)
+            content.offset(x: proxy.size.width * 0.9 * sin(radians))
         }
-        .offset(x: isFront && !reduceMotion ? dragOffset : 0)
-        .rotationEffect(.degrees(tilt))
-        .zIndex(Double(items.count - abs(offset)))
+        // Cards beyond the visible ones wait out of sight round the back of the drum.
+        .opacity(visibility)
+        // Whichever card is nearest the front, mid-swipe included, sits on top.
+        .zIndex(facing)
         .allowsHitTesting(isFront)
         .simultaneousGesture(isFront ? swipeGesture : nil)
+    }
+
+    /// The in-flight swipe as a fraction of one card, positive when dragging right.
+    private var dragProgress: Double {
+        min(max(Double(dragOffset / swipeThreshold) * 0.5, -1), 1)
     }
 
     private var swipeGesture: some Gesture {
@@ -187,7 +202,10 @@ struct RecentsDeckView<Item: Hashable>: View {
     ScrollView {
         RecentsDeckView(
             title: "Last Viewed",
-            items: ["Negroni", "Daiquiri", "Martini"],
+            items: [
+                "Negroni", "Daiquiri", "Martini", "Mojito", "Spritz",
+                "Paloma", "Margarita", "Manhattan", "Sazerac"
+            ],
             cardModel: { LibraryCardModel(title: $0, image: .symbol("wineglass"), imageContentMode: .fit) },
             onOpen: { _ in }
         )

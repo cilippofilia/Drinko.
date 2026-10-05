@@ -44,14 +44,45 @@ struct RecentsDeckLayoutTests {
         #expect(RecentsDeckLayout.offset(ofIndex: 0, frontIndex: 0, count: 0) == 0)
     }
 
-    @Test func oddDeckFansOutSymmetrically() {
-        let steps = [0, 1, 2, -2, -1].map { RecentsDeckLayout.fanSteps(forOffset: $0, count: 5) }
-        #expect(steps == [0, 1, 2, -2, -1])
+    @Test func showsAtMostTwoCardsPerSide() {
+        #expect(RecentsDeckLayout.visibleStepsPerSide(count: 9) == 2)
+        #expect(RecentsDeckLayout.visibleStepsPerSide(count: 5) == 2)
+        #expect(RecentsDeckLayout.visibleStepsPerSide(count: 4) == 1)
+        #expect(RecentsDeckLayout.visibleStepsPerSide(count: 1) == 0)
     }
 
-    @Test func evenDeckTucksTheExtraCardBehindTheFront() {
-        let steps = [0, 1, 2, -1].map { RecentsDeckLayout.fanSteps(forOffset: $0, count: 4) }
-        #expect(steps == [0, 1, 0, -1])
-        #expect(RecentsDeckLayout.fanSteps(forOffset: 1, count: 2) == 0)
+    @Test func hiddenCardsWaitJustPastTheVisibleOnes() {
+        let steps = [0, 1, 2, 3, 4, -4, -3, -2, -1].map { RecentsDeckLayout.drumSteps(forOffset: $0, count: 9) }
+        #expect(steps == [0, 1, 2, 3, 3, -3, -3, -2, -1])
+        #expect(RecentsDeckLayout.drumSteps(forOffset: 2, count: 4) == 2)
+    }
+
+    @Test func onlyTheVisibleSlotsAreShownAtRest() {
+        let visibility = [0, 1, 2, 3, -3].map {
+            RecentsDeckLayout.drumVisibility(forSteps: $0, dragProgress: 0, count: 9)
+        }
+        #expect(visibility == [1, 1, 1, 0, 0])
+        // An even deck's extra card stays hidden so the drum looks symmetric.
+        #expect(RecentsDeckLayout.drumVisibility(forSteps: 2, dragProgress: 0, count: 4) == 0)
+    }
+
+    @Test func dragFadesTheWaitingCardIn() {
+        #expect(RecentsDeckLayout.drumVisibility(forSteps: 3, dragProgress: -0.5, count: 9) == 0.5)
+        #expect(RecentsDeckLayout.drumVisibility(forSteps: 3, dragProgress: -1, count: 9) == 1)
+    }
+
+    @Test func drumAnglesSpreadCardsEvenlyAroundTheFront() {
+        let angles = [0, 1, 2, -2, -1].map { RecentsDeckLayout.drumAngle(forSteps: $0, dragProgress: 0) }
+        #expect(angles == [0, 36, 72, -72, -36])
+    }
+
+    @Test func dragTurnsTheWholeDrum() {
+        #expect(RecentsDeckLayout.drumAngle(forSteps: 0, dragProgress: 0.5) == 18)
+        #expect(RecentsDeckLayout.drumAngle(forSteps: 1, dragProgress: -1) == 0)
+    }
+
+    @Test func drumAngleNeverPassesAQuarterTurn() {
+        #expect(RecentsDeckLayout.drumAngle(forSteps: 2, dragProgress: 1) == 90)
+        #expect(RecentsDeckLayout.drumAngle(forSteps: -2, dragProgress: -1) == -90)
     }
 }
