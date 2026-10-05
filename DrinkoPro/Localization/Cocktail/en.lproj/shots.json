@@ -99,5 +99,947 @@
                 "unit":"oz."
             }
         ]
+    },
+    {
+        "id":"buona-sera",
+        "name":"Buona Sera",
+        "method": "shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Amaretto Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"White Rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Espresso Coffee Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"57-t-bird",
+        "name":"57 T-Bird",
+        "method": "shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Grand Marnier",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Amaretto Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"opening-shot",
+        "name":"Opening Shot",
+        "method": "shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Bourbon Whiskey",
+                "quantity":1,
+                "unit":"oz."
+            },
+            {
+                "name":"Sweet Red Vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Grenadine syrup",
+                "quantity":0.15,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"liquirice-shot",
+        "name":"Liquirice Shot",
+        "method": "shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Sambuca",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Creme de cassis",
+                "quantity":0.3,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"hot-shot",
+        "name":"Hot Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Galliano Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Filter coffee (hot)",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Whipping cream",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"willy-shot",
+        "name":"F. Willy Shot",
+        "method":"shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"White Rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Amaratte Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Triple Sec",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Lime cordial",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"apple-pie",
+        "name":"Apple Pie",
+        "method": "shake & fine strain",
+        "glass":"shot",
+        "garnish":"cinnamon powder",
+        "ice":"-",
+        "extra":"Carefully float the cream on top.",
+
+        "ingredients":[
+            {
+                "name":"Apple Schnapps Liqueur",
+                "quantity":1,
+                "unit":"oz."
+            },
+            {
+                "name":"Hazelnut Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Whipping Cream",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"pavlova-shot",
+        "name":"Pavlova Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Black Raspberry Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Hazelnut Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bartender-mum",
+        "name":"Bartender's Mum",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Butterscotch Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"abc-shot",
+        "name":"A.B.C. Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Amaretto Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Cognac",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"b-53",
+        "name":"B-53",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Coffee Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Vodka",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"alice-in-wonderland",
+        "name":"Alice in Wonderland",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"lime wedge",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Grand Marnier",
+                "quantity":1,
+                "unit":"oz."
+            },
+            {
+                "name":"Reposado tequila",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"747-shot",
+        "name":"747 Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Grand Marnier",
+                "quantity":1,
+                "unit":"oz."
+            },
+            {
+                "name":"Reposado tequila",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"b-55",
+        "name":"B-55",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Espresso Coffee Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Absinthe",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"black-jack-shot",
+        "name":"Black Jack Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Black Sambuca Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Whiskey",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bubblegum-shot",
+        "name":"Bubblegum Shot",
+        "method": "shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Green Melon Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Amaretto Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Whipping Cream",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bijou-shot",
+        "name":"Bijou Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Sweet Red Vermouth",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Green Chartreuse Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"London Dry Gin",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"f-16-shot",
+        "name":"F-16 Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"White Rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Espresso Coffee Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"russian-lude",
+        "name":"Russian Lude",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Galliano Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Green Chartreuse Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"rattlesnake-shot",
+        "name":"Rattlesnake Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Espresso Coffee Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"White Creme de Cacao Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"peanut-butter-jelly",
+        "name":"Peanut Butter Jelly",
+        "method":"shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Black Raspberry Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Hazelnut Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"melon-ball",
+        "name":"Melon Ball",
+        "method":"shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Green Melon Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Oranje Juice",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"liminal-shot",
+        "name":"Liminal Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Grenadine Syrup",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Blue Curacao Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Lime Vodka",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"golden-shot",
+        "name":"Golden Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Honey Herbal Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Scotch Whisky",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"universal-shot",
+        "name":"Universal Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Green Melon Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Grapefruit Juice",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"after-six-shot",
+        "name":"After Six Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Espresso Coffee Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"White Creme de Menthe Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Irish Cream Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"bald-eagle",
+        "name":"Bald Eagle",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"White Creme de Menthe Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Reposado Tequila",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"fifth-avenue",
+        "name":"Fifth Avenue",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Dark Creme de Cacao Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Apricot Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Whipping Cream",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"raging-bull",
+        "name":"Raging Bull",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Espresso Coffee Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Black Sambuca Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Reposado Tequila",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"pear-drop",
+        "name":"Pear Drop",
+        "method":"shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Citron Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Lychee Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Pear & Cognac Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"head-shot",
+        "name":"Head Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Black Sambuca Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Green Chartreuse Liqueur",
+                "quantity":0.75,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"stars-stripes",
+        "name":"Stars & Stripes",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Creme de Cassis Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Maraschino Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Green Chartreuse Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"fourth-july",
+        "name":"Fourth of July Shot",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Grenadine Syrup",
+                "quantity":0.25,
+                "unit":"oz."
+            },
+            {
+                "name":"Blue Curacao Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"burning-bush",
+        "name":"Burning Bush",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Reposado Tequila",
+                "quantity":1,
+                "unit":"oz."
+            },
+            {
+                "name":"Tabasco",
+                "quantity":3,
+                "unit":"dashes"
+            }
+        ]
+    },
+    {
+        "id":"suitably-frank",
+        "name":"Suitably Frank",
+        "method":"build & layer",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Cherry Liqueur",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Licor 43",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Vodka",
+                "quantity":0.5,
+                "unit":"oz."
+            }
+        ]
+    },
+    {
+        "id":"surfer-on-acid",
+        "name":"Surfer on Acid",
+        "method": "shake & fine strain",
+        "glass":"shot",
+        "garnish":"-",
+        "ice":"-",
+        "extra":"-",
+
+        "ingredients":[
+            {
+                "name":"Coconut Rum",
+                "quantity":0.5,
+                "unit":"oz."
+            },
+            {
+                "name":"Pineapple Juice",
+                "quantity":0.75,
+                "unit":"oz."
+            },
+            {
+                "name":"Jagermeister",
+                "quantity":0.25,
+                "unit":"oz."
+            }
+        ]
     }
 ]
