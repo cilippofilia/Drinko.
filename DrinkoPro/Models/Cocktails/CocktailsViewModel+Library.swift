@@ -35,7 +35,7 @@ extension CocktailsViewModel {
     private func libraryImage(for cocktail: Cocktail) -> LibraryImage {
         guard cocktail.id.hasPrefix("user-") else {
             if let stickerURL = cocktail.stickerURL {
-                return .sticker(stickerURL)
+                return .sticker(stickerURL, tint: MainSpirit(ingredients: cocktail.ingredients)?.colorName)
             }
             return .remote(URL(string: cocktail.pic))
         }

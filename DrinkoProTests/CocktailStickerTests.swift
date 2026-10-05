@@ -26,8 +26,17 @@ struct CocktailStickerTests {
 
     @Test func shotsShowTheirSticker() throws {
         for id in ["blow-job", "liquirice-shot"] {
-            let cocktail = try drink(id)
-            #expect(viewModel.cardModel(for: cocktail).image == .sticker(stickerURL(id)))
+            guard case .sticker(let url, _) = viewModel.cardModel(for: try drink(id)).image else {
+                Issue.record("\(id) has no sticker")
+                continue
+            }
+            #expect(url == stickerURL(id))
         }
+    }
+
+    @Test func stickerIsTintedWithTheMainSpiritsColor() throws {
+        // A Blow Job is Kahlua, Bailey's and cream, so it takes the liqueur color.
+        let image = viewModel.cardModel(for: try drink("blow-job")).image
+        #expect(image == .sticker(stickerURL("blow-job"), tint: MainSpirit.liqueur.colorName))
     }
 }

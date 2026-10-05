@@ -60,7 +60,7 @@ struct CocktailsLibraryTests {
         #expect(model.title == cocktail.name)
         #expect(model.subtitle == nil)
         #expect(model.progress == nil)
-        #expect(model.image == .sticker(cocktail.stickerURL))
+        #expect(model.image == .sticker(cocktail.stickerURL, tint: MainSpirit(ingredients: cocktail.ingredients)?.colorName))
         #expect(model.imageContentMode == .fit)
     }
 

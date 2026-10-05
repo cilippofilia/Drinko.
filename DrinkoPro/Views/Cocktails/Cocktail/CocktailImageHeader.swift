@@ -13,7 +13,7 @@ struct CocktailImageHeader: View {
     
     var body: some View {
         if let stickerURL = cocktail.stickerURL {
-            StickerImageView(url: stickerURL)
+            StickerImageView(url: stickerURL, tint: MainSpirit(ingredients: cocktail.ingredients)?.colorName)
                 .frame(height: imageFrameHeight)
                 .frame(maxWidth: .infinity)
                 .clipShape(.rect(cornerRadius: imageCornerRadius))

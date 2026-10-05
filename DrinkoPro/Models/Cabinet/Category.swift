@@ -75,47 +75,47 @@ extension Category {
         [
             Category(
                 name: "Vodkas",
-                color: "Dr. Magenta", 
+                color: MainSpirit.vodka.colorName,
                 creationDate: Date()
             ),
             Category(
                 name: "Gins",
-                color: "Dr. Lavender",
+                color: MainSpirit.gin.colorName,
                 creationDate: Date()
             ),
             Category(
                 name: "Whiskeys",
-                color: "Dr. Gold",
+                color: MainSpirit.whiskey.colorName,
                 creationDate: Date()
             ),
             Category(
                 name: "Rums",
-                color: "Dr. Poppy",
+                color: MainSpirit.rum.colorName,
                 creationDate: Date()
             ),
             Category(
                 name: "Tequilas & Mezcals",
-                color: "Dr. Green",
+                color: MainSpirit.tequila.colorName,
                 creationDate: Date()
             ),
             Category(
                 name: "Cognacs",
-                color: "Dr. Orange",
+                color: MainSpirit.cognac.colorName,
                 creationDate: Date()
             ),
             Category(
                 name: "Liqueurs",
-                color: "Dr. Sky",
+                color: MainSpirit.liqueur.colorName,
                 creationDate: Date()
             ),
             Category(
                 name: "Juices",
-                color: "Dr. Bubblegum",
+                color: MainSpirit.juice.colorName,
                 creationDate: Date()
             ),
             Category(
                 name: "Syrups",
-                color: "Dr. Red",
+                color: MainSpirit.syrup.colorName,
                 creationDate: Date()
             )
         ]
