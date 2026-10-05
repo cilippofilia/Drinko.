@@ -109,9 +109,14 @@ struct RecentsDeckView<Item: Hashable>: View {
             guard !didDrag else { return }
             onOpen(item)
         } label: {
-            LibraryCardView(model: cardModel(item))
-                .brightness(-0.25 * (1 - facing))
-                .shadow(color: .black.opacity(0.12 + 0.13 * facing), radius: shadowRadius, y: shadowRadius / 2)
+            LibraryCardView(
+                model: cardModel(item),
+                showsTitlePill: true,
+                // Only the front card at rest faces the viewer flat on; glass would smear on the turned ones.
+                titlePillUsesGlass: isFront && dragOffset == 0
+            )
+            .brightness(-0.25 * (1 - facing))
+            .shadow(color: .black.opacity(0.12 + 0.13 * facing), radius: shadowRadius, y: shadowRadius / 2)
         }
         .buttonStyle(.libraryCard)
         .containerRelativeFrame(.horizontal) { length, _ in

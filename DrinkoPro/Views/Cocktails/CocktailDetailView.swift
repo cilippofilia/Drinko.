@@ -96,14 +96,22 @@ struct CocktailDetailView: View {
     var cocktailContent: some View {
         VStack {
             CocktailImageHeader(cocktail: activeCocktail)
-            
-            VStack(alignment: .leading) {
-                Text(activeCocktail.name)
-                    .font(.title.bold())
-                    .padding(.top, 12)
+                .overlay(alignment: .bottomLeading) {
+                    // User cocktails have no header image, so their name stays in the text below.
+                    if !viewModel.isUserCreated(activeCocktail) {
+                        LibraryTitlePill(title: activeCocktail.name)
+                            .padding()
+                            .accessibilityAddTraits(.isHeader)
+                    }
+                }
 
-                Divider()
-                
+            VStack(alignment: .leading) {
+                if viewModel.isUserCreated(activeCocktail) {
+                    Text(activeCocktail.name)
+                        .font(.title.bold())
+                        .padding(.top, 12)
+                }
+
                 CocktailDetailsSection(
                     cocktail: activeCocktail,
                     selectedUnit: unitPreference.unit(for: locale),

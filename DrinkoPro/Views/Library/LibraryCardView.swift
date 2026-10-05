@@ -8,6 +8,11 @@ import SwiftUI
 /// One item in a library section's grid layout. Also used for the recents deck.
 struct LibraryCardView: View {
     let model: LibraryCardModel
+    /// Shows the title in a Liquid Glass pill instead of on a blurred band, as on the recents deck.
+    /// The pill style leaves out the subtitle.
+    var showsTitlePill = false
+    /// Whether the title pill uses Liquid Glass. Turn it off while the card is rotated in 3D.
+    var titlePillUsesGlass = true
 
     /// How far above the text the blur starts fading in.
     @ScaledMetric private var blurFadeHeight: CGFloat = 48
@@ -24,25 +29,32 @@ struct LibraryCardView: View {
             .overlay {
                 // A blurred, lightly washed-out copy of the image fades in behind the title,
                 // so it melts into the photo's white backdrop with no visible edge or tint.
-                LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
-                    .blur(radius: 6, opaque: true)
-                    .overlay(.white.opacity(0.4))
-                    .mask(alignment: .bottom) {
-                        VStack(spacing: 0) {
-                            LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
-                                .frame(height: blurFadeHeight)
-                            Color.black
-                                .frame(height: titleHeight)
+                // The title pill brings its own glass, so it needs no blur behind it.
+                if !showsTitlePill {
+                    LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
+                        .blur(radius: 6, opaque: true)
+                        .overlay(.white.opacity(0.4))
+                        .mask(alignment: .bottom) {
+                            VStack(spacing: 0) {
+                                LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
+                                    .frame(height: blurFadeHeight)
+                                Color.black
+                                    .frame(height: titleHeight)
+                            }
                         }
-                    }
+                }
             }
             .overlay(alignment: .bottom) {
                 VStack(alignment: .leading) {
-                    Text(model.title)
-                        .font(.headline)
-                        .lineLimit(2)
+                    if showsTitlePill {
+                        LibraryTitlePill(title: model.title, font: .headline, usesGlass: titlePillUsesGlass)
+                    } else {
+                        Text(model.title)
+                            .font(.headline)
+                            .lineLimit(2)
+                    }
 
-                    if let subtitle = model.subtitle {
+                    if !showsTitlePill, let subtitle = model.subtitle {
                         Text(subtitle)
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
