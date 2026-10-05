@@ -260,7 +260,7 @@ class CocktailsViewModel {
                 if let char = firstCharacter.first, char.isLetter {
                     return String(char)
                 }
-                return "#"
+                return Self.nonLetterSectionKey
             }
         }
 
@@ -275,13 +275,23 @@ class CocktailsViewModel {
         isFavorite: (Cocktail) -> Bool
     ) -> [String] {
         let keys = Array(groupedCocktails(filterOption: filterOption, source: source, isFavorite: isFavorite).keys)
+        let sortedKeys: [String]
         switch sortOption {
         case .fromZtoA:
-            return keys.sorted(by: >)
+            sortedKeys = keys.sorted(by: >)
         default:
-            return keys.sorted(by: <)
+            sortedKeys = keys.sorted(by: <)
         }
+
+        // Names starting with a number or symbol share the "#" section, which goes at the bottom.
+        guard sortOption == .fromAtoZ || sortOption == .fromZtoA, sortedKeys.contains(Self.nonLetterSectionKey) else {
+            return sortedKeys
+        }
+        return sortedKeys.filter { $0 != Self.nonLetterSectionKey } + [Self.nonLetterSectionKey]
     }
+
+    /// Section for cocktails whose name doesn't start with a letter.
+    private static let nonLetterSectionKey = "#"
 
     private func sortedCocktails(in cocktails: [Cocktail]) -> [Cocktail] {
         cocktails.sorted(by: currentSortComparator)

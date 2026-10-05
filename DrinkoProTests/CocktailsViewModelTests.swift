@@ -76,6 +76,19 @@ final class CocktailsViewModelTests: XCTestCase {
         XCTAssertEqual(keys, keys.sorted(by: >))
     }
 
+    func testNamesStartingWithANumberAreListedLast() {
+        let viewModel = CocktailsViewModel()
+
+        for sortOption in [SortOption.fromAtoZ, .fromZtoA] {
+            viewModel.sortOption = sortOption
+            let keys = viewModel.sortedSectionKeys(filterOption: .all) { _ in false }
+            let grouped = viewModel.groupedCocktails(filterOption: .all) { _ in false }
+
+            XCTAssertEqual(keys.last, "#")
+            XCTAssertTrue(grouped["#"]?.contains { $0.name == "57 T-Bird" } ?? false)
+        }
+    }
+
     func testHistoryAndProcedureLookup() {
         let viewModel = CocktailsViewModel()
         guard
