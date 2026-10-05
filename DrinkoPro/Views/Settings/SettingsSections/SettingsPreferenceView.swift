@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsPreferenceView: View {
     @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
+    @AppStorage(CocktailUnitPreference.storageKey) private var unitPreference: CocktailUnitPreference = .automatic
 
     @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.openURL) var openURL
@@ -49,6 +50,23 @@ struct SettingsPreferenceView: View {
             .pickerStyle(.navigationLink)
             #endif
             .accessibilityHint("Chooses which cocktails appear in the Cocktails list.")
+
+            Picker(selection: $unitPreference) {
+                ForEach(CocktailUnitPreference.allCases) { preference in
+                    Text(preference.title)
+                        .tag(preference)
+                }
+            } label: {
+                SettingsRowView(
+                    icon: "ruler",
+                    color: .secondary,
+                    itemName: "Units"
+                )
+            }
+            #if os(iOS)
+            .pickerStyle(.navigationLink)
+            #endif
+            .accessibilityHint("Chooses whether cocktail recipes show milliliters or ounces.")
         }
     }
 }

@@ -10,13 +10,14 @@ import SwiftUI
 struct CocktailDetailView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.horizontalSizeClass) var sizeClass
+    @Environment(\.locale) private var locale
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
 
     @State private var showHistory = false
     @State private var showProcedure = false
 
-    @State private var selectedUnit = "ml"
+    @AppStorage(CocktailUnitPreference.storageKey) private var unitPreference: CocktailUnitPreference = .automatic
     @State private var showDeleteConfirmation = false
     @State private var showEditSheet = false
 
@@ -97,19 +98,15 @@ struct CocktailDetailView: View {
             CocktailImageHeader(cocktail: activeCocktail)
             
             VStack(alignment: .leading) {
-                if !viewModel.isUserCreated(activeCocktail) {
-                    CocktailUnitPicker(selectedUnit: $selectedUnit)
-                }
-                
                 Text(activeCocktail.name)
                     .font(.title.bold())
-                    .padding(.top, viewModel.isUserCreated(activeCocktail) ? 12 : 0)
+                    .padding(.top, 12)
 
                 Divider()
                 
                 CocktailDetailsSection(
                     cocktail: activeCocktail,
-                    selectedUnit: selectedUnit,
+                    selectedUnit: unitPreference.unit(for: locale),
                     showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
                 )
                 

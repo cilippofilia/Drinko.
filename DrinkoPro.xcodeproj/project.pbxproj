@@ -104,12 +104,14 @@
 		D1C5B0022F00000000000005 /* UserCocktailFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000005 /* UserCocktailFormState.swift */; };
 		D1C5B0022F00000000000006 /* CocktailsViewModel+Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */; };
 		D1C5B0022F00000000000007 /* MainSpirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000007 /* MainSpirit.swift */; };
+		D1C5B0022F00000000000008 /* CocktailUnitPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */; };
 		D1C5B0032F00000000000001 /* CocktailListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000001 /* CocktailListSource.swift */; };
 		D1C5B0032F00000000000002 /* CocktailFilterSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000002 /* CocktailFilterSection.swift */; };
 		D1C5B0032F00000000000004 /* UserCocktailDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000004 /* UserCocktailDetails.swift */; };
 		D1C5B0032F00000000000005 /* UserCocktailFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000005 /* UserCocktailFormState.swift */; };
 		D1C5B0032F00000000000006 /* CocktailsViewModel+Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */; };
 		D1C5B0032F00000000000007 /* MainSpirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000007 /* MainSpirit.swift */; };
+		D1C5B0032F00000000000008 /* CocktailUnitPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +208,7 @@
 		D1C5B0012F00000000000005 /* UserCocktailFormState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCocktailFormState.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailsViewModel+Library.swift"; sourceTree = "<group>"; };
 		D1C5B0012F00000000000007 /* MainSpirit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSpirit.swift; sourceTree = "<group>"; };
+		D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailUnitPreference.swift; sourceTree = "<group>"; };
 		E1690D2E636390583CBD52BA /* LearnDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,7 +261,6 @@
 				CocktailDetailsSection.swift,
 				CocktailImageHeader.swift,
 				CocktailRelatedSection.swift,
-				CocktailUnitPicker.swift,
 				HistoryView.swift,
 				IngredientsView.swift,
 				LinkedCocktailsView.swift,
@@ -274,7 +276,6 @@
 				CocktailDetailsSection.swift,
 				CocktailImageHeader.swift,
 				CocktailRelatedSection.swift,
-				CocktailUnitPicker.swift,
 				HistoryView.swift,
 				IngredientsView.swift,
 				LinkedCocktailsView.swift,
@@ -363,6 +364,7 @@
 				1821590C2F3EA342002C1046 /* UserCocktailPreviewer.swift */,
 				D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */,
 				D1C5B0012F00000000000007 /* MainSpirit.swift */,
+				D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */,
 			);
 			path = Cocktails;
 			sourceTree = "<group>";
@@ -817,6 +819,7 @@
 				D1C5B0022F00000000000002 /* CocktailFilterSection.swift in Sources */,
 				D1C5B0022F00000000000006 /* CocktailsViewModel+Library.swift in Sources */,
 				D1C5B0022F00000000000007 /* MainSpirit.swift in Sources */,
+				D1C5B0022F00000000000008 /* CocktailUnitPreference.swift in Sources */,
 				18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */,
 				18A929D52F12C6A900B70219 /* LearnView.swift in Sources */,
 				1858F96A3068702A0016B2DD /* Bottle.swift in Sources */,
@@ -875,6 +878,7 @@
 				D1C5B0032F00000000000002 /* CocktailFilterSection.swift in Sources */,
 				D1C5B0032F00000000000006 /* CocktailsViewModel+Library.swift in Sources */,
 				D1C5B0032F00000000000007 /* MainSpirit.swift in Sources */,
+				D1C5B0032F00000000000008 /* CocktailUnitPreference.swift in Sources */,
 				18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */,
 				18263CA12F3D248200758DCC /* DeleteButtonView.swift in Sources */,
 				1827138E2B658293000D3343 /* ProductRowView.swift in Sources */,
