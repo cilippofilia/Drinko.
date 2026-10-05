@@ -96,22 +96,15 @@ struct CocktailDetailView: View {
     var cocktailContent: some View {
         VStack {
             CocktailImageHeader(cocktail: activeCocktail)
-                .overlay(alignment: .bottomLeading) {
-                    // User cocktails have no header image, so their name stays in the text below.
-                    if !viewModel.isUserCreated(activeCocktail) {
-                        LibraryTitlePill(title: activeCocktail.name)
-                            .padding(LibraryTitlePill.cornerInset)
-                            .accessibilityAddTraits(.isHeader)
-                    }
-                }
-                // Lets the title pill's corners follow the header image's.
-                .containerShape(.rect(cornerRadius: libraryCardCornerRadius))
-
+            
             VStack(alignment: .leading) {
-                if viewModel.isUserCreated(activeCocktail) {
+                // The header shows the name over the artwork; user cocktails have none, so it goes here.
+                if activeCocktail.id.hasPrefix("user-") {
                     Text(activeCocktail.name)
                         .font(.title.bold())
                         .padding(.top, 12)
+
+                    Divider()
                 }
 
                 CocktailDetailsSection(

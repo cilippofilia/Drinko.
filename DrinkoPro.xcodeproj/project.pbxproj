@@ -259,6 +259,7 @@
 			membershipExceptions = (
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
+				CocktailHeaderImage.swift,
 				CocktailImageHeader.swift,
 				CocktailRelatedSection.swift,
 				HistoryView.swift,
@@ -274,6 +275,7 @@
 			membershipExceptions = (
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
+				CocktailHeaderImage.swift,
 				CocktailImageHeader.swift,
 				CocktailRelatedSection.swift,
 				HistoryView.swift,
