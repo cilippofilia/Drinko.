@@ -24,11 +24,10 @@ struct CocktailStickerTests {
         #expect(try drink("gin-martini").stickerURL == stickerURL("dry-martini"))
     }
 
-    @Test func drinksWithoutAStickerKeepTheirPhoto() throws {
-        for id in ["blow-job", "irish-car-bomb"] {
+    @Test func shotsShowTheirSticker() throws {
+        for id in ["blow-job", "liquirice-shot"] {
             let cocktail = try drink(id)
-            #expect(cocktail.stickerURL == nil)
-            #expect(viewModel.cardModel(for: cocktail).image == .remote(URL(string: cocktail.pic)))
+            #expect(viewModel.cardModel(for: cocktail).image == .sticker(stickerURL(id)))
         }
     }
 }

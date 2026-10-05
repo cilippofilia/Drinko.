@@ -28,10 +28,9 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
     }
 
     /// The cocktail's sticker: the drink cut out with a white border on a transparent
-    /// background. `nil` for the user's own cocktails and for the few drinks that don't have
-    /// a sticker yet, which keep their `pic` photo.
+    /// background. `nil` for the user's own cocktails.
     var stickerURL: URL? {
-        guard !id.hasPrefix("user-"), !Self.idsWithoutSticker.contains(id) else { return nil }
+        guard !id.hasPrefix("user-") else { return nil }
         let name = Self.stickerNames[id] ?? id
         return URL(string: "https://raw.githubusercontent.com/cilippofilia/Drinko-stickers/main/drinko-\(name).png")
     }
@@ -39,9 +38,6 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
     var image: String {
         glass
     }
-
-    /// Drinks with no sticker yet.
-    private static let idsWithoutSticker: Set<String> = ["blow-job", "irish-car-bomb"]
 
     /// Drinks whose sticker is filed under another name.
     private static let stickerNames = [
