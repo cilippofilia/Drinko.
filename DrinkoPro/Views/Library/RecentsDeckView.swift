@@ -105,7 +105,7 @@ struct RecentsDeckView<Item: Hashable>: View {
             guard !didDrag else { return }
             onOpen(item)
         } label: {
-            LibraryCardView(model: cardModel(item))
+            LibraryCardView(model: cardModel(item), titleStyle: .blurredBand)
                 .brightness(-0.25 * (1 - facing))
                 .shadow(color: .black.opacity(0.12 + 0.13 * facing), radius: shadowRadius, y: shadowRadius / 2)
         }

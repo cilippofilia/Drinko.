@@ -11,6 +11,7 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
 
     let section: LibrarySection<Item>
     let layout: LibraryLayout
+    var showsHeader = true
     let isCollapsed: Bool
     let isCollapsible: Bool
     let selection: Item?
@@ -21,12 +22,14 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            LibrarySectionHeader(
-                title: section.title,
-                isCollapsed: isCollapsed,
-                isEnabled: isCollapsible,
-                action: onToggleCollapsed
-            )
+            if showsHeader {
+                LibrarySectionHeader(
+                    title: section.title,
+                    isCollapsed: isCollapsed,
+                    isEnabled: isCollapsible,
+                    action: onToggleCollapsed
+                )
+            }
 
             if !isCollapsed {
                 switch layout {

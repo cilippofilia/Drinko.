@@ -16,6 +16,8 @@ struct LibraryView<Item: Hashable, MenuContent: View>: View {
     let isSearching: Bool
     @Binding var collapsedSections: CollapsedSections
     let layout: LibraryLayout
+    /// `false` hides the collapsible section headers and always shows every section's items.
+    var showsSectionHeaders = true
     let onSelect: @MainActor (Item) -> Void
     let cardModel: @MainActor (Item) -> LibraryCardModel
     @ViewBuilder let contextMenu: @MainActor (Item) -> MenuContent
@@ -36,8 +38,10 @@ struct LibraryView<Item: Hashable, MenuContent: View>: View {
                     LibrarySectionView(
                         section: section,
                         layout: layout,
-                        isCollapsed: collapsedSections.isCollapsed(section.id, whileSearching: isSearching),
-                        isCollapsible: !isSearching,
+                        showsHeader: showsSectionHeaders,
+                        isCollapsed: showsSectionHeaders
+                            && collapsedSections.isCollapsed(section.id, whileSearching: isSearching),
+                        isCollapsible: showsSectionHeaders && !isSearching,
                         selection: selection,
                         onToggleCollapsed: {
                             withAnimation(.snappy) {

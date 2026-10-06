@@ -16,9 +16,6 @@ enum LibraryLayout: String, CaseIterable {
     /// The `@AppStorage` key for the Cocktails library's layout.
     static let cocktailsStorageKey = "cocktailsLibraryLayout"
 
-    /// The `@AppStorage` key for the Tools library's layout.
-    static let toolsStorageKey = "toolsLibraryLayout"
-
     /// The key Learn and Cocktails shared before each got its own layout.
     static let legacyStorageKey = "libraryLayout"
 

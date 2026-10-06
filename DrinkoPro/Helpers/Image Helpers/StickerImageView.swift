@@ -29,6 +29,7 @@ struct StickerImageView: View {
                         .overlay(tint.map { Color($0).opacity(tintOpacity) } ?? .clear)
                 }
             }
+            .clipShape(.rect(cornerRadius: libraryCardCornerRadius, style: .continuous))
     }
 }
 

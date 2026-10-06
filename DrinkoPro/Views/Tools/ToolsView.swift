@@ -14,17 +14,6 @@ struct ToolsView: View {
     @State private var selection: Selection?
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
 
-    @AppStorage(LibraryLayout.toolsStorageKey) private var layout: LibraryLayout = .initial()
-    @AppStorage("toolsCollapsedSections") private var collapsedSections = CollapsedSections()
-
-    private var layoutTogglePlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        return .topBarLeading
-        #else
-        return .automatic
-        #endif
-    }
-
     var body: some View {
         NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
             LibraryView(
@@ -33,18 +22,14 @@ struct ToolsView: View {
                 sections: ToolsLibrary.sections,
                 selection: selection,
                 isSearching: false,
-                collapsedSections: $collapsedSections,
-                layout: layout,
+                collapsedSections: .constant(CollapsedSections()),
+                layout: .grid,
+                showsSectionHeaders: false,
                 onSelect: select,
                 cardModel: ToolsLibrary.cardModel(for:),
                 contextMenu: { _ in EmptyView() }
             )
             .navigationTitle("Tools")
-            .toolbar {
-                ToolbarItem(placement: layoutTogglePlacement) {
-                    LibraryLayoutToggle(layout: $layout)
-                }
-            }
             #if os(iOS) || os(macOS)
             .safeAreaInset(edge: .bottom) {
                 CrossPromoBannerView()

@@ -15,6 +15,9 @@ struct LibraryCardModel: Hashable {
     var progress: Double?
     /// Shows a heart badge on the item.
     var isFavorite: Bool
+    /// `false` leaves the grid card's artwork bare, for artwork that already shows the title,
+    /// like book covers. Rows and the recents deck still show it.
+    var showsCardTitle: Bool
 
     init(
         title: String,
@@ -22,7 +25,8 @@ struct LibraryCardModel: Hashable {
         image: LibraryImage,
         imageContentMode: ContentMode = .fill,
         progress: Double? = nil,
-        isFavorite: Bool = false
+        isFavorite: Bool = false,
+        showsCardTitle: Bool = true
     ) {
         self.title = title
         self.subtitle = subtitle
@@ -30,5 +34,6 @@ struct LibraryCardModel: Hashable {
         self.imageContentMode = imageContentMode
         self.progress = progress
         self.isFavorite = isFavorite
+        self.showsCardTitle = showsCardTitle
     }
 }

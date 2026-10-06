@@ -52,7 +52,9 @@ extension LessonsViewModel {
             LibraryCardModel(
                 title: book.title,
                 subtitle: "© \(book.author)",
-                image: .remote(URL(string: book.image))
+                image: .remote(URL(string: book.image)),
+                // The cover already shows the title.
+                showsCardTitle: false
             )
         }
     }
