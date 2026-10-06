@@ -98,7 +98,7 @@ struct RecentsDeckView<Item: Hashable>: View {
         // How much the card faces the viewer: 1 at the front, 0 edge-on at the drum's side.
         let facing = cos(radians)
         // Cards further round the drum are further away, so smaller and in shadow.
-        let scale = 0.8 + 0.2 * facing
+        let scale = 0.7 + 0.3 * facing
         let shadowRadius: CGFloat = 6 + 10 * facing
 
         return Button {
@@ -120,7 +120,7 @@ struct RecentsDeckView<Item: Hashable>: View {
         .rotation3DEffect(.degrees(-angle), axis: (x: 0, y: 1, z: 0), perspective: 0.3)
         .scaleEffect(scale)
         .visualEffect { content, proxy in
-            content.offset(x: proxy.size.width * 0.9 * sin(radians))
+            content.offset(x: proxy.size.width * 1.5 * sin(radians))
         }
         // Cards beyond the visible ones wait out of sight round the back of the drum.
         .opacity(visibility)
