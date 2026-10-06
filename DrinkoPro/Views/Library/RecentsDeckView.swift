@@ -37,10 +37,6 @@ struct RecentsDeckView<Item: Hashable>: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text(title)
-                .font(.title2.bold())
-                .accessibilityHidden(true)
-
             ZStack {
                 ForEach(Array(items.enumerated()), id: \.element) { index, item in
                     let offset = RecentsDeckLayout.offset(ofIndex: index, frontIndex: frontIndex, count: items.count)
@@ -52,7 +48,7 @@ struct RecentsDeckView<Item: Hashable>: View {
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(accessibilityLabelText)
-        .accessibilityHint("Swipe up or down to browse. Double tap to open.")
+        .accessibilityHint("Swipe left or right browse. Tap to open.")
         .accessibilityAdjustableAction { direction in
             switch direction {
             case .increment:

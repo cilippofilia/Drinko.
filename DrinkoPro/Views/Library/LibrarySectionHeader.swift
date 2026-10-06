@@ -22,7 +22,7 @@ struct LibrarySectionHeader: View {
                 Text(title)
                 Spacer()
             }
-            .font(.title3.bold())
+            .font(.headline)
             .contentShape(.rect)
         }
         .buttonStyle(.plain)
