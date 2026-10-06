@@ -15,10 +15,6 @@ struct LearnDetailView: View {
             LessonDetailView(lesson: lesson)
         case .book(let book):
             BookDetailView(book: book)
-        case .abvCalculator:
-            ABVCalculator()
-        case .superjuice(let juiceType):
-            SuperJuiceView(typeOfJuice: juiceType)
         }
     }
 }

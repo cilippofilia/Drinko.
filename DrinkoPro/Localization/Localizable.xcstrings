@@ -2446,6 +2446,62 @@
         }
       }
     },
+    "Choose a calculator to get started." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle einen Rechner, um loszulegen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige una calculadora para empezar."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez un calculateur pour commencer."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli un calcolatore per iniziare."
+          }
+        }
+      }
+    },
+    "Choose a lesson or book to start learning." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wähle eine Lektion oder ein Buch, um mit dem Lernen zu beginnen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige una lección o un libro para empezar a aprender."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez une leçon ou un livre pour commencer à apprendre."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli una lezione o un libro per iniziare a imparare."
+          }
+        }
+      }
+    },
     "Choose Image" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -2483,34 +2539,6 @@
     },
     "Choose a cocktail to see its details." : {
 
-    },
-    "Choose a lesson, calculator or book to start learning." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wähle eine Lektion, einen Rechner oder ein Buch, um mit dem Lernen zu beginnen."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Elige una lección, calculadora o libro para empezar a aprender."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choisissez une leçon, un calculateur ou un livre pour commencer à apprendre."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scegli una lezione, un calcolatore o un libro per iniziare a imparare."
-          }
-        }
-      }
     },
     "Choose a section from the sidebar to start your mixology journey." : {
       "localizations" : {
@@ -6961,6 +6989,34 @@
     "Select a Cocktail" : {
 
     },
+    "Select a Tool" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Werkzeug auswählen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Selecciona una herramienta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez un outil"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seleziona uno strumento"
+          }
+        }
+      }
+    },
     "Select a Topic" : {
       "localizations" : {
         "de" : {
@@ -7992,6 +8048,41 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Per iniziare, premi \"Aggiungi una categoria\" qua sotto o il + in alto a destra"
+          }
+        }
+      }
+    },
+    "Tools" : {
+      "comment" : "Tools Tab",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Werkzeuge"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tools"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Herramientas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Outils"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Strumenti"
           }
         }
       }

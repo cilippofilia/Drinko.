@@ -12,16 +12,12 @@ extension LearnView {
     enum Selection: Hashable, Identifiable {
         case lesson(Lesson)
         case book(Book)
-        case abvCalculator
-        case superjuice(String)
 
         /// A stable string identity, used for recents and persistence.
         var id: String {
             switch self {
             case .lesson(let lesson): "lesson:\(lesson.id)"
             case .book(let book): "book:\(book.id)"
-            case .abvCalculator: "abv"
-            case .superjuice(let juiceType): "superjuice:\(juiceType)"
             }
         }
     }

@@ -112,6 +112,14 @@
 		D1C5B0032F00000000000006 /* CocktailsViewModel+Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */; };
 		D1C5B0032F00000000000007 /* MainSpirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000007 /* MainSpirit.swift */; };
 		D1C5B0032F00000000000008 /* CocktailUnitPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */; };
+		D1C5B0F22F00000000000001 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000001 /* ToolsView.swift */; };
+		D1C5B0F22F00000000000002 /* ToolsView+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000002 /* ToolsView+Selection.swift */; };
+		D1C5B0F22F00000000000003 /* ToolsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000003 /* ToolsLibrary.swift */; };
+		D1C5B0F22F00000000000004 /* ToolsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000004 /* ToolsDetailView.swift */; };
+		D1C5B0F32F00000000000001 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000001 /* ToolsView.swift */; };
+		D1C5B0F32F00000000000002 /* ToolsView+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000002 /* ToolsView+Selection.swift */; };
+		D1C5B0F32F00000000000003 /* ToolsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000003 /* ToolsLibrary.swift */; };
+		D1C5B0F32F00000000000004 /* ToolsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000004 /* ToolsDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -209,6 +217,10 @@
 		D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailsViewModel+Library.swift"; sourceTree = "<group>"; };
 		D1C5B0012F00000000000007 /* MainSpirit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSpirit.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailUnitPreference.swift; sourceTree = "<group>"; };
+		D1C5B0F12F00000000000001 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
+		D1C5B0F12F00000000000002 /* ToolsView+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolsView+Selection.swift"; sourceTree = "<group>"; };
+		D1C5B0F12F00000000000003 /* ToolsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsLibrary.swift; sourceTree = "<group>"; };
+		D1C5B0F12F00000000000004 /* ToolsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsDetailView.swift; sourceTree = "<group>"; };
 		E1690D2E636390583CBD52BA /* LearnDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -549,6 +561,7 @@
 				18F49EA82A286D2E00862CE3 /* Learn */,
 				18F49EB52A286D2E00862CE3 /* Cocktails */,
 				182713862B65656C000D3343 /* Cabinet */,
+				D1C5B0F42F00000000000001 /* Tools */,
 				18F49EA42A286D2E00862CE3 /* Settings */,
 				18B449CD2A8764C300F52B1B /* Supporting Views */,
 				5B229FB4AA21888363C91437 /* Library */,
@@ -576,7 +589,6 @@
 				18A0C5E12F77A00100D1E0A1 /* LearnView+Selection.swift */,
 				E1690D2E636390583CBD52BA /* LearnDetailView.swift */,
 				18883A832ACC70C400FC78C7 /* Lessons */,
-				18883A842ACC718200FC78C7 /* Calculators */,
 				188E93BC2A4C1DF6001691E6 /* Books */,
 			);
 			path = Learn;
@@ -592,6 +604,18 @@
 				18EB4EBA2EEED46500691DC2 /* Cocktail */,
 			);
 			path = Cocktails;
+			sourceTree = "<group>";
+		};
+		D1C5B0F42F00000000000001 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D1C5B0F12F00000000000001 /* ToolsView.swift */,
+				D1C5B0F12F00000000000002 /* ToolsView+Selection.swift */,
+				D1C5B0F12F00000000000003 /* ToolsLibrary.swift */,
+				D1C5B0F12F00000000000004 /* ToolsDetailView.swift */,
+				18883A842ACC718200FC78C7 /* Calculators */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -800,6 +824,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C5B0F32F00000000000001 /* ToolsView.swift in Sources */,
+				D1C5B0F32F00000000000002 /* ToolsView+Selection.swift in Sources */,
+				D1C5B0F32F00000000000003 /* ToolsLibrary.swift in Sources */,
+				D1C5B0F32F00000000000004 /* ToolsDetailView.swift in Sources */,
 				18A929FF2F12CB4100B70219 /* SettingsRowView.swift in Sources */,
 				18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */,
 				18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */,
@@ -853,6 +881,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1C5B0F22F00000000000001 /* ToolsView.swift in Sources */,
+				D1C5B0F22F00000000000002 /* ToolsView+Selection.swift in Sources */,
+				D1C5B0F22F00000000000003 /* ToolsLibrary.swift in Sources */,
+				D1C5B0F22F00000000000004 /* ToolsDetailView.swift in Sources */,
 				18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */,
 				18F49EC82A286D2E00862CE3 /* CocktailRowView.swift in Sources */,
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,

@@ -35,13 +35,17 @@ struct MacHomeView: View {
                 NavigationStack {
                     LearnView()
                 }
+            case .cabinet:
+                NavigationStack {
+                    MacCabinetView()
+                }
             case .cocktails:
                 NavigationStack {
                     CocktailsView()
                 }
-            case .cabinet:
+            case .tools:
                 NavigationStack {
-                    MacCabinetView()
+                    ToolsView()
                 }
             case .settings:
                 NavigationStack {

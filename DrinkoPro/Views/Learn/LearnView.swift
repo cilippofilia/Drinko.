@@ -86,13 +86,13 @@ struct LearnView: View {
         } detail: {
             if let selection {
                 LearnDetailView(selection: selection)
-                    // Recreate the detail so per-page state (e.g. calculator inputs) resets on a new selection.
+                    // Recreate the detail so per-page state resets on a new selection.
                     .id(selection)
             } else {
                 ContentUnavailableView(
                     "Select a Topic",
                     systemImage: "books.vertical",
-                    description: Text("Choose a lesson, calculator or book to start learning.")
+                    description: Text("Choose a lesson or book to start learning.")
                 )
             }
         }
