@@ -10,9 +10,17 @@ struct LibraryCardView: View {
     let model: LibraryCardModel
 
     /// How far above the text the blur starts fading in.
-    @ScaledMetric private var blurFadeHeight: CGFloat = 48
-    /// The measured height of the title block, so the blur covers exactly the text plus the fade.
+    @ScaledMetric private var blurFadeHeight: CGFloat = 28
+    /// The measured height of the padded title block.
     @State private var titleHeight: CGFloat = 0
+    /// The measured height of the text alone, so the blur reaches full strength right where the text starts.
+    @State private var textHeight: CGFloat = 0
+
+    /// The fully blurred area: the text plus the padding below it. The padding is even,
+    /// so the space above the text is half the difference between the two heights.
+    private var solidBlurHeight: CGFloat {
+        (titleHeight + textHeight) / 2
+    }
 
     var body: some View {
         // A fixed aspect ratio keeps every card the same height however the text wraps.
@@ -24,15 +32,30 @@ struct LibraryCardView: View {
             .overlay {
                 // A blurred, lightly washed-out copy of the image fades in behind the title,
                 // so it melts into the photo's white backdrop with no visible edge or tint.
+                // Flatten it onto the card's background first, or the opaque blur darkens the
+                // translucent fill behind symbols and assets into a grey band.
                 LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
+                    .background(.background.secondary)
+                    .compositingGroup()
                     .blur(radius: 6, opaque: true)
                     .overlay(.white.opacity(0.4))
                     .mask(alignment: .bottom) {
                         VStack(spacing: 0) {
-                            LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
-                                .frame(height: blurFadeHeight)
+                            // Eased stops so the blur creeps in rather than starting at a visible line.
+                            LinearGradient(
+                                stops: [
+                                    .init(color: .clear, location: 0),
+                                    .init(color: .black.opacity(0.1), location: 0.3),
+                                    .init(color: .black.opacity(0.4), location: 0.6),
+                                    .init(color: .black.opacity(0.8), location: 0.85),
+                                    .init(color: .black, location: 1)
+                                ],
+                                startPoint: .top,
+                                endPoint: .bottom
+                            )
+                            .frame(height: blurFadeHeight)
                             Color.black
-                                .frame(height: titleHeight)
+                                .frame(height: solidBlurHeight)
                         }
                     }
             }
@@ -42,19 +65,17 @@ struct LibraryCardView: View {
                         .font(.headline)
                         .lineLimit(2)
 
-                    if let subtitle = model.subtitle {
-                        Text(subtitle)
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                            .lineLimit(2)
-                    }
-
                     if let progress = model.progress {
                         LibraryProgressBar(progress: progress)
                     }
                 }
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .onGeometryChange(for: CGFloat.self) { proxy in
+                    proxy.size.height
+                } action: { height in
+                    textHeight = height
+                }
                 .padding()
                 // The backdrop is always light, so keep the text dark in Dark Mode too.
                 .environment(\.colorScheme, .light)
@@ -92,7 +113,7 @@ struct LibraryCardView: View {
 #if DEBUG
 #Preview {
     HStack(alignment: .top) {
-        LibraryCardView(model: LibraryCardModel(title: "Ice", subtitle: "Why ice matters more than you think.", image: .symbol("cube"), imageContentMode: .fit, progress: 0.3))
+        LibraryCardView(model: LibraryCardModel(title: "Ice", image: .symbol("cube"), imageContentMode: .fit, progress: 0.3))
         LibraryCardView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true))
     }
     .padding()

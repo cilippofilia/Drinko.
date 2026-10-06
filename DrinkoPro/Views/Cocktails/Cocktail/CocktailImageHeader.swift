@@ -13,9 +13,18 @@ struct CocktailImageHeader: View {
     let cocktail: Cocktail
 
     /// How far above the name the blur starts fading in.
-    @ScaledMetric private var blurFadeHeight: CGFloat = 48
-    /// The measured height of the name, so the blur covers exactly the text plus the fade.
-    @State private var titleHeight: CGFloat = 0
+    @ScaledMetric private var blurFadeHeight: CGFloat = 28
+    /// The measured height of the name, so the blur reaches full strength right where the text starts.
+    @State private var textHeight: CGFloat = 0
+
+    /// The gap between the name and the card's leading edge, and between its baseline and
+    /// the card's bottom edge, so the name sits evenly in the corner.
+    private let titleInset: CGFloat = 16
+
+    /// The fully blurred area: the name plus the inset below it.
+    private var solidBlurHeight: CGFloat {
+        textHeight + titleInset
+    }
 
     var body: some View {
         if !cocktail.id.hasPrefix("user-") {
@@ -32,10 +41,21 @@ struct CocktailImageHeader: View {
                         .overlay(.white.opacity(0.4))
                         .mask(alignment: .bottom) {
                             VStack(spacing: 0) {
-                                LinearGradient(colors: [.clear, .black], startPoint: .top, endPoint: .bottom)
-                                    .frame(height: blurFadeHeight)
+                                // Eased stops so the blur creeps in rather than starting at a visible line.
+                                LinearGradient(
+                                    stops: [
+                                        .init(color: .clear, location: 0),
+                                        .init(color: .black.opacity(0.1), location: 0.3),
+                                        .init(color: .black.opacity(0.4), location: 0.6),
+                                        .init(color: .black.opacity(0.8), location: 0.85),
+                                        .init(color: .black, location: 1)
+                                    ],
+                                    startPoint: .top,
+                                    endPoint: .bottom
+                                )
+                                .frame(height: blurFadeHeight)
                                 Color.black
-                                    .frame(height: titleHeight)
+                                    .frame(height: solidBlurHeight)
                             }
                         }
                         .accessibilityHidden(true)
@@ -46,15 +66,20 @@ struct CocktailImageHeader: View {
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                        // The backdrop is always light, so keep the text dark in Dark Mode too.
-                        .environment(\.colorScheme, .light)
-                        .accessibilityAddTraits(.isHeader)
                         .onGeometryChange(for: CGFloat.self) { proxy in
                             proxy.size.height
                         } action: { height in
-                            titleHeight = height
+                            textHeight = height
                         }
+                        .padding(titleInset)
+                        // Measure the bottom inset from the baseline rather than below the
+                        // descenders, or the name looks further from the bottom than the side.
+                        .alignmentGuide(.bottom) { dimensions in
+                            dimensions[.lastTextBaseline] + titleInset
+                        }
+                        // The backdrop is always light, so keep the text dark in Dark Mode too.
+                        .environment(\.colorScheme, .light)
+                        .accessibilityAddTraits(.isHeader)
                 }
                 .clipShape(.rect(cornerRadius: imageCornerRadius))
         }
