@@ -48,7 +48,7 @@ struct RecentsDeckView<Item: Hashable>: View {
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(accessibilityLabelText)
-        .accessibilityHint("Swipe left or right browse. Tap to open.")
+        .accessibilityHint("Swipe up or down to browse. Double tap to open.")
         .accessibilityAdjustableAction { direction in
             switch direction {
             case .increment:

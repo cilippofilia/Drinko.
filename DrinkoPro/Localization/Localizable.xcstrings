@@ -7691,11 +7691,7 @@
     "Swipe between the small and medium widgets, then tap Add Widget." : {
 
     },
-    "Swipe left or right browse. Tap to open." : {
-
-    },
     "Swipe up or down to browse. Double tap to open." : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
