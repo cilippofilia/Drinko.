@@ -33,10 +33,23 @@ enum ToolsLibrary {
             )
         case .superjuice(let juiceType):
             LibraryCardModel(
-                title: String(localized: "\(juiceType.capitalizingFirstLetter()) Superjuice"),
+                title: superjuiceTitle(for: juiceType),
                 subtitle: String(localized: "Turn a few fruits into a litre of juice."),
                 image: .asset(juiceType)
             )
+        }
+    }
+
+    /// A fully-translated title for one superjuice tool, keyed on the whole phrase rather
+    /// than interpolating the raw (English-only) juice type.
+    private static func superjuiceTitle(for juiceType: String) -> String {
+        switch juiceType {
+        case "lime":
+            String(localized: "Lime Superjuice")
+        case "lemon":
+            String(localized: "Lemon Superjuice")
+        default:
+            String(localized: "\(juiceType.capitalizingFirstLetter()) Superjuice")
         }
     }
 }

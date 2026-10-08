@@ -30,13 +30,19 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
     /// The cocktail's sticker: the drink cut out with a white border on a transparent
     /// background. `nil` for the user's own cocktails.
     var stickerURL: URL? {
-        guard !id.hasPrefix("user-") else { return nil }
+        guard !isUserCreated else { return nil }
         let name = Self.stickerNames[id] ?? id
         return URL(string: "https://raw.githubusercontent.com/cilippofilia/Drinko-stickers/main/drinko-\(name).png")
     }
 
     var image: String {
         glass
+    }
+
+    /// Whether this cocktail was created by the user, as opposed to being one of the app's
+    /// bundled drinks.
+    var isUserCreated: Bool {
+        id.hasPrefix("user-")
     }
 
     /// Drinks whose sticker is filed under another name.
@@ -110,6 +116,12 @@ class CocktailsViewModel {
     var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
     var userProcedures: [Procedure] = []
     private var modelContext: ModelContext?
+
+    /// Cached sticker tint per cocktail id. See `CocktailsViewModel+Library`.
+    @ObservationIgnored var stickerTintCache: [String: MainSpirit?] = [:]
+
+    /// Cached id → cocktail lookup for the bundled drinks. See `CocktailsViewModel+Library`.
+    @ObservationIgnored var bundledDrinksByIDCache: [String: Cocktail]?
 
     var listOfAllDrinks: [Cocktail] {
         listOfCocktails + listOfShots + userCocktails
@@ -275,23 +287,11 @@ class CocktailsViewModel {
         isFavorite: (Cocktail) -> Bool
     ) -> [String] {
         let keys = Array(groupedCocktails(filterOption: filterOption, source: source, isFavorite: isFavorite).keys)
-        let sortedKeys: [String]
-        switch sortOption {
-        case .fromZtoA:
-            sortedKeys = keys.sorted(by: >)
-        default:
-            sortedKeys = keys.sorted(by: <)
-        }
-
-        // Names starting with a number or symbol share the "#" section, which goes at the bottom.
-        guard sortOption == .fromAtoZ || sortOption == .fromZtoA, sortedKeys.contains(Self.nonLetterSectionKey) else {
-            return sortedKeys
-        }
-        return sortedKeys.filter { $0 != Self.nonLetterSectionKey } + [Self.nonLetterSectionKey]
+        return sortSectionKeys(keys)
     }
 
     /// Section for cocktails whose name doesn't start with a letter.
-    private static let nonLetterSectionKey = "#"
+    static let nonLetterSectionKey = "#"
 
     private func sortedCocktails(in cocktails: [Cocktail]) -> [Cocktail] {
         cocktails.sorted(by: currentSortComparator)

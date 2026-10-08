@@ -88,4 +88,31 @@ struct CocktailsLibraryTests {
         let items = viewModel.recentItems(from: [shot.id, "user-deleted", first.id])
         #expect(items == [shot, first])
     }
+
+    @Test(arguments: [
+        (SortOption.fromAtoZ, ["A", "B", "#"]),
+        (.fromZtoA, ["B", "A", "#"]),
+        // The "#"-last rule only applies to name sorts.
+        (.byGlass, ["#", "A", "B"]),
+        (.byIce, ["#", "A", "B"])
+    ])
+    func sortSectionKeysKeepsHashLastOnlyForNameSorts(sortOption: SortOption, expected: [String]) {
+        let viewModel = CocktailsViewModel()
+        viewModel.sortOption = sortOption
+
+        #expect(viewModel.sortSectionKeys(["#", "B", "A"]) == expected)
+    }
+
+    @Test func stickerTintIsCachedPerCocktail() throws {
+        let viewModel = CocktailsViewModel()
+        let cocktail = try #require(viewModel.listOfCocktails.first { !$0.ingredients.isEmpty })
+        let expectedTint = MainSpirit(ingredients: cocktail.ingredients)?.colorName
+
+        let first = viewModel.cardModel(for: cocktail)
+        let second = viewModel.cardModel(for: cocktail)
+
+        #expect(first.image == .sticker(cocktail.stickerURL, tint: expectedTint))
+        #expect(second.image == .sticker(cocktail.stickerURL, tint: expectedTint))
+        #expect(viewModel.stickerTintCache[cocktail.id] != nil)
+    }
 }

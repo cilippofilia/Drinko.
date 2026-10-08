@@ -13,6 +13,10 @@ class LessonsViewModel {
     private(set) var lessonsByTopic: [String: [Lesson]]
     var books: [Book] = Bundle.main.decode([Book].self, from: "books.json")
 
+    /// Cached id → item lookup, built lazily since lessons and books are bundled and don't
+    /// change after init. See `LessonsViewModel+Library.recentItems(from:)`.
+    @ObservationIgnored var itemsByIDCache: [String: LearnView.Selection]?
+
     init(topics: [LearnTopic] = LearnTopic.all) {
         self.topics = topics
         var lessons: [String: [Lesson]] = [:]

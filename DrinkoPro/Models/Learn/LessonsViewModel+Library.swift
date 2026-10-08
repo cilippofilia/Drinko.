@@ -60,8 +60,20 @@ extension LessonsViewModel {
     }
 
     /// Maps stored recent IDs back to items, keeping order and dropping IDs that no longer exist.
+    ///
+    /// Looks up items in the cached id → item dictionary, built once on first use since lessons
+    /// and books are bundled and don't change after init.
     func recentItems(from ids: [String]) -> [LearnView.Selection] {
-        let itemsByID = Dictionary(allItems.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
-        return ids.compactMap { itemsByID[$0] }
+        ids.compactMap { itemsByID[$0] }
+    }
+
+    /// The id → item lookup, built once on first use.
+    private var itemsByID: [String: LearnView.Selection] {
+        if let cached = itemsByIDCache {
+            return cached
+        }
+        let dict = Dictionary(allItems.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        itemsByIDCache = dict
+        return dict
     }
 }

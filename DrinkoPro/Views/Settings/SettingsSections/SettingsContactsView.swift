@@ -52,15 +52,17 @@ struct SettingsContactsView: View {
 
 private extension SettingsContactsView {
     func openMail(subject: String, body: String) {
-        guard let url = URL(string: "mailto:\(email)?subject=\(percentEncoded(subject))&body=\(percentEncoded(body))") else {
-            return
-        }
+        var components = URLComponents()
+        components.scheme = "mailto"
+        components.path = email
+        components.queryItems = [
+            URLQueryItem(name: "subject", value: subject),
+            URLQueryItem(name: "body", value: body)
+        ]
+
+        guard let url = components.url else { return }
 
         openURL(url)
-    }
-
-    func percentEncoded(_ text: String) -> String {
-        text.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
     }
 
     var reportBug: some View {

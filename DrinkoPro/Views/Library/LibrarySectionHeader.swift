@@ -23,21 +23,38 @@ struct LibrarySectionHeader: View {
                 Spacer()
             }
             .font(.headline)
+            .frame(minHeight: 44)
             .contentShape(.rect)
         }
         .buttonStyle(.plain)
         .disabled(!isEnabled)
         .accessibilityLabel(title)
         .accessibilityAddTraits(.isHeader)
-        .accessibilityValue(isEnabled ? (isCollapsed ? "Collapsed" : "Expanded") : "")
+        .accessibilityValue(value)
         .accessibilityHint(hint)
+    }
+
+    /// The expanded/collapsed state, read out after the title.
+    private var value: LocalizedStringKey {
+        if !isEnabled {
+            ""
+        } else if isCollapsed {
+            "Collapsed"
+        } else {
+            "Expanded"
+        }
     }
 
     /// Two whole literal strings (rather than one with an interpolated word) so each
     /// reads naturally once translated.
-    private var hint: String {
-        guard isEnabled else { return "" }
-        return isCollapsed ? "Double tap to expand this section." : "Double tap to collapse this section."
+    private var hint: LocalizedStringKey {
+        if !isEnabled {
+            ""
+        } else if isCollapsed {
+            "Double tap to expand this section."
+        } else {
+            "Double tap to collapse this section."
+        }
     }
 }
 

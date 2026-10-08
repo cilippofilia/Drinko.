@@ -26,97 +26,41 @@ struct LibraryCardView: View {
         (titleHeight + textHeight) / 2
     }
 
+    /// `true` when the title isn't drawn anywhere on the card's own layers, so VoiceOver
+    /// needs to read it from the artwork instead.
+    private var artworkNeedsTitleLabel: Bool {
+        titleStyle == .glassPill && !model.showsCardTitle
+    }
+
     var body: some View {
         // A fixed aspect ratio keeps every card the same height however the text wraps.
         Color.clear
             .aspectRatio(4 / 5, contentMode: .fit)
             .overlay {
                 LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
+                    // The artwork is decorative when the title's drawn elsewhere on the card.
+                    // When it isn't (bare book covers), replace its accessibility tree with the
+                    // title so VoiceOver still reads it; otherwise leave it as the empty tree
+                    // `LibraryImageView`'s own `.accessibilityHidden(true)` already produces.
+                    .accessibilityRepresentation {
+                        if artworkNeedsTitleLabel {
+                            Text(model.title)
+                        }
+                    }
             }
             .overlay {
                 if titleStyle == .blurredBand {
-                    // A blurred, lightly washed-out copy of the image fades in behind the title,
-                    // so it melts into the photo's white backdrop with no visible edge or tint.
-                    // Flatten it onto the card's background first, or the opaque blur darkens the
-                    // translucent fill behind symbols and assets into a grey band.
-                    LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
-                        .background(.background.secondary)
-                        .compositingGroup()
-                        .blur(radius: 6, opaque: true)
-                        .overlay(.white.opacity(0.4))
-                        .mask(alignment: .bottom) {
-                            VStack(spacing: 0) {
-                                // Eased stops so the blur creeps in rather than starting at a visible line.
-                                LinearGradient(
-                                    stops: [
-                                        .init(color: .clear, location: 0),
-                                        .init(color: .black.opacity(0.1), location: 0.3),
-                                        .init(color: .black.opacity(0.4), location: 0.6),
-                                        .init(color: .black.opacity(0.8), location: 0.85),
-                                        .init(color: .black, location: 1)
-                                    ],
-                                    startPoint: .top,
-                                    endPoint: .bottom
-                                )
-                                .frame(height: blurFadeHeight)
-                                Color.black
-                                    .frame(height: solidBlurHeight)
-                            }
-                        }
+                    LibraryCardBlurBand(fadeHeight: blurFadeHeight, solidHeight: solidBlurHeight)
                 }
             }
             .overlay(alignment: .bottom) {
-                switch titleStyle {
-                case .glassPill:
-                    VStack(alignment: .leading) {
-                        if model.showsCardTitle {
-                            Text(model.title)
-                                .font(.headline)
-                                .lineLimit(2)
-                                .titlePill()
-                        } else {
-                            // The artwork is decorative to VoiceOver, so still read the title.
-                            Color.clear
-                                .frame(height: 0)
-                                .accessibilityElement()
-                                .accessibilityLabel(model.title)
-                        }
-
-                        if let progress = model.progress {
-                            LibraryProgressBar(progress: progress)
-                        }
-                    }
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(pillInset)
-                    // The artwork is always light, so keep the glass and text light in Dark Mode too.
-                    .environment(\.colorScheme, .light)
-                case .blurredBand:
-                    VStack(alignment: .leading) {
-                        Text(model.title)
-                            .font(.headline)
-                            .lineLimit(2)
-
-                        if let progress = model.progress {
-                            LibraryProgressBar(progress: progress)
-                        }
-                    }
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .onGeometryChange(for: CGFloat.self) { proxy in
-                        proxy.size.height
-                    } action: { height in
-                        textHeight = height
-                    }
-                    .padding()
-                    // The backdrop is always light, so keep the text dark in Dark Mode too.
-                    .environment(\.colorScheme, .light)
-                    .onGeometryChange(for: CGFloat.self) { proxy in
-                        proxy.size.height
-                    } action: { height in
-                        titleHeight = height
-                    }
-                }
+                LibraryCardTitleOverlay(
+                    model: model,
+                    titleStyle: titleStyle,
+                    pillInset: pillInset,
+                    textHeight: $textHeight,
+                    titleHeight: $titleHeight
+                )
             }
             .overlay(alignment: .topTrailing) {
                 if model.isFavorite {

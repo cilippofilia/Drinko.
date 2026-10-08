@@ -161,16 +161,18 @@ struct CocktailsView: View {
 
 private extension CocktailsView {
     var contentView: some View {
-        Group {
-            if shouldShowFilterEmptyState {
+        let sections = visibleSections
+
+        return Group {
+            if shouldShowFilterEmptyState(sections) {
                 filterEmptyStateView
-            } else if !viewModel.searchText.isEmpty && visibleCocktails.isEmpty {
+            } else if !viewModel.searchText.isEmpty && sections.isEmpty {
                 searchEmptyStateView
             } else {
                 LibraryView(
                     recentsTitle: String(localized: "Last Viewed"),
                     recents: viewModel.recentItems(from: recentsStore.ids(in: .cocktails)),
-                    sections: visibleSections,
+                    sections: sections,
                     selection: selectedCocktail,
                     isSearching: !viewModel.searchText.isEmpty,
                     collapsedSections: $collapsedSections,
@@ -179,7 +181,7 @@ private extension CocktailsView {
                     cardModel: { viewModel.cardModel(for: $0, isFavorite: favorites.contains($0)) },
                     contextMenu: { cocktail in
                         FavoriteCocktailButtonView(cocktail: cocktail)
-                        if cocktail.id.hasPrefix("user-") {
+                        if cocktail.isUserCreated {
                             DeleteButtonView(
                                 label: "Delete",
                                 action: {
@@ -192,11 +194,10 @@ private extension CocktailsView {
                 )
             }
         }
-        .accessibilityLabel("Filter cocktails")
     }
 
-    var shouldShowFilterEmptyState: Bool {
-        (filterOption == .favoritesOnly || showsOnlyUserCocktails) && visibleCocktails.isEmpty
+    func shouldShowFilterEmptyState(_ sections: [LibrarySection<Cocktail>]) -> Bool {
+        (filterOption == .favoritesOnly || showsOnlyUserCocktails) && sections.isEmpty
     }
 
     var showsOnlyUserCocktails: Bool {

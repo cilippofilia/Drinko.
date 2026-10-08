@@ -99,7 +99,7 @@ struct CocktailDetailView: View {
             
             VStack(alignment: .leading) {
                 // The header shows the name over the artwork; user cocktails have none, so it goes here.
-                if activeCocktail.id.hasPrefix("user-") {
+                if activeCocktail.isUserCreated {
                     Text(activeCocktail.name)
                         .font(.title.bold())
                         .padding(.top, 12)

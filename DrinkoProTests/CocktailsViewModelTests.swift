@@ -251,4 +251,62 @@ final class CocktailsViewModelTests: XCTestCase {
         XCTAssertEqual(CocktailListSource.appOnly.rawValue, "appOnly")
         XCTAssertEqual(CocktailListSource.userOnly.rawValue, "userOnly")
     }
+
+    // MARK: - Recents cache
+
+    /// Adds a second user cocktail to an already-configured view model.
+    private func addSecondUserCocktail(to viewModel: CocktailsViewModel, name: String) {
+        viewModel.addUserCocktail(UserCocktailDetails(
+            name: name,
+            method: "stir",
+            glass: "coupe",
+            garnish: "",
+            ice: "none",
+            extra: "",
+            ingredients: [],
+            procedureSteps: []
+        ))
+    }
+
+    func testRecentItemsIncludeAUserCocktailAddedAfterTheBundledCacheWarmedUp() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+        let bundledID = try XCTUnwrap(viewModel.listOfCocktails.first?.id)
+
+        // Warm the cached bundled-drinks lookup before a second user cocktail is added.
+        XCTAssertEqual(viewModel.recentItems(from: [bundledID]).map(\.id), [bundledID])
+
+        addSecondUserCocktail(to: viewModel, name: "Second Special")
+        let newUser = try XCTUnwrap(viewModel.userCocktails.first { $0.name == "Second Special" })
+
+        XCTAssertEqual(viewModel.recentItems(from: [newUser.id, bundledID]).map(\.id), [newUser.id, bundledID])
+    }
+
+    func testRecentItemsDropAUserCocktailAfterItsDeleted() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+        let userCocktail = try XCTUnwrap(viewModel.userCocktails.first)
+        XCTAssertEqual(viewModel.recentItems(from: [userCocktail.id]).map(\.id), [userCocktail.id])
+
+        viewModel.deleteUserCocktail(userCocktail)
+
+        XCTAssertTrue(viewModel.recentItems(from: [userCocktail.id]).isEmpty)
+    }
+
+    func testRecentItemsReflectAUserCocktailsLatestName() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+        let userCocktail = try XCTUnwrap(viewModel.userCocktails.first)
+
+        viewModel.updateUserCocktail(userCocktail, with: UserCocktailDetails(
+            name: "Renamed Special",
+            method: userCocktail.method,
+            glass: userCocktail.glass,
+            garnish: userCocktail.garnish,
+            ice: userCocktail.ice,
+            extra: userCocktail.extra,
+            ingredients: userCocktail.ingredients,
+            procedureSteps: []
+        ))
+
+        let renamed = try XCTUnwrap(viewModel.recentItems(from: [userCocktail.id]).first)
+        XCTAssertEqual(renamed.name, "Renamed Special")
+    }
 }

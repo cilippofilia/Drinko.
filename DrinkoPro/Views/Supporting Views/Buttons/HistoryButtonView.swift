@@ -25,7 +25,7 @@ struct HistoryButtonView: View {
                 .accessibilityHint(cocktail.name)
                 .sheet(isPresented: showHistory) {
                     HistoryView(cocktail: cocktail, history: history)
-                        .presentationDetents([.medium])
+                        .presentationDetents([.medium, .large])
                 }
             }
         }

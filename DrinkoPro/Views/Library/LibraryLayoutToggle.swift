@@ -18,10 +18,12 @@ struct LibraryLayoutToggle: View {
     }
 
     var body: some View {
-        Button(title, systemImage: systemImage) {
-            withAnimation(.snappy) {
-                layout = layout.toggled
-            }
-        }
+        Button(title, systemImage: systemImage, action: toggleLayout)
+    }
+
+    /// Switches the layout. The caller (`LibraryView`) owns the animation, so Reduce Motion
+    /// is honored and the switch isn't animated twice.
+    private func toggleLayout() {
+        layout = layout.toggled
     }
 }

@@ -6,7 +6,7 @@
 import SwiftUI
 
 /// A collapsible section showing its items as a list or a grid.
-struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
+struct LibrarySectionView<Item: Identifiable & Hashable, MenuContent: View>: View {
     @ScaledMetric private var gridMinimumWidth: CGFloat = 140
 
     let section: LibrarySection<Item>
@@ -35,19 +35,21 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
                 switch layout {
                 case .list:
                     LazyVStack(spacing: 0) {
-                        ForEach(section.items, id: \.self) { item in
-                            LibraryItemButton(isSelected: selection == item) {
-                                onSelect(item)
-                            } label: {
-                                LibraryRowView(model: cardModel(item))
-                            } contextMenu: {
-                                contextMenu(item)
-                            }
-                            .buttonStyle(.plain)
+                        ForEach(section.items) { item in
+                            VStack(spacing: 0) {
+                                LibraryItemButton(isSelected: selection?.id == item.id, layout: .list) {
+                                    onSelect(item)
+                                } label: {
+                                    LibraryRowView(model: cardModel(item))
+                                } contextMenu: {
+                                    contextMenu(item)
+                                }
+                                .buttonStyle(.plain)
 
-                            if item != section.items.last {
                                 Divider()
                                     .padding(.leading)
+                                    .opacity(item.id == section.items.last?.id ? 0 : 1)
+                                    .accessibilityHidden(true)
                             }
                         }
                     }
@@ -55,8 +57,8 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
                     .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
                 case .grid:
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: gridMinimumWidth), alignment: .top)]) {
-                        ForEach(section.items, id: \.self) { item in
-                            LibraryItemButton(isSelected: selection == item) {
+                        ForEach(section.items) { item in
+                            LibraryItemButton(isSelected: selection?.id == item.id, layout: .grid) {
                                 onSelect(item)
                             } label: {
                                 LibraryCardView(model: cardModel(item))
@@ -73,17 +75,23 @@ struct LibrarySectionView<Item: Hashable, MenuContent: View>: View {
 }
 
 #if DEBUG
+/// A minimal `Identifiable` item for previews.
+private struct PreviewItem: Identifiable, Hashable {
+    let id: String
+}
+
 #Preview {
+    let items = ["Negroni", "Daiquiri", "Martini"].map(PreviewItem.init(id:))
     ScrollView {
         LibrarySectionView(
-            section: LibrarySection(id: "demo", title: "Demo", items: ["Negroni", "Daiquiri", "Martini"]),
+            section: LibrarySection(id: "demo", title: "Demo", items: items),
             layout: .grid,
             isCollapsed: false,
             isCollapsible: true,
-            selection: "Daiquiri",
+            selection: items[1],
             onToggleCollapsed: { },
             onSelect: { _ in },
-            cardModel: { LibraryCardModel(title: $0, image: .symbol("wineglass"), imageContentMode: .fit) },
+            cardModel: { LibraryCardModel(title: $0.id, image: .symbol("wineglass"), imageContentMode: .fit) },
             contextMenu: { _ in EmptyView() }
         )
         .padding()

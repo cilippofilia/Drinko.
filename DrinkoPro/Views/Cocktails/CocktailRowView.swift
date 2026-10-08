@@ -49,7 +49,7 @@ struct CocktailRowView: View {
                 Text(cocktail.name)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
-                if cocktail.id.hasPrefix("user-") {
+                if cocktail.isUserCreated {
                     Text("Created by you")
                         .font(.caption)
                         .foregroundStyle(.secondary)

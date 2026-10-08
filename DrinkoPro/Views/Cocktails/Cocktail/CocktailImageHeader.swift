@@ -17,7 +17,7 @@ struct CocktailImageHeader: View {
     @ScaledMetric private var pillInset: CGFloat = 8
 
     var body: some View {
-        if !cocktail.id.hasPrefix("user-") {
+        if !cocktail.isUserCreated {
             CocktailHeaderImage(cocktail: cocktail)
                 .overlay(alignment: .bottomLeading) {
                     Text(cocktail.name)

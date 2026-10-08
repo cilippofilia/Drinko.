@@ -15,18 +15,12 @@ struct CocktailFilterSection: View {
 
     var body: some View {
         Section("Filter") {
-            ForEach(availableOptions, id: \.self) { option in
-                Button {
-                    filterOption = option
-                } label: {
-                    HStack {
-                        Text(title(for: option))
-                        if filterOption == option {
-                            Image(systemName: "checkmark")
-                        }
-                    }
+            Picker("Filter", selection: $filterOption) {
+                ForEach(availableOptions, id: \.self) { option in
+                    Text(title(for: option)).tag(option)
                 }
             }
+            .pickerStyle(.inline)
         }
     }
 
