@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct LinkedCocktailsView: View {
+    @Environment(CocktailsViewModel.self) private var viewModel
+
     let cocktails: [Cocktail]
 
     var body: some View {
@@ -15,9 +17,8 @@ struct LinkedCocktailsView: View {
             ForEach(cocktails) { cocktail in
                 NavigationLink(value: cocktail) {
                     HStack {
-                        CocktailRowView(
-                            cocktail: cocktail
-                        )
+                        // The same sticker row as the Cocktails list layout.
+                        LibraryRowView(model: viewModel.cardModel(for: cocktail))
 
                         Image(systemName: "chevron.right")
                             .bold()
@@ -34,6 +35,7 @@ struct LinkedCocktailsView: View {
 
 #if DEBUG
 #Preview {
-    LinkedCocktailsView(cocktails: [])
+    LinkedCocktailsView(cocktails: [.example])
+        .environment(CocktailsViewModel())
 }
 #endif

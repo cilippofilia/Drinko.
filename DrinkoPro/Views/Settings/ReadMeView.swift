@@ -31,20 +31,19 @@ struct ReadMeView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: sizeClass == .compact ? 10 : 20) {
+            VStack {
                 Text(readMeText)
                     .multilineTextAlignment(.leading)
                     .padding(.vertical)
 
-                VStack(spacing: sizeClass == .compact ? 10 : 20) {
+                VStack {
                     Text("Special thanks to:")
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    
+
                     Text("Drink selection")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
-                              spacing: sizeClass == .compact ? 10 : 20) {
+                    LazyVGrid(columns: sizeClass == .regular ? regularColumns : compactColumn) {
                         CreditsCardView(name: "Danil Nevsky",
                                         brief: "Instagram: @cocktailman",
                                         url: "https://instagram.com/cocktailman")
@@ -62,9 +61,8 @@ struct ReadMeView: View {
                     Text("Photos & Videos")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
-                              spacing: sizeClass == .compact ? 10 : 20) {
+
+                    LazyVGrid(columns: sizeClass == .regular ? regularColumns : compactColumn) {
                         CreditsCardView(name: "Difford's Guide",
                                         brief: "For discerning drinkers.",
                                         url: "https://www.diffordsguide.com")
@@ -79,9 +77,8 @@ struct ReadMeView: View {
                     Text("Translations & UI Design")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    LazyVGrid(columns: sizeClass == .compact ? compactColumn : regularColumns,
-                              spacing: sizeClass == .compact ? 10 : 20) {
+
+                    LazyVGrid(columns: sizeClass == .regular ? regularColumns : compactColumn) {
                         CreditsCardView(name: "Alex Trubacs",
                                         brief: "X (Twitter): @actlikeacrazy",
                                         url: "https://instagram.com/actlikeacrazy")
@@ -97,7 +94,7 @@ struct ReadMeView: View {
                     }
                 }
             }
-            .padding(sizeClass == .compact ? .bottom : [.bottom, .horizontal])
+            .padding(sizeClass == .regular ? [.bottom, .horizontal] : .bottom)
         }
         .navigationTitle("Drinko.")
         .scrollIndicators(.hidden, axes: .vertical)

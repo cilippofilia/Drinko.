@@ -8,10 +8,10 @@ import SwiftUI
 /// One item in a library section's grid layout. Also used for the recents deck.
 struct LibraryCardView: View {
     let model: LibraryCardModel
-    var titleStyle: LibraryCardTitleStyle = .glassPill
-
-    /// The gap between the title pill and the card's edges.
-    @ScaledMetric private var pillInset: CGFloat = 8
+    /// Shows the title even when the model hides it on bare grid artwork (book covers that
+    /// already show their title). The recents deck sets this, since its smaller cards benefit
+    /// from a consistent label across items.
+    var alwaysShowsTitle = false
 
     /// How far above the text the blur starts fading in.
     @ScaledMetric private var blurFadeHeight: CGFloat = 28
@@ -26,10 +26,14 @@ struct LibraryCardView: View {
         (titleHeight + textHeight) / 2
     }
 
+    private var showsTitle: Bool {
+        alwaysShowsTitle || model.showsCardTitle
+    }
+
     /// `true` when the title isn't drawn anywhere on the card's own layers, so VoiceOver
     /// needs to read it from the artwork instead.
     private var artworkNeedsTitleLabel: Bool {
-        titleStyle == .glassPill && !model.showsCardTitle
+        !showsTitle
     }
 
     var body: some View {
@@ -49,18 +53,19 @@ struct LibraryCardView: View {
                     }
             }
             .overlay {
-                if titleStyle == .blurredBand {
+                if showsTitle || model.progress != nil {
                     LibraryCardBlurBand(fadeHeight: blurFadeHeight, solidHeight: solidBlurHeight)
                 }
             }
             .overlay(alignment: .bottom) {
-                LibraryCardTitleOverlay(
-                    model: model,
-                    titleStyle: titleStyle,
-                    pillInset: pillInset,
-                    textHeight: $textHeight,
-                    titleHeight: $titleHeight
-                )
+                if showsTitle || model.progress != nil {
+                    LibraryCardTitleOverlay(
+                        model: model,
+                        showsTitle: showsTitle,
+                        textHeight: $textHeight,
+                        titleHeight: $titleHeight
+                    )
+                }
             }
             .overlay(alignment: .topTrailing) {
                 if model.isFavorite {
@@ -71,8 +76,6 @@ struct LibraryCardView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.background.secondary)
         .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
-        // Lets the title pill's corners follow the card's.
-        .containerShape(.rect(cornerRadius: libraryCardCornerRadius))
         .overlay {
             RoundedRectangle(cornerRadius: libraryCardCornerRadius)
                 .strokeBorder(.separator, lineWidth: 1)

@@ -11,7 +11,6 @@ struct SettingsPreferenceView: View {
     @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
     @AppStorage(CocktailUnitPreference.storageKey) private var unitPreference: CocktailUnitPreference = .automatic
 
-    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.openURL) var openURL
 
     var body: some View {

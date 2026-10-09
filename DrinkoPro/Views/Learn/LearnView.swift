@@ -79,22 +79,22 @@ struct LearnView: View {
                 }
             }
             #if os(iOS) || os(macOS)
-            .safeAreaInset(edge: .bottom) {
-                CrossPromoBannerView()
-            }
+            .crossPromoBanner()
             #endif
         } detail: {
-            if let selection {
-                LearnDetailView(selection: selection)
-                    // Recreate the detail so per-page state resets on a new selection.
-                    .id(selection)
-            } else {
-                ContentUnavailableView(
-                    "Select a Topic",
-                    systemImage: "books.vertical",
-                    description: Text("Choose a lesson or book to start learning.")
-                )
+            NavigationStack {
+                if let selection {
+                    LearnDetailView(selection: selection)
+                } else {
+                    ContentUnavailableView(
+                        "Select a Topic",
+                        systemImage: "books.vertical",
+                        description: Text("Choose a lesson or book to start learning.")
+                    )
+                }
             }
+            // Recreate the detail so per-page state resets on a new selection.
+            .id(selection)
         }
     }
 

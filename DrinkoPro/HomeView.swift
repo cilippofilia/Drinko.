@@ -25,7 +25,9 @@ struct HomeView: View {
     @State private var interstitialAd: Ad?
 
     var body: some View {
-        TabView(selection: selectedViewBinding) {
+        @Bindable var appNavigationModel = appNavigationModel
+
+        TabView(selection: $appNavigationModel.selectedTab) {
             Tab("Learn", systemImage: "books.vertical", value: LearnView.learnTag) {
                 LearnView()
             }
@@ -42,8 +44,20 @@ struct HomeView: View {
                 SettingsView()
             }
         }
-        .tabViewStyle(.sidebarAdaptable)
+        .tabViewStyle(.tabBarOnly)
         .onAppear(perform: checkForReview)
+        // Restore the last-used tab from the previous session. Only applies while
+        // `selectedTab` is still at its untouched default, so it never clobbers a deep link
+        // (`AppNavigationModel.handle(url:)`) that already selected a tab before this view
+        // first appeared.
+        .onAppear {
+            if appNavigationModel.selectedTab == LearnView.learnTag, let selectedView {
+                appNavigationModel.selectedTab = selectedView
+            }
+        }
+        .onChange(of: appNavigationModel.selectedTab) { _, newValue in
+            selectedView = newValue
+        }
         .sheet(isPresented: $showingWidgetTutorial) {
             NavigationStack {
                 WidgetTutorialView()
@@ -111,24 +125,12 @@ struct HomeView: View {
             showingWidgetTutorial = true
         }
     }
-
-    private var selectedViewBinding: Binding<String?> {
-        Binding(
-            get: {
-                appNavigationModel.selectedTab ?? selectedView
-            },
-            set: { newValue in
-                selectedView = newValue
-                appNavigationModel.selectedTab = newValue
-            }
-        )
-    }
 }
 
 #if DEBUG
 #Preview {
     HomeView()
-        .tabViewStyle(.sidebarAdaptable)
+        .tabViewStyle(.tabBarOnly)
         .drinkoPreviewEnvironment()
 }
 #endif

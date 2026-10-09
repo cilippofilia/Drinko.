@@ -15,6 +15,9 @@ import AppKit
 let rowHeight: CGFloat = 45
 let imageCornerRadius: CGFloat = 10
 let imageFrameHeight: CGFloat = 280
+/// The tallest a hero image that scales with its column's width (lessons, books) is allowed to
+/// grow, so a wide iPad column doesn't produce an oversized banner.
+let heroImageMaxHeight: CGFloat = 480
 let libraryCardCornerRadius: CGFloat = 24
 #if os(macOS)
 let screenWidth: CGFloat = 350

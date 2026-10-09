@@ -10,12 +10,15 @@ import SwiftUI
 
 struct EditCategoryView: View {
     @Bindable var category: Category
-    @Binding var navigationPath: NavigationPath
-    @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
 
     @State private var showingDeleteConfirmation = false
     @State private var isSelected = false
+
+    /// Called after the category has been deleted from the model context, so the caller
+    /// can clear its selection instead of relying on `dismiss()`, which does nothing when
+    /// this view is shown as a `NavigationSplitView` detail.
+    var onDelete: () -> Void = {}
 
     let colorColumns = [
         GridItem(.adaptive(minimum: 44))
@@ -101,7 +104,7 @@ extension EditCategoryView {
 
     func delete() {
         modelContext.delete(category)
-        dismiss()
+        onDelete()
     }
 }
 
@@ -109,8 +112,8 @@ extension EditCategoryView {
 #Preview {
     do {
         let previewer = try CabinetPreviewerPreviewer()
-        
-        return EditCategoryView(category: previewer.category, navigationPath: .constant(NavigationPath()))
+
+        return EditCategoryView(category: previewer.category)
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CocktailDetailView: View {
     @Environment(\.dismiss) var dismiss
-    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(\.locale) private var locale
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
@@ -58,12 +57,9 @@ struct CocktailDetailView: View {
             }
             if viewModel.isUserCreated(activeCocktail) {
                 ToolbarItem(placement: toolbarPlacement) {
-                    Button(action: {
+                    Button("Edit Cocktail", systemImage: "pencil.line") {
                         showEditSheet = true
-                    }) {
-                        Image(systemName: "pencil.line")
                     }
-                    .accessibilityLabel("Edit Cocktail")
                     .accessibilityHint("Edits this cocktail")
                 }
             }
@@ -125,7 +121,7 @@ struct CocktailDetailView: View {
 
                 if !viewModel.getLinkedCocktails(for: activeCocktail).isEmpty {
                     Text("You may also like")
-                        .font(sizeClass == .compact ? .title3.bold() : .title.bold())
+                        .font(.title3.bold())
                         .padding(.top, 8)
 
                     LinkedCocktailsView(

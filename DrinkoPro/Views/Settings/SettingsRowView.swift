@@ -15,7 +15,7 @@ struct SettingsRowView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             Image(systemName: icon)
-                .foregroundColor(color)
+                .foregroundStyle(color)
                 .frame(minWidth: 30, minHeight: 30)
                 .accessibilityHidden(true)
 

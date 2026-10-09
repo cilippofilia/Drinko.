@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct CocktailRowView: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(Favorites.self) private var favorites
     @ScaledMetric private var frameSize: CGFloat = 45
 
     var cocktail: Cocktail
 
     var body: some View {
-        HStack(spacing: sizeClass == .compact ? 10 : 20) {
+        HStack {
             if cocktail.glass == "wine" {
                 Image(systemName: "wineglass")
                     .imageScale(.large)

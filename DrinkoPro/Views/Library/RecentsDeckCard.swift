@@ -33,7 +33,7 @@ struct RecentsDeckCard: View {
         let shadowRadius: CGFloat = 6 + 10 * facing
 
         return Button(action: onOpen) {
-            LibraryCardView(model: model, titleStyle: .blurredBand)
+            LibraryCardView(model: model, alwaysShowsTitle: true)
                 .brightness(-0.25 * (1 - facing))
                 .shadow(color: .black.opacity(0.12 + 0.13 * facing), radius: shadowRadius, y: shadowRadius / 2)
         }

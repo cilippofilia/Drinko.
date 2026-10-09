@@ -332,7 +332,7 @@ extension UserCocktailForm {
     private func parseQuantity(from rawValue: String) -> Double? {
         let trimmed = rawValue.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return nil }
-        return Double(trimmed.replacingOccurrences(of: ",", with: "."))
+        return Double(trimmed.replacing(",", with: "."))
     }
 
     private func ingredientErrorMessage(for draft: IngredientDraft) -> String? {

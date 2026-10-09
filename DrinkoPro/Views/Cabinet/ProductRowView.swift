@@ -10,15 +10,31 @@ import SwiftUI
 
 struct ProductRowView: View {
     @Environment(\.modelContext) private var modelContext
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    #endif
     @ScaledMetric private var minRowHeight: CGFloat = 45
-    
+
     let product: Item
-    
+    var isSelected: Bool = false
+    var onSelect: () -> Void = {}
+
+    /// Only highlight the selection while the detail column is on screen beside the sidebar.
+    /// On compact widths the detail is pushed over the sidebar and the selection is never
+    /// cleared on the way back, so a highlight there would stick to the last item opened.
+    private var showsSelection: Bool {
+        #if os(iOS)
+        isSelected && horizontalSizeClass == .regular
+        #else
+        isSelected
+        #endif
+    }
+
     var body: some View {
-        NavigationLink(destination: EditProductView(product: product)) {
+        Button(action: onSelect) {
             HStack {
                 Label("Need to buy", systemImage: "cart")
-                    .foregroundColor(product.isFavorite ? Color.secondary : Color.clear)
+                    .foregroundStyle(product.isFavorite ? Color.secondary : Color.clear)
                     .animation(.default, value: product.isFavorite)
                     .symbolEffect(.bounce.up, value: product.isFavorite)
                     .labelStyle(.iconOnly)
@@ -42,10 +58,10 @@ struct ProductRowView: View {
                         }
                     }
                     .font(.caption)
-                    .foregroundColor(Color.secondary)
+                    .foregroundStyle(Color.secondary)
                 }
                 .multilineTextAlignment(.leading)
-                
+
                 Spacer()
 
                 if product.tried {
@@ -57,11 +73,15 @@ struct ProductRowView: View {
                     .foregroundStyle(Color(.drGold))
                 }
             }
+            .frame(minHeight: minRowHeight)
+            .contentShape(.rect)
         }
-        .frame(minHeight: minRowHeight)
+        .buttonStyle(.plain)
+        .listRowBackground(showsSelection ? Color.accentColor.opacity(0.15) : nil)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(product.name)
         .accessibilityValue(accessibilityValue)
+        .accessibilityAddTraits(showsSelection ? .isSelected : [])
     }
 
     private var accessibilityValue: String {
@@ -86,7 +106,7 @@ struct ProductRowView: View {
 #Preview {
     do {
         let previewer = try CabinetPreviewerPreviewer()
-        
+
         return ProductRowView(product: Item(name: "Absolut Vodka", detail: "This is to test the detail section of a product", madeIn: "Portugal", abv: "43", tried: true, isFavorite: false))
             .modelContainer(previewer.container)
     } catch {

@@ -14,11 +14,9 @@ struct CocktailDetailsSection: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            CocktailDetailSectionView(
-                cocktail: cocktail,
-                text: "Ingredients"
-            )
-            
+            Text("Ingredients")
+                .font(.headline)
+
             IngredientsView(
                 ingredients: cocktail.ingredients,
                 selectedUnit: selectedUnit,
@@ -27,27 +25,27 @@ struct CocktailDetailsSection: View {
 
             CocktailDetailSectionView(
                 cocktail: cocktail,
-                text: "Method"
+                kind: .method
             )
-            
+
             CocktailDetailSectionView(
                 cocktail: cocktail,
-                text: "Glass"
+                kind: .glass
             )
-            
+
             CocktailDetailSectionView(
                 cocktail: cocktail,
-                text: "Garnish"
+                kind: .garnish
             )
-            
+
             CocktailDetailSectionView(
                 cocktail: cocktail,
-                text: "Ice"
+                kind: .ice
             )
-            
+
             CocktailDetailSectionView(
                 cocktail: cocktail,
-                text: "Extra"
+                kind: .extra
             )
         }
         .padding(.vertical, 8)

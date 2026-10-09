@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct CocktailRelatedSection: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
     @Environment(CocktailsViewModel.self) private var viewModel
     let cocktail: Cocktail
     let procedure: Procedure

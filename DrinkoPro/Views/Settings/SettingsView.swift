@@ -22,9 +22,7 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .scrollBounceBehavior(.basedOnSize)
             #if os(iOS)
-            .safeAreaInset(edge: .bottom) {
-                CrossPromoBannerView()
-            }
+            .crossPromoBanner()
             #endif
         }
     }

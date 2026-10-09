@@ -73,7 +73,7 @@ extension UserCreatedCocktail {
         let normalizedName = name
             .lowercased()
             .trimmingCharacters(in: .whitespacesAndNewlines)
-            .replacingOccurrences(of: "[^a-z0-9]+", with: "-", options: .regularExpression)
+            .replacing(/[^a-z0-9]+/, with: "-")
             .trimmingCharacters(in: CharacterSet(charactersIn: "-"))
         let fallback = normalizedName.isEmpty ? "user-cocktail" : normalizedName
         return "user-\(fallback)-\(UUID().uuidString.prefix(6).lowercased())"

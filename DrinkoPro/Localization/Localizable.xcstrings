@@ -2545,6 +2545,9 @@
         }
       }
     },
+    "Choose a product or category to edit it." : {
+
+    },
     "Choose a section from the sidebar to start your mixology journey." : {
       "localizations" : {
         "de" : {
@@ -4401,7 +4404,11 @@
         }
       }
     },
+    "Filter and Sort" : {
+
+    },
     "Filter and sort cocktails" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5805,6 +5812,9 @@
         }
       }
     },
+    "None" : {
+
+    },
     "Not favorite" : {
       "localizations" : {
         "de" : {
@@ -6168,6 +6178,7 @@
       }
     },
     "Options" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7235,6 +7246,9 @@
     "Select a Cocktail" : {
 
     },
+    "Select a Product" : {
+
+    },
     "Select a Tool" : {
       "localizations" : {
         "de" : {
@@ -7864,6 +7878,7 @@
       }
     },
     "Sort cocktails" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

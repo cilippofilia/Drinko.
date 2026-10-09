@@ -31,22 +31,22 @@ struct ToolsView: View {
             )
             .navigationTitle("Tools")
             #if os(iOS) || os(macOS)
-            .safeAreaInset(edge: .bottom) {
-                CrossPromoBannerView()
-            }
+            .crossPromoBanner()
             #endif
         } detail: {
-            if let selection {
-                ToolsDetailView(selection: selection)
-                    // Recreate the detail so calculator inputs reset on a new selection.
-                    .id(selection)
-            } else {
-                ContentUnavailableView(
-                    "Select a Tool",
-                    systemImage: "wrench.and.screwdriver",
-                    description: Text("Choose a calculator to get started.")
-                )
+            NavigationStack {
+                if let selection {
+                    ToolsDetailView(selection: selection)
+                } else {
+                    ContentUnavailableView(
+                        "Select a Tool",
+                        systemImage: "wrench.and.screwdriver",
+                        description: Text("Choose a calculator to get started.")
+                    )
+                }
             }
+            // Recreate the detail so calculator inputs reset on a new selection.
+            .id(selection)
         }
     }
 

@@ -52,11 +52,25 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
     ]
 }
 
-enum SortOption {
+enum SortOption: CaseIterable {
     case fromAtoZ
     case fromZtoA
     case byGlass
     case byIce
+
+    /// The localized title shown for this option in the sort picker.
+    var title: LocalizedStringKey {
+        switch self {
+        case .fromAtoZ:
+            "A > Z"
+        case .fromZtoA:
+            "Z > A"
+        case .byGlass:
+            "By Glass"
+        case .byIce:
+            "By Ice"
+        }
+    }
 }
 
 struct Ingredient: Codable, Equatable, Identifiable, Hashable {

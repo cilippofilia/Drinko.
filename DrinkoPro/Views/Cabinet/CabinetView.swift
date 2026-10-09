@@ -15,8 +15,10 @@ struct CabinetView: View {
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     #endif
 
-    @State private var path = NavigationPath()
     @State private var showAddCategorySheet: Bool = false
+    @State private var selectedProduct: Item?
+    @State private var selectedCategory: Category?
+    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
 
     @Query(sort: [
         SortDescriptor(\Category.name),
@@ -24,20 +26,31 @@ struct CabinetView: View {
     ]) var categories: [Category]
 
     var body: some View {
-        NavigationStack {
+        NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
             Group {
                 if categories.isEmpty {
                     unavailableView
                 } else {
                     categoriesList
-                        .navigationTitle("Cabinet")
                 }
             }
-            #if os(iOS)
-            .safeAreaInset(edge: .bottom) {
-                CrossPromoBannerView()
+            .navigationTitle("Cabinet")
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Add Category", systemImage: "plus") {
+                        showAddCategorySheet.toggle()
+                    }
+                }
             }
+            .sheet(isPresented: $showAddCategorySheet) {
+                AddCategoryView()
+                    .presentationDetents([.medium, .large])
+            }
+            #if os(iOS)
+            .crossPromoBanner()
             #endif
+        } detail: {
+            detailView
         }
     }
 }
@@ -54,19 +67,6 @@ extension CabinetView {
                 showAddCategorySheet.toggle()
             }
         })
-        .navigationTitle("Cabinet")
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button(action: {
-                    showAddCategorySheet.toggle()
-                }) {
-                    Label("Add category", systemImage: "plus")
-                }
-            }
-        }
-        .sheet(isPresented: $showAddCategorySheet) {
-            AddCategoryView()
-        }
     }
 
     var categoriesList: some View {
@@ -75,39 +75,50 @@ extension CabinetView {
                 Section {
                     if let products = category.products {
                         ForEach(products) { product in
-                            ProductRowView(product: product)
-                                .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                                    FavoriteProductButtonView(product: product)
-                                        .tint(product.isFavorite ? .red : .blue)
-                                }
+                            ProductRowView(
+                                product: product,
+                                isSelected: selectedProduct == product,
+                                onSelect: { select(product) }
+                            )
+                            .swipeActions(edge: .leading, allowsFullSwipe: true) {
+                                FavoriteProductButtonView(product: product)
+                                    .tint(product.isFavorite ? .red : .blue)
+                            }
                         }
                     }
-                    Button(action: {
+                    Button("Add Product", systemImage: "plus") {
                         addProduct(to: category)
-                    }) {
-                        Label("Add Product", systemImage: "plus")
                     }
                 } header: {
-                    CategoryHeaderView(category: category)
+                    CategoryHeaderView(category: category, onEdit: { edit(category) })
                 }
             }
         }
-        .navigationDestination(for: Category.self) { category in
-            EditCategoryView(category: category, navigationPath: $path)
-        }
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button(action: {
-                    showAddCategorySheet.toggle()
-                }) {
-                    Label("Add category", systemImage: "plus")
-                }
+        .listStyle(.insetGrouped)
+    }
+
+    @ViewBuilder
+    var detailView: some View {
+        if let selectedProduct {
+            NavigationStack {
+                EditProductView(product: selectedProduct, onDelete: { clearSelection(after: selectedProduct) })
             }
-        }
-        .listStyle(InsetGroupedListStyle())
-        .sheet(isPresented: $showAddCategorySheet) {
-            AddCategoryView()
-                .presentationDetents([.medium, .large])
+            .id(selectedProduct.id)
+        } else if let selectedCategory {
+            NavigationStack {
+                EditCategoryView(category: selectedCategory, onDelete: { clearSelection(after: selectedCategory) })
+            }
+            .id(selectedCategory.id)
+        } else {
+            // Hosted in a stack like the selected states, so the detail column's bar
+            // (and the sidebar toggle in it) sits under the tab bar the same way.
+            NavigationStack {
+                ContentUnavailableView(
+                    "Select a Product",
+                    systemImage: "cabinet",
+                    description: Text("Choose a product or category to edit it.")
+                )
+            }
         }
     }
 
@@ -117,13 +128,50 @@ extension CabinetView {
         crossPromoSignal.bump()
         #endif
     }
+
+    /// Opens `product` in the detail column, pushing it on compact widths.
+    func select(_ product: Item) {
+        selectedProduct = product
+        selectedCategory = nil
+        preferredCompactColumn = .detail
+    }
+
+    /// Opens `category` for editing in the detail column, pushing it on compact widths.
+    func edit(_ category: Category) {
+        selectedCategory = category
+        selectedProduct = nil
+        preferredCompactColumn = .detail
+    }
+
+    /// Clears the selection once `product` has been deleted, so the detail column doesn't
+    /// keep showing a model that's gone, then returns to the sidebar on compact widths.
+    func clearSelection(after product: Item) {
+        if selectedProduct == product {
+            selectedProduct = nil
+            preferredCompactColumn = .sidebar
+        }
+    }
+
+    /// Clears the selection once `category` has been deleted, so the detail column doesn't
+    /// keep showing a model that's gone, then returns to the sidebar on compact widths.
+    /// Also drops a selected product that belonged to the deleted category.
+    func clearSelection(after category: Category) {
+        if selectedCategory == category {
+            selectedCategory = nil
+            preferredCompactColumn = .sidebar
+        }
+        if let selectedProduct, selectedProduct.category == category {
+            self.selectedProduct = nil
+            preferredCompactColumn = .sidebar
+        }
+    }
 }
 
 #if DEBUG
 #Preview {
     do {
         let previewer = try CabinetPreviewerPreviewer()
-        
+
         return CabinetView()
         /// comment the following line to display an emptyCabinet
             .modelContainer(previewer.container)

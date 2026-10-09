@@ -68,7 +68,7 @@ struct SettingsInfoView: View {
                 Spacer()
 
                 Text("\(getCurrentAppVersion())")
-                    .foregroundColor(.secondary)
+                    .foregroundStyle(.secondary)
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Version")

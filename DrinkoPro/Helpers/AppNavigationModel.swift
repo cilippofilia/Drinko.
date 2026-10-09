@@ -11,7 +11,7 @@ import Observation
 @MainActor
 @Observable
 final class AppNavigationModel {
-    var selectedTab: String?
+    var selectedTab: String? = LearnView.learnTag
     var pendingCocktailID: String?
 
     func handle(url: URL) {

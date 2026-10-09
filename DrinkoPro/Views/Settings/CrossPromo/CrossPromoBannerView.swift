@@ -7,7 +7,8 @@ import PrivateAds
 import SwiftUI
 
 /// A persistent ambient banner ad for Filippo Cilia's other apps, refreshed each time this view
-/// appears. Pinned to the bottom of the Settings tab.
+/// appears. Pinned to the bottom of the Learn, Cabinet, Cocktails, Tools, and Settings tabs via
+/// `.crossPromoBanner()`.
 struct CrossPromoBannerView: View {
     @Environment(RemoveAdsStore.self) private var removeAdsStore
 

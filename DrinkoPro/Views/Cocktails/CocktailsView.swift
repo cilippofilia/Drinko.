@@ -62,10 +62,12 @@ struct CocktailsView: View {
     }
 
     var body: some View {
+        @Bindable var viewModel = viewModel
+
         NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
             contentView
                 .navigationTitle("Cocktails")
-                .searchable(text: searchBinding, prompt: "Search Cocktails")
+                .searchable(text: $viewModel.searchText, prompt: "Search Cocktails")
                 .toolbar {
                     ToolbarItem(placement: layoutTogglePlacement) {
                         LibraryLayoutToggle(layout: $layout)
@@ -134,9 +136,7 @@ struct CocktailsView: View {
                     }
                 }
                 #if os(iOS) || os(macOS)
-                .safeAreaInset(edge: .bottom) {
-                    CrossPromoBannerView()
-                }
+                .crossPromoBanner()
                 #endif
         } detail: {
             if let selectedCocktail {
@@ -149,11 +149,15 @@ struct CocktailsView: View {
                 // Reset pushed "You may also like" pages when the sidebar selection changes.
                 .id(selectedCocktail.id)
             } else {
-                ContentUnavailableView(
-                    "Select a Cocktail",
-                    systemImage: "wineglass",
-                    description: Text("Choose a cocktail to see its details.")
-                )
+                // Hosted in a stack like the selected state, so the detail column's bar
+                // (and the sidebar toggle in it) sits under the tab bar the same way.
+                NavigationStack {
+                    ContentUnavailableView(
+                        "Select a Cocktail",
+                        systemImage: "wineglass",
+                        description: Text("Choose a cocktail to see its details.")
+                    )
+                }
             }
         }
     }
@@ -202,13 +206,6 @@ private extension CocktailsView {
 
     var showsOnlyUserCocktails: Bool {
         filterOption == .userCreatedOnly || listSource == .userOnly
-    }
-
-    var searchBinding: Binding<String> {
-        Binding(
-            get: { viewModel.searchText },
-            set: { viewModel.searchText = $0 }
-        )
     }
 
     var filterEmptyStateView: some View {
@@ -266,78 +263,31 @@ private extension CocktailsView {
     }
 
     var optionsMenu: some View {
-        Menu {
+        @Bindable var viewModel = viewModel
+
+        return Menu {
             CocktailFilterSection(
                 filterOption: $filterOption,
                 availableOptions: availableFilterOptions
             )
 
             Section("Sort") {
-                Button(action: {
-                    viewModel.sortOption = .fromAtoZ
-                }) {
-                    HStack {
-                        Text("A > Z")
-                        if viewModel.sortOption == .fromAtoZ {
-                            Image(systemName: "checkmark")
-                        }
+                Picker("Sort", selection: $viewModel.sortOption) {
+                    ForEach(SortOption.allCases, id: \.self) { option in
+                        Text(option.title).tag(option)
                     }
                 }
-
-                Button(action: {
-                    viewModel.sortOption = .fromZtoA
-                }) {
-                    HStack {
-                        Text("Z > A")
-                        if viewModel.sortOption == .fromZtoA {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button(action: {
-                    viewModel.sortOption = .byGlass
-                }) {
-                    HStack {
-                        Text("By Glass")
-                        if viewModel.sortOption == .byGlass {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button(action: {
-                    viewModel.sortOption = .byIce
-                }) {
-                    HStack {
-                        Text("By Ice")
-                        if viewModel.sortOption == .byIce {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
+                .pickerStyle(.inline)
             }
         } label: {
-            #if os(iOS)
-            if UIAccessibility.isVoiceOverRunning {
-                Text("Filter and sort cocktails")
-            } else {
-                Label("Options", systemImage: "line.3.horizontal.decrease.circle")
-            }
-            #elseif os(macOS)
-            Label("Options", systemImage: "line.3.horizontal.decrease.circle")
-            #endif
+            Label("Filter and Sort", systemImage: "line.3.horizontal.decrease.circle")
         }
-        .accessibilityLabel("Sort cocktails")
     }
 
     var addCocktailButton: some View {
-        Button {
+        Button("Create Cocktail", systemImage: "plus") {
             showCreateCocktailSheet = true
-        } label: {
-            Image(systemName: "plus")
         }
-        .accessibilityLabel("Create Cocktail")
     }
 
     @MainActor

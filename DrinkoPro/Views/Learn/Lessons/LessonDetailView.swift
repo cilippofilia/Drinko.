@@ -10,37 +10,33 @@ import SwiftUI
 
 struct LessonDetailView: View {
     @Environment(\.openURL) var openURL
-    @Environment(\.horizontalSizeClass) var sizeClass
 
     var lesson: Lesson
 
-    private var isCompact: Bool { sizeClass == .compact }
-
     var body: some View {
         ScrollView {
-            VStack(spacing: isCompact ? nil : 20) {
+            VStack {
                 AsyncImageView(
                     image: lesson.image,
                     frameHeight: imageFrameHeight,
-                    aspectRatio: .fill
+                    aspectRatio: .fill,
+                    scalesWithContainer: true
                 )
 
-                VStack(spacing: isCompact ? 10 : 20) {
+                VStack {
                     Text(lesson.title)
                         .font(.title.bold())
 
                     Text(lesson.description)
                         .font(.headline)
                         .foregroundStyle(.secondary)
-                        #if os(iOS)
-                        .padding(.bottom, isCompact ? 0 : nil)
-                        #elseif os(macOS)
-                        .multilineTextAlignment(isCompact ? .leading : .center)
+                        #if os(macOS)
+                        .multilineTextAlignment(.center)
                         #endif
 
-                    VStack(alignment: .leading, spacing: isCompact ? nil : 20) {
+                    VStack(alignment: .leading) {
                         ForEach(lesson.body) { text in
-                            VStack(alignment: .leading, spacing: isCompact ? 10 : nil) {
+                            VStack(alignment: .leading) {
                                 Text(text.heading)
                                     .font(text.heading.count < 50 ? .headline : .body)
 
@@ -53,6 +49,8 @@ struct LessonDetailView: View {
                     }
                 }
                 .padding([.horizontal, .bottom])
+                .frame(maxWidth: 700)
+                .frame(maxWidth: .infinity)
             }
         }
         .navigationTitle(lesson.title)
