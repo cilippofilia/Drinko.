@@ -40,6 +40,14 @@ enum ToolsLibrary {
         }
     }
 
+    /// The SF Symbol for a tool's iPad sidebar row (`Tab` takes a symbol, not the card's artwork).
+    static func sidebarSymbol(for item: ToolsView.Selection) -> String {
+        switch item {
+        case .abvCalculator: "percent"
+        case .superjuice: "drop"
+        }
+    }
+
     /// A fully-translated title for one superjuice tool, keyed on the whole phrase rather
     /// than interpolating the raw (English-only) juice type.
     private static func superjuiceTitle(for juiceType: String) -> String {

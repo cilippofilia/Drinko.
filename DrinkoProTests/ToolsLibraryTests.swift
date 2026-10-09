@@ -24,4 +24,9 @@ struct ToolsLibraryTests {
         #expect(ToolsLibrary.cardModel(for: .abvCalculator).imageContentMode == .fill)
         #expect(ToolsLibrary.cardModel(for: .superjuice("lemon")).image == .asset("lemon"))
     }
+
+    @Test func sidebarSymbols() {
+        #expect(ToolsLibrary.sidebarSymbol(for: .abvCalculator) == "percent")
+        #expect(ToolsLibrary.sidebarSymbol(for: .superjuice("lime")) == "drop")
+    }
 }
