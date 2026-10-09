@@ -204,7 +204,12 @@ private extension CocktailsView {
                     clearSelection(after: currentCocktail)
                 }
             }
-            #if os(iOS) || os(macOS)
+            // Catches a user cocktail deleted from another live Cocktails page (iPad).
+            #if os(iOS)
+            .onChange(of: viewModel.userCocktails.map(\.id)) { _, _ in pruneStalePathEntries() }
+            .onAppear(perform: pruneStalePathEntries)
+            .crossPromoBanner()
+            #elseif os(macOS)
             .crossPromoBanner()
             #endif
     }
@@ -377,6 +382,14 @@ private extension CocktailsView {
         }
         #endif
     }
+
+    #if os(iOS)
+    /// Drops any pushed cocktail no longer in `viewModel.listOfAllDrinks` (deleted elsewhere).
+    func pruneStalePathEntries() {
+        let validIDs = Set(viewModel.listOfAllDrinks.map(\.id))
+        path.removeAll { !validIDs.contains($0.id) }
+    }
+    #endif
 }
 
 #if DEBUG
