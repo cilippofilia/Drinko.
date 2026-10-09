@@ -14,30 +14,49 @@ struct CabinetView: View {
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     #endif
 
+    /// When set, the page shows only this category (an iPad sidebar row). `nil` shows all.
+    private let categoryID: UUID?
+
     @State private var showAddCategorySheet: Bool = false
     @State private var selectedProduct: Item?
     @State private var selectedCategory: Category?
-    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
 
     @Query(sort: [
         SortDescriptor(\Category.name),
         SortDescriptor(\Category.creationDate)
     ]) var categories: [Category]
 
+    init(categoryID: UUID? = nil) {
+        self.categoryID = categoryID
+    }
+
+    private var visibleCategories: [Category] {
+        categories.filter { categoryID == nil || $0.id == categoryID }
+    }
+
+    private var title: String {
+        if let categoryID, let category = categories.first(where: { $0.id == categoryID }) {
+            return category.name
+        }
+        return String(localized: "Cabinet")
+    }
+
     var body: some View {
-        NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
+        NavigationStack {
             Group {
-                if categories.isEmpty {
+                if visibleCategories.isEmpty {
                     unavailableView
                 } else {
                     categoriesList
                 }
             }
-            .navigationTitle("Cabinet")
+            .navigationTitle(title)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button("Add Category", systemImage: "plus") {
-                        showAddCategorySheet.toggle()
+                if categoryID == nil {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button("Add Category", systemImage: "plus") {
+                            showAddCategorySheet.toggle()
+                        }
                     }
                 }
             }
@@ -45,11 +64,15 @@ struct CabinetView: View {
                 AddCategoryView()
                     .presentationDetents([.medium, .large])
             }
+            .navigationDestination(item: $selectedProduct) { product in
+                EditProductView(product: product, onDelete: { clearSelection(after: product) })
+            }
+            .navigationDestination(item: $selectedCategory) { category in
+                EditCategoryView(category: category, onDelete: { clearSelection(after: category) })
+            }
             #if os(iOS)
             .crossPromoBanner()
             #endif
-        } detail: {
-            detailView
         }
     }
 }
@@ -70,7 +93,7 @@ extension CabinetView {
 
     var categoriesList: some View {
         List {
-            ForEach(categories) { category in
+            ForEach(visibleCategories) { category in
                 Section {
                     if let products = category.products {
                         ForEach(products) { product in
@@ -96,31 +119,6 @@ extension CabinetView {
         .listStyle(.insetGrouped)
     }
 
-    @ViewBuilder
-    var detailView: some View {
-        if let selectedProduct {
-            NavigationStack {
-                EditProductView(product: selectedProduct, onDelete: { clearSelection(after: selectedProduct) })
-            }
-            .id(selectedProduct.id)
-        } else if let selectedCategory {
-            NavigationStack {
-                EditCategoryView(category: selectedCategory, onDelete: { clearSelection(after: selectedCategory) })
-            }
-            .id(selectedCategory.id)
-        } else {
-            // Hosted in a stack like the selected states, so the detail column's bar
-            // (and the sidebar toggle in it) sits under the tab bar the same way.
-            NavigationStack {
-                ContentUnavailableView(
-                    "Select a Product",
-                    systemImage: "cabinet",
-                    description: Text("Choose a product or category to edit it.")
-                )
-            }
-        }
-    }
-
     func addProduct(to category: Category) {
         category.products?.append(Item(name: "Product Name"))
         #if os(iOS)
@@ -128,40 +126,34 @@ extension CabinetView {
         #endif
     }
 
-    /// Opens `product` in the detail column, pushing it on compact widths.
+    /// Pushes `product` onto the stack.
     func select(_ product: Item) {
         selectedProduct = product
         selectedCategory = nil
-        preferredCompactColumn = .detail
     }
 
-    /// Opens `category` for editing in the detail column, pushing it on compact widths.
+    /// Pushes `category` onto the stack for editing.
     func edit(_ category: Category) {
         selectedCategory = category
         selectedProduct = nil
-        preferredCompactColumn = .detail
     }
 
-    /// Clears the selection once `product` has been deleted, so the detail column doesn't
-    /// keep showing a model that's gone, then returns to the sidebar on compact widths.
+    /// Pops `product` once it's been deleted, so the stack doesn't keep showing a model
+    /// that's gone.
     func clearSelection(after product: Item) {
         if selectedProduct == product {
             selectedProduct = nil
-            preferredCompactColumn = .sidebar
         }
     }
 
-    /// Clears the selection once `category` has been deleted, so the detail column doesn't
-    /// keep showing a model that's gone, then returns to the sidebar on compact widths.
-    /// Also drops a selected product that belonged to the deleted category.
+    /// Pops `category` once it's been deleted, so the stack doesn't keep showing a model
+    /// that's gone. Also drops a selected product that belonged to the deleted category.
     func clearSelection(after category: Category) {
         if selectedCategory == category {
             selectedCategory = nil
-            preferredCompactColumn = .sidebar
         }
         if let selectedProduct, selectedProduct.category == category {
             self.selectedProduct = nil
-            preferredCompactColumn = .sidebar
         }
     }
 }
