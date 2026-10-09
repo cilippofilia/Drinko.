@@ -74,6 +74,13 @@ struct CabinetView: View {
             .crossPromoBanner()
             #endif
         }
+        .onAppear(perform: pruneSelection)
+        // On iPad, this page and another live Cabinet page (the main one, or another
+        // category's) can both be showing a product or category pushed from the now-stale
+        // selection below. Catches a deletion made on the other page.
+        .onChange(of: categories.flatMap { [$0.id] + ($0.products ?? []).map(\.id) }) {
+            pruneSelection()
+        }
     }
 }
 
@@ -154,6 +161,34 @@ extension CabinetView {
         }
         if let selectedProduct, selectedProduct.category == category {
             self.selectedProduct = nil
+        }
+    }
+
+    /// Drops `selectedCategory`/`selectedProduct` if either is no longer something this page
+    /// can show — deleted directly, or (for a product) orphaned by its category being deleted
+    /// — regardless of which page did the deleting (see `CabinetSelectionValidity`).
+    func pruneSelection() {
+        let categoryIDs = Set(categories.map(\.id))
+        if let selectedCategory,
+           !CabinetSelectionValidity.categoryIsValid(
+               selectedCategoryID: selectedCategory.id,
+               categoryIDs: categoryIDs
+           ) {
+            self.selectedCategory = nil
+        }
+        if let selectedProduct {
+            // Checked before touching `.category`: a deleted model's relationships may fault
+            // and crash, but its own `isDeleted` flag is safe to read.
+            let isDeleted = selectedProduct.isDeleted
+            let productCategoryID = isDeleted ? nil : selectedProduct.category?.id
+            if !CabinetSelectionValidity.productIsValid(
+                selectedProductID: selectedProduct.id,
+                isDeleted: isDeleted,
+                productCategoryID: productCategoryID,
+                categoryIDs: categoryIDs
+            ) {
+                self.selectedProduct = nil
+            }
         }
     }
 }
