@@ -18,8 +18,9 @@ final class RecentsStore {
     /// How many recent items each namespace keeps.
     static let capacity = 9
 
-    /// How long a selection must stay put before it's recorded, so arrowing through a
-    /// sidebar list with a hardware keyboard doesn't record every row it passes.
+    /// How long a selection must stay put before it's recorded, so quickly moving through
+    /// selections (e.g. arrow keys in the macOS sidebar, or tapping through several items)
+    /// doesn't record each one.
     static let recordDelay: Duration = .seconds(1)
 
     @ObservationIgnored private let defaults: UserDefaults

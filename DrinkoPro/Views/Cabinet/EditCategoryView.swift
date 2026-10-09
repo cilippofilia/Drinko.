@@ -16,8 +16,8 @@ struct EditCategoryView: View {
     @State private var isSelected = false
 
     /// Called after the category has been deleted from the model context, so the caller
-    /// can clear its selection instead of relying on `dismiss()`, which does nothing when
-    /// this view is shown as a `NavigationSplitView` detail.
+    /// can clear its selection instead of relying on `dismiss()`, which does nothing once
+    /// this view is pushed on iOS or shown as a `NavigationSplitView` detail on macOS.
     var onDelete: () -> Void = {}
 
     let colorColumns = [
