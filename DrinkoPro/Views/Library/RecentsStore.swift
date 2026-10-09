@@ -18,6 +18,10 @@ final class RecentsStore {
     /// How many recent items each namespace keeps.
     static let capacity = 9
 
+    /// How long a selection must stay put before it's recorded, so arrowing through a
+    /// sidebar list with a hardware keyboard doesn't record every row it passes.
+    static let recordDelay: Duration = .seconds(1)
+
     @ObservationIgnored private let defaults: UserDefaults
     private var idsByNamespace: [Namespace: [String]] = [:]
 
