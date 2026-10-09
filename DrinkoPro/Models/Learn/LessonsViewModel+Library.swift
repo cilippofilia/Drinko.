@@ -7,7 +7,20 @@ import Foundation
 import SwiftUI
 
 extension LessonsViewModel {
-    static let booksSectionID = "books"
+    nonisolated static let booksSectionID = "books"
+
+    /// Every library section ID in display order: the topics, then Books.
+    nonisolated static var librarySectionIDs: [String] {
+        LearnTopic.all.map(\.id) + [booksSectionID]
+    }
+
+    /// The display title of the library section `id`, or `nil` when there's no such section.
+    nonisolated static func sectionTitle(for id: String) -> String? {
+        if id == booksSectionID {
+            return String(localized: "Books")
+        }
+        return LearnTopic.all.first { $0.id == id }?.title
+    }
 
     /// Every item the Learn library can show.
     var allItems: [LearnView.Selection] {

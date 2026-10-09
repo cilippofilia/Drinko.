@@ -444,12 +444,35 @@ class CocktailsViewModel {
 }
 
 extension CocktailsViewModel {
-    enum FilterOption {
+    /// Raw values are persisted (as part of `AppTab`'s raw value), so don't rename cases.
+    enum FilterOption: String {
         case all
         case cocktailsOnly
         case shotsOnly
         case favoritesOnly
         case userCreatedOnly
+    }
+}
+
+extension CocktailsViewModel.FilterOption {
+    /// The page title when this filter is a page's preset (the iPad sidebar rows).
+    var pageTitle: String {
+        switch self {
+        case .all, .cocktailsOnly: String(localized: "Cocktails")
+        case .shotsOnly: String(localized: "Shots")
+        case .favoritesOnly: String(localized: "Favorites")
+        case .userCreatedOnly: String(localized: "My Cocktails")
+        }
+    }
+
+    /// The SF Symbol for this filter's iPad sidebar row.
+    var sidebarSymbol: String {
+        switch self {
+        case .all, .cocktailsOnly: "wineglass"
+        case .shotsOnly: "drop"
+        case .favoritesOnly: "heart"
+        case .userCreatedOnly: "person.crop.circle"
+        }
     }
 }
 

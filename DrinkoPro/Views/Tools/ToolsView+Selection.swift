@@ -20,5 +20,11 @@ extension ToolsView {
             case .superjuice(let juiceType): "superjuice:\(juiceType)"
             }
         }
+
+        /// The tool whose `id` is `id`, or `nil` when no current tool has that ID.
+        init?(id: String) {
+            guard let match = ToolsLibrary.calculatorItems.first(where: { $0.id == id }) else { return nil }
+            self = match
+        }
     }
 }
