@@ -43,6 +43,14 @@ struct AppTabTests {
         #expect(AppTab(rawValue: "Tools/superjuice:grape") == .tools)
     }
 
+    @Test func nonSidebarFiltersDecodeToCocktailsTab() {
+        // "all" and "cocktailsOnly" are real `FilterOption` raw values, but neither has its
+        // own sidebar `Tab`, so they must fall back to the main Cocktails tab rather than
+        // decoding to a `.cocktailFilter` with nowhere to go.
+        #expect(AppTab(rawValue: "Cocktails/all") == .cocktails)
+        #expect(AppTab(rawValue: "Cocktails/cocktailsOnly") == .cocktails)
+    }
+
     @Test func unknownNamesDecodeToNil() {
         #expect(AppTab(rawValue: "") == nil)
         #expect(AppTab(rawValue: "MacCabinet") == nil)
@@ -56,9 +64,7 @@ struct AppTabTests {
         #expect(AppTab.tool(.abvCalculator).parent == .tools)
         for main in [AppTab.learn, .cabinet, .cocktails, .tools, .settings] {
             #expect(main.parent == main)
-            #expect(!main.isSidebarOnly)
         }
-        #expect(AppTab.tool(.abvCalculator).isSidebarOnly)
     }
 
     @Test func sidebarCocktailFiltersAreShotsFavoritesMine() {

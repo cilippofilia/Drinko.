@@ -38,11 +38,6 @@ enum AppTab: Hashable {
         }
     }
 
-    /// Whether this destination only exists in the iPad sidebar (not in the tab bar).
-    var isSidebarOnly: Bool {
-        self != parent
-    }
-
     /// This destination adjusted to what can currently be shown: sidebar-only rows fall back
     /// to their main tab in a compact (bottom tab bar) layout, and a Cabinet category that
     /// no longer exists falls back to Cabinet.
@@ -89,7 +84,10 @@ extension AppTab {
         case .cabinet:
             self = detail.flatMap(UUID.init(uuidString:)).map(AppTab.cabinetCategory) ?? .cabinet
         case .cocktails:
+            // Only a filter with its own sidebar row (`sidebarCocktailFilters`) has a `Tab` to
+            // decode to; others (e.g. "all", "cocktailsOnly") fall back to the main tab.
             self = detail.flatMap(CocktailsViewModel.FilterOption.init(rawValue:))
+                .flatMap { AppTab.sidebarCocktailFilters.contains($0) ? $0 : nil }
                 .map(AppTab.cocktailFilter) ?? .cocktails
         case .tools:
             self = detail.flatMap(ToolsView.Selection.init(id:)).map(AppTab.tool) ?? .tools
