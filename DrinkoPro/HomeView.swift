@@ -52,47 +52,52 @@ struct HomeView: View {
                 SettingsView()
             }
 
-            TabSection("Cocktails") {
-                ForEach(AppTab.sidebarCocktailFilters, id: \.self) { filter in
-                    Tab(filter.pageTitle, systemImage: filter.sidebarSymbol, value: AppTab.cocktailFilter(filter)) {
-                        CocktailsView(filter: filter)
-                    }
-                    .tabPlacement(.sidebarOnly)
-                }
-            }
-            TabSection("Learn") {
-                ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
-                    Tab(
-                        LessonsViewModel.sectionTitle(for: id) ?? "",
-                        systemImage: id == LessonsViewModel.booksSectionID ? "books.vertical" : "book",
-                        value: AppTab.learnSection(id)
-                    ) {
-                        LearnView(sectionID: id)
-                    }
-                    .tabPlacement(.sidebarOnly)
-                }
-            }
-            TabSection("Tools") {
-                ForEach(ToolsLibrary.calculatorItems) { item in
-                    Tab(
-                        ToolsLibrary.cardModel(for: item).title,
-                        systemImage: ToolsLibrary.sidebarSymbol(for: item),
-                        value: AppTab.tool(item)
-                    ) {
-                        NavigationStack {
-                            ToolsDetailView(selection: item)
+            // The sidebar-only groups below only make sense once there's a sidebar to put them
+            // in. In a compact (bottom tab bar) layout they'd otherwise all count toward the
+            // tab bar, pushing the real tabs into an unwanted "More" overflow page.
+            if horizontalSizeClass != .compact {
+                TabSection("Cocktails") {
+                    ForEach(AppTab.sidebarCocktailFilters, id: \.self) { filter in
+                        Tab(filter.pageTitle, systemImage: filter.sidebarSymbol, value: AppTab.cocktailFilter(filter)) {
+                            CocktailsView(filter: filter)
                         }
-                        .crossPromoBanner()
+                        .tabPlacement(.sidebarOnly)
                     }
-                    .tabPlacement(.sidebarOnly)
                 }
-            }
-            TabSection("Cabinet") {
-                ForEach(categories) { category in
-                    Tab(category.name, systemImage: "tray", value: AppTab.cabinetCategory(category.id)) {
-                        CabinetView(categoryID: category.id)
+                TabSection("Learn") {
+                    ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
+                        Tab(
+                            LessonsViewModel.sectionTitle(for: id) ?? "",
+                            systemImage: id == LessonsViewModel.booksSectionID ? "books.vertical" : "book",
+                            value: AppTab.learnSection(id)
+                        ) {
+                            LearnView(sectionID: id)
+                        }
+                        .tabPlacement(.sidebarOnly)
                     }
-                    .tabPlacement(.sidebarOnly)
+                }
+                TabSection("Tools") {
+                    ForEach(ToolsLibrary.calculatorItems) { item in
+                        Tab(
+                            ToolsLibrary.cardModel(for: item).title,
+                            systemImage: ToolsLibrary.sidebarSymbol(for: item),
+                            value: AppTab.tool(item)
+                        ) {
+                            NavigationStack {
+                                ToolsDetailView(selection: item)
+                                    .crossPromoBanner()
+                            }
+                        }
+                        .tabPlacement(.sidebarOnly)
+                    }
+                }
+                TabSection("Cabinet") {
+                    ForEach(categories) { category in
+                        Tab(category.name, systemImage: "tray", value: AppTab.cabinetCategory(category.id)) {
+                            CabinetView(categoryID: category.id)
+                        }
+                        .tabPlacement(.sidebarOnly)
+                    }
                 }
             }
         }
