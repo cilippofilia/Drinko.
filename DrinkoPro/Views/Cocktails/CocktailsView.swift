@@ -258,10 +258,10 @@ private extension CocktailsView {
             label: {
                 if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
                     Label("No favorite cocktails yet", systemImage: "heart.slash")
-                } else if showsOnlyUserCocktails && viewModel.searchText.isEmpty {
-                    Label("No custom cocktails yet", systemImage: "plus.circle")
                 } else if filterOption == .shotsOnly && viewModel.searchText.isEmpty {
                     Label("No shots to show", systemImage: "drop")
+                } else if showsOnlyUserCocktails && viewModel.searchText.isEmpty {
+                    Label("No custom cocktails yet", systemImage: "plus.circle")
                 } else {
                     Label("No cocktails found", systemImage: "exclamationmark.magnifyingglass")
                 }
@@ -269,10 +269,10 @@ private extension CocktailsView {
             description: {
                 if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
                     Text("Add cocktails to favorites to quickly find them here.")
-                } else if showsOnlyUserCocktails && viewModel.searchText.isEmpty {
-                    Text("Create a cocktail to find it here.")
                 } else if filterOption == .shotsOnly && viewModel.searchText.isEmpty {
                     Text("Your list source doesn't include Drinko's shots.")
+                } else if showsOnlyUserCocktails && viewModel.searchText.isEmpty {
+                    Text("Create a cocktail to find it here.")
                 } else {
                     Text("No cocktails match \"\(viewModel.searchText)\".")
                 }
