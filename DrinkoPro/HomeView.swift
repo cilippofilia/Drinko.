@@ -7,6 +7,7 @@
 
 import PrivateAds
 import StoreKit
+import SwiftData
 import SwiftUI
 
 struct HomeView: View {
@@ -21,6 +22,12 @@ struct HomeView: View {
     @SceneStorage("selectedView") var selectedView: String?
     @Environment(\.requestReview) private var requestReview
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+
+    // Cabinet categories, for the iPad sidebar's Cabinet group (same order as CabinetView).
+    @Query(sort: [
+        SortDescriptor(\Category.name),
+        SortDescriptor(\Category.creationDate)
+    ]) private var categories: [Category]
 
     @State private var showingWidgetTutorial = false
     @State private var interstitialAd: Ad?
@@ -44,6 +51,50 @@ struct HomeView: View {
             Tab("Settings", systemImage: "gear", value: AppTab.settings) {
                 SettingsView()
             }
+
+            TabSection("Cocktails") {
+                ForEach(AppTab.sidebarCocktailFilters, id: \.self) { filter in
+                    Tab(filter.pageTitle, systemImage: filter.sidebarSymbol, value: AppTab.cocktailFilter(filter)) {
+                        CocktailsView(filter: filter)
+                    }
+                    .tabPlacement(.sidebarOnly)
+                }
+            }
+            TabSection("Learn") {
+                ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
+                    Tab(
+                        LessonsViewModel.sectionTitle(for: id) ?? "",
+                        systemImage: id == LessonsViewModel.booksSectionID ? "books.vertical" : "book",
+                        value: AppTab.learnSection(id)
+                    ) {
+                        LearnView(sectionID: id)
+                    }
+                    .tabPlacement(.sidebarOnly)
+                }
+            }
+            TabSection("Tools") {
+                ForEach(ToolsLibrary.calculatorItems) { item in
+                    Tab(
+                        ToolsLibrary.cardModel(for: item).title,
+                        systemImage: ToolsLibrary.sidebarSymbol(for: item),
+                        value: AppTab.tool(item)
+                    ) {
+                        NavigationStack {
+                            ToolsDetailView(selection: item)
+                        }
+                        .crossPromoBanner()
+                    }
+                    .tabPlacement(.sidebarOnly)
+                }
+            }
+            TabSection("Cabinet") {
+                ForEach(categories) { category in
+                    Tab(category.name, systemImage: "tray", value: AppTab.cabinetCategory(category.id)) {
+                        CabinetView(categoryID: category.id)
+                    }
+                    .tabPlacement(.sidebarOnly)
+                }
+            }
         }
         .tabViewStyle(.sidebarAdaptable)
         .onAppear(perform: checkForReview)
@@ -61,6 +112,10 @@ struct HomeView: View {
             selectedView = newValue.rawValue
         }
         .onChange(of: horizontalSizeClass) {
+            fitSelection()
+        }
+        // A selected Cabinet category row disappears when the category is deleted.
+        .onChange(of: categories.map(\.id)) {
             fitSelection()
         }
         .sheet(isPresented: $showingWidgetTutorial) {
@@ -110,7 +165,7 @@ struct HomeView: View {
     private func fitSelection() {
         let fitted = appNavigationModel.selectedTab.fitted(
             isCompact: horizontalSizeClass == .compact,
-            categoryIDs: []
+            categoryIDs: Set(categories.map(\.id))
         )
         if fitted != appNavigationModel.selectedTab {
             appNavigationModel.selectedTab = fitted
