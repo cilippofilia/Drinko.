@@ -16,16 +16,41 @@ struct CocktailsView: View {
     @Environment(RecentsStore.self) private var recentsStore
 
     @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
-    @State private var filterOption: CocktailsViewModel.FilterOption = .all
+    /// A fixed filter for this page (an iPad sidebar row). `nil` lets the user pick one.
+    private let presetFilter: CocktailsViewModel.FilterOption?
+    @State private var filterOption: CocktailsViewModel.FilterOption
     @State private var showCreateCocktailSheet: Bool = false
     @State private var showDeleteAlert: Bool = false
     @State private var cocktailPendingDeletion: Cocktail = .userCreatedExample
     @State private var didConfigureModelContext: Bool = false
 
+    #if os(iOS)
+    @State private var path: [Cocktail] = []
+    #else
     @State private var selectedCocktail: Cocktail?
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
+    #endif
     @AppStorage(LibraryLayout.cocktailsStorageKey) private var layout: LibraryLayout = .initial()
     @AppStorage("cocktailsCollapsedSections") private var collapsedSections = CollapsedSections()
+
+    init(filter: CocktailsViewModel.FilterOption? = nil) {
+        presetFilter = filter
+        _filterOption = State(initialValue: filter ?? .all)
+    }
+
+    /// The cocktail opened from this page (iOS: the first pushed page, not "You may also like"
+    /// pages pushed after it; macOS: the detail column).
+    private var currentCocktail: Cocktail? {
+        #if os(iOS)
+        path.first
+        #else
+        selectedCocktail
+        #endif
+    }
+
+    private var title: String {
+        presetFilter?.pageTitle ?? String(localized: "Cocktails")
+    }
 
     private var visibleCocktails: [Cocktail] {
         viewModel.filteredCocktails(filterOption: filterOption, source: listSource) { cocktail in
@@ -60,82 +85,28 @@ struct CocktailsView: View {
     }
 
     var body: some View {
-        @Bindable var viewModel = viewModel
+        container
+            .task(id: currentCocktail?.id) {
+                // Record only once the selection settles; a new selection cancels this.
+                guard let id = currentCocktail?.id else { return }
+                try? await Task.sleep(for: RecentsStore.recordDelay)
+                guard !Task.isCancelled else { return }
+                recentsStore.record(id, in: .cocktails)
+            }
+    }
 
+    @ViewBuilder
+    private var container: some View {
+        #if os(iOS)
+        NavigationStack(path: $path) {
+            library
+                .navigationDestination(for: Cocktail.self) { cocktail in
+                    CocktailDetailView(cocktail: cocktail)
+                }
+        }
+        #else
         NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
-            contentView
-                .navigationTitle("Cocktails")
-                .searchable(text: $viewModel.searchText, prompt: "Search Cocktails")
-                .toolbar {
-                    ToolbarItem(placement: layoutTogglePlacement) {
-                        LibraryLayoutToggle(layout: $layout)
-                    }
-                    ToolbarItemGroup(placement: toolbarPlacement) {
-                        optionsMenu
-                        addCocktailButton
-                    }
-                }
-                .sheet(isPresented: $showCreateCocktailSheet) {
-                    #if os(iOS)
-                    NavigationStack {
-                        UserCocktailForm(
-                            methodOptions: viewModel.methodOptions(),
-                            glassOptions: viewModel.glassOptions(),
-                            iceOptions: viewModel.iceOptions(),
-                            unitOptions: viewModel.unitOptions()
-                        )
-                    }
-                    #else
-                    MacUserCocktailForm(
-                        methodOptions: viewModel.methodOptions(),
-                        glassOptions: viewModel.glassOptions(),
-                        iceOptions: viewModel.iceOptions(),
-                        unitOptions: viewModel.unitOptions()
-                    )
-                    #endif
-                }
-                .alert("Delete Cocktail?", isPresented: $showDeleteAlert) {
-                    DeleteButtonView(
-                        label: "Delete",
-                        action: {
-                            viewModel.deleteUserCocktail(cocktailPendingDeletion)
-                            if favorites.contains(cocktailPendingDeletion) {
-                                favorites.remove(cocktailPendingDeletion)
-                            }
-                            recentsStore.remove(cocktailPendingDeletion.id, in: .cocktails)
-                            if selectedCocktail == cocktailPendingDeletion {
-                                selectedCocktail = nil
-                                preferredCompactColumn = .sidebar
-                            }
-                        }
-                    )
-                    Button("Cancel", role: .cancel) { }
-                } message: {
-                    Text("This will permanently remove your cocktail.")
-                }
-                .task {
-                    if !didConfigureModelContext {
-                        viewModel.configure(modelContext: modelContext)
-                        didConfigureModelContext = true
-                    }
-                    openPendingCocktailIfNeeded()
-                }
-                .onChange(of: appNavigationModel.pendingCocktailID, initial: true) { _, _ in
-                    openPendingCocktailIfNeeded()
-                }
-                .onChange(of: listSource) { _, _ in
-                    // Drop a filter or selection the new source can no longer show.
-                    if !availableFilterOptions.contains(filterOption) {
-                        filterOption = .all
-                    }
-                    if let selectedCocktail, !visibleCocktails.contains(selectedCocktail) {
-                        self.selectedCocktail = nil
-                        preferredCompactColumn = .sidebar
-                    }
-                }
-                #if os(iOS) || os(macOS)
-                .crossPromoBanner()
-                #endif
+            library
         } detail: {
             if let selectedCocktail {
                 NavigationStack {
@@ -158,10 +129,86 @@ struct CocktailsView: View {
                 }
             }
         }
+        #endif
     }
 }
 
 private extension CocktailsView {
+    var library: some View {
+        @Bindable var viewModel = viewModel
+
+        return contentView
+            .navigationTitle(title)
+            .searchable(text: $viewModel.searchText, prompt: "Search Cocktails")
+            .toolbar {
+                ToolbarItem(placement: layoutTogglePlacement) {
+                    LibraryLayoutToggle(layout: $layout)
+                }
+                ToolbarItemGroup(placement: toolbarPlacement) {
+                    optionsMenu
+                    addCocktailButton
+                }
+            }
+            .sheet(isPresented: $showCreateCocktailSheet) {
+                #if os(iOS)
+                NavigationStack {
+                    UserCocktailForm(
+                        methodOptions: viewModel.methodOptions(),
+                        glassOptions: viewModel.glassOptions(),
+                        iceOptions: viewModel.iceOptions(),
+                        unitOptions: viewModel.unitOptions()
+                    )
+                }
+                #else
+                MacUserCocktailForm(
+                    methodOptions: viewModel.methodOptions(),
+                    glassOptions: viewModel.glassOptions(),
+                    iceOptions: viewModel.iceOptions(),
+                    unitOptions: viewModel.unitOptions()
+                )
+                #endif
+            }
+            .alert("Delete Cocktail?", isPresented: $showDeleteAlert) {
+                DeleteButtonView(
+                    label: "Delete",
+                    action: {
+                        viewModel.deleteUserCocktail(cocktailPendingDeletion)
+                        if favorites.contains(cocktailPendingDeletion) {
+                            favorites.remove(cocktailPendingDeletion)
+                        }
+                        recentsStore.remove(cocktailPendingDeletion.id, in: .cocktails)
+                        clearSelection(after: cocktailPendingDeletion)
+                    }
+                )
+                Button("Cancel", role: .cancel) { }
+            } message: {
+                Text("This will permanently remove your cocktail.")
+            }
+            .task {
+                if !didConfigureModelContext {
+                    viewModel.configure(modelContext: modelContext)
+                    didConfigureModelContext = true
+                }
+                openPendingCocktailIfNeeded()
+            }
+            .onChange(of: appNavigationModel.pendingCocktailID, initial: true) { _, _ in
+                openPendingCocktailIfNeeded()
+            }
+            .onChange(of: listSource) { _, _ in
+                // Drop a filter or selection the new source can no longer show. A preset
+                // filter stays, and its page shows an empty state instead.
+                if presetFilter == nil, !availableFilterOptions.contains(filterOption) {
+                    filterOption = .all
+                }
+                if let currentCocktail, !visibleCocktails.contains(currentCocktail) {
+                    clearSelection(after: currentCocktail)
+                }
+            }
+            #if os(iOS) || os(macOS)
+            .crossPromoBanner()
+            #endif
+    }
+
     var contentView: some View {
         let sections = visibleSections
 
@@ -175,7 +222,7 @@ private extension CocktailsView {
                     recentsTitle: String(localized: "Last Viewed"),
                     recents: viewModel.recentItems(from: recentsStore.ids(in: .cocktails)),
                     sections: sections,
-                    selection: selectedCocktail,
+                    selection: currentCocktail,
                     isSearching: !viewModel.searchText.isEmpty,
                     collapsedSections: $collapsedSections,
                     layout: layout,
@@ -199,7 +246,7 @@ private extension CocktailsView {
     }
 
     func shouldShowFilterEmptyState(_ sections: [LibrarySection<Cocktail>]) -> Bool {
-        (filterOption == .favoritesOnly || showsOnlyUserCocktails) && sections.isEmpty
+        (filterOption == .favoritesOnly || filterOption == .shotsOnly || showsOnlyUserCocktails) && sections.isEmpty
     }
 
     var showsOnlyUserCocktails: Bool {
@@ -213,6 +260,8 @@ private extension CocktailsView {
                     Label("No favorite cocktails yet", systemImage: "heart.slash")
                 } else if showsOnlyUserCocktails && viewModel.searchText.isEmpty {
                     Label("No custom cocktails yet", systemImage: "plus.circle")
+                } else if filterOption == .shotsOnly && viewModel.searchText.isEmpty {
+                    Label("No shots to show", systemImage: "drop")
                 } else {
                     Label("No cocktails found", systemImage: "exclamationmark.magnifyingglass")
                 }
@@ -222,12 +271,14 @@ private extension CocktailsView {
                     Text("Add cocktails to favorites to quickly find them here.")
                 } else if showsOnlyUserCocktails && viewModel.searchText.isEmpty {
                     Text("Create a cocktail to find it here.")
+                } else if filterOption == .shotsOnly && viewModel.searchText.isEmpty {
+                    Text("Your list source doesn't include Drinko's shots.")
                 } else {
                     Text("No cocktails match \"\(viewModel.searchText)\".")
                 }
             },
             actions: {
-                if filterOption == .userCreatedOnly || filterOption == .favoritesOnly {
+                if presetFilter == nil, filterOption == .userCreatedOnly || filterOption == .favoritesOnly {
                     Button("Clear filter", systemImage: "xmark.circle") {
                         filterOption = .all
                     }
@@ -264,10 +315,12 @@ private extension CocktailsView {
         @Bindable var viewModel = viewModel
 
         return Menu {
-            CocktailFilterSection(
-                filterOption: $filterOption,
-                availableOptions: availableFilterOptions
-            )
+            if presetFilter == nil {
+                CocktailFilterSection(
+                    filterOption: $filterOption,
+                    availableOptions: availableFilterOptions
+                )
+            }
 
             Section("Sort") {
                 Picker("Sort", selection: $viewModel.sortOption) {
@@ -290,17 +343,39 @@ private extension CocktailsView {
 
     @MainActor
     func openPendingCocktailIfNeeded() {
+        // Only the main Cocktails page opens deep links; a sidebar filter page that has been
+        // opened before stays loaded and must not consume the link.
+        guard presetFilter == nil else { return }
         guard let cocktailID = appNavigationModel.consumePendingCocktailID() else { return }
         guard let cocktail = viewModel.listOfAllDrinks.first(where: { $0.id == cocktailID }) else { return }
 
         select(cocktail)
     }
 
-    /// Opens `cocktail` in the detail column, pushing it on compact widths, and records it as recent.
+    /// Opens `cocktail`: pushes it on iOS, shows it in the detail column on macOS. It's
+    /// recorded as recent once the selection settles (see the `.task(id:)` in `body`).
     func select(_ cocktail: Cocktail) {
+        #if os(iOS)
+        path = [cocktail]
+        #else
         selectedCocktail = cocktail
         preferredCompactColumn = .detail
-        recentsStore.record(cocktail.id, in: .cocktails)
+        #endif
+    }
+
+    /// Stops showing `cocktail` once it's gone (deleted, or hidden by the list source):
+    /// pops it and anything pushed after it on iOS, clears the detail column on macOS.
+    func clearSelection(after cocktail: Cocktail) {
+        #if os(iOS)
+        if let index = path.firstIndex(of: cocktail) {
+            path.removeSubrange(index...)
+        }
+        #else
+        if selectedCocktail == cocktail {
+            selectedCocktail = nil
+            preferredCompactColumn = .sidebar
+        }
+        #endif
     }
 }
 
