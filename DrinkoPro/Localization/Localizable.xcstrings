@@ -2545,9 +2545,6 @@
         }
       }
     },
-    "Choose a product or category to edit it." : {
-
-    },
     "Choose a section from the sidebar to start your mixology journey." : {
       "localizations" : {
         "de" : {
@@ -7348,9 +7345,6 @@
     "Select a Cocktail" : {
 
     },
-    "Select a Product" : {
-
-    },
     "Select a Tool" : {
       "localizations" : {
         "de" : {
@@ -9074,40 +9068,6 @@
     "y" : {
 
     },
-    "Your list source doesn't include Drinko's shots." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Deine Listenquelle enthält Drinkos Shots nicht."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your list source doesn't include Drinko's shots."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "El origen de tu lista no incluye los chupitos de Drinko."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La source de ta liste n'inclut pas les shots de Drinko."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "La fonte della tua lista non include gli shot di Drinko."
-          }
-        }
-      }
-    },
     "You may also like" : {
       "localizations" : {
         "de" : {
@@ -9138,6 +9098,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Potrebbe piacerti anche..."
+          }
+        }
+      }
+    },
+    "Your list source doesn't include Drinko's shots." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Listenquelle enthält Drinkos Shots nicht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your list source doesn't include Drinko's shots."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El origen de tu lista no incluye los chupitos de Drinko."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La source de ta liste n'inclut pas les shots de Drinko."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La fonte della tua lista non include gli shot di Drinko."
           }
         }
       }
