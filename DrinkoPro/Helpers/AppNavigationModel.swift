@@ -11,7 +11,7 @@ import Observation
 @MainActor
 @Observable
 final class AppNavigationModel {
-    var selectedTab: String? = LearnView.learnTag
+    var selectedTab: AppTab = .learn
     var pendingCocktailID: String?
 
     func handle(url: URL) {
@@ -21,7 +21,7 @@ final class AppNavigationModel {
         let pathComponents = url.pathComponents.filter { $0 != "/" }
         guard let cocktailID = pathComponents.first, !cocktailID.isEmpty else { return }
 
-        selectedTab = CocktailsView.cocktailsTag
+        selectedTab = .cocktails
         pendingCocktailID = cocktailID
     }
 

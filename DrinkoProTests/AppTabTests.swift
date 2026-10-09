@@ -78,4 +78,28 @@ struct AppTabTests {
         #expect(LessonsViewModel.sectionTitle(for: "nope") == nil)
         #expect(LessonsViewModel.librarySectionIDs == LearnTopic.all.map(\.id) + [LessonsViewModel.booksSectionID])
     }
+
+    @Test func fittedUsesParentWhenCompact() {
+        let tab = AppTab.cocktailFilter(.shotsOnly)
+        #expect(tab.fitted(isCompact: true, categoryIDs: []) == .cocktails)
+        #expect(tab.fitted(isCompact: false, categoryIDs: []) == tab)
+        #expect(AppTab.settings.fitted(isCompact: true, categoryIDs: []) == .settings)
+    }
+
+    @Test func fittedDropsDeletedCategory() {
+        let tab = AppTab.cabinetCategory(categoryID)
+        #expect(tab.fitted(isCompact: false, categoryIDs: [categoryID]) == tab)
+        #expect(tab.fitted(isCompact: false, categoryIDs: [UUID()]) == .cabinet)
+    }
+
+    @Test func deepLinkSelectsCocktails() throws {
+        let model = AppNavigationModel()
+        model.handle(url: try #require(URL(string: "drinko://cocktail/negroni")))
+        #expect(model.selectedTab == .cocktails)
+        #expect(model.consumePendingCocktailID() == "negroni")
+
+        let untouched = AppNavigationModel()
+        untouched.handle(url: try #require(URL(string: "https://cocktail/negroni")))
+        #expect(untouched.selectedTab == .learn)
+    }
 }

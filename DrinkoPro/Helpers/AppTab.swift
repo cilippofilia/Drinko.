@@ -42,6 +42,19 @@ enum AppTab: Hashable {
     var isSidebarOnly: Bool {
         self != parent
     }
+
+    /// This destination adjusted to what can currently be shown: sidebar-only rows fall back
+    /// to their main tab in a compact (bottom tab bar) layout, and a Cabinet category that
+    /// no longer exists falls back to Cabinet.
+    func fitted(isCompact: Bool, categoryIDs: Set<UUID>) -> AppTab {
+        if isCompact {
+            return parent
+        }
+        if case .cabinetCategory(let id) = self, !categoryIDs.contains(id) {
+            return .cabinet
+        }
+        return self
+    }
 }
 
 extension AppTab {

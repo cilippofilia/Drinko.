@@ -9,8 +9,6 @@ import SwiftData
 import SwiftUI
 
 struct CocktailsView: View {
-    static let cocktailsTag: String? = "Cocktails"
-
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites

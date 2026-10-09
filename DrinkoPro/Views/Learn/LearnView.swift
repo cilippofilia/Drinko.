@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct LearnView: View {
-    static let learnTag: String? = "Learn"
-
     @Environment(LessonsViewModel.self) private var viewModel
     @Environment(RecentsStore.self) private var recentsStore
 

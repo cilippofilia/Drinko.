@@ -20,6 +20,7 @@ struct HomeView: View {
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
     @Environment(\.requestReview) private var requestReview
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     @State private var showingWidgetTutorial = false
     @State private var interstitialAd: Ad?
@@ -28,35 +29,39 @@ struct HomeView: View {
         @Bindable var appNavigationModel = appNavigationModel
 
         TabView(selection: $appNavigationModel.selectedTab) {
-            Tab("Learn", systemImage: "books.vertical", value: LearnView.learnTag) {
+            Tab("Learn", systemImage: "books.vertical", value: AppTab.learn) {
                 LearnView()
             }
-            Tab("Cabinet", systemImage: "cabinet", value: CabinetView.cabinetTag) {
+            Tab("Cabinet", systemImage: "cabinet", value: AppTab.cabinet) {
                 CabinetView()
             }
-            Tab("Cocktails", systemImage: "wineglass", value: CocktailsView.cocktailsTag) {
+            Tab("Cocktails", systemImage: "wineglass", value: AppTab.cocktails) {
                 CocktailsView()
             }
-            Tab("Tools", systemImage: "wrench.and.screwdriver", value: ToolsView.toolsTag) {
+            Tab("Tools", systemImage: "wrench.and.screwdriver", value: AppTab.tools) {
                 ToolsView()
             }
-            Tab("Settings", systemImage: "gear", value: SettingsView.settingsTag) {
+            Tab("Settings", systemImage: "gear", value: AppTab.settings) {
                 SettingsView()
             }
         }
-        .tabViewStyle(.tabBarOnly)
+        .tabViewStyle(.sidebarAdaptable)
         .onAppear(perform: checkForReview)
         // Restore the last-used tab from the previous session. Only applies while
         // `selectedTab` is still at its untouched default, so it never clobbers a deep link
         // (`AppNavigationModel.handle(url:)`) that already selected a tab before this view
         // first appeared.
         .onAppear {
-            if appNavigationModel.selectedTab == LearnView.learnTag, let selectedView {
-                appNavigationModel.selectedTab = selectedView
+            if appNavigationModel.selectedTab == .learn, let selectedView, let tab = AppTab(rawValue: selectedView) {
+                appNavigationModel.selectedTab = tab
             }
+            fitSelection()
         }
         .onChange(of: appNavigationModel.selectedTab) { _, newValue in
-            selectedView = newValue
+            selectedView = newValue.rawValue
+        }
+        .onChange(of: horizontalSizeClass) {
+            fitSelection()
         }
         .sheet(isPresented: $showingWidgetTutorial) {
             NavigationStack {
@@ -101,6 +106,17 @@ struct HomeView: View {
         )
     }
 
+    /// Moves the selection to something the current layout can show (see `AppTab.fitted`).
+    private func fitSelection() {
+        let fitted = appNavigationModel.selectedTab.fitted(
+            isCompact: horizontalSizeClass == .compact,
+            categoryIDs: []
+        )
+        if fitted != appNavigationModel.selectedTab {
+            appNavigationModel.selectedTab = fitted
+        }
+    }
+
     // Get current Version of the App
     func getCurrentAppVersion() -> String {
         guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
@@ -130,7 +146,6 @@ struct HomeView: View {
 #if DEBUG
 #Preview {
     HomeView()
-        .tabViewStyle(.tabBarOnly)
         .drinkoPreviewEnvironment()
 }
 #endif

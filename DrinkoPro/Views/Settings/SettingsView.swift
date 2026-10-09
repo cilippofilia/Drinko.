@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    static let settingsTag: String? = "Settings"
-
     var body: some View {
         NavigationStack {
             Form {

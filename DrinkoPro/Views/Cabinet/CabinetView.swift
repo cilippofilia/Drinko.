@@ -9,7 +9,6 @@ import SwiftData
 import SwiftUI
 
 struct CabinetView: View {
-    static let cabinetTag: String? = "Cabinet"
     @Environment(\.modelContext) private var modelContext
     #if os(iOS)
     @Environment(CrossPromoSignal.self) private var crossPromoSignal

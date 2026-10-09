@@ -9,8 +9,6 @@ import SwiftUI
 
 /// The Tools tab: calculators and other bar utilities.
 struct ToolsView: View {
-    static let toolsTag: String? = "Tools"
-
     @State private var selection: Selection?
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
 
