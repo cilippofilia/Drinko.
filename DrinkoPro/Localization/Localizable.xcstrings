@@ -4336,6 +4336,40 @@
         }
       }
     },
+    "Favorites" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoriten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favorites"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoritos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoris"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferiti"
+          }
+        }
+      }
+    },
     "Favorites Only" : {
       "localizations" : {
         "de" : {
@@ -5494,6 +5528,40 @@
         }
       }
     },
+    "My Cocktails" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meine Cocktails"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Cocktails"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mis cócteles"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mes cocktails"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I miei cocktail"
+          }
+        }
+      }
+    },
     "Name" : {
       "localizations" : {
         "de" : {
@@ -5808,6 +5876,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessuna lezione o libro corrisponde a \"%@\". Prova un termine di ricerca diverso o sfoglia tutti gli argomenti."
+          }
+        }
+      }
+    },
+    "No shots to show" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keine Shots zum Anzeigen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No shots to show"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay chupitos para mostrar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun shot à afficher"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuno shot da mostrare"
           }
         }
       }
@@ -7564,6 +7666,40 @@
         }
       }
     },
+    "Shots" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shots"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shots"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chupitos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shots"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shot"
+          }
+        }
+      }
+    },
     "Shots Only" : {
       "localizations" : {
         "de" : {
@@ -8937,6 +9073,40 @@
     },
     "y" : {
 
+    },
+    "Your list source doesn't include Drinko's shots." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Listenquelle enthält Drinkos Shots nicht."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your list source doesn't include Drinko's shots."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El origen de tu lista no incluye los chupitos de Drinko."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La source de ta liste n'inclut pas les shots de Drinko."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La fonte della tua lista non include gli shot di Drinko."
+          }
+        }
+      }
     },
     "You may also like" : {
       "localizations" : {
