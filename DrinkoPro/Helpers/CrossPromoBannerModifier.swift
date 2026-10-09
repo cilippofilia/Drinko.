@@ -7,22 +7,16 @@ import SwiftUI
 
 /// Attaches the persistent cross-promo ad banner to the bottom of a view.
 ///
-/// Uses `.safeAreaBar(edge:)` on iOS 26 / macOS 26 and later, which lets the banner sit on top of
-/// scrollable content with the modern Liquid Glass treatment, falling back to
-/// `.safeAreaInset(edge:)` on earlier OS versions.
+/// Uses `.safeAreaInset(edge:)` rather than `.safeAreaBar(edge:)`: a safe-area bar counts as a
+/// bar, so the system extends the scroll edge effect up to the banner's top edge and dims the
+/// content behind it. As an inset, the banner floats as its own card over the content and only
+/// the tab bar casts the edge effect, matching pages without a banner.
 private struct CrossPromoBannerModifier: ViewModifier {
     func body(content: Content) -> some View {
-        if #available(iOS 26, macOS 26, *) {
-            content
-                .safeAreaBar(edge: .bottom) {
-                    CrossPromoBannerView()
-                }
-        } else {
-            content
-                .safeAreaInset(edge: .bottom) {
-                    CrossPromoBannerView()
-                }
-        }
+        content
+            .safeAreaInset(edge: .bottom) {
+                CrossPromoBannerView()
+            }
     }
 }
 
