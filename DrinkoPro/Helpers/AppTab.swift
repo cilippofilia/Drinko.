@@ -44,7 +44,11 @@ enum AppTab: Hashable {
     }
 }
 
-extension AppTab: RawRepresentable {
+extension AppTab {
+    /// A string encoding for scene storage (not a `RawRepresentable` conformance —
+    /// that would make the standard library pick its raw-value-based `==`/`hash(into:)`
+    /// over the synthesized case-based ones, silently breaking equality here).
+    ///
     /// Main tabs keep the strings the old `String?` tab tags used, so a tab saved by an
     /// earlier version still restores. Sidebar rows append `/<detail>`.
     private enum Name: String {
