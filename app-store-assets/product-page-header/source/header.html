@@ -1,0 +1,73 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  :root { --blue:#3274ea; --deep:#1f56c9; --yellow:#ffb212; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { width:var(--w); height:var(--h); overflow:hidden; background:var(--blue); }
+  body { position:relative; font-family:"Inter Display","Inter",sans-serif; color:#fff; }
+
+  /* lighting: soft spotlight behind the drinks, darker edges and a calm lower band */
+  .bg { position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 38% 62% at 50% 58%, rgba(120,175,255,.55), rgba(120,175,255,0) 70%),
+      radial-gradient(ellipse 80% 90% at 50% 45%, rgba(50,116,234,0), rgba(18,60,160,.55) 100%),
+      linear-gradient(180deg, #3a7ef0 0%, #3274ea 45%, #2259cf 100%);
+  }
+  .bubble { position:absolute; border-radius:50%; background:rgba(255,255,255,.16); }
+
+  .head { position:absolute; left:0; right:0; top:var(--headTop); text-align:center; }
+  .eyebrow { font-family:"Inter"; font-weight:800; letter-spacing:.32em; font-size:var(--eyebrow);
+    text-transform:uppercase; opacity:.92; margin-bottom:calc(var(--eyebrow) * .9); }
+  h1 { font-weight:900; font-size:var(--title); line-height:.98; letter-spacing:-.025em; }
+  h1 .hl { position:relative; display:inline-block; isolation:isolate; color:#1b1b1f; padding:0 .12em; }
+  h1 .hl::before { content:""; position:absolute; inset:.1em -.02em .02em; background:var(--yellow);
+    border-radius:.14em; z-index:-1; transform:rotate(-1.2deg); }
+  h1 .hl span { position:relative; }
+
+  .stage { position:absolute; left:50%; bottom:var(--stageBottom); width:0; height:0; }
+  .drink { position:absolute; bottom:0; transform-origin:50% 100%;
+    filter: drop-shadow(0 calc(var(--h) * .02) calc(var(--h) * .025) rgba(10,30,90,.35)); }
+  .drink img { display:block; width:100%; height:auto; }
+  .shelf { position:absolute; left:50%; transform:translateX(-50%); bottom:calc(var(--stageBottom) - var(--h) * .035);
+    width:var(--shelfW); height:calc(var(--h) * .07);
+    background:radial-gradient(ellipse 50% 50% at 50% 50%, rgba(8,28,90,.45), rgba(8,28,90,0) 70%); }
+</style></head>
+<body>
+  <div class="bg"></div>
+  <div id="bubbles"></div>
+  <div class="head">
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1 id="title"></h1>
+  </div>
+  <div class="shelf"></div>
+  <div class="stage" id="stage"></div>
+<script>
+  const P = window.PARAMS;
+  const r = document.documentElement.style;
+  for (const [k,v] of Object.entries(P.css)) r.setProperty('--'+k, v);
+  document.getElementById('eyebrow').innerHTML = P.eyebrow;
+  document.getElementById('title').innerHTML = P.title;
+
+  // deterministic bubbles
+  let s = 7; const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+  const W = P.w, H = P.h, bb = document.getElementById('bubbles');
+  for (let i = 0; i < P.bubbles; i++) {
+    const d = (rnd() < .8 ? 8 + rnd()*22 : 30 + rnd()*40) * (H/1646);
+    const e = document.createElement('div'); e.className = 'bubble';
+    Object.assign(e.style, { width:d+'px', height:d+'px', left:(rnd()*W)+'px', top:(rnd()*H)+'px', opacity:.5 + rnd()*.5 });
+    bb.appendChild(e);
+  }
+
+  const stage = document.getElementById('stage');
+  for (const d of P.drinks) {
+    const el = document.createElement('div'); el.className = 'drink';
+    el.style.width = d.w + 'px';
+    el.style.left = (d.x - d.w/2) + 'px';
+    el.style.bottom = (d.y || 0) + 'px';
+    el.style.transform = `rotate(${d.rot||0}deg)`;
+    el.style.zIndex = d.z || 1;
+    el.innerHTML = `<img src="${d.src}">`;
+    stage.appendChild(el);
+  }
+</script>
+</body></html>
