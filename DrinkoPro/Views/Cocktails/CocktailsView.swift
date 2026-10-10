@@ -52,6 +52,11 @@ struct CocktailsView: View {
         presetFilter?.pageTitle ?? String(localized: "Cocktails")
     }
 
+    /// The tab that shows this page: its sidebar filter row, or the main Cocktails tab.
+    private var pageTab: AppTab {
+        presetFilter.map(AppTab.cocktailFilter) ?? .cocktails
+    }
+
     private var visibleCocktails: [Cocktail] {
         viewModel.filteredCocktails(filterOption: filterOption, source: listSource) { cocktail in
             favorites.contains(cocktail)
@@ -193,6 +198,10 @@ private extension CocktailsView {
             }
             .onChange(of: appNavigationModel.pendingCocktailID, initial: true) { _, _ in
                 openPendingCocktailIfNeeded()
+            }
+            // `initial: true` covers a page created by the tab switch the request itself made.
+            .onChange(of: appNavigationModel.pendingCreation, initial: true) { _, _ in
+                presentPendingCreationIfNeeded()
             }
             .onChange(of: listSource) { _, _ in
                 // Drop a filter or selection the new source can no longer show. A preset
@@ -355,6 +364,15 @@ private extension CocktailsView {
         guard let cocktail = viewModel.listOfAllDrinks.first(where: { $0.id == cocktailID }) else { return }
 
         select(cocktail)
+    }
+
+    /// Presents the create sheet for File › New Cocktail. Only the selected page responds;
+    /// other Cocktails pages opened before stay loaded and must not consume the request.
+    @MainActor
+    func presentPendingCreationIfNeeded() {
+        guard appNavigationModel.selectedTab == pageTab else { return }
+        guard appNavigationModel.consumePendingCreation(.cocktail) else { return }
+        showCreateCocktailSheet = true
     }
 
     /// Opens `cocktail`: pushes it on iOS, shows it in the detail column on macOS. It's

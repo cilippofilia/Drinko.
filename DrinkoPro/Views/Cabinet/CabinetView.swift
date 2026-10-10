@@ -9,6 +9,7 @@ import SwiftData
 import SwiftUI
 
 struct CabinetView: View {
+    @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(\.modelContext) private var modelContext
     #if os(iOS)
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
@@ -75,6 +76,10 @@ struct CabinetView: View {
             #endif
         }
         .onAppear(perform: pruneSelection)
+        // File › New Category. `initial: true` covers the page created by the tab switch.
+        .onChange(of: appNavigationModel.pendingCreation, initial: true) { _, _ in
+            presentPendingCreationIfNeeded()
+        }
         // On iPad, this page and another live Cabinet page (the main one, or another
         // category's) can both be showing a product or category pushed from the now-stale
         // selection below. Catches a deletion made on the other page.
@@ -131,6 +136,14 @@ extension CabinetView {
         #if os(iOS)
         crossPromoSignal.bump()
         #endif
+    }
+
+    /// Presents Add Category for File › New Category. Only the main Cabinet page has the
+    /// sheet; category pages opened before stay loaded and must not consume the request.
+    func presentPendingCreationIfNeeded() {
+        guard categoryID == nil, appNavigationModel.selectedTab == .cabinet else { return }
+        guard appNavigationModel.consumePendingCreation(.category) else { return }
+        showAddCategorySheet = true
     }
 
     /// Pushes `product` onto the stack.
