@@ -10,6 +10,9 @@ import SwiftUI
 /// appears. Pinned to the bottom of the Learn, Cabinet, Cocktails, Tools, and Settings tabs via
 /// `.crossPromoBanner()`.
 struct CrossPromoBannerView: View {
+    /// The width in points of the widest iPhone screen (Pro Max).
+    static let maxWidth: CGFloat = 440
+
     @Environment(RemoveAdsStore.self) private var removeAdsStore
 
     @State private var ad: Ad?
@@ -26,12 +29,10 @@ struct CrossPromoBannerView: View {
                         showRemoveAdsPaywall = true
                     }
                 )
-                #if os(macOS)
-                // Matches the readable width `.formStyle(.grouped)` gives Mac list/form rows,
-                // instead of stretching edge-to-edge across the whole detail pane.
-                .frame(maxWidth: 700)
-                #endif
                 .padding()
+                // Capped (padding included) at the widest iPhone screen, so the banner is the
+                // same size on iPad and Mac as on iPhone instead of stretching across the window.
+                .frame(maxWidth: Self.maxWidth)
             }
         }
         .task {
