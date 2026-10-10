@@ -141,7 +141,7 @@ struct HomeView: View {
                     }
             }
         }
-        // A PrivateAds cross-promo ad every 3rd interaction bump (favoriting a cocktail or
+        // A PrivateAds cross-promo ad every 5th interaction bump (favoriting a cocktail or
         // product, creating a user cocktail, or adding a cabinet category — see
         // `CrossPromoSignal`). Lives here rather than on any one tab since the triggering
         // action can happen from Cocktails or Cabinet; `.fullScreenCover` presents over the
@@ -153,7 +153,8 @@ struct HomeView: View {
             }
         }
         .onChange(of: crossPromoSignal.count) { _, newValue in
-            guard removeAdsStore.isAdsRemoved == false, newValue > 0, newValue.isMultiple(of: 3) else { return }
+            guard removeAdsStore.isAdsRemoved == false,
+                  CrossPromoSignal.shouldShowInterstitial(at: newValue) else { return }
             Task { await refreshInterstitialAd() }
         }
         // Dismiss an ad the user is mid-way through if they buy "Remove Ads" from its own paywall.
