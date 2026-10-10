@@ -6,7 +6,6 @@
 //
 
 import PrivateAds
-import StoreKit
 import SwiftData
 import SwiftUI
 
@@ -14,13 +13,8 @@ struct HomeView: View {
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     @Environment(RemoveAdsStore.self) private var removeAdsStore
-    // AppStorage is used to keep track of how many times the app has been opened
-    @AppStorage("appUsageCounter") var appUsageCounter: Int = 0
-    // AppStorage flag so the widget tutorial sheet only ever auto-presents once
-    @AppStorage("widgetTutorialShown") var widgetTutorialShown: Bool = false
     // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
-    @Environment(\.requestReview) private var requestReview
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     // Cabinet categories, for the iPad sidebar's Cabinet group (same order as CabinetView).
@@ -29,7 +23,6 @@ struct HomeView: View {
         SortDescriptor(\Category.creationDate)
     ]) private var categories: [Category]
 
-    @State private var showingWidgetTutorial = false
     @State private var interstitialAd: Ad?
 
     var body: some View {
@@ -108,7 +101,6 @@ struct HomeView: View {
             }
         }
         .tabViewStyle(.sidebarAdaptable)
-        .onAppear(perform: checkForReview)
         // Restore the last-used tab from the previous session. Only applies while
         // `selectedTab` is still at its untouched default, so it never clobbers a deep link
         // (`AppNavigationModel.handle(url:)`) that already selected a tab before this view
@@ -128,18 +120,6 @@ struct HomeView: View {
         // A selected Cabinet category row disappears when the category is deleted.
         .onChange(of: categories.map(\.id)) {
             fitSelection()
-        }
-        .sheet(isPresented: $showingWidgetTutorial) {
-            NavigationStack {
-                WidgetTutorialView()
-                    .toolbar {
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") {
-                                showingWidgetTutorial = false
-                            }
-                        }
-                    }
-            }
         }
         // A PrivateAds cross-promo ad every 5th interaction bump (favoriting a cocktail or
         // product, creating a user cocktail, or adding a cabinet category — see
@@ -190,23 +170,6 @@ struct HomeView: View {
             return "Unknown"
         }
         return version
-    }
-
-    func checkForReview() {
-        appUsageCounter += 1
-
-        if appUsageCounter == 3 || appUsageCounter % 15 == 0 {
-            if appUsageCounter > 103 { appUsageCounter = 0 }
-            requestReview()
-        }
-
-        // Show the widget tutorial once, after the user has had a few app
-        // opens. The threshold of 4 avoids overlapping with the review
-        // prompt at 3, and `>=` ensures users already past 4 still see it.
-        if appUsageCounter >= 4 && !widgetTutorialShown {
-            widgetTutorialShown = true
-            showingWidgetTutorial = true
-        }
     }
 }
 
