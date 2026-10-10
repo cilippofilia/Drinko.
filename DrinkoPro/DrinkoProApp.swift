@@ -64,5 +64,10 @@ struct DrinkoProApp: App {
         .environment(crossPromoSignal)
         #endif
         .modelContainer(modelContainer)
+        #if os(iOS)
+        .commands {
+            AppCommands(appNavigationModel: appNavigationModel)
+        }
+        #endif
     }
 }
