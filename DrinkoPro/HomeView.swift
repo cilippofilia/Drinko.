@@ -56,6 +56,8 @@ struct HomeView: View {
             // in. In a compact (bottom tab bar) layout they'd otherwise all count toward the
             // tab bar, pushing the real tabs into an unwanted "More" overflow page.
             if horizontalSizeClass != .compact {
+                // `.sidebarOnly` on the rows alone doesn't hide a section: it would still show up in
+                // the floating tab bar as an extra item after Settings.
                 TabSection("Cocktails") {
                     ForEach(AppTab.sidebarCocktailFilters, id: \.self) { filter in
                         Tab(filter.pageTitle, systemImage: filter.sidebarSymbol, value: AppTab.cocktailFilter(filter)) {
@@ -64,6 +66,7 @@ struct HomeView: View {
                         .tabPlacement(.sidebarOnly)
                     }
                 }
+                .tabPlacement(.sidebarOnly)
                 TabSection("Learn") {
                     ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
                         Tab(
@@ -76,6 +79,7 @@ struct HomeView: View {
                         .tabPlacement(.sidebarOnly)
                     }
                 }
+                .tabPlacement(.sidebarOnly)
                 TabSection("Tools") {
                     ForEach(ToolsLibrary.calculatorItems) { item in
                         Tab(
@@ -91,6 +95,7 @@ struct HomeView: View {
                         .tabPlacement(.sidebarOnly)
                     }
                 }
+                .tabPlacement(.sidebarOnly)
                 TabSection("Cabinet") {
                     ForEach(categories) { category in
                         Tab(category.name, systemImage: "tray", value: AppTab.cabinetCategory(category.id)) {
@@ -99,6 +104,7 @@ struct HomeView: View {
                         .tabPlacement(.sidebarOnly)
                     }
                 }
+                .tabPlacement(.sidebarOnly)
             }
         }
         .tabViewStyle(.sidebarAdaptable)
