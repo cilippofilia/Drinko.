@@ -18,9 +18,13 @@ struct LibraryRowView: View {
         HStack {
             VStack {
                 // Stickers stand on their own in a row, so they can fill the whole thumbnail.
-                LibraryImageView(image: model.image, contentMode: model.imageContentMode, showsStickerBackdrop: false)
-                    .frame(width: thumbnailSize, height: thumbnailSize)
-                    .clipShape(.rect(cornerRadius: imageCornerRadius))
+                LibraryImageView(
+                    image: model.image,
+                    contentMode: model.imageContentMode,
+                    showsStickerBackdrop: false
+                )
+                .frame(width: thumbnailSize, height: thumbnailSize)
+                .clipShape(.rect(cornerRadius: thumbnailCornerRadius))
 
                 if let progress = model.progress {
                     LibraryProgressBar(progress: progress)
@@ -56,6 +60,12 @@ struct LibraryRowView: View {
         }
         .padding(padsHorizontalEdges ? .all : .vertical)
         .contentShape(.rect)
+    }
+
+    /// Stickers aren't rounded: they fill the thumbnail edge to edge, so rounding would
+    /// clip their die-cut outline. Everything else sits on a backdrop that needs the corners.
+    private var thumbnailCornerRadius: CGFloat {
+        if case .sticker = model.image { 0 } else { imageCornerRadius }
     }
 }
 

@@ -30,7 +30,9 @@ struct StickerImageView: View {
                         .overlay(tint.map { Color($0).opacity(Self.tintOpacity) } ?? .clear)
                 }
             }
-            .clipShape(.rect(cornerRadius: libraryCardCornerRadius, style: .continuous))
+            // Only the backdrop needs rounding. A bare sticker fills its frame, so rounding
+            // would clip the corners of its die-cut outline.
+            .clipShape(.rect(cornerRadius: showsBackdrop ? libraryCardCornerRadius : 0, style: .continuous))
     }
 }
 

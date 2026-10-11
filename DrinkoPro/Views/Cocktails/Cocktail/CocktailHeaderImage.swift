@@ -27,8 +27,7 @@ struct CocktailHeaderImage: View {
                 )
                 .buttonStyle(.borderedProminent)
             }
-            .padding(.bottom, bottomInset)
-            .frame(maxWidth: .infinity, minHeight: imageFrameHeight)
+            .frame(maxWidth: .infinity, minHeight: imageFrameHeight, alignment: .center)
             .background(.fill.quaternary)
         } else {
             switch viewModel.cardModel(for: cocktail).image {
