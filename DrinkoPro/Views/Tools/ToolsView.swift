@@ -16,54 +16,27 @@ struct ToolsView: View {
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
     #endif
 
-    var body: some View {
+    private var navigation: LibraryNavigationBindings<Selection> {
         #if os(iOS)
-        NavigationStack(path: $path) {
-            library
-                .navigationDestination(for: Selection.self) { item in
-                    ToolsDetailView(selection: item)
-                }
-        }
+        .init(path: $path)
         #else
-        NavigationSplitView(preferredCompactColumn: $preferredCompactColumn) {
-            library
-        } detail: {
-            NavigationStack {
-                if let selection {
-                    ToolsDetailView(selection: selection)
-                } else {
-                    ContentUnavailableView(
-                        "Select a Tool",
-                        systemImage: "wrench.and.screwdriver",
-                        description: Text("Choose a calculator to get started.")
-                    )
-                }
-            }
-            // Recreate the detail so calculator inputs reset on a new selection.
-            .id(selection)
-        }
+        .init(selection: $selection, preferredCompactColumn: $preferredCompactColumn)
         #endif
     }
 
-    private var library: some View {
-        LibraryView(
-            title: String(localized: "Tools"),
-            recentsTitle: "",
-            recents: [Selection](),
-            sections: ToolsLibrary.sections,
-            selection: currentSelection,
-            isSearching: false,
-            collapsedSections: .constant(CollapsedSections()),
-            layout: .grid,
-            showsSectionHeaders: false,
-            onSelect: select,
-            cardModel: ToolsLibrary.cardModel(for:),
-            contextMenu: { _ in EmptyView() }
+    var body: some View {
+        LibraryNavigationContainer(
+            navigation: navigation,
+            library: { ToolsLibraryPage(selection: currentSelection, onSelect: select) },
+            detail: { ToolsDetailView(selection: $0) },
+            placeholder: {
+                ContentUnavailableView(
+                    "Select a Tool",
+                    systemImage: "wrench.and.screwdriver",
+                    description: Text("Choose a calculator to get started.")
+                )
+            }
         )
-        .navigationTitle("Tools")
-        #if os(iOS) || os(macOS)
-        .crossPromoBanner()
-        #endif
     }
 
     private var currentSelection: Selection? {

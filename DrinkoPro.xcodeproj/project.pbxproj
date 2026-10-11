@@ -120,6 +120,18 @@
 		D1C5B0F32F00000000000002 /* ToolsView+Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000002 /* ToolsView+Selection.swift */; };
 		D1C5B0F32F00000000000003 /* ToolsLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000003 /* ToolsLibrary.swift */; };
 		D1C5B0F32F00000000000004 /* ToolsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000004 /* ToolsDetailView.swift */; };
+		D1C5B1002F00000000000002 /* CocktailsLibraryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1002F00000000000001 /* CocktailsLibraryContent.swift */; };
+		D1C5B1002F00000000000003 /* CocktailsLibraryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1002F00000000000001 /* CocktailsLibraryContent.swift */; };
+		D1C5B1012F00000000000002 /* CocktailsFilterEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1012F00000000000001 /* CocktailsFilterEmptyState.swift */; };
+		D1C5B1012F00000000000003 /* CocktailsFilterEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1012F00000000000001 /* CocktailsFilterEmptyState.swift */; };
+		D1C5B1022F00000000000002 /* CocktailsSearchEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1022F00000000000001 /* CocktailsSearchEmptyState.swift */; };
+		D1C5B1022F00000000000003 /* CocktailsSearchEmptyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1022F00000000000001 /* CocktailsSearchEmptyState.swift */; };
+		D1C5B1032F00000000000002 /* CocktailsOptionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1032F00000000000001 /* CocktailsOptionsMenu.swift */; };
+		D1C5B1032F00000000000003 /* CocktailsOptionsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1032F00000000000001 /* CocktailsOptionsMenu.swift */; };
+		D1C5B1042F00000000000002 /* LearnLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1042F00000000000001 /* LearnLibrary.swift */; };
+		D1C5B1042F00000000000003 /* LearnLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1042F00000000000001 /* LearnLibrary.swift */; };
+		D1C5B1052F00000000000002 /* ToolsLibraryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1052F00000000000001 /* ToolsLibraryPage.swift */; };
+		D1C5B1052F00000000000003 /* ToolsLibraryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1052F00000000000001 /* ToolsLibraryPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -221,6 +233,12 @@
 		D1C5B0F12F00000000000002 /* ToolsView+Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToolsView+Selection.swift"; sourceTree = "<group>"; };
 		D1C5B0F12F00000000000003 /* ToolsLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsLibrary.swift; sourceTree = "<group>"; };
 		D1C5B0F12F00000000000004 /* ToolsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsDetailView.swift; sourceTree = "<group>"; };
+		D1C5B1002F00000000000001 /* CocktailsLibraryContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsLibraryContent.swift; sourceTree = "<group>"; };
+		D1C5B1012F00000000000001 /* CocktailsFilterEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsFilterEmptyState.swift; sourceTree = "<group>"; };
+		D1C5B1022F00000000000001 /* CocktailsSearchEmptyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsSearchEmptyState.swift; sourceTree = "<group>"; };
+		D1C5B1032F00000000000001 /* CocktailsOptionsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsOptionsMenu.swift; sourceTree = "<group>"; };
+		D1C5B1042F00000000000001 /* LearnLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnLibrary.swift; sourceTree = "<group>"; };
+		D1C5B1052F00000000000001 /* ToolsLibraryPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsLibraryPage.swift; sourceTree = "<group>"; };
 		E1690D2E636390583CBD52BA /* LearnDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -587,6 +605,7 @@
 			children = (
 				18F49EAE2A286D2E00862CE3 /* LearnView.swift */,
 				18A0C5E12F77A00100D1E0A1 /* LearnView+Selection.swift */,
+				D1C5B1042F00000000000001 /* LearnLibrary.swift */,
 				E1690D2E636390583CBD52BA /* LearnDetailView.swift */,
 				18883A832ACC70C400FC78C7 /* Lessons */,
 				188E93BC2A4C1DF6001691E6 /* Books */,
@@ -599,6 +618,10 @@
 			children = (
 				18F49EB72A286D2E00862CE3 /* CocktailsView.swift */,
 				D1C5B0012F00000000000002 /* CocktailFilterSection.swift */,
+				D1C5B1032F00000000000001 /* CocktailsOptionsMenu.swift */,
+				D1C5B1022F00000000000001 /* CocktailsSearchEmptyState.swift */,
+				D1C5B1012F00000000000001 /* CocktailsFilterEmptyState.swift */,
+				D1C5B1002F00000000000001 /* CocktailsLibraryContent.swift */,
 				18F49EB62A286D2E00862CE3 /* CocktailRowView.swift */,
 				18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */,
 				18EB4EBA2EEED46500691DC2 /* Cocktail */,
@@ -611,6 +634,7 @@
 			children = (
 				D1C5B0F12F00000000000001 /* ToolsView.swift */,
 				D1C5B0F12F00000000000002 /* ToolsView+Selection.swift */,
+				D1C5B1052F00000000000001 /* ToolsLibraryPage.swift */,
 				D1C5B0F12F00000000000003 /* ToolsLibrary.swift */,
 				D1C5B0F12F00000000000004 /* ToolsDetailView.swift */,
 				18883A842ACC718200FC78C7 /* Calculators */,
@@ -826,6 +850,7 @@
 			files = (
 				D1C5B0F32F00000000000001 /* ToolsView.swift in Sources */,
 				D1C5B0F32F00000000000002 /* ToolsView+Selection.swift in Sources */,
+				D1C5B1052F00000000000002 /* ToolsLibraryPage.swift in Sources */,
 				D1C5B0F32F00000000000003 /* ToolsLibrary.swift in Sources */,
 				D1C5B0F32F00000000000004 /* ToolsDetailView.swift in Sources */,
 				18A929FF2F12CB4100B70219 /* SettingsRowView.swift in Sources */,
@@ -847,6 +872,10 @@
 				18A929D32F12C33F00B70219 /* Item.swift in Sources */,
 				18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */,
 				D1C5B0022F00000000000002 /* CocktailFilterSection.swift in Sources */,
+				D1C5B1032F00000000000002 /* CocktailsOptionsMenu.swift in Sources */,
+				D1C5B1022F00000000000002 /* CocktailsSearchEmptyState.swift in Sources */,
+				D1C5B1012F00000000000002 /* CocktailsFilterEmptyState.swift in Sources */,
+				D1C5B1002F00000000000002 /* CocktailsLibraryContent.swift in Sources */,
 				D1C5B0022F00000000000006 /* CocktailsViewModel+Library.swift in Sources */,
 				D1C5B0022F00000000000007 /* MainSpirit.swift in Sources */,
 				D1C5B0022F00000000000008 /* CocktailUnitPreference.swift in Sources */,
@@ -854,6 +883,7 @@
 				18A929D52F12C6A900B70219 /* LearnView.swift in Sources */,
 				1858F96A3068702A0016B2DD /* Bottle.swift in Sources */,
 				18A0C5E22F77A00100D1E0A1 /* LearnView+Selection.swift in Sources */,
+				D1C5B1042F00000000000002 /* LearnLibrary.swift in Sources */,
 				182159082F3EA2CC002C1046 /* UserIngredient.swift in Sources */,
 				18A929EA2F12C8F100B70219 /* FavoriteCocktailButtonView.swift in Sources */,
 				1858F9753068707B0016B2DD /* ABVMethodPickers.swift in Sources */,
@@ -883,6 +913,7 @@
 			files = (
 				D1C5B0F22F00000000000001 /* ToolsView.swift in Sources */,
 				D1C5B0F22F00000000000002 /* ToolsView+Selection.swift in Sources */,
+				D1C5B1052F00000000000003 /* ToolsLibraryPage.swift in Sources */,
 				D1C5B0F22F00000000000003 /* ToolsLibrary.swift in Sources */,
 				D1C5B0F22F00000000000004 /* ToolsDetailView.swift in Sources */,
 				18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */,
@@ -891,6 +922,7 @@
 				182157692F3E7DC5002C1046 /* UserCreatedCocktail.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
 				18A0C5E32F77A00100D1E0A1 /* LearnView+Selection.swift in Sources */,
+				D1C5B1042F00000000000003 /* LearnLibrary.swift in Sources */,
 				18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */,
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
 				1858F96F306870360016B2DD /* MixingMethod.swift in Sources */,
@@ -910,6 +942,10 @@
 				18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */,
 				18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */,
 				D1C5B0032F00000000000002 /* CocktailFilterSection.swift in Sources */,
+				D1C5B1032F00000000000003 /* CocktailsOptionsMenu.swift in Sources */,
+				D1C5B1022F00000000000003 /* CocktailsSearchEmptyState.swift in Sources */,
+				D1C5B1012F00000000000003 /* CocktailsFilterEmptyState.swift in Sources */,
+				D1C5B1002F00000000000003 /* CocktailsLibraryContent.swift in Sources */,
 				D1C5B0032F00000000000006 /* CocktailsViewModel+Library.swift in Sources */,
 				D1C5B0032F00000000000007 /* MainSpirit.swift in Sources */,
 				D1C5B0032F00000000000008 /* CocktailUnitPreference.swift in Sources */,
