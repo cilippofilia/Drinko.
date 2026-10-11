@@ -46,6 +46,9 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
             .symbol("wineglass")
         case "coffee mug", "julep cup":
             .asset("julep")
+        case "highball":
+            // There is no highball artwork; the collins glass is the closest match.
+            .asset("collins")
         default:
             .asset(image)
         }

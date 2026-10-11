@@ -27,6 +27,10 @@ struct CocktailGlassArtworkTests {
         #expect(cocktail(glass: glass).glassArtwork == .asset("julep"))
     }
 
+    @Test func highballUsesTheCollinsAsset() {
+        #expect(cocktail(glass: "highball").glassArtwork == .asset("collins"))
+    }
+
     @Test(arguments: ["coupe", "rock", "nick-nora", "tiki"])
     func otherGlassesUseTheirOwnAsset(glass: String) {
         #expect(cocktail(glass: glass).glassArtwork == .asset(glass))
