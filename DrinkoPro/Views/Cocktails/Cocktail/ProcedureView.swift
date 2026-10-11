@@ -12,7 +12,7 @@ struct ProcedureView: View {
     var procedure: Procedure
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: detailCardGroupSpacing) {
             ForEach(procedure.procedure) { step in
                 VStack(alignment: .leading) {
                     Text(step.step)
@@ -21,7 +21,6 @@ struct ProcedureView: View {
                     Text(step.text)
                 }
                 .multilineTextAlignment(.leading)
-                .padding(.vertical, 5)
 
                 if step.id != procedure.procedure.last?.id {
                     Divider()

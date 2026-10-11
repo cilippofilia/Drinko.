@@ -58,7 +58,7 @@ struct CocktailDetailView: View {
         let linkedCocktails = viewModel.getLinkedCocktails(for: activeCocktail)
 
         ScrollView {
-            VStack {
+            VStack(spacing: detailCardInset) {
                 CocktailImageHeader(
                     cocktail: activeCocktail,
                     history: viewModel.getCocktailHistory(for: activeCocktail)

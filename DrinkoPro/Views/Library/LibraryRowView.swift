@@ -10,9 +10,9 @@ struct LibraryRowView: View {
     @ScaledMetric private var thumbnailSize: CGFloat = 56
 
     let model: LibraryCardModel
-    /// `false` drops the side padding, for rows inside a container that already insets them,
-    /// like the cocktail detail cards.
-    var padsHorizontalEdges = true
+    /// `false` drops the padding, for rows inside a container that already insets and spaces
+    /// them, like the cocktail detail cards.
+    var padsEdges = true
 
     var body: some View {
         HStack {
@@ -58,7 +58,7 @@ struct LibraryRowView: View {
                 .foregroundStyle(.secondary)
                 .accessibilityHidden(true)
         }
-        .padding(padsHorizontalEdges ? .all : .vertical)
+        .padding(padsEdges ? .all : [])
         .contentShape(.rect)
     }
 

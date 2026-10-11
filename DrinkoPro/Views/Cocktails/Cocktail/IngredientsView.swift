@@ -13,7 +13,7 @@ struct IngredientsView: View {
     let showsOriginalUnits: Bool
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: detailCardRowSpacing) {
             ForEach(ingredients) { ingredient in
                 let line = IngredientLine(
                     ingredient: ingredient,
@@ -36,7 +36,6 @@ struct IngredientsView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.bottom)
     }
 }
 

@@ -19,6 +19,13 @@ let imageFrameHeight: CGFloat = 280
 /// grow, so a wide iPad column doesn't produce an oversized banner.
 let heroImageMaxHeight: CGFloat = 480
 let libraryCardCornerRadius: CGFloat = 24
+/// The inset from a cocktail detail card's edges to its content, and the gap between cards.
+let detailCardInset: CGFloat = 16
+/// The gap between groups inside a cocktail detail card, like a card's header and its content,
+/// or one procedure step and the next.
+let detailCardGroupSpacing: CGFloat = 12
+/// The gap between the rows of a list inside a cocktail detail card, like its ingredients.
+let detailCardRowSpacing: CGFloat = 8
 #if os(macOS)
 let screenWidth: CGFloat = 350
 #endif

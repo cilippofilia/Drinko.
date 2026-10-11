@@ -16,6 +16,15 @@ struct DetailSectionCard<Content: View>: View {
     /// The size of the round badge behind the chevron.
     @ScaledMetric private var badgeSize: CGFloat = 30
 
+    /// Keeps the whole header a comfortable tap target.
+    private let headerMinHeight: CGFloat = 44
+
+    /// The header is taller than the chevron badge to stay easy to tap, so trim the top inset by
+    /// the extra space. That way the badge sits as far from the top edge as from the trailing one.
+    private var topInset: CGFloat {
+        max(0, detailCardInset - max(0, headerMinHeight - badgeSize) / 2)
+    }
+
     init(
         title: LocalizedStringKey,
         isCollapsed: Bool,
@@ -29,7 +38,7 @@ struct DetailSectionCard<Content: View>: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: detailCardGroupSpacing) {
             Button(action: toggle) {
                 HStack {
                     Text(title)
@@ -45,7 +54,7 @@ struct DetailSectionCard<Content: View>: View {
                         .background(.fill.tertiary, in: .circle)
                         .accessibilityHidden(true)
                 }
-                .frame(minHeight: 44)
+                .frame(minHeight: headerMinHeight)
                 .contentShape(.rect)
             }
             .buttonStyle(.plain)
@@ -57,7 +66,9 @@ struct DetailSectionCard<Content: View>: View {
                 content
             }
         }
-        .padding()
+        .padding(.horizontal, detailCardInset)
+        .padding(.top, topInset)
+        .padding(.bottom, detailCardInset)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(.fill.quinary, in: .rect(cornerRadius: libraryCardCornerRadius))
     }
