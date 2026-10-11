@@ -10,6 +10,9 @@ struct LibraryRowView: View {
     @ScaledMetric private var thumbnailSize: CGFloat = 56
 
     let model: LibraryCardModel
+    /// `false` drops the side padding, for rows inside a container that already insets them,
+    /// like the cocktail detail cards.
+    var padsHorizontalEdges = true
 
     var body: some View {
         HStack {
@@ -43,8 +46,15 @@ struct LibraryRowView: View {
             if model.isFavorite {
                 LibraryFavoriteBadge()
             }
+
+            // Every row opens its item, so it gets the standard disclosure chevron.
+            Image(systemName: "chevron.right")
+                .bold()
+                .imageScale(.small)
+                .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
         }
-        .padding()
+        .padding(padsHorizontalEdges ? .all : .vertical)
         .contentShape(.rect)
     }
 }

@@ -16,16 +16,9 @@ struct LinkedCocktailsView: View {
         Group {
             ForEach(cocktails) { cocktail in
                 NavigationLink(value: cocktail) {
-                    HStack {
-                        // The same sticker row as the Cocktails list layout.
-                        LibraryRowView(model: viewModel.cardModel(for: cocktail))
-
-                        Image(systemName: "chevron.right")
-                            .bold()
-                            .imageScale(.small)
-                            .foregroundStyle(.secondary)
-                            .accessibilityHidden(true)
-                    }
+                    // The same sticker row as the Cocktails list layout. The card already insets
+                    // it, so skip the row's side padding.
+                    LibraryRowView(model: viewModel.cardModel(for: cocktail), padsHorizontalEdges: false)
                 }
                 .buttonStyle(.plain)
             }
