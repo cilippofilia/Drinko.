@@ -32,6 +32,9 @@ nonisolated struct CocktailShareItem: Transferable {
     /// How long to wait for remote artwork before sharing with the glass art instead.
     var loadTimeout: Duration = .seconds(3)
 
+    /// The user's photo, already decoded, for user cocktails that have one.
+    var userPhoto: CGImage?
+
     /// The pixel scale the card is rendered at.
     static let renderScale: CGFloat = 3
 
@@ -85,7 +88,9 @@ nonisolated struct CocktailShareItem: Transferable {
             }
         case .asset, .symbol:
             return .glass(artwork, tint: tint)
-        case .sticker(nil, _), .remote(nil), .userPhoto:
+        case .userPhoto:
+            if let userPhoto { return .userPhoto(userPhoto) }
+        case .sticker(nil, _), .remote(nil):
             break
         }
         return .glass(cocktail.glassArtwork, tint: tint)

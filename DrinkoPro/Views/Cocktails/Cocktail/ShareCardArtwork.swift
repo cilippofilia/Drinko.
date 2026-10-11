@@ -13,4 +13,6 @@ enum ShareCardArtwork {
     case photo(CGImage)
     /// Bundled glass art (an asset or SF Symbol) on the tint wash.
     case glass(LibraryImage, tint: String?)
+    /// The user's own photo, filling the banner.
+    case userPhoto(CGImage)
 }

@@ -160,4 +160,34 @@ struct CocktailShareItemTests {
         let data = try await item.pngData()
         #expect(!data.isEmpty)
     }
+
+    @Test func userPhotoIsUsedWithoutDownloading() async throws {
+        var item = item(
+            for: .userCreatedExample,
+            artwork: .userPhoto(id: Cocktail.userCreatedExample.id, revision: 1),
+            loadImage: { _ in
+                Issue.record("User photos never download")
+                throw LoadFailed()
+            }
+        )
+        item.userPhoto = try Self.sampleImage()
+
+        guard case .userPhoto = await item.resolvedArtwork() else {
+            Issue.record("Expected the user's photo")
+            return
+        }
+    }
+
+    @Test func missingUserPhotoFallsBackToGlass() async {
+        let item = item(
+            for: .userCreatedExample,
+            artwork: .userPhoto(id: Cocktail.userCreatedExample.id, revision: 1),
+            loadImage: { _ in throw LoadFailed() }
+        )
+
+        guard case .glass = await item.resolvedArtwork() else {
+            Issue.record("Expected glass fallback")
+            return
+        }
+    }
 }

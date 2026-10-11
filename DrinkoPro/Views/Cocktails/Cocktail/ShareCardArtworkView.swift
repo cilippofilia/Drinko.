@@ -29,6 +29,12 @@ struct ShareCardArtworkView: View {
                 .background(.white)
         case .glass(let glass, let tint):
             TintedGlassArtwork(artwork: glass, tint: tint)
+        case .userPhoto(let image):
+            Image(decorative: image, scale: 1)
+                .resizable()
+                .scaledToFill()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .clipped()
         }
     }
 }

@@ -33,13 +33,18 @@ struct CocktailDetailView: View {
 
     /// The recipe card the Share button exports, rendered only when the share sheet asks.
     private var shareItem: CocktailShareItem {
-        CocktailShareItem(
+        var item = CocktailShareItem(
             cocktail: activeCocktail,
             artwork: viewModel.cardModel(for: activeCocktail).image,
             tint: viewModel.stickerTint(for: activeCocktail),
             selectedUnit: unitPreference.unit(for: locale),
             showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
         )
+        if case .userPhoto(let id, let revision) = item.artwork {
+            // 1080 = CocktailShareCard.width × CocktailShareItem.renderScale
+            item.userPhoto = viewModel.photoThumbnail(for: id, revision: revision, maxPixelSize: 1080)
+        }
+        return item
     }
 
     var body: some View {
