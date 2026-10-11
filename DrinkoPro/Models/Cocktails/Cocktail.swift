@@ -154,8 +154,13 @@ class CocktailsViewModel {
     private(set) var cocktailIDsWithPhotos: Set<String> = []
     /// Bumped each time a cocktail's photo changes, so views and caches drop the old one.
     var photoRevisions: [String: Int] = [:]
-    /// Decoded photo thumbnails keyed by "id#revision#maxPixelSize".
-    @ObservationIgnored var photoThumbnailCache: [String: CGImage] = [:]
+    /// Decoded photo thumbnails keyed by "id#revision#maxPixelSize", capped at 64 MB. The revision
+    /// is part of the key, so replaced photos' entries just age out.
+    @ObservationIgnored let photoThumbnailCache: NSCache<NSString, CGImage> = {
+        let cache = NSCache<NSString, CGImage>()
+        cache.totalCostLimit = 64 * 1024 * 1024
+        return cache
+    }()
 
     /// Cached id → cocktail lookup for the bundled drinks. See `CocktailsViewModel+Library`.
     @ObservationIgnored var bundledDrinksByIDCache: [String: Cocktail]?

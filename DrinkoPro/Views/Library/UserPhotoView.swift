@@ -20,8 +20,13 @@ struct UserPhotoView: View {
     /// Rounded up to a multiple of this many pixels so near-identical frames share a cached thumbnail.
     private let pixelSizeBucket = 100.0
 
+    /// Photos can be wider or taller than the frame, and filling it scales the photo's short side
+    /// up to match, so ask for 1.5x (enough to fill from a 3:2 photo). The view model clamps
+    /// this to the stored size.
+    private let fillAllowance = 1.5
+
     private var maxPixelSize: Int? {
-        let side = Double(max(viewSize.width, viewSize.height)) * displayScale
+        let side = Double(max(viewSize.width, viewSize.height)) * displayScale * fillAllowance
         guard side > 0 else { return nil }
         return Int((side / pixelSizeBucket).rounded(.up) * pixelSizeBucket)
     }

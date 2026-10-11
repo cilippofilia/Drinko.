@@ -42,7 +42,11 @@ struct CocktailImageHeader: View {
         CocktailHeaderImage(cocktail: cocktail, bottomInset: rowHeight)
             .overlay {
                 if viewModel.hasPicture(cocktail) {
-                    LibraryCardBlurBand(fadeHeight: blurFadeHeight, solidHeight: solidBlurHeight)
+                    LibraryCardBlurBand(
+                        fadeHeight: blurFadeHeight,
+                        solidHeight: solidBlurHeight,
+                        colorScheme: titleColorScheme
+                    )
                 }
             }
             .overlay(alignment: .bottom) {

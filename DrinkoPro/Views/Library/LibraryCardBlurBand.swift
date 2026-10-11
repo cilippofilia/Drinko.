@@ -9,19 +9,21 @@ import SwiftUI
 ///
 /// Blurs the artwork that's already drawn behind it (via a material, which samples whatever
 /// sits beneath it) rather than rendering a second copy of the image, so there's no duplicate
-/// load or decode. Eases in from a transparent top edge so there's no visible seam, and stays
-/// light even in Dark Mode so it melts into the photo's white backdrop.
+/// load or decode. Eases in from a transparent top edge so there's no visible seam. Stays light
+/// by default, even in Dark Mode, so it melts into a bundled photo's white backdrop; pass
+/// `colorScheme` to follow the system instead (user photos).
 struct LibraryCardBlurBand: View {
     /// How far above the text the blur starts fading in.
     let fadeHeight: CGFloat
     /// The fully blurred area: the text plus the padding below it.
     let solidHeight: CGFloat
+    /// The appearance of the blur. Light by default because bundled artwork is always light.
+    var colorScheme: ColorScheme = .light
 
     var body: some View {
         Rectangle()
             .fill(.thinMaterial)
-            // The artwork is always light, so keep the blur light in Dark Mode too.
-            .environment(\.colorScheme, .light)
+            .environment(\.colorScheme, colorScheme)
             .mask(alignment: .bottom) {
                 VStack(spacing: 0) {
                     // Eased stops so the blur creeps in rather than starting at a visible line.

@@ -71,19 +71,35 @@ struct UserCocktailPhotoTests {
         #expect(viewModel.photoThumbnail(for: cocktail.id, revision: 1, maxPixelSize: 100) != nil)
     }
 
-    @Test func replacingAPhotoBumpsRevisionAndClearsThumbnails() throws {
+    @Test func replacingAPhotoBumpsRevisionAndDecodesNewData() throws {
         let (viewModel, container) = try makeViewModel()
         _ = container
         viewModel.addUserCocktail(details(photo: .set(try samplePhoto())))
         let cocktail = try #require(viewModel.userCocktails.first)
         let before = viewModel.photoRevision(for: cocktail.id)
-        _ = viewModel.photoThumbnail(for: cocktail.id, revision: before, maxPixelSize: 100)
-        #expect(!viewModel.photoThumbnailCache.isEmpty)
+        let original = try #require(viewModel.photoThumbnail(for: cocktail.id, revision: before, maxPixelSize: 100))
 
         viewModel.setPhoto(try samplePhoto(width: 200, height: 200), for: cocktail)
 
         #expect(viewModel.photoRevision(for: cocktail.id) == before + 1)
-        #expect(viewModel.photoThumbnailCache.isEmpty)
+        let replaced = try #require(
+            viewModel.photoThumbnail(for: cocktail.id, revision: before + 1, maxPixelSize: 100)
+        )
+        // The original is 400x300 (100x75 thumbnail); the replacement is square.
+        #expect(original.height == 75)
+        #expect(replaced.height == 100)
+    }
+
+    @Test func oversizedThumbnailRequestsShareOneCacheEntry() throws {
+        let (viewModel, container) = try makeViewModel()
+        _ = container
+        viewModel.addUserCocktail(details(photo: .set(try samplePhoto())))
+        let cocktail = try #require(viewModel.userCocktails.first)
+
+        let first = try #require(viewModel.photoThumbnail(for: cocktail.id, revision: 1, maxPixelSize: 2000))
+        let second = try #require(viewModel.photoThumbnail(for: cocktail.id, revision: 1, maxPixelSize: 3000))
+
+        #expect(first === second)
     }
 
     @Test func removingAPhotoRestoresGlassArtwork() throws {

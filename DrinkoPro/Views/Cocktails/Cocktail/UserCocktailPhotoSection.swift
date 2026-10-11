@@ -19,13 +19,12 @@ struct UserCocktailPhotoSection: View {
     var body: some View {
         Section("Photo") {
             if let preview {
-                Image(decorative: preview, scale: 1)
+                Image(preview, scale: 1, label: Text("Cocktail photo"))
                     .resizable()
                     .scaledToFill()
                     .frame(height: previewHeight)
                     .frame(maxWidth: .infinity)
                     .clipShape(.rect(cornerRadius: 12))
-                    .accessibilityLabel("Cocktail photo")
             }
 
             CocktailPhotoMenu(
@@ -34,6 +33,10 @@ struct UserCocktailPhotoSection: View {
                     Label(photoData == nil ? "Add Photo" : "Replace Photo", systemImage: "photo.badge.plus")
                 }
             )
+            // Decodes once per photo change, on this always-present row rather than the Section.
+            .task(id: photoData) {
+                preview = photoData.flatMap { UserPhotoProcessor.thumbnail(from: $0, maxPixelSize: 900) }
+            }
 
             if photoData != nil {
                 Button("Remove Photo", systemImage: "trash", role: .destructive) {
@@ -41,13 +44,5 @@ struct UserCocktailPhotoSection: View {
                 }
             }
         }
-        .onAppear(perform: updatePreview)
-        .onChange(of: photoData) {
-            updatePreview()
-        }
-    }
-
-    private func updatePreview() {
-        preview = photoData.flatMap { UserPhotoProcessor.thumbnail(from: $0, maxPixelSize: 900) }
     }
 }

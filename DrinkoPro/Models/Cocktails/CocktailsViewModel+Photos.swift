@@ -40,21 +40,23 @@ extension CocktailsViewModel {
     /// A decoded thumbnail of the cocktail's photo no larger than `maxPixelSize`, cached per
     /// revision and size so scrolling doesn't decode the JPEG again.
     func photoThumbnail(for id: String, revision: Int, maxPixelSize: Int) -> CGImage? {
-        let key = "\(id)#\(revision)#\(maxPixelSize)"
-        if let cached = photoThumbnailCache[key] {
+        // Photos are stored at most this big, so larger requests can share one entry.
+        let maxPixelSize = min(maxPixelSize, UserPhotoProcessor.maxStoredPixelSize)
+        let key = "\(id)#\(revision)#\(maxPixelSize)" as NSString
+        if let cached = photoThumbnailCache.object(forKey: key) {
             return cached
         }
         guard let data = userCreatedCocktails.first(where: { $0.id == id })?.photoData,
               let image = UserPhotoProcessor.thumbnail(from: data, maxPixelSize: maxPixelSize) else {
             return nil
         }
-        photoThumbnailCache[key] = image
+        photoThumbnailCache.setObject(image, forKey: key, cost: image.bytesPerRow * image.height)
         return image
     }
 
-    /// Moves the cocktail to a new photo revision and drops its cached thumbnails.
+    /// Moves the cocktail to a new photo revision. Thumbnails cached for older revisions are never
+    /// asked for again and age out of the cache.
     func photoDidChange(for id: String) {
         photoRevisions[id, default: 0] += 1
-        photoThumbnailCache = photoThumbnailCache.filter { !$0.key.hasPrefix("\(id)#") }
     }
 }

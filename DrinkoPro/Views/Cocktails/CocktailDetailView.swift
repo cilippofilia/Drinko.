@@ -41,8 +41,15 @@ struct CocktailDetailView: View {
             showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
         )
         if case .userPhoto(let id, let revision) = item.artwork {
-            // 1080 = CocktailShareCard.width × CocktailShareItem.renderScale
-            item.userPhoto = viewModel.photoThumbnail(for: id, revision: revision, maxPixelSize: 1080)
+            let viewModel = viewModel
+            item.loadUserPhoto = {
+                // The stored size, so the 1080 px wide banner fills from a sharp source.
+                viewModel.photoThumbnail(
+                    for: id,
+                    revision: revision,
+                    maxPixelSize: UserPhotoProcessor.maxStoredPixelSize
+                )
+            }
         }
         return item
     }

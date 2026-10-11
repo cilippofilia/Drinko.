@@ -170,7 +170,8 @@ struct CocktailShareItemTests {
                 throw LoadFailed()
             }
         )
-        item.userPhoto = try Self.sampleImage()
+        let photo = try Self.sampleImage()
+        item.loadUserPhoto = { photo }
 
         guard case .userPhoto = await item.resolvedArtwork() else {
             Issue.record("Expected the user's photo")
