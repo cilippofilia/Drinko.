@@ -252,6 +252,15 @@ final class CocktailsViewModelTests: XCTestCase {
         XCTAssertEqual(CocktailListSource.userOnly.rawValue, "userOnly")
     }
 
+    func testListSourceIncludesCocktailBySourceOnly() {
+        XCTAssertTrue(CocktailListSource.userAndApp.includes(.example))
+        XCTAssertTrue(CocktailListSource.userAndApp.includes(.userCreatedExample))
+        XCTAssertTrue(CocktailListSource.appOnly.includes(.example))
+        XCTAssertFalse(CocktailListSource.appOnly.includes(.userCreatedExample))
+        XCTAssertFalse(CocktailListSource.userOnly.includes(.example))
+        XCTAssertTrue(CocktailListSource.userOnly.includes(.userCreatedExample))
+    }
+
     // MARK: - Recents cache
 
     /// Adds a second user cocktail to an already-configured view model.

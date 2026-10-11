@@ -17,9 +17,12 @@ enum LearnCollapseMigration {
         "liqueursCollapsed": "liqueurs",
         "advancedLessonsCollapsed": "advanced-lessons",
         "syrupsCollapsed": "syrups",
-        "calculatorsCollapsed": "calculators",
         "booksCollapsed": "books"
     ]
+
+    /// Old keys with no Learn section left to map to (Calculators moved to Tools). They're
+    /// still removed, but not migrated.
+    private static let retiredKeys = ["calculatorsCollapsed"]
 
     private static let newKey = "learnCollapsedSections"
 
@@ -43,7 +46,7 @@ enum LearnCollapseMigration {
         guard let migrated = migrated(from: defaults) else { return }
 
         defaults.set(migrated.rawValue, forKey: newKey)
-        for oldKey in keyMapping.keys {
+        for oldKey in Array(keyMapping.keys) + retiredKeys {
             defaults.removeObject(forKey: oldKey)
         }
     }

@@ -57,16 +57,19 @@ struct CocktailsView: View {
         presetFilter.map(AppTab.cocktailFilter) ?? .cocktails
     }
 
-    private var visibleCocktails: [Cocktail] {
-        viewModel.filteredCocktails(filterOption: filterOption, source: listSource) { cocktail in
-            favorites.contains(cocktail)
-        }
-    }
-
     private var visibleSections: [LibrarySection<Cocktail>] {
         viewModel.librarySections(filterOption: filterOption, source: listSource) { cocktail in
             favorites.contains(cocktail)
         }
+    }
+
+    /// The "Last Viewed" band's cocktails, limited to the list source. Like Learn's section
+    /// pages, a sidebar filter page (other than All) shows no band, since unfiltered recents
+    /// would sit above a filtered list.
+    private var recentCocktails: [Cocktail] {
+        guard presetFilter == nil || presetFilter == .all else { return [] }
+        return viewModel.recentItems(from: recentsStore.ids(in: .cocktails))
+            .filter(listSource.includes)
     }
 
     private var availableFilterOptions: [CocktailsViewModel.FilterOption] {
@@ -209,7 +212,7 @@ private extension CocktailsView {
                 if presetFilter == nil, !availableFilterOptions.contains(filterOption) {
                     filterOption = .all
                 }
-                if let currentCocktail, !visibleCocktails.contains(currentCocktail) {
+                if let currentCocktail, !listSource.includes(currentCocktail) {
                     clearSelection(after: currentCocktail)
                 }
             }
@@ -235,7 +238,7 @@ private extension CocktailsView {
                 LibraryView(
                     title: title,
                     recentsTitle: String(localized: "Last Viewed"),
-                    recents: viewModel.recentItems(from: recentsStore.ids(in: .cocktails)),
+                    recents: recentCocktails,
                     sections: sections,
                     selection: currentCocktail,
                     isSearching: !viewModel.searchText.isEmpty,
@@ -403,10 +406,13 @@ private extension CocktailsView {
     }
 
     #if os(iOS)
-    /// Drops any pushed cocktail no longer in `viewModel.listOfAllDrinks` (deleted elsewhere).
+    /// Pops the first pushed cocktail no longer in `viewModel.listOfAllDrinks` (deleted
+    /// elsewhere) and every page pushed after it, like `clearSelection(after:)`.
     func pruneStalePathEntries() {
         let validIDs = Set(viewModel.listOfAllDrinks.map(\.id))
-        path.removeAll { !validIDs.contains($0.id) }
+        if let index = path.firstIndex(where: { !validIDs.contains($0.id) }) {
+            path.removeSubrange(index...)
+        }
     }
     #endif
 }

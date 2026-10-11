@@ -82,8 +82,13 @@ struct CabinetView: View {
         }
         // On iPad, this page and another live Cabinet page (the main one, or another
         // category's) can both be showing a product or category pushed from the now-stale
-        // selection below. Catches a deletion made on the other page.
-        .onChange(of: categories.flatMap { [$0.id] + ($0.products ?? []).map(\.id) }) {
+        // selection below. Catches a deletion made on the other page. Watches the category
+        // IDs and the product count rather than every product ID, which would be rebuilt on
+        // each render.
+        .onChange(of: categories.map(\.id)) {
+            pruneSelection()
+        }
+        .onChange(of: categories.reduce(0) { $0 + ($1.products?.count ?? 0) }) {
             pruneSelection()
         }
     }

@@ -37,4 +37,9 @@ enum CocktailListSource: String, CaseIterable, Identifiable {
     var includesUserCocktails: Bool {
         self != .appOnly
     }
+
+    /// Whether `cocktail` is part of this source, regardless of any filter or search.
+    func includes(_ cocktail: Cocktail) -> Bool {
+        cocktail.isUserCreated ? includesUserCocktails : includesAppCocktails
+    }
 }

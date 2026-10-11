@@ -76,7 +76,7 @@ extension CocktailsViewModel {
 
     /// The main spirit's tint for `cocktail`'s sticker, cached per id since bundled cocktails
     /// never change and the lookup folds over ~40 ingredient-name fragments.
-    private func stickerTint(for cocktail: Cocktail) -> String? {
+    func stickerTint(for cocktail: Cocktail) -> String? {
         if let cached = stickerTintCache[cocktail.id] {
             return cached?.colorName
         }

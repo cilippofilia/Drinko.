@@ -40,8 +40,9 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     /// so a swipe re-evaluates the body only when the text flips between light and dark.
     @State private var scrollState = RecentsHeroScrollState()
     /// Each item's card model and backdrop, worked out when the items change rather than on
-    /// every frame.
-    @State private var entries: [RecentsHeroEntry]
+    /// every frame. Built in `refreshEntries()`, not `init`: the parent re-runs `init` on every
+    /// update and `State` would throw the result away.
+    @State private var entries: [RecentsHeroEntry] = []
 
     /// The hero text's size. A scaled metric keeps it following Dynamic Type while being far
     /// larger than any text style.
@@ -59,7 +60,6 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         self.items = items
         self.cardModel = cardModel
         self.onOpen = onOpen
-        _entries = State(initialValue: items.map { RecentsHeroEntry(model: cardModel($0)) })
     }
 
     private var slotCount: Int {

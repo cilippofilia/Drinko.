@@ -25,6 +25,10 @@ struct HomeView: View {
 
     @State private var interstitialAd: Ad?
     @State private var showRemoveAdsPaywall = false
+    /// The sidebar row `fitSelection()` last swapped for its main tab because the layout
+    /// couldn't show it (compact width, or a category not synced yet). It comes back once it
+    /// can be shown, and stays the saved tab meanwhile.
+    @State private var hiddenSelection: AppTab?
 
     var body: some View {
         @Bindable var appNavigationModel = appNavigationModel
@@ -140,6 +144,9 @@ struct HomeView: View {
             fitSelection()
         }
         .onChange(of: appNavigationModel.selectedTab) { _, newValue in
+            // The main tab standing in for a hidden sidebar row isn't saved over that row.
+            if let hiddenSelection, newValue == hiddenSelection.parent { return }
+            hiddenSelection = nil
             selectedView = newValue.rawValue
         }
         .onChange(of: horizontalSizeClass) {
@@ -181,13 +188,21 @@ struct HomeView: View {
         )
     }
 
-    /// Moves the selection to something the current layout can show (see `AppTab.fitted`).
+    /// Moves the selection to something the current layout can show (see `AppTab.fitted`),
+    /// or back to `hiddenSelection` once it can be shown again.
     private func fitSelection() {
-        let fitted = appNavigationModel.selectedTab.fitted(
-            isCompact: horizontalSizeClass == .compact,
-            categoryIDs: Set(categories.map(\.id))
-        )
-        if fitted != appNavigationModel.selectedTab {
+        let isCompact = horizontalSizeClass == .compact
+        let categoryIDs = Set(categories.map(\.id))
+        let selectedTab = appNavigationModel.selectedTab
+
+        if let hiddenSelection, selectedTab == hiddenSelection.parent,
+           hiddenSelection.fitted(isCompact: isCompact, categoryIDs: categoryIDs) == hiddenSelection {
+            appNavigationModel.selectedTab = hiddenSelection
+            return
+        }
+        let fitted = selectedTab.fitted(isCompact: isCompact, categoryIDs: categoryIDs)
+        if fitted != selectedTab {
+            hiddenSelection = selectedTab
             appNavigationModel.selectedTab = fitted
         }
     }

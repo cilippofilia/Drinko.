@@ -35,7 +35,6 @@ struct LearnCollapseMigrationTests {
             "liqueursCollapsed": "liqueurs",
             "advancedLessonsCollapsed": "advanced-lessons",
             "syrupsCollapsed": "syrups",
-            "calculatorsCollapsed": "calculators",
             "booksCollapsed": "books"
         ]
         for oldKey in mapping.keys {
@@ -71,7 +70,8 @@ struct LearnCollapseMigrationTests {
         let stored = defaults.string(forKey: "learnCollapsedSections")
         let collapsed = CollapsedSections(rawValue: stored ?? "")
         #expect(collapsed?.contains("basic-lessons") == true)
-        #expect(collapsed?.contains("calculators") == true)
+        // Calculators moved to Tools: the old key is removed but not migrated.
+        #expect(collapsed?.contains("calculators") == false)
         #expect(defaults.object(forKey: "basicLessonsCollapsed") == nil)
         #expect(defaults.object(forKey: "calculatorsCollapsed") == nil)
     }
