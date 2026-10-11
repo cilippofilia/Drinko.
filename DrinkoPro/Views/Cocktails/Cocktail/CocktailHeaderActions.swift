@@ -26,8 +26,10 @@ struct CocktailHeaderActions: View {
         .environment(\.colorScheme, .light)
         .sheet(isPresented: $showHistory) {
             if let history {
+                // Medium only, so on iOS 26 it stays an inset sheet floating over the cocktail;
+                // longer histories scroll inside it.
                 HistoryView(cocktail: cocktail, history: history)
-                    .presentationDetents([.medium, .large])
+                    .presentationDetents([.medium])
             }
         }
     }
