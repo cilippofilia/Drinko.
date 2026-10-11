@@ -67,6 +67,30 @@ struct CocktailShareItemTests {
         #expect(glass == Cocktail.example.glassArtwork)
     }
 
+    @Test func fallsBackToGlassArtworkWhenDownloadStalls() async {
+        var item = item(
+            for: .example,
+            artwork: .sticker(URL(string: "https://example.com/s.png"), tint: nil),
+            loadImage: { _ in
+                try await Task.sleep(for: .seconds(60))
+                throw LoadFailed()
+            }
+        )
+        item.loadTimeout = .milliseconds(50)
+
+        let clock = ContinuousClock()
+        let start = clock.now
+        let artwork = await item.resolvedArtwork()
+        let elapsed = clock.now - start
+
+        guard case .glass(let glass, _) = artwork else {
+            Issue.record("Expected glass fallback")
+            return
+        }
+        #expect(glass == Cocktail.example.glassArtwork)
+        #expect(elapsed < .seconds(5))
+    }
+
     @Test func userCocktailsNeverDownload() async {
         let item = item(
             for: .userCreatedExample,

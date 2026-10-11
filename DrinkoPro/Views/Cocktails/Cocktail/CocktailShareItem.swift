@@ -29,6 +29,9 @@ nonisolated struct CocktailShareItem: Transferable {
         )
     }
 
+    /// How long to wait for remote artwork before sharing with the glass art instead.
+    var loadTimeout: Duration = .seconds(3)
+
     /// The pixel scale the card is rendered at.
     static let renderScale: CGFloat = 3
 
@@ -36,19 +39,36 @@ nonisolated struct CocktailShareItem: Transferable {
         DataRepresentation(exportedContentType: .png) { item in
             try await item.pngData()
         }
+        .suggestedFileName { "\($0.cocktail.name).png" }
     }
 
-    /// Loads the artwork the card shows. Falls back to the glass art when a download fails, so
-    /// sharing works offline.
+    /// Downloads `url`, giving up after `loadTimeout` so a flaky network can't stall the share sheet.
+    private func downloadedImage(from url: URL) async -> CGImage? {
+        let load = loadImage
+        let timeout = loadTimeout
+        return await withTaskGroup(of: CGImage?.self) { group in
+            group.addTask { try? await load(url) }
+            group.addTask {
+                try? await Task.sleep(for: timeout)
+                return nil
+            }
+            let first = await group.next() ?? nil
+            group.cancelAll()
+            return first
+        }
+    }
+
+    /// Loads the artwork the card shows. Falls back to the glass art when a download fails or
+    /// times out, so sharing works offline.
     @MainActor
     func resolvedArtwork() async -> ShareCardArtwork {
         switch artwork {
         case .sticker(let url?, let stickerTint):
-            if let image = try? await loadImage(url) {
+            if let image = await downloadedImage(from: url) {
                 return .sticker(image, tint: stickerTint)
             }
         case .remote(let url?):
-            if let image = try? await loadImage(url) {
+            if let image = await downloadedImage(from: url) {
                 return .photo(image)
             }
         case .asset, .symbol:
