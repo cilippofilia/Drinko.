@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct CocktailDetailView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.locale) private var locale
@@ -56,33 +55,36 @@ struct CocktailDetailView: View {
                 DetailSectionCard(
                     title: "Ingredients",
                     isCollapsed: isCollapsed(.ingredients),
-                    toggle: { toggle(.ingredients) }
-                ) {
-                    CocktailDetailsSection(
-                        cocktail: activeCocktail,
-                        selectedUnit: unitPreference.unit(for: locale),
-                        showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
-                    )
-                }
+                    toggle: { toggle(.ingredients) },
+                    content: {
+                        CocktailDetailsSection(
+                            cocktail: activeCocktail,
+                            selectedUnit: unitPreference.unit(for: locale),
+                            showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
+                        )
+                    }
+                )
 
                 if let procedure = viewModel.getCocktailProcedure(for: activeCocktail) {
                     DetailSectionCard(
                         title: "Procedure",
                         isCollapsed: isCollapsed(.procedure),
-                        toggle: { toggle(.procedure) }
-                    ) {
-                        ProcedureView(cocktail: activeCocktail, procedure: procedure)
-                    }
+                        toggle: { toggle(.procedure) },
+                        content: {
+                            ProcedureView(cocktail: activeCocktail, procedure: procedure)
+                        }
+                    )
                 }
 
                 if !linkedCocktails.isEmpty {
                     DetailSectionCard(
                         title: "You may also like",
                         isCollapsed: isCollapsed(.suggested),
-                        toggle: { toggle(.suggested) }
-                    ) {
-                        LinkedCocktailsView(cocktails: linkedCocktails)
-                    }
+                        toggle: { toggle(.suggested) },
+                        content: {
+                            LinkedCocktailsView(cocktails: linkedCocktails)
+                        }
+                    )
                 }
 
                 if viewModel.isUserCreated(activeCocktail) {

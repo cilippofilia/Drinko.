@@ -66,12 +66,12 @@ struct DetailSectionCard<Content: View>: View {
 #if DEBUG
 #Preview {
     VStack {
-        DetailSectionCard(title: "Ingredients", isCollapsed: false, toggle: { }) {
+        DetailSectionCard(title: "Ingredients", isCollapsed: false, toggle: { }, content: {
             Text("2 oz. London Dry Gin")
-        }
-        DetailSectionCard(title: "Procedure", isCollapsed: true, toggle: { }) {
+        })
+        DetailSectionCard(title: "Procedure", isCollapsed: true, toggle: { }, content: {
             Text("Hidden")
-        }
+        })
     }
     .padding()
 }
