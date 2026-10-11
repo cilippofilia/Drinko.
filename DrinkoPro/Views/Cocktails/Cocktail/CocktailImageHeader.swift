@@ -31,10 +31,11 @@ struct CocktailImageHeader: View {
 
     @Environment(\.colorScheme) private var colorScheme
 
-    /// Pictures are always light, so the name and icons stay dark over them in Dark Mode too.
-    /// Without a picture the header follows the system appearance.
+    /// Bundled stickers and photos are always light, so the name and icons stay dark over them in
+    /// Dark Mode too. User photos can be anything, and the placeholder follows the system, so those
+    /// use the system appearance over the blur band.
     private var titleColorScheme: ColorScheme {
-        viewModel.hasPicture(cocktail) ? .light : colorScheme
+        cocktail.isUserCreated ? colorScheme : .light
     }
 
     var body: some View {

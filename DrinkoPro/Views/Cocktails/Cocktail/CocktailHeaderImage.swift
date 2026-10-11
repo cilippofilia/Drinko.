@@ -40,9 +40,10 @@ struct CocktailHeaderImage: View {
                     aspectRatio: .fit
                 )
                 .background(Color.white)
-            case .userPhoto:
-                // Temporary: the photo itself is drawn once the views are wired up.
-                EmptyView()
+            case .userPhoto(let id, let revision):
+                UserPhotoView(id: id, revision: revision)
+                    .frame(height: imageFrameHeight)
+                    .frame(maxWidth: .infinity)
             case .asset, .symbol:
                 // Only cocktails without a picture get glass art, and they take the branch above.
                 EmptyView()

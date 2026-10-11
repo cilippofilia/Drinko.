@@ -165,9 +165,9 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
             currentSlot = homeSlot
             refreshEntries()
         }
-        // Favoriting an item doesn't change `items`, so watch the badges separately and keep the
-        // carousel where it is.
-        .onChange(of: items.map { cardModel($0).isFavorite }) {
+        // Favoriting or re-photographing an item changes its card model without changing
+        // `items`, so watch the models themselves and keep the carousel where it is.
+        .onChange(of: items.map { cardModel($0) }) {
             refreshEntries()
         }
         .onChange(of: colorScheme) {

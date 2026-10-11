@@ -176,6 +176,10 @@ struct RecentsHeroLayoutTests {
         #expect(RecentsHeroLayout.textStyle(forLuminance: RecentsHeroLayout.darkTextThreshold) == .light)
     }
 
+    @Test func userPhotosGetTheNeutralBackdrop() {
+        #expect(RecentsHeroLayout.backdrop(for: .userPhoto(id: "user-x", revision: 1)) == .neutral)
+    }
+
     // MARK: Navigation bar
 
     @Test func barTitleWaitsUntilTheContentScrollsPastTheThreshold() {
