@@ -26,6 +26,26 @@ struct IngredientLineTests {
         #expect(line.unit == "oz.")
     }
 
+    @Test func keepsFractionalQuantitiesInOriginalUnits() {
+        let line = IngredientLine(
+            ingredient: Ingredient(name: "cointreau", quantity: 0.75, unit: "oz."),
+            selectedUnit: "ml",
+            showsOriginalUnits: true
+        )
+        #expect(line.quantity == 0.75)
+        #expect(line.unit == "oz.")
+    }
+
+    @Test func convertsFractionalQuantities() {
+        let line = IngredientLine(
+            ingredient: Ingredient(name: "cointreau", quantity: 1.25, unit: "oz."),
+            selectedUnit: "ml",
+            showsOriginalUnits: false
+        )
+        #expect(line.quantity == 37.5)
+        #expect(line.unit == "ml")
+    }
+
     @Test func unconvertibleUnitPassesThrough() {
         let line = IngredientLine(
             ingredient: Ingredient(name: "angostura bitters", quantity: 2, unit: "dash"),
