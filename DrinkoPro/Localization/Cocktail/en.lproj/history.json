@@ -147,5 +147,15 @@
     {
         "id":"white-russian",
         "text":"The Black Russian is a traditional cocktail that was first introduced in 1949, but it transforms into a White Russian with the addition of cream. Although neither drink has its origins in Russia, they are both named after the primary ingredient, which is vodka.\n\nAfter the release of the movie \"The Big Lebowski\" in 1998, the popularity of this cocktail skyrocketed. The main character of the movie, Jeffrey \"The Dude\" Lebowski, seems to prefer this cocktail and refers to it as \"Caucasian\" on several occasions throughout the film."
+    },
+
+    {
+        "id":"milano-torino",
+        "text":"Created in the 1860s by Gaspare Campari at his Caffè Campari, on Milan's Piazza del Duomo and named after the origins of its two ingredients: Campari from Milan and rosso vermouth, traditionally from Turin. It is said that later, soda water was added to the Milano-Torino to create the Americano. The Milano-Torino also morphed into the Negroni with gin added."
+    },
+
+    {
+        "id":"garibaldi",
+        "text":"Named after the famous revolutionary general who helped liberate and reunify Italy, the Garibaldi appears on cocktail lists throughout Italy. This little-known classic was brilliantly revitalised by Naren Young for the re-launch of New York City's Dante in October 2015 and remains a must-try cocktail at this World's 50 Best Best Bar."
     }
 ]
