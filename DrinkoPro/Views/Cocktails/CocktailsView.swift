@@ -68,7 +68,7 @@ struct CocktailsView: View {
     /// would sit above a filtered list.
     private var recentCocktails: [Cocktail] {
         guard presetFilter == nil || presetFilter == .all else { return [] }
-        return viewModel.recentItems(from: recentsStore.ids(in: .cocktails))
+        return viewModel.recentCocktailsWithPictures(from: recentsStore.ids(in: .cocktails))
             .filter(listSource.includes)
     }
 

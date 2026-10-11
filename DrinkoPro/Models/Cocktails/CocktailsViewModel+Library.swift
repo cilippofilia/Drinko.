@@ -41,6 +41,12 @@ extension CocktailsViewModel {
         }
     }
 
+    /// The recent cocktails for the "Last Viewed" carousel, which is all pictures, so it skips
+    /// cocktails without one.
+    func recentCocktailsWithPictures(from ids: [String]) -> [Cocktail] {
+        recentItems(from: ids).filter(\.hasPicture)
+    }
+
     /// Sorts already-grouped keys by `sortOption`, keeping "#" last for A→Z/Z→A. Shared by
     /// `sortedSectionKeys` and `librarySections` so grouping only happens once per call.
     func sortSectionKeys(_ keys: [String]) -> [String] {

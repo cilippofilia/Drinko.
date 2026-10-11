@@ -10,6 +10,8 @@ import SwiftUI
 struct CocktailHeaderActions: View {
     let cocktail: Cocktail
     let history: History?
+    /// The appearance the icons are drawn in, matching the name next to them.
+    let iconColorScheme: ColorScheme
 
     @State private var showHistory = false
 
@@ -21,9 +23,9 @@ struct CocktailHeaderActions: View {
         .labelStyle(.iconOnly)
         .buttonStyle(HeaderIconButtonStyle())
         .font(.title2)
-        // The artwork is always light, so keep the buttons light in Dark Mode too. The sheet is
-        // attached outside this scope so the history itself still follows the system appearance.
-        .environment(\.colorScheme, .light)
+        // The sheet is attached outside this scope so the history itself still follows the
+        // system appearance.
+        .environment(\.colorScheme, iconColorScheme)
         .sheet(isPresented: $showHistory) {
             if let history {
                 // Medium only, so on iOS 26 it stays an inset sheet floating over the cocktail;

@@ -89,6 +89,24 @@ struct CocktailsLibraryTests {
         #expect(items == [shot, first])
     }
 
+    @Test func onlyBundledCocktailsHavePictures() throws {
+        let viewModel = CocktailsViewModel()
+        let bundled = try #require(viewModel.listOfCocktails.first)
+
+        #expect(bundled.hasPicture)
+        #expect(!userCocktail(glass: "coupe").hasPicture)
+    }
+
+    @Test func lastViewedSkipsCocktailsWithoutPictures() throws {
+        let viewModel = CocktailsViewModel()
+        let first = try #require(viewModel.listOfCocktails.first)
+        let shot = try #require(viewModel.listOfShots.first)
+
+        // `recentItems` resolves user cocktails too; the carousel only shows ones with a picture.
+        #expect(viewModel.recentCocktailsWithPictures(from: [shot.id, first.id]) == [shot, first])
+        #expect(viewModel.recentCocktailsWithPictures(from: ["user-unknown", first.id]) == [first])
+    }
+
     @Test(arguments: [
         (SortOption.fromAtoZ, ["A", "B", "#"]),
         (.fromZtoA, ["B", "A", "#"]),

@@ -60,6 +60,12 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
         id.hasPrefix("user-")
     }
 
+    /// Whether there's a picture of the drink to show. Bundled drinks have a sticker or photo;
+    /// the user's own cocktails don't yet.
+    var hasPicture: Bool {
+        !isUserCreated
+    }
+
     /// Drinks whose sticker is filed under another name.
     private static let stickerNames = [
         "augie-march": "manhattan",

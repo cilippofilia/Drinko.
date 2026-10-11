@@ -938,6 +938,34 @@
         }
       }
     },
+    "Add a photo of your cocktail to show it here." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge ein Foto deines Cocktails hinzu, um es hier anzuzeigen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade una foto de tu cóctel para mostrarla aquí."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez une photo de votre cocktail pour l’afficher ici."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi una foto del tuo cocktail per mostrarla qui."
+          }
+        }
+      }
+    },
     "Add a Widget" : {
 
     },
@@ -5873,6 +5901,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nessuna lezione o libro corrisponde a \"%@\". Prova un termine di ricerca diverso o sfoglia tutti gli argomenti."
+          }
+        }
+      }
+    },
+    "No Photo" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kein Foto"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin foto"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune photo"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna foto"
           }
         }
       }

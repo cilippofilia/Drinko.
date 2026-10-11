@@ -27,10 +27,20 @@ struct CocktailImageHeader: View {
         (rowHeight + textHeight) / 2
     }
 
+    @Environment(\.colorScheme) private var colorScheme
+
+    /// Pictures are always light, so the name and icons stay dark over them in Dark Mode too.
+    /// Without a picture the header follows the system appearance.
+    private var titleColorScheme: ColorScheme {
+        cocktail.hasPicture ? .light : colorScheme
+    }
+
     var body: some View {
-        CocktailHeaderImage(cocktail: cocktail)
+        CocktailHeaderImage(cocktail: cocktail, bottomInset: rowHeight)
             .overlay {
-                LibraryCardBlurBand(fadeHeight: blurFadeHeight, solidHeight: solidBlurHeight)
+                if cocktail.hasPicture {
+                    LibraryCardBlurBand(fadeHeight: blurFadeHeight, solidHeight: solidBlurHeight)
+                }
             }
             .overlay(alignment: .bottom) {
                 // The icons sit on the name's last line, so they read as part of the title.
@@ -45,11 +55,10 @@ struct CocktailImageHeader: View {
                         } action: { height in
                             textHeight = height
                         }
-                        // The artwork is always light, so keep the name dark in Dark Mode too.
-                        .environment(\.colorScheme, .light)
+                        .environment(\.colorScheme, titleColorScheme)
                         .accessibilityAddTraits(.isHeader)
 
-                    CocktailHeaderActions(cocktail: cocktail, history: history)
+                    CocktailHeaderActions(cocktail: cocktail, history: history, iconColorScheme: titleColorScheme)
                 }
                 .padding()
                 .onGeometryChange(for: CGFloat.self) { proxy in
