@@ -18,6 +18,8 @@ struct LibraryView<Item: Identifiable & Hashable, MenuContent: View>: View {
     /// and the navigation bar's inline title stays hidden (see `showsBarTitle`).
     let title: String
     let recentsTitle: String
+    /// How the recents band names its centred item.
+    var recentsTitleStyle: RecentsHeroTitleStyle = .hero
     let recents: [Item]
     let sections: [LibrarySection<Item>]
     let selection: Item?
@@ -64,6 +66,7 @@ struct LibraryView<Item: Identifiable & Hashable, MenuContent: View>: View {
                 if showsRecents {
                     RecentsHeroView(
                         title: "\(title) · \(recentsTitle)",
+                        titleStyle: recentsTitleStyle,
                         items: recents,
                         cardModel: cardModel,
                         onOpen: onSelect

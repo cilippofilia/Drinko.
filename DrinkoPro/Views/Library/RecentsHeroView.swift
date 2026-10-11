@@ -8,7 +8,8 @@ import SwiftUI
 /// The "Last Read" / "Last Viewed" band at the top of a library: a small label, the centred
 /// item's name in huge type, and a row of three items (the centred one large, its neighbours
 /// smaller) in front of the name, over a backdrop that takes its color or photo from the items.
-/// The band keeps one height whatever the name's length.
+/// The band keeps one height whatever the name's length. With the `.caption` title style, the
+/// name is a plain caption under the row instead, for artwork that would hide the huge type.
 ///
 /// The band runs edge to edge (the caller must not pad it). Its backdrop extends upwards
 /// behind the navigation bar, large title and search field, and past the top when the list is
@@ -24,6 +25,7 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     @Environment(\.colorScheme) private var colorScheme
 
     let title: String
+    let titleStyle: RecentsHeroTitleStyle
     let items: [Item]
     let cardModel: @MainActor (Item) -> LibraryCardModel
     let onOpen: @MainActor (Item) -> Void
@@ -47,11 +49,13 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
 
     init(
         title: String,
+        titleStyle: RecentsHeroTitleStyle = .hero,
         items: [Item],
         cardModel: @escaping @MainActor (Item) -> LibraryCardModel,
         onOpen: @escaping @MainActor (Item) -> Void
     ) {
         self.title = title
+        self.titleStyle = titleStyle
         self.items = items
         self.cardModel = cardModel
         self.onOpen = onOpen
@@ -109,54 +113,43 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         VStack(spacing: 0) {
             RecentsHeroHeader(title: title, textColor: textColor)
 
-            carousel
-                .accessibilityElement(children: .ignore)
-                .accessibilityLabel(accessibilityLabelText)
-                .accessibilityHint("Swipe up or down to browse. Double tap to open.")
-                .accessibilityAdjustableAction { direction in
-                    switch direction {
-                    case .increment:
-                        scroll(to: RecentsHeroLayout.nextSlot(currentSlot ?? homeSlot, count: items.count))
-                    case .decrement:
-                        scroll(to: RecentsHeroLayout.previousSlot(currentSlot ?? homeSlot, count: items.count))
-                    @unknown default:
-                        break
+            switch titleStyle {
+            case .hero:
+                accessibleCarousel
+                    // The items start about a line into the name, so they overlap its lower part
+                    // and any further lines.
+                    .padding(.top, heroFontSize)
+                    // The name is drawn twice, outside the layout so a long name never changes the
+                    // band's height: once behind the items, and once in front of them with the
+                    // centre slot cut out. The centred item covers the name; its neighbours sit
+                    // behind it.
+                    .background(alignment: .topLeading) {
+                        RecentsHeroName(
+                            text: currentTitle,
+                            heroID: currentIndex,
+                            fontSize: heroFontSize,
+                            textColor: textColor
+                        )
                     }
-                }
-                .accessibilityAction {
-                    if let currentItem {
-                        onOpen(currentItem)
+                    .overlay(alignment: .topLeading) {
+                        RecentsHeroName(
+                            text: currentTitle,
+                            // The item, not the slot, so re-centring on a copy doesn't animate.
+                            heroID: currentIndex,
+                            fontSize: heroFontSize,
+                            textColor: textColor
+                        )
+                            .mask {
+                                RecentsHeroCentreCutout(width: itemWidth)
+                            }
+                            .accessibilityHidden(true)
+                            .allowsHitTesting(false)
                     }
-                }
-                // The items start about a line into the name, so they overlap its lower part
-                // and any further lines.
-                .padding(.top, heroFontSize)
-                // The name is drawn twice, outside the layout so a long name never changes the
-                // band's height: once behind the items, and once in front of them with the
-                // centre slot cut out. The centred item covers the name; its neighbours sit
-                // behind it.
-                .background(alignment: .topLeading) {
-                    RecentsHeroName(
-                        text: currentTitle,
-                        heroID: currentIndex,
-                        fontSize: heroFontSize,
-                        textColor: textColor
-                    )
-                }
-                .overlay(alignment: .topLeading) {
-                    RecentsHeroName(
-                        text: currentTitle,
-                        // The item, not the slot, so re-centring on a copy doesn't animate.
-                        heroID: currentIndex,
-                        fontSize: heroFontSize,
-                        textColor: textColor
-                    )
-                        .mask {
-                            RecentsHeroCentreCutout(width: itemWidth)
-                        }
-                        .accessibilityHidden(true)
-                        .allowsHitTesting(false)
-                }
+            case .caption:
+                accessibleCarousel
+
+                RecentsHeroCaption(text: currentTitle, heroID: currentIndex, textColor: textColor)
+            }
         }
         .frame(maxWidth: .infinity)
         .background {
@@ -181,6 +174,29 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         .onChange(of: itemWidth) {
             configureScrollState()
         }
+    }
+
+    /// The carousel as one adjustable element: swipe up or down to move, double tap to open.
+    private var accessibleCarousel: some View {
+        carousel
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(accessibilityLabelText)
+            .accessibilityHint("Swipe up or down to browse. Double tap to open.")
+            .accessibilityAdjustableAction { direction in
+                switch direction {
+                case .increment:
+                    scroll(to: RecentsHeroLayout.nextSlot(currentSlot ?? homeSlot, count: items.count))
+                case .decrement:
+                    scroll(to: RecentsHeroLayout.previousSlot(currentSlot ?? homeSlot, count: items.count))
+                @unknown default:
+                    break
+                }
+            }
+            .accessibilityAction {
+                if let currentItem {
+                    onOpen(currentItem)
+                }
+            }
     }
 
     private var carousel: some View {

@@ -124,6 +124,8 @@ struct LearnView: View {
                 LibraryView(
                     title: title,
                     recentsTitle: String(localized: "Last Read"),
+                    // Lesson photos fill their cards and would hide the hero's huge type.
+                    recentsTitleStyle: .caption,
                     recents: sectionID == nil ? viewModel.recentItems(from: recentsStore.ids(in: .learn)) : [],
                     sections: sections,
                     selection: currentSelection,
