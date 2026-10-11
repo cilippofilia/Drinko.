@@ -7,8 +7,8 @@ import PhotosUI
 import SwiftUI
 
 /// A menu for adding a photo to a cocktail: take one with the camera (iOS, when there is one)
-/// or choose one from the library. Hands back the photo already shrunk for storage, and shows
-/// an alert if it can't be read.
+/// or choose one from the library. Hands back the photo already shrunk for storage, shows a
+/// spinner while it loads, and shows an alert if it can't be read.
 struct CocktailPhotoMenu<Label: View>: View {
     let onPick: (Data) -> Void
     @ViewBuilder let label: Label
@@ -17,6 +17,8 @@ struct CocktailPhotoMenu<Label: View>: View {
     @State private var showsCamera = false
     @State private var pickerItem: PhotosPickerItem?
     @State private var showsError = false
+    /// True while a picked photo downloads (it may only be in iCloud) and is shrunk.
+    @State private var isLoading = false
 
     init(onPick: @escaping (Data) -> Void, @ViewBuilder label: () -> Label) {
         self.onPick = onPick
@@ -36,28 +38,24 @@ struct CocktailPhotoMenu<Label: View>: View {
                 showsLibrary = true
             }
         } label: {
-            label
+            if isLoading {
+                ProgressView()
+            } else {
+                label
+            }
         }
+        // No second pick while one is still loading.
+        .disabled(isLoading)
         .photosPicker(isPresented: $showsLibrary, selection: $pickerItem, matching: .images)
         .onChange(of: pickerItem) { _, item in
             guard let item else { return }
             pickerItem = nil
-            Task {
-                do {
-                    guard let data = try await item.loadTransferable(type: Data.self) else {
-                        showsError = true
-                        return
-                    }
-                    await process(data)
-                } catch {
-                    showsError = true
-                }
-            }
+            load { try await item.loadTransferable(type: Data.self) }
         }
         #if os(iOS)
         .fullScreenCover(isPresented: $showsCamera) {
             CameraPicker { data in
-                Task { await process(data) }
+                load { data }
             }
             .ignoresSafeArea()
         }
@@ -67,11 +65,21 @@ struct CocktailPhotoMenu<Label: View>: View {
         }
     }
 
-    private func process(_ data: Data) async {
-        do {
-            onPick(try await UserPhotoProcessor.processedJPEG(from: data))
-        } catch {
-            showsError = true
+    /// Fetches the photo's data, shrinks it for storage and hands it back, showing the spinner
+    /// meanwhile. `nil` data or any failure shows the alert instead.
+    private func load(_ fetch: @escaping () async throws -> Data?) {
+        isLoading = true
+        Task {
+            defer { isLoading = false }
+            do {
+                guard let data = try await fetch() else {
+                    showsError = true
+                    return
+                }
+                onPick(try await UserPhotoProcessor.processedJPEG(from: data))
+            } catch {
+                showsError = true
+            }
         }
     }
 }
