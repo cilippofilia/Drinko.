@@ -106,6 +106,49 @@ enum RecentsHeroLayout {
         return Position(lowerIndex: lower, upperIndex: upper, fraction: clamped - Double(lower))
     }
 
+    /// Like `position(forFractionalIndex:count:)`, but for a fractional *slot* of a carousel
+    /// showing `itemCount` items: both ends are mapped back onto items (a looping carousel's
+    /// slots repeat them), and with `snapsFraction` the fraction jumps to the nearer end instead
+    /// of gliding, which is what Reduce Motion wants. `nil` when there are no items.
+    static func itemPosition(forFractionalSlot value: Double, itemCount: Int, snapsFraction: Bool) -> Position? {
+        guard let slots = position(forFractionalIndex: value, count: slotCount(count: itemCount)) else {
+            return nil
+        }
+        return Position(
+            lowerIndex: itemIndex(forSlot: slots.lowerIndex, count: itemCount),
+            upperIndex: itemIndex(forSlot: slots.upperIndex, count: itemCount),
+            fraction: snapsFraction ? slots.fraction.rounded() : slots.fraction
+        )
+    }
+
+    /// The value `fraction` of the way from `start` to `end`.
+    static func interpolated(from start: Double, to end: Double, fraction: Double) -> Double {
+        start + (end - start) * fraction
+    }
+
+    /// The backdrop luminance at a fractional slot, blended from each item's own luminance
+    /// (one entry per item), so the scroll handler can pick the text style for every frame
+    /// without resolving colors. `fallback` is returned when there are no items.
+    static func blendedLuminance(
+        atFractionalSlot value: Double,
+        itemLuminances: [Double],
+        snapsFraction: Bool,
+        fallback: Double
+    ) -> Double {
+        guard let position = itemPosition(
+            forFractionalSlot: value,
+            itemCount: itemLuminances.count,
+            snapsFraction: snapsFraction
+        ) else {
+            return fallback
+        }
+        return interpolated(
+            from: itemLuminances[position.lowerIndex],
+            to: itemLuminances[position.upperIndex],
+            fraction: position.fraction
+        )
+    }
+
     // MARK: - Backdrops
 
     /// What fills the band behind an item.

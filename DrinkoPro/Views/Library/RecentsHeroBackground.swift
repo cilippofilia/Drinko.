@@ -33,6 +33,21 @@ extension RecentsHeroLayout.Backdrop {
         return base.mix(with: tint, by: StickerImageView.tintOpacity)
     }
 
+    /// How light the backdrop looks, for choosing the text color. Photos are always darkened by
+    /// their scrim, so they count as dark. The colors are resolved against an environment with
+    /// only the color scheme set, which keeps callers from depending on the whole environment.
+    func luminance(in colorScheme: ColorScheme) -> Double {
+        if photoURL != nil { return 0.1 }
+        var environment = EnvironmentValues()
+        environment.colorScheme = colorScheme
+        let resolved = color(in: colorScheme).resolve(in: environment)
+        return RecentsHeroLayout.luminance(
+            red: Double(resolved.red),
+            green: Double(resolved.green),
+            blue: Double(resolved.blue)
+        )
+    }
+
     /// The photo behind this backdrop, if it has one.
     var photoURL: URL? {
         guard case .photo(let url) = self else { return nil }
@@ -45,7 +60,8 @@ extension RecentsHeroLayout.Backdrop {
 ///
 /// Tinted backdrops are built like the sticker cards (white with the tint washed over it) and
 /// blend continuously with `Color.mix`, so swiping drifts the band from one tint to the
-/// next. Photo wallpapers are heavily blurred copies of the item's photo, cross-faded by the same
+/// next. Photo wallpapers are heavily blurred copies of the item's photo (blurred once, ahead of time; see
+/// `RecentsHeroWallpaperCache`), cross-faded by the same
 /// fraction, over the neutral tone so there's something to look at while they load. A color next
 /// to a photo simply cross-fades. Reduce Motion doesn't remove the change, but the caller passes
 /// a fraction that jumps rather than glides (see `RecentsHeroView`), so it reads as a cross-fade.
@@ -61,11 +77,6 @@ struct RecentsHeroBackground: View {
     /// 0 shows `lower`; 1 shows `upper`.
     let fraction: Double
 
-    /// How blurred the wallpaper is. Enough to dissolve the photo into a wash of its colors.
-    private let blurRadius: CGFloat = 50
-    /// Scaling the photo up pushes the blur's soft edges out of frame and covers the area
-    /// stretched above the band.
-    private let wallpaperScale: CGFloat = 2.4
     /// How much the wallpaper is darkened so white text stays readable on bright photos.
     private let scrimOpacity = 0.4
 
@@ -89,9 +100,7 @@ struct RecentsHeroBackground: View {
     @ViewBuilder
     private func wallpaper(for backdrop: RecentsHeroLayout.Backdrop) -> some View {
         if let url = backdrop.photoURL {
-            CachedRemoteImage(url: url, contentMode: .fill)
-                .scaleEffect(wallpaperScale, anchor: .bottom)
-                .blur(radius: blurRadius, opaque: true)
+            RecentsHeroWallpaper(url: url)
                 .overlay { Color.black.opacity(scrimOpacity) }
         }
     }

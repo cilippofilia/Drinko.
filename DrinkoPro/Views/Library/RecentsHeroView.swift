@@ -34,12 +34,29 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     @State private var currentSlot: Int?
     /// The carousel's width, which sizes the items and the margins that centre them.
     @State private var containerWidth = 0.0
-    /// The scroll view's horizontal offset, measured from the first slot being centred.
-    @State private var scrollOffset = 0.0
+    /// The per-frame scroll position. The body never reads its position, only its text style,
+    /// so a swipe re-evaluates the body only when the text flips between light and dark.
+    @State private var scrollState = RecentsHeroScrollState()
+    /// Each item's card model and backdrop, worked out when the items change rather than on
+    /// every frame.
+    @State private var entries: [RecentsHeroEntry]
 
     /// The hero text's size. A scaled metric keeps it following Dynamic Type while being far
     /// larger than any text style.
     @ScaledMetric(relativeTo: .largeTitle) private var heroFontSize = 56.0
+
+    init(
+        title: String,
+        items: [Item],
+        cardModel: @escaping @MainActor (Item) -> LibraryCardModel,
+        onOpen: @escaping @MainActor (Item) -> Void
+    ) {
+        self.title = title
+        self.items = items
+        self.cardModel = cardModel
+        self.onOpen = onOpen
+        _entries = State(initialValue: items.map { RecentsHeroEntry(model: cardModel($0)) })
+    }
 
     private var slotCount: Int {
         RecentsHeroLayout.slotCount(count: items.count)
@@ -59,63 +76,33 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         items.indices.contains(currentIndex) ? items[currentIndex] : nil
     }
 
+    /// The centred item's name, empty when there is none.
+    private var currentTitle: String {
+        entries.indices.contains(currentIndex) ? entries[currentIndex].model.title : ""
+    }
+
     private var itemWidth: Double {
         RecentsHeroLayout.itemWidth(forContainerWidth: containerWidth)
     }
 
-    /// How far, in slots, the scroll view is from the first slot. Zero until the width is known.
-    private var position: RecentsHeroLayout.Position? {
-        let fractionalSlot = itemWidth > 0 ? scrollOffset / itemWidth : 0
-        return RecentsHeroLayout.position(forFractionalIndex: fractionalSlot, count: slotCount)
-    }
-
-    private func backdrop(atSlot slot: Int) -> RecentsHeroLayout.Backdrop {
-        let index = RecentsHeroLayout.itemIndex(forSlot: slot, count: items.count)
-        guard items.indices.contains(index) else { return .neutral }
-        return RecentsHeroLayout.backdrop(for: cardModel(items[index]).image)
-    }
-
-    /// The fraction between the two backdrops. With Reduce Motion it snaps to the nearer one
-    /// (and the change is animated), so the band cross-fades instead of drifting with the finger.
-    private var backdropFraction: Double {
-        let fraction = position?.fraction ?? 0
-        return reduceMotion ? fraction.rounded() : fraction
-    }
-
-    private var lowerBackdrop: RecentsHeroLayout.Backdrop {
-        backdrop(atSlot: position?.lowerIndex ?? homeSlot)
-    }
-
-    private var upperBackdrop: RecentsHeroLayout.Backdrop {
-        backdrop(atSlot: position?.upperIndex ?? homeSlot)
-    }
-
-    /// Whether the text over the band should be light or dark, from the blended backdrop.
-    private var textStyle: RecentsHeroLayout.TextStyle {
-        RecentsHeroLayout.textStyle(forLuminance: luminance)
-    }
-
-    private var luminance: Double {
-        let lower = backdropLuminance(lowerBackdrop)
-        let upper = backdropLuminance(upperBackdrop)
-        return lower + (upper - lower) * backdropFraction
-    }
-
-    @Environment(\.self) private var environment
-
-    /// Photos are always darkened by their scrim, so they count as dark.
-    private func backdropLuminance(_ backdrop: RecentsHeroLayout.Backdrop) -> Double {
-        if backdrop.photoURL != nil { return 0.1 }
-        let resolved = backdrop.color(in: colorScheme).resolve(in: environment)
-        return RecentsHeroLayout.luminance(
-            red: Double(resolved.red),
-            green: Double(resolved.green),
-            blue: Double(resolved.blue)
-        )
-    }
-
     private var textColor: Color {
-        textStyle == .light ? .white : .black.opacity(0.85)
+        scrollState.textStyle == .light ? .white : .black.opacity(0.85)
+    }
+
+    /// Rebuilds the per-item data after the items or the appearance change.
+    private func refreshEntries() {
+        entries = items.map { RecentsHeroEntry(model: cardModel($0)) }
+        configureScrollState()
+    }
+
+    /// Passes the scroll state what it needs to pick the text style on each frame.
+    private func configureScrollState() {
+        scrollState.configure(
+            itemWidth: itemWidth,
+            itemLuminances: entries.map { $0.backdrop.luminance(in: colorScheme) },
+            fallbackLuminance: RecentsHeroLayout.Backdrop.neutral.luminance(in: colorScheme),
+            snapsFraction: reduceMotion
+        )
     }
 
     var body: some View {
@@ -149,10 +136,21 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                 // centre slot cut out. The centred item covers the name; its neighbours sit
                 // behind it.
                 .background(alignment: .topLeading) {
-                    heroName
+                    RecentsHeroName(
+                        text: currentTitle,
+                        heroID: currentIndex,
+                        fontSize: heroFontSize,
+                        textColor: textColor
+                    )
                 }
                 .overlay(alignment: .topLeading) {
-                    heroName
+                    RecentsHeroName(
+                        text: currentTitle,
+                        // The item, not the slot, so re-centring on a copy doesn't animate.
+                        heroID: currentIndex,
+                        fontSize: heroFontSize,
+                        textColor: textColor
+                    )
                         .mask {
                             RecentsHeroCentreCutout(width: itemWidth)
                         }
@@ -162,33 +160,38 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         }
         .frame(maxWidth: .infinity)
         .background {
-            // Padding by a negative amount makes the backdrop taller than the band without
-            // affecting layout, so it reaches behind the navigation bar and over a pull-down.
-            RecentsHeroBackground(lower: lowerBackdrop, upper: upperBackdrop, fraction: backdropFraction)
-                .padding(.top, -Self.backdropExtension)
-                .animation(reduceMotion ? .easeInOut : nil, value: backdropFraction)
+            RecentsHeroScrollingBackground(scrollState: scrollState, backdrops: entries.map(\.backdrop))
         }
         .onAppear {
             if currentSlot == nil {
                 currentSlot = homeSlot
             }
+            refreshEntries()
         }
         .onChange(of: items) {
             currentSlot = homeSlot
+            refreshEntries()
+        }
+        .onChange(of: colorScheme) {
+            configureScrollState()
+        }
+        .onChange(of: reduceMotion) {
+            configureScrollState()
+        }
+        .onChange(of: itemWidth) {
+            configureScrollState()
         }
     }
-
-    /// How far above the band the backdrop reaches: more than the navigation bar, large title
-    /// and search field together, with room for a long pull-down.
-    private static var backdropExtension: CGFloat { 600 }
 
     private var carousel: some View {
         ScrollView(.horizontal) {
             LazyHStack(spacing: 0) {
-                ForEach(0..<slotCount, id: \.self) { slot in
-                    let item = items[RecentsHeroLayout.itemIndex(forSlot: slot, count: items.count)]
-                    RecentsHeroItem(model: cardModel(item)) {
-                        select(slot: slot, item: item)
+                // Laid out from `entries`, which catches up with `items` one update later, so
+                // the slots and the models they show always agree.
+                ForEach(0..<RecentsHeroLayout.slotCount(count: entries.count), id: \.self) { slot in
+                    let index = RecentsHeroLayout.itemIndex(forSlot: slot, count: entries.count)
+                    RecentsHeroItem(model: entries[index].model) {
+                        select(slot: slot, index: index)
                     }
                     .frame(width: itemWidth)
                     .visualEffect { [itemWidth, reduceMotion] content, proxy in
@@ -200,7 +203,6 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                         let progress = itemWidth > 0 ? min(distance / itemWidth, 1) : 0
                         return content
                             .scaleEffect(reduceMotion ? 1 : 1 - 0.3 * progress)
-                            .opacity(1 - 0.25 * progress)
                     }
                 }
             }
@@ -228,7 +230,7 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         .onScrollGeometryChange(for: Double.self) { geometry in
             geometry.contentOffset.x + geometry.contentInsets.leading
         } action: { _, newValue in
-            scrollOffset = newValue
+            scrollState.scroll(toOffset: newValue)
         }
         .onGeometryChange(for: Double.self) { proxy in
             proxy.size.width
@@ -239,27 +241,17 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         .padding(.vertical)
     }
 
-    /// The centred item's name. Shared by the copy behind the items and the one in front.
-    private var heroName: RecentsHeroName<Int> {
-        RecentsHeroName(
-            text: currentItem.map { cardModel($0).title } ?? "",
-            // The item, not the slot, so re-centring on a copy doesn't animate.
-            heroID: currentIndex,
-            fontSize: heroFontSize,
-            textColor: textColor
-        )
-    }
-
     private var accessibilityLabelText: Text {
-        guard let currentItem else { return Text(title) }
-        return Text("\(title), \(currentIndex + 1) of \(items.count), \(cardModel(currentItem).title)")
+        guard currentItem != nil else { return Text(title) }
+        return Text("\(title), \(currentIndex + 1) of \(items.count), \(currentTitle)")
     }
 
     /// Opens the tapped item if it's the centred one; otherwise centres it, so a tap on a
     /// smaller neighbour never opens something other than what the hero text names.
-    private func select(slot: Int, item: Item) {
+    private func select(slot: Int, index: Int) {
+        guard items.indices.contains(index) else { return }
         if slot == currentSlot {
-            onOpen(item)
+            onOpen(items[index])
         } else {
             scroll(to: slot)
         }

@@ -18,23 +18,9 @@ struct RecentsHeroItem: View {
 
     var body: some View {
         Button(action: onTap) {
-            artwork
+            RecentsHeroArtwork(model: model)
                 .aspectRatio(1, contentMode: .fit)
         }
         .buttonStyle(.libraryCard)
-    }
-
-    @ViewBuilder
-    private var artwork: some View {
-        switch model.image {
-        case .sticker(let url, _):
-            // `showsBackdrop: false` lets the sticker fill its frame on its own.
-            StickerImageView(url: url, showsBackdrop: false)
-                .shadow(color: .black.opacity(0.3), radius: 14, y: 8)
-        default:
-            LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
-                .clipShape(.rect(cornerRadius: libraryCardCornerRadius, style: .continuous))
-                .shadow(color: .black.opacity(0.25), radius: 12, y: 6)
-        }
     }
 }
