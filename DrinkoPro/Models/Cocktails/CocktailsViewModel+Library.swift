@@ -93,13 +93,6 @@ extension CocktailsViewModel {
             return .remote(URL(string: cocktail.pic))
         }
 
-        switch cocktail.glass {
-        case "wine":
-            return .symbol("wineglass")
-        case "coffee mug", "julep cup":
-            return .asset("julep")
-        default:
-            return .asset(cocktail.image)
-        }
+        return cocktail.glassArtwork
     }
 }

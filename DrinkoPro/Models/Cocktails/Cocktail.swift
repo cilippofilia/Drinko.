@@ -39,6 +39,18 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
         glass
     }
 
+    /// The glass artwork shown for a cocktail without a sticker or photo, like the user's own.
+    var glassArtwork: LibraryImage {
+        switch glass {
+        case "wine":
+            .symbol("wineglass")
+        case "coffee mug", "julep cup":
+            .asset("julep")
+        default:
+            .asset(image)
+        }
+    }
+
     /// Whether this cocktail was created by the user, as opposed to being one of the app's
     /// bundled drinks.
     var isUserCreated: Bool {
