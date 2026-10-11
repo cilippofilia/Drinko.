@@ -33,7 +33,8 @@ struct CocktailImageHeader: View {
                 LibraryCardBlurBand(fadeHeight: blurFadeHeight, solidHeight: solidBlurHeight)
             }
             .overlay(alignment: .bottom) {
-                HStack(alignment: .bottom) {
+                // The icons sit on the name's last line, so they read as part of the title.
+                HStack(alignment: .lastTextBaseline) {
                     Text(cocktail.name)
                         .font(.title.bold())
                         .lineLimit(2)
