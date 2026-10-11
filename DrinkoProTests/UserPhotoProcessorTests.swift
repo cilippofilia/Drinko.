@@ -7,8 +7,14 @@ import UniformTypeIdentifiers
 
 @Suite("UserPhotoProcessor")
 struct UserPhotoProcessorTests {
-    /// A solid-colour JPEG of the given size.
-    private func jpeg(width: Int, height: Int) throws -> Data {
+    private struct ImageInfo {
+        let width: Int
+        let height: Int
+        let type: String?
+    }
+
+    /// A solid-colour JPEG of the given size, optionally tagged with an EXIF orientation.
+    private func jpeg(width: Int, height: Int, orientation: Int? = nil) throws -> Data {
         let context = try #require(CGContext(
             data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0,
             space: CGColorSpaceCreateDeviceRGB(),
@@ -18,16 +24,19 @@ struct UserPhotoProcessorTests {
         context.fill(CGRect(x: 0, y: 0, width: width, height: height))
         let image = try #require(context.makeImage())
         let data = NSMutableData()
-        let destination = try #require(CGImageDestinationCreateWithData(data, UTType.jpeg.identifier as CFString, 1, nil))
-        CGImageDestinationAddImage(destination, image, nil)
+        let destination = try #require(CGImageDestinationCreateWithData(
+            data, UTType.jpeg.identifier as CFString, 1, nil
+        ))
+        let properties = orientation.map { [kCGImagePropertyOrientation: $0] as CFDictionary }
+        CGImageDestinationAddImage(destination, image, properties)
         #expect(CGImageDestinationFinalize(destination))
         return data as Data
     }
 
-    private func pixelSize(of data: Data) throws -> (width: Int, height: Int, type: String?) {
+    private func pixelSize(of data: Data) throws -> ImageInfo {
         let source = try #require(CGImageSourceCreateWithData(data as CFData, nil))
         let image = try #require(CGImageSourceCreateImageAtIndex(source, 0, nil))
-        return (image.width, image.height, CGImageSourceGetType(source) as String?)
+        return ImageInfo(width: image.width, height: image.height, type: CGImageSourceGetType(source) as String?)
     }
 
     @Test func downscalesLargePhotosToTheStoredMaximum() async throws {
@@ -52,8 +61,17 @@ struct UserPhotoProcessorTests {
     }
 
     @Test func thumbnailsFitTheRequestedSize() throws {
-        let thumbnail = try #require(UserPhotoProcessor.thumbnail(from: jpeg(width: 1600, height: 1200), maxPixelSize: 400))
+        let data = try jpeg(width: 1600, height: 1200)
+        let thumbnail = try #require(UserPhotoProcessor.thumbnail(from: data, maxPixelSize: 400))
         #expect(max(thumbnail.width, thumbnail.height) == 400)
         #expect(UserPhotoProcessor.thumbnail(from: Data("nope".utf8), maxPixelSize: 400) == nil)
+    }
+
+    @Test func appliesEXIFOrientation() async throws {
+        // Orientation 6 = rotate 90 degrees clockwise to display, so a 400x300 capture becomes 300x400.
+        let processed = try await UserPhotoProcessor.processedJPEG(from: jpeg(width: 400, height: 300, orientation: 6))
+        let size = try pixelSize(of: processed)
+        #expect(size.width == 300)
+        #expect(size.height == 400)
     }
 }
