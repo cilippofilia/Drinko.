@@ -2543,6 +2543,73 @@
                 "text": "Fine strain the cocktail inside the glass, add fresh cubed ice and enjoy!"
             }
         ]
+    },
+    {
+        "id":"rossa-sour",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the cocktail shaker"
+            },
+            {
+                "step": "Step 2",
+                "text": "Shake hard to emulsify your foaming agent. Add fresh cubed ice to the shaker, lock it, and shake hard for 8 to 12 seconds (until it is frosty outside)"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fine strain the cocktail into the glass, add your garnish and enjoy"
+            }
+        ]
+    },
+    {
+        "id":"garibaldi",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Dry blend the orange juice (freshly squeezed is preferred) without ice to make it fluffy"
+            },
+            {
+                "step": "Step 2",
+                "text": "Pour Campari, sugar syrup and half of the orange juice into glass over 2 cubes of ice and stir"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fill glass with more ice and fill with rest of fluffy orange juice"
+            }
+        ]
+    },
+    {
+        "id":"blood-orange-garibaldi",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Dry blend the blood orange juice (freshly squeezed is preferred) without ice to make it fluffy"
+            },
+            {
+                "step": "Step 2",
+                "text": "Pour Campari, sugar syrup and half of the blood orange juice into glass over 2 cubes of ice and stir"
+            },
+            {
+                "step": "Step 3",
+                "text": "Fill glass with more ice and fill with rest of fluffy blood orange juice"
+            }
+        ]
+    },
+    {
+        "id":"milano-torino",
+        "procedure": [
+            {
+                "step": "Step 1",
+                "text": "Add all the ingredients into the mixing glass"
+            },
+            {
+                "step": "Step 2",
+                "text": "Add fresh cubed ice to the mixing glass and stir the cocktail between 40 to 60 seconds"
+            },
+            {
+                "step": "Step 3",
+                "text": "Strain the cocktail inside the glass, garnish and enjoy!"
+            }
+        ]
     }
 ]
-
