@@ -74,12 +74,14 @@ struct LibraryView<Item: Identifiable & Hashable, MenuContent: View>: View {
                 }
 
                 ForEach(sections) { section in
+                    let isCollapsed = showsSectionHeaders
+                        && collapsedSections.isCollapsed(section.id, whileSearching: isSearching)
+
                     LibrarySectionView(
                         section: section,
                         layout: layout,
                         showsHeader: showsSectionHeaders,
-                        isCollapsed: showsSectionHeaders
-                            && collapsedSections.isCollapsed(section.id, whileSearching: isSearching),
+                        isCollapsed: isCollapsed,
                         isCollapsible: showsSectionHeaders && !isSearching,
                         selection: selection,
                         onToggleCollapsed: {
@@ -92,7 +94,8 @@ struct LibraryView<Item: Identifiable & Hashable, MenuContent: View>: View {
                         contextMenu: contextMenu
                     )
                     .padding(.horizontal)
-                    .padding(.bottom)
+                    // Collapsed headers stack closely; their 44-point tap targets already space them.
+                    .padding(.bottom, isCollapsed ? 0 : nil)
                 }
             }
             .animation(collapseAndLayoutAnimation, value: layout)
