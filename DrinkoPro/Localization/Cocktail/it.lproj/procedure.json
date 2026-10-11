@@ -2540,5 +2540,73 @@
                 "text": "Filtra finemente il cocktail nel bicchiere, aggiungi ghiaccio fresco a cubetti e goditi il cocktail!"
             }
         ]
+    },
+    {
+        "id":"rossa-sour",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nello shaker per cocktail"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Agita energicamente per emulsionare l'agente schiumogeno. Aggiungi ghiaccio fresco a cubetti nello shaker, chiudilo e agita vigorosamente per 8-12 secondi (finché non sarà ghiacciato all'esterno)"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtra finemente il cocktail nel bicchiere, aggiungi la guarnizione e gustalo"
+            }
+        ]
+    },
+    {
+        "id":"garibaldi",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Frulla il succo d'arancia (preferibilmente spremuto fresco) senza ghiaccio per renderlo spumoso"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Versa il Campari, lo sciroppo di zucchero e metà del succo d'arancia nel bicchiere su 2 cubetti di ghiaccio e mescola"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Riempi il bicchiere con altro ghiaccio e completa con il resto del succo d'arancia spumoso"
+            }
+        ]
+    },
+    {
+        "id":"blood-orange-garibaldi",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Frulla il succo d'arancia rossa (preferibilmente spremuto fresco) senza ghiaccio per renderlo spumoso"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Versa il Campari, lo sciroppo di zucchero e metà del succo d'arancia rossa nel bicchiere su 2 cubetti di ghiaccio e mescola"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Riempi il bicchiere con altro ghiaccio e completa con il resto del succo d'arancia rossa spumoso"
+            }
+        ]
+    },
+    {
+        "id":"milano-torino",
+        "procedure": [
+            {
+                "step": "Passo 1",
+                "text": "Aggiungi tutti gli ingredienti nel mixing glass"
+            },
+            {
+                "step": "Passo 2",
+                "text": "Aggiungi ghiaccio fresco a cubetti nel mixing glass e mescola il cocktail per 40-60 secondi"
+            },
+            {
+                "step": "Passo 3",
+                "text": "Filtra il cocktail nel bicchiere, guarnisci e gustalo!"
+            }
+        ]
     }
 ]
