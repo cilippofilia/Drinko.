@@ -18,6 +18,7 @@ struct MacUserCocktailForm: View {
     private let unitOptions: [String]
     private let editingCocktail: Cocktail?
     private let editingProcedureSteps: [String]
+    private let originalPhotoData: Data?
 
     @State private var name = ""
     @State private var method: String
@@ -27,6 +28,7 @@ struct MacUserCocktailForm: View {
     @State private var extra = ""
     @State private var ingredientDrafts: [IngredientDraft]
     @State private var procedureDrafts: [String]
+    @State private var photoData: Data?
     @State private var alertMessage: String?
 
     init(
@@ -35,7 +37,8 @@ struct MacUserCocktailForm: View {
         iceOptions: [String],
         unitOptions: [String],
         editingCocktail: Cocktail? = nil,
-        editingProcedureSteps: [String] = []
+        editingProcedureSteps: [String] = [],
+        editingPhotoData: Data? = nil
     ) {
         self.methodOptions = methodOptions
         self.glassOptions = glassOptions
@@ -43,6 +46,8 @@ struct MacUserCocktailForm: View {
         self.unitOptions = unitOptions
         self.editingCocktail = editingCocktail
         self.editingProcedureSteps = editingProcedureSteps
+        self.originalPhotoData = editingPhotoData
+        _photoData = State(initialValue: editingPhotoData)
 
         let initialState = Self.makeInitialState(
             methodOptions: methodOptions,
@@ -66,6 +71,7 @@ struct MacUserCocktailForm: View {
         NavigationStack {
             ScrollView {
                 Form {
+                    UserCocktailPhotoSection(photoData: $photoData)
                     baseInfoSection
                     ingredientsSection
                     procedureSection
@@ -341,6 +347,12 @@ extension MacUserCocktailForm {
         )
     }
 
+    /// What saving should do with the photo: nothing if it's untouched, so it isn't re-encoded.
+    private var photoChange: UserCocktailDetails.PhotoChange {
+        guard photoData != originalPhotoData else { return .unchanged }
+        return photoData.map { .set($0) } ?? .remove
+    }
+
     private func saveCocktail() {
         if let saveDisabledReason {
             alertMessage = saveDisabledReason
@@ -370,7 +382,8 @@ extension MacUserCocktailForm {
             ice: ice,
             extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
             ingredients: ingredients,
-            procedureSteps: procedureSteps
+            procedureSteps: procedureSteps,
+            photoChange: photoChange
         )
 
         if let editingCocktail {

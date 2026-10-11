@@ -143,7 +143,8 @@ struct CocktailDetailView: View {
                     iceOptions: viewModel.iceOptions(),
                     unitOptions: viewModel.unitOptions(),
                     editingCocktail: activeCocktail,
-                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail)
+                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail),
+                    editingPhotoData: viewModel.photoData(for: activeCocktail)
                 )
                 #else
                 MacUserCocktailForm(
@@ -152,7 +153,8 @@ struct CocktailDetailView: View {
                     iceOptions: viewModel.iceOptions(),
                     unitOptions: viewModel.unitOptions(),
                     editingCocktail: activeCocktail,
-                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail)
+                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail),
+                    editingPhotoData: viewModel.photoData(for: activeCocktail)
                 )
                 #endif
             }
