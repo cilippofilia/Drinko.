@@ -23,6 +23,9 @@ class UserCreatedCocktail {
     var procedure: UserProcedure?
     var creationDate: Date = Date()
     var lastUpdated: Date?
+    /// The user's photo of the drink, already downscaled to JPEG by `UserPhotoProcessor`.
+    /// Stored outside the database row and synced as a CloudKit asset.
+    @Attribute(.externalStorage) var photoData: Data?
 
     init(
         id: String? = nil,

@@ -103,6 +103,7 @@
 		D1C5B0022F00000000000004 /* UserCocktailDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000004 /* UserCocktailDetails.swift */; };
 		D1C5B0022F00000000000005 /* UserCocktailFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000005 /* UserCocktailFormState.swift */; };
 		D1C5B0022F00000000000006 /* CocktailsViewModel+Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */; };
+		D1C5B0022F0000000000AA01 /* CocktailsViewModel+Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F0000000000AA01 /* CocktailsViewModel+Photos.swift */; };
 		D1C5B0022F00000000000007 /* MainSpirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000007 /* MainSpirit.swift */; };
 		D1C5B0022F00000000000008 /* CocktailUnitPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */; };
 		D1C5B0032F00000000000001 /* CocktailListSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000001 /* CocktailListSource.swift */; };
@@ -110,6 +111,7 @@
 		D1C5B0032F00000000000004 /* UserCocktailDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000004 /* UserCocktailDetails.swift */; };
 		D1C5B0032F00000000000005 /* UserCocktailFormState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000005 /* UserCocktailFormState.swift */; };
 		D1C5B0032F00000000000006 /* CocktailsViewModel+Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */; };
+		D1C5B0032F0000000000AA01 /* CocktailsViewModel+Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F0000000000AA01 /* CocktailsViewModel+Photos.swift */; };
 		D1C5B0032F00000000000007 /* MainSpirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000007 /* MainSpirit.swift */; };
 		D1C5B0032F00000000000008 /* CocktailUnitPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */; };
 		D1C5B0F22F00000000000001 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0F12F00000000000001 /* ToolsView.swift */; };
@@ -227,6 +229,7 @@
 		D1C5B0012F00000000000004 /* UserCocktailDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCocktailDetails.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000005 /* UserCocktailFormState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCocktailFormState.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailsViewModel+Library.swift"; sourceTree = "<group>"; };
+		D1C5B0012F0000000000AA01 /* CocktailsViewModel+Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CocktailsViewModel+Photos.swift"; sourceTree = "<group>"; };
 		D1C5B0012F00000000000007 /* MainSpirit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSpirit.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailUnitPreference.swift; sourceTree = "<group>"; };
 		D1C5B0F12F00000000000001 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
@@ -415,6 +418,7 @@
 				182159092F3EA2E7002C1046 /* UserProcedure.swift */,
 				1821590C2F3EA342002C1046 /* UserCocktailPreviewer.swift */,
 				D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */,
+				D1C5B0012F0000000000AA01 /* CocktailsViewModel+Photos.swift */,
 				D1C5B0012F00000000000007 /* MainSpirit.swift */,
 				D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */,
 			);
@@ -897,6 +901,7 @@
 				D1C5B1012F00000000000002 /* CocktailsFilterEmptyState.swift in Sources */,
 				D1C5B1002F00000000000002 /* CocktailsLibraryContent.swift in Sources */,
 				D1C5B0022F00000000000006 /* CocktailsViewModel+Library.swift in Sources */,
+				D1C5B0022F0000000000AA01 /* CocktailsViewModel+Photos.swift in Sources */,
 				D1C5B0022F00000000000007 /* MainSpirit.swift in Sources */,
 				D1C5B0022F00000000000008 /* CocktailUnitPreference.swift in Sources */,
 				18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */,
@@ -967,6 +972,7 @@
 				D1C5B1012F00000000000003 /* CocktailsFilterEmptyState.swift in Sources */,
 				D1C5B1002F00000000000003 /* CocktailsLibraryContent.swift in Sources */,
 				D1C5B0032F00000000000006 /* CocktailsViewModel+Library.swift in Sources */,
+				D1C5B0032F0000000000AA01 /* CocktailsViewModel+Photos.swift in Sources */,
 				D1C5B0032F00000000000007 /* MainSpirit.swift in Sources */,
 				D1C5B0032F00000000000008 /* CocktailUnitPreference.swift in Sources */,
 				18481D272C20E8120083FD5A /* AddCategoryView.swift in Sources */,

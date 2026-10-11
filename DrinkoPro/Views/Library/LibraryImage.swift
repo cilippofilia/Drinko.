@@ -15,4 +15,7 @@ enum LibraryImage: Hashable {
     case asset(String)
     /// An SF Symbol name.
     case symbol(String)
+    /// The user's own photo of their cocktail, drawn by `UserPhotoView`. `revision` changes
+    /// whenever the photo does, so views showing the old one refresh.
+    case userPhoto(id: String, revision: Int)
 }

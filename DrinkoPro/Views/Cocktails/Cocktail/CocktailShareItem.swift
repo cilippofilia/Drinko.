@@ -85,7 +85,7 @@ nonisolated struct CocktailShareItem: Transferable {
             }
         case .asset, .symbol:
             return .glass(artwork, tint: tint)
-        case .sticker(nil, _), .remote(nil):
+        case .sticker(nil, _), .remote(nil), .userPhoto:
             break
         }
         return .glass(cocktail.glassArtwork, tint: tint)

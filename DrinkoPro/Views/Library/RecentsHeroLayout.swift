@@ -170,7 +170,7 @@ enum RecentsHeroLayout {
             .color(tint)
         case .remote(let url?):
             .photo(url)
-        case .sticker, .remote, .asset, .symbol:
+        case .sticker, .remote, .asset, .symbol, .userPhoto:
             .neutral
         }
     }

@@ -39,6 +39,9 @@ struct LibraryImageView: View {
                         .scaledToFill()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
+            case .userPhoto:
+                // Temporary: replaced once the photo view exists.
+                Color.clear
             case .symbol(let name):
                 Image(systemName: name)
                     .resizable()

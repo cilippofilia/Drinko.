@@ -15,11 +15,13 @@ struct CocktailHeaderImage: View {
     var bottomInset: CGFloat = 0
 
     var body: some View {
-        if !cocktail.hasPicture {
+        if !viewModel.hasPicture(cocktail) {
             ContentUnavailableView {
                 Label("No Photo", systemImage: "photo.badge.plus")
             } description: {
                 Text("Add a photo of your cocktail to show it here.")
+            } actions: {
+                Button("Add Media") { }
             }
             .padding(.bottom, bottomInset)
             .frame(maxWidth: .infinity, minHeight: imageFrameHeight)
@@ -38,10 +40,12 @@ struct CocktailHeaderImage: View {
                     aspectRatio: .fit
                 )
                 .background(Color.white)
-            case let artwork:
-                TintedGlassArtwork(artwork: artwork, tint: viewModel.stickerTint(for: cocktail))
-                    .frame(height: imageFrameHeight)
-                    .frame(maxWidth: .infinity)
+            case .userPhoto:
+                // Temporary: the photo itself is drawn once the views are wired up.
+                EmptyView()
+            case .asset, .symbol:
+                // Only cocktails without a picture get glass art, and they take the branch above.
+                EmptyView()
             }
         }
     }

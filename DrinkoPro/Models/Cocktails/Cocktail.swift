@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 23/04/2023.
 //
 
+import CoreGraphics
 import SwiftData
 import SwiftUI
 
@@ -58,12 +59,6 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
     /// bundled drinks.
     var isUserCreated: Bool {
         id.hasPrefix("user-")
-    }
-
-    /// Whether there's a picture of the drink to show. Bundled drinks have a sticker or photo;
-    /// the user's own cocktails don't yet.
-    var hasPicture: Bool {
-        !isUserCreated
     }
 
     /// Drinks whose sticker is filed under another name.
@@ -154,6 +149,13 @@ class CocktailsViewModel {
 
     /// Cached sticker tint per cocktail id. See `CocktailsViewModel+Library`.
     @ObservationIgnored var stickerTintCache: [String: MainSpirit?] = [:]
+
+    /// IDs of user cocktails that have a photo, refreshed whenever user cocktails reload.
+    private(set) var cocktailIDsWithPhotos: Set<String> = []
+    /// Bumped each time a cocktail's photo changes, so views and caches drop the old one.
+    var photoRevisions: [String: Int] = [:]
+    /// Decoded photo thumbnails keyed by "id#revision#maxPixelSize".
+    @ObservationIgnored var photoThumbnailCache: [String: CGImage] = [:]
 
     /// Cached id → cocktail lookup for the bundled drinks. See `CocktailsViewModel+Library`.
     @ObservationIgnored var bundledDrinksByIDCache: [String: Cocktail]?
@@ -385,6 +387,7 @@ class CocktailsViewModel {
         if let procedure = newCocktail.procedure {
             procedure.cocktail = newCocktail
         }
+        if case .set(let data) = details.photoChange { newCocktail.photoData = data }
         modelContext.insert(newCocktail)
         saveUserCocktails()
     }
@@ -408,6 +411,16 @@ class CocktailsViewModel {
         existing.ingredients?.forEach { $0.cocktail = existing }
         existing.procedure = makeUserProcedure(from: details.procedureSteps)
         existing.procedure?.cocktail = existing
+        switch details.photoChange {
+        case .unchanged:
+            break
+        case .set(let data):
+            existing.photoData = data
+            photoDidChange(for: existing.id)
+        case .remove:
+            existing.photoData = nil
+            photoDidChange(for: existing.id)
+        }
         saveUserCocktails()
     }
 
@@ -417,11 +430,12 @@ class CocktailsViewModel {
             return
         }
         stickerTintCache[existing.id] = nil
+        photoDidChange(for: existing.id)
         modelContext.delete(existing)
         saveUserCocktails()
     }
 
-    private func saveUserCocktails() {
+    func saveUserCocktails() {
         guard let modelContext else { return }
         do {
             try modelContext.save()
@@ -433,6 +447,7 @@ class CocktailsViewModel {
 
     private func refreshUserMappings() {
         userCocktails = userCreatedCocktails.map { $0.cocktail }
+        cocktailIDsWithPhotos = Set(userCreatedCocktails.filter { $0.photoData != nil }.map(\.id))
         userProcedures = userCreatedCocktails.compactMap { userCocktail in
             guard let procedure = userCocktail.procedure else { return nil }
             let sortedSteps = (procedure.steps ?? []).sorted { $0.order < $1.order }

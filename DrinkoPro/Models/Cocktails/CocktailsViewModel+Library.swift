@@ -44,7 +44,7 @@ extension CocktailsViewModel {
     /// The recent cocktails for the "Last Viewed" carousel, which is all pictures, so it skips
     /// cocktails without one.
     func recentCocktailsWithPictures(from ids: [String]) -> [Cocktail] {
-        recentItems(from: ids).filter(\.hasPicture)
+        recentItems(from: ids).filter { hasPicture($0) }
     }
 
     /// Sorts already-grouped keys by `sortOption`, keeping "#" last for A→Z/Z→A. Shared by
@@ -99,6 +99,9 @@ extension CocktailsViewModel {
             return .remote(URL(string: cocktail.pic))
         }
 
+        if hasPhoto(cocktail) {
+            return .userPhoto(id: cocktail.id, revision: photoRevision(for: cocktail.id))
+        }
         return cocktail.glassArtwork
     }
 }

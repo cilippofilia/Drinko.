@@ -93,8 +93,8 @@ struct CocktailsLibraryTests {
         let viewModel = CocktailsViewModel()
         let bundled = try #require(viewModel.listOfCocktails.first)
 
-        #expect(bundled.hasPicture)
-        #expect(!userCocktail(glass: "coupe").hasPicture)
+        #expect(viewModel.hasPicture(bundled))
+        #expect(!viewModel.hasPicture(userCocktail(glass: "coupe")))
     }
 
     @Test func lastViewedSkipsCocktailsWithoutPictures() throws {

@@ -10,6 +10,8 @@ import SwiftUI
 /// The cocktail's artwork with its name on a blurred band in the bottom corner, like the
 /// library cards, and the Favorite/History buttons in the opposite corner.
 struct CocktailImageHeader: View {
+    @Environment(CocktailsViewModel.self) private var viewModel
+
     let cocktail: Cocktail
     let history: History?
 
@@ -32,13 +34,13 @@ struct CocktailImageHeader: View {
     /// Pictures are always light, so the name and icons stay dark over them in Dark Mode too.
     /// Without a picture the header follows the system appearance.
     private var titleColorScheme: ColorScheme {
-        cocktail.hasPicture ? .light : colorScheme
+        viewModel.hasPicture(cocktail) ? .light : colorScheme
     }
 
     var body: some View {
         CocktailHeaderImage(cocktail: cocktail, bottomInset: rowHeight)
             .overlay {
-                if cocktail.hasPicture {
+                if viewModel.hasPicture(cocktail) {
                     LibraryCardBlurBand(fadeHeight: blurFadeHeight, solidHeight: solidBlurHeight)
                 }
             }
