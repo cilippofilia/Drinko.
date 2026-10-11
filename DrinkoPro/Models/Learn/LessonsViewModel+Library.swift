@@ -22,6 +22,22 @@ extension LessonsViewModel {
         return LearnTopic.all.first { $0.id == id }?.title
     }
 
+    /// The SF Symbol for library section `id` in the iPad sidebar, so each Learn row is
+    /// recognisable at a glance rather than all sharing one book icon.
+    nonisolated static func sidebarSymbol(for id: String) -> String {
+        switch id {
+        case "basic-lessons": "graduationcap"
+        case "bar-preps": "list.bullet.clipboard"
+        case "basic-spirits": "waterbottle"
+        case "advanced-spirits": "star"
+        case "liqueurs": "drop.halffull"
+        case "advanced-lessons": "brain.head.profile"
+        case "syrups": "flask"
+        case booksSectionID: "books.vertical"
+        default: "book"
+        }
+    }
+
     /// Every item the Learn library can show.
     var allItems: [LearnView.Selection] {
         allLessons.map { .lesson($0) } + books.map { .book($0) }

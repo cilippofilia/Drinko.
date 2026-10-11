@@ -458,10 +458,20 @@ extension CocktailsViewModel.FilterOption {
     /// The page title when this filter is a page's preset (the iPad sidebar rows).
     var pageTitle: String {
         switch self {
-        case .all, .cocktailsOnly: String(localized: "Cocktails")
+        case .all: String(localized: "All Cocktails")
+        case .cocktailsOnly: String(localized: "Cocktails")
         case .shotsOnly: String(localized: "Shots")
         case .favoritesOnly: String(localized: "Favorites")
         case .userCreatedOnly: String(localized: "My Cocktails")
+        }
+    }
+
+    /// The label of this filter's iPad sidebar row. "All" reads better than the page title
+    /// under the sidebar's "Cocktails" header.
+    var sidebarTitle: String {
+        switch self {
+        case .all: String(localized: "All")
+        default: pageTitle
         }
     }
 

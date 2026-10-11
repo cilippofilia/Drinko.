@@ -24,7 +24,7 @@ enum AppTab: Hashable {
 
     /// The cocktail filters that get their own sidebar row, in display order.
     static let sidebarCocktailFilters: [CocktailsViewModel.FilterOption] = [
-        .shotsOnly, .favoritesOnly, .userCreatedOnly
+        .all, .shotsOnly, .favoritesOnly, .userCreatedOnly
     ]
 
     /// The main tab this destination belongs to; a main tab is its own parent.
@@ -85,7 +85,7 @@ extension AppTab {
             self = detail.flatMap(UUID.init(uuidString:)).map(AppTab.cabinetCategory) ?? .cabinet
         case .cocktails:
             // Only a filter with its own sidebar row (`sidebarCocktailFilters`) has a `Tab` to
-            // decode to; others (e.g. "all", "cocktailsOnly") fall back to the main tab.
+            // decode to; others (e.g. "cocktailsOnly") fall back to the main tab.
             self = detail.flatMap(CocktailsViewModel.FilterOption.init(rawValue:))
                 .flatMap { AppTab.sidebarCocktailFilters.contains($0) ? $0 : nil }
                 .map(AppTab.cocktailFilter) ?? .cocktails

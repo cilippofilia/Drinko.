@@ -24,6 +24,7 @@ struct HomeView: View {
     ]) private var categories: [Category]
 
     @State private var interstitialAd: Ad?
+    @State private var showRemoveAdsPaywall = false
 
     var body: some View {
         @Bindable var appNavigationModel = appNavigationModel
@@ -53,21 +54,8 @@ struct HomeView: View {
                 // the floating tab bar as an extra item after Settings.
                 TabSection("Cocktails") {
                     ForEach(AppTab.sidebarCocktailFilters, id: \.self) { filter in
-                        Tab(filter.pageTitle, systemImage: filter.sidebarSymbol, value: AppTab.cocktailFilter(filter)) {
+                        Tab(filter.sidebarTitle, systemImage: filter.sidebarSymbol, value: AppTab.cocktailFilter(filter)) {
                             CocktailsView(filter: filter)
-                        }
-                        .tabPlacement(.sidebarOnly)
-                    }
-                }
-                .tabPlacement(.sidebarOnly)
-                TabSection("Learn") {
-                    ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
-                        Tab(
-                            LessonsViewModel.sectionTitle(for: id) ?? "",
-                            systemImage: id == LessonsViewModel.booksSectionID ? "books.vertical" : "book",
-                            value: AppTab.learnSection(id)
-                        ) {
-                            LearnView(sectionID: id)
                         }
                         .tabPlacement(.sidebarOnly)
                     }
@@ -89,6 +77,19 @@ struct HomeView: View {
                     }
                 }
                 .tabPlacement(.sidebarOnly)
+                TabSection("Learn") {
+                    ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
+                        Tab(
+                            LessonsViewModel.sectionTitle(for: id) ?? "",
+                            systemImage: LessonsViewModel.sidebarSymbol(for: id),
+                            value: AppTab.learnSection(id)
+                        ) {
+                            LearnView(sectionID: id)
+                        }
+                        .tabPlacement(.sidebarOnly)
+                    }
+                }
+                .tabPlacement(.sidebarOnly)
                 TabSection("Cabinet") {
                     ForEach(categories) { category in
                         Tab(category.name, systemImage: "tray", value: AppTab.cabinetCategory(category.id)) {
@@ -101,6 +102,33 @@ struct HomeView: View {
             }
         }
         .tabViewStyle(.sidebarAdaptable)
+        // Only ever visible with a sidebar; the compact tab bar has nowhere to show it.
+        .tabViewSidebarBottomBar {
+            if removeAdsStore.isAdsRemoved == false {
+                // Insets match the system sidebar rows (icon at 35pt, title at 70pt) so this
+                // reads as one more row rather than a toolbar button.
+                Button {
+                    showRemoveAdsPaywall = true
+                } label: {
+                    HStack(spacing: 13) {
+                        Image(systemName: "nosign")
+                            .frame(width: 22)
+                        Text("Remove Ads")
+                            .foregroundStyle(.primary)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .contentShape(.rect)
+                }
+                .buttonStyle(.plain)
+                .foregroundStyle(.tint)
+                .padding(.leading, 35)
+                .padding(.vertical)
+            }
+        }
+        .sheet(isPresented: $showRemoveAdsPaywall) {
+            CrossPromoRemoveAdsInfoView()
+                .presentationDetents([.medium])
+        }
         // Restore the last-used tab from the previous session. Only applies while
         // `selectedTab` is still at its untouched default, so it never clobbers a deep link
         // (`AppNavigationModel.handle(url:)`) that already selected a tab before this view

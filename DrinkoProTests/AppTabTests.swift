@@ -16,7 +16,7 @@ struct AppTabTests {
         [
             .learn, .learnSection("bar-preps"), .learnSection(LessonsViewModel.booksSectionID),
             .cabinet, .cabinetCategory(categoryID),
-            .cocktails, .cocktailFilter(.shotsOnly), .cocktailFilter(.favoritesOnly), .cocktailFilter(.userCreatedOnly),
+            .cocktails, .cocktailFilter(.all), .cocktailFilter(.shotsOnly), .cocktailFilter(.favoritesOnly), .cocktailFilter(.userCreatedOnly),
             .tools, .tool(.abvCalculator), .tool(.superjuice("lime")),
             .settings
         ]
@@ -44,10 +44,9 @@ struct AppTabTests {
     }
 
     @Test func nonSidebarFiltersDecodeToCocktailsTab() {
-        // "all" and "cocktailsOnly" are real `FilterOption` raw values, but neither has its
-        // own sidebar `Tab`, so they must fall back to the main Cocktails tab rather than
-        // decoding to a `.cocktailFilter` with nowhere to go.
-        #expect(AppTab(rawValue: "Cocktails/all") == .cocktails)
+        // "cocktailsOnly" is a real `FilterOption` raw value, but it has no sidebar `Tab`, so
+        // it must fall back to the main Cocktails tab rather than decoding to a
+        // `.cocktailFilter` with nowhere to go.
         #expect(AppTab(rawValue: "Cocktails/cocktailsOnly") == .cocktails)
     }
 
@@ -67,8 +66,10 @@ struct AppTabTests {
         }
     }
 
-    @Test func sidebarCocktailFiltersAreShotsFavoritesMine() {
-        #expect(AppTab.sidebarCocktailFilters == [.shotsOnly, .favoritesOnly, .userCreatedOnly])
+    @Test func sidebarCocktailFiltersAreAllShotsFavoritesMine() {
+        #expect(AppTab.sidebarCocktailFilters == [.all, .shotsOnly, .favoritesOnly, .userCreatedOnly])
+        #expect(CocktailsViewModel.FilterOption.all.sidebarTitle == String(localized: "All"))
+        #expect(CocktailsViewModel.FilterOption.shotsOnly.sidebarTitle == String(localized: "Shots"))
     }
 
     @Test func toolSelectionDecodesOnlyRealTools() {

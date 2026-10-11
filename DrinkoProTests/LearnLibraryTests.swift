@@ -62,4 +62,10 @@ struct LearnLibraryTests {
         let book = try #require(viewModel.books.first)
         #expect(viewModel.cardModel(for: .book(book)).subtitle == "© \(book.author)")
     }
+
+    @Test func everySidebarSectionHasItsOwnSymbol() {
+        let symbols = LessonsViewModel.librarySectionIDs.map(LessonsViewModel.sidebarSymbol(for:))
+        #expect(!symbols.contains("book"))
+        #expect(Set(symbols).count == symbols.count)
+    }
 }
