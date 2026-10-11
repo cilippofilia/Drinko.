@@ -289,6 +289,7 @@
 			membershipExceptions = (
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
+				CocktailHeaderActions.swift,
 				CocktailHeaderImage.swift,
 				CocktailImageHeader.swift,
 				CocktailRelatedSection.swift,
@@ -299,6 +300,8 @@
 				IngredientsView.swift,
 				LinkedCocktailsView.swift,
 				ProcedureView.swift,
+				TintWash.swift,
+				TintedGlassArtwork.swift,
 				UserCocktailForm.swift,
 			);
 			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
@@ -308,6 +311,7 @@
 			membershipExceptions = (
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
+				CocktailHeaderActions.swift,
 				CocktailHeaderImage.swift,
 				CocktailImageHeader.swift,
 				CocktailRelatedSection.swift,
@@ -318,6 +322,8 @@
 				IngredientsView.swift,
 				LinkedCocktailsView.swift,
 				ProcedureView.swift,
+				TintWash.swift,
+				TintedGlassArtwork.swift,
 				UserCocktailForm.swift,
 			);
 			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;

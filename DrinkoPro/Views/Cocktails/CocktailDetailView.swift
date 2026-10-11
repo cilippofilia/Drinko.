@@ -91,18 +91,12 @@ struct CocktailDetailView: View {
     
     var cocktailContent: some View {
         VStack {
-            CocktailImageHeader(cocktail: activeCocktail)
+            CocktailImageHeader(
+                cocktail: activeCocktail,
+                history: viewModel.getCocktailHistory(for: activeCocktail)
+            )
             
             VStack(alignment: .leading) {
-                // The header shows the name over the artwork; user cocktails have none, so it goes here.
-                if activeCocktail.isUserCreated {
-                    Text(activeCocktail.name)
-                        .font(.title.bold())
-                        .padding(.top, 12)
-
-                    Divider()
-                }
-
                 CocktailDetailsSection(
                     cocktail: activeCocktail,
                     selectedUnit: unitPreference.unit(for: locale),
