@@ -21,7 +21,11 @@ struct CocktailHeaderImage: View {
             } description: {
                 Text("Add a photo of your cocktail to show it here.")
             } actions: {
-                Button("Add Media") { }
+                CocktailPhotoMenu(
+                    onPick: { viewModel.setPhoto($0, for: cocktail) },
+                    label: { Label("Add Photo", systemImage: "photo.badge.plus") }
+                )
+                .buttonStyle(.borderedProminent)
             }
             .padding(.bottom, bottomInset)
             .frame(maxWidth: .infinity, minHeight: imageFrameHeight)

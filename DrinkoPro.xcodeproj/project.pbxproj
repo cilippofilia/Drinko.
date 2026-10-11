@@ -290,11 +290,13 @@
 		18A929EE2F12C91A00B70219 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				CameraPicker.swift,
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
 				CocktailHeaderActions.swift,
 				CocktailHeaderImage.swift,
 				CocktailImageHeader.swift,
+				CocktailPhotoMenu.swift,
 				CocktailShareBanner.swift,
 				CocktailShareCard.swift,
 				CocktailShareItem.swift,
@@ -316,11 +318,13 @@
 		18EB4EC02EEED46600691DC2 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				CameraPicker.swift,
 				CocktailDetailSectionView.swift,
 				CocktailDetailsSection.swift,
 				CocktailHeaderActions.swift,
 				CocktailHeaderImage.swift,
 				CocktailImageHeader.swift,
+				CocktailPhotoMenu.swift,
 				CocktailShareBanner.swift,
 				CocktailShareCard.swift,
 				CocktailShareItem.swift,
