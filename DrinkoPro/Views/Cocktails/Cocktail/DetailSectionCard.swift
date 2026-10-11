@@ -1,0 +1,78 @@
+//
+//  DetailSectionCard.swift
+//  DrinkoPro
+//
+
+import SwiftUI
+
+/// A rounded card on the cocktail detail screen: a title with a chevron button in the
+/// trailing corner that collapses or expands the content below it.
+struct DetailSectionCard<Content: View>: View {
+    let title: LocalizedStringKey
+    let isCollapsed: Bool
+    let toggle: () -> Void
+    @ViewBuilder let content: Content
+
+    /// The size of the round badge behind the chevron.
+    @ScaledMetric private var badgeSize: CGFloat = 30
+
+    init(
+        title: LocalizedStringKey,
+        isCollapsed: Bool,
+        toggle: @escaping () -> Void,
+        @ViewBuilder content: () -> Content
+    ) {
+        self.title = title
+        self.isCollapsed = isCollapsed
+        self.toggle = toggle
+        self.content = content()
+    }
+
+    var body: some View {
+        VStack(alignment: .leading) {
+            Button(action: toggle) {
+                HStack {
+                    Text(title)
+                        .font(.title3.bold())
+
+                    Spacer()
+
+                    Image(systemName: "chevron.down")
+                        .bold()
+                        .imageScale(.small)
+                        .rotationEffect(.degrees(isCollapsed ? -90 : 0))
+                        .frame(width: badgeSize, height: badgeSize)
+                        .background(.fill.tertiary, in: .circle)
+                        .accessibilityHidden(true)
+                }
+                .frame(minHeight: 44)
+                .contentShape(.rect)
+            }
+            .buttonStyle(.plain)
+            .accessibilityAddTraits(.isHeader)
+            .accessibilityValue(CollapsibleSectionAccessibility.value(isCollapsed: isCollapsed))
+            .accessibilityHint(CollapsibleSectionAccessibility.hint(isCollapsed: isCollapsed))
+
+            if !isCollapsed {
+                content
+            }
+        }
+        .padding()
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(.fill.quinary, in: .rect(cornerRadius: libraryCardCornerRadius))
+    }
+}
+
+#if DEBUG
+#Preview {
+    VStack {
+        DetailSectionCard(title: "Ingredients", isCollapsed: false, toggle: { }) {
+            Text("2 oz. London Dry Gin")
+        }
+        DetailSectionCard(title: "Procedure", isCollapsed: true, toggle: { }) {
+            Text("Hidden")
+        }
+    }
+    .padding()
+}
+#endif

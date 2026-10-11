@@ -36,25 +36,11 @@ struct LibrarySectionHeader: View {
 
     /// The expanded/collapsed state, read out after the title.
     private var value: LocalizedStringKey {
-        if !isEnabled {
-            ""
-        } else if isCollapsed {
-            "Collapsed"
-        } else {
-            "Expanded"
-        }
+        isEnabled ? CollapsibleSectionAccessibility.value(isCollapsed: isCollapsed) : ""
     }
 
-    /// Two whole literal strings (rather than one with an interpolated word) so each
-    /// reads naturally once translated.
     private var hint: LocalizedStringKey {
-        if !isEnabled {
-            ""
-        } else if isCollapsed {
-            "Double tap to expand this section."
-        } else {
-            "Double tap to collapse this section."
-        }
+        isEnabled ? CollapsibleSectionAccessibility.hint(isCollapsed: isCollapsed) : ""
     }
 }
 
