@@ -165,6 +165,11 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
             currentSlot = homeSlot
             refreshEntries()
         }
+        // Favoriting an item doesn't change `items`, so watch the badges separately and keep the
+        // carousel where it is.
+        .onChange(of: items.map { cardModel($0).isFavorite }) {
+            refreshEntries()
+        }
         .onChange(of: colorScheme) {
             configureScrollState()
         }
@@ -259,7 +264,9 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
 
     private var accessibilityLabelText: Text {
         guard currentItem != nil else { return Text(title) }
-        return Text("\(title), \(currentIndex + 1) of \(items.count), \(currentTitle)")
+        let label = Text("\(title), \(currentIndex + 1) of \(items.count), \(currentTitle)")
+        guard entries.indices.contains(currentIndex), entries[currentIndex].model.isFavorite else { return label }
+        return label + Text(verbatim: ", ") + Text("Favorite")
     }
 
     /// Opens the tapped item if it's the centred one; otherwise centres it, so a tap on a

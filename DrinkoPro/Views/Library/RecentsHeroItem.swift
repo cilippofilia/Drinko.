@@ -20,6 +20,13 @@ struct RecentsHeroItem: View {
         Button(action: onTap) {
             RecentsHeroArtwork(model: model)
                 .aspectRatio(1, contentMode: .fit)
+                .overlay(alignment: .topTrailing) {
+                    if model.isFavorite {
+                        RecentsHeroFavoriteBadge()
+                            .transition(.scale.combined(with: .opacity))
+                    }
+                }
+                .animation(.default, value: model.isFavorite)
         }
         .buttonStyle(.libraryCard)
     }
