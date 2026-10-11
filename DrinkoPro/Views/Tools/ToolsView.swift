@@ -47,6 +47,7 @@ struct ToolsView: View {
 
     private var library: some View {
         LibraryView(
+            title: String(localized: "Tools"),
             recentsTitle: "",
             recents: [Selection](),
             sections: ToolsLibrary.sections,

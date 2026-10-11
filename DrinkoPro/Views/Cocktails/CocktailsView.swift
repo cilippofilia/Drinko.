@@ -233,6 +233,7 @@ private extension CocktailsView {
                 searchEmptyStateView
             } else {
                 LibraryView(
+                    title: title,
                     recentsTitle: String(localized: "Last Viewed"),
                     recents: viewModel.recentItems(from: recentsStore.ids(in: .cocktails)),
                     sections: sections,

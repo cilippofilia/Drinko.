@@ -122,6 +122,7 @@ struct LearnView: View {
                 )
             } else {
                 LibraryView(
+                    title: title,
                     recentsTitle: String(localized: "Last Read"),
                     recents: sectionID == nil ? viewModel.recentItems(from: recentsStore.ids(in: .learn)) : [],
                     sections: sections,

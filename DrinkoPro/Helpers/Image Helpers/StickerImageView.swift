@@ -16,8 +16,9 @@ struct StickerImageView: View {
     /// How much of the frame the sticker fills when it sits on its backdrop.
     private let insetScale = 0.82
     /// How strongly the tint washes over the white backdrop. Kept pale in both appearances so
-    /// the sticker's white border and the card's dark title stay readable.
-    private let tintOpacity = 0.3
+    /// the sticker's white border and the card's dark title stay readable. The recents hero
+    /// band uses the same wash, so its backdrop matches the cards below it.
+    static let tintOpacity = 0.3
 
     var body: some View {
         CachedRemoteImage(url: url, contentMode: .fit)
@@ -26,7 +27,7 @@ struct StickerImageView: View {
             .background {
                 if showsBackdrop {
                     Color.white
-                        .overlay(tint.map { Color($0).opacity(tintOpacity) } ?? .clear)
+                        .overlay(tint.map { Color($0).opacity(Self.tintOpacity) } ?? .clear)
                 }
             }
             .clipShape(.rect(cornerRadius: libraryCardCornerRadius, style: .continuous))
