@@ -21,6 +21,15 @@ struct CocktailHeaderActions: View {
         .labelStyle(.iconOnly)
         .modifier(RoundGlassButtons())
         .controlSize(.large)
+        // The artwork is always light, so keep the buttons light in Dark Mode too. The sheet is
+        // attached outside this scope so the history itself still follows the system appearance.
+        .environment(\.colorScheme, .light)
+        .sheet(isPresented: $showHistory) {
+            if let history {
+                HistoryView(cocktail: cocktail, history: history)
+                    .presentationDetents([.medium, .large])
+            }
+        }
     }
 }
 

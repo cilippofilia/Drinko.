@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// The History button. The owner presents the sheet from `showHistory`, so it can sit outside
+/// any appearance override applied to the button.
 struct HistoryButtonView: View {
     let history: History?
     let showHistory: Binding<Bool>
@@ -23,10 +25,6 @@ struct HistoryButtonView: View {
                 }
                 .accessibilityLabel("Show history")
                 .accessibilityHint(cocktail.name)
-                .sheet(isPresented: showHistory) {
-                    HistoryView(cocktail: cocktail, history: history)
-                        .presentationDetents([.medium, .large])
-                }
             }
         }
     }
