@@ -32,6 +32,17 @@ struct CocktailDetailView: View {
         viewModel.cocktail(withID: cocktail.id, fallback: cocktail)
     }
 
+    /// The recipe card the Share button exports, rendered only when the share sheet asks.
+    private var shareItem: CocktailShareItem {
+        CocktailShareItem(
+            cocktail: activeCocktail,
+            artwork: viewModel.cardModel(for: activeCocktail).image,
+            tint: viewModel.stickerTint(for: activeCocktail),
+            selectedUnit: unitPreference.unit(for: locale),
+            showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
+        )
+    }
+
     var body: some View {
         let linkedCocktails = viewModel.getLinkedCocktails(for: activeCocktail)
 
@@ -99,6 +110,14 @@ struct CocktailDetailView: View {
         .navigationBarTitleDisplayMode(.inline)
         #endif
         .toolbar {
+            ToolbarItem(placement: toolbarPlacement) {
+                ShareLink(
+                    item: shareItem,
+                    preview: SharePreview(activeCocktail.name, image: Image("logo"))
+                ) {
+                    Label("Share Recipe Card", systemImage: "square.and.arrow.up")
+                }
+            }
             if viewModel.isUserCreated(activeCocktail) {
                 ToolbarItem(placement: toolbarPlacement) {
                     Button("Edit Cocktail", systemImage: "pencil.line") {

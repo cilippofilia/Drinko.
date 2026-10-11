@@ -7626,6 +7626,22 @@
     "Shaken" : {
 
     },
+    "Share Recipe Card" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir la receta"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividi la ricetta"
+          }
+        }
+      }
+    },
     "Share the app" : {
       "localizations" : {
         "de" : {
