@@ -13,7 +13,7 @@ struct ProcedureView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            ForEach(procedure.procedure.enumerated(), id: \.element.id) { index, step in
+            ForEach(procedure.procedure) { step in
                 VStack(alignment: .leading) {
                     Text(step.step)
                         .bold()
@@ -23,7 +23,7 @@ struct ProcedureView: View {
                 .multilineTextAlignment(.leading)
                 .padding(.vertical, 5)
 
-                if index < procedure.procedure.count - 1 {
+                if step.id != procedure.procedure.last?.id {
                     Divider()
                 }
             }
