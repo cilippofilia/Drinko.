@@ -91,6 +91,32 @@ struct CocktailShareItemTests {
         #expect(elapsed < .seconds(5))
     }
 
+    /// `RemoteImageLoader` awaits an unstructured download task, which keeps running when the
+    /// caller is cancelled. The timeout must not wait for it.
+    @Test func timeoutDoesNotWaitForADownloadThatIgnoresCancellation() async {
+        var item = item(
+            for: .example,
+            artwork: .sticker(URL(string: "https://example.com/s.png"), tint: nil),
+            loadImage: { _ in
+                // An unstructured task doesn't inherit cancellation, so this wait can't be cut short.
+                await Task { try? await Task.sleep(for: .seconds(3)) }.value
+                throw LoadFailed()
+            }
+        )
+        item.loadTimeout = .milliseconds(50)
+
+        let clock = ContinuousClock()
+        let start = clock.now
+        let artwork = await item.resolvedArtwork()
+        let elapsed = clock.now - start
+
+        guard case .glass = artwork else {
+            Issue.record("Expected glass fallback")
+            return
+        }
+        #expect(elapsed < .seconds(1))
+    }
+
     @Test func userCocktailsNeverDownload() async {
         let item = item(
             for: .userCreatedExample,

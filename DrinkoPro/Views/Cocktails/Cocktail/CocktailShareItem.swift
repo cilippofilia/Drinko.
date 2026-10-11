@@ -43,19 +43,31 @@ nonisolated struct CocktailShareItem: Transferable {
     }
 
     /// Downloads `url`, giving up after `loadTimeout` so a flaky network can't stall the share sheet.
+    ///
+    /// A task group would wait for the download to finish even after the timeout wins, and
+    /// `RemoteImageLoader` keeps downloading when cancelled. So the download and the timer race
+    /// as separate tasks, and whichever reports first through the stream decides the result.
     private func downloadedImage(from url: URL) async -> CGImage? {
         let load = loadImage
         let timeout = loadTimeout
-        return await withTaskGroup(of: CGImage?.self) { group in
-            group.addTask { try? await load(url) }
-            group.addTask {
-                try? await Task.sleep(for: timeout)
-                return nil
-            }
-            let first = await group.next() ?? nil
-            group.cancelAll()
-            return first
+        let (results, continuation) = AsyncStream.makeStream(of: CGImage?.self)
+
+        let download = Task {
+            continuation.yield(try? await load(url))
         }
+        let timer = Task {
+            try? await Task.sleep(for: timeout)
+            continuation.yield(nil)
+        }
+
+        var iterator = results.makeAsyncIterator()
+        // `nil` here also covers the share being cancelled while waiting.
+        let first = await iterator.next() ?? nil
+
+        continuation.finish()
+        download.cancel()
+        timer.cancel()
+        return first
     }
 
     /// Loads the artwork the card shows. Falls back to the glass art when a download fails or
