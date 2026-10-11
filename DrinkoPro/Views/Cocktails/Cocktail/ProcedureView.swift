@@ -13,20 +13,19 @@ struct ProcedureView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Procedure")
-                .font(.title3.bold())
-
-            VStack(alignment: .leading) {
-                ForEach(procedure.procedure) { steps in
-                    Text(steps.step)
+            ForEach(procedure.procedure.enumerated(), id: \.element.id) { index, step in
+                VStack(alignment: .leading) {
+                    Text(step.step)
                         .bold()
 
-                    Text(steps.text)
-
-                    Divider()
+                    Text(step.text)
                 }
                 .multilineTextAlignment(.leading)
                 .padding(.vertical, 5)
+
+                if index < procedure.procedure.count - 1 {
+                    Divider()
+                }
             }
         }
     }
