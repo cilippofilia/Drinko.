@@ -395,6 +395,7 @@ class CocktailsViewModel {
         existing.ice = details.ice
         existing.extra = details.extra
         existing.lastUpdated = Date()
+        stickerTintCache[existing.id] = nil
         existing.ingredients = details.ingredients.map {
             UserIngredient(name: $0.name, quantity: $0.quantity, unit: $0.unit)
         }
@@ -409,6 +410,7 @@ class CocktailsViewModel {
         guard let existing = userCreatedCocktails.first(where: { $0.id == cocktail.id }) else {
             return
         }
+        stickerTintCache[existing.id] = nil
         modelContext.delete(existing)
         saveUserCocktails()
     }
