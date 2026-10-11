@@ -304,8 +304,8 @@
 				ProcedureView.swift,
 				ShareCardArtwork.swift,
 				ShareCardArtworkView.swift,
-				TintWash.swift,
 				TintedGlassArtwork.swift,
+				TintWash.swift,
 				UserCocktailForm.swift,
 			);
 			target = 18A929A72F12C13D00B70219 /* DrinkoDesktop */;
@@ -330,8 +330,8 @@
 				ProcedureView.swift,
 				ShareCardArtwork.swift,
 				ShareCardArtworkView.swift,
-				TintWash.swift,
 				TintedGlassArtwork.swift,
+				TintWash.swift,
 				UserCocktailForm.swift,
 			);
 			target = 18F49E5F2A27B28D00862CE3 /* DrinkoPro */;
