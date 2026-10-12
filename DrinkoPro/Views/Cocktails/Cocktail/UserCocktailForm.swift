@@ -21,6 +21,7 @@ struct UserCocktailForm: View {
     private let editingCocktail: Cocktail?
     private let editingProcedureSteps: [String]
     private let originalPhotoData: Data?
+    private let originalStickerData: Data?
 
     @State private var name = ""
     @State private var method: String
@@ -31,6 +32,8 @@ struct UserCocktailForm: View {
     @State private var ingredientDrafts: [IngredientDraft]
     @State private var procedureDrafts: [String]
     @State private var photoData: Data?
+    @State private var stickerData: Data?
+    @State private var isMakingSticker = false
     @State private var alertMessage: String?
 
     init(
@@ -40,7 +43,8 @@ struct UserCocktailForm: View {
         unitOptions: [String],
         editingCocktail: Cocktail? = nil,
         editingProcedureSteps: [String] = [],
-        editingPhotoData: Data? = nil
+        editingPhotoData: Data? = nil,
+        editingStickerData: Data? = nil
     ) {
         self.methodOptions = methodOptions
         self.glassOptions = glassOptions
@@ -50,6 +54,8 @@ struct UserCocktailForm: View {
         self.editingProcedureSteps = editingProcedureSteps
         self.originalPhotoData = editingPhotoData
         _photoData = State(initialValue: editingPhotoData)
+        self.originalStickerData = editingStickerData
+        _stickerData = State(initialValue: editingStickerData)
 
         let initialState = Self.makeInitialState(
             methodOptions: methodOptions,
@@ -71,7 +77,7 @@ struct UserCocktailForm: View {
 
     var body: some View {
         Form {
-            UserCocktailPhotoSection(photoData: $photoData)
+            UserCocktailPhotoSection(photoData: $photoData, stickerData: $stickerData, isMakingSticker: $isMakingSticker)
 
             Section("Basics") {
                 TextField("Name", text: $name)
@@ -214,6 +220,9 @@ extension UserCocktailForm {
     }
 
     private var saveDisabledReason: String? {
+        if isMakingSticker {
+            return "Wait for the sticker to finish before saving."
+        }
         if trimmedName.isEmpty {
             return "Add a cocktail name to enable Save."
         }
@@ -295,8 +304,12 @@ extension UserCocktailForm {
 
     /// What saving should do with the photo: nothing if it's untouched, so it isn't re-encoded.
     private var photoChange: UserCocktailDetails.PhotoChange {
-        guard photoData != originalPhotoData else { return .unchanged }
-        return photoData.map { .set($0) } ?? .remove
+        .between(originalPhotoData, photoData)
+    }
+
+    /// What saving should do with the sticker, the same way.
+    private var stickerChange: UserCocktailDetails.PhotoChange {
+        .between(originalStickerData, stickerData)
     }
 
     private func saveCocktail() {
@@ -329,7 +342,8 @@ extension UserCocktailForm {
             extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
             ingredients: ingredients,
             procedureSteps: procedureSteps,
-            photoChange: photoChange
+            photoChange: photoChange,
+            stickerChange: stickerChange
         )
 
         if let editingCocktail {

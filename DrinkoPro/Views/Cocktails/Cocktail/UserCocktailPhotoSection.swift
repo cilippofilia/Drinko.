@@ -6,29 +6,71 @@
 import SwiftUI
 
 /// The Photo section of the create/edit cocktail forms: a preview of the photo, a menu to
-/// take or choose one, and a way to remove it. Edits a draft; the form saves it.
+/// take or choose one, a way to remove it, and a toggle that turns it into a sticker.
+/// Edits drafts; the form saves them.
 struct UserCocktailPhotoSection: View {
     @Binding var photoData: Data?
+    /// The sticker made from `photoData`, or nil when the toggle is off or it isn't made yet.
+    @Binding var stickerData: Data?
 
     /// Decoded once per photo, not on every keystroke elsewhere in the form.
     @State private var preview: CGImage?
+    @State private var stickerPreview: CGImage?
+    @State private var makesSticker: Bool
+    /// Owned by the form, which won't save while a sticker is still being made.
+    @Binding var isMakingSticker: Bool
+    @State private var stickerError: LocalizedStringResource?
 
     /// The preview's height in the form.
     @ScaledMetric private var previewHeight: CGFloat = 180
 
+    init(photoData: Binding<Data?>, stickerData: Binding<Data?>, isMakingSticker: Binding<Bool>) {
+        _photoData = photoData
+        _stickerData = stickerData
+        _isMakingSticker = isMakingSticker
+        _makesSticker = State(initialValue: stickerData.wrappedValue != nil)
+    }
+
+    /// What the sticker task depends on: a new photo or flipping the toggle restarts it.
+    private struct StickerJob: Equatable {
+        let photo: Data?
+        let isOn: Bool
+    }
+
     var body: some View {
-        Section("Photo") {
-            if let preview {
+        Section {
+            if makesSticker, let stickerPreview {
+                Image(stickerPreview, scale: 1, label: Text("Cocktail sticker"))
+                    .resizable()
+                    .scaledToFit()
+                    .scaleEffect(StickerImageView.insetScale)
+                    .frame(height: previewHeight)
+                    .frame(maxWidth: .infinity)
+                    .background { TintWash(tint: nil) }
+                    .clipShape(.rect(cornerRadius: 12))
+            } else if let preview {
                 Image(preview, scale: 1, label: Text("Cocktail photo"))
                     .resizable()
                     .scaledToFill()
                     .frame(height: previewHeight)
                     .frame(maxWidth: .infinity)
                     .clipShape(.rect(cornerRadius: 12))
+                    .overlay {
+                        if isMakingSticker {
+                            ProgressView()
+                                .padding()
+                                .background(.regularMaterial, in: .rect(cornerRadius: 12))
+                        }
+                    }
             }
 
             CocktailPhotoMenu(
-                onPick: { photoData = $0 },
+                onPick: { newPhoto in
+                    // A sticker belongs to the photo it was cut from.
+                    photoData = newPhoto
+                    stickerData = nil
+                    stickerError = nil
+                },
                 label: {
                     Label(photoData == nil ? "Add Photo" : "Replace Photo", systemImage: "photo.badge.plus")
                 }
@@ -39,10 +81,63 @@ struct UserCocktailPhotoSection: View {
             }
 
             if photoData != nil {
+                Toggle("Make Sticker", systemImage: "wand.and.sparkles", isOn: $makesSticker)
+                    .disabled(isMakingSticker)
+                    .task(id: StickerJob(photo: photoData, isOn: makesSticker)) {
+                        await updateSticker()
+                    }
+                    .task(id: stickerData) {
+                        stickerPreview = stickerData.flatMap {
+                            UserPhotoProcessor.thumbnail(from: $0, maxPixelSize: 900)
+                        }
+                    }
+
                 Button("Remove Photo", systemImage: "trash", role: .destructive) {
                     photoData = nil
+                    stickerData = nil
+                    makesSticker = false
+                    stickerError = nil
+                    // The toggle row (and its sticker task) goes away with the photo, so nothing
+                    // else would clear this and Save would stay blocked.
+                    isMakingSticker = false
                 }
             }
+        } header: {
+            Text("Photo")
+        } footer: {
+            if let stickerError {
+                Text(stickerError)
+            }
         }
+    }
+
+    /// Makes the sticker when the toggle is on and there isn't one for this photo yet, or drops
+    /// it when the toggle is off. Runs again whenever the photo or toggle changes, which cancels
+    /// a sticker still being made for the old one.
+    private func updateSticker() async {
+        guard makesSticker, let photoData else {
+            stickerData = nil
+            isMakingSticker = false
+            return
+        }
+        // Already made for this photo (photo changes clear it).
+        guard stickerData == nil else { return }
+
+        stickerError = nil
+        isMakingSticker = true
+        do {
+            let sticker = try await StickerMaker.makeSticker(from: photoData)
+            guard !Task.isCancelled else { return }
+            stickerData = sticker
+        } catch StickerMaker.StickerError.noSubject {
+            guard !Task.isCancelled else { return }
+            stickerError = "Couldn't find a drink in this photo."
+            makesSticker = false
+        } catch {
+            guard !Task.isCancelled else { return }
+            stickerError = "Couldn't make a sticker from this photo."
+            makesSticker = false
+        }
+        isMakingSticker = false
     }
 }
