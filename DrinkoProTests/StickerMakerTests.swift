@@ -40,8 +40,8 @@ struct StickerMakerTests {
     private func subjectLeftEdge(_ pixels: [UInt8], width: Int, height: Int) throws -> Int {
         let middleRow = height / 2
         return try #require((0..<width).first { column in
-            let px = pixel(pixels, width: width, x: column, y: middleRow)
-            return px[0] > 200 && px[1] < 60 && px[3] == 255
+            let rgba = pixel(pixels, width: width, x: column, y: middleRow)
+            return rgba[0] > 200 && rgba[1] < 60 && rgba[3] == 255
         })
     }
 

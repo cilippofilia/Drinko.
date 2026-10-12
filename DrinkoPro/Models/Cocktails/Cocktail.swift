@@ -427,8 +427,9 @@ class CocktailsViewModel {
         }
         switch details.stickerChange {
         case .unchanged:
-            // A new or removed photo makes the stored sticker stale.
-            if details.photoChange != .unchanged, existing.stickerData != nil {
+            // A new or removed photo makes the stored sticker stale, and a sticker with no
+            // photo (e.g. from a synced record) is an orphan that's never shown.
+            if existing.stickerData != nil, details.photoChange != .unchanged || existing.photoData == nil {
                 existing.stickerData = nil
                 picturesChanged = true
             }

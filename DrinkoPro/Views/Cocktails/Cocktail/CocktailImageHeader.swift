@@ -32,10 +32,11 @@ struct CocktailImageHeader: View {
     @Environment(\.colorScheme) private var colorScheme
 
     /// Bundled stickers and photos are always light, so the name and icons stay dark over them in
-    /// Dark Mode too. User photos can be anything, and the placeholder follows the system, so those
+    /// Dark Mode too. A user's sticker sits on the same always-light wash, so it does the same.
+    /// User photos can be anything, and the placeholder follows the system, so those
     /// use the system appearance over the blur band.
     private var titleColorScheme: ColorScheme {
-        cocktail.isUserCreated ? colorScheme : .light
+        cocktail.isUserCreated && !viewModel.hasSticker(cocktail) ? colorScheme : .light
     }
 
     var body: some View {

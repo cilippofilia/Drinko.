@@ -65,7 +65,10 @@ struct LibraryRowView: View {
     /// Stickers aren't rounded: they fill the thumbnail edge to edge, so rounding would
     /// clip their die-cut outline. Everything else sits on a backdrop that needs the corners.
     private var thumbnailCornerRadius: CGFloat {
-        if case .sticker = model.image { 0 } else { imageCornerRadius }
+        switch model.image {
+        case .sticker, .userSticker: 0
+        default: imageCornerRadius
+        }
     }
 }
 

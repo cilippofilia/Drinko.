@@ -110,6 +110,37 @@ struct UserCocktailStickerTests {
         #expect(!viewModel.hasSticker(cocktail))
     }
 
+    @Test func anOrphanStickerWithNoPhotoIsClearedOnSave() throws {
+        let (viewModel, container) = try makeViewModel()
+        _ = container
+        viewModel.addUserCocktail(details(photo: .set(try samplePhoto()), sticker: .set(try sampleSticker())))
+        let cocktail = try #require(viewModel.userCocktails.first)
+        // Simulate a synced record that has a sticker but no photo.
+        let stored = try #require(viewModel.userCreatedCocktails.first(where: { $0.id == cocktail.id }))
+        stored.photoData = nil
+        stored.stickerData = try sampleSticker()
+
+        viewModel.updateUserCocktail(cocktail, with: details())
+
+        #expect(!viewModel.hasSticker(cocktail))
+    }
+
+    @Test func addingAStickerToAPhotoOnlyCocktail() throws {
+        let (viewModel, container) = try makeViewModel()
+        _ = container
+        viewModel.addUserCocktail(details(photo: .set(try samplePhoto())))
+        let cocktail = try #require(viewModel.userCocktails.first)
+
+        viewModel.updateUserCocktail(cocktail, with: details(sticker: .set(try sampleSticker())))
+
+        #expect(viewModel.hasSticker(cocktail))
+        #expect(viewModel.hasPhoto(cocktail))
+        #expect(viewModel.cardModel(for: cocktail).image == .userSticker(
+            id: cocktail.id, revision: viewModel.photoRevision(for: cocktail.id),
+            tint: viewModel.stickerTint(for: cocktail)
+        ))
+    }
+
     @Test func turningTheStickerOffKeepsThePhoto() throws {
         let (viewModel, container) = try makeViewModel()
         _ = container

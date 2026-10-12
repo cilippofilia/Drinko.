@@ -19,6 +19,10 @@ struct RecentsHeroArtwork: View {
             // `showsBackdrop: false` lets the sticker fill its frame on its own.
             StickerImageView(url: url, showsBackdrop: false)
                 .shadow(color: .black.opacity(0.3), radius: 8, y: 4)
+        case .userSticker(let id, let revision, _):
+            // Drawn exactly like a bundled sticker: bare, with the shadow following the outline.
+            UserStickerView(id: id, revision: revision, showsBackdrop: false)
+                .shadow(color: .black.opacity(0.3), radius: 8, y: 4)
         default:
             LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
                 .clipShape(.rect(cornerRadius: libraryCardCornerRadius, style: .continuous))
