@@ -51,6 +51,17 @@ struct CocktailDetailView: View {
                 )
             }
         }
+        if case .userSticker(let id, let revision, _) = item.artwork {
+            let viewModel = viewModel
+            item.loadUserSticker = {
+                // Full size, so the 1080 px wide banner fills from a sharp source.
+                viewModel.stickerThumbnail(
+                    for: id,
+                    revision: revision,
+                    maxPixelSize: Int(StickerMaker.maxLongSide)
+                )
+            }
+        }
         return item
     }
 

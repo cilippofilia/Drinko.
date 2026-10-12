@@ -161,16 +161,16 @@ enum RecentsHeroLayout {
         case neutral
     }
 
-    /// The backdrop for an item's artwork. Stickers with a tint take that tint's color, photos
+    /// The backdrop for an item's artwork. Stickers (bundled or the user's) with a tint take that tint's color, photos
     /// are blurred into a wallpaper, and everything else (untinted stickers, assets, symbols,
     /// photos without a URL) gets the neutral tone.
     static func backdrop(for image: LibraryImage) -> Backdrop {
         switch image {
-        case .sticker(_, let tint?):
+        case .sticker(_, let tint?), .userSticker(_, _, let tint?):
             .color(tint)
         case .remote(let url?):
             .photo(url)
-        case .sticker, .remote, .asset, .symbol, .userPhoto:
+        case .sticker, .userSticker, .remote, .asset, .symbol, .userPhoto:
             .neutral
         }
     }

@@ -36,6 +36,10 @@ nonisolated struct CocktailShareItem: Transferable {
     /// rendered, so opening a cocktail never decodes it.
     var loadUserPhoto: (@MainActor @Sendable () -> CGImage?)?
 
+    /// Decodes the user's sticker for user cocktails that have one. Only called when the card is
+    /// rendered, like `loadUserPhoto`.
+    var loadUserSticker: (@MainActor @Sendable () -> CGImage?)?
+
     /// The pixel scale the card is rendered at.
     static let renderScale: CGFloat = 3
 
@@ -91,6 +95,8 @@ nonisolated struct CocktailShareItem: Transferable {
             return .glass(artwork, tint: tint)
         case .userPhoto:
             if let photo = loadUserPhoto?() { return .userPhoto(photo) }
+        case .userSticker(_, _, let stickerTint):
+            if let sticker = loadUserSticker?() { return .sticker(sticker, tint: stickerTint) }
         case .sticker(nil, _), .remote(nil):
             break
         }

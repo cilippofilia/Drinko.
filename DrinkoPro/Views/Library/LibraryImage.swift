@@ -18,4 +18,7 @@ enum LibraryImage: Hashable {
     /// The user's own photo of their cocktail, drawn by `UserPhotoView`. `revision` changes
     /// whenever the photo does, so views showing the old one refresh.
     case userPhoto(id: String, revision: Int)
+    /// The user's photo turned into a sticker, drawn by `UserStickerView` inset on a wash of the
+    /// named color asset (white when `nil`), like the bundled stickers.
+    case userSticker(id: String, revision: Int, tint: String?)
 }

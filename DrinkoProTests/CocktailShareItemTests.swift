@@ -191,4 +191,36 @@ struct CocktailShareItemTests {
             return
         }
     }
+
+    @Test func userStickerSharesAsATintedSticker() async throws {
+        var item = item(
+            for: .userCreatedExample,
+            artwork: .userSticker(id: Cocktail.userCreatedExample.id, revision: 1, tint: "gin"),
+            loadImage: { _ in
+                Issue.record("User stickers never download")
+                throw LoadFailed()
+            }
+        )
+        let sticker = try Self.sampleImage()
+        item.loadUserSticker = { sticker }
+
+        guard case .sticker(_, let tint) = await item.resolvedArtwork() else {
+            Issue.record("Expected the user's sticker")
+            return
+        }
+        #expect(tint == "gin")
+    }
+
+    @Test func missingUserStickerFallsBackToGlass() async {
+        let item = item(
+            for: .userCreatedExample,
+            artwork: .userSticker(id: Cocktail.userCreatedExample.id, revision: 1, tint: nil),
+            loadImage: { _ in throw LoadFailed() }
+        )
+
+        guard case .glass = await item.resolvedArtwork() else {
+            Issue.record("Expected glass fallback")
+            return
+        }
+    }
 }

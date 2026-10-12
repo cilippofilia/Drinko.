@@ -26,7 +26,7 @@ struct TintedGlassArtwork: View {
                     .resizable()
                     .scaledToFit()
                     .foregroundStyle(.secondary)
-            case .remote, .sticker, .userPhoto:
+            case .remote, .sticker, .userPhoto, .userSticker:
                 Image(systemName: "wineglass")
                     .resizable()
                     .scaledToFit()

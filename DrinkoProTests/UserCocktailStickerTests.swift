@@ -150,4 +150,26 @@ struct UserCocktailStickerTests {
         #expect(sticker.height > sticker.width)
         #expect(sticker.alphaInfo != .none && sticker.alphaInfo != .noneSkipLast)
     }
+
+    @Test func libraryShowsTheStickerOverThePhoto() throws {
+        let (viewModel, container) = try makeViewModel()
+        _ = container
+        viewModel.addUserCocktail(details(photo: .set(try samplePhoto()), sticker: .set(try sampleSticker())))
+        let cocktail = try #require(viewModel.userCocktails.first)
+        let revision = viewModel.photoRevision(for: cocktail.id)
+
+        #expect(viewModel.cardModel(for: cocktail).image == .userSticker(
+            id: cocktail.id, revision: revision, tint: viewModel.stickerTint(for: cocktail)
+        ))
+
+        viewModel.updateUserCocktail(cocktail, with: details(sticker: .remove))
+        #expect(viewModel.cardModel(for: cocktail).image == .userPhoto(
+            id: cocktail.id, revision: viewModel.photoRevision(for: cocktail.id)
+        ))
+    }
+
+    @Test func tintedUserStickersTakeTheirTintAsHeroBackdrop() {
+        #expect(RecentsHeroLayout.backdrop(for: .userSticker(id: "x", revision: 0, tint: "gin")) == .color("gin"))
+        #expect(RecentsHeroLayout.backdrop(for: .userSticker(id: "x", revision: 0, tint: nil)) == .neutral)
+    }
 }

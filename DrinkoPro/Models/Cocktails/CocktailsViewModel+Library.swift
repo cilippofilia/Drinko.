@@ -99,6 +99,13 @@ extension CocktailsViewModel {
             return .remote(URL(string: cocktail.pic))
         }
 
+        if hasSticker(cocktail) {
+            return .userSticker(
+                id: cocktail.id,
+                revision: photoRevision(for: cocktail.id),
+                tint: stickerTint(for: cocktail)
+            )
+        }
         if hasPhoto(cocktail) {
             return .userPhoto(id: cocktail.id, revision: photoRevision(for: cocktail.id))
         }

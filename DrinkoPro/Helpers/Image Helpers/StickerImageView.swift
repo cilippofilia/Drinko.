@@ -13,8 +13,9 @@ struct StickerImageView: View {
     /// A color asset name to wash the backdrop with. `nil` leaves it plain white.
     var tint: String?
 
-    /// How much of the frame the sticker fills when it sits on its backdrop.
-    private let insetScale = 0.82
+    /// How much of the frame the sticker fills when it sits on its backdrop. Shared with
+    /// `UserStickerView` so the user's stickers sit the same way.
+    static let insetScale = 0.82
     /// How strongly the tint washes over the white backdrop. Kept pale in both appearances so
     /// the sticker's white border and the card's dark title stay readable. The recents hero
     /// band uses the same wash, so its backdrop matches the cards below it.
@@ -22,7 +23,7 @@ struct StickerImageView: View {
 
     var body: some View {
         CachedRemoteImage(url: url, contentMode: .fit)
-            .scaleEffect(showsBackdrop ? insetScale : 1)
+            .scaleEffect(showsBackdrop ? Self.insetScale : 1)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background {
                 if showsBackdrop {

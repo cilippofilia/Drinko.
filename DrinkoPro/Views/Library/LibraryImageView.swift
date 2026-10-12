@@ -41,6 +41,8 @@ struct LibraryImageView: View {
                 }
             case .userPhoto(let id, let revision):
                 UserPhotoView(id: id, revision: revision)
+            case .userSticker(let id, let revision, let tint):
+                UserStickerView(id: id, revision: revision, tint: tint, showsBackdrop: showsStickerBackdrop)
             case .symbol(let name):
                 Image(systemName: name)
                     .resizable()

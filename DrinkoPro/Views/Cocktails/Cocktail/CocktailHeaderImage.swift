@@ -5,8 +5,8 @@
 
 import SwiftUI
 
-/// The artwork behind the cocktail detail header: the drink's sticker, its photo when it has
-/// no sticker, or a prompt to add a photo for cocktails without a picture.
+/// The artwork behind the cocktail detail header: the drink's sticker, the user's sticker or photo
+/// when it has one, or a prompt to add a photo for cocktails without a picture.
 struct CocktailHeaderImage: View {
     @Environment(CocktailsViewModel.self) private var viewModel
 
@@ -45,6 +45,10 @@ struct CocktailHeaderImage: View {
                 .background(Color.white)
             case .userPhoto(let id, let revision):
                 UserPhotoView(id: id, revision: revision)
+                    .frame(height: imageFrameHeight)
+                    .frame(maxWidth: .infinity)
+            case .userSticker(let id, let revision, let tint):
+                UserStickerView(id: id, revision: revision, tint: tint)
                     .frame(height: imageFrameHeight)
                     .frame(maxWidth: .infinity)
             case .asset, .symbol:
