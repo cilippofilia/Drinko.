@@ -22,8 +22,6 @@ struct MacSettingsView: View {
     private let contactDevSubject = "Drinko: Enquiry"
     private let contactDevBody = ""
 
-    static let settingsTag: String? = "Settings"
-
     var body: some View {
         let languageCode = Bundle.main.preferredLocalizations.first?.uppercased() ?? "EN"
 

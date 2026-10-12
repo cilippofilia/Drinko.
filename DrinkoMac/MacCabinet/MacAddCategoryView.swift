@@ -12,7 +12,6 @@ struct MacAddCategoryView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
-    @FocusState private var isFocused: Bool
     @State private var categoryName = ""
     @State private var categoryDetails = ""
     @State private var categoryColor = "Dr. Blue"

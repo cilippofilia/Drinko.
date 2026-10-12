@@ -68,10 +68,6 @@ extension UserCreatedCocktail {
         )
     }
 
-    var mappedProcedure: UserProcedure? {
-        procedure.map({ UserProcedure(steps: $0.steps ?? []) })
-    }
-
     static func makeUserCocktailID(from name: String) -> String {
         let normalizedName = name
             .lowercased()

@@ -9,8 +9,6 @@ import SwiftData
 import SwiftUI
 
 struct MacProductRowView: View {
-    @Environment(\.modelContext) private var modelContext
-
     let product: Item
 
     var body: some View {

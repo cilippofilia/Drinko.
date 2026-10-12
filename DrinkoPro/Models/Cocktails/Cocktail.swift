@@ -104,11 +104,6 @@ struct Ingredient: Codable, Equatable, Identifiable, Hashable {
     }
 
     @MainActor
-    var mlUnit: String {
-        UnitConverter.unitLabel(for: unit, convertingTo: "ml")
-    }
-
-    @MainActor
     func convertedQuantity(to targetUnit: String) -> Double {
         UnitConverter.convert(quantity, from: unit, to: targetUnit)
     }
@@ -247,10 +242,6 @@ class CocktailsViewModel {
         filteredCocktails(filterOption: .all) { _ in false }
     }
 
-    var cocktailsGrouped: [String: [Cocktail]] {
-        groupedCocktails(filterOption: .all) { _ in false }
-    }
-    
     var sortedSectionKeys: [String] {
         sortedSectionKeys(filterOption: .all) { _ in false }
     }

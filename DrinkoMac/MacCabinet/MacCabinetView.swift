@@ -9,7 +9,6 @@ import SwiftData
 import SwiftUI
 
 struct MacCabinetView: View {
-    static let macCabinetTag: String? = "MacCabinet"
     @Environment(\.modelContext) private var modelContext
 
     @State private var showAddCategorySheet: Bool = false

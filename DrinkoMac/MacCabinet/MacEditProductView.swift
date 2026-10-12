@@ -12,7 +12,6 @@ struct MacEditProductView: View {
     @Bindable var product: Item
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    @FocusState private var isFocused: Bool
     @State private var showingDeleteConfirmation: Bool = false
     @State private var isAnimated: Bool = false
     

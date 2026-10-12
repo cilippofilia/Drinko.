@@ -13,9 +13,7 @@ struct SplashScreenView: View {
     @State private var showHomeView = false
     @State private var angle: Double = -90
     @State private var opacity: Double = 1
-    @State private var scale: CGFloat = 1
     @State private var imgOffset: CGFloat = -800
-    @State private var txtOffset: CGFloat = 0
     @State private var frameSize: CGFloat = 200
 
     var body: some View {

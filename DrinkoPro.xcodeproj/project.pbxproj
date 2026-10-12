@@ -15,8 +15,6 @@
 		182159082F3EA2CC002C1046 /* UserIngredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182159062F3EA2CC002C1046 /* UserIngredient.swift */; };
 		1821590A2F3EA2E7002C1046 /* UserProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182159092F3EA2E7002C1046 /* UserProcedure.swift */; };
 		1821590B2F3EA2E7002C1046 /* UserProcedure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182159092F3EA2E7002C1046 /* UserProcedure.swift */; };
-		1821590D2F3EA342002C1046 /* UserCocktailPreviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821590C2F3EA342002C1046 /* UserCocktailPreviewer.swift */; };
-		1821590E2F3EA342002C1046 /* UserCocktailPreviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1821590C2F3EA342002C1046 /* UserCocktailPreviewer.swift */; };
 		182522402AB9B4AE0064D87D /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */; };
 		18263CA02F3D248200758DCC /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18263C9F2F3D248200758DCC /* DeleteButtonView.swift */; };
 		18263CA12F3D248200758DCC /* DeleteButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18263C9F2F3D248200758DCC /* DeleteButtonView.swift */; };
@@ -69,7 +67,6 @@
 		18A92A022F12CC4100B70219 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
 		18A92A052F12CC6200B70219 /* LessonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB02A286D2E00862CE3 /* LessonDetailView.swift */; };
 		18A92A062F12CC6D00B70219 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188E93CB2A4C260E001691E6 /* BookDetailView.swift */; };
-		18A92A072F12CD0B00B70219 /* DrinkoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */; };
 		18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */; };
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
@@ -83,7 +80,6 @@
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
 		18F49E6B2A27B28F00862CE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */; };
 		18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E712A286CDD00862CE3 /* HomeView.swift */; };
-		18F49E9F2A286D2A00862CE3 /* DrinkoButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */; };
 		18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA52A286D2E00862CE3 /* SettingsView.swift */; };
 		18F49EBD2A286D2E00862CE3 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */; };
 		18F49EBE2A286D2E00862CE3 /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA72A286D2E00862CE3 /* ReadMeView.swift */; };
@@ -170,7 +166,6 @@
 		182157682F3E7DC5002C1046 /* UserCreatedCocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreatedCocktail.swift; sourceTree = "<group>"; };
 		182159062F3EA2CC002C1046 /* UserIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIngredient.swift; sourceTree = "<group>"; };
 		182159092F3EA2E7002C1046 /* UserProcedure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProcedure.swift; sourceTree = "<group>"; };
-		1821590C2F3EA342002C1046 /* UserCocktailPreviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCocktailPreviewer.swift; sourceTree = "<group>"; };
 		1825223F2AB9B4AE0064D87D /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		18263C9F2F3D248200758DCC /* DeleteButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonView.swift; sourceTree = "<group>"; };
 		1827137B2B655D78000D3343 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -211,7 +206,6 @@
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18F49E712A286CDD00862CE3 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkoButtonView.swift; sourceTree = "<group>"; };
 		18F49EA52A286D2E00862CE3 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		18F49EA72A286D2E00862CE3 /* ReadMeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeView.swift; sourceTree = "<group>"; };
@@ -419,7 +413,6 @@
 				182157682F3E7DC5002C1046 /* UserCreatedCocktail.swift */,
 				182159062F3EA2CC002C1046 /* UserIngredient.swift */,
 				182159092F3EA2E7002C1046 /* UserProcedure.swift */,
-				1821590C2F3EA342002C1046 /* UserCocktailPreviewer.swift */,
 				D1C5B0012F00000000000006 /* CocktailsViewModel+Library.swift */,
 				D1C5B0012F0000000000AA01 /* CocktailsViewModel+Photos.swift */,
 				D1C5B0012F00000000000007 /* MainSpirit.swift */,
@@ -522,7 +515,6 @@
 			children = (
 				180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */,
 				18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */,
-				18F49E8A2A286D2A00862CE3 /* DrinkoButtonView.swift */,
 				18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */,
 				18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */,
 				18263C9F2F3D248200758DCC /* DeleteButtonView.swift */,
@@ -883,7 +875,6 @@
 				18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */,
 				18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */,
 				183F93612F253BE5005CF96A /* SettingsPreferenceView.swift in Sources */,
-				1821590D2F3EA342002C1046 /* UserCocktailPreviewer.swift in Sources */,
 				1821590A2F3EA2E7002C1046 /* UserProcedure.swift in Sources */,
 				1858F978306870810016B2DD /* ABVIngredientRow.swift in Sources */,
 				183F93622F253BE5005CF96A /* SettingsContactsView.swift in Sources */,
@@ -928,7 +919,6 @@
 				D1C5B0022F00000000000005 /* UserCocktailFormState.swift in Sources */,
 				D1C5B0022F00000000000004 /* UserCocktailDetails.swift in Sources */,
 				D1C5B0022F00000000000001 /* CocktailListSource.swift in Sources */,
-				18A92A072F12CD0B00B70219 /* DrinkoButtonView.swift in Sources */,
 				183F93642F253E41005CF96A /* CreditsCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -953,7 +943,6 @@
 				1858F96F306870360016B2DD /* MixingMethod.swift in Sources */,
 				1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */,
 				1827138C2B6576AB000D3343 /* CategoryHeaderView.swift in Sources */,
-				1821590E2F3EA342002C1046 /* UserCocktailPreviewer.swift in Sources */,
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
 				18EB4EC52EEED46E00691DC2 /* LikeButtonView.swift in Sources */,
 				1821590B2F3EA2E7002C1046 /* UserProcedure.swift in Sources */,
@@ -996,7 +985,6 @@
 				1858F972306870560016B2DD /* ABVCalculatorViewModel.swift in Sources */,
 				188E93CC2A4C260E001691E6 /* BookDetailView.swift in Sources */,
 				18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */,
-				18F49E9F2A286D2A00862CE3 /* DrinkoButtonView.swift in Sources */,
 				18F49E722A286CDD00862CE3 /* HomeView.swift in Sources */,
 				1827137F2B655D78000D3343 /* Item.swift in Sources */,
 				97051BF8C92F6A7E8F0D12B2 /* LearnDetailView.swift in Sources */,
