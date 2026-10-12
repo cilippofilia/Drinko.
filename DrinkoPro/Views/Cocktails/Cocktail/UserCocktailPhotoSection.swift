@@ -82,7 +82,6 @@ struct UserCocktailPhotoSection: View {
 
             if photoData != nil {
                 Toggle("Make Sticker", systemImage: "wand.and.sparkles", isOn: $makesSticker)
-                    .disabled(isMakingSticker)
                     .task(id: StickerJob(photo: photoData, isOn: makesSticker)) {
                         await updateSticker()
                     }
@@ -95,6 +94,7 @@ struct UserCocktailPhotoSection: View {
                 Button("Remove Photo", systemImage: "trash", role: .destructive) {
                     photoData = nil
                     stickerData = nil
+                    stickerPreview = nil
                     makesSticker = false
                     stickerError = nil
                     // The toggle row (and its sticker task) goes away with the photo, so nothing
@@ -113,7 +113,8 @@ struct UserCocktailPhotoSection: View {
 
     /// Makes the sticker when the toggle is on and there isn't one for this photo yet, or drops
     /// it when the toggle is off. Runs again whenever the photo or toggle changes, which cancels
-    /// a sticker still being made for the old one.
+    /// a sticker still being made for the old one. SwiftUI cancels the old run only on the next
+    /// view update, so a late result is also dropped if the photo or toggle changed meanwhile.
     private func updateSticker() async {
         guard makesSticker, let photoData else {
             stickerData = nil
@@ -122,22 +123,28 @@ struct UserCocktailPhotoSection: View {
         }
         // Already made for this photo (photo changes clear it).
         guard stickerData == nil else { return }
+        let source = photoData
 
         stickerError = nil
         isMakingSticker = true
         do {
             let sticker = try await StickerMaker.makeSticker(from: photoData)
-            guard !Task.isCancelled else { return }
+            guard isCurrent(source) else { return }
             stickerData = sticker
         } catch StickerMaker.StickerError.noSubject {
-            guard !Task.isCancelled else { return }
+            guard isCurrent(source) else { return }
             stickerError = "Couldn't find a drink in this photo."
             makesSticker = false
         } catch {
-            guard !Task.isCancelled else { return }
+            guard isCurrent(source) else { return }
             stickerError = "Couldn't make a sticker from this photo."
             makesSticker = false
         }
         isMakingSticker = false
+    }
+
+    /// Whether a sticker made from `source` still belongs in the form.
+    private func isCurrent(_ source: Data) -> Bool {
+        !Task.isCancelled && photoData == source && makesSticker
     }
 }
