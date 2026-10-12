@@ -77,7 +77,11 @@ struct UserCocktailForm: View {
 
     var body: some View {
         Form {
-            UserCocktailPhotoSection(photoData: $photoData, stickerData: $stickerData, isMakingSticker: $isMakingSticker)
+            UserCocktailPhotoSection(
+                photoData: $photoData,
+                stickerData: $stickerData,
+                isMakingSticker: $isMakingSticker
+            )
 
             Section("Basics") {
                 TextField("Name", text: $name)

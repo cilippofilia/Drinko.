@@ -31,17 +31,17 @@ struct StickerMakerTests {
         return pixels
     }
 
-    private func pixel(_ pixels: [UInt8], width: Int, x: Int, y: Int) -> [UInt8] {
-        let start = (y * width + x) * 4
+    private func pixel(_ pixels: [UInt8], width: Int, x column: Int, y row: Int) -> [UInt8] {
+        let start = (row * width + column) * 4
         return Array(pixels[start..<start + 4])
     }
 
     /// The first x in the middle row that is opaque red: the subject's left edge.
     private func subjectLeftEdge(_ pixels: [UInt8], width: Int, height: Int) throws -> Int {
-        let row = height / 2
-        return try #require((0..<width).first { x in
-            let p = pixel(pixels, width: width, x: x, y: row)
-            return p[0] > 200 && p[1] < 60 && p[3] == 255
+        let middleRow = height / 2
+        return try #require((0..<width).first { column in
+            let px = pixel(pixels, width: width, x: column, y: middleRow)
+            return px[0] > 200 && px[1] < 60 && px[3] == 255
         })
     }
 

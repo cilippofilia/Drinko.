@@ -77,7 +77,11 @@ struct MacUserCocktailForm: View {
         NavigationStack {
             ScrollView {
                 Form {
-                    UserCocktailPhotoSection(photoData: $photoData, stickerData: $stickerData, isMakingSticker: $isMakingSticker)
+                    UserCocktailPhotoSection(
+                        photoData: $photoData,
+                        stickerData: $stickerData,
+                        isMakingSticker: $isMakingSticker
+                    )
                     baseInfoSection
                     ingredientsSection
                     procedureSection

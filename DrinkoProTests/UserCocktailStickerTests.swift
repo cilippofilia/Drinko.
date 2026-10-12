@@ -58,12 +58,12 @@ struct UserCocktailStickerTests {
     }
 
     @Test func changeBetweenDrafts() {
-        let a = Data([1]), b = Data([2])
+        let first = Data([1]), second = Data([2])
         #expect(UserCocktailDetails.PhotoChange.between(nil, nil) == .unchanged)
-        #expect(UserCocktailDetails.PhotoChange.between(a, a) == .unchanged)
-        #expect(UserCocktailDetails.PhotoChange.between(a, b) == .set(b))
-        #expect(UserCocktailDetails.PhotoChange.between(nil, b) == .set(b))
-        #expect(UserCocktailDetails.PhotoChange.between(a, nil) == .remove)
+        #expect(UserCocktailDetails.PhotoChange.between(first, first) == .unchanged)
+        #expect(UserCocktailDetails.PhotoChange.between(first, second) == .set(second))
+        #expect(UserCocktailDetails.PhotoChange.between(nil, second) == .set(second))
+        #expect(UserCocktailDetails.PhotoChange.between(first, nil) == .remove)
     }
 
     @Test func addingWithAStickerStoresAndShowsIt() throws {
