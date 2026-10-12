@@ -13,16 +13,11 @@ struct EditCategoryView: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var showingDeleteConfirmation = false
-    @State private var isSelected = false
 
     /// Called after the category has been deleted from the model context, so the caller
     /// can clear its selection instead of relying on `dismiss()`, which does nothing once
     /// this view is pushed on iOS or shown as a `NavigationSplitView` detail on macOS.
     var onDelete: () -> Void = {}
-
-    let colorColumns = [
-        GridItem(.adaptive(minimum: 44))
-    ]
 
     var body: some View {
         Form {
@@ -38,11 +33,7 @@ struct EditCategoryView: View {
             }
 
             Section("Colors") {
-                LazyVGrid(columns: colorColumns) {
-                    ForEach(Category.colors, id: \.self) { color in
-                        colorButton(for: color)
-                    }
-                }
+                ColorSwatchPicker(colors: Category.colors, cornerRadius: 6, selection: $category.color)
                 .padding(.vertical, 7)
             }
 
@@ -75,33 +66,6 @@ struct EditCategoryView: View {
 
 // MARK: FUNCTIONS
 extension EditCategoryView {
-    func colorButton(for item: String) -> some View {
-        Button {
-            category.color = item
-            isSelected.toggle()
-        } label: {
-            ZStack {
-                Color(item)
-                    .aspectRatio(1, contentMode: .fit)
-                    .clipShape(.rect(cornerRadius: 6, style: .continuous))
-
-                if item == category.color {
-                    Image(systemName: "checkmark.circle")
-                        .foregroundStyle(.white)
-                        .font(.title)
-                        .symbolEffect(.bounce.down, value: isSelected)
-                }
-            }
-        }
-        .buttonStyle(.plain)
-        .contentShape(.rect)
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(item) color")
-        .accessibilityValue(item == category.color ? "Selected" : "Not selected")
-        .accessibilityHint("Selects this color for the category.")
-        .accessibilityAddTraits(item == category.color ? .isSelected : [])
-    }
-
     func delete() {
         modelContext.delete(category)
         onDelete()

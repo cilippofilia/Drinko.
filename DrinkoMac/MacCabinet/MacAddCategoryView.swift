@@ -16,13 +16,8 @@ struct MacAddCategoryView: View {
     @State private var categoryDetails = ""
     @State private var categoryColor = "Dr. Blue"
 
-    @State private var isSelected: Bool = false
     @State private var isColorsCollapsed: Bool = false
     @State private var isSuggestedCollapsed: Bool = false
-
-    let colorColumns = [
-        GridItem(.adaptive(minimum: 33))
-    ]
 
     var body: some View {
         NavigationStack {
@@ -62,11 +57,7 @@ struct MacAddCategoryView: View {
 
                 Section {
                     if !isColorsCollapsed {
-                        LazyVGrid(columns: colorColumns) {
-                            ForEach(Category.colors, id: \.self) { color in
-                                colorButton(for: color)
-                            }
-                        }
+                        ColorSwatchPicker(colors: Category.colors, selection: $categoryColor)
                         .padding(.bottom)
                     }
                 } header: {
@@ -139,32 +130,6 @@ struct MacAddCategoryView: View {
 
 // MARK: FUNCTIONS
 extension MacAddCategoryView {
-    func colorButton(for item: String) -> some View {
-        Button {
-            categoryColor = item
-            isSelected.toggle()
-        } label: {
-            ZStack {
-                Color(item)
-                    .aspectRatio(1, contentMode: .fit)
-                    .clipShape(.rect(cornerRadius: 11, style: .continuous))
-
-                if item == categoryColor {
-                    Image(systemName: "checkmark.circle")
-                        .foregroundStyle(.white)
-                        .font(.title)
-                        .symbolEffect(.bounce.down, value: isSelected)
-                }
-            }
-        }
-        .buttonStyle(.plain)
-        .accessibilityElement(children: .ignore)
-        .accessibilityAddTraits(
-            item == categoryColor ? [.isButton, .isSelected] : .isButton
-        )
-        .accessibilityLabel("Select color \(item)")
-    }
-
     private func categoryRow(for category: Category) -> some View {
         Button {
             modelContext.insert(category)
