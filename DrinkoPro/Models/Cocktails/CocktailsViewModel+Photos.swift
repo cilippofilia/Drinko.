@@ -23,12 +23,6 @@ extension CocktailsViewModel {
         !cocktail.isUserCreated || hasPhoto(cocktail) || hasSticker(cocktail)
     }
 
-    /// The card color the user picked for this cocktail, whether or not a main spirit is
-    /// currently overriding it. `nil` when they haven't picked one.
-    func pickedTintColor(for cocktail: Cocktail) -> String? {
-        userTintColors[cocktail.id]
-    }
-
     /// How many times this cocktail's photo has changed this session.
     func photoRevision(for id: String) -> Int {
         photoRevisions[id, default: 0]

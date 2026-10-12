@@ -32,7 +32,11 @@ struct UserCocktailColorSection: View {
                     Text("Automatic, from \(spirit.displayName)")
                 }
             } else {
-                ColorSwatchPicker(colors: Category.colors, selection: $tintColor)
+                ColorSwatchPicker(
+                    colors: Category.colors,
+                    accessibilityHint: "Selects this color for the card.",
+                    selection: $tintColor
+                )
             }
         } header: {
             Text("Card Color")
@@ -40,7 +44,7 @@ struct UserCocktailColorSection: View {
             if spirit == nil {
                 Text("Pick a color for this cocktail's card.")
             } else {
-                Text("Cocktails take their main spirit's color. Pick one when there isn't a spirit.")
+                Text("Cocktails take their main ingredient's color. Pick one when they don't have one.")
             }
         }
     }

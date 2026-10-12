@@ -18,8 +18,14 @@ struct ColorSwatchPicker: View {
     /// The corner radius of each swatch.
     var cornerRadius: CGFloat = 11
 
+    /// What VoiceOver reads after each swatch's name, such as "Selects this color for the category."
+    let accessibilityHint: LocalizedStringKey
+
     /// The name of the selected color, or `nil` when none is selected.
     @Binding var selection: String?
+
+    /// Flips on every tap, so tapping the already-selected swatch still bounces its checkmark.
+    @State private var tapCount = false
 
     #if os(iOS)
     private let columns = [
@@ -31,17 +37,29 @@ struct ColorSwatchPicker: View {
     ]
     #endif
 
-    init(colors: [String], cornerRadius: CGFloat = 11, selection: Binding<String?>) {
+    init(
+        colors: [String],
+        cornerRadius: CGFloat = 11,
+        accessibilityHint: LocalizedStringKey,
+        selection: Binding<String?>
+    ) {
         self.colors = colors
         self.cornerRadius = cornerRadius
+        self.accessibilityHint = accessibilityHint
         self._selection = selection
     }
 
     /// Creates a picker for a selection that always has a value, such as a Cabinet category's color.
-    init(colors: [String], cornerRadius: CGFloat = 11, selection: Binding<String>) {
+    init(
+        colors: [String],
+        cornerRadius: CGFloat = 11,
+        accessibilityHint: LocalizedStringKey,
+        selection: Binding<String>
+    ) {
         self.init(
             colors: colors,
             cornerRadius: cornerRadius,
+            accessibilityHint: accessibilityHint,
             selection: Binding<String?>(
                 get: { selection.wrappedValue },
                 set: { newValue in
@@ -64,6 +82,7 @@ struct ColorSwatchPicker: View {
     private func swatch(for item: String) -> some View {
         Button {
             selection = item
+            tapCount.toggle()
         } label: {
             ZStack {
                 Color(item)
@@ -74,7 +93,7 @@ struct ColorSwatchPicker: View {
                     Image(systemName: "checkmark.circle")
                         .foregroundStyle(.white)
                         .font(.title)
-                        .symbolEffect(.bounce.down, value: selection)
+                        .symbolEffect(.bounce.down, value: tapCount)
                 }
             }
         }
@@ -83,7 +102,7 @@ struct ColorSwatchPicker: View {
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(item) color")
         .accessibilityValue(item == selection ? "Selected" : "Not selected")
-        .accessibilityHint("Selects this color.")
+        .accessibilityHint(accessibilityHint)
         .accessibilityAddTraits(item == selection ? .isSelected : [])
     }
 }

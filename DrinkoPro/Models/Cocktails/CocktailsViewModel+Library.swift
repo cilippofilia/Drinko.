@@ -97,6 +97,12 @@ extension CocktailsViewModel {
         return cocktail.isUserCreated ? userTintColors[cocktail.id] : nil
     }
 
+    /// The card color the user picked for this cocktail, whether or not a main spirit is
+    /// currently overriding it. `nil` when they haven't picked one.
+    func pickedTintColor(for cocktail: Cocktail) -> String? {
+        userTintColors[cocktail.id]
+    }
+
     private func libraryImage(for cocktail: Cocktail) -> LibraryImage {
         guard cocktail.isUserCreated else {
             if let stickerURL = cocktail.stickerURL {

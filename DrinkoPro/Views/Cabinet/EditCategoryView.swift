@@ -33,7 +33,12 @@ struct EditCategoryView: View {
             }
 
             Section("Colors") {
-                ColorSwatchPicker(colors: Category.colors, cornerRadius: 6, selection: $category.color)
+                ColorSwatchPicker(
+                    colors: Category.colors,
+                    cornerRadius: 6,
+                    accessibilityHint: "Selects this color for the category.",
+                    selection: $category.color
+                )
                 .padding(.vertical, 7)
             }
 

@@ -87,7 +87,11 @@ struct AddCategoryView: View {
 
                 Section {
                     if !isColorsCollapsed {
-                        ColorSwatchPicker(colors: Category.colors, selection: $categoryColor)
+                        ColorSwatchPicker(
+                            colors: Category.colors,
+                            accessibilityHint: "Selects this color for the category.",
+                            selection: $categoryColor
+                        )
                         #if os(macOS)
                         .padding(.bottom)
                         #endif
