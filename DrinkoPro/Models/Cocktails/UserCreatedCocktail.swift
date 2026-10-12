@@ -26,6 +26,9 @@ class UserCreatedCocktail {
     /// The user's photo of the drink, already downscaled to JPEG by `UserPhotoProcessor`.
     /// Stored outside the database row and synced as a CloudKit asset.
     @Attribute(.externalStorage) var photoData: Data?
+    /// The photo turned into a sticker by `StickerMaker`: an RGBA PNG on a transparent
+    /// background. Derived from `photoData`, so it's removed whenever the photo changes.
+    @Attribute(.externalStorage) var stickerData: Data?
 
     init(
         id: String? = nil,

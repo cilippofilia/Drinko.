@@ -147,10 +147,13 @@ class CocktailsViewModel {
 
     /// IDs of user cocktails that have a photo, refreshed whenever user cocktails reload.
     private(set) var cocktailIDsWithPhotos: Set<String> = []
+    /// IDs of user cocktails that have a sticker, refreshed whenever user cocktails reload.
+    private(set) var cocktailIDsWithStickers: Set<String> = []
     /// Bumped each time a cocktail's photo changes, so views and caches drop the old one.
     var photoRevisions: [String: Int] = [:]
-    /// Decoded photo thumbnails keyed by "id#revision#maxPixelSize", capped at 64 MB. The revision
-    /// is part of the key, so replaced photos' entries just age out.
+    /// Decoded photo and sticker thumbnails keyed by "id#revision#maxPixelSize" (stickers prefixed
+    /// "sticker#"), capped at 64 MB. The revision is part of the key, so replaced images' entries
+    /// just age out.
     @ObservationIgnored let photoThumbnailCache: NSCache<NSString, CGImage> = {
         let cache = NSCache<NSString, CGImage>()
         cache.totalCostLimit = 64 * 1024 * 1024
@@ -383,7 +386,11 @@ class CocktailsViewModel {
         if let procedure = newCocktail.procedure {
             procedure.cocktail = newCocktail
         }
-        if case .set(let data) = details.photoChange { newCocktail.photoData = data }
+        if case .set(let data) = details.photoChange {
+            newCocktail.photoData = data
+            // A sticker is cut from the photo, so it's only kept alongside one.
+            if case .set(let sticker) = details.stickerChange { newCocktail.stickerData = sticker }
+        }
         modelContext.insert(newCocktail)
         saveUserCocktails()
     }
@@ -407,16 +414,32 @@ class CocktailsViewModel {
         existing.ingredients?.forEach { $0.cocktail = existing }
         existing.procedure = makeUserProcedure(from: details.procedureSteps)
         existing.procedure?.cocktail = existing
+        var picturesChanged = false
         switch details.photoChange {
         case .unchanged:
             break
         case .set(let data):
             existing.photoData = data
-            photoDidChange(for: existing.id)
+            picturesChanged = true
         case .remove:
             existing.photoData = nil
-            photoDidChange(for: existing.id)
+            picturesChanged = true
         }
+        switch details.stickerChange {
+        case .unchanged:
+            // A new or removed photo makes the stored sticker stale.
+            if details.photoChange != .unchanged, existing.stickerData != nil {
+                existing.stickerData = nil
+                picturesChanged = true
+            }
+        case .set(let data):
+            existing.stickerData = existing.photoData == nil ? nil : data
+            picturesChanged = true
+        case .remove:
+            existing.stickerData = nil
+            picturesChanged = true
+        }
+        if picturesChanged { photoDidChange(for: existing.id) }
         saveUserCocktails()
     }
 
@@ -444,6 +467,7 @@ class CocktailsViewModel {
     private func refreshUserMappings() {
         userCocktails = userCreatedCocktails.map { $0.cocktail }
         cocktailIDsWithPhotos = Set(userCreatedCocktails.filter { $0.photoData != nil }.map(\.id))
+        cocktailIDsWithStickers = Set(userCreatedCocktails.filter { $0.stickerData != nil }.map(\.id))
         userProcedures = userCreatedCocktails.compactMap { userCocktail in
             guard let procedure = userCocktail.procedure else { return nil }
             let sortedSteps = (procedure.steps ?? []).sorted { $0.order < $1.order }
