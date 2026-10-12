@@ -23,7 +23,9 @@ struct RecentsHeroArtwork: View {
             // Drawn exactly like a bundled sticker: bare, with the shadow following the outline.
             UserStickerView(id: id, revision: revision, showsBackdrop: false)
                 .shadow(color: .black.opacity(0.3), radius: 8, y: 4)
-        default:
+        case .remote, .asset, .symbol, .userPhoto, .glass:
+            // Cocktails with tinted glass have no picture, so the hero excludes them; if one
+            // does get here it sits in a rounded card like any other non-sticker.
             LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
                 .clipShape(.rect(cornerRadius: libraryCardCornerRadius, style: .continuous))
                 .shadow(color: .black.opacity(0.25), radius: 8, y: 4)

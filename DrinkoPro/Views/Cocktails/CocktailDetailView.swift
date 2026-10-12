@@ -163,7 +163,8 @@ struct CocktailDetailView: View {
                     editingCocktail: activeCocktail,
                     editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail),
                     editingPhotoData: viewModel.photoData(for: activeCocktail),
-                    editingStickerData: viewModel.stickerData(for: activeCocktail)
+                    editingStickerData: viewModel.stickerData(for: activeCocktail),
+                    editingTintColor: viewModel.pickedTintColor(for: activeCocktail)
                 )
                 #else
                 MacUserCocktailForm(
@@ -174,7 +175,8 @@ struct CocktailDetailView: View {
                     editingCocktail: activeCocktail,
                     editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail),
                     editingPhotoData: viewModel.photoData(for: activeCocktail),
-                    editingStickerData: viewModel.stickerData(for: activeCocktail)
+                    editingStickerData: viewModel.stickerData(for: activeCocktail),
+                    editingTintColor: viewModel.pickedTintColor(for: activeCocktail)
                 )
                 #endif
             }

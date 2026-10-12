@@ -80,15 +80,21 @@ extension CocktailsViewModel {
         return dict
     }
 
-    /// The main spirit's tint for `cocktail`'s sticker, cached per id since bundled cocktails
-    /// never change and the lookup folds over ~40 ingredient-name fragments.
+    /// The card tint for `cocktail`: its main spirit's color, or for the user's own cocktails
+    /// without one, the color they picked. The spirit lookup is cached per id since bundled
+    /// cocktails never change and it folds over ~40 ingredient-name fragments.
     func stickerTint(for cocktail: Cocktail) -> String? {
+        let spirit: MainSpirit?
         if let cached = stickerTintCache[cocktail.id] {
-            return cached?.colorName
+            spirit = cached
+        } else {
+            spirit = MainSpirit(ingredients: cocktail.ingredients)
+            stickerTintCache[cocktail.id] = spirit
         }
-        let spirit = MainSpirit(ingredients: cocktail.ingredients)
-        stickerTintCache[cocktail.id] = spirit
-        return spirit?.colorName
+        if let spirit {
+            return spirit.colorName
+        }
+        return cocktail.isUserCreated ? userTintColors[cocktail.id] : nil
     }
 
     private func libraryImage(for cocktail: Cocktail) -> LibraryImage {
@@ -109,6 +115,6 @@ extension CocktailsViewModel {
         if hasPhoto(cocktail) {
             return .userPhoto(id: cocktail.id, revision: photoRevision(for: cocktail.id))
         }
-        return cocktail.glassArtwork
+        return .glass(cocktail.glassArtwork, tint: stickerTint(for: cocktail))
     }
 }

@@ -33,6 +33,7 @@ struct UserCocktailForm: View {
     @State private var procedureDrafts: [String]
     @State private var photoData: Data?
     @State private var stickerData: Data?
+    @State private var tintColor: String?
     @State private var isMakingSticker = false
     @State private var alertMessage: String?
 
@@ -44,7 +45,8 @@ struct UserCocktailForm: View {
         editingCocktail: Cocktail? = nil,
         editingProcedureSteps: [String] = [],
         editingPhotoData: Data? = nil,
-        editingStickerData: Data? = nil
+        editingStickerData: Data? = nil,
+        editingTintColor: String? = nil
     ) {
         self.methodOptions = methodOptions
         self.glassOptions = glassOptions
@@ -56,6 +58,7 @@ struct UserCocktailForm: View {
         _photoData = State(initialValue: editingPhotoData)
         self.originalStickerData = editingStickerData
         _stickerData = State(initialValue: editingStickerData)
+        _tintColor = State(initialValue: editingTintColor)
 
         let initialState = Self.makeInitialState(
             methodOptions: methodOptions,
@@ -82,6 +85,8 @@ struct UserCocktailForm: View {
                 stickerData: $stickerData,
                 isMakingSticker: $isMakingSticker
             )
+
+            UserCocktailColorSection(ingredients: parsedIngredients, tintColor: $tintColor)
 
             Section("Basics") {
                 TextField("Name", text: $name)
@@ -322,13 +327,6 @@ extension UserCocktailForm {
             return
         }
 
-        let ingredients = ingredientDrafts.compactMap { draft -> Ingredient? in
-            let trimmedIngredientName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !trimmedIngredientName.isEmpty else { return nil }
-            guard let quantity = parseQuantity(from: draft.quantity), quantity > 0 else { return nil }
-            return Ingredient(name: trimmedIngredientName, quantity: quantity, unit: draft.unit)
-        }
-
         let procedureSteps = procedureDrafts
             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
             .filter { !$0.isEmpty }
@@ -344,10 +342,11 @@ extension UserCocktailForm {
             garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
             ice: ice,
             extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
-            ingredients: ingredients,
+            ingredients: parsedIngredients,
             procedureSteps: procedureSteps,
             photoChange: photoChange,
-            stickerChange: stickerChange
+            stickerChange: stickerChange,
+            tintColor: tintColor
         )
 
         if let editingCocktail {
@@ -359,6 +358,17 @@ extension UserCocktailForm {
             #endif
         }
         dismiss()
+    }
+
+    /// The drafts that are complete enough to save, as ingredients. Also what the Card Color
+    /// section reads its automatic color from, so it follows the drafts as they're typed.
+    private var parsedIngredients: [Ingredient] {
+        ingredientDrafts.compactMap { draft -> Ingredient? in
+            let trimmedIngredientName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmedIngredientName.isEmpty else { return nil }
+            guard let quantity = parseQuantity(from: draft.quantity), quantity > 0 else { return nil }
+            return Ingredient(name: trimmedIngredientName, quantity: quantity, unit: draft.unit)
+        }
     }
 
     private func parseQuantity(from rawValue: String) -> Double? {

@@ -36,4 +36,5 @@ struct UserCocktailDetails {
     var procedureSteps: [String]
     var photoChange: PhotoChange = .unchanged
     var stickerChange: PhotoChange = .unchanged
+    var tintColor: String?
 }

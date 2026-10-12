@@ -51,7 +51,7 @@ struct CocktailHeaderImage: View {
                 UserStickerView(id: id, revision: revision, tint: tint)
                     .frame(height: imageFrameHeight)
                     .frame(maxWidth: .infinity)
-            case .asset, .symbol:
+            case .asset, .symbol, .glass:
                 // Only cocktails without a picture get glass art, and they take the branch above.
                 EmptyView()
             }

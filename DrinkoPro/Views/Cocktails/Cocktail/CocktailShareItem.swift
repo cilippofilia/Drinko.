@@ -81,6 +81,7 @@ nonisolated struct CocktailShareItem: Transferable {
     /// Loads the artwork the card shows. Falls back to the glass art when a download fails or
     /// times out, so sharing works offline.
     @MainActor
+    // swiftlint:disable:next cyclomatic_complexity
     func resolvedArtwork() async -> ShareCardArtwork {
         switch artwork {
         case .sticker(let url?, let stickerTint):
@@ -93,6 +94,8 @@ nonisolated struct CocktailShareItem: Transferable {
             }
         case .asset, .symbol:
             return .glass(artwork, tint: tint)
+        case .glass(let inner, let glassTint):
+            return .glass(inner, tint: glassTint)
         case .userPhoto:
             if let photo = loadUserPhoto?() { return .userPhoto(photo) }
         case .userSticker(_, _, let stickerTint):

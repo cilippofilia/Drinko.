@@ -149,6 +149,8 @@ class CocktailsViewModel {
     private(set) var cocktailIDsWithPhotos: Set<String> = []
     /// IDs of user cocktails that have a sticker, refreshed whenever user cocktails reload.
     private(set) var cocktailIDsWithStickers: Set<String> = []
+    /// The card colors the user picked, keyed by cocktail id, refreshed whenever user cocktails reload.
+    private(set) var userTintColors: [String: String] = [:]
     /// Bumped each time a cocktail's photo changes, so views and caches drop the old one.
     var photoRevisions: [String: Int] = [:]
     /// Decoded photo and sticker thumbnails keyed by "id#revision#maxPixelSize" (stickers prefixed
@@ -382,6 +384,7 @@ class CocktailsViewModel {
             creationDate: Date(),
             lastUpdated: nil
         )
+        newCocktail.tintColor = details.tintColor
         newCocktail.ingredients?.forEach { $0.cocktail = newCocktail }
         if let procedure = newCocktail.procedure {
             procedure.cocktail = newCocktail
@@ -407,6 +410,7 @@ class CocktailsViewModel {
         existing.ice = details.ice
         existing.extra = details.extra
         existing.lastUpdated = Date()
+        existing.tintColor = details.tintColor
         stickerTintCache[existing.id] = nil
         existing.ingredients = details.ingredients.map {
             UserIngredient(name: $0.name, quantity: $0.quantity, unit: $0.unit)
@@ -469,6 +473,10 @@ class CocktailsViewModel {
         userCocktails = userCreatedCocktails.map { $0.cocktail }
         cocktailIDsWithPhotos = Set(userCreatedCocktails.filter { $0.photoData != nil }.map(\.id))
         cocktailIDsWithStickers = Set(userCreatedCocktails.filter { $0.stickerData != nil }.map(\.id))
+        userTintColors = Dictionary(
+            userCreatedCocktails.compactMap { cocktail in cocktail.tintColor.map { (cocktail.id, $0) } },
+            uniquingKeysWith: { first, _ in first }
+        )
         userProcedures = userCreatedCocktails.compactMap { userCocktail in
             guard let procedure = userCocktail.procedure else { return nil }
             let sortedSteps = (procedure.steps ?? []).sorted { $0.order < $1.order }

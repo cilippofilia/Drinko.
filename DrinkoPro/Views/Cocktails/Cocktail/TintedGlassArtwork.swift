@@ -14,9 +14,15 @@ struct TintedGlassArtwork: View {
     /// How much of the frame the glass fills, leaving room for the name below it.
     private let insetScale = 0.6
 
+    /// The artwork to draw: when handed already tinted `.glass`, the glass inside it, so the
+    /// wash isn't nested.
+    private var glassArtwork: LibraryImage {
+        if case .glass(let inner, _) = artwork { inner } else { artwork }
+    }
+
     var body: some View {
         Group {
-            switch artwork {
+            switch glassArtwork {
             case .asset(let name):
                 Image(name)
                     .resizable()
@@ -26,7 +32,7 @@ struct TintedGlassArtwork: View {
                     .resizable()
                     .scaledToFit()
                     .foregroundStyle(.secondary)
-            case .remote, .sticker, .userPhoto, .userSticker:
+            case .remote, .sticker, .userPhoto, .userSticker, .glass:
                 Image(systemName: "wineglass")
                     .resizable()
                     .scaledToFit()

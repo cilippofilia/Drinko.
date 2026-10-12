@@ -39,6 +39,6 @@ struct CocktailGlassArtworkTests {
     @Test func libraryRowsOfUserCocktailsUseGlassArtwork() {
         let viewModel = CocktailsViewModel()
         let userCocktail = cocktail(glass: "wine")
-        #expect(viewModel.cardModel(for: userCocktail).image == userCocktail.glassArtwork)
+        #expect(viewModel.cardModel(for: userCocktail).image == .glass(userCocktail.glassArtwork, tint: nil))
     }
 }

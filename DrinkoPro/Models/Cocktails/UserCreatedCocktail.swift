@@ -29,6 +29,8 @@ class UserCreatedCocktail {
     /// The photo turned into a sticker by `StickerMaker`: an RGBA PNG on a transparent
     /// background. Derived from `photoData`, so it's removed whenever the photo changes.
     @Attribute(.externalStorage) var stickerData: Data?
+    /// The card color the person picked, used only when the ingredients have no main spirit to take a tint from.
+    var tintColor: String?
 
     init(
         id: String? = nil,

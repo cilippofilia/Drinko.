@@ -21,4 +21,7 @@ enum LibraryImage: Hashable {
     /// The user's photo turned into a sticker, drawn by `UserStickerView` inset on a wash of the
     /// named color asset (white when `nil`), like the bundled stickers.
     case userSticker(id: String, revision: Int, tint: String?)
+    /// Glass artwork (an `.asset` or `.symbol`) on a wash of the named color asset, for the user's
+    /// cocktails without a picture.
+    indirect case glass(LibraryImage, tint: String?)
 }

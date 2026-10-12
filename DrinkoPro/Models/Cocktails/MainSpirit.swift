@@ -33,6 +33,21 @@ enum MainSpirit: CaseIterable {
         }
     }
 
+    /// The family's name as shown to the user.
+    var displayName: String {
+        switch self {
+        case .vodka: String(localized: "Vodka")
+        case .gin: String(localized: "Gin")
+        case .whiskey: String(localized: "Whiskey")
+        case .rum: String(localized: "Rum")
+        case .tequila: String(localized: "Tequila")
+        case .cognac: String(localized: "Cognac")
+        case .liqueur: String(localized: "Liqueur")
+        case .juice: String(localized: "Juice")
+        case .syrup: String(localized: "Syrup")
+        }
+    }
+
     /// Spirits beat liqueurs, which beat juices, which beat syrups.
     private var rank: Int {
         switch self {

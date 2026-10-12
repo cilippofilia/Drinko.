@@ -74,10 +74,10 @@ struct CocktailsLibraryTests {
 
     @Test func userCocktailCardsUseGlassArtwork() {
         let viewModel = CocktailsViewModel()
-        #expect(viewModel.cardModel(for: userCocktail(glass: "wine")).image == .symbol("wineglass"))
-        #expect(viewModel.cardModel(for: userCocktail(glass: "julep cup")).image == .asset("julep"))
-        #expect(viewModel.cardModel(for: userCocktail(glass: "coffee mug")).image == .asset("julep"))
-        #expect(viewModel.cardModel(for: userCocktail(glass: "coupe")).image == .asset("coupe"))
+        #expect(viewModel.cardModel(for: userCocktail(glass: "wine")).image == .glass(.symbol("wineglass"), tint: nil))
+        #expect(viewModel.cardModel(for: userCocktail(glass: "julep cup")).image == .glass(.asset("julep"), tint: nil))
+        #expect(viewModel.cardModel(for: userCocktail(glass: "coffee mug")).image == .glass(.asset("julep"), tint: nil))
+        #expect(viewModel.cardModel(for: userCocktail(glass: "coupe")).image == .glass(.asset("coupe"), tint: nil))
     }
 
     @Test func recentItemsDropUnknownIDs() throws {

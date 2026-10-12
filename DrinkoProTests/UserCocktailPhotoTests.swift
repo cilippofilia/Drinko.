@@ -112,7 +112,7 @@ struct UserCocktailPhotoTests {
 
         let updated = try #require(viewModel.userCocktails.first)
         #expect(!viewModel.hasPhoto(updated))
-        #expect(viewModel.cardModel(for: updated).image == updated.glassArtwork)
+        #expect(viewModel.cardModel(for: updated).image == .glass(updated.glassArtwork, tint: MainSpirit.gin.colorName))
         #expect(viewModel.recentCocktailsWithPictures(from: [updated.id]).isEmpty)
     }
 
