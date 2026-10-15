@@ -40,7 +40,7 @@ struct LibraryItemButton<Label: View, MenuContent: View>: View {
                         .opacity(showsSelection && layout == .list ? 0.15 : 0)
                 }
                 .overlay {
-                    RoundedRectangle(cornerRadius: libraryCardCornerRadius)
+                    RoundedRectangle(cornerRadius: polaroidCornerRadius)
                         .strokeBorder(.tint, lineWidth: 2)
                         .opacity(showsSelection && layout == .grid ? 1 : 0)
                         .allowsHitTesting(false)

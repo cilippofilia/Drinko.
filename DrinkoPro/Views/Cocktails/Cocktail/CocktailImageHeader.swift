@@ -7,76 +7,34 @@
 
 import SwiftUI
 
-/// The cocktail's artwork with its name on a blurred band in the bottom corner, like the
-/// library cards, and the Favorite/History buttons in the opposite corner.
+/// The cocktail's artwork as a polaroid, with its name and actions written on the strip below,
+/// like the library cards.
 struct CocktailImageHeader: View {
-    @Environment(CocktailsViewModel.self) private var viewModel
+    /// The system appearance, read outside the polaroid (which is always light), so the History
+    /// sheet still follows it.
+    @Environment(\.colorScheme) private var colorScheme
 
     let cocktail: Cocktail
     let history: History?
 
-    /// How far above the name the blur starts fading in.
-    @ScaledMetric private var blurFadeHeight: CGFloat = 28
-    /// The measured height of the padded name-and-buttons row.
-    @State private var rowHeight: CGFloat = 0
-    /// The measured height of the name text alone, so the blur reaches full strength right
-    /// where the name starts.
-    @State private var textHeight: CGFloat = 0
-
-    /// The fully blurred area: the name plus the padding below it. The padding is even,
-    /// so the space above the name is half the difference between the two heights.
-    private var solidBlurHeight: CGFloat {
-        (rowHeight + textHeight) / 2
-    }
-
-    @Environment(\.colorScheme) private var colorScheme
-
-    /// Bundled stickers and photos are always light, so the name and icons stay dark over them in
-    /// Dark Mode too. A user's sticker sits on the same always-light wash, so it does the same.
-    /// User photos can be anything, and the placeholder follows the system, so those
-    /// use the system appearance over the blur band.
-    private var titleColorScheme: ColorScheme {
-        cocktail.isUserCreated && !viewModel.hasSticker(cocktail) ? colorScheme : .light
-    }
-
     var body: some View {
-        CocktailHeaderImage(cocktail: cocktail, bottomInset: rowHeight)
-            .overlay {
-                if viewModel.hasPicture(cocktail) {
-                    LibraryCardBlurBand(
-                        fadeHeight: blurFadeHeight,
-                        solidHeight: solidBlurHeight,
-                        colorScheme: titleColorScheme
-                    )
-                }
-            }
-            .overlay(alignment: .bottom) {
-                // The icons sit on the name's last line, so they read as part of the title.
-                HStack(alignment: .lastTextBaseline) {
-                    Text(cocktail.name)
-                        .font(.title.bold())
-                        .lineLimit(2)
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .onGeometryChange(for: CGFloat.self) { proxy in
-                            proxy.size.height
-                        } action: { height in
-                            textHeight = height
-                        }
-                        .environment(\.colorScheme, titleColorScheme)
-                        .accessibilityAddTraits(.isHeader)
+        PolaroidFrame {
+            CocktailHeaderImage(cocktail: cocktail)
+        } caption: {
+            // The icons sit on the name's last line, so they read as part of the title.
+            HStack(alignment: .lastTextBaseline) {
+                Text(cocktail.name)
+                    .font(.title.bold())
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .accessibilityAddTraits(.isHeader)
 
-                    CocktailHeaderActions(cocktail: cocktail, history: history, iconColorScheme: titleColorScheme)
-                }
-                .padding()
-                .onGeometryChange(for: CGFloat.self) { proxy in
-                    proxy.size.height
-                } action: { height in
-                    rowHeight = height
-                }
+                CocktailHeaderActions(cocktail: cocktail, history: history, sheetColorScheme: colorScheme)
             }
-            // Rounded like the library cards.
-            .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
+        }
+        .compositingGroup()
+        .shadow(color: .black.opacity(0.12), radius: 6, y: 3)
     }
 }
 

@@ -66,6 +66,8 @@ struct CocktailsLibraryContent: View {
                         }
                     }
                 )
+                // Cocktail names are short, so one caption line keeps the cards compact.
+                .environment(\.libraryCardCaptionLines, 1)
             }
         }
     }

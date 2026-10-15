@@ -19,6 +19,10 @@ let imageFrameHeight: CGFloat = 280
 /// grow, so a wide iPad column doesn't produce an oversized banner.
 let heroImageMaxHeight: CGFloat = 480
 let libraryCardCornerRadius: CGFloat = 24
+/// How round a polaroid's paper corners are (the library grid cards and the cocktail header).
+let polaroidCornerRadius: CGFloat = 16
+/// How round a polaroid's photo window is. Just softened, as on a print.
+let polaroidPhotoCornerRadius: CGFloat = 6
 /// The inset from a cocktail detail card's edges to its content, and the gap between cards.
 let detailCardInset: CGFloat = 16
 /// The gap between groups inside a cocktail detail card, like a card's header and its content,

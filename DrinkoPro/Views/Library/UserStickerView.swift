@@ -9,6 +9,7 @@ import SwiftUI
 /// `StickerImageView`. Asks the view model for a thumbnail sized to the space on offer, so a row
 /// never decodes the full sticker.
 struct UserStickerView: View {
+    @Environment(\.stickerBackdropCornerRadius) private var backdropCornerRadius
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(\.displayScale) private var displayScale
 
@@ -52,7 +53,7 @@ struct UserStickerView: View {
                 viewSize = newSize
             }
             // Only the backdrop needs rounding; a bare sticker would lose its die-cut corners.
-            .clipShape(.rect(cornerRadius: showsBackdrop ? libraryCardCornerRadius : 0, style: .continuous))
+            .clipShape(.rect(cornerRadius: showsBackdrop ? backdropCornerRadius : 0, style: .continuous))
             .accessibilityHidden(true)
     }
 }

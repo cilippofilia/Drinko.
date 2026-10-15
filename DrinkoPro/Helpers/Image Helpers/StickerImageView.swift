@@ -7,6 +7,7 @@ import SwiftUI
 
 /// A cocktail sticker, either on its own or inset on a light backdrop.
 struct StickerImageView: View {
+    @Environment(\.stickerBackdropCornerRadius) private var backdropCornerRadius
     let url: URL?
     /// Sits the sticker inset on a backdrop. Without it, the sticker fills the frame on its own.
     var showsBackdrop = true
@@ -33,7 +34,7 @@ struct StickerImageView: View {
             }
             // Only the backdrop needs rounding. A bare sticker fills its frame, so rounding
             // would clip the corners of its die-cut outline.
-            .clipShape(.rect(cornerRadius: showsBackdrop ? libraryCardCornerRadius : 0, style: .continuous))
+            .clipShape(.rect(cornerRadius: showsBackdrop ? backdropCornerRadius : 0, style: .continuous))
     }
 }
 

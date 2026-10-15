@@ -10,8 +10,9 @@ import SwiftUI
 struct CocktailHeaderActions: View {
     let cocktail: Cocktail
     let history: History?
-    /// The appearance the icons are drawn in, matching the name next to them.
-    let iconColorScheme: ColorScheme
+    /// The appearance the History sheet is shown in. The icons sit on the header's always-light
+    /// polaroid, so the sheet can't take the appearance from here.
+    let sheetColorScheme: ColorScheme
 
     @State private var showHistory = false
 
@@ -23,15 +24,14 @@ struct CocktailHeaderActions: View {
         .labelStyle(.iconOnly)
         .buttonStyle(HeaderIconButtonStyle())
         .font(.title2)
-        // The sheet is attached outside this scope so the history itself still follows the
-        // system appearance.
-        .environment(\.colorScheme, iconColorScheme)
         .sheet(isPresented: $showHistory) {
             if let history {
                 // Medium only, so on iOS 26 it stays an inset sheet floating over the cocktail;
                 // longer histories scroll inside it.
                 HistoryView(cocktail: cocktail, history: history)
                     .presentationDetents([.medium])
+                    // Applies to the sheet itself, chrome included, not just its content.
+                    .preferredColorScheme(sheetColorScheme)
             }
         }
     }

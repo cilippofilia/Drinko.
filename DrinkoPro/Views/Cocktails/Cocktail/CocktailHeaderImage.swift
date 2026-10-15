@@ -11,8 +11,6 @@ struct CocktailHeaderImage: View {
     @Environment(CocktailsViewModel.self) private var viewModel
 
     let cocktail: Cocktail
-    /// Room to leave at the bottom for the name drawn over the header.
-    var bottomInset: CGFloat = 0
 
     var body: some View {
         if !viewModel.hasPicture(cocktail) {

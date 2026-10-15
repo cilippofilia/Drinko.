@@ -7,87 +7,68 @@ import SwiftUI
 
 /// One item in a library section's grid layout. Also used for the recents deck.
 struct LibraryCardView: View {
+    @Environment(\.libraryCardCaptionLines) private var captionLines
+
     let model: LibraryCardModel
     /// Shows the title even when the model hides it on bare grid artwork (book covers that
     /// already show their title). The recents deck sets this, since its smaller cards benefit
     /// from a consistent label across items.
     var alwaysShowsTitle = false
 
-    /// How far above the text the blur starts fading in.
-    @ScaledMetric private var blurFadeHeight: CGFloat = 28
-    /// The measured height of the padded title block.
-    @State private var titleHeight: CGFloat = 0
-    /// The measured height of the text alone, so the blur reaches full strength right where the text starts.
-    @State private var textHeight: CGFloat = 0
-
-    /// The fully blurred area: the text plus the padding below it. The padding is even,
-    /// so the space above the text is half the difference between the two heights.
-    private var solidBlurHeight: CGFloat {
-        (titleHeight + textHeight) / 2
-    }
-
     private var showsTitle: Bool {
         alwaysShowsTitle || model.showsCardTitle
     }
 
-    /// `true` when the title isn't drawn anywhere on the card's own layers, so VoiceOver
-    /// needs to read it from the artwork instead.
-    private var artworkNeedsTitleLabel: Bool {
-        !showsTitle
-    }
-
     var body: some View {
-        // A fixed aspect ratio keeps every card the same height however the text wraps.
-        Color.clear
-            .aspectRatio(4 / 5, contentMode: .fit)
-            .overlay {
-                LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
-                    // The artwork is decorative when the title's drawn elsewhere on the card.
-                    // When it isn't (bare book covers), replace its accessibility tree with the
-                    // title so VoiceOver still reads it; otherwise leave it as the empty tree
-                    // `LibraryImageView`'s own `.accessibilityHidden(true)` already produces.
-                    .accessibilityRepresentation {
-                        if artworkNeedsTitleLabel {
-                            Text(model.title)
+        PolaroidFrame {
+            // A square window keeps every photo the same size however the caption wraps.
+            Color.clear
+                .aspectRatio(1, contentMode: .fit)
+                .overlay {
+                    LibraryImageView(image: model.image, contentMode: model.imageContentMode, insetsFittedPhoto: true)
+                        // The artwork is decorative when the caption names the item. When it
+                        // doesn't (bare book covers), replace its accessibility tree with the
+                        // title so VoiceOver still reads it; otherwise leave it as the empty tree
+                        // `LibraryImageView`'s own `.accessibilityHidden(true)` already produces.
+                        .accessibilityRepresentation {
+                            if !showsTitle {
+                                Text(model.title)
+                            }
                         }
+                }
+                .overlay(alignment: .topTrailing) {
+                    if model.isFavorite {
+                        LibraryFavoriteBadge()
+                            .padding()
                     }
-            }
-            .overlay {
-                if showsTitle || model.progress != nil {
-                    LibraryCardBlurBand(fadeHeight: blurFadeHeight, solidHeight: solidBlurHeight)
+                }
+        } caption: {
+            VStack(alignment: .leading) {
+                // The library's line count is always reserved, so every card in a row is the
+                // same height; a name too long for it shrinks a little before it truncates. A
+                // book cover already shows its title, so its caption is left blank, like an
+                // unwritten polaroid.
+                Text(model.title)
+                    .font(.headline)
+                    .lineLimit(captionLines, reservesSpace: true)
+                    .minimumScaleFactor(0.8)
+                    .multilineTextAlignment(.leading)
+                    .opacity(showsTitle ? 1 : 0)
+                    .accessibilityHidden(!showsTitle)
+
+                if let progress = model.progress {
+                    LibraryProgressBar(progress: progress)
                 }
             }
-            .overlay(alignment: .bottom) {
-                if showsTitle || model.progress != nil {
-                    LibraryCardTitleOverlay(
-                        model: model,
-                        showsTitle: showsTitle,
-                        textHeight: $textHeight,
-                        titleHeight: $titleHeight
-                    )
-                }
-            }
-            .overlay(alignment: .topTrailing) {
-                if model.isFavorite {
-                    LibraryFavoriteBadge()
-                        .padding()
-                }
-            }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(.background.secondary)
-        .clipShape(.rect(cornerRadius: libraryCardCornerRadius))
-        .overlay {
-            RoundedRectangle(cornerRadius: libraryCardCornerRadius)
-                .strokeBorder(.separator, lineWidth: 1)
         }
-        // Flatten the stacked image, blur and text into one layer, so system effects that
-        // dim or fade the card (like the context menu's long-press highlight) don't turn
-        // the individual layers see-through.
+        // Flatten the paper, photo and caption into one layer, so system effects that dim or
+        // fade the card (like the context menu's long-press highlight) don't turn the
+        // individual layers see-through.
         .compositingGroup()
-        .shadow(color: .black.opacity(0.08), radius: 4, y: 2)
-        .contentShape(.rect(cornerRadius: libraryCardCornerRadius))
+        .shadow(color: .black.opacity(0.12), radius: 6, y: 3)
+        .contentShape(.rect(cornerRadius: polaroidCornerRadius))
         #if os(iOS)
-        .contentShape(.contextMenuPreview, .rect(cornerRadius: libraryCardCornerRadius))
+        .contentShape(.contextMenuPreview, .rect(cornerRadius: polaroidCornerRadius))
         #endif
     }
 }
@@ -98,6 +79,21 @@ struct LibraryCardView: View {
         LibraryCardView(model: LibraryCardModel(title: "Ice", image: .symbol("cube"), imageContentMode: .fit, progress: 0.3))
         LibraryCardView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true))
     }
+    .padding()
+}
+
+#Preview("One caption line") {
+    HStack(alignment: .top) {
+        LibraryCardView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit))
+        LibraryCardView(
+            model: LibraryCardModel(
+                title: "Philadelphia Fish House Punch",
+                image: .symbol("cup.and.saucer"),
+                imageContentMode: .fit
+            )
+        )
+    }
+    .environment(\.libraryCardCaptionLines, 1)
     .padding()
 }
 #endif
