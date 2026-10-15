@@ -255,7 +255,7 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         // Settle on the item a swipe will end on as soon as the finger lifts, rather than
         // waiting for the deceleration to finish.
         .scrollTargetBehavior(RecentsHeroSnapBehavior(itemWidth: itemWidth) { slot in
-            if (0..<slotCount).contains(slot) {
+            if (0..<slotCount).contains(slot), slot != settledSlot {
                 settledSlot = slot
             }
         })

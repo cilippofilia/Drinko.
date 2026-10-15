@@ -18,8 +18,9 @@ struct RecentsHeroSnapBehavior: ScrollTargetBehavior {
         guard itemWidth > 0 else { return }
         // The content starts at the first slot, so slot `n`'s centre is `n + 0.5` widths in.
         let slot = Int(((target.rect.midX - itemWidth / 2) / itemWidth).rounded())
-        // The scroll view asks for targets from its gesture handling, on the main thread.
-        MainActor.assumeIsolated {
+        // SwiftUI can ask for a target in the middle of a view update (a layout pass, not just a
+        // lifted finger), when changing state isn't allowed, so report it afterwards.
+        Task { @MainActor in
             onTarget(slot)
         }
     }
