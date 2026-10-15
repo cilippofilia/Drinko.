@@ -5,16 +5,21 @@
 
 import SwiftUI
 
-/// The iPadOS menu bar (and the hold-⌘ shortcut list): File › New… and View › section
-/// shortcuts. Everything routes through `AppNavigationModel`, so a command behaves like
-/// tapping the matching tab or toolbar button.
+/// The iPadOS and macOS menu bar (and the iPadOS hold-⌘ shortcut list): File › New… and
+/// View › section shortcuts. On macOS ⌘N already opens a new window, so New Cocktail uses ⌥⌘N
+/// there. Everything routes through `AppNavigationModel`, so a command behaves like tapping
+/// the matching tab or toolbar button.
 struct AppCommands: Commands {
     let appNavigationModel: AppNavigationModel
 
     var body: some Commands {
         CommandGroup(after: .newItem) {
             Button("New Cocktail", action: appNavigationModel.requestNewCocktail)
+                #if os(macOS)
+                .keyboardShortcut("n", modifiers: [.command, .option])
+                #else
                 .keyboardShortcut("n")
+                #endif
             Button("New Category", action: appNavigationModel.requestNewCategory)
                 .keyboardShortcut("n", modifiers: [.command, .shift])
         }
