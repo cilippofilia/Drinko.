@@ -20,6 +20,7 @@ struct UserCocktailPhotoSection: View {
     /// Owned by the form, which won't save while a sticker is still being made.
     @Binding var isMakingSticker: Bool
     @State private var stickerError: LocalizedStringResource?
+    @State private var confirmsRemovingPhoto = false
 
     /// The preview's height in the form.
     @ScaledMetric private var previewHeight: CGFloat = 180
@@ -73,8 +74,12 @@ struct UserCocktailPhotoSection: View {
                 },
                 label: {
                     Label(photoData == nil ? "Add Photo" : "Replace Photo", systemImage: "photo.badge.plus")
+                        .labelStyle(.formAction)
                 }
             )
+            // A menu tints its whole label, so tint it with the text color; the label style
+            // colors the icon itself.
+            .tint(Color.primary)
             // Decodes once per photo change, on this always-present row rather than the Section.
             .task(id: photoData) {
                 preview = photoData.flatMap { UserPhotoProcessor.thumbnail(from: $0, maxPixelSize: 900) }
@@ -91,15 +96,28 @@ struct UserCocktailPhotoSection: View {
                         }
                     }
 
-                Button("Remove Photo", systemImage: "trash", role: .destructive) {
-                    photoData = nil
-                    stickerData = nil
-                    stickerPreview = nil
-                    makesSticker = false
-                    stickerError = nil
-                    // The toggle row (and its sticker task) goes away with the photo, so nothing
-                    // else would clear this and Save would stay blocked.
-                    isMakingSticker = false
+                Button(role: .destructive) {
+                    confirmsRemovingPhoto = true
+                } label: {
+                    Label {
+                        Text("Remove Photo")
+                    } icon: {
+                        // In a form the destructive role only reddens the title, and the icon
+                        // keeps the app's tint, so color it explicitly.
+                        Image(systemName: "trash")
+                            .foregroundStyle(Color.red)
+                    }
+                }
+                .confirmationDialog(
+                    "Remove this photo?",
+                    isPresented: $confirmsRemovingPhoto,
+                    titleVisibility: .visible
+                ) {
+                    Button("Remove Photo", role: .destructive, action: removePhoto)
+                } message: {
+                    if stickerData != nil {
+                        Text("Its sticker will be removed too.")
+                    }
                 }
             }
         } header: {
@@ -109,6 +127,18 @@ struct UserCocktailPhotoSection: View {
                 Text(stickerError)
             }
         }
+    }
+
+    /// Clears the photo and everything made from it.
+    private func removePhoto() {
+        photoData = nil
+        stickerData = nil
+        stickerPreview = nil
+        makesSticker = false
+        stickerError = nil
+        // The toggle row (and its sticker task) goes away with the photo, so nothing else would
+        // clear this and Save would stay blocked.
+        isMakingSticker = false
     }
 
     /// Makes the sticker when the toggle is on and there isn't one for this photo yet, or drops

@@ -147,6 +147,7 @@ struct UserCocktailForm: View {
                 Button("Add Ingredient", systemImage: "plus") {
                     ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
                 }
+                .labelStyle(.formAction)
             }
 
             Section("Procedure") {
@@ -175,6 +176,7 @@ struct UserCocktailForm: View {
                 Button("Add Step", systemImage: "plus") {
                     procedureDrafts.append("")
                 }
+                .labelStyle(.formAction)
             }
 
             Section("Notes") {
