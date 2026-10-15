@@ -61,6 +61,12 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
         id.hasPrefix("user-")
     }
 
+    /// Whether the cocktail's name or any of its ingredients contains the query.
+    func matches(_ query: String) -> Bool {
+        name.localizedStandardContains(query)
+            || ingredients.contains { $0.name.localizedStandardContains(query) }
+    }
+
     /// Drinks whose sticker is filed under another name.
     private static let stickerNames = [
         "augie-march": "manhattan",
@@ -290,7 +296,7 @@ class CocktailsViewModel {
         }
 
         guard !searchText.isEmpty else { return baseCocktails }
-        return baseCocktails.filter { $0.name.localizedStandardContains(searchText) }
+        return baseCocktails.filter { $0.matches(searchText) }
     }
 
     func groupedCocktails(

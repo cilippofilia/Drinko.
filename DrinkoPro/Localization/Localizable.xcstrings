@@ -795,6 +795,40 @@
         }
       }
     },
+    "Cocktails or Ingredients" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktails oder Zutaten"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktails or Ingredients"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cócteles o ingredientes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktails ou ingrédients"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail o ingredienti"
+          }
+        }
+      }
+    },
     "Cocktails take their main ingredient's color. Pick one when they don't have one." : {
       "extractionState" : "manual",
       "localizations" : {

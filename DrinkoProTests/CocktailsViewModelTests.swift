@@ -48,7 +48,21 @@ final class CocktailsViewModelTests: XCTestCase {
 
         let results = viewModel.filteredCocktails
         XCTAssertFalse(results.isEmpty)
-        XCTAssertTrue(results.allSatisfy { $0.name.localizedStandardContains(searchText) })
+        XCTAssertTrue(results.allSatisfy { $0.matches(searchText) })
+    }
+
+    func testFilteredCocktailsMatchIngredientNames() throws {
+        let viewModel = CocktailsViewModel()
+        // Find an ingredient that isn't part of its cocktail's name, so only the ingredient can match.
+        let match = viewModel.listOfAllDrinks.lazy
+            .flatMap { cocktail in cocktail.ingredients.map { (cocktail, $0.name) } }
+            .first { cocktail, ingredient in !cocktail.name.localizedStandardContains(ingredient) }
+        let (cocktail, ingredient) = try XCTUnwrap(match)
+        viewModel.searchText = ingredient
+
+        let results = viewModel.filteredCocktails
+        XCTAssertTrue(results.contains(cocktail))
+        XCTAssertTrue(results.allSatisfy { $0.matches(ingredient) })
     }
 
     func testFilteredCocktailsFavoritesOnly() {

@@ -123,7 +123,7 @@ struct CocktailsView: View {
                     }
                 )
                 .navigationTitle(title)
-                .searchable(text: $viewModel.searchText, prompt: "Search Cocktails")
+                .searchable(text: $viewModel.searchText, prompt: "Cocktails or Ingredients")
                 .toolbar {
                     ToolbarItem(placement: layoutTogglePlacement) {
                         LibraryLayoutToggle(layout: $layout)
