@@ -49,3 +49,27 @@ struct UserCocktailColorSection: View {
         }
     }
 }
+
+#Preview {
+    UserCocktailColorSection(
+        ingredients: [
+            Ingredient(
+                name: "london dry gin",
+                quantity: 2.0,
+                unit: "oz."),
+            Ingredient(
+                name: "cointreau",
+                quantity: 0.5,
+                unit: "oz."),
+            Ingredient(
+                name: "dry vermouth",
+                quantity: 6,
+                unit: "leaves"),
+            Ingredient(
+                name: "angostura bitters",
+                quantity: 4,
+                unit: "dashes")
+        ],
+        tintColor: .constant(nil)
+    )
+}
