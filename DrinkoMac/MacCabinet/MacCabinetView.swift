@@ -10,6 +10,7 @@ import SwiftUI
 
 struct MacCabinetView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(CrossPromoSignal.self) private var crossPromoSignal
 
     @State private var showAddCategorySheet: Bool = false
     @State private var selectedCategory: Category? = nil
@@ -39,9 +40,7 @@ struct MacCabinetView: View {
                         .navigationTitle("Cabinet")
                 }
             }
-            .safeAreaInset(edge: .bottom) {
-                CrossPromoBannerView()
-            }
+            .crossPromoBanner()
         }
     }
 }
@@ -136,6 +135,7 @@ extension MacCabinetView {
 
     func addProduct(to category: Category) {
         category.products?.append(Item(name:"Product Name"))
+        crossPromoSignal.bump()
     }
 }
 
@@ -162,6 +162,7 @@ extension MacCabinetView {
         let previewer = try CabinetPreviewerPreviewer()
 
         return MacCabinetView()
+            .environment(CrossPromoSignal())
         /// comment the following line to display an emptyCabinet
             .modelContainer(previewer.container)
     } catch {
