@@ -24,6 +24,7 @@ struct MacHomeView: View {
 
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
     @State private var interstitialAd: Ad?
+    @State private var showRemoveAdsPaywall = false
 
     /// The sidebar selection. Ignores `nil`, so a click on empty space can't deselect the row.
     private var sidebarSelection: Binding<AppTab?> {
@@ -84,6 +85,17 @@ struct MacHomeView: View {
                     }
                 }
             }
+            .safeAreaInset(edge: .bottom) {
+                if removeAdsStore.isAdsRemoved == false {
+                    Button("Remove Ads", systemImage: "nosign") {
+                        showRemoveAdsPaywall = true
+                    }
+                    .buttonStyle(.plain)
+                    .foregroundStyle(.tint)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
+                }
+            }
             .navigationSplitViewColumnWidth(
                 min: 140,
                 ideal: 180,
@@ -107,6 +119,10 @@ struct MacHomeView: View {
         // A selected Cabinet category row disappears when the category is deleted.
         .onChange(of: categories.map(\.id)) {
             fitSelection()
+        }
+        .sheet(isPresented: $showRemoveAdsPaywall) {
+            CrossPromoRemoveAdsInfoView()
+                .frame(minWidth: 420, minHeight: 480)
         }
         .sheet(item: $interstitialAd) { ad in
             AdView(advert: ad, config: .crossPromo) {
