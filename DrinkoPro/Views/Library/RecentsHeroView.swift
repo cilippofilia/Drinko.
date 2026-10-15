@@ -151,6 +151,8 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                 RecentsHeroCaption(text: currentTitle, heroID: currentIndex, textColor: textColor)
             }
         }
+        // Room for the backdrop to fade out under the content.
+        .padding(.bottom, RecentsHeroLayout.backdropFadeHeight)
         .frame(maxWidth: .infinity)
         .background {
             RecentsHeroScrollingBackground(scrollState: scrollState, backdrops: entries.map(\.backdrop))

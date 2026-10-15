@@ -30,12 +30,21 @@ struct RecentsHeroScrollingBackground: View {
         )
         let fraction = position?.fraction ?? 0
         // Padding by a negative amount makes the backdrop taller than the band without
-        // affecting layout, so it reaches behind the navigation bar and over a pull-down.
+        // affecting layout, so it reaches behind the navigation bar and over a pull-down. The
+        // mask fades the bottom out into the page background (black in dark mode, white in
+        // light mode), so the band melts into the list instead of ending on a hard edge.
         RecentsHeroBackground(
             lower: position.map { backdrops[$0.lowerIndex] } ?? .neutral,
             upper: position.map { backdrops[$0.upperIndex] } ?? .neutral,
             fraction: fraction
         )
+        .mask {
+            VStack(spacing: 0) {
+                Rectangle()
+                RecentsHeroFadeMask()
+                    .frame(height: RecentsHeroLayout.backdropFadeHeight)
+            }
+        }
         .padding(.top, -extensionAbove)
         .animation(reduceMotion ? .easeInOut : nil, value: fraction)
     }
