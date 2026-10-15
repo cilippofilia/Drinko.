@@ -78,10 +78,10 @@ enum RecentsHeroLayout {
     /// The widest an item gets, so the row doesn't balloon on iPad and Mac.
     static let maximumItemWidth = 280.0
 
-    /// The height of the fade at the bottom of the band, where the backdrop melts into the page
-    /// background. The band leaves this much empty space under its content so no text sits on
-    /// the fade.
-    static let backdropFadeHeight = 56.0
+    /// How far below the band's bottom edge the fade runs, into the gap before the list, so
+    /// the band takes no extra room for it. It ends before the first section header, which
+    /// then sits on the plain page background.
+    static let fadeBelowBottom = 16.0
 
     /// The width of one item (and the distance between neighbours' centres) in a band
     /// `containerWidth` wide.
