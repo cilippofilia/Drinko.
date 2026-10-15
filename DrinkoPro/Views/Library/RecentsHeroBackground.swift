@@ -55,59 +55,41 @@ extension RecentsHeroLayout.Backdrop {
     }
 }
 
-/// The full-bleed backdrop of the recents hero band, blending between the backdrops of the two
-/// items the carousel is between.
+/// The full-bleed backdrop of the recents hero band for one item.
 ///
-/// Tinted backdrops are built like the sticker cards (white with the tint washed over it) and
-/// blend continuously with `Color.mix`, so swiping drifts the band from one tint to the
-/// next. Photo wallpapers are heavily blurred copies of the item's photo (blurred once, ahead of time; see
-/// `RecentsHeroWallpaperCache`), cross-faded by the same
-/// fraction, over the neutral tone so there's something to look at while they load. A color next
-/// to a photo simply cross-fades. Reduce Motion doesn't remove the change, but the caller passes
-/// a fraction that jumps rather than glides (see `RecentsHeroView`), so it reads as a cross-fade.
+/// A tinted backdrop is built like the sticker cards (white with the tint washed over it), so a
+/// band matches its card pixel for pixel. A photo backdrop is a heavily blurred copy of the
+/// item's photo (blurred once, ahead of time; see `RecentsHeroWallpaperCache`), darkened by a
+/// scrim, over the neutral tone so there's something to look at while it loads.
 ///
-/// The view fills the band; the band extends it upwards (behind the navigation bar and over a
-/// pull-down) by padding it with a negative top inset, and the photo layer is scaled up from the
-/// bottom edge to cover that extra height.
+/// The view fills the band; `RecentsHeroSettledBackground` extends it upwards (behind the
+/// navigation bar and over a pull-down) and cross-fades it when the centred item changes.
 struct RecentsHeroBackground: View {
     @Environment(\.colorScheme) private var colorScheme
 
-    let lower: RecentsHeroLayout.Backdrop
-    let upper: RecentsHeroLayout.Backdrop
-    /// 0 shows `lower`; 1 shows `upper`.
-    let fraction: Double
+    let backdrop: RecentsHeroLayout.Backdrop
 
     /// How much the wallpaper is darkened so white text stays readable on bright photos.
     private let scrimOpacity = 0.4
 
     var body: some View {
         ZStack {
-            lower.baseColor(in: colorScheme)
-                .mix(with: upper.baseColor(in: colorScheme), by: fraction)
-            RecentsHeroTintWash(lower: lower.tint, upper: upper.tint, fraction: fraction)
-
-            wallpaper(for: lower)
-                .opacity(1 - fraction)
-            if upper != lower {
-                wallpaper(for: upper)
-                    .opacity(fraction)
+            backdrop.baseColor(in: colorScheme)
+            if let tint = backdrop.tint {
+                tint.opacity(StickerImageView.tintOpacity)
+            }
+            if let url = backdrop.photoURL {
+                RecentsHeroWallpaper(url: url)
+                    .overlay { Color.black.opacity(scrimOpacity) }
             }
         }
         .accessibilityHidden(true)
         .allowsHitTesting(false)
     }
-
-    @ViewBuilder
-    private func wallpaper(for backdrop: RecentsHeroLayout.Backdrop) -> some View {
-        if let url = backdrop.photoURL {
-            RecentsHeroWallpaper(url: url)
-                .overlay { Color.black.opacity(scrimOpacity) }
-        }
-    }
 }
 
 #if DEBUG
 #Preview {
-    RecentsHeroBackground(lower: .color("Dr. Gold"), upper: .color("Dr. Lavender"), fraction: 0.4)
+    RecentsHeroBackground(backdrop: .color("Dr. Lavender"))
 }
 #endif

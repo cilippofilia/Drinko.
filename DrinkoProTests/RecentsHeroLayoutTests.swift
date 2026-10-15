@@ -66,74 +66,15 @@ struct RecentsHeroLayoutTests {
         #expect(RecentsHeroLayout.itemWidth(forContainerWidth: -5) == 0)
     }
 
-    // MARK: Scroll progress
+    // MARK: Fade curve
 
-    @Test func positionBetweenItemsSplitsIntoNeighboursAndFraction() throws {
-        let position = try #require(RecentsHeroLayout.position(forFractionalIndex: 1.25, count: 4))
-        #expect(position.lowerIndex == 1)
-        #expect(position.upperIndex == 2)
-        #expect(abs(position.fraction - 0.25) < 0.0001)
-    }
-
-    @Test func positionOnAnItemHasNoFraction() {
-        #expect(RecentsHeroLayout.position(forFractionalIndex: 2, count: 4)
-            == RecentsHeroLayout.Position(lowerIndex: 2, upperIndex: 3, fraction: 0))
-    }
-
-    @Test func positionIsClampedAtBothEnds() {
-        #expect(RecentsHeroLayout.position(forFractionalIndex: -0.6, count: 3)
-            == RecentsHeroLayout.Position(lowerIndex: 0, upperIndex: 1, fraction: 0))
-        #expect(RecentsHeroLayout.position(forFractionalIndex: 7, count: 3)
-            == RecentsHeroLayout.Position(lowerIndex: 2, upperIndex: 2, fraction: 0))
-    }
-
-    @Test func positionHandlesEmptySingleAndNonFiniteInput() {
-        #expect(RecentsHeroLayout.position(forFractionalIndex: 0, count: 0) == nil)
-        #expect(RecentsHeroLayout.position(forFractionalIndex: 0.5, count: 1)
-            == RecentsHeroLayout.Position(lowerIndex: 0, upperIndex: 0, fraction: 0))
-        #expect(RecentsHeroLayout.position(forFractionalIndex: .nan, count: 3)?.lowerIndex == 0)
-    }
-
-    @Test func itemPositionMapsSlotsOntoItemsAndWrapsAtCopyBoundaries() {
-        // Slot 5 of a 3-item loop is item 2, and slot 6 is back to item 0.
-        #expect(RecentsHeroLayout.itemPosition(forFractionalSlot: 5.25, itemCount: 3, snapsFraction: false)
-            == RecentsHeroLayout.Position(lowerIndex: 2, upperIndex: 0, fraction: 0.25))
-        #expect(RecentsHeroLayout.itemPosition(forFractionalSlot: 0, itemCount: 0, snapsFraction: false) == nil)
-    }
-
-    @Test func snappingRoundsTheFractionToTheNearerItem() {
-        let nearFirst = RecentsHeroLayout.itemPosition(forFractionalSlot: 1.3, itemCount: 4, snapsFraction: true)
-        #expect(nearFirst?.fraction == 0)
-        let nearSecond = RecentsHeroLayout.itemPosition(forFractionalSlot: 1.7, itemCount: 4, snapsFraction: true)
-        #expect(nearSecond?.fraction == 1)
-    }
-
-    @Test func interpolationRunsFromStartToEnd() {
-        #expect(RecentsHeroLayout.interpolated(from: 0.2, to: 0.8, fraction: 0) == 0.2)
-        #expect(RecentsHeroLayout.interpolated(from: 0.2, to: 0.8, fraction: 1) == 0.8)
-        #expect(abs(RecentsHeroLayout.interpolated(from: 0.2, to: 0.8, fraction: 0.5) - 0.5) < 0.0001)
-    }
-
-    @Test func blendedLuminanceMixesTheNeighbouringItems() {
-        let luminances = [0.1, 0.9, 0.5]
-        #expect(RecentsHeroLayout.blendedLuminance(
-            atFractionalSlot: 0, itemLuminances: luminances, snapsFraction: false, fallback: 0.3) == 0.1)
-        let halfway = RecentsHeroLayout.blendedLuminance(
-            atFractionalSlot: 0.5, itemLuminances: luminances, snapsFraction: false, fallback: 0.3)
-        #expect(abs(halfway - 0.5) < 0.0001)
-        // Reduce Motion snaps to the nearer item.
-        let snapped = RecentsHeroLayout.blendedLuminance(
-            atFractionalSlot: 0.6, itemLuminances: luminances, snapsFraction: true, fallback: 0.3)
-        #expect(abs(snapped - 0.9) < 0.0001)
-        // The last item blends back into the first only on a looping carousel's next slot.
-        let wrapped = RecentsHeroLayout.blendedLuminance(
-            atFractionalSlot: 2, itemLuminances: luminances, snapsFraction: false, fallback: 0.3)
-        #expect(abs(wrapped - 0.5) < 0.0001)
-    }
-
-    @Test func blendedLuminanceFallsBackWithoutItems() {
-        #expect(RecentsHeroLayout.blendedLuminance(
-            atFractionalSlot: 1, itemLuminances: [], snapsFraction: false, fallback: 0.3) == 0.3)
+    @Test func fadeCurveLiftRisesFromTheMiddleToTheEdges() {
+        #expect(RecentsHeroLayout.fadeCurveLift(atDistance: 0, fromCentreOfWidth: 400) == 0)
+        #expect(RecentsHeroLayout.fadeCurveLift(atDistance: 200, fromCentreOfWidth: 400)
+            == RecentsHeroLayout.fadeCurveDepth)
+        #expect(RecentsHeroLayout.fadeCurveLift(atDistance: 100, fromCentreOfWidth: 400)
+            == RecentsHeroLayout.fadeCurveDepth / 4)
+        #expect(RecentsHeroLayout.fadeCurveLift(atDistance: 100, fromCentreOfWidth: 0) == 0)
     }
 
     // MARK: Backdrops

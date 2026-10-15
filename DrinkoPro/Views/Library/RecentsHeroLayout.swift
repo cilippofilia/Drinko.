@@ -83,75 +83,23 @@ enum RecentsHeroLayout {
     /// then sits on the plain page background.
     static let fadeBelowBottom = 16.0
 
+    /// How much higher the fade sits at the band's left and right edges than in the middle, so
+    /// it curves up around the centred item like a smile.
+    static let fadeCurveDepth = 24.0
+
+    /// How much higher the fade curve sits `distance` points from the middle of a band `width`
+    /// wide: nothing in the middle, `fadeCurveDepth` at either edge, along a parabola. The
+    /// shader in `RecentsHeroFade.metal` draws the same curve.
+    static func fadeCurveLift(atDistance distance: Double, fromCentreOfWidth width: Double) -> Double {
+        guard width > 0 else { return 0 }
+        let across = distance / (width / 2)
+        return fadeCurveDepth * across * across
+    }
+
     /// The width of one item (and the distance between neighbours' centres) in a band
     /// `containerWidth` wide.
     static func itemWidth(forContainerWidth containerWidth: Double) -> Double {
         min(max(containerWidth, 0) * itemWidthFraction, maximumItemWidth)
-    }
-
-    // MARK: - Scroll progress
-
-    /// Which two items the band is between, and how far from the first towards the second.
-    struct Position: Equatable {
-        let lowerIndex: Int
-        let upperIndex: Int
-        /// 0 when exactly on `lowerIndex`, approaching 1 as `upperIndex` arrives.
-        let fraction: Double
-    }
-
-    /// Turns a fractional item position (scroll offset divided by item stride) into the pair of
-    /// items to blend. Clamped at both ends so rubber-banding past the first or last item
-    /// holds the end item's backdrop instead of reaching for one that doesn't exist.
-    /// `nil` when there are no items.
-    static func position(forFractionalIndex value: Double, count: Int) -> Position? {
-        guard count > 0 else { return nil }
-        let clamped = min(max(value.isFinite ? value : 0, 0), Double(count - 1))
-        let lower = Int(clamped.rounded(.down))
-        let upper = min(lower + 1, count - 1)
-        return Position(lowerIndex: lower, upperIndex: upper, fraction: clamped - Double(lower))
-    }
-
-    /// Like `position(forFractionalIndex:count:)`, but for a fractional *slot* of a carousel
-    /// showing `itemCount` items: both ends are mapped back onto items (a looping carousel's
-    /// slots repeat them), and with `snapsFraction` the fraction jumps to the nearer end instead
-    /// of gliding, which is what Reduce Motion wants. `nil` when there are no items.
-    static func itemPosition(forFractionalSlot value: Double, itemCount: Int, snapsFraction: Bool) -> Position? {
-        guard let slots = position(forFractionalIndex: value, count: slotCount(count: itemCount)) else {
-            return nil
-        }
-        return Position(
-            lowerIndex: itemIndex(forSlot: slots.lowerIndex, count: itemCount),
-            upperIndex: itemIndex(forSlot: slots.upperIndex, count: itemCount),
-            fraction: snapsFraction ? slots.fraction.rounded() : slots.fraction
-        )
-    }
-
-    /// The value `fraction` of the way from `start` to `end`.
-    static func interpolated(from start: Double, to end: Double, fraction: Double) -> Double {
-        start + (end - start) * fraction
-    }
-
-    /// The backdrop luminance at a fractional slot, blended from each item's own luminance
-    /// (one entry per item), so the scroll handler can pick the text style for every frame
-    /// without resolving colors. `fallback` is returned when there are no items.
-    static func blendedLuminance(
-        atFractionalSlot value: Double,
-        itemLuminances: [Double],
-        snapsFraction: Bool,
-        fallback: Double
-    ) -> Double {
-        guard let position = itemPosition(
-            forFractionalSlot: value,
-            itemCount: itemLuminances.count,
-            snapsFraction: snapsFraction
-        ) else {
-            return fallback
-        }
-        return interpolated(
-            from: itemLuminances[position.lowerIndex],
-            to: itemLuminances[position.upperIndex],
-            fraction: position.fraction
-        )
     }
 
     // MARK: - Backdrops

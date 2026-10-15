@@ -17,6 +17,9 @@ import SwiftUI
 /// sits behind system chrome, the label and hero text pick white or near-black from the
 /// backdrop's luminance.
 ///
+/// The name, backdrop and text color follow the item the carousel settles on, not every item
+/// that passes the centre, so a fast swipe only moves and scales the items.
+///
 /// The scroll view does the carousel work: each swipe snaps to an item, and with three or more
 /// items the row loops endlessly in both directions. Tapping the centred item opens it; tapping a
 /// neighbour brings it to the centre first.
@@ -36,9 +39,11 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     @State private var currentSlot: Int?
     /// The carousel's width, which sizes the items and the margins that centre them.
     @State private var containerWidth = 0.0
-    /// The per-frame scroll position. The body never reads its position, only its text style,
-    /// so a swipe re-evaluates the body only when the text flips between light and dark.
-    @State private var scrollState = RecentsHeroScrollState()
+    /// The slot the carousel last came to rest on, or will once the current swipe ends, which
+    /// the name, backdrop and text color follow. It ignores the items a swipe passes over.
+    @State private var settledSlot: Int?
+    /// Whether the carousel is at rest, so a programmatic jump can settle straight away.
+    @State private var isScrollIdle = true
     /// Each item's card model and backdrop, worked out when the items change rather than on
     /// every frame. Built in `refreshEntries()`, not `init`: the parent re-runs `init` on every
     /// update and `State` would throw the result away.
@@ -85,28 +90,37 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         entries.indices.contains(currentIndex) ? entries[currentIndex].model.title : ""
     }
 
+    /// The settled item's position, which the name and backdrop show.
+    private var settledIndex: Int {
+        RecentsHeroLayout.itemIndex(forSlot: settledSlot ?? currentSlot ?? homeSlot, count: items.count)
+    }
+
+    /// The settled item's name, empty when there is none.
+    private var settledTitle: String {
+        entries.indices.contains(settledIndex) ? entries[settledIndex].model.title : ""
+    }
+
+    /// The settled item's backdrop, or the neutral tone when there is none.
+    private var settledBackdrop: RecentsHeroLayout.Backdrop {
+        entries.indices.contains(settledIndex) ? entries[settledIndex].backdrop : .neutral
+    }
+
     private var itemWidth: Double {
         RecentsHeroLayout.itemWidth(forContainerWidth: containerWidth)
     }
 
     private var textColor: Color {
-        scrollState.textStyle == .light ? .white : .black.opacity(0.85)
+        switch RecentsHeroLayout.textStyle(forLuminance: settledBackdrop.luminance(in: colorScheme)) {
+        case .light:
+            .white
+        case .dark:
+            .black.opacity(0.85)
+        }
     }
 
-    /// Rebuilds the per-item data after the items or the appearance change.
+    /// Rebuilds the per-item data after the items change.
     private func refreshEntries() {
         entries = items.map { RecentsHeroEntry(model: cardModel($0)) }
-        configureScrollState()
-    }
-
-    /// Passes the scroll state what it needs to pick the text style on each frame.
-    private func configureScrollState() {
-        scrollState.configure(
-            itemWidth: itemWidth,
-            itemLuminances: entries.map { $0.backdrop.luminance(in: colorScheme) },
-            fallbackLuminance: RecentsHeroLayout.Backdrop.neutral.luminance(in: colorScheme),
-            snapsFraction: reduceMotion
-        )
     }
 
     var body: some View {
@@ -125,17 +139,17 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                     // behind it.
                     .background(alignment: .topLeading) {
                         RecentsHeroName(
-                            text: currentTitle,
-                            heroID: currentIndex,
+                            text: settledTitle,
+                            heroID: settledIndex,
                             fontSize: heroFontSize,
                             textColor: textColor
                         )
                     }
                     .overlay(alignment: .topLeading) {
                         RecentsHeroName(
-                            text: currentTitle,
+                            text: settledTitle,
                             // The item, not the slot, so re-centring on a copy doesn't animate.
-                            heroID: currentIndex,
+                            heroID: settledIndex,
                             fontSize: heroFontSize,
                             textColor: textColor
                         )
@@ -148,25 +162,23 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
             case .caption:
                 accessibleCarousel
 
-                RecentsHeroCaption(text: currentTitle, heroID: currentIndex, textColor: textColor)
+                RecentsHeroCaption(text: settledTitle, heroID: settledIndex, textColor: textColor)
             }
         }
         .frame(maxWidth: .infinity)
         .background {
-            RecentsHeroScrollingBackground(
-                scrollState: scrollState,
-                backdrops: entries.map(\.backdrop),
-                fadeAboveBottom: titleStyle.fadeAboveBottom
-            )
+            RecentsHeroSettledBackground(backdrop: settledBackdrop, fadeAboveBottom: titleStyle.fadeAboveBottom)
         }
         .onAppear {
             if currentSlot == nil {
                 currentSlot = homeSlot
+                settledSlot = homeSlot
             }
             refreshEntries()
         }
         .onChange(of: items) {
             currentSlot = homeSlot
+            settledSlot = homeSlot
             refreshEntries()
         }
         // Favoriting or re-photographing an item changes its card model without changing
@@ -174,14 +186,12 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         .onChange(of: items.map { cardModel($0) }) {
             refreshEntries()
         }
-        .onChange(of: colorScheme) {
-            configureScrollState()
-        }
-        .onChange(of: reduceMotion) {
-            configureScrollState()
-        }
-        .onChange(of: itemWidth) {
-            configureScrollState()
+        // A jump made while the carousel is at rest (one without a scroll animation) never
+        // reports a new phase, so settle on it here.
+        .onChange(of: currentSlot) {
+            if isScrollIdle {
+                settledSlot = currentSlot
+            }
         }
     }
 
@@ -219,15 +229,22 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                         select(slot: slot, index: index)
                     }
                     .frame(width: itemWidth)
-                    .visualEffect { [itemWidth, reduceMotion] content, proxy in
-                        // Measure against the scroll view's visible bounds in the same space,
-                        // since that space's origin is offset by the content margins.
+                    .visualEffect { [itemWidth, containerWidth, reduceMotion] content, proxy in
+                        // The scroll view's visible bounds come back in the item's own
+                        // coordinates, so compare their centre with the item's.
                         let space = NamedCoordinateSpace.scrollView(axis: .horizontal)
-                        let visibleMidX = proxy.bounds(of: space)?.midX ?? 0
-                        let distance = abs(proxy.frame(in: space).midX - visibleMidX)
+                        let visibleMidX = proxy.bounds(of: space)?.midX ?? proxy.size.width / 2
+                        let distance = abs(visibleMidX - proxy.size.width / 2)
                         let progress = itemWidth > 0 ? min(distance / itemWidth, 1) : 0
+                        // Items rise as they move out from the centre, along the same curve as
+                        // the backdrop's fade, so the row travels in an arc.
+                        let lift = RecentsHeroLayout.fadeCurveLift(
+                            atDistance: distance,
+                            fromCentreOfWidth: containerWidth
+                        )
                         return content
-                            .scaleEffect(reduceMotion ? 1 : 1 - 0.3 * progress)
+                            .scaleEffect(reduceMotion ? 1 : 1 - 0.36 * progress)
+                            .offset(y: reduceMotion ? 0 : -lift)
                     }
                 }
             }
@@ -235,28 +252,33 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         }
         // Margins half a width less an item put the first and last slots in the centre.
         .contentMargins(.horizontal, max((containerWidth - itemWidth) / 2, 0), for: .scrollContent)
-        .scrollTargetBehavior(.viewAligned)
-        .scrollPosition(id: $currentSlot)
-        // Once a swipe settles near either end of the copies, jump back to the same item in
-        // the middle copy. The copies look identical, so without animation it can't be seen.
-        .onScrollPhaseChange { _, newPhase in
-            guard newPhase == .idle, let currentSlot else { return }
-            let recentered = RecentsHeroLayout.recenteredSlot(currentSlot, count: items.count)
-            guard recentered != currentSlot else { return }
-            var transaction = Transaction()
-            transaction.disablesAnimations = true
-            withTransaction(transaction) {
-                self.currentSlot = recentered
+        // Settle on the item a swipe will end on as soon as the finger lifts, rather than
+        // waiting for the deceleration to finish.
+        .scrollTargetBehavior(RecentsHeroSnapBehavior(itemWidth: itemWidth) { slot in
+            if (0..<slotCount).contains(slot) {
+                settledSlot = slot
             }
+        })
+        .scrollPosition(id: $currentSlot)
+        // Once a swipe comes to rest, settle on the centred item. Near either end of the
+        // copies, also jump back to the same item in the middle copy. The copies look
+        // identical, so without animation it can't be seen.
+        .onScrollPhaseChange { _, newPhase in
+            isScrollIdle = newPhase == .idle
+            guard isScrollIdle, let currentSlot else { return }
+            let recentered = RecentsHeroLayout.recenteredSlot(currentSlot, count: items.count)
+            if recentered != currentSlot {
+                var transaction = Transaction()
+                transaction.disablesAnimations = true
+                withTransaction(transaction) {
+                    self.currentSlot = recentered
+                }
+            }
+            settledSlot = recentered
         }
         .scrollIndicators(.hidden)
         // Items cast shadows that the scroll view would otherwise clip.
         .scrollClipDisabled()
-        .onScrollGeometryChange(for: Double.self) { geometry in
-            geometry.contentOffset.x + geometry.contentInsets.leading
-        } action: { _, newValue in
-            scrollState.scroll(toOffset: newValue)
-        }
         .onGeometryChange(for: Double.self) { proxy in
             proxy.size.width
         } action: { newValue in

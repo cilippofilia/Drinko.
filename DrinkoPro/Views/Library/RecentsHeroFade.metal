@@ -20,10 +20,22 @@ static float recentsHeroNoise(float2 position) {
 }
 
 /// Fades the backdrop out between `start` and `end` (in points, top to bottom), so it melts into
-/// the page background. A little noise dithers the alpha, which keeps a long, low-contrast
-/// gradient (a pale tint into black) from showing bands.
-[[ stitchable ]] half4 recentsHeroBackdropFade(float2 position, half4 color, float start, float end) {
-    float alpha = 1.0 - recentsHeroFadeProgress(position.y, start, end);
+/// the page background. The fade curves like a smile: it holds its place in the middle of a
+/// layer `width` wide and rises by `curveDepth` towards either edge. A little noise dithers the
+/// alpha, which keeps a long, low-contrast gradient (a pale tint into black) from showing bands.
+[[ stitchable ]] half4 recentsHeroBackdropFade(
+    float2 position,
+    half4 color,
+    float start,
+    float end,
+    float width,
+    float curveDepth
+) {
+    // -1 at the left edge, 0 in the middle, 1 at the right edge. Matches
+    // `RecentsHeroLayout.fadeCurveLift`, which moves the items along the same curve.
+    float across = (position.x - width * 0.5) / max(width * 0.5, 1.0);
+    float lift = curveDepth * across * across;
+    float alpha = 1.0 - recentsHeroFadeProgress(position.y + lift, start, end);
     alpha = saturate(alpha + (recentsHeroNoise(position) - 0.5) / 128.0 * step(0.001, alpha));
     // SwiftUI colors are premultiplied, so scaling every channel fades the pixel.
     return color * half(alpha);
