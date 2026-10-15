@@ -20,6 +20,8 @@ struct UserCocktailForm: View {
     private let unitOptions: [String]
     private let editingCocktail: Cocktail?
     private let editingProcedureSteps: [String]
+    private let originalPhotoData: Data?
+    private let originalStickerData: Data?
 
     @State private var name = ""
     @State private var method: String
@@ -29,6 +31,10 @@ struct UserCocktailForm: View {
     @State private var extra = ""
     @State private var ingredientDrafts: [IngredientDraft]
     @State private var procedureDrafts: [String]
+    @State private var photoData: Data?
+    @State private var stickerData: Data?
+    @State private var tintColor: String?
+    @State private var isMakingSticker = false
     @State private var alertMessage: String?
 
     init(
@@ -37,7 +43,10 @@ struct UserCocktailForm: View {
         iceOptions: [String],
         unitOptions: [String],
         editingCocktail: Cocktail? = nil,
-        editingProcedureSteps: [String] = []
+        editingProcedureSteps: [String] = [],
+        editingPhotoData: Data? = nil,
+        editingStickerData: Data? = nil,
+        editingTintColor: String? = nil
     ) {
         self.methodOptions = methodOptions
         self.glassOptions = glassOptions
@@ -45,6 +54,11 @@ struct UserCocktailForm: View {
         self.unitOptions = unitOptions
         self.editingCocktail = editingCocktail
         self.editingProcedureSteps = editingProcedureSteps
+        self.originalPhotoData = editingPhotoData
+        _photoData = State(initialValue: editingPhotoData)
+        self.originalStickerData = editingStickerData
+        _stickerData = State(initialValue: editingStickerData)
+        _tintColor = State(initialValue: editingTintColor)
 
         let initialState = Self.makeInitialState(
             methodOptions: methodOptions,
@@ -66,6 +80,14 @@ struct UserCocktailForm: View {
 
     var body: some View {
         Form {
+            UserCocktailPhotoSection(
+                photoData: $photoData,
+                stickerData: $stickerData,
+                isMakingSticker: $isMakingSticker
+            )
+
+            UserCocktailColorSection(ingredients: parsedIngredients, tintColor: $tintColor)
+
             Section("Basics") {
                 TextField("Name", text: $name)
                 Picker("Method", selection: $method) {
@@ -125,6 +147,7 @@ struct UserCocktailForm: View {
                 Button("Add Ingredient", systemImage: "plus") {
                     ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
                 }
+                .labelStyle(.formAction)
             }
 
             Section("Procedure") {
@@ -153,6 +176,7 @@ struct UserCocktailForm: View {
                 Button("Add Step", systemImage: "plus") {
                     procedureDrafts.append("")
                 }
+                .labelStyle(.formAction)
             }
 
             Section("Notes") {
@@ -207,6 +231,9 @@ extension UserCocktailForm {
     }
 
     private var saveDisabledReason: String? {
+        if isMakingSticker {
+            return "Wait for the sticker to finish before saving."
+        }
         if trimmedName.isEmpty {
             return "Add a cocktail name to enable Save."
         }
@@ -249,16 +276,7 @@ extension UserCocktailForm {
         unitOptions: [String],
         editingCocktail: Cocktail?,
         editingProcedureSteps: [String]
-    ) -> (
-        name: String,
-        method: String,
-        glass: String,
-        garnish: String,
-        ice: String,
-        extra: String,
-        ingredientDrafts: [IngredientDraft],
-        procedureDrafts: [String]
-    ) {
+    ) -> UserCocktailFormState {
         if let editingCocktail {
             let mappedIngredients = editingCocktail.ingredients.map {
                 IngredientDraft(name: $0.name, quantity: String($0.quantity), unit: $0.unit)
@@ -271,7 +289,7 @@ extension UserCocktailForm {
                 .filter { !$0.isEmpty }
             let procedureDrafts = trimmedProcedure.isEmpty ? [""] : trimmedProcedure
 
-            return (
+            return UserCocktailFormState(
                 name: editingCocktail.name,
                 method: editingCocktail.method,
                 glass: editingCocktail.glass,
@@ -283,7 +301,7 @@ extension UserCocktailForm {
             )
         }
 
-        return (
+        return UserCocktailFormState(
             name: "",
             method: methodOptions.first ?? "shake & fine strain",
             glass: glassOptions.first ?? "rock",
@@ -295,17 +313,20 @@ extension UserCocktailForm {
         )
     }
 
+    /// What saving should do with the photo: nothing if it's untouched, so it isn't re-encoded.
+    private var photoChange: UserCocktailDetails.PhotoChange {
+        .between(originalPhotoData, photoData)
+    }
+
+    /// What saving should do with the sticker, the same way.
+    private var stickerChange: UserCocktailDetails.PhotoChange {
+        .between(originalStickerData, stickerData)
+    }
+
     private func saveCocktail() {
         if let saveDisabledReason {
             alertMessage = saveDisabledReason
             return
-        }
-
-        let ingredients = ingredientDrafts.compactMap { draft -> Ingredient? in
-            let trimmedIngredientName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !trimmedIngredientName.isEmpty else { return nil }
-            guard let quantity = parseQuantity(from: draft.quantity), quantity > 0 else { return nil }
-            return Ingredient(name: trimmedIngredientName, quantity: quantity, unit: draft.unit)
         }
 
         let procedureSteps = procedureDrafts
@@ -316,29 +337,24 @@ extension UserCocktailForm {
             extra = "-"
         }
 
+        let details = UserCocktailDetails(
+            name: trimmedName,
+            method: method,
+            glass: glass,
+            garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
+            ice: ice,
+            extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
+            ingredients: parsedIngredients,
+            procedureSteps: procedureSteps,
+            photoChange: photoChange,
+            stickerChange: stickerChange,
+            tintColor: tintColor
+        )
+
         if let editingCocktail {
-            viewModel.updateUserCocktail(
-                editingCocktail,
-                name: trimmedName,
-                method: method,
-                glass: glass,
-                garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
-                ice: ice,
-                extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
-                ingredients: ingredients,
-                procedureSteps: procedureSteps
-            )
+            viewModel.updateUserCocktail(editingCocktail, with: details)
         } else {
-            viewModel.addUserCocktail(
-                name: trimmedName,
-                method: method,
-                glass: glass,
-                garnish: garnish.trimmingCharacters(in: .whitespacesAndNewlines),
-                ice: ice,
-                extra: extra.trimmingCharacters(in: .whitespacesAndNewlines),
-                ingredients: ingredients,
-                procedureSteps: procedureSteps
-            )
+            viewModel.addUserCocktail(details)
             #if os(iOS)
             crossPromoSignal.bump()
             #endif
@@ -346,10 +362,21 @@ extension UserCocktailForm {
         dismiss()
     }
 
+    /// The drafts that are complete enough to save, as ingredients. Also what the Card Color
+    /// section reads its automatic color from, so it follows the drafts as they're typed.
+    private var parsedIngredients: [Ingredient] {
+        ingredientDrafts.compactMap { draft -> Ingredient? in
+            let trimmedIngredientName = draft.name.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !trimmedIngredientName.isEmpty else { return nil }
+            guard let quantity = parseQuantity(from: draft.quantity), quantity > 0 else { return nil }
+            return Ingredient(name: trimmedIngredientName, quantity: quantity, unit: draft.unit)
+        }
+    }
+
     private func parseQuantity(from rawValue: String) -> Double? {
         let trimmed = rawValue.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return nil }
-        return Double(trimmed.replacingOccurrences(of: ",", with: "."))
+        return Double(trimmed.replacing(",", with: "."))
     }
 
     private func ingredientErrorMessage(for draft: IngredientDraft) -> String? {

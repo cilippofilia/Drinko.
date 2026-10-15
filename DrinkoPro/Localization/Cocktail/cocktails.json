@@ -2351,7 +2351,7 @@
     },
     {
         "id": "americano-cocktail",
-        "name": "Americano (cocktail)",
+        "name": "Americano",
         "method": "build + quick stir",
         "glass": "collins",
         "garnish": "orange slice",
@@ -2904,7 +2904,7 @@
         "ingredients": [
             {
                 "name": "white rum",
-                "quantity": 1.0,
+                "quantity": 2.0,
                 "unit": "oz."
             },
             {
@@ -4553,6 +4553,115 @@
             {
                 "name": "rich demerara syrup",
                 "quantity": 0.25,
+                "unit": "oz."
+            }
+        ]
+    },
+    {
+        "id": "rossa-sour",
+        "name": "Rossa Sour",
+        "method": "dry shake, shake with ice & fine strain",
+        "glass": "coupe",
+        "garnish": "Maraschino cherry",
+        "ice": "-",
+        "extra": "-",
+        "ingredients": [
+            {
+                "name": "campari",
+                "quantity": 1.5,
+                "unit": "oz."
+            },
+            {
+                "name": "simple syrup",
+                "quantity": 0.75,
+                "unit": "oz."
+            },
+            {
+                "name": "pink grapefruit juice",
+                "quantity": 0.75,
+                "unit": "oz."
+            },
+            {
+                "name": "lime juice",
+                "quantity": 0.75,
+                "unit": "oz."
+            },
+            {
+                "name": "egg white",
+                "quantity": 1.0,
+                "unit": "oz."
+            }
+        ]
+    },
+    {
+        "id": "garibaldi",
+        "name": "Garibaldi",
+        "method": "build",
+        "glass": "collins",
+        "garnish": "Orange wedge",
+        "ice": "cubed",
+        "extra": "Blend the orange juice without ice to make it fluffy",
+        "ingredients": [
+            {
+                "name": "campari",
+                "quantity": 1.5,
+                "unit": "oz."
+            },
+            {
+                "name": "simple syrup",
+                "quantity": 1.0,
+                "unit": "barspoon"
+            },
+            {
+                "name": "orange juice",
+                "quantity": 4,
+                "unit": "oz."
+            }
+        ]
+    },
+    {
+        "id": "blood-orange-garibaldi",
+        "name": "Blood Orange Garibaldi",
+        "method": "build",
+        "glass": "collins",
+        "garnish": "Blood orange wedge",
+        "ice": "cubed",
+        "extra": "Blend the orange juice without ice to make it fluffy",
+        "ingredients": [
+            {
+                "name": "campari",
+                "quantity": 1.5,
+                "unit": "oz."
+            },
+            {
+                "name": "simple syrup",
+                "quantity": 1.0,
+                "unit": "barspoon"
+            },
+            {
+                "name": "blood orange juice",
+                "quantity": 4,
+                "unit": "oz."
+            }
+        ]
+    },
+    {
+        "id": "milano-torino",
+        "name": "Milano Torino",
+        "method": "stir & strain",
+        "glass": "coupe",
+        "garnish": "orange slice",
+        "ice": "cubed",
+        "extra": "-",
+        "ingredients": [
+            {
+                "name": "campari",
+                "quantity": 1.5,
+                "unit": "oz."
+            },
+            {
+                "name": "sweet red vermouth",
+                "quantity": 1.5,
                 "unit": "oz."
             }
         ]

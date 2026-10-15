@@ -11,9 +11,10 @@ import SwiftUI
 /// re-appearing rows (or a detail pane rebuilt via `.id(selection)`) do not flash a `ProgressView`
 /// or re-download an image already held by the loader's in-memory cache.
 ///
-/// The image is requested at a pixel size derived from the view's own rendered size (read via
+/// The image is requested at a pixel size derived from the space the view is given (read via
 /// `onGeometryChange`, not `GeometryReader`) multiplied by the display scale, so a 45pt row
-/// thumbnail never decodes a full-size source image.
+/// thumbnail never decodes a full-size source image. The view always fills that space, so give
+/// it a frame.
 struct CachedRemoteImage: View {
     private enum LoadState {
         case loading
@@ -48,7 +49,10 @@ struct CachedRemoteImage: View {
     }
 
     var body: some View {
-        content
+        // Measure the space on offer, not the content: while loading, the content is just a
+        // small spinner, and sizing the first request to it fetched a blurry thumbnail.
+        Color.clear
+            .overlay { content }
             .onGeometryChange(for: CGSize.self) { proxy in
                 proxy.size
             } action: { newSize in

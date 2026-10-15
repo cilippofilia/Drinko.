@@ -66,7 +66,7 @@
 
     {
         "id":"daiquiri",
-        "text":"While many vintage drinks lack documentation to prove their precise point of creation, the daiquiri's origin is backed up by an actual cocktail recipe card signed by 'Jennings Cox' in 1896. Cox, an American engineer who lived and worked in Cuba after the Spanish-American War, is believed to have invented the daiquiri after running out of gin while throwing a cocktail party. Since rum is plentiful in the country, it proved to be a convenient substitute in a punch he was serving. Unlike what is stated on his recipe card, the drink was made with limes and brown sugar. It turned out to be a huge hit, and Cox christened it the 'Daiquiri,' naming the drink after a nearby port town, which also happened to be where the U.S. first invaded Cuba during the Spanish-American War.\n\nHowever, considering the island's abundance of lime, sugar, and rum, it's likely that Cox was merely the first to pen the recipe of a cocktail that had already existed in Cuba. Not to mention that a prototype of the daiquiri had been saving the British Royal Navy from scurvy for centuries before.",
+        "text":"While many vintage drinks lack documentation to prove their precise point of creation, the daiquiri's origin is backed up by an actual cocktail recipe card signed by 'Jennings Cox' in 1896. Cox, an American engineer who lived and worked in Cuba after the Spanish-American War, is believed to have invented the daiquiri after running out of gin while throwing a cocktail party. Since rum is plentiful in the country, it proved to be a convenient substitute in a punch he was serving. Unlike what is stated on his recipe card, the drink was made with limes and brown sugar. It turned out to be a huge hit, and Cox christened it the 'Daiquiri,' naming the drink after a nearby port town, which also happened to be where the U.S. first invaded Cuba during the Spanish-American War.\n\nHowever, considering the island's abundance of lime, sugar, and rum, it's likely that Cox was merely the first to pen the recipe of a cocktail that had already existed in Cuba. Not to mention that a prototype of the daiquiri had been saving the British Royal Navy from scurvy for centuries before."
     },
 
     {
@@ -147,5 +147,15 @@
     {
         "id":"white-russian",
         "text":"The Black Russian is a traditional cocktail that was first introduced in 1949, but it transforms into a White Russian with the addition of cream. Although neither drink has its origins in Russia, they are both named after the primary ingredient, which is vodka.\n\nAfter the release of the movie \"The Big Lebowski\" in 1998, the popularity of this cocktail skyrocketed. The main character of the movie, Jeffrey \"The Dude\" Lebowski, seems to prefer this cocktail and refers to it as \"Caucasian\" on several occasions throughout the film."
+    },
+
+    {
+        "id":"milano-torino",
+        "text":"Created in the 1860s by Gaspare Campari at his Caffè Campari, on Milan's Piazza del Duomo and named after the origins of its two ingredients: Campari from Milan and rosso vermouth, traditionally from Turin. It is said that later, soda water was added to the Milano-Torino to create the Americano. The Milano-Torino also morphed into the Negroni with gin added."
+    },
+
+    {
+        "id":"garibaldi",
+        "text":"Named after the famous revolutionary general who helped liberate and reunify Italy, the Garibaldi appears on cocktail lists throughout Italy. This little-known classic was brilliantly revitalised by Naren Young for the re-launch of New York City's Dante in October 2015 and remains a must-try cocktail at this World's 50 Best Best Bar."
     }
 ]

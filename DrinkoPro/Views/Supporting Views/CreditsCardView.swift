@@ -9,7 +9,6 @@ import SwiftUI
 
 struct CreditsCardView: View {
     @Environment(\.openURL) var openURL
-    @Environment(\.horizontalSizeClass) var sizeClass
 
     var name: String
     var brief: String
@@ -19,7 +18,7 @@ struct CreditsCardView: View {
         Button {
             openURL(URL(string: url)!)
         } label: {
-            HStack(spacing: sizeClass == .compact ? 10 : 20) {
+            HStack {
                 Image(systemName: "heart.fill")
                     .foregroundStyle(.red)
                     .imageScale(.large)
@@ -46,12 +45,7 @@ struct CreditsCardView: View {
         }
         .buttonStyle(.plain)
         .background(.secondary.opacity(0.2))
-        .clipShape(
-            RoundedRectangle(
-                cornerRadius: sizeClass == .compact ? 10 : 20,
-                style: .continuous
-            )
-        )
+        .clipShape(.rect(cornerRadius: 16, style: .continuous))
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(name)
         .accessibilityValue(brief)

@@ -14,11 +14,6 @@ struct MacEditCategoryView: View {
     @Environment(\.modelContext) private var modelContext
 
     @State private var showingDeleteConfirmation = false
-    @State private var isSelected = false
-
-    let colorColumns = [
-        GridItem(.adaptive(minimum: 33))
-    ]
 
     var body: some View {
         Form {
@@ -52,11 +47,12 @@ struct MacEditCategoryView: View {
             }
 
             Section("Colors") {
-                LazyVGrid(columns: colorColumns) {
-                    ForEach(Category.colors, id: \.self) { color in
-                        colorButton(for: color)
-                    }
-                }
+                ColorSwatchPicker(
+                    colors: Category.colors,
+                    cornerRadius: 6,
+                    accessibilityHint: "Selects this color for the category.",
+                    selection: $category.color
+                )
             }
 
             Section {
@@ -98,32 +94,6 @@ struct MacEditCategoryView: View {
 
 // MARK: FUNCTIONS
 extension MacEditCategoryView {
-    func colorButton(for item: String) -> some View {
-        Button {
-            category.color = item
-            isSelected.toggle()
-        } label: {
-            ZStack {
-                Color(item)
-                    .aspectRatio(1, contentMode: .fit)
-                    .cornerRadius(6)
-
-                if item == category.color {
-                    Image(systemName: "checkmark.circle")
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .symbolEffect(.bounce.down, value: isSelected)
-                }
-            }
-        }
-        .buttonStyle(.plain)
-        .accessibilityElement(children: .ignore)
-        .accessibilityAddTraits(
-            item == category.color ? [.isButton, .isSelected] : .isButton
-        )
-        .accessibilityLabel("Select color \(item)")
-    }
-
     private func save() {
         dismiss()
     }

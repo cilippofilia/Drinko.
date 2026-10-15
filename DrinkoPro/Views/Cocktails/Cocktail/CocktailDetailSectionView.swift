@@ -7,48 +7,62 @@
 
 import SwiftUI
 
+/// A single row inside a cocktail's detail list (its method, glass, garnish, ice, or extra),
+/// showing a localized label and the matching value pulled from a `Cocktail`.
 struct CocktailDetailSectionView: View {
+    enum Kind {
+        case method
+        case glass
+        case garnish
+        case ice
+        case extra
+
+        /// The localized label shown before the value.
+        var title: LocalizedStringKey {
+            switch self {
+            case .method:
+                "Method"
+            case .glass:
+                "Glass"
+            case .garnish:
+                "Garnish"
+            case .ice:
+                "Ice"
+            case .extra:
+                "Extra"
+            }
+        }
+
+        /// The raw value pulled from `cocktail` for this detail kind.
+        func value(for cocktail: Cocktail) -> String {
+            switch self {
+            case .method:
+                cocktail.method
+            case .glass:
+                cocktail.glass
+            case .garnish:
+                cocktail.garnish
+            case .ice:
+                cocktail.ice
+            case .extra:
+                cocktail.extra
+            }
+        }
+    }
+
     var cocktail: Cocktail
-    var text: LocalizedStringKey
+    var kind: Kind
 
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
-            Text(text)
+            Text(kind.title)
                 .font(.headline)
 
-            if text == "Method" {
-                Text(cocktail.method.capitalizingFirstLetter())
-            }
-
-            if text == "Glass" {
-                Text(cocktail.glass.capitalizingFirstLetter())
-            }
-
-            if text == "Garnish" {
-                if cocktail.garnish == "-" {
-                    Text(cocktail.garnish.capitalized.replacingOccurrences(of: "-", with: "None").capitalizingFirstLetter())
-                        .foregroundColor(.secondary)
-                } else {
-                    Text(cocktail.garnish.capitalizingFirstLetter())
-                }
-            }
-
-            if text == "Ice" {
-                if cocktail.ice == "-" {
-                    Text(cocktail.ice.replacingOccurrences(of: "-", with: "None"))
-                        .foregroundColor(.secondary)
-                } else {
-                    Text(cocktail.ice.capitalizingFirstLetter())
-                }
-            }
-
-            if text == "Extra" {
-                if cocktail.extra == "-" {
-                    Text(cocktail.extra.replacingOccurrences(of: "-", with: "None"))
-                        .foregroundColor(.secondary)
-                } else {
-                    Text(cocktail.extra.capitalizingFirstLetter())
-                }
+            if kind.value(for: cocktail) == "-" {
+                Text("None")
+                    .foregroundStyle(.secondary)
+            } else {
+                Text(kind.value(for: cocktail).capitalizingFirstLetter())
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -57,6 +71,6 @@ struct CocktailDetailSectionView: View {
 
 #if DEBUG
 #Preview {
-    CocktailDetailSectionView(cocktail: .example, text: "Extra")
+    CocktailDetailSectionView(cocktail: .example, kind: .extra)
 }
 #endif

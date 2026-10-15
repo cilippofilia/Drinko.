@@ -125,6 +125,9 @@ actor RemoteImageLoader {
 
         guard let httpResponse = response as? HTTPURLResponse,
               (200..<300).contains(httpResponse.statusCode) else {
+            // `.returnCacheDataElseLoad` ignores expiry, so a cached 404 (e.g. an image requested
+            // before it was uploaded) would otherwise be served forever.
+            session.configuration.urlCache?.removeCachedResponse(for: URLRequest(url: url))
             throw LoaderError.invalidResponse
         }
 

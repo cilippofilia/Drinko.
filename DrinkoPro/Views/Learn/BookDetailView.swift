@@ -8,28 +8,24 @@
 import SwiftUI
 
 struct BookDetailView: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
-
     var book: Book
-
-    private var isCompact: Bool { sizeClass == .compact }
 
     var body: some View {
         ScrollView {
-            VStack(spacing: isCompact ? nil : 20) {
+            VStack {
                 CachedRemoteImage(url: URL(string: book.image), contentMode: .fill)
-                    .frame(height: imageFrameHeight)
                     #if os(macOS)
-                    .frame(width: screenWidth)
+                    .frame(width: screenWidth, height: imageFrameHeight)
                     #else
-                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .aspectRatio(16 / 9, contentMode: .fill)
+                    .frame(maxWidth: .infinity)
+                    .frame(maxHeight: heroImageMaxHeight)
                     #endif
                     .clipped()
 
-                VStack(spacing: isCompact ? 10 : 20) {
+                VStack {
                     Text(book.title)
                         .font(.title.bold())
-                        .padding(.vertical, isCompact ? 0 : nil)
 
                     Text(book.description)
                         .font(.headline)
@@ -39,6 +35,8 @@ struct BookDetailView: View {
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
+                .frame(maxWidth: 700)
+                .frame(maxWidth: .infinity)
             }
         }
         .navigationTitle(book.title)

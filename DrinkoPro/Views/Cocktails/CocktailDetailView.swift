@@ -9,14 +9,11 @@ import SwiftUI
 
 struct CocktailDetailView: View {
     @Environment(\.dismiss) var dismiss
-    @Environment(\.horizontalSizeClass) var sizeClass
+    @Environment(\.locale) private var locale
     @Environment(CocktailsViewModel.self) private var viewModel
-    @Environment(Favorites.self) private var favorites
 
-    @State private var showHistory = false
-    @State private var showProcedure = false
-
-    @State private var selectedUnit = "ml"
+    @AppStorage(CocktailUnitPreference.storageKey) private var unitPreference: CocktailUnitPreference = .automatic
+    @AppStorage(DetailSection.storageKey) private var collapsedSections = CollapsedSections()
     @State private var showDeleteConfirmation = false
     @State private var showEditSheet = false
 
@@ -34,9 +31,102 @@ struct CocktailDetailView: View {
         viewModel.cocktail(withID: cocktail.id, fallback: cocktail)
     }
 
+    /// The recipe card the Share button exports, rendered only when the share sheet asks.
+    private var shareItem: CocktailShareItem {
+        var item = CocktailShareItem(
+            cocktail: activeCocktail,
+            artwork: viewModel.cardModel(for: activeCocktail).image,
+            tint: viewModel.stickerTint(for: activeCocktail),
+            selectedUnit: unitPreference.unit(for: locale),
+            showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
+        )
+        if case .userPhoto(let id, let revision) = item.artwork {
+            let viewModel = viewModel
+            item.loadUserPhoto = {
+                // The stored size, so the 1080 px wide banner fills from a sharp source.
+                viewModel.photoThumbnail(
+                    for: id,
+                    revision: revision,
+                    maxPixelSize: UserPhotoProcessor.maxStoredPixelSize
+                )
+            }
+        }
+        if case .userSticker(let id, let revision, _) = item.artwork {
+            let viewModel = viewModel
+            item.loadUserSticker = {
+                // Full size, so the 1080 px wide banner fills from a sharp source.
+                viewModel.stickerThumbnail(
+                    for: id,
+                    revision: revision,
+                    maxPixelSize: Int(StickerMaker.maxLongSide)
+                )
+            }
+        }
+        return item
+    }
+
     var body: some View {
+        let linkedCocktails = viewModel.getLinkedCocktails(for: activeCocktail)
+
         ScrollView {
-            cocktailContent
+            VStack(spacing: detailCardInset) {
+                CocktailImageHeader(
+                    cocktail: activeCocktail,
+                    history: viewModel.getCocktailHistory(for: activeCocktail)
+                )
+
+                DetailSectionCard(
+                    title: "Ingredients",
+                    isCollapsed: isCollapsed(.ingredients),
+                    toggle: { toggle(.ingredients) },
+                    content: {
+                        CocktailDetailsSection(
+                            cocktail: activeCocktail,
+                            selectedUnit: unitPreference.unit(for: locale),
+                            showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
+                        )
+                    }
+                )
+
+                if let procedure = viewModel.getCocktailProcedure(for: activeCocktail) {
+                    DetailSectionCard(
+                        title: "Procedure",
+                        isCollapsed: isCollapsed(.procedure),
+                        toggle: { toggle(.procedure) },
+                        content: {
+                            ProcedureView(cocktail: activeCocktail, procedure: procedure)
+                        }
+                    )
+                }
+
+                if !linkedCocktails.isEmpty {
+                    DetailSectionCard(
+                        title: "You may also like",
+                        isCollapsed: isCollapsed(.suggested),
+                        toggle: { toggle(.suggested) },
+                        content: {
+                            LinkedCocktailsView(cocktails: linkedCocktails)
+                        }
+                    )
+                }
+
+                if viewModel.isUserCreated(activeCocktail) {
+                    DeleteButtonView(
+                        label: "Delete",
+                        action: {
+                            showDeleteConfirmation = true
+                        }
+                    )
+                    .foregroundStyle(.red)
+                    .buttonStyle(.bordered)
+                    .padding(.top)
+                }
+
+                Spacer(minLength: 50)
+            }
+            .padding(.horizontal)
+            .frame(maxWidth: 700)
+            .frame(maxWidth: .infinity)
         }
         .navigationTitle(activeCocktail.name)
         .scrollIndicators(.hidden, axes: .vertical)
@@ -46,23 +136,18 @@ struct CocktailDetailView: View {
         #endif
         .toolbar {
             ToolbarItem(placement: toolbarPlacement) {
-                HistoryButtonView(
-                    history: viewModel.getCocktailHistory(for: activeCocktail),
-                    showHistory: $showHistory,
-                    cocktail: activeCocktail
-                )
-            }
-            ToolbarItem(placement: toolbarPlacement) {
-                LikeButtonView(cocktail: activeCocktail)
+                ShareLink(
+                    item: shareItem,
+                    preview: SharePreview(activeCocktail.name, image: Image("logo"))
+                ) {
+                    Label("Share Recipe Card", systemImage: "square.and.arrow.up")
+                }
             }
             if viewModel.isUserCreated(activeCocktail) {
                 ToolbarItem(placement: toolbarPlacement) {
-                    Button(action: {
+                    Button("Edit Cocktail", systemImage: "pencil.line") {
                         showEditSheet = true
-                    }) {
-                        Image(systemName: "pencil.line")
                     }
-                    .accessibilityLabel("Edit Cocktail")
                     .accessibilityHint("Edits this cocktail")
                 }
             }
@@ -76,7 +161,10 @@ struct CocktailDetailView: View {
                     iceOptions: viewModel.iceOptions(),
                     unitOptions: viewModel.unitOptions(),
                     editingCocktail: activeCocktail,
-                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail)
+                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail),
+                    editingPhotoData: viewModel.photoData(for: activeCocktail),
+                    editingStickerData: viewModel.stickerData(for: activeCocktail),
+                    editingTintColor: viewModel.pickedTintColor(for: activeCocktail)
                 )
                 #else
                 MacUserCocktailForm(
@@ -85,74 +173,14 @@ struct CocktailDetailView: View {
                     iceOptions: viewModel.iceOptions(),
                     unitOptions: viewModel.unitOptions(),
                     editingCocktail: activeCocktail,
-                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail)
+                    editingProcedureSteps: viewModel.procedureSteps(for: activeCocktail),
+                    editingPhotoData: viewModel.photoData(for: activeCocktail),
+                    editingStickerData: viewModel.stickerData(for: activeCocktail),
+                    editingTintColor: viewModel.pickedTintColor(for: activeCocktail)
                 )
                 #endif
             }
         }
-    }
-    
-    var cocktailContent: some View {
-        VStack {
-            CocktailImageHeader(cocktail: activeCocktail)
-            
-            VStack(alignment: .leading) {
-                if !viewModel.isUserCreated(activeCocktail) {
-                    CocktailUnitPicker(selectedUnit: $selectedUnit)
-                }
-                
-                Text(activeCocktail.name)
-                    .font(.title.bold())
-                    .padding(.top, viewModel.isUserCreated(activeCocktail) ? 12 : 0)
-
-                Divider()
-                
-                CocktailDetailsSection(
-                    cocktail: activeCocktail,
-                    selectedUnit: selectedUnit,
-                    showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
-                )
-                
-                Divider()
-
-                if let procedure = viewModel.getCocktailProcedure(for: activeCocktail) {
-                    ProcedureView(
-                        cocktail: cocktail,
-                        procedure: procedure
-                    )
-                    .padding(.top, 8)
-                }
-
-                if !viewModel.getLinkedCocktails(for: activeCocktail).isEmpty {
-                    Text("You may also like")
-                        .font(sizeClass == .compact ? .title3.bold() : .title.bold())
-                        .padding(.top, 8)
-
-                    LinkedCocktailsView(
-                        cocktails: viewModel.getLinkedCocktails(for: activeCocktail)
-                    )
-                    .padding(.bottom, 8)
-
-                    Divider()
-                }
-
-                if viewModel.isUserCreated(activeCocktail) {
-                    DeleteButtonView(
-                        label: "Delete",
-                        action: {
-                            showDeleteConfirmation = true
-                        }
-                    )
-                    .foregroundStyle(.red)
-                    .buttonStyle(.bordered)
-                    .padding(.top, 8)
-                }
-            }
-            Spacer(minLength: 50)
-        }
-        .padding(.horizontal)
-        .frame(maxWidth: 700)
-        .frame(maxWidth: .infinity)
         .alert("Delete Cocktail?", isPresented: $showDeleteConfirmation) {
             DeleteButtonView(
                 label: "Delete",
@@ -166,16 +194,30 @@ struct CocktailDetailView: View {
             Text("This will permanently remove your cocktail.")
         }
     }
+
+    private func isCollapsed(_ section: DetailSection) -> Bool {
+        collapsedSections.contains(section.rawValue)
+    }
+
+    private func toggle(_ section: DetailSection) {
+        withAnimation {
+            collapsedSections.toggle(section.rawValue)
+        }
+    }
 }
 
 #if DEBUG
-#Preview {
-    TabView {
-        NavigationStack {
-            CocktailDetailView(cocktail: .userCreatedExample)
-                .environment(CocktailsViewModel())
-                .environment(Favorites())
-        }
+#Preview("Bundled") {
+    NavigationStack {
+        CocktailDetailView(cocktail: .example)
+            .drinkoPreviewEnvironment()
+    }
+}
+
+#Preview("User cocktail") {
+    NavigationStack {
+        CocktailDetailView(cocktail: .userCreatedExample)
+            .drinkoPreviewEnvironment()
     }
 }
 #endif

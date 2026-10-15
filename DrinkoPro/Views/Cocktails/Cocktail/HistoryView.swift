@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct HistoryView: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
-    
     let cocktail: Cocktail
     let history: History
 
@@ -23,7 +21,6 @@ struct HistoryView: View {
 
                 Text(history.text)
                     .multilineTextAlignment(.leading)
-                    .lineSpacing(sizeClass == .compact ? 5 : 10)
             }
             .padding()
         }

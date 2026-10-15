@@ -13,44 +13,22 @@ struct CocktailDetailsSection: View {
     let showsOriginalUnits: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            CocktailDetailSectionView(
-                cocktail: cocktail,
-                text: "Ingredients"
-            )
-            
+        // The ingredients and the details are separate groups, so they get the wider group gap.
+        VStack(alignment: .leading, spacing: detailCardInset) {
             IngredientsView(
                 ingredients: cocktail.ingredients,
                 selectedUnit: selectedUnit,
                 showsOriginalUnits: showsOriginalUnits
             )
 
-            CocktailDetailSectionView(
-                cocktail: cocktail,
-                text: "Method"
-            )
-            
-            CocktailDetailSectionView(
-                cocktail: cocktail,
-                text: "Glass"
-            )
-            
-            CocktailDetailSectionView(
-                cocktail: cocktail,
-                text: "Garnish"
-            )
-            
-            CocktailDetailSectionView(
-                cocktail: cocktail,
-                text: "Ice"
-            )
-            
-            CocktailDetailSectionView(
-                cocktail: cocktail,
-                text: "Extra"
-            )
+            VStack(alignment: .leading, spacing: detailCardRowSpacing) {
+                CocktailDetailSectionView(cocktail: cocktail, kind: .method)
+                CocktailDetailSectionView(cocktail: cocktail, kind: .glass)
+                CocktailDetailSectionView(cocktail: cocktail, kind: .garnish)
+                CocktailDetailSectionView(cocktail: cocktail, kind: .ice)
+                CocktailDetailSectionView(cocktail: cocktail, kind: .extra)
+            }
         }
-        .padding(.vertical, 8)
     }
 }
 

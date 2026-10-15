@@ -1,0 +1,82 @@
+//
+//  LibraryRowView.swift
+//  DrinkoPro
+//
+
+import SwiftUI
+
+/// One item in a library section's list layout.
+struct LibraryRowView: View {
+    @ScaledMetric private var thumbnailSize: CGFloat = 56
+
+    let model: LibraryCardModel
+    /// `false` drops the padding, for rows inside a container that already insets and spaces
+    /// them, like the cocktail detail cards.
+    var padsEdges = true
+
+    var body: some View {
+        HStack {
+            VStack {
+                // Stickers stand on their own in a row, so they can fill the whole thumbnail.
+                LibraryImageView(
+                    image: model.image,
+                    contentMode: model.imageContentMode,
+                    showsStickerBackdrop: false
+                )
+                .frame(width: thumbnailSize, height: thumbnailSize)
+                .clipShape(.rect(cornerRadius: thumbnailCornerRadius))
+
+                if let progress = model.progress {
+                    LibraryProgressBar(progress: progress)
+                        .frame(width: thumbnailSize)
+                }
+            }
+
+            VStack(alignment: .leading) {
+                Text(model.title)
+                    .font(.headline)
+
+                if let subtitle = model.subtitle {
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .lineLimit(2)
+                        .truncationMode(.tail)
+                }
+            }
+            .multilineTextAlignment(.leading)
+            .frame(maxWidth: .infinity, alignment: .leading)
+
+            if model.isFavorite {
+                LibraryFavoriteBadge()
+            }
+
+            // Every row opens its item, so it gets the standard disclosure chevron.
+            Image(systemName: "chevron.right")
+                .bold()
+                .imageScale(.small)
+                .foregroundStyle(.secondary)
+                .accessibilityHidden(true)
+        }
+        .padding(padsEdges ? .all : [])
+        .contentShape(.rect)
+    }
+
+    /// Stickers aren't rounded: they fill the thumbnail edge to edge, so rounding would
+    /// clip their die-cut outline. Everything else sits on a backdrop that needs the corners.
+    private var thumbnailCornerRadius: CGFloat {
+        switch model.image {
+        case .sticker, .userSticker: 0
+        default: imageCornerRadius
+        }
+    }
+}
+
+#if DEBUG
+#Preview {
+    VStack(spacing: 0) {
+        LibraryRowView(model: LibraryCardModel(title: "Ice", subtitle: "Why ice matters more than you think.", image: .symbol("cube"), imageContentMode: .fit, progress: 0.5))
+        LibraryRowView(model: LibraryCardModel(title: "Negroni", image: .symbol("wineglass"), imageContentMode: .fit, isFavorite: true))
+    }
+}
+#endif

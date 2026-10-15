@@ -13,31 +13,29 @@ struct IngredientsView: View {
     let showsOriginalUnits: Bool
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: detailCardRowSpacing) {
             ForEach(ingredients) { ingredient in
-                let quantity = showsOriginalUnits
-                    ? ingredient.quantity
-                    : ingredient.convertedQuantity(to: selectedUnit)
-                let unit = showsOriginalUnits
-                    ? ingredient.unit
-                    : ingredient.convertedUnit(to: selectedUnit)
+                let line = IngredientLine(
+                    ingredient: ingredient,
+                    selectedUnit: selectedUnit,
+                    showsOriginalUnits: showsOriginalUnits
+                )
 
                 HStack {
-                    Text(quantity, format: .number.precision(.fractionLength(0...2)))
+                    Text(line.quantity, format: .number.precision(.fractionLength(0...2)))
 
-                    Text(unit)
+                    Text(line.unit)
 
-                    Text(ingredient.name.capitalized)
+                    Text(line.name)
 
                     Spacer()
                 }
                 .accessibilityElement(children: .ignore)
-                .accessibilityLabel(ingredient.name.capitalized)
-                .accessibilityValue("\(quantity, specifier: "%2g") \(unit)")
+                .accessibilityLabel(line.name)
+                .accessibilityValue("\(line.quantity, specifier: "%2g") \(line.unit)")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .padding(.bottom)
     }
 }
 

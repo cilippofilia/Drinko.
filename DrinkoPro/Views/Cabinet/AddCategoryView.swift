@@ -17,19 +17,8 @@ struct AddCategoryView: View {
     @State private var categoryDetails = ""
     @State private var categoryColor = "Dr. Blue"
 
-    @State private var isSelected: Bool = false
     @State private var isColorsCollapsed: Bool = false
     @State private var isSuggestedCollapsed: Bool = false
-
-    #if os(iOS)
-    let colorColumns = [
-        GridItem(.adaptive(minimum: 44))
-    ]
-    #else
-    let colorColumns = [
-        GridItem(.adaptive(minimum: 33))
-    ]
-    #endif
 
     var leadingToolbarPlacement: ToolbarItemPlacement {
         #if os(iOS)
@@ -98,11 +87,11 @@ struct AddCategoryView: View {
 
                 Section {
                     if !isColorsCollapsed {
-                        LazyVGrid(columns: colorColumns) {
-                            ForEach(Category.colors, id: \.self) { color in
-                                colorButton(for: color)
-                            }
-                        }
+                        ColorSwatchPicker(
+                            colors: Category.colors,
+                            accessibilityHint: "Selects this color for the category.",
+                            selection: $categoryColor
+                        )
                         #if os(macOS)
                         .padding(.bottom)
                         #endif
@@ -197,33 +186,6 @@ struct AddCategoryView: View {
 
 // MARK: FUNCTIONS
 extension AddCategoryView {
-    func colorButton(for item: String) -> some View {
-        Button {
-            categoryColor = item
-            isSelected.toggle()
-        } label: {
-            ZStack {
-                Color(item)
-                    .aspectRatio(1, contentMode: .fit)
-                    .clipShape(.rect(cornerRadius: 11, style: .continuous))
-
-                if item == categoryColor {
-                    Image(systemName: "checkmark.circle")
-                        .foregroundStyle(.white)
-                        .font(.title)
-                        .symbolEffect(.bounce.down, value: isSelected)
-                }
-            }
-        }
-        .buttonStyle(.plain)
-        .contentShape(.rect)
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(item) color")
-        .accessibilityValue(item == categoryColor ? "Selected" : "Not selected")
-        .accessibilityHint("Selects this color for the category.")
-        .accessibilityAddTraits(item == categoryColor ? .isSelected : [])
-    }
-
     private func categoryRow(for category: Category) -> some View {
         Button {
             modelContext.insert(category)

@@ -10,6 +10,9 @@ import SwiftUI
 struct MacSettingsView: View {
     @Environment(\.openURL) var openURL
 
+    @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
+    @AppStorage(CocktailUnitPreference.storageKey) private var unitPreference: CocktailUnitPreference = .automatic
+
     @State private var showOptions = false
     private let email = "cilia.filippo.dev@gmail.com"
     private let reportBugSubject = "Drinko: Bug Report"
@@ -18,8 +21,6 @@ struct MacSettingsView: View {
     private let requestFeatureBody = ""
     private let contactDevSubject = "Drinko: Enquiry"
     private let contactDevBody = ""
-
-    static let settingsTag: String? = "Settings"
 
     var body: some View {
         let languageCode = Bundle.main.preferredLocalizations.first?.uppercased() ?? "EN"
@@ -42,6 +43,26 @@ struct MacSettingsView: View {
                         .buttonStyle(.plain)
                         .accessibilityHint("Opens macOS language settings.")
                     }
+
+                    Picker(selection: $listSource) {
+                        ForEach(CocktailListSource.allCases) { source in
+                            Text(source.title)
+                                .tag(source)
+                        }
+                    } label: {
+                        MacSettingsRowView(icon: "list.bullet", color: .primary, itemName: "Cocktail List")
+                    }
+                    .accessibilityHint("Chooses which cocktails appear in the Cocktails list.")
+
+                    Picker(selection: $unitPreference) {
+                        ForEach(CocktailUnitPreference.allCases) { preference in
+                            Text(preference.title)
+                                .tag(preference)
+                        }
+                    } label: {
+                        MacSettingsRowView(icon: "ruler", color: .primary, itemName: "Units")
+                    }
+                    .accessibilityHint("Chooses whether cocktail recipes show milliliters or ounces.")
                 } header: {
                     Text("Preferences")
                         .foregroundStyle(.secondary)

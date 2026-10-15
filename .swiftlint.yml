@@ -1,0 +1,3 @@
+# Default rules; only skip generated build output.
+excluded:
+  - .build

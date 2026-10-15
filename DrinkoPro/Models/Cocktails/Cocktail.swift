@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 23/04/2023.
 //
 
+import CoreGraphics
 import SwiftData
 import SwiftUI
 
@@ -27,16 +28,71 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
         }
     }
 
+    /// The cocktail's sticker: the drink cut out with a white border on a transparent
+    /// background. `nil` for the user's own cocktails.
+    var stickerURL: URL? {
+        guard !isUserCreated else { return nil }
+        let name = Self.stickerNames[id] ?? id
+        return URL(string: "https://raw.githubusercontent.com/cilippofilia/Drinko-stickers/main/drinko-\(name).png")
+    }
+
     var image: String {
         glass
     }
+
+    /// The glass artwork shown for a cocktail without a sticker or photo, like the user's own.
+    var glassArtwork: LibraryImage {
+        switch glass {
+        case "wine":
+            .symbol("wineglass")
+        case "coffee mug", "julep cup":
+            .asset("julep")
+        case "highball":
+            // There is no highball artwork; the collins glass is the closest match.
+            .asset("collins")
+        default:
+            .asset(image)
+        }
+    }
+
+    /// Whether this cocktail was created by the user, as opposed to being one of the app's
+    /// bundled drinks.
+    var isUserCreated: Bool {
+        id.hasPrefix("user-")
+    }
+
+    /// Whether the cocktail's name or any of its ingredients contains the query.
+    func matches(_ query: String) -> Bool {
+        name.localizedStandardContains(query)
+            || ingredients.contains { $0.name.localizedStandardContains(query) }
+    }
+
+    /// Drinks whose sticker is filed under another name.
+    private static let stickerNames = [
+        "augie-march": "manhattan",
+        "gin-martini": "dry-martini"
+    ]
 }
 
-enum SortOption {
+enum SortOption: CaseIterable {
     case fromAtoZ
     case fromZtoA
     case byGlass
     case byIce
+
+    /// The localized title shown for this option in the sort picker.
+    var title: LocalizedStringKey {
+        switch self {
+        case .fromAtoZ:
+            "A > Z"
+        case .fromZtoA:
+            "Z > A"
+        case .byGlass:
+            "By Glass"
+        case .byIce:
+            "By Ice"
+        }
+    }
 }
 
 struct Ingredient: Codable, Equatable, Identifiable, Hashable {
@@ -51,11 +107,6 @@ struct Ingredient: Codable, Equatable, Identifiable, Hashable {
             return UnitConverter.convert(quantity, from: "oz.", to: "ml")
         }
         return quantity
-    }
-
-    @MainActor
-    var mlUnit: String {
-        UnitConverter.unitLabel(for: unit, convertingTo: "ml")
     }
 
     @MainActor
@@ -96,6 +147,29 @@ class CocktailsViewModel {
     var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
     var userProcedures: [Procedure] = []
     private var modelContext: ModelContext?
+
+    /// Cached sticker tint per cocktail id. See `CocktailsViewModel+Library`.
+    @ObservationIgnored var stickerTintCache: [String: MainSpirit?] = [:]
+
+    /// IDs of user cocktails that have a photo, refreshed whenever user cocktails reload.
+    private(set) var cocktailIDsWithPhotos: Set<String> = []
+    /// IDs of user cocktails that have a sticker, refreshed whenever user cocktails reload.
+    private(set) var cocktailIDsWithStickers: Set<String> = []
+    /// The card colors the user picked, keyed by cocktail id, refreshed whenever user cocktails reload.
+    private(set) var userTintColors: [String: String] = [:]
+    /// Bumped each time a cocktail's photo changes, so views and caches drop the old one.
+    var photoRevisions: [String: Int] = [:]
+    /// Decoded photo and sticker thumbnails keyed by "id#revision#maxPixelSize" (stickers prefixed
+    /// "sticker#"), capped at 64 MB. The revision is part of the key, so replaced images' entries
+    /// just age out.
+    @ObservationIgnored let photoThumbnailCache: NSCache<NSString, CGImage> = {
+        let cache = NSCache<NSString, CGImage>()
+        cache.totalCostLimit = 64 * 1024 * 1024
+        return cache
+    }()
+
+    /// Cached id → cocktail lookup for the bundled drinks. See `CocktailsViewModel+Library`.
+    @ObservationIgnored var bundledDrinksByIDCache: [String: Cocktail]?
 
     var listOfAllDrinks: [Cocktail] {
         listOfCocktails + listOfShots + userCocktails
@@ -179,41 +253,59 @@ class CocktailsViewModel {
         filteredCocktails(filterOption: .all) { _ in false }
     }
 
-    var cocktailsGrouped: [String: [Cocktail]] {
-        groupedCocktails(filterOption: .all) { _ in false }
-    }
-    
     var sortedSectionKeys: [String] {
         sortedSectionKeys(filterOption: .all) { _ in false }
     }
 
+    /// The filters that can return results for the given source. For example,
+    /// user-created cocktails are never shots, so "Shots Only" is hidden when
+    /// the list only shows the user's cocktails.
+    func availableFilterOptions(for source: CocktailListSource) -> [FilterOption] {
+        switch source {
+        case .userAndApp:
+            [.all, .cocktailsOnly, .shotsOnly, .favoritesOnly, .userCreatedOnly]
+        case .appOnly:
+            [.all, .cocktailsOnly, .shotsOnly, .favoritesOnly]
+        case .userOnly:
+            [.all, .favoritesOnly]
+        }
+    }
+
     func filteredCocktails(
         filterOption: FilterOption,
+        source: CocktailListSource = .userAndApp,
         isFavorite: (Cocktail) -> Bool
     ) -> [Cocktail] {
+        // Narrow to the chosen source first, then apply the filter within it.
+        let appCocktails = source.includesAppCocktails ? listOfCocktails : []
+        let appShots = source.includesAppCocktails ? listOfShots : []
+        let ownCocktails = source.includesUserCocktails ? userCocktails : []
+
         let baseCocktails: [Cocktail]
         switch filterOption {
         case .all:
-            baseCocktails = sortedCocktails
+            baseCocktails = sortedCocktails(in: appCocktails + appShots + ownCocktails)
         case .cocktailsOnly:
-            baseCocktails = sortedCocktails(in: listOfCocktails + userCocktails)
+            baseCocktails = sortedCocktails(in: appCocktails + ownCocktails)
         case .shotsOnly:
-            baseCocktails = sortedCocktails(in: listOfShots)
+            baseCocktails = sortedCocktails(in: appShots)
         case .favoritesOnly:
-            baseCocktails = sortedCocktails.filter(isFavorite)
+            baseCocktails = sortedCocktails(in: appCocktails + appShots + ownCocktails).filter(isFavorite)
         case .userCreatedOnly:
-            baseCocktails = sortedCocktails(in: userCocktails)
+            baseCocktails = sortedCocktails(in: ownCocktails)
         }
 
         guard !searchText.isEmpty else { return baseCocktails }
-        return baseCocktails.filter { $0.name.localizedStandardContains(searchText) }
+        return baseCocktails.filter { $0.matches(searchText) }
     }
 
     func groupedCocktails(
         filterOption: FilterOption,
+        source: CocktailListSource = .userAndApp,
         isFavorite: (Cocktail) -> Bool
     ) -> [String: [Cocktail]] {
-        let grouped = Dictionary(grouping: filteredCocktails(filterOption: filterOption, isFavorite: isFavorite)) { cocktail in
+        let cocktails = filteredCocktails(filterOption: filterOption, source: source, isFavorite: isFavorite)
+        let grouped = Dictionary(grouping: cocktails) { cocktail in
             switch sortOption {
             case .byGlass:
                 return cocktail.glass.capitalizingFirstLetter()
@@ -224,7 +316,7 @@ class CocktailsViewModel {
                 if let char = firstCharacter.first, char.isLetter {
                     return String(char)
                 }
-                return "#"
+                return Self.nonLetterSectionKey
             }
         }
 
@@ -235,16 +327,15 @@ class CocktailsViewModel {
 
     func sortedSectionKeys(
         filterOption: FilterOption,
+        source: CocktailListSource = .userAndApp,
         isFavorite: (Cocktail) -> Bool
     ) -> [String] {
-        let keys = Array(groupedCocktails(filterOption: filterOption, isFavorite: isFavorite).keys)
-        switch sortOption {
-        case .fromZtoA:
-            return keys.sorted(by: >)
-        default:
-            return keys.sorted(by: <)
-        }
+        let keys = Array(groupedCocktails(filterOption: filterOption, source: source, isFavorite: isFavorite).keys)
+        return sortSectionKeys(keys)
     }
+
+    /// Section for cocktails whose name doesn't start with a letter.
+    static let nonLetterSectionKey = "#"
 
     private func sortedCocktails(in cocktails: [Cocktail]) -> [Cocktail] {
         cocktails.sorted(by: currentSortComparator)
@@ -282,68 +373,84 @@ class CocktailsViewModel {
         return Array(list.prefix(5))
     }
 
-    func addUserCocktail(
-        name: String,
-        method: String,
-        glass: String,
-        garnish: String,
-        ice: String,
-        extra: String,
-        ingredients: [Ingredient],
-        procedureSteps: [String]
-    ) {
+    func addUserCocktail(_ details: UserCocktailDetails) {
         guard let modelContext else { return }
-        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        let trimmedName = details.name.trimmingCharacters(in: .whitespacesAndNewlines)
         let newCocktail = UserCreatedCocktail(
             name: trimmedName,
-            method: method,
-            glass: glass,
-            garnish: garnish,
-            ice: ice,
-            extra: extra,
-            ingredients: ingredients.map {
+            method: details.method,
+            glass: details.glass,
+            garnish: details.garnish,
+            ice: details.ice,
+            extra: details.extra,
+            ingredients: details.ingredients.map {
                 UserIngredient(name: $0.name, quantity: $0.quantity, unit: $0.unit)
             },
-            procedure: makeUserProcedure(from: procedureSteps),
+            procedure: makeUserProcedure(from: details.procedureSteps),
             creationDate: Date(),
             lastUpdated: nil
         )
+        newCocktail.tintColor = details.tintColor
         newCocktail.ingredients?.forEach { $0.cocktail = newCocktail }
         if let procedure = newCocktail.procedure {
             procedure.cocktail = newCocktail
+        }
+        if case .set(let data) = details.photoChange {
+            newCocktail.photoData = data
+            // A sticker is cut from the photo, so it's only kept alongside one.
+            if case .set(let sticker) = details.stickerChange { newCocktail.stickerData = sticker }
         }
         modelContext.insert(newCocktail)
         saveUserCocktails()
     }
 
-    func updateUserCocktail(
-        _ cocktail: Cocktail,
-        name: String,
-        method: String,
-        glass: String,
-        garnish: String,
-        ice: String,
-        extra: String,
-        ingredients: [Ingredient],
-        procedureSteps: [String]
-    ) {
+    func updateUserCocktail(_ cocktail: Cocktail, with details: UserCocktailDetails) {
         guard let existing = userCreatedCocktails.first(where: { $0.id == cocktail.id }) else {
             return
         }
 
-        existing.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
-        existing.method = method
-        existing.glass = glass
-        existing.garnish = garnish
-        existing.ice = ice
-        existing.extra = extra
+        existing.name = details.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        existing.method = details.method
+        existing.glass = details.glass
+        existing.garnish = details.garnish
+        existing.ice = details.ice
+        existing.extra = details.extra
         existing.lastUpdated = Date()
-        existing.ingredients = ingredients.map {
+        existing.tintColor = details.tintColor
+        stickerTintCache[existing.id] = nil
+        existing.ingredients = details.ingredients.map {
             UserIngredient(name: $0.name, quantity: $0.quantity, unit: $0.unit)
         }
         existing.ingredients?.forEach { $0.cocktail = existing }
-        existing.procedure = makeUserProcedure(from: procedureSteps)
+        existing.procedure = makeUserProcedure(from: details.procedureSteps)
         existing.procedure?.cocktail = existing
+        var picturesChanged = false
+        switch details.photoChange {
+        case .unchanged:
+            break
+        case .set(let data):
+            existing.photoData = data
+            picturesChanged = true
+        case .remove:
+            existing.photoData = nil
+            picturesChanged = true
+        }
+        switch details.stickerChange {
+        case .unchanged:
+            // A new or removed photo makes the stored sticker stale, and a sticker with no
+            // photo (e.g. from a synced record) is an orphan that's never shown.
+            if existing.stickerData != nil, details.photoChange != .unchanged || existing.photoData == nil {
+                existing.stickerData = nil
+                picturesChanged = true
+            }
+        case .set(let data):
+            existing.stickerData = existing.photoData == nil ? nil : data
+            picturesChanged = true
+        case .remove:
+            existing.stickerData = nil
+            picturesChanged = true
+        }
+        if picturesChanged { photoDidChange(for: existing.id) }
         saveUserCocktails()
     }
 
@@ -352,11 +459,13 @@ class CocktailsViewModel {
         guard let existing = userCreatedCocktails.first(where: { $0.id == cocktail.id }) else {
             return
         }
+        stickerTintCache[existing.id] = nil
+        photoDidChange(for: existing.id)
         modelContext.delete(existing)
         saveUserCocktails()
     }
 
-    private func saveUserCocktails() {
+    func saveUserCocktails() {
         guard let modelContext else { return }
         do {
             try modelContext.save()
@@ -368,6 +477,12 @@ class CocktailsViewModel {
 
     private func refreshUserMappings() {
         userCocktails = userCreatedCocktails.map { $0.cocktail }
+        cocktailIDsWithPhotos = Set(userCreatedCocktails.filter { $0.photoData != nil }.map(\.id))
+        cocktailIDsWithStickers = Set(userCreatedCocktails.filter { $0.stickerData != nil }.map(\.id))
+        userTintColors = Dictionary(
+            userCreatedCocktails.compactMap { cocktail in cocktail.tintColor.map { (cocktail.id, $0) } },
+            uniquingKeysWith: { first, _ in first }
+        )
         userProcedures = userCreatedCocktails.compactMap { userCocktail in
             guard let procedure = userCocktail.procedure else { return nil }
             let sortedSteps = (procedure.steps ?? []).sorted { $0.order < $1.order }
@@ -402,12 +517,45 @@ class CocktailsViewModel {
 }
 
 extension CocktailsViewModel {
-    enum FilterOption {
+    /// Raw values are persisted (as part of `AppTab`'s raw value), so don't rename cases.
+    enum FilterOption: String {
         case all
         case cocktailsOnly
         case shotsOnly
         case favoritesOnly
         case userCreatedOnly
+    }
+}
+
+extension CocktailsViewModel.FilterOption {
+    /// The page title when this filter is a page's preset (the iPad sidebar rows).
+    var pageTitle: String {
+        switch self {
+        case .all: String(localized: "All Cocktails")
+        case .cocktailsOnly: String(localized: "Cocktails")
+        case .shotsOnly: String(localized: "Shots")
+        case .favoritesOnly: String(localized: "Favorites")
+        case .userCreatedOnly: String(localized: "My Cocktails")
+        }
+    }
+
+    /// The label of this filter's iPad sidebar row. "All" reads better than the page title
+    /// under the sidebar's "Cocktails" header.
+    var sidebarTitle: String {
+        switch self {
+        case .all: String(localized: "All")
+        default: pageTitle
+        }
+    }
+
+    /// The SF Symbol for this filter's iPad sidebar row.
+    var sidebarSymbol: String {
+        switch self {
+        case .all, .cocktailsOnly: "wineglass"
+        case .shotsOnly: "drop"
+        case .favoritesOnly: "heart"
+        case .userCreatedOnly: "person.crop.circle"
+        }
     }
 }
 

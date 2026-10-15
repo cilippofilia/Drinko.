@@ -2540,5 +2540,73 @@
                 "text": "Gießen Sie den Cocktail durch ein Sieb ins Glas, fügen Sie frisches gewürfeltes Eis hinzu und genießen Sie!"
             }
         ]
+    },
+    {
+        "id":"rossa-sour",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten in den Cocktail-Shaker geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Kräftig schütteln, um deinen Schaumbildner zu emulgieren. Frische Würfeleiswürfel in den Shaker geben, verschließen und 8 bis 12 Sekunden kräftig schütteln (bis es außen frostig ist)"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail fein ins Glas abseihen, garnieren und genießen"
+            }
+        ]
+    },
+    {
+        "id":"garibaldi",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Den Orangensaft (am besten frisch gepresst) ohne Eis mixen, bis er luftig ist"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Campari, Zuckersirup und die Hälfte des Orangensafts über 2 Eiswürfel ins Glas gießen und umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit mehr Eis füllen und mit dem restlichen luftigen Orangensaft auffüllen"
+            }
+        ]
+    },
+    {
+        "id":"blood-orange-garibaldi",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Den Blutorangensaft (am besten frisch gepresst) ohne Eis mixen, bis er luftig ist"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Campari, Zuckersirup und die Hälfte des Blutorangensafts über 2 Eiswürfel ins Glas gießen und umrühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Das Glas mit mehr Eis füllen und mit dem restlichen luftigen Blutorangensaft auffüllen"
+            }
+        ]
+    },
+    {
+        "id":"milano-torino",
+        "procedure": [
+            {
+                "step": "Schritt 1",
+                "text": "Alle Zutaten ins Mixing-Glas geben"
+            },
+            {
+                "step": "Schritt 2",
+                "text": "Frische Würfeleiswürfel in das Mixing-Glas geben und den Cocktail zwischen 40 und 60 Sekunden rühren"
+            },
+            {
+                "step": "Schritt 3",
+                "text": "Den Cocktail ins Glas abseihen, garnieren und genießen!"
+            }
+        ]
     }
 ]

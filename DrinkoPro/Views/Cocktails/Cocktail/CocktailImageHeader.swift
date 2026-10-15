@@ -7,25 +7,65 @@
 
 import SwiftUI
 
+/// The cocktail's artwork as a polaroid, with its name and actions written on the strip below,
+/// like the library cards.
 struct CocktailImageHeader: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
+    /// The system appearance, read outside the polaroid (which is always light), so the History
+    /// sheet still follows it.
+    @Environment(\.colorScheme) private var colorScheme
+
     let cocktail: Cocktail
-    
+    let history: History?
+
     var body: some View {
-        if !cocktail.id.hasPrefix("user-") {
-            AsyncImageView(
-                image: cocktail.pic,
-                frameHeight: imageFrameHeight,
-                aspectRatio: .fit
-            )
-            .background(Color.white)
-            .clipShape(.rect(cornerRadius: imageCornerRadius))
+        PolaroidFrame {
+            CocktailHeaderImage(cocktail: cocktail)
+        } caption: {
+            // The icons sit on the name's last line, so they read as part of the title.
+            HStack(alignment: .lastTextBaseline) {
+                Text(cocktail.name)
+                    .font(.title.bold())
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .accessibilityAddTraits(.isHeader)
+
+                CocktailHeaderActions(cocktail: cocktail, history: history, sheetColorScheme: colorScheme)
+            }
         }
+        .compositingGroup()
+        .shadow(color: .black.opacity(0.12), radius: 6, y: 3)
     }
 }
 
 #if DEBUG
-#Preview {
-    CocktailImageHeader(cocktail: .example)
+#Preview("Bundled") {
+    CocktailImageHeader(cocktail: .example, history: .example)
+        .padding()
+        .drinkoPreviewEnvironment()
+}
+
+#Preview("User cocktail, no history") {
+    CocktailImageHeader(cocktail: .userCreatedExample, history: nil)
+        .padding()
+        .drinkoPreviewEnvironment()
+}
+
+#Preview("Long name") {
+    CocktailImageHeader(
+        cocktail: Cocktail(
+            id: "user-long",
+            name: "The Extraordinarily Long Named Midnight Garden Fizz",
+            method: "build",
+            glass: "collins",
+            garnish: "-",
+            ice: "cubes",
+            extra: "-",
+            ingredients: []
+        ),
+        history: .example
+    )
+    .padding()
+    .drinkoPreviewEnvironment()
 }
 #endif

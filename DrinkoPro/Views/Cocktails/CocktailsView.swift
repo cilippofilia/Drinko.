@@ -9,37 +9,71 @@ import SwiftData
 import SwiftUI
 
 struct CocktailsView: View {
-    static let cocktailsTag: String? = "Cocktails"
-
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
     @Environment(\.modelContext) private var modelContext
+    @Environment(RecentsStore.self) private var recentsStore
 
-    @State private var filterOption: CocktailsViewModel.FilterOption = .all
+    @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
+    /// A fixed filter for this page (an iPad sidebar row). `nil` lets the user pick one.
+    private let presetFilter: CocktailsViewModel.FilterOption?
+    @State private var filterOption: CocktailsViewModel.FilterOption
     @State private var showCreateCocktailSheet: Bool = false
     @State private var showDeleteAlert: Bool = false
     @State private var cocktailPendingDeletion: Cocktail = .userCreatedExample
     @State private var didConfigureModelContext: Bool = false
 
+    #if os(iOS)
+    @State private var path: [Cocktail] = []
+    #else
     @State private var selectedCocktail: Cocktail?
+    @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
+    #endif
+    @AppStorage(LibraryLayout.cocktailsStorageKey) private var layout: LibraryLayout = .initial()
+    @AppStorage("cocktailsCollapsedSections") private var collapsedSections = CollapsedSections()
 
-    private var visibleCocktails: [Cocktail] {
-        viewModel.filteredCocktails(filterOption: filterOption) { cocktail in
+    init(filter: CocktailsViewModel.FilterOption? = nil) {
+        presetFilter = filter
+        _filterOption = State(initialValue: filter ?? .all)
+    }
+
+    /// The cocktail opened from this page (iOS: the first pushed page, not "You may also like"
+    /// pages pushed after it; macOS: the detail column).
+    private var currentCocktail: Cocktail? {
+        #if os(iOS)
+        path.first
+        #else
+        selectedCocktail
+        #endif
+    }
+
+    private var title: String {
+        presetFilter?.pageTitle ?? String(localized: "Cocktails")
+    }
+
+    /// The tab that shows this page: its sidebar filter row, or the main Cocktails tab.
+    private var pageTab: AppTab {
+        presetFilter.map(AppTab.cocktailFilter) ?? .cocktails
+    }
+
+    private var visibleSections: [LibrarySection<Cocktail>] {
+        viewModel.librarySections(filterOption: filterOption, source: listSource) { cocktail in
             favorites.contains(cocktail)
         }
     }
 
-    private var visibleGroupedCocktails: [String: [Cocktail]] {
-        viewModel.groupedCocktails(filterOption: filterOption) { cocktail in
-            favorites.contains(cocktail)
-        }
+    /// The "Last Viewed" band's cocktails, limited to the list source. Like Learn's section
+    /// pages, a sidebar filter page (other than All) shows no band, since unfiltered recents
+    /// would sit above a filtered list.
+    private var recentCocktails: [Cocktail] {
+        guard presetFilter == nil || presetFilter == .all else { return [] }
+        return viewModel.recentCocktailsWithPictures(from: recentsStore.ids(in: .cocktails))
+            .filter(listSource.includes)
     }
 
-    private var visibleSectionKeys: [String] {
-        viewModel.sortedSectionKeys(filterOption: filterOption) { cocktail in
-            favorites.contains(cocktail)
-        }
+    private var availableFilterOptions: [CocktailsViewModel.FilterOption] {
+        viewModel.availableFilterOptions(for: listSource)
     }
 
     private var toolbarPlacement: ToolbarItemPlacement {
@@ -50,344 +84,206 @@ struct CocktailsView: View {
         #endif
     }
 
+    private var layoutTogglePlacement: ToolbarItemPlacement {
+        #if os(iOS)
+        return .topBarLeading
+        #else
+        return .automatic
+        #endif
+    }
+
+    private var navigation: LibraryNavigationBindings<Cocktail> {
+        #if os(iOS)
+        .init(path: $path)
+        #else
+        .init(selection: $selectedCocktail, preferredCompactColumn: $preferredCompactColumn)
+        #endif
+    }
+
     var body: some View {
-        NavigationSplitView {
-            contentView
-                .navigationTitle("Cocktails")
-                .searchable(text: searchBinding, prompt: "Search Cocktails")
+        @Bindable var viewModel = viewModel
+
+        LibraryNavigationContainer(
+            navigation: navigation,
+            library: {
+                CocktailsLibraryContent(
+                    title: title,
+                    recents: recentCocktails,
+                    sections: visibleSections,
+                    selection: currentCocktail,
+                    presetFilter: presetFilter,
+                    filterOption: $filterOption,
+                    listSource: listSource,
+                    collapsedSections: $collapsedSections,
+                    layout: layout,
+                    onSelect: select,
+                    onRequestDelete: { cocktail in
+                        cocktailPendingDeletion = cocktail
+                        showDeleteAlert = true
+                    }
+                )
+                .navigationTitle(title)
+                .searchable(text: $viewModel.searchText, prompt: "Cocktails or Ingredients")
                 .toolbar {
+                    ToolbarItem(placement: layoutTogglePlacement) {
+                        LibraryLayoutToggle(layout: $layout)
+                    }
                     ToolbarItemGroup(placement: toolbarPlacement) {
-                        optionsMenu
-                        addCocktailButton
-                    }
-                }
-                .sheet(isPresented: $showCreateCocktailSheet) {
-                    #if os(iOS)
-                    NavigationStack {
-                        UserCocktailForm(
-                            methodOptions: viewModel.methodOptions(),
-                            glassOptions: viewModel.glassOptions(),
-                            iceOptions: viewModel.iceOptions(),
-                            unitOptions: viewModel.unitOptions()
+                        CocktailsOptionsMenu(
+                            filterOption: $filterOption,
+                            presetFilter: presetFilter,
+                            availableOptions: availableFilterOptions
                         )
-                    }
-                    #else
-                    MacUserCocktailForm(
-                        methodOptions: viewModel.methodOptions(),
-                        glassOptions: viewModel.glassOptions(),
-                        iceOptions: viewModel.iceOptions(),
-                        unitOptions: viewModel.unitOptions()
-                    )
-                    #endif
-                }
-                .alert("Delete Cocktail?", isPresented: $showDeleteAlert) {
-                    DeleteButtonView(
-                        label: "Delete",
-                        action: {
-                            viewModel.deleteUserCocktail(cocktailPendingDeletion)
-                            if favorites.contains(cocktailPendingDeletion) {
-                                favorites.remove(cocktailPendingDeletion)
-                            }
-                            if selectedCocktail == cocktailPendingDeletion {
-                                selectedCocktail = nil
-                            }
+                        Button("Create Cocktail", systemImage: "plus") {
+                            showCreateCocktailSheet = true
                         }
-                    )
-                    Button("Cancel", role: .cancel) { }
-                } message: {
-                    Text("This will permanently remove your cocktail.")
-                }
-                .task {
-                    if !didConfigureModelContext {
-                        viewModel.configure(modelContext: modelContext)
-                        didConfigureModelContext = true
                     }
-                    openPendingCocktailIfNeeded()
-                }
-                .onChange(of: appNavigationModel.pendingCocktailID, initial: true) { _, _ in
-                    openPendingCocktailIfNeeded()
                 }
                 #if os(iOS) || os(macOS)
-                .safeAreaInset(edge: .bottom) {
-                    CrossPromoBannerView()
-                }
+                .crossPromoBanner()
                 #endif
-        } detail: {
-            if let selectedCocktail {
-                NavigationStack {
-                    CocktailDetailView(cocktail: selectedCocktail)
-                        .navigationDestination(for: Cocktail.self) { cocktail in
-                            CocktailDetailView(cocktail: cocktail)
-                        }
-                }
-                // Reset pushed "You may also like" pages when the sidebar selection changes.
-                .id(selectedCocktail.id)
-            } else {
+            },
+            detail: { CocktailDetailView(cocktail: $0) },
+            placeholder: {
                 ContentUnavailableView(
                     "Select a Cocktail",
                     systemImage: "wineglass",
                     description: Text("Choose a cocktail to see its details.")
                 )
             }
+        )
+        .sheet(isPresented: $showCreateCocktailSheet) {
+            #if os(iOS)
+            NavigationStack {
+                UserCocktailForm(
+                    methodOptions: viewModel.methodOptions(),
+                    glassOptions: viewModel.glassOptions(),
+                    iceOptions: viewModel.iceOptions(),
+                    unitOptions: viewModel.unitOptions()
+                )
+            }
+            #else
+            MacUserCocktailForm(
+                methodOptions: viewModel.methodOptions(),
+                glassOptions: viewModel.glassOptions(),
+                iceOptions: viewModel.iceOptions(),
+                unitOptions: viewModel.unitOptions()
+            )
+            #endif
+        }
+        .alert("Delete Cocktail?", isPresented: $showDeleteAlert) {
+            DeleteButtonView(
+                label: "Delete",
+                action: {
+                    viewModel.deleteUserCocktail(cocktailPendingDeletion)
+                    if favorites.contains(cocktailPendingDeletion) {
+                        favorites.remove(cocktailPendingDeletion)
+                    }
+                    recentsStore.remove(cocktailPendingDeletion.id, in: .cocktails)
+                    clearSelection(after: cocktailPendingDeletion)
+                }
+            )
+            Button("Cancel", role: .cancel) { }
+        } message: {
+            Text("This will permanently remove your cocktail.")
+        }
+        .task {
+            if !didConfigureModelContext {
+                viewModel.configure(modelContext: modelContext)
+                didConfigureModelContext = true
+            }
+            openPendingCocktailIfNeeded()
+        }
+        .onChange(of: appNavigationModel.pendingCocktailID, initial: true) { _, _ in
+            openPendingCocktailIfNeeded()
+        }
+        // `initial: true` covers a page created by the tab switch the request itself made.
+        .onChange(of: appNavigationModel.pendingCreation, initial: true) { _, _ in
+            presentPendingCreationIfNeeded()
+        }
+        .onChange(of: listSource) { _, _ in
+            // Drop a filter or selection the new source can no longer show. A preset
+            // filter stays, and its page shows an empty state instead.
+            if presetFilter == nil, !availableFilterOptions.contains(filterOption) {
+                filterOption = .all
+            }
+            if let currentCocktail, !listSource.includes(currentCocktail) {
+                clearSelection(after: currentCocktail)
+            }
+        }
+        // Catches a user cocktail deleted from another live Cocktails page (iPad).
+        #if os(iOS)
+        .onChange(of: viewModel.userCocktails.map(\.id)) { _, _ in pruneStalePathEntries() }
+        .onAppear(perform: pruneStalePathEntries)
+        #endif
+        .task(id: currentCocktail?.id) {
+            // Record only once the selection settles; a new selection cancels this.
+            guard let id = currentCocktail?.id else { return }
+            try? await Task.sleep(for: RecentsStore.recordDelay)
+            guard !Task.isCancelled else { return }
+            recentsStore.record(id, in: .cocktails)
         }
     }
 }
 
 private extension CocktailsView {
-    var contentView: some View {
-        Group {
-            if shouldShowFilterEmptyState {
-                filterEmptyStateView
-            } else if viewModel.searchText.isEmpty {
-                fullListView
-            } else if visibleCocktails.isEmpty {
-                searchEmptyStateView
-            } else {
-                filteredListView
-            }
-        }
-        .accessibilityLabel("Filter cocktails")
-    }
-
-    var shouldShowFilterEmptyState: Bool {
-        (filterOption == .favoritesOnly || filterOption == .userCreatedOnly) && visibleCocktails.isEmpty
-    }
-
-    var searchBinding: Binding<String> {
-        Binding(
-            get: { viewModel.searchText },
-            set: { viewModel.searchText = $0 }
-        )
-    }
-
-    var filterEmptyStateView: some View {
-        ContentUnavailableView(
-            label: {
-                if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
-                    Label("No favorite cocktails yet", systemImage: "heart.slash")
-                } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
-                    Label("No custom cocktails yet", systemImage: "plus.circle")
-                } else {
-                    Label("No cocktails found", systemImage: "exclamationmark.magnifyingglass")
-                }
-            },
-            description: {
-                if filterOption == .favoritesOnly && viewModel.searchText.isEmpty {
-                    Text("Add cocktails to favorites to quickly find them here.")
-                } else if filterOption == .userCreatedOnly && viewModel.searchText.isEmpty {
-                    Text("Create a cocktail to find it here.")
-                } else {
-                    Text("No cocktails match \"\(viewModel.searchText)\".")
-                }
-            },
-            actions: {
-                if filterOption == .userCreatedOnly || filterOption == .favoritesOnly {
-                    Button("Clear filter", systemImage: "xmark.circle") {
-                        filterOption = .all
-                    }
-                    .buttonStyle(.bordered)
-                }
-                if !viewModel.searchText.isEmpty {
-                    Button("Clear Search", systemImage: "xmark.circle") {
-                        viewModel.searchText = ""
-                    }
-                    .buttonStyle(.bordered)
-                }
-            }
-        )
-    }
-
-    var fullListView: some View {
-        List(selection: $selectedCocktail) {
-            ForEach(visibleSectionKeys, id: \.self) { sectionKey in
-                Section {
-                    ForEach(visibleGroupedCocktails[sectionKey] ?? []) { cocktail in
-                        cocktailRow(for: cocktail)
-                    }
-                } header: {
-                    Text(sectionKey)
-                }
-            }
-        }
-    }
-
-    var searchEmptyStateView: some View {
-        ContentUnavailableView(
-            label: {
-                Label("\"\(viewModel.searchText)\" not found", systemImage: "exclamationmark.magnifyingglass")
-            },
-            description: {
-                Text("No cocktails match \"\(viewModel.searchText)\". Try a different search term or browse all cocktails.")
-            },
-            actions: {
-                Button("Clear Search", systemImage: "xmark.circle") {
-                    viewModel.searchText = ""
-                }
-                .buttonStyle(.bordered)
-            }
-        )
-    }
-
-    var filteredListView: some View {
-        List(selection: $selectedCocktail) {
-            ForEach(visibleCocktails) { cocktail in
-                cocktailRow(for: cocktail)
-            }
-        }
-    }
-
-    func cocktailRow(for cocktail: Cocktail) -> some View {
-        CocktailRowView(cocktail: cocktail)
-            .tag(cocktail)
-            .swipeActions(edge: .leading, allowsFullSwipe: true) {
-                FavoriteCocktailButtonView(cocktail: cocktail)
-                    .tint(favorites.contains(cocktail) ? .red : .blue)
-                if cocktail.id.hasPrefix("user-") {
-                    DeleteButtonView(
-                        label: "Delete",
-                        action: {
-                            cocktailPendingDeletion = cocktail
-                            showDeleteAlert = true
-                        }
-                    )
-                }
-            }
-    }
-
-    var optionsMenu: some View {
-        Menu {
-            Section("Filter") {
-                Button {
-                    filterOption = .all
-                } label: {
-                    HStack {
-                        Text("All Cocktails")
-                        if filterOption == .all {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button {
-                    filterOption = .cocktailsOnly
-                } label: {
-                    HStack {
-                        Text("Cocktails Only")
-                        if filterOption == .cocktailsOnly {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button {
-                    filterOption = .shotsOnly
-                } label: {
-                    HStack {
-                        Text("Shots Only")
-                        if filterOption == .shotsOnly {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button {
-                    filterOption = .favoritesOnly
-                } label: {
-                    HStack {
-                        Text("Favorites Only")
-                        if filterOption == .favoritesOnly {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button {
-                    filterOption = .userCreatedOnly
-                } label: {
-                    HStack {
-                        Text("User Created Only")
-                        if filterOption == .userCreatedOnly {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-            }
-
-            Section("Sort") {
-                Button(action: {
-                    viewModel.sortOption = .fromAtoZ
-                }) {
-                    HStack {
-                        Text("A > Z")
-                        if viewModel.sortOption == .fromAtoZ {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button(action: {
-                    viewModel.sortOption = .fromZtoA
-                }) {
-                    HStack {
-                        Text("Z > A")
-                        if viewModel.sortOption == .fromZtoA {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button(action: {
-                    viewModel.sortOption = .byGlass
-                }) {
-                    HStack {
-                        Text("By Glass")
-                        if viewModel.sortOption == .byGlass {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-
-                Button(action: {
-                    viewModel.sortOption = .byIce
-                }) {
-                    HStack {
-                        Text("By Ice")
-                        if viewModel.sortOption == .byIce {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                }
-            }
-        } label: {
-            #if os(iOS)
-            if UIAccessibility.isVoiceOverRunning {
-                Text("Filter and sort cocktails")
-            } else {
-                Label("Options", systemImage: "line.3.horizontal.decrease.circle")
-            }
-            #elseif os(macOS)
-            Label("Options", systemImage: "line.3.horizontal.decrease.circle")
-            #endif
-        }
-        .accessibilityLabel("Sort cocktails")
-    }
-
-    var addCocktailButton: some View {
-        Button {
-            showCreateCocktailSheet = true
-        } label: {
-            Image(systemName: "plus")
-        }
-        .accessibilityLabel("Create Cocktail")
-    }
 
     @MainActor
     func openPendingCocktailIfNeeded() {
+        // Only the main Cocktails page opens deep links; a sidebar filter page that has been
+        // opened before stays loaded and must not consume the link.
+        guard presetFilter == nil else { return }
         guard let cocktailID = appNavigationModel.consumePendingCocktailID() else { return }
         guard let cocktail = viewModel.listOfAllDrinks.first(where: { $0.id == cocktailID }) else { return }
 
-        selectedCocktail = cocktail
+        select(cocktail)
     }
+
+    /// Presents the create sheet for File › New Cocktail. Only the selected page responds;
+    /// other Cocktails pages opened before stay loaded and must not consume the request.
+    @MainActor
+    func presentPendingCreationIfNeeded() {
+        guard appNavigationModel.selectedTab == pageTab else { return }
+        guard appNavigationModel.consumePendingCreation(.cocktail) else { return }
+        showCreateCocktailSheet = true
+    }
+
+    /// Opens `cocktail`: pushes it on iOS, shows it in the detail column on macOS. It's
+    /// recorded as recent once the selection settles (see the `.task(id:)` in `body`).
+    func select(_ cocktail: Cocktail) {
+        #if os(iOS)
+        path = [cocktail]
+        #else
+        selectedCocktail = cocktail
+        preferredCompactColumn = .detail
+        #endif
+    }
+
+    /// Stops showing `cocktail` once it's gone (deleted, or hidden by the list source):
+    /// pops it and anything pushed after it on iOS, clears the detail column on macOS.
+    func clearSelection(after cocktail: Cocktail) {
+        #if os(iOS)
+        if let index = path.firstIndex(of: cocktail) {
+            path.removeSubrange(index...)
+        }
+        #else
+        if selectedCocktail == cocktail {
+            selectedCocktail = nil
+            preferredCompactColumn = .sidebar
+        }
+        #endif
+    }
+
+    #if os(iOS)
+    /// Pops the first pushed cocktail no longer in `viewModel.listOfAllDrinks` (deleted
+    /// elsewhere) and every page pushed after it, like `clearSelection(after:)`.
+    func pruneStalePathEntries() {
+        let validIDs = Set(viewModel.listOfAllDrinks.map(\.id))
+        if let index = path.firstIndex(where: { !validIDs.contains($0.id) }) {
+            path.removeSubrange(index...)
+        }
+    }
+    #endif
 }
 
 #if DEBUG

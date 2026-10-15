@@ -2543,5 +2543,73 @@
         "text": "Cuela finamente el cóctel en el vaso, añade cubos de hielo frescos y disfruta"
       }
     ]
+  },
+  {
+    "id": "rossa-sour",
+    "procedure": [
+      {
+        "step": "Paso 1",
+        "text": "Añade todos los ingredientes a la coctelera"
+      },
+      {
+        "step": "Paso 2",
+        "text": "Agita con fuerza para emulsionar el agente espumante. Añade cubos de hielo frescos a la coctelera, ciérrala y agita con fuerza durante 8 a 12 segundos (hasta que esté escarchada por fuera)"
+      },
+      {
+        "step": "Paso 3",
+        "text": "Cuela finamente el cóctel en el vaso, añade la guarnición y disfruta"
+      }
+    ]
+  },
+  {
+    "id": "garibaldi",
+    "procedure": [
+      {
+        "step": "Paso 1",
+        "text": "Bate el zumo de naranja (preferiblemente recién exprimido) sin hielo para que quede espumoso"
+      },
+      {
+        "step": "Paso 2",
+        "text": "Vierte el Campari, el jarabe de azúcar y la mitad del zumo de naranja en el vaso sobre 2 cubos de hielo y remueve"
+      },
+      {
+        "step": "Paso 3",
+        "text": "Llena el vaso con más hielo y completa con el resto del zumo de naranja espumoso"
+      }
+    ]
+  },
+  {
+    "id": "blood-orange-garibaldi",
+    "procedure": [
+      {
+        "step": "Paso 1",
+        "text": "Bate el zumo de naranja sanguina (preferiblemente recién exprimido) sin hielo para que quede espumoso"
+      },
+      {
+        "step": "Paso 2",
+        "text": "Vierte el Campari, el jarabe de azúcar y la mitad del zumo de naranja sanguina en el vaso sobre 2 cubos de hielo y remueve"
+      },
+      {
+        "step": "Paso 3",
+        "text": "Llena el vaso con más hielo y completa con el resto del zumo de naranja sanguina espumoso"
+      }
+    ]
+  },
+  {
+    "id": "milano-torino",
+    "procedure": [
+      {
+        "step": "Paso 1",
+        "text": "Añade todos los ingredientes al vaso mezclador"
+      },
+      {
+        "step": "Paso 2",
+        "text": "Añade cubos de hielo frescos al vaso mezclador y remueve el cóctel entre 40 y 60 segundos"
+      },
+      {
+        "step": "Paso 3",
+        "text": "Cuela el cóctel en el vaso, guarnécelo y disfruta"
+      }
+    ]
   }
 ]

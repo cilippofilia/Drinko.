@@ -1,3 +1,4 @@
+import SwiftData
 import XCTest
 
 #if canImport(DrinkoPro)
@@ -47,7 +48,21 @@ final class CocktailsViewModelTests: XCTestCase {
 
         let results = viewModel.filteredCocktails
         XCTAssertFalse(results.isEmpty)
-        XCTAssertTrue(results.allSatisfy { $0.name.localizedStandardContains(searchText) })
+        XCTAssertTrue(results.allSatisfy { $0.matches(searchText) })
+    }
+
+    func testFilteredCocktailsMatchIngredientNames() throws {
+        let viewModel = CocktailsViewModel()
+        // Find an ingredient that isn't part of its cocktail's name, so only the ingredient can match.
+        let match = viewModel.listOfAllDrinks.lazy
+            .flatMap { cocktail in cocktail.ingredients.map { (cocktail, $0.name) } }
+            .first { cocktail, ingredient in !cocktail.name.localizedStandardContains(ingredient) }
+        let (cocktail, ingredient) = try XCTUnwrap(match)
+        viewModel.searchText = ingredient
+
+        let results = viewModel.filteredCocktails
+        XCTAssertTrue(results.contains(cocktail))
+        XCTAssertTrue(results.allSatisfy { $0.matches(ingredient) })
     }
 
     func testFilteredCocktailsFavoritesOnly() {
@@ -73,6 +88,19 @@ final class CocktailsViewModelTests: XCTestCase {
 
         let keys = viewModel.sortedSectionKeys(filterOption: .all) { _ in false }
         XCTAssertEqual(keys, keys.sorted(by: >))
+    }
+
+    func testNamesStartingWithANumberAreListedLast() {
+        let viewModel = CocktailsViewModel()
+
+        for sortOption in [SortOption.fromAtoZ, .fromZtoA] {
+            viewModel.sortOption = sortOption
+            let keys = viewModel.sortedSectionKeys(filterOption: .all) { _ in false }
+            let grouped = viewModel.groupedCocktails(filterOption: .all) { _ in false }
+
+            XCTAssertEqual(keys.last, "#")
+            XCTAssertTrue(grouped["#"]?.contains { $0.name == "57 T-Bird" } ?? false)
+        }
     }
 
     func testHistoryAndProcedureLookup() {
@@ -110,5 +138,198 @@ final class CocktailsViewModelTests: XCTestCase {
             linkedCocktail.ingredients.contains { $0.name.contains(ingredient) }
         })
         XCTAssertLessThanOrEqual(linked.count, 5)
+    }
+
+    // MARK: - List source
+
+    /// Keeps the in-memory store alive for the duration of a test.
+    private var container: ModelContainer?
+
+    override func tearDown() async throws {
+        container = nil
+        try await super.tearDown()
+    }
+
+    /// A view model backed by an in-memory store holding one user cocktail.
+    private func makeViewModelWithUserCocktail() throws -> CocktailsViewModel {
+        let container = try ModelContainer(
+            for: UserCreatedCocktail.self,
+            UserIngredient.self,
+            UserProcedure.self,
+            UserProcedureStep.self,
+            configurations: ModelConfiguration(isStoredInMemoryOnly: true, cloudKitDatabase: .none)
+        )
+        let viewModel = CocktailsViewModel()
+        viewModel.configure(modelContext: container.mainContext)
+        viewModel.addUserCocktail(UserCocktailDetails(
+            name: "House Special",
+            method: "shake & fine strain",
+            glass: "coupe",
+            garnish: "",
+            ice: "none",
+            extra: "",
+            ingredients: [Ingredient(name: "Rum", quantity: 2, unit: "oz.")],
+            procedureSteps: []
+        ))
+        self.container = container
+        return viewModel
+    }
+
+    func testUserAndAppSourceIncludesEverything() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+
+        let results = viewModel.filteredCocktails(filterOption: .all, source: .userAndApp) { _ in false }
+
+        XCTAssertEqual(results.count, viewModel.listOfAllDrinks.count)
+        XCTAssertEqual(viewModel.userCocktails.count, 1)
+    }
+
+    func testDefaultSourceMatchesUserAndApp() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+
+        XCTAssertEqual(
+            viewModel.filteredCocktails(filterOption: .all) { _ in false },
+            viewModel.filteredCocktails(filterOption: .all, source: .userAndApp) { _ in false }
+        )
+    }
+
+    func testAppOnlySourceExcludesUserCocktails() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+
+        let results = viewModel.filteredCocktails(filterOption: .all, source: .appOnly) { _ in false }
+
+        XCTAssertEqual(results.count, viewModel.listOfCocktails.count + viewModel.listOfShots.count)
+        XCTAssertFalse(results.contains { viewModel.isUserCreated($0) })
+    }
+
+    func testUserOnlySourceShowsOnlyUserCocktails() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+
+        let results = viewModel.filteredCocktails(filterOption: .all, source: .userOnly) { _ in false }
+
+        XCTAssertEqual(results, viewModel.userCocktails)
+    }
+
+    func testSourceAndFilterIntersect() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+        let userCocktail = try XCTUnwrap(viewModel.userCocktails.first)
+        let appCocktail = try XCTUnwrap(viewModel.listOfCocktails.first)
+        let favoriteIDs: Set<String> = [userCocktail.id, appCocktail.id]
+
+        let appFavorites = viewModel.filteredCocktails(filterOption: .favoritesOnly, source: .appOnly) {
+            favoriteIDs.contains($0.id)
+        }
+        let userFavorites = viewModel.filteredCocktails(filterOption: .favoritesOnly, source: .userOnly) {
+            favoriteIDs.contains($0.id)
+        }
+        let appCocktailsOnly = viewModel.filteredCocktails(filterOption: .cocktailsOnly, source: .appOnly) { _ in
+            false
+        }
+        let appUserCreated = viewModel.filteredCocktails(filterOption: .userCreatedOnly, source: .appOnly) { _ in
+            false
+        }
+
+        XCTAssertEqual(appFavorites, [appCocktail])
+        XCTAssertEqual(userFavorites, [userCocktail])
+        XCTAssertEqual(appCocktailsOnly.count, viewModel.listOfCocktails.count)
+        XCTAssertTrue(appUserCreated.isEmpty)
+    }
+
+    func testUserOnlySourceRespectsSearch() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+
+        viewModel.searchText = "house"
+        XCTAssertEqual(viewModel.filteredCocktails(filterOption: .all, source: .userOnly) { _ in false }.count, 1)
+
+        viewModel.searchText = "negroni"
+        XCTAssertTrue(viewModel.filteredCocktails(filterOption: .all, source: .userOnly) { _ in false }.isEmpty)
+    }
+
+    func testAvailableFilterOptionsPerSource() {
+        let viewModel = CocktailsViewModel()
+
+        XCTAssertEqual(
+            viewModel.availableFilterOptions(for: .userAndApp),
+            [.all, .cocktailsOnly, .shotsOnly, .favoritesOnly, .userCreatedOnly]
+        )
+        XCTAssertEqual(
+            viewModel.availableFilterOptions(for: .appOnly),
+            [.all, .cocktailsOnly, .shotsOnly, .favoritesOnly]
+        )
+        XCTAssertEqual(viewModel.availableFilterOptions(for: .userOnly), [.all, .favoritesOnly])
+    }
+
+    func testListSourceRawValuesAreStable() {
+        // Raw values are persisted in UserDefaults, so they must not change.
+        XCTAssertEqual(CocktailListSource.userAndApp.rawValue, "userAndApp")
+        XCTAssertEqual(CocktailListSource.appOnly.rawValue, "appOnly")
+        XCTAssertEqual(CocktailListSource.userOnly.rawValue, "userOnly")
+    }
+
+    func testListSourceIncludesCocktailBySourceOnly() {
+        XCTAssertTrue(CocktailListSource.userAndApp.includes(.example))
+        XCTAssertTrue(CocktailListSource.userAndApp.includes(.userCreatedExample))
+        XCTAssertTrue(CocktailListSource.appOnly.includes(.example))
+        XCTAssertFalse(CocktailListSource.appOnly.includes(.userCreatedExample))
+        XCTAssertFalse(CocktailListSource.userOnly.includes(.example))
+        XCTAssertTrue(CocktailListSource.userOnly.includes(.userCreatedExample))
+    }
+
+    // MARK: - Recents cache
+
+    /// Adds a second user cocktail to an already-configured view model.
+    private func addSecondUserCocktail(to viewModel: CocktailsViewModel, name: String) {
+        viewModel.addUserCocktail(UserCocktailDetails(
+            name: name,
+            method: "stir",
+            glass: "coupe",
+            garnish: "",
+            ice: "none",
+            extra: "",
+            ingredients: [],
+            procedureSteps: []
+        ))
+    }
+
+    func testRecentItemsIncludeAUserCocktailAddedAfterTheBundledCacheWarmedUp() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+        let bundledID = try XCTUnwrap(viewModel.listOfCocktails.first?.id)
+
+        // Warm the cached bundled-drinks lookup before a second user cocktail is added.
+        XCTAssertEqual(viewModel.recentItems(from: [bundledID]).map(\.id), [bundledID])
+
+        addSecondUserCocktail(to: viewModel, name: "Second Special")
+        let newUser = try XCTUnwrap(viewModel.userCocktails.first { $0.name == "Second Special" })
+
+        XCTAssertEqual(viewModel.recentItems(from: [newUser.id, bundledID]).map(\.id), [newUser.id, bundledID])
+    }
+
+    func testRecentItemsDropAUserCocktailAfterItsDeleted() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+        let userCocktail = try XCTUnwrap(viewModel.userCocktails.first)
+        XCTAssertEqual(viewModel.recentItems(from: [userCocktail.id]).map(\.id), [userCocktail.id])
+
+        viewModel.deleteUserCocktail(userCocktail)
+
+        XCTAssertTrue(viewModel.recentItems(from: [userCocktail.id]).isEmpty)
+    }
+
+    func testRecentItemsReflectAUserCocktailsLatestName() throws {
+        let viewModel = try makeViewModelWithUserCocktail()
+        let userCocktail = try XCTUnwrap(viewModel.userCocktails.first)
+
+        viewModel.updateUserCocktail(userCocktail, with: UserCocktailDetails(
+            name: "Renamed Special",
+            method: userCocktail.method,
+            glass: userCocktail.glass,
+            garnish: userCocktail.garnish,
+            ice: userCocktail.ice,
+            extra: userCocktail.extra,
+            ingredients: userCocktail.ingredients,
+            procedureSteps: []
+        ))
+
+        let renamed = try XCTUnwrap(viewModel.recentItems(from: [userCocktail.id]).first)
+        XCTAssertEqual(renamed.name, "Renamed Special")
     }
 }

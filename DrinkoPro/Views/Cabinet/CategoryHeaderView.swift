@@ -10,7 +10,8 @@ import SwiftUI
 
 struct CategoryHeaderView: View {
     let category: Category
-    
+    var onEdit: () -> Void
+
     var body: some View {
         HStack(alignment: .firstTextBaseline) {
             Text(category.name)
@@ -21,14 +22,11 @@ struct CategoryHeaderView: View {
                 .lineLimit(2)
 
             Spacer()
-            
-            NavigationLink(value: category) {
-                Image(systemName: "square.and.pencil")
-                    .foregroundStyle(Color(category.color))
-            }
-            .accessibilityLabel("Edit \(category.name)")
+
+            Button("Edit \(category.name)", systemImage: "square.and.pencil", action: onEdit)
+                .labelStyle(.iconOnly)
+                .foregroundStyle(Color(category.color))
         }
-        .fontWeight(.medium)
         .padding(.bottom, 10)
     }
 }
@@ -37,8 +35,8 @@ struct CategoryHeaderView: View {
 #Preview {
     do {
         let previewer = try CabinetPreviewerPreviewer()
-        
-        return CategoryHeaderView(category: previewer.category)
+
+        return CategoryHeaderView(category: previewer.category, onEdit: {})
             .modelContainer(previewer.container)
     } catch {
         return Text("Failed to create preview: \(error.localizedDescription)")

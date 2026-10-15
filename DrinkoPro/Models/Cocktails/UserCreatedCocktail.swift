@@ -23,6 +23,14 @@ class UserCreatedCocktail {
     var procedure: UserProcedure?
     var creationDate: Date = Date()
     var lastUpdated: Date?
+    /// The user's photo of the drink, already downscaled to JPEG by `UserPhotoProcessor`.
+    /// Stored outside the database row and synced as a CloudKit asset.
+    @Attribute(.externalStorage) var photoData: Data?
+    /// The photo turned into a sticker by `StickerMaker`: an RGBA PNG on a transparent
+    /// background. Derived from `photoData`, so it's removed whenever the photo changes.
+    @Attribute(.externalStorage) var stickerData: Data?
+    /// The card color the person picked, used only when the ingredients have no main spirit to take a tint from.
+    var tintColor: String?
 
     init(
         id: String? = nil,
@@ -65,15 +73,11 @@ extension UserCreatedCocktail {
         )
     }
 
-    var mappedProcedure: UserProcedure? {
-        procedure.map({ UserProcedure(steps: $0.steps ?? []) })
-    }
-
     static func makeUserCocktailID(from name: String) -> String {
         let normalizedName = name
             .lowercased()
             .trimmingCharacters(in: .whitespacesAndNewlines)
-            .replacingOccurrences(of: "[^a-z0-9]+", with: "-", options: .regularExpression)
+            .replacing(/[^a-z0-9]+/, with: "-")
             .trimmingCharacters(in: CharacterSet(charactersIn: "-"))
         let fallback = normalizedName.isEmpty ? "user-cocktail" : normalizedName
         return "user-\(fallback)-\(UUID().uuidString.prefix(6).lowercased())"

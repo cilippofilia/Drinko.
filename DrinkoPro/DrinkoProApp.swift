@@ -14,6 +14,7 @@ struct DrinkoProApp: App {
     @State private var cocktailsViewModel = CocktailsViewModel()
     @State private var lessonsViewModel = LessonsViewModel()
     @State private var appNavigationModel = AppNavigationModel()
+    @State private var recentsStore = RecentsStore()
     #if os(iOS) || os(macOS)
     @State private var removeAdsStore = RemoveAdsStore()
     @State private var crossPromoSignal = CrossPromoSignal()
@@ -22,6 +23,8 @@ struct DrinkoProApp: App {
     private let modelContainer: ModelContainer
 
     init() {
+        LearnCollapseMigration.runIfNeeded()
+
         do {
             let config = ModelConfiguration(cloudKitDatabase: .automatic)
             modelContainer = try ModelContainer(
@@ -55,10 +58,16 @@ struct DrinkoProApp: App {
         .environment(cocktailsViewModel)
         .environment(lessonsViewModel)
         .environment(appNavigationModel)
+        .environment(recentsStore)
         #if os(iOS) || os(macOS)
         .environment(removeAdsStore)
         .environment(crossPromoSignal)
         #endif
         .modelContainer(modelContainer)
+        #if os(iOS)
+        .commands {
+            AppCommands(appNavigationModel: appNavigationModel)
+        }
+        #endif
     }
 }

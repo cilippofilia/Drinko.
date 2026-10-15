@@ -9,8 +9,9 @@ import Foundation
 
 enum NavigationTab: String, CaseIterable, Identifiable, Hashable {
     case learn
-    case cocktails
     case cabinet
+    case cocktails
+    case tools
     case settings
 
     var id: String { rawValue }
@@ -23,6 +24,8 @@ enum NavigationTab: String, CaseIterable, Identifiable, Hashable {
             "Cocktails"
         case .cabinet:
             "Cabinet"
+        case .tools:
+            "Tools"
         case .settings:
             "Settings"
         }
@@ -36,6 +39,8 @@ enum NavigationTab: String, CaseIterable, Identifiable, Hashable {
             "wineglass.fill"
         case .cabinet:
             "cabinet.fill"
+        case .tools:
+            "wrench.and.screwdriver.fill"
         case .settings:
             "gear"
         }

@@ -8,34 +8,25 @@
 import SwiftUI
 
 struct ProcedureView: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
-    
     var cocktail: Cocktail
     var procedure: Procedure
-    
-    var body: some View {
-        ScrollView {
-            VStack(alignment: .leading) {
-                Text("Procedure")
-                    .font(sizeClass == .compact ? .title3.bold() : .title.bold())
 
+    var body: some View {
+        VStack(alignment: .leading, spacing: detailCardGroupSpacing) {
+            ForEach(procedure.procedure) { step in
                 VStack(alignment: .leading) {
-                    ForEach(procedure.procedure) { steps in
-                        Text(steps.step)
-                            .bold()
-                        
-                        Text(steps.text)
-                        
-                        Divider()
-                    }
-                    .multilineTextAlignment(.leading)
-                    .padding(.vertical, 5)
+                    Text(step.step)
+                        .bold()
+
+                    Text(step.text)
                 }
-                .lineSpacing(sizeClass == .compact ? 5 : 10)
+                .multilineTextAlignment(.leading)
+
+                if step.id != procedure.procedure.last?.id {
+                    Divider()
+                }
             }
         }
-        .scrollIndicators(.hidden, axes: .vertical)
-        .scrollBounceBehavior(.basedOnSize)
     }
 }
 

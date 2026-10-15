@@ -2544,5 +2544,73 @@
                 "text": "Filtrez finement le cocktail dans le verre, ajoutez des glaçons frais et savourez !"
             }
         ]
+    },
+    {
+        "id":"rossa-sour",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le shaker à cocktails"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Secouez vigoureusement pour émulsifier votre agent moussant. Ajoutez des glaçons frais dans le shaker, fermez-le et secouez vigoureusement pendant 8 à 12 secondes (jusqu'à ce qu'il soit givré à l'extérieur)"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez finement le cocktail dans le verre, ajoutez la garniture et savourez"
+            }
+        ]
+    },
+    {
+        "id":"garibaldi",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Mixez le jus d'orange (de préférence fraîchement pressé) sans glace pour le rendre mousseux"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Versez le Campari, le sirop de sucre et la moitié du jus d'orange dans le verre sur 2 glaçons et remuez"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Remplissez le verre de glace et complétez avec le reste du jus d'orange mousseux"
+            }
+        ]
+    },
+    {
+        "id":"blood-orange-garibaldi",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Mixez le jus d'orange sanguine (de préférence fraîchement pressé) sans glace pour le rendre mousseux"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Versez le Campari, le sirop de sucre et la moitié du jus d'orange sanguine dans le verre sur 2 glaçons et remuez"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Remplissez le verre de glace et complétez avec le reste du jus d'orange sanguine mousseux"
+            }
+        ]
+    },
+    {
+        "id":"milano-torino",
+        "procedure": [
+            {
+                "step": "Étape 1",
+                "text": "Ajoutez tous les ingrédients dans le verre à mélanger"
+            },
+            {
+                "step": "Étape 2",
+                "text": "Ajoutez de la glace fraîche en cubes dans le verre à mélanger et remuez le cocktail entre 40 et 60 secondes"
+            },
+            {
+                "step": "Étape 3",
+                "text": "Filtrez le cocktail dans le verre, décorez et savourez!"
+            }
+        ]
     }
 ]

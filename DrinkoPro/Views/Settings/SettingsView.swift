@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    static let settingsTag: String? = "Settings"
-
     var body: some View {
         NavigationStack {
             Form {
@@ -22,9 +20,7 @@ struct SettingsView: View {
             .navigationTitle("Settings")
             .scrollBounceBehavior(.basedOnSize)
             #if os(iOS)
-            .safeAreaInset(edge: .bottom) {
-                CrossPromoBannerView()
-            }
+            .crossPromoBanner()
             #endif
         }
     }
