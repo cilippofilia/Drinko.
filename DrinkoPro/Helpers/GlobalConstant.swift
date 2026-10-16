@@ -30,6 +30,9 @@ let detailCardInset: CGFloat = 16
 let detailCardGroupSpacing: CGFloat = 12
 /// The gap between the rows of a list inside a cocktail detail card, like its ingredients.
 let detailCardRowSpacing: CGFloat = 8
+/// The widest a column of reading content grows, so text lines stay comfortable on wide
+/// windows (iPad, iPhone Duo's inner display).
+let readableContentWidth: CGFloat = 700
 #if os(macOS)
 let screenWidth: CGFloat = 350
 #endif

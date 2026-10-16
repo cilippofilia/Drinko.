@@ -70,6 +70,8 @@ struct CrossPromoRemoveAdsInfoView: View {
                     }
                 }
                 .padding(.top, 32)
+                .frame(maxWidth: readableContentWidth)
+                .frame(maxWidth: .infinity)
             }
             .scrollBounceBehavior(.basedOnSize)
             .safeAreaInset(edge: .bottom) {
