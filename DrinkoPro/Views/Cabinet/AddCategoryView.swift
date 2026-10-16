@@ -20,22 +20,6 @@ struct AddCategoryView: View {
     @State private var isColorsCollapsed: Bool = false
     @State private var isSuggestedCollapsed: Bool = false
 
-    var leadingToolbarPlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        .topBarLeading
-        #else
-        .automatic
-        #endif
-    }
-
-    var trailingToolbarPlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        .topBarTrailing
-        #else
-        .automatic
-        #endif
-    }
-
     func textfieldPlaceholder(_ str: String) -> String {
         #if os(iOS)
         str
@@ -155,22 +139,18 @@ struct AddCategoryView: View {
             .padding()
             #endif
             .toolbar {
-                ToolbarItem(placement: trailingToolbarPlacement) {
-                    Button(action: {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save", systemImage: "checkmark") {
                         addCategory()
                         dismiss()
-                    }) {
-                        Text("Save")
                     }
                 }
-                ToolbarItem(placement: leadingToolbarPlacement) {
-                    Button(action: {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel", systemImage: "xmark") {
                         dismiss()
-                    }) {
-                        Text("Cancel")
                     }
                 }
-                #if os(IOS)
+                #if os(iOS)
                 ToolbarItemGroup(placement: .keyboard) {
                     Spacer()
 

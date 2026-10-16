@@ -198,13 +198,13 @@ struct UserCocktailForm: View {
             Text(alertMessage ?? "")
         }
         .toolbar {
-            ToolbarItem(placement: leadingToolbarPlacement) {
-                Button("Cancel") {
+            ToolbarItem(placement: .cancellationAction) {
+                Button("Cancel", systemImage: "xmark") {
                     dismiss()
                 }
             }
-            ToolbarItem(placement: trailingToolbarPlacement) {
-                Button(editingCocktail == nil ? "Save" : "Update") {
+            ToolbarItem(placement: .confirmationAction) {
+                Button(editingCocktail == nil ? "Save" : "Update", systemImage: "checkmark") {
                     saveCocktail()
                 }
             }
@@ -214,22 +214,6 @@ struct UserCocktailForm: View {
 
 // MARK: HELPER PROPERTIES
 extension UserCocktailForm {
-    var leadingToolbarPlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        .topBarLeading
-        #elseif os(macOS)
-        .automatic
-        #endif
-    }
-
-    var trailingToolbarPlacement: ToolbarItemPlacement {
-        #if os(iOS)
-        .topBarTrailing
-        #elseif os(macOS)
-        .automatic
-        #endif
-    }
-
     private var saveDisabledReason: String? {
         if isMakingSticker {
             return "Wait for the sticker to finish before saving."
