@@ -20,22 +20,20 @@ static float recentsHeroNoise(float2 position) {
 }
 
 /// Fades the backdrop out between `start` and `end` (in points, top to bottom), so it melts into
-/// the page background. The fade curves like a smile: it holds its place at `centre` and rises by
-/// `curveDepth` at `halfWidth` either side of it (the band's edges; past them, as behind a
-/// vertical toolbar, it keeps rising). A little noise dithers the
+/// the page background. The fade curves like a smile: it holds its place in the middle of a
+/// layer `width` wide and rises by `curveDepth` towards either edge. A little noise dithers the
 /// alpha, which keeps a long, low-contrast gradient (a pale tint into black) from showing bands.
 [[ stitchable ]] half4 recentsHeroBackdropFade(
     float2 position,
     half4 color,
     float start,
     float end,
-    float centre,
-    float halfWidth,
+    float width,
     float curveDepth
 ) {
-    // -1 at the band's left edge, 0 in its middle, 1 at its right edge. Matches
+    // -1 at the left edge, 0 in the middle, 1 at the right edge. Matches
     // `RecentsHeroLayout.fadeCurveLift`, which moves the items along the same curve.
-    float across = (position.x - centre) / max(halfWidth, 1.0);
+    float across = (position.x - width * 0.5) / max(width * 0.5, 1.0);
     float lift = curveDepth * across * across;
     float alpha = 1.0 - recentsHeroFadeProgress(position.y + lift, start, end);
     alpha = saturate(alpha + (recentsHeroNoise(position) - 0.5) / 128.0 * step(0.001, alpha));
