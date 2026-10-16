@@ -144,11 +144,13 @@ struct AddCategoryView: View {
                         addCategory()
                         dismiss()
                     }
+                    .titleOnlyBeforeGlassToolbars()
                 }
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel", systemImage: "xmark") {
                         dismiss()
                     }
+                    .titleOnlyBeforeGlassToolbars()
                 }
                 #if os(iOS)
                 ToolbarItemGroup(placement: .keyboard) {

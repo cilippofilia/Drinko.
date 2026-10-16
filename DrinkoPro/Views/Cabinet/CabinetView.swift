@@ -15,7 +15,7 @@ struct CabinetView: View {
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     #endif
 
-    /// When set, the page shows only this category (an iPad sidebar row). `nil` shows all.
+    /// When set, the page shows only this category (a sidebar row). `nil` shows all.
     private let categoryID: UUID?
 
     @State private var showAddCategorySheet: Bool = false

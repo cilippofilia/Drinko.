@@ -202,11 +202,13 @@ struct UserCocktailForm: View {
                 Button("Cancel", systemImage: "xmark") {
                     dismiss()
                 }
+                .titleOnlyBeforeGlassToolbars()
             }
             ToolbarItem(placement: .confirmationAction) {
                 Button(editingCocktail == nil ? "Save" : "Update", systemImage: "checkmark") {
                     saveCocktail()
                 }
+                .titleOnlyBeforeGlassToolbars()
             }
         }
     }

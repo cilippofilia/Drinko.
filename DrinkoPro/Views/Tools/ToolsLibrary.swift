@@ -40,7 +40,7 @@ enum ToolsLibrary {
         }
     }
 
-    /// The SF Symbol for a tool's iPad sidebar row (`Tab` takes a symbol, not the card's artwork).
+    /// The SF Symbol for a tool's sidebar row (`Tab` takes a symbol, not the card's artwork).
     static func sidebarSymbol(for item: ToolsView.Selection) -> String {
         switch item {
         case .abvCalculator: "percent"

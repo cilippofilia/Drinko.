@@ -17,7 +17,7 @@ struct HomeView: View {
     @SceneStorage("selectedView") var selectedView: String?
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
-    // Cabinet categories, for the iPad sidebar's Cabinet group (same order as CabinetView).
+    // Cabinet categories, for the sidebar's Cabinet group (same order as CabinetView).
     @Query(sort: [
         SortDescriptor(\Category.name),
         SortDescriptor(\Category.creationDate)
@@ -106,8 +106,8 @@ struct HomeView: View {
             }
         }
         .tabViewStyle(.sidebarAdaptable)
-        // iPhone keeps a tab bar even at regular width (iPhone Duo's inner display) unless asked
-        // for a sidebar; iPad already defaults to one.
+        // On iOS 27+, asks for a sidebar at regular width (iPhone Duo's inner display); iPad keeps
+        // its default presentation.
         .drinkoTabBarPlacement()
         // Only ever visible with a sidebar; the compact tab bar has nowhere to show it.
         .tabViewSidebarBottomBar {

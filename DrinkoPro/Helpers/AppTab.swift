@@ -6,7 +6,7 @@
 import Foundation
 import SwiftUI
 
-/// Every destination the iOS tab view can select: the five main tabs, plus the iPad
+/// Every destination the iOS tab view can select: the five main tabs, plus the
 /// sidebar-only rows that open a main tab's page with a preset.
 enum AppTab: Hashable {
     case learn
