@@ -11,6 +11,8 @@ import SwiftUI
 /// so scrolling (however fast) never redraws it. It reaches far above the band, behind the
 /// navigation bar and over a pull-down, and fades out at the bottom into the page background.
 struct RecentsHeroSettledBackground: View {
+    @Environment(\.layoutDirection) private var layoutDirection
+
     let backdrop: RecentsHeroLayout.Backdrop
     /// How far above the band's bottom edge the backdrop starts fading out.
     let fadeAboveBottom: Double
@@ -34,12 +36,22 @@ struct RecentsHeroSettledBackground: View {
         // the page background (black in dark mode, white in light mode) along a gentle curve, so
         // the band melts into the list instead of ending on a hard edge. The effect sits inside the padding so it
         // measures the whole extended backdrop.
-        .visualEffect { [fadeAboveBottom] content, proxy in
-            content.colorEffect(
+        //
+        // The backdrop also runs sideways behind a vertical toolbar (iPhone Duo), so the curve is
+        // centred on the band itself, between the safe-area insets, to stay in line with the
+        // items riding along it.
+        .visualEffect { [fadeAboveBottom, layoutDirection] content, proxy in
+            let insets = proxy.safeAreaInsets
+            let isRightToLeft = layoutDirection == .rightToLeft
+            let left = isRightToLeft ? insets.trailing : insets.leading
+            let right = isRightToLeft ? insets.leading : insets.trailing
+            let bandWidth = max(proxy.size.width - left - right, 0)
+            return content.colorEffect(
                 ShaderLibrary.recentsHeroBackdropFade(
                     .float(proxy.size.height - RecentsHeroLayout.fadeBelowBottom - fadeAboveBottom),
                     .float(proxy.size.height),
-                    .float(proxy.size.width),
+                    .float(left + bandWidth / 2),
+                    .float(bandWidth / 2),
                     .float(RecentsHeroLayout.fadeCurveDepth)
                 )
             )
