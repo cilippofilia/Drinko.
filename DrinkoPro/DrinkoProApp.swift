@@ -53,6 +53,10 @@ struct DrinkoProApp: App {
             .onOpenURL { url in
                 appNavigationModel.handle(url: url)
             }
+            .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+                guard let url = activity.webpageURL else { return }
+                appNavigationModel.handle(url: url)
+            }
         }
         .environment(favorites)
         .environment(cocktailsViewModel)
