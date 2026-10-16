@@ -16,7 +16,7 @@ struct MacHomeView: View {
     // Same key as the iOS HomeView: remembers the last-used sidebar row between launches.
     @SceneStorage("selectedView") private var selectedView: String?
 
-    // Cabinet categories for the sidebar's Cabinet group (same order as the Cabinet page).
+    // Cabinet categories, to move the selection off a deleted category's row.
     @Query(sort: [
         SortDescriptor(\Category.name),
         SortDescriptor(\Category.creationDate)
@@ -24,121 +24,42 @@ struct MacHomeView: View {
 
     @State private var columnVisibility: NavigationSplitViewVisibility = .all
     @State private var interstitialAd: Ad?
-    @State private var showRemoveAdsPaywall = false
-
-    /// The sidebar selection. Ignores `nil`, so a click on empty space can't deselect the row.
-    private var sidebarSelection: Binding<AppTab?> {
-        Binding(
-            get: { appNavigationModel.selectedTab },
-            set: { newValue in
-                if let newValue {
-                    appNavigationModel.selectedTab = newValue
-                }
-            }
-        )
-    }
 
     var body: some View {
-        NavigationSplitView(columnVisibility: $columnVisibility) {
-            List(selection: sidebarSelection) {
-                Label("Learn", systemImage: "books.vertical.fill")
-                    .tag(AppTab.learn)
-                Label("Cabinet", systemImage: "cabinet.fill")
-                    .tag(AppTab.cabinet)
-                Label("Cocktails", systemImage: "wineglass.fill")
-                    .tag(AppTab.cocktails)
-                Label("Tools", systemImage: "wrench.and.screwdriver.fill")
-                    .tag(AppTab.tools)
-                Label("Settings", systemImage: "gear")
-                    .tag(AppTab.settings)
-
-                Section("Cocktails") {
-                    ForEach(AppTab.sidebarCocktailFilters, id: \.self) { filter in
-                        Label(filter.sidebarTitle, systemImage: filter.sidebarSymbol)
-                            .tag(AppTab.cocktailFilter(filter))
-                    }
+        MacHomePageView(tab: appNavigationModel.selectedTab)
+            .environment(\.macColumnVisibility, $columnVisibility)
+            // Restore the last-used row from the previous session. Only applies while
+            // `selectedTab` is still at its untouched default, so it never clobbers a deep link
+            // that already selected a tab before this view first appeared.
+            .onAppear {
+                if appNavigationModel.selectedTab == .learn, let selectedView,
+                   let tab = AppTab(rawValue: selectedView) {
+                    appNavigationModel.selectedTab = tab
                 }
-                Section("Tools") {
-                    ForEach(ToolsLibrary.calculatorItems) { item in
-                        Label(
-                            ToolsLibrary.cardModel(for: item).title,
-                            systemImage: ToolsLibrary.sidebarSymbol(for: item)
-                        )
-                        .tag(AppTab.tool(item))
-                    }
-                }
-                Section("Learn") {
-                    ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
-                        Label(
-                            LessonsViewModel.sectionTitle(for: id) ?? "",
-                            systemImage: LessonsViewModel.sidebarSymbol(for: id)
-                        )
-                        .tag(AppTab.learnSection(id))
-                    }
-                }
-                if !categories.isEmpty {
-                    Section("Cabinet") {
-                        ForEach(categories) { category in
-                            Label(category.name, systemImage: "tray")
-                                .tag(AppTab.cabinetCategory(category.id))
-                        }
-                    }
+                fitSelection()
+            }
+            .onChange(of: appNavigationModel.selectedTab) { _, newValue in
+                selectedView = newValue.rawValue
+            }
+            // A selected Cabinet category row disappears when the category is deleted.
+            .onChange(of: categories.map(\.id)) {
+                fitSelection()
+            }
+            .sheet(item: $interstitialAd) { ad in
+                AdView(advert: ad, config: .crossPromo) {
+                    CrossPromoRemoveAdsInfoView()
                 }
             }
-            .safeAreaInset(edge: .bottom) {
-                if removeAdsStore.isAdsRemoved == false {
-                    Button("Remove Ads", systemImage: "nosign") {
-                        showRemoveAdsPaywall = true
-                    }
-                    .buttonStyle(.plain)
-                    .foregroundStyle(.tint)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                }
+            .onChange(of: crossPromoSignal.count) { _, newValue in
+                guard removeAdsStore.isAdsRemoved == false,
+                      CrossPromoSignal.shouldShowInterstitial(at: newValue) else { return }
+                Task { await refreshInterstitialAd() }
             }
-            .navigationSplitViewColumnWidth(
-                min: 140,
-                ideal: 180,
-                max: 220
-            )
-        } detail: {
-            MacHomeDetailView(tab: appNavigationModel.selectedTab)
-        }
-        // Restore the last-used row from the previous session. Only applies while
-        // `selectedTab` is still at its untouched default, so it never clobbers a deep link
-        // that already selected a tab before this view first appeared.
-        .onAppear {
-            if appNavigationModel.selectedTab == .learn, let selectedView, let tab = AppTab(rawValue: selectedView) {
-                appNavigationModel.selectedTab = tab
+            // Dismiss an ad the user is mid-way through if they buy "Remove Ads" from its own paywall.
+            .onChange(of: removeAdsStore.isAdsRemoved) { _, isAdsRemoved in
+                guard isAdsRemoved else { return }
+                interstitialAd = nil
             }
-            fitSelection()
-        }
-        .onChange(of: appNavigationModel.selectedTab) { _, newValue in
-            selectedView = newValue.rawValue
-        }
-        // A selected Cabinet category row disappears when the category is deleted.
-        .onChange(of: categories.map(\.id)) {
-            fitSelection()
-        }
-        .sheet(isPresented: $showRemoveAdsPaywall) {
-            CrossPromoRemoveAdsInfoView()
-                .frame(minWidth: 420, minHeight: 480)
-        }
-        .sheet(item: $interstitialAd) { ad in
-            AdView(advert: ad, config: .crossPromo) {
-                CrossPromoRemoveAdsInfoView()
-            }
-        }
-        .onChange(of: crossPromoSignal.count) { _, newValue in
-            guard removeAdsStore.isAdsRemoved == false,
-                  CrossPromoSignal.shouldShowInterstitial(at: newValue) else { return }
-            Task { await refreshInterstitialAd() }
-        }
-        // Dismiss an ad the user is mid-way through if they buy "Remove Ads" from its own paywall.
-        .onChange(of: removeAdsStore.isAdsRemoved) { _, isAdsRemoved in
-            guard isAdsRemoved else { return }
-            interstitialAd = nil
-        }
     }
 
     private func refreshInterstitialAd() async {
@@ -153,7 +74,10 @@ struct MacHomeView: View {
     /// Moves the selection off a Cabinet category that no longer exists (see `AppTab.fitted`).
     private func fitSelection() {
         let categoryIDs = Set(categories.map(\.id))
-        appNavigationModel.selectedTab = appNavigationModel.selectedTab.fitted(isCompact: false, categoryIDs: categoryIDs)
+        appNavigationModel.selectedTab = appNavigationModel.selectedTab.fitted(
+            isCompact: false,
+            categoryIDs: categoryIDs
+        )
     }
 }
 
