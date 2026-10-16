@@ -24,11 +24,15 @@ final class RemoteImageLoaderTests: XCTestCase {
     }
 
     private func makeTestImageData(pixelSize: Int = 400) throws -> Data {
+        try makeTestImageData(width: pixelSize, height: pixelSize)
+    }
+
+    private func makeTestImageData(width: Int, height: Int) throws -> Data {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         guard let context = CGContext(
             data: nil,
-            width: pixelSize,
-            height: pixelSize,
+            width: width,
+            height: height,
             bitsPerComponent: 8,
             bytesPerRow: 0,
             space: colorSpace,
@@ -38,7 +42,7 @@ final class RemoteImageLoaderTests: XCTestCase {
         }
 
         context.setFillColor(red: 1, green: 0, blue: 0, alpha: 1)
-        context.fill(CGRect(x: 0, y: 0, width: pixelSize, height: pixelSize))
+        context.fill(CGRect(x: 0, y: 0, width: width, height: height))
 
         guard let cgImage = context.makeImage() else {
             throw TestSetupError.imageGenerationFailed
@@ -81,6 +85,48 @@ final class RemoteImageLoaderTests: XCTestCase {
 
         let requestCount = await StubURLProtocol.requestCount(for: url)
         XCTAssertEqual(requestCount, 1, "The second load should be served from the in-memory cache, not the network.")
+    }
+
+    func testFillingDecodesAWideImageSoItsShortSideCoversTheTarget() async throws {
+        let imageData = try makeTestImageData(width: 1000, height: 443)
+        let url = URL(string: "https://example.com/wide-image.jpg")!
+        await StubURLProtocol.setResponse(for: url, data: imageData, statusCode: 200)
+
+        let loader = RemoteImageLoader(session: makeSession())
+
+        let fitted = try await loader.image(for: url, maxPixelSize: 400)
+        XCTAssertEqual(fitted.width, 400)
+
+        let filled = try await loader.image(for: url, maxPixelSize: 400, filling: true)
+        XCTAssertGreaterThanOrEqual(filled.height, 400)
+    }
+
+    func testDecodedLongestSideForFittingIsTheTarget() {
+        let side = RemoteImageLoader.decodedLongestSide(
+            forTargetPixelSize: 560, sourceWidth: 1000, sourceHeight: 443, filling: false
+        )
+        XCTAssertEqual(side, 560)
+    }
+
+    func testDecodedLongestSideForFillingScalesByTheAspectRatio() {
+        let side = RemoteImageLoader.decodedLongestSide(
+            forTargetPixelSize: 300, sourceWidth: 1000, sourceHeight: 500, filling: true
+        )
+        XCTAssertEqual(side, 600)
+    }
+
+    func testDecodedLongestSideForFillingNeverExceedsTheSource() {
+        let side = RemoteImageLoader.decodedLongestSide(
+            forTargetPixelSize: 560, sourceWidth: 1000, sourceHeight: 443, filling: true
+        )
+        XCTAssertEqual(side, 1000)
+    }
+
+    func testDecodedLongestSideWithUnknownSourceSizeIsTheTarget() {
+        let side = RemoteImageLoader.decodedLongestSide(
+            forTargetPixelSize: 560, sourceWidth: 0, sourceHeight: 0, filling: true
+        )
+        XCTAssertEqual(side, 560)
     }
 
     func testNotFoundResponseThrows() async throws {

@@ -39,6 +39,7 @@ actor RemoteImageLoader {
     private struct CacheKey: Hashable {
         let url: URL
         let maxPixelSize: Int
+        let filling: Bool
     }
 
     private let session: URLSession
@@ -79,9 +80,12 @@ actor RemoteImageLoader {
     ///   - maxPixelSize: The maximum width/height, in pixels, to decode the image at. Passing the
     ///     view's actual rendered size (in pixels) avoids decoding a full-size image for a small
     ///     thumbnail.
+    ///   - filling: Whether the image will fill (and be cropped by) a `maxPixelSize` frame rather
+    ///     than fit inside it. Filling needs the *shorter* side to reach `maxPixelSize`, so a wide
+    ///     photo is decoded larger than that; otherwise its centre would be stretched up and blur.
     /// - Returns: The decoded, downsampled `CGImage`.
-    func image(for url: URL, maxPixelSize: Int) async throws -> CGImage {
-        let key = CacheKey(url: url, maxPixelSize: maxPixelSize)
+    func image(for url: URL, maxPixelSize: Int, filling: Bool = false) async throws -> CGImage {
+        let key = CacheKey(url: url, maxPixelSize: maxPixelSize, filling: filling)
 
         if let cached = memoryCache[key] {
             return cached
@@ -93,7 +97,7 @@ actor RemoteImageLoader {
 
         let session = self.session
         let task = Task<CGImage, Error> {
-            try await Self.downloadAndDecode(session: session, url: url, maxPixelSize: maxPixelSize)
+            try await Self.downloadAndDecode(session: session, url: url, maxPixelSize: maxPixelSize, filling: filling)
         }
         inFlightTasks[key] = task
 
@@ -120,7 +124,12 @@ actor RemoteImageLoader {
         }
     }
 
-    private static func downloadAndDecode(session: URLSession, url: URL, maxPixelSize: Int) async throws -> CGImage {
+    private static func downloadAndDecode(
+        session: URLSession,
+        url: URL,
+        maxPixelSize: Int,
+        filling: Bool
+    ) async throws -> CGImage {
         let (data, response) = try await session.data(from: url)
 
         guard let httpResponse = response as? HTTPURLResponse,
@@ -131,20 +140,48 @@ actor RemoteImageLoader {
             throw LoaderError.invalidResponse
         }
 
-        return try downsample(data: data, maxPixelSize: maxPixelSize)
+        return try downsample(data: data, maxPixelSize: maxPixelSize, filling: filling)
     }
 
-    private static func downsample(data: Data, maxPixelSize: Int) throws -> CGImage {
+    /// The longest side to decode a `sourceWidth` × `sourceHeight` image at, for a frame
+    /// `targetPixelSize` pixels across.
+    ///
+    /// Fitting only needs the longer side to reach the target, so that's the size. Filling crops
+    /// the longer side, so the shorter side must reach the target instead: the longer side is
+    /// scaled up by the aspect ratio, but never past the source's own size.
+    static func decodedLongestSide(
+        forTargetPixelSize targetPixelSize: Int,
+        sourceWidth: Int,
+        sourceHeight: Int,
+        filling: Bool
+    ) -> Int {
+        let longSide = max(sourceWidth, sourceHeight)
+        let shortSide = min(sourceWidth, sourceHeight)
+        guard filling, shortSide > 0 else { return targetPixelSize }
+
+        let scaled = (Double(targetPixelSize) * Double(longSide) / Double(shortSide)).rounded(.up)
+        return min(Int(scaled), longSide)
+    }
+
+    private static func downsample(data: Data, maxPixelSize: Int, filling: Bool) throws -> CGImage {
         let sourceOptions: [CFString: Any] = [kCGImageSourceShouldCache: false]
         guard let source = CGImageSourceCreateWithData(data as CFData, sourceOptions as CFDictionary) else {
             throw LoaderError.decodingFailed
         }
 
+        let properties = CGImageSourceCopyPropertiesAtIndex(source, 0, nil) as? [CFString: Any]
+        let longestSide = decodedLongestSide(
+            forTargetPixelSize: maxPixelSize,
+            sourceWidth: properties?[kCGImagePropertyPixelWidth] as? Int ?? 0,
+            sourceHeight: properties?[kCGImagePropertyPixelHeight] as? Int ?? 0,
+            filling: filling
+        )
+
         let thumbnailOptions: [CFString: Any] = [
             kCGImageSourceCreateThumbnailFromImageAlways: true,
             kCGImageSourceCreateThumbnailWithTransform: true,
             kCGImageSourceShouldCacheImmediately: true,
-            kCGImageSourceThumbnailMaxPixelSize: maxPixelSize
+            kCGImageSourceThumbnailMaxPixelSize: longestSide
         ]
 
         guard let cgImage = CGImageSourceCreateThumbnailAtIndex(source, 0, thumbnailOptions as CFDictionary) else {
