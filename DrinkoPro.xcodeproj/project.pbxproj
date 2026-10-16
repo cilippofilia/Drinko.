@@ -58,6 +58,7 @@
 		18A929D52F12C6A900B70219 /* LearnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EAE2A286D2E00862CE3 /* LearnView.swift */; };
 		18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
 		18A929DC2F12C72000B70219 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
+		18C71A022F4000010AAA0002 /* CocktailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C71A012F4000010AAA0001 /* CocktailsViewModel.swift */; };
 		18A929EA2F12C8F100B70219 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
 		18A929EB2F12C8FA00B70219 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 		18A929EC2F12C91200B70219 /* HistoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */; };
@@ -75,6 +76,7 @@
 		18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307732B6F99DD00CB94AB /* EditProductView.swift */; };
 		18B307792B7771C300CB94AB /* FavoriteProductButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */; };
 		18EB4E932EEECEDC00691DC2 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
+		18C71A032F4000010AAA0003 /* CocktailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C71A012F4000010AAA0001 /* CocktailsViewModel.swift */; };
 		18EB4EC42EEED46E00691DC2 /* HistoryButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */; };
 		18EB4EC52EEED46E00691DC2 /* LikeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */; };
 		18F49E642A27B28D00862CE3 /* DrinkoProApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */; };
@@ -199,6 +201,7 @@
 		18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteProductButtonView.swift; sourceTree = "<group>"; };
 		18CABC402EF21ED3000A3278 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocktail.swift; sourceTree = "<group>"; };
+		18C71A012F4000010AAA0001 /* CocktailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsViewModel.swift; sourceTree = "<group>"; };
 		18EB4EC12EEED46E00691DC2 /* HistoryButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryButtonView.swift; sourceTree = "<group>"; };
 		18EB4EC22EEED46E00691DC2 /* LikeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButtonView.swift; sourceTree = "<group>"; };
 		18F1A3F6A4C9794685440EB6 /* Drinko.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Drinko.storekit; sourceTree = "<group>"; };
@@ -409,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */,
+				18C71A012F4000010AAA0001 /* CocktailsViewModel.swift */,
 				D1C5B0012F00000000000005 /* UserCocktailFormState.swift */,
 				D1C5B0012F00000000000004 /* UserCocktailDetails.swift */,
 				D1C5B0012F00000000000001 /* CocktailListSource.swift */,
@@ -918,6 +922,7 @@
 				1858F96D306870350016B2DD /* Serving.swift in Sources */,
 				183F93602F253BDC005CF96A /* ReadMeView.swift in Sources */,
 				18A929DC2F12C72000B70219 /* Cocktail.swift in Sources */,
+				18C71A022F4000010AAA0002 /* CocktailsViewModel.swift in Sources */,
 				D1C5B0022F00000000000005 /* UserCocktailFormState.swift in Sources */,
 				D1C5B0022F00000000000004 /* UserCocktailDetails.swift in Sources */,
 				D1C5B0022F00000000000001 /* CocktailListSource.swift in Sources */,
@@ -970,6 +975,7 @@
 				18263CA12F3D248200758DCC /* DeleteButtonView.swift in Sources */,
 				1827138E2B658293000D3343 /* ProductRowView.swift in Sources */,
 				18EB4E932EEECEDC00691DC2 /* Cocktail.swift in Sources */,
+				18C71A032F4000010AAA0003 /* CocktailsViewModel.swift in Sources */,
 				D1C5B0032F00000000000005 /* UserCocktailFormState.swift in Sources */,
 				D1C5B0032F00000000000004 /* UserCocktailDetails.swift in Sources */,
 				D1C5B0032F00000000000001 /* CocktailListSource.swift in Sources */,
