@@ -168,6 +168,9 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         .frame(maxWidth: .infinity)
         .background {
             RecentsHeroSettledBackground(backdrop: settledBackdrop, fadeAboveBottom: titleStyle.fadeAboveBottom)
+                // Decoration, so it runs behind a vertical toolbar (iPhone Duo) as it does
+                // behind the navigation bar.
+                .ignoresSafeArea(edges: .horizontal)
         }
         .onAppear {
             if currentSlot == nil {
@@ -279,6 +282,13 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         .scrollIndicators(.hidden)
         // Items cast shadows that the scroll view would otherwise clip.
         .scrollClipDisabled()
+        // ...but only vertically. Past the band's sides, neighbours would draw under (and
+        // beyond) a vertical toolbar, as on iPhone Duo. The mask is stretched above and below so
+        // the lifted items and their shadows still show.
+        .mask {
+            Rectangle()
+                .padding(.vertical, -itemWidth)
+        }
         .onGeometryChange(for: Double.self) { proxy in
             proxy.size.width
         } action: { newValue in
