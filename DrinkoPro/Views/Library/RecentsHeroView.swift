@@ -282,13 +282,6 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         .scrollIndicators(.hidden)
         // Items cast shadows that the scroll view would otherwise clip.
         .scrollClipDisabled()
-        // ...but only vertically. Past the band's sides, neighbours would draw under (and
-        // beyond) a vertical toolbar, as on iPhone Duo. The mask is stretched above and below so
-        // the lifted items and their shadows still show.
-        .mask {
-            Rectangle()
-                .padding(.vertical, -itemWidth)
-        }
         .onGeometryChange(for: Double.self) { proxy in
             proxy.size.width
         } action: { newValue in
