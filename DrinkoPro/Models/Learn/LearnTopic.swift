@@ -11,7 +11,7 @@ struct LearnTopic: Identifiable, Hashable {
     let title: String
 
     /// Every topic, in display order. Add a topic by adding an entry here and a `<id>.json` file.
-    static let all: [LearnTopic] = [
+    nonisolated static let all: [LearnTopic] = [
         LearnTopic(id: "basic-lessons", title: String(localized: "Basic Lessons")),
         LearnTopic(id: "bar-preps", title: String(localized: "Bar Preps")),
         LearnTopic(id: "basic-spirits", title: String(localized: "Basic Spirits")),

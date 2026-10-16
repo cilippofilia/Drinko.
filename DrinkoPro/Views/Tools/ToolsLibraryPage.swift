@@ -22,8 +22,8 @@ struct ToolsLibraryPage: View {
             collapsedSections: .constant(CollapsedSections()),
             layout: .grid,
             showsSectionHeaders: false,
-            onSelect: onSelect,
-            cardModel: ToolsLibrary.cardModel(for:),
+            onSelect: { onSelect($0) },
+            cardModel: { ToolsLibrary.cardModel(for: $0) },
             contextMenu: { _ in EmptyView() }
         )
         .navigationTitle("Tools")

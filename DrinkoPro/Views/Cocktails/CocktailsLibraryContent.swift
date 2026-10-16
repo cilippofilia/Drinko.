@@ -54,7 +54,7 @@ struct CocktailsLibraryContent: View {
                     isSearching: !viewModel.searchText.isEmpty,
                     collapsedSections: $collapsedSections,
                     layout: layout,
-                    onSelect: onSelect,
+                    onSelect: { onSelect($0) },
                     cardModel: { viewModel.cardModel(for: $0, isFavorite: favorites.contains($0)) },
                     contextMenu: { cocktail in
                         FavoriteCocktailButtonView(cocktail: cocktail)
