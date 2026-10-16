@@ -23,6 +23,21 @@ extension View {
         padding(.horizontal)
         #endif
     }
+
+    /// Calls `action` with the horizontal edge holding a vertical toolbar (iPhone Duo), now and
+    /// whenever it changes, or with `nil` where there is none (including before iOS 27.1).
+    @ViewBuilder
+    func onToolbarVerticalEdgeChange(_ action: @escaping (HorizontalEdge?) -> Void) -> some View {
+        #if os(iOS)
+        if #available(iOS 27.1, *) {
+            modifier(ToolbarVerticalEdgeReader(action: action))
+        } else {
+            self
+        }
+        #else
+        self
+        #endif
+    }
 }
 
 #if os(iOS)
@@ -42,6 +57,19 @@ private struct BarAwareHorizontalPadding: ViewModifier {
 
     func body(content: Content) -> some View {
         content.padding(paddedEdges)
+    }
+}
+
+@available(iOS 27.1, *)
+private struct ToolbarVerticalEdgeReader: ViewModifier {
+    @Environment(\.toolbarVerticalEdge) private var toolbarVerticalEdge
+
+    let action: (HorizontalEdge?) -> Void
+
+    func body(content: Content) -> some View {
+        content.onChange(of: toolbarVerticalEdge, initial: true) { _, newValue in
+            action(newValue)
+        }
     }
 }
 #endif

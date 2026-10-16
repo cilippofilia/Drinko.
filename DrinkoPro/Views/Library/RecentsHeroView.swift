@@ -48,10 +48,23 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     /// every frame. Built in `refreshEntries()`, not `init`: the parent re-runs `init` on every
     /// update and `State` would throw the result away.
     @State private var entries: [RecentsHeroEntry] = []
-    /// The horizontal safe-area insets around the band, such as iPhone Duo's vertical toolbar.
-    /// The band reaches out over them so the carousel centres on the whole width, while its
-    /// text is inset by them to stay clear of the bar.
-    @State private var sideInsets = EdgeInsets()
+    /// The horizontal safe-area insets around the band, as measured.
+    @State private var measuredSideInsets = EdgeInsets()
+    /// The edge holding a vertical toolbar (iPhone Duo), if any.
+    @State private var toolbarVerticalEdge: HorizontalEdge?
+
+    /// The inset on the vertical toolbar's side only. The band reaches out over it so the
+    /// carousel centres on the whole width, bar included, while its text is inset by it to stay
+    /// clear of the bar. Other insets, such as a sidebar overlaying the content while iPhone Duo
+    /// is partly folded, are left alone, so the band stays beside them.
+    private var sideInsets: EdgeInsets {
+        EdgeInsets(
+            top: 0,
+            leading: toolbarVerticalEdge == .leading ? measuredSideInsets.leading : 0,
+            bottom: 0,
+            trailing: toolbarVerticalEdge == .trailing ? measuredSideInsets.trailing : 0
+        )
+    }
 
     /// The hero text's size. A scaled metric keeps it following Dynamic Type while being far
     /// larger than any text style.
@@ -198,8 +211,11 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                         trailing: proxy.safeAreaInsets.trailing
                     )
                 } action: { newValue in
-                    sideInsets = newValue
+                    measuredSideInsets = newValue
                 }
+        }
+        .onToolbarVerticalEdgeChange { newValue in
+            toolbarVerticalEdge = newValue
         }
         .onAppear {
             if currentSlot == nil {
