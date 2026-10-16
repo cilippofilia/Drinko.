@@ -52,7 +52,8 @@ struct LibraryNavigationContainer<Item: Hashable, Library: View, Detail: View, P
             MacSidebarView()
         } content: {
             library
-                .navigationSplitViewColumnWidth(min: 280, ideal: 340)
+                // Narrower than this, the recents hero's title wraps over its items.
+                .navigationSplitViewColumnWidth(min: 320, ideal: 380)
         } detail: {
             // Hosted in a stack in both states, so the detail column's bar looks the same
             // with or without a selection.
