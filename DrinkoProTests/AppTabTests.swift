@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import SwiftUI
 import Testing
 @testable import DrinkoPro
 
@@ -108,5 +109,20 @@ struct AppTabTests {
         let untouched = AppNavigationModel()
         untouched.handle(url: try #require(URL(string: "https://cocktail/negroni")))
         #expect(untouched.selectedTab == .learn)
+    }
+
+    @Test func sidebarRowsNeedRegularWidth() {
+        #expect(AppTab.sidebarRowsAvailable(horizontalSizeClass: .regular))
+        #expect(!AppTab.sidebarRowsAvailable(horizontalSizeClass: .compact))
+        // Before the trait arrives, assume no sidebar rather than inserting rows with nowhere to go.
+        #expect(!AppTab.sidebarRowsAvailable(horizontalSizeClass: nil))
+    }
+
+    @Test func foldingFallsBackAndUnfoldingKeepsRow() {
+        let shots = AppTab.cocktailFilter(.shotsOnly)
+        let folded = !AppTab.sidebarRowsAvailable(horizontalSizeClass: .compact)
+        let unfolded = !AppTab.sidebarRowsAvailable(horizontalSizeClass: .regular)
+        #expect(shots.fitted(isCompact: folded, categoryIDs: []) == .cocktails)
+        #expect(shots.fitted(isCompact: unfolded, categoryIDs: []) == shots)
     }
 }
