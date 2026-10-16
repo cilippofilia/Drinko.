@@ -116,6 +116,7 @@ struct HomeView: View {
                 } label: {
                     HStack(spacing: 13) {
                         Image(systemName: "nosign")
+                            .foregroundStyle(.red)
                             .frame(width: 22)
                         Text("Remove Ads")
                             .foregroundStyle(.primary)
@@ -124,7 +125,6 @@ struct HomeView: View {
                     .contentShape(.rect)
                 }
                 .buttonStyle(.plain)
-                .foregroundStyle(.tint)
                 .padding(.leading, 35)
                 .padding(.vertical)
             }

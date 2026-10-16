@@ -82,11 +82,18 @@ struct MacSidebarView: View {
         }
         .safeAreaInset(edge: .bottom) {
             if removeAdsStore.isAdsRemoved == false {
-                Button("Remove Ads", systemImage: "nosign") {
+                Button {
                     showRemoveAdsPaywall = true
+                } label: {
+                    Label {
+                        Text("Remove Ads")
+                    } icon: {
+                        Image(systemName: "nosign")
+                            .foregroundStyle(.red)
+                    }
                 }
                 .buttonStyle(.plain)
-                .foregroundStyle(.tint)
+                .foregroundStyle(.primary)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
                 // Rows scroll under the button, so it needs its own backdrop to stay legible.
