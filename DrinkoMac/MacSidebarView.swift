@@ -89,6 +89,8 @@ struct MacSidebarView: View {
                 .foregroundStyle(.tint)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
+                // Rows scroll under the button, so it needs its own backdrop to stay legible.
+                .background(.ultraThinMaterial)
             }
         }
         .navigationSplitViewColumnWidth(
