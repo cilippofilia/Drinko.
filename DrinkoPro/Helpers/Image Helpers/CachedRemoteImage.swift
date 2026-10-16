@@ -13,8 +13,9 @@ import SwiftUI
 ///
 /// The image is requested at a pixel size derived from the space the view is given (read via
 /// `onGeometryChange`, not `GeometryReader`) multiplied by the display scale, so a 45pt row
-/// thumbnail never decodes a full-size source image. The view always fills that space, so give
-/// it a frame.
+/// thumbnail never decodes a full-size source image. With `.fill`, the image's shorter side is
+/// sized to cover that space, so cropping a wide photo doesn't stretch it. The view always fills
+/// that space, so give it a frame.
 struct CachedRemoteImage: View {
     private enum LoadState {
         case loading
@@ -45,7 +46,7 @@ struct CachedRemoteImage: View {
 
     private var taskID: String? {
         guard let url, let targetPixelSize else { return nil }
-        return "\(url.absoluteString)#\(targetPixelSize)"
+        return "\(url.absoluteString)#\(targetPixelSize)#\(contentMode == .fill)"
     }
 
     var body: some View {
@@ -79,7 +80,11 @@ struct CachedRemoteImage: View {
         guard let url, let targetPixelSize else { return }
 
         do {
-            let cgImage = try await RemoteImageLoader.shared.image(for: url, maxPixelSize: targetPixelSize)
+            let cgImage = try await RemoteImageLoader.shared.image(
+                for: url,
+                maxPixelSize: targetPixelSize,
+                filling: contentMode == .fill
+            )
             loadState = .success(cgImage)
         } catch is CancellationError {
             // A new size or URL superseded this load; leave the current state as-is.
