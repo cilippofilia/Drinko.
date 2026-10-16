@@ -10,10 +10,10 @@ import Foundation
 /// The content of the Tools library: its sections and the card shown for each tool.
 enum ToolsLibrary {
     static let calculatorsSectionID = "calculators"
-    private static let superjuiceTypes = ["lime", "lemon"]
+    private nonisolated static let superjuiceTypes = ["lime", "lemon"]
 
     /// The calculator entries shown in the Calculators section, in display order.
-    static var calculatorItems: [ToolsView.Selection] {
+    nonisolated static var calculatorItems: [ToolsView.Selection] {
         [.abvCalculator] + superjuiceTypes.map { .superjuice($0) }
     }
 

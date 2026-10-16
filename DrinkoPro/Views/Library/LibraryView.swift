@@ -89,9 +89,9 @@ struct LibraryView<Item: Identifiable & Hashable, MenuContent: View>: View {
                                 collapsedSections.toggle(section.id)
                             }
                         },
-                        onSelect: onSelect,
-                        cardModel: cardModel,
-                        contextMenu: contextMenu
+                        onSelect: { onSelect($0) },
+                        cardModel: { cardModel($0) },
+                        contextMenu: { contextMenu($0) }
                     )
                     .padding(.horizontal)
                     // Collapsed headers stack closely; their 44-point tap targets already space them.

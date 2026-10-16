@@ -221,6 +221,7 @@ extension MacUserCocktailForm {
                 Button("Add Ingredient", systemImage: "plus") {
                     ingredientDrafts.append(IngredientDraft(unit: unitOptions.first ?? "oz."))
                 }
+                .labelStyle(.formAction)
                 Button("Remove Ingredient", systemImage: "minus") {
                     removeLastIngredient()
                 }
@@ -248,6 +249,7 @@ extension MacUserCocktailForm {
                 Button("Add Step", systemImage: "plus") {
                     procedureDrafts.append("")
                 }
+                .labelStyle(.formAction)
                 Button("Remove Step", systemImage: "minus") {
                     removeLastProcedureStep()
                 }

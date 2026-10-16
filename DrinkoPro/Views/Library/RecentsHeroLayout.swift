@@ -81,16 +81,16 @@ enum RecentsHeroLayout {
     /// How far below the band's bottom edge the fade runs, into the gap before the list, so
     /// the band takes no extra room for it. It ends before the first section header, which
     /// then sits on the plain page background.
-    static let fadeBelowBottom = 16.0
+    nonisolated static let fadeBelowBottom = 16.0
 
     /// How much higher the fade sits at the band's left and right edges than in the middle, so
     /// it curves up around the centred item like a smile.
-    static let fadeCurveDepth = 24.0
+    nonisolated static let fadeCurveDepth = 24.0
 
     /// How much higher the fade curve sits `distance` points from the middle of a band `width`
     /// wide: nothing in the middle, `fadeCurveDepth` at either edge, along a parabola. The
     /// shader in `RecentsHeroFade.metal` draws the same curve.
-    static func fadeCurveLift(atDistance distance: Double, fromCentreOfWidth width: Double) -> Double {
+    nonisolated static func fadeCurveLift(atDistance distance: Double, fromCentreOfWidth width: Double) -> Double {
         guard width > 0 else { return 0 }
         let across = distance / (width / 2)
         return fadeCurveDepth * across * across

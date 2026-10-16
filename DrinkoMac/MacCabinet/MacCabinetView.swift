@@ -10,6 +10,11 @@ import SwiftUI
 
 struct MacCabinetView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(AppNavigationModel.self) private var appNavigationModel
+    @Environment(CrossPromoSignal.self) private var crossPromoSignal
+
+    /// When set, the page shows only this category (a sidebar row). `nil` shows all.
+    private let categoryID: UUID?
 
     @State private var showAddCategorySheet: Bool = false
     @State private var selectedCategory: Category? = nil
@@ -26,22 +31,43 @@ struct MacCabinetView: View {
         SortDescriptor(\Category.creationDate)
     ]) var categories: [Category]
 
+    init(categoryID: UUID? = nil) {
+        self.categoryID = categoryID
+    }
+
+    private var visibleCategories: [Category] {
+        categories.filter { categoryID == nil || $0.id == categoryID }
+    }
+
+    private var title: String {
+        if let categoryID, let category = categories.first(where: { $0.id == categoryID }) {
+            return category.name
+        }
+        return String(localized: "Cabinet")
+    }
+
     var body: some View {
         NavigationStack {
             Group {
-                if categories.isEmpty {
+                if visibleCategories.isEmpty {
                     MacCabinetUnavailableView(
                         showAddCategorySheet: $showAddCategorySheet,
                         action: { showAddCategorySheet.toggle() }
                     )
                 } else {
                     categoriesList
-                        .navigationTitle("Cabinet")
                 }
             }
-            .safeAreaInset(edge: .bottom) {
-                CrossPromoBannerView()
+            .navigationTitle(title)
+            .sheet(isPresented: $showAddCategorySheet) {
+                MacAddCategoryView()
+                    .presentationDetents([.medium, .large])
             }
+            .crossPromoBanner()
+        }
+        // File › New Category. `initial: true` covers the page created by the sidebar switch.
+        .onChange(of: appNavigationModel.pendingCreation, initial: true) { _, _ in
+            presentPendingCreationIfNeeded()
         }
     }
 }
@@ -49,7 +75,7 @@ struct MacCabinetView: View {
 extension MacCabinetView {
     var categoriesList: some View {
         List {
-            ForEach(categories) { category in
+            ForEach(visibleCategories) { category in
                 Section {
                     if let products = category.products {
                         ForEach(products) { product in
@@ -91,10 +117,6 @@ extension MacCabinetView {
                 .listRowSeparator(.hidden)
             }
         }
-        .sheet(isPresented: $showAddCategorySheet) {
-            MacAddCategoryView()
-                .presentationDetents([.medium, .large])
-        }
         .sheet(item: $selectedCategory) { category in
             MacEditCategoryView(category: category)
                 .presentationDetents([.medium, .large])
@@ -104,13 +126,15 @@ extension MacCabinetView {
                 .presentationDetents([.medium, .large])
         }
         .toolbar {
-            ToolbarItem(placement: .automatic) {
-                Button(action: {
-                    showAddCategorySheet.toggle()
-                }) {
-                    Label("Add category", systemImage: "plus")
+            if categoryID == nil {
+                ToolbarItem(placement: .automatic) {
+                    Button(action: {
+                        showAddCategorySheet.toggle()
+                    }) {
+                        Label("Add category", systemImage: "plus")
+                    }
+                    .accessibilityLabel("Add category")
                 }
-                .accessibilityLabel("Add category")
             }
         }
         .alert(isPresented: $showError) {
@@ -136,6 +160,15 @@ extension MacCabinetView {
 
     func addProduct(to category: Category) {
         category.products?.append(Item(name:"Product Name"))
+        crossPromoSignal.bump()
+    }
+
+    /// Presents Add Category for File › New Category. Only the main Cabinet page has the
+    /// sheet; category pages opened before stay loaded and must not consume the request.
+    func presentPendingCreationIfNeeded() {
+        guard categoryID == nil, appNavigationModel.selectedTab == .cabinet else { return }
+        guard appNavigationModel.consumePendingCreation(.category) else { return }
+        showAddCategorySheet = true
     }
 }
 
@@ -162,6 +195,7 @@ extension MacCabinetView {
         let previewer = try CabinetPreviewerPreviewer()
 
         return MacCabinetView()
+            .environment(CrossPromoSignal())
         /// comment the following line to display an emptyCabinet
             .modelContainer(previewer.container)
     } catch {

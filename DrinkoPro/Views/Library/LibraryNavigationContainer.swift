@@ -6,7 +6,9 @@
 import SwiftUI
 
 /// The navigation shell shared by the Learn, Cocktails and Tools pages: a `NavigationStack`
-/// on iOS, and a sidebar plus detail column (`NavigationSplitView`) on macOS.
+/// on iOS, and on macOS the window's whole split view: the app sidebar (`MacSidebarView`),
+/// the library, then the detail column. (Nesting this page's split view inside the window's
+/// one would misplace the detail content; see `MacHomePageView`.)
 ///
 /// The screen owns the selection state (the pushed `path` on iOS, the `selection` and
 /// `preferredCompactColumn` on macOS); this view only hosts the library and its detail.
@@ -15,6 +17,9 @@ struct LibraryNavigationContainer<Item: Hashable, Library: View, Detail: View, P
     private let library: Library
     private let detail: (Item) -> Detail
     private let placeholder: Placeholder
+    #if os(macOS)
+    @Environment(\.macColumnVisibility) private var columnVisibility
+    #endif
 
     /// - Parameters:
     ///   - navigation: The screen's selection state.
@@ -40,11 +45,18 @@ struct LibraryNavigationContainer<Item: Hashable, Library: View, Detail: View, P
                 .navigationDestination(for: Item.self) { detail($0) }
         }
         #else
-        NavigationSplitView(preferredCompactColumn: navigation.preferredCompactColumn) {
+        NavigationSplitView(
+            columnVisibility: columnVisibility,
+            preferredCompactColumn: navigation.preferredCompactColumn
+        ) {
+            MacSidebarView()
+        } content: {
             library
+                // Narrower than this, the recents hero's title wraps over its items.
+                .navigationSplitViewColumnWidth(min: 320, ideal: 380)
         } detail: {
-            // Hosted in a stack in both states, so the detail column's bar (and the sidebar
-            // toggle in it) sits under the tab bar the same way.
+            // Hosted in a stack in both states, so the detail column's bar looks the same
+            // with or without a selection.
             NavigationStack {
                 if let selection = navigation.selection.wrappedValue {
                     detail(selection)

@@ -9,7 +9,7 @@ import Foundation
 
 extension ToolsView {
     /// The item shown in the detail column of the Tools split view.
-    enum Selection: Hashable, Identifiable {
+    nonisolated enum Selection: Hashable, Identifiable {
         case abvCalculator
         case superjuice(String)
 

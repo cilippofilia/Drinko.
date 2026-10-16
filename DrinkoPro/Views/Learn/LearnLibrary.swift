@@ -73,7 +73,7 @@ struct LearnLibrary: View {
                     collapsedSections: $collapsedSections,
                     layout: layout,
                     showsSectionHeaders: sectionID == nil,
-                    onSelect: onSelect,
+                    onSelect: { onSelect($0) },
                     cardModel: viewModel.cardModel(for:),
                     contextMenu: { _ in EmptyView() }
                 )
