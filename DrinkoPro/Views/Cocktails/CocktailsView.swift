@@ -31,7 +31,7 @@ struct CocktailsView: View {
     @State private var preferredCompactColumn: NavigationSplitViewColumn = .sidebar
     #endif
     @AppStorage(LibraryLayout.cocktailsStorageKey) private var layout: LibraryLayout = .initial()
-    @AppStorage("cocktailsCollapsedSections") private var collapsedSections = CollapsedSections()
+    @AppStorage(CollapsedSections.cocktailsStorageKey) private var collapsedSections = CollapsedSections()
 
     init(filter: CocktailsViewModel.FilterOption? = nil) {
         presetFilter = filter

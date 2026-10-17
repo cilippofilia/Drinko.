@@ -7,6 +7,12 @@ import Foundation
 
 /// The IDs of collapsed library sections, storable in `@AppStorage`.
 struct CollapsedSections: RawRepresentable, Equatable {
+    /// `@AppStorage` key for the Learn library's collapsed sections.
+    static let learnStorageKey = "learnCollapsedSections"
+
+    /// `@AppStorage` key for the Cocktails library's collapsed sections.
+    static let cocktailsStorageKey = "cocktailsCollapsedSections"
+
     private var ids: Set<String>
 
     init() {

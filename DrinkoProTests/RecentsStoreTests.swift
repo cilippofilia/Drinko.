@@ -93,4 +93,26 @@ struct RecentsStoreTests {
         store.remove("a", in: .cocktails)
         #expect(RecentsStore(defaults: defaults).ids(in: .cocktails) == ["b"])
     }
+
+    @Test func reloadPicksUpIDsWrittenToDefaults() throws {
+        let defaults = try makeDefaults()
+        let store = RecentsStore(defaults: defaults)
+        store.record("a", in: .learn)
+
+        defaults.set(["x", "y"], forKey: RecentsStore.storageKey(for: .cocktails))
+        store.reload()
+
+        #expect(store.ids(in: .cocktails) == ["x", "y"])
+        #expect(store.ids(in: .learn) == ["a"])
+    }
+
+    @Test func reloadTrimsToCapacity() throws {
+        let defaults = try makeDefaults()
+        let store = RecentsStore(defaults: defaults)
+
+        defaults.set(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"], forKey: RecentsStore.storageKey(for: .learn))
+        store.reload()
+
+        #expect(store.ids(in: .learn).count == RecentsStore.capacity)
+    }
 }

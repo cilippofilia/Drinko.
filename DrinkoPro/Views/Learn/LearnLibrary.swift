@@ -11,7 +11,7 @@ struct LearnLibrary: View {
     @Environment(RecentsStore.self) private var recentsStore
 
     @AppStorage(LibraryLayout.learnStorageKey) private var layout: LibraryLayout = .initial()
-    @AppStorage("learnCollapsedSections") private var collapsedSections = CollapsedSections()
+    @AppStorage(CollapsedSections.learnStorageKey) private var collapsedSections = CollapsedSections()
     @State private var searchText = ""
 
     /// When set, the page shows only this library section and hides the recents deck.

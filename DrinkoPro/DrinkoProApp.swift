@@ -10,20 +10,33 @@ import SwiftUI
 
 @main
 struct DrinkoProApp: App {
-    @State private var favorites = Favorites()
+    @State private var favorites: Favorites
     @State private var cocktailsViewModel = CocktailsViewModel()
     @State private var lessonsViewModel = LessonsViewModel()
     @State private var appNavigationModel = AppNavigationModel()
-    @State private var recentsStore = RecentsStore()
+    @State private var recentsStore: RecentsStore
     #if os(iOS) || os(macOS)
     @State private var removeAdsStore = RemoveAdsStore()
     @State private var crossPromoSignal = CrossPromoSignal()
     #endif
 
     private let modelContainer: ModelContainer
+    // Mirrors favorites, recents and settings to iCloud. Kept for the app's lifetime.
+    private let cloudSync: CloudSync
 
     init() {
         LearnCollapseMigration.runIfNeeded()
+
+        let favorites = Favorites()
+        let recentsStore = RecentsStore()
+        _favorites = State(initialValue: favorites)
+        _recentsStore = State(initialValue: recentsStore)
+
+        cloudSync = CloudSync { _ in
+            favorites.reload()
+            recentsStore.reload()
+        }
+        cloudSync.start()
 
         do {
             let config = ModelConfiguration(cloudKitDatabase: .automatic)
