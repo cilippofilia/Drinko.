@@ -70,6 +70,9 @@
 		18A92A082F12CD4F00B70219 /* SuperJuiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18883A852ACC71F400FC78C7 /* SuperJuiceView.swift */; };
 		18A92A0E2F12CE4A00B70219 /* FavoriteProductButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B307782B7771C300CB94AB /* FavoriteProductButtonView.swift */; };
 		18ABAC10308370A700761368 /* DrinkoClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 18ABAC04308370A600761368 /* DrinkoClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		18ABAC23308370A700761368 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
+		18ABAC24308370A700761368 /* MainSpirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000007 /* MainSpirit.swift */; };
+		18ABAC25308370A700761368 /* CocktailUnitPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */; };
 		18AF16382ABB60B7006BBB89 /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
 		18AF163A2ABB6128006BBB89 /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
 		18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF163B2ABB6216006BBB89 /* SettingsInfoView.swift */; };
@@ -131,9 +134,6 @@
 		D1C5B1042F00000000000003 /* LearnLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1042F00000000000001 /* LearnLibrary.swift */; };
 		D1C5B1052F00000000000002 /* ToolsLibraryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1052F00000000000001 /* ToolsLibraryPage.swift */; };
 		D1C5B1052F00000000000003 /* ToolsLibraryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B1052F00000000000001 /* ToolsLibraryPage.swift */; };
-		18ABAC23308370A700761368 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
-		18ABAC24308370A700761368 /* MainSpirit.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000007 /* MainSpirit.swift */; };
-		18ABAC25308370A700761368 /* CocktailUnitPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B0012F00000000000008 /* CocktailUnitPreference.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,24 +348,24 @@
 				BundledCocktailCatalog.swift,
 				CocktailClipLink.swift,
 				GlobalConstant.swift,
-				UnitConverter.swift,
-				"String-Ext.swift",
+				"Image Helpers/CachedRemoteImage.swift",
 				"Image Helpers/ImageFailedToLoad.swift",
 				"Image Helpers/ImageSuccesful.swift",
+				"Image Helpers/RemoteImageLoader.swift",
 				"Image Helpers/StickerImageView.swift",
 				"Image Helpers/StickerMetrics.swift",
-				"Image Helpers/CachedRemoteImage.swift",
-				"Image Helpers/RemoteImageLoader.swift",
+				"String-Ext.swift",
+				UnitConverter.swift,
 			);
 			target = 18ABAC03308370A600761368 /* DrinkoClip */;
 		};
 		18ABAC21308370A700761368 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				LibraryImage.swift,
 				CollapsibleSectionAccessibility.swift,
-				StickerBackdropCornerRadius.swift,
+				LibraryImage.swift,
 				PolaroidFrame.swift,
+				StickerBackdropCornerRadius.swift,
 			);
 			target = 18ABAC03308370A600761368 /* DrinkoClip */;
 		};
@@ -1562,7 +1562,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Drinko uses the camera so you can take photos of your cocktails.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1601,7 +1601,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Drinko uses the camera so you can take photos of your cocktails.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
