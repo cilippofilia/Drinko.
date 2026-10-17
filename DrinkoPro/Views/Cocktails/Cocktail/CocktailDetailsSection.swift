@@ -32,7 +32,7 @@ struct CocktailDetailsSection: View {
     }
 }
 
-#if DEBUG
+#if DEBUG && !APPCLIP
 #Preview {
     CocktailDetailsSection(cocktail: .example, selectedUnit: "ml", showsOriginalUnits: false)
 }
