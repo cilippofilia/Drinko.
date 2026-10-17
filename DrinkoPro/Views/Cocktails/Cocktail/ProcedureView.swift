@@ -30,7 +30,7 @@ struct ProcedureView: View {
     }
 }
 
-#if DEBUG
+#if DEBUG && !APPCLIP
 #Preview {
     ProcedureView(cocktail: .example, procedure: .example)
 }

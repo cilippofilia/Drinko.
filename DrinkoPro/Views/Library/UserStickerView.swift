@@ -39,7 +39,7 @@ struct UserStickerView: View {
                     Image(decorative: image, scale: displayScale)
                         .resizable()
                         .scaledToFit()
-                        .scaleEffect(showsBackdrop ? StickerImageView.insetScale : 1)
+                        .scaleEffect(showsBackdrop ? StickerMetrics.insetScale : 1)
                 }
             }
             .background {

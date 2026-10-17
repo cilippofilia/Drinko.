@@ -138,6 +138,7 @@ struct CocktailDetailView: View {
             ToolbarItem(placement: toolbarPlacement) {
                 ShareLink(
                     item: shareItem,
+                    message: CocktailShareMessage.text(for: activeCocktail).map { Text($0) },
                     preview: SharePreview(activeCocktail.name, image: Image("logo"))
                 ) {
                     Label("Share Recipe Card", systemImage: "square.and.arrow.up")

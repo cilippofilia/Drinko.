@@ -44,7 +44,7 @@ struct UserCocktailPhotoSection: View {
                 Image(stickerPreview, scale: 1, label: Text("Cocktail sticker"))
                     .resizable()
                     .scaledToFit()
-                    .scaleEffect(StickerImageView.insetScale)
+                    .scaleEffect(StickerMetrics.insetScale)
                     .frame(height: previewHeight)
                     .frame(maxWidth: .infinity)
                     .background { TintWash(tint: nil) }

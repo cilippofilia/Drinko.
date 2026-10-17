@@ -69,7 +69,7 @@ struct CocktailDetailSectionView: View {
     }
 }
 
-#if DEBUG
+#if DEBUG && !APPCLIP
 #Preview {
     CocktailDetailSectionView(cocktail: .example, kind: .extra)
 }

@@ -16,7 +16,7 @@ import SwiftUI
 /// thumbnail never decodes a full-size source image. With `.fill`, the image's shorter side is
 /// sized to cover that space, so cropping a wide photo doesn't stretch it. The view always fills
 /// that space, so give it a frame.
-struct CachedRemoteImage: View {
+struct CachedRemoteImage<Failure: View>: View {
     private enum LoadState {
         case loading
         case success(CGImage)
@@ -25,10 +25,19 @@ struct CachedRemoteImage: View {
 
     let url: URL?
     let contentMode: ContentMode
+    private let failureContent: Failure
 
     @Environment(\.displayScale) private var displayScale
     @State private var loadState = LoadState.loading
     @State private var viewSize = CGSize.zero
+
+    /// Shows `failureContent` when the image can't be loaded, e.g. offline. Callers that don't
+    /// need their own placeholder use `init(url:contentMode:)`, which shows `ImageFailedToLoad`.
+    init(url: URL?, contentMode: ContentMode, @ViewBuilder failure: () -> Failure) {
+        self.url = url
+        self.contentMode = contentMode
+        self.failureContent = failure()
+    }
 
     /// Rounds the requested pixel size up to the next multiple of this many pixels, so that
     /// views with slightly different scaled metrics (e.g. Dynamic Type row heights) still share
@@ -72,7 +81,7 @@ struct CachedRemoteImage: View {
         case .success(let cgImage):
             ImageSuccesful(image: Image(decorative: cgImage, scale: displayScale), aspectRatio: contentMode)
         case .failure:
-            ImageFailedToLoad()
+            failureContent
         }
     }
 
@@ -91,6 +100,12 @@ struct CachedRemoteImage: View {
         } catch {
             loadState = .failure
         }
+    }
+}
+
+extension CachedRemoteImage where Failure == ImageFailedToLoad {
+    init(url: URL?, contentMode: ContentMode) {
+        self.init(url: url, contentMode: contentMode) { ImageFailedToLoad() }
     }
 }
 

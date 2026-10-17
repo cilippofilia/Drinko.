@@ -23,11 +23,7 @@ final class AppNavigationModel {
     var pendingCreation: CreationRequest?
 
     func handle(url: URL) {
-        guard url.scheme == "drinko" else { return }
-        guard url.host == "cocktail" else { return }
-
-        let pathComponents = url.pathComponents.filter { $0 != "/" }
-        guard let cocktailID = pathComponents.first, !cocktailID.isEmpty else { return }
+        guard let cocktailID = CocktailClipLink.cocktailID(from: url) else { return }
 
         selectedTab = .cocktails
         pendingCocktailID = cocktailID

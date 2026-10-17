@@ -19,7 +19,7 @@ extension RecentsHeroLayout.Backdrop {
     }
 
     /// The tint washed over the base, if any. It's laid over the base at
-    /// `StickerImageView.tintOpacity`, exactly as the sticker cards do, so a band at rest
+    /// `StickerMetrics.tintOpacity`, exactly as the sticker cards do, so a band at rest
     /// matches its card pixel for pixel.
     var tint: Color? {
         guard case .color(let name) = self else { return nil }
@@ -30,7 +30,7 @@ extension RecentsHeroLayout.Backdrop {
     func color(in colorScheme: ColorScheme) -> Color {
         let base = baseColor(in: colorScheme)
         guard let tint else { return base }
-        return base.mix(with: tint, by: StickerImageView.tintOpacity)
+        return base.mix(with: tint, by: StickerMetrics.tintOpacity)
     }
 
     /// How light the backdrop looks, for choosing the text color. Photos are always darkened by
@@ -76,7 +76,7 @@ struct RecentsHeroBackground: View {
         ZStack {
             backdrop.baseColor(in: colorScheme)
             if let tint = backdrop.tint {
-                tint.opacity(StickerImageView.tintOpacity)
+                tint.opacity(StickerMetrics.tintOpacity)
             }
             if let url = backdrop.photoURL {
                 RecentsHeroWallpaper(url: url)

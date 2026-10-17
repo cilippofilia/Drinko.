@@ -12,6 +12,6 @@ struct TintWash: View {
 
     var body: some View {
         Color.white
-            .overlay(tint.map { Color($0).opacity(StickerImageView.tintOpacity) } ?? .clear)
+            .overlay(tint.map { Color($0).opacity(StickerMetrics.tintOpacity) } ?? .clear)
     }
 }

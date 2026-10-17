@@ -10,6 +10,13 @@ import Testing
 @MainActor
 @Suite("AppNavigationModel")
 struct AppNavigationModelTests {
+    @Test func appClipLinkSelectsCocktails() throws {
+        let model = AppNavigationModel()
+        model.handle(url: CocktailClipLink.url(for: "negroni"))
+        #expect(model.selectedTab == .cocktails)
+        #expect(model.consumePendingCocktailID() == "negroni")
+    }
+
     @Test func newCocktailSwitchesToCocktails() {
         let model = AppNavigationModel()
         model.selectedTab = .learn
