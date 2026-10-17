@@ -16,7 +16,7 @@ struct CocktailsLibraryContent: View {
     let sections: [LibrarySection<Cocktail>]
     /// The cocktail currently shown, highlighted in the library.
     let selection: Cocktail?
-    /// A fixed filter for the page (an iPad sidebar row). `nil` lets the user pick one.
+    /// A fixed filter for the page (a sidebar row). `nil` lets the user pick one.
     let presetFilter: CocktailsViewModel.FilterOption?
     @Binding var filterOption: CocktailsViewModel.FilterOption
     let listSource: CocktailListSource

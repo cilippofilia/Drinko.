@@ -52,6 +52,8 @@ struct WidgetTutorialView: View {
                     )
                 }
             }
+            .frame(maxWidth: readableContentWidth)
+            .frame(maxWidth: .infinity)
             .padding()
         }
         .navigationTitle("Add a Widget")

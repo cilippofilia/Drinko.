@@ -48,6 +48,23 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     /// every frame. Built in `refreshEntries()`, not `init`: the parent re-runs `init` on every
     /// update and `State` would throw the result away.
     @State private var entries: [RecentsHeroEntry] = []
+    /// The horizontal safe-area insets around the band, as measured.
+    @State private var measuredSideInsets = EdgeInsets()
+    /// The edge holding a vertical toolbar (iPhone Duo), if any.
+    @State private var toolbarVerticalEdge: HorizontalEdge?
+
+    /// The inset on the vertical toolbar's side only. The band reaches out over it so the
+    /// carousel centres on the whole width, bar included, while its text is inset by it to stay
+    /// clear of the bar. Other insets, such as a sidebar overlaying the content while iPhone Duo
+    /// is partly folded, are left alone, so the band stays beside them.
+    private var sideInsets: EdgeInsets {
+        EdgeInsets(
+            top: 0,
+            leading: toolbarVerticalEdge == .leading ? measuredSideInsets.leading : 0,
+            bottom: 0,
+            trailing: toolbarVerticalEdge == .trailing ? measuredSideInsets.trailing : 0
+        )
+    }
 
     /// The hero text's size. A scaled metric keeps it following Dynamic Type while being far
     /// larger than any text style.
@@ -126,6 +143,8 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     var body: some View {
         VStack(spacing: 0) {
             RecentsHeroHeader(title: title, textColor: textColor)
+                .padding(.leading, sideInsets.leading)
+                .padding(.trailing, sideInsets.trailing)
 
             switch titleStyle {
             case .hero:
@@ -144,6 +163,8 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                             fontSize: heroFontSize,
                             textColor: textColor
                         )
+                        .padding(.leading, sideInsets.leading)
+                        .padding(.trailing, sideInsets.trailing)
                     }
                     .overlay(alignment: .topLeading) {
                         RecentsHeroName(
@@ -153,6 +174,9 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                             fontSize: heroFontSize,
                             textColor: textColor
                         )
+                            .padding(.leading, sideInsets.leading)
+                            .padding(.trailing, sideInsets.trailing)
+                            // Masked across the whole band, so the cutout stays on the centred item.
                             .mask {
                                 RecentsHeroCentreCutout(width: itemWidth)
                             }
@@ -163,11 +187,35 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                 accessibleCarousel
 
                 RecentsHeroCaption(text: settledTitle, heroID: settledIndex, textColor: textColor)
+                    // Inset equally on both sides, so it stays centred under the item.
+                    .padding(.horizontal, max(sideInsets.leading, sideInsets.trailing))
             }
         }
         .frame(maxWidth: .infinity)
         .background {
             RecentsHeroSettledBackground(backdrop: settledBackdrop, fadeAboveBottom: titleStyle.fadeAboveBottom)
+        }
+        // Reaches out over the side insets without affecting layout, so the carousel and the
+        // backdrop (with its curve) centre on the full width, bar included, and items slide
+        // under the bar.
+        .padding(.leading, -sideInsets.leading)
+        .padding(.trailing, -sideInsets.trailing)
+        .background {
+            Color.clear
+                .ignoresSafeArea(edges: .horizontal)
+                .onGeometryChange(for: EdgeInsets.self) { proxy in
+                    EdgeInsets(
+                        top: 0,
+                        leading: proxy.safeAreaInsets.leading,
+                        bottom: 0,
+                        trailing: proxy.safeAreaInsets.trailing
+                    )
+                } action: { newValue in
+                    measuredSideInsets = newValue
+                }
+        }
+        .onToolbarVerticalEdgeChange { newValue in
+            toolbarVerticalEdge = newValue
         }
         .onAppear {
             if currentSlot == nil {

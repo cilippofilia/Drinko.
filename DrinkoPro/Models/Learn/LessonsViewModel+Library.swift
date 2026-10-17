@@ -22,7 +22,7 @@ extension LessonsViewModel {
         return LearnTopic.all.first { $0.id == id }?.title
     }
 
-    /// The SF Symbol for library section `id` in the iPad sidebar, so each Learn row is
+    /// The SF Symbol for library section `id` in the sidebar, so each Learn row is
     /// recognisable at a glance rather than all sharing one book icon.
     nonisolated static func sidebarSymbol(for id: String) -> String {
         switch id {

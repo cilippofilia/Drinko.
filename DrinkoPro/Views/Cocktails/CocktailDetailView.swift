@@ -125,7 +125,7 @@ struct CocktailDetailView: View {
                 Spacer(minLength: 50)
             }
             .padding(.horizontal)
-            .frame(maxWidth: 700)
+            .frame(maxWidth: readableContentWidth)
             .frame(maxWidth: .infinity)
         }
         .navigationTitle(activeCocktail.name)

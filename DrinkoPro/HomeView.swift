@@ -17,7 +17,7 @@ struct HomeView: View {
     @SceneStorage("selectedView") var selectedView: String?
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
-    // Cabinet categories, for the iPad sidebar's Cabinet group (same order as CabinetView).
+    // Cabinet categories, for the sidebar's Cabinet group (same order as CabinetView).
     @Query(sort: [
         SortDescriptor(\Category.name),
         SortDescriptor(\Category.creationDate)
@@ -53,7 +53,7 @@ struct HomeView: View {
             // The sidebar-only groups below only make sense once there's a sidebar to put them
             // in. In a compact (bottom tab bar) layout they'd otherwise all count toward the
             // tab bar, pushing the real tabs into an unwanted "More" overflow page.
-            if horizontalSizeClass != .compact {
+            if AppTab.sidebarRowsAvailable(horizontalSizeClass: horizontalSizeClass) {
                 // `.sidebarOnly` on the rows alone doesn't hide a section: it would still show up in
                 // the floating tab bar as an extra item after Settings.
                 TabSection("Cocktails") {
@@ -106,6 +106,9 @@ struct HomeView: View {
             }
         }
         .tabViewStyle(.sidebarAdaptable)
+        // On iOS 27+, asks for a sidebar at regular width (iPhone Duo's inner display); iPad keeps
+        // its default presentation.
+        .drinkoTabBarPlacement()
         // Only ever visible with a sidebar; the compact tab bar has nowhere to show it.
         .tabViewSidebarBottomBar {
             if removeAdsStore.isAdsRemoved == false {
@@ -191,7 +194,7 @@ struct HomeView: View {
     /// Moves the selection to something the current layout can show (see `AppTab.fitted`),
     /// or back to `hiddenSelection` once it can be shown again.
     private func fitSelection() {
-        let isCompact = horizontalSizeClass == .compact
+        let isCompact = !AppTab.sidebarRowsAvailable(horizontalSizeClass: horizontalSizeClass)
         let categoryIDs = Set(categories.map(\.id))
         let selectedTab = appNavigationModel.selectedTab
 
@@ -213,6 +216,18 @@ struct HomeView: View {
             return "Unknown"
         }
         return version
+    }
+}
+
+private extension View {
+    /// Prefers the sidebar for the adaptable tab view where the system supports it (iOS 27+).
+    @ViewBuilder
+    func drinkoTabBarPlacement() -> some View {
+        if #available(iOS 27, *) {
+            defaultTabBarPlacement(.sidebar)
+        } else {
+            self
+        }
     }
 }
 

@@ -49,7 +49,7 @@ struct LessonDetailView: View {
                     }
                 }
                 .padding([.horizontal, .bottom])
-                .frame(maxWidth: 700)
+                .frame(maxWidth: readableContentWidth)
                 .frame(maxWidth: .infinity)
             }
         }

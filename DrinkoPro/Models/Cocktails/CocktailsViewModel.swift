@@ -399,7 +399,7 @@ extension CocktailsViewModel {
 }
 
 extension CocktailsViewModel.FilterOption {
-    /// The page title when this filter is a page's preset (the iPad sidebar rows).
+    /// The page title when this filter is a page's preset (the sidebar rows).
     var pageTitle: String {
         switch self {
         case .all: String(localized: "All Cocktails")
@@ -410,7 +410,7 @@ extension CocktailsViewModel.FilterOption {
         }
     }
 
-    /// The label of this filter's iPad sidebar row. "All" reads better than the page title
+    /// The label of this filter's sidebar row. "All" reads better than the page title
     /// under the sidebar's "Cocktails" header.
     var sidebarTitle: String {
         switch self {
@@ -419,7 +419,7 @@ extension CocktailsViewModel.FilterOption {
         }
     }
 
-    /// The SF Symbol for this filter's iPad sidebar row.
+    /// The SF Symbol for this filter's sidebar row.
     var sidebarSymbol: String {
         switch self {
         case .all, .cocktailsOnly: "wineglass"

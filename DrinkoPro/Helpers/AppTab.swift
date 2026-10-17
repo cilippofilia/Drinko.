@@ -4,8 +4,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-/// Every destination the iOS tab view can select: the five main tabs, plus the iPad
+/// Every destination the iOS tab view can select: the five main tabs, plus the
 /// sidebar-only rows that open a main tab's page with a preset.
 enum AppTab: Hashable {
     case learn
@@ -49,6 +50,12 @@ enum AppTab: Hashable {
             return .cabinet
         }
         return self
+    }
+
+    /// Whether the layout has a sidebar for the sidebar-only rows. Only a regular width gets
+    /// one; compact, or no size class yet, keeps the bottom/vertical tab bar.
+    static func sidebarRowsAvailable(horizontalSizeClass: UserInterfaceSizeClass?) -> Bool {
+        horizontalSizeClass == .regular
     }
 }
 

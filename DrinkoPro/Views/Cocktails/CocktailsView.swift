@@ -16,7 +16,7 @@ struct CocktailsView: View {
     @Environment(RecentsStore.self) private var recentsStore
 
     @AppStorage(CocktailListSource.storageKey) private var listSource: CocktailListSource = .userAndApp
-    /// A fixed filter for this page (an iPad sidebar row). `nil` lets the user pick one.
+    /// A fixed filter for this page (a sidebar row). `nil` lets the user pick one.
     private let presetFilter: CocktailsViewModel.FilterOption?
     @State private var filterOption: CocktailsViewModel.FilterOption
     @State private var showCreateCocktailSheet: Bool = false

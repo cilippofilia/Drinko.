@@ -35,7 +35,7 @@ struct BookDetailView: View {
                 }
                 .padding(.horizontal)
                 .padding(.bottom)
-                .frame(maxWidth: 700)
+                .frame(maxWidth: readableContentWidth)
                 .frame(maxWidth: .infinity)
             }
         }

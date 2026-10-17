@@ -29,7 +29,8 @@ struct CrossPromoBannerView: View {
                         showRemoveAdsPaywall = true
                     }
                 )
-                .padding()
+                .padding(.vertical)
+                .barAwareHorizontalPadding()
                 // Capped (padding included) at the widest iPhone screen, so the banner is the
                 // same size on iPad and Mac as on iPhone instead of stretching across the window.
                 .frame(maxWidth: Self.maxWidth)

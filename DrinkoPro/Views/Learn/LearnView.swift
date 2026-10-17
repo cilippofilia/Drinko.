@@ -10,7 +10,7 @@ import SwiftUI
 struct LearnView: View {
     @Environment(RecentsStore.self) private var recentsStore
 
-    /// When set, the page shows only this library section (an iPad sidebar row) and hides the
+    /// When set, the page shows only this library section (a sidebar row) and hides the
     /// recents deck. `nil` shows the whole library.
     private let sectionID: String?
 

@@ -8,25 +8,9 @@
 import SwiftUI
 
 struct ReadMeView: View {
-    @Environment(\.horizontalSizeClass) var sizeClass
-
-    private let compactColumn = [
-        GridItem(.flexible(minimum: 240,
-                           maximum: 480),
-                 spacing: 20,
-                 alignment: .leading),
-    ]
-
-    private let regularColumns = [
-        GridItem(.flexible(minimum: 240,
-                           maximum: 480),
-                 spacing: 20,
-                 alignment: .leading),
-
-        GridItem(.flexible(minimum: 240,
-                           maximum: 480),
-                 spacing: 20,
-                 alignment: .leading),
+    /// As many credit columns as fit, from one on a narrow phone to two or more on wide windows.
+    private let creditColumns = [
+        GridItem(.adaptive(minimum: 240, maximum: 480), spacing: 20, alignment: .leading)
     ]
 
     var body: some View {
@@ -43,7 +27,7 @@ struct ReadMeView: View {
                     Text("Drink selection")
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
-                    LazyVGrid(columns: sizeClass == .regular ? regularColumns : compactColumn) {
+                    LazyVGrid(columns: creditColumns) {
                         CreditsCardView(name: "Danil Nevsky",
                                         brief: "Instagram: @cocktailman",
                                         url: "https://instagram.com/cocktailman")
@@ -62,7 +46,7 @@ struct ReadMeView: View {
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
 
-                    LazyVGrid(columns: sizeClass == .regular ? regularColumns : compactColumn) {
+                    LazyVGrid(columns: creditColumns) {
                         CreditsCardView(name: "Difford's Guide",
                                         brief: "For discerning drinkers.",
                                         url: "https://www.diffordsguide.com")
@@ -78,7 +62,7 @@ struct ReadMeView: View {
                         .font(.headline)
                         .frame(maxWidth: .infinity, alignment: .leading)
 
-                    LazyVGrid(columns: sizeClass == .regular ? regularColumns : compactColumn) {
+                    LazyVGrid(columns: creditColumns) {
                         CreditsCardView(name: "Alex Trubacs",
                                         brief: "X (Twitter): @actlikeacrazy",
                                         url: "https://instagram.com/actlikeacrazy")
@@ -94,7 +78,9 @@ struct ReadMeView: View {
                     }
                 }
             }
-            .padding(sizeClass == .regular ? [.bottom, .horizontal] : .bottom)
+            .padding([.bottom, .horizontal])
+            .frame(maxWidth: readableContentWidth)
+            .frame(maxWidth: .infinity)
         }
         .navigationTitle("Drinko.")
         .scrollIndicators(.hidden, axes: .vertical)
