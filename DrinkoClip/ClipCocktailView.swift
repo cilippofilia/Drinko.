@@ -10,6 +10,9 @@ struct ClipCocktailView: View {
     @Environment(\.locale) private var locale
     @AppStorage(CocktailUnitPreference.storageKey) private var unitPreference: CocktailUnitPreference = .automatic
     @State private var collapsed: Set<String> = []
+    /// Room kept under the recipe so its end can scroll clear of the App Store install banner,
+    /// which floats over the bottom of the screen and doesn't report its height.
+    @ScaledMetric(relativeTo: .body) private var installBannerClearance = 180.0
 
     let cocktail: Cocktail
     let history: History?
@@ -72,6 +75,7 @@ struct ClipCocktailView: View {
         .navigationTitle(cocktail.name)
         .navigationBarTitleDisplayMode(.inline)
         .scrollIndicators(.hidden, axes: .vertical)
+        .contentMargins(.bottom, installBannerClearance, for: .scrollContent)
         .onScrollGeometryChange(for: Bool.self) { geometry in
             geometry.contentSize.height > geometry.containerSize.height
                 && geometry.visibleRect.maxY >= geometry.contentSize.height - 1
