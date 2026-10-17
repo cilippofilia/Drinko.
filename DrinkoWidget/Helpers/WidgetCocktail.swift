@@ -20,17 +20,33 @@ struct WidgetCocktail: Codable, Equatable, Identifiable, Hashable {
 
     let ingredients: [WidgetIngredient]
 
-    var pic: String {
-        if id == "augie-march" {
-            "https://raw.githubusercontent.com/cilippofilia/drinko-clear-cocktail-pics/main/manhattan-img.png"
-        } else {
-            "https://raw.githubusercontent.com/cilippofilia/drinko-clear-cocktail-pics/main/\(id)-img.png"
-        }
+    /// The drink's sticker from the Drinko-stickers repo, matching the app's `Cocktail.stickerURL`.
+    var stickerURL: URL? {
+        let name = Self.stickerNames[id] ?? id
+        return URL(string: "https://raw.githubusercontent.com/cilippofilia/Drinko-stickers/main/drinko-\(name).png")
     }
 
-    var imageURL: URL? {
-        URL(string: pic)
+    /// The family the drink is built on, whose color washes the sticker's backdrop as on the
+    /// app's library cards. `nil` for drinks without one, such as wine-based ones.
+    var mainSpirit: MainSpirit? {
+        MainSpirit(pours: ingredients.map { (name: $0.name, milliliters: $0.milliliters) })
     }
+
+    /// Whether this is one of the bundled shots, which are all served in a shot glass.
+    var isShot: Bool {
+        glass == "shot"
+    }
+
+    /// The ingredient names in pouring order, as one line the widget can wrap.
+    var ingredientList: String {
+        ingredients.map(\.name.capitalized).joined(separator: " · ")
+    }
+
+    /// Drinks that share another drink's sticker. Keep in sync with `Cocktail.stickerNames`.
+    private static let stickerNames = [
+        "augie-march": "manhattan",
+        "gin-martini": "dry-martini"
+    ]
 }
 
 struct WidgetIngredient: Codable, Equatable, Identifiable, Hashable {
@@ -38,4 +54,9 @@ struct WidgetIngredient: Codable, Equatable, Identifiable, Hashable {
     let name: String
     let quantity: Double
     let unit: String
+
+    /// The poured amount in milliliters, converting ounces the same way the app does.
+    var milliliters: Double {
+        unit == "oz." ? quantity * 30 : quantity
+    }
 }

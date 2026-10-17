@@ -16,8 +16,9 @@ struct DrinkoWidgetProvider: AppIntentTimelineProvider {
         DrinkoWidgetEntry(
             date: .now,
             cocktail: DrinkoWidgetCatalog.nullCocktail,
-            imageData: nil,
-            showsIngredients: true
+            stickerData: nil,
+            showsIngredients: true,
+            mainSpirit: DrinkoWidgetCatalog.nullCocktail.mainSpirit
         )
     }
 
@@ -51,13 +52,14 @@ struct DrinkoWidgetProvider: AppIntentTimelineProvider {
         )
 
         let cocktail = DrinkoWidgetCatalog.dailyPick(from: pool, on: date) ?? DrinkoWidgetCatalog.nullCocktail
-        let imageData = DrinkoWidgetImageStore.imageData(for: cocktail)
+        let stickerData = DrinkoWidgetImageStore.stickerData(for: cocktail)
 
         return DrinkoWidgetEntry(
             date: date,
             cocktail: cocktail,
-            imageData: imageData,
-            showsIngredients: configuration.showsIngredients
+            stickerData: stickerData,
+            showsIngredients: configuration.showsIngredients,
+            mainSpirit: cocktail.mainSpirit
         )
     }
 

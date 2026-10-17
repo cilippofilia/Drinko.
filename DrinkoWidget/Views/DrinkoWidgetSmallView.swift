@@ -9,30 +9,37 @@ import SwiftUI
 import WidgetKit
 
 struct DrinkoWidgetSmallView: View {
-    let cocktail: WidgetCocktail
-    let imageData: Data?
+    @Environment(\.widgetRenderingMode) private var renderingMode
+
+    let entry: DrinkoWidgetEntry
 
     var body: some View {
-        ZStack {
-            Text(cocktail.name)
-                .font(.system(size: 36, weight: .heavy, design: .serif))
-                .foregroundStyle(.primary)
+        let ink = WidgetInk(renderingMode: renderingMode)
+        VStack(spacing: 0) {
+            WidgetStickerImage(stickerData: entry.stickerData)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            Text(entry.cocktail.name)
+                .font(.system(.headline, design: .serif))
+                .fontWeight(.heavy)
+                .foregroundStyle(ink.primary)
                 .widgetAccentable()
-                .lineLimit(3)
-                .minimumScaleFactor(0.5)
-                .frame(maxHeight: .infinity, alignment: .top)
-
-            WidgetRenderedImage(imageData: imageData)
-                .scaleEffect(1.25)
-                .frame(maxHeight: .infinity, alignment: .bottom)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.7)
+                .fixedSize(horizontal: false, vertical: true)
         }
     }
 }
 
-struct DrinkoWidgetSmallView_Previews: PreviewProvider {
-    static var previews: some View {
-        DrinkoWidgetSmallView(cocktail: DrinkoWidgetCatalog.nullCocktail, imageData: nil)
-            .containerBackground(.background, for: .widget)
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
-    }
+#if DEBUG
+#Preview("Short name - no ingredients", as: .systemSmall) {
+    DrinkoWidget()
+} timeline: {
+    DrinkoWidgetEntry.preview(showsIngredients: false)
 }
+#Preview("Long name preview", as: .systemSmall) {
+    DrinkoWidget()
+} timeline: {
+    DrinkoWidgetEntry.longNamePreview
+}
+#endif

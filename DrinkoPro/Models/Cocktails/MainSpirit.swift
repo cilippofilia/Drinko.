@@ -58,16 +58,16 @@ enum MainSpirit: CaseIterable {
         }
     }
 
-    /// The main spirit of a drink: the best-ranked family among its ingredients, and within that
-    /// rank the one poured in the largest amount (the first listed on a tie). `nil` when no
-    /// ingredient belongs to a family, such as a wine-based drink.
-    @MainActor
-    init?(ingredients: [Ingredient]) {
+    /// The main spirit of a drink: the best-ranked family among its pours, and within that rank
+    /// the one poured in the largest amount (the first listed on a tie). `nil` when no pour
+    /// belongs to a family, such as a wine-based drink. Takes plain names and milliliter amounts
+    /// so the widget, which has no `Ingredient` type, can share it.
+    init?(pours: [(name: String, milliliters: Double)]) {
         var best: (spirit: MainSpirit, amount: Double)?
 
-        for ingredient in ingredients {
-            guard let spirit = MainSpirit(ingredientName: ingredient.name) else { continue }
-            let amount = ingredient.mlQuantity
+        for pour in pours {
+            guard let spirit = MainSpirit(ingredientName: pour.name) else { continue }
+            let amount = pour.milliliters
 
             if let current = best {
                 let outranks = spirit.rank < current.spirit.rank

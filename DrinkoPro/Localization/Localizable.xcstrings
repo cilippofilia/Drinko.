@@ -35,35 +35,6 @@
         }
       }
     },
-    "%@ on Drinko: %@" : {
-      "comment" : "Share message sent with a cocktail's recipe card. First argument: cocktail name. Second: link to the recipe.",
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ auf Drinko: %2$@"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ en Drinko: %2$@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ sur Drinko : %2$@"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ su Drinko: %2$@"
-          }
-        }
-      }
-    },
     "-" : {
       "localizations" : {
         "de" : {
@@ -423,6 +394,36 @@
         }
       }
     },
+    "%@ on Drinko: %@" : {
+      "comment" : "Share message sent with a cocktail's recipe card. First argument: cocktail name. Second: link to the recipe.",
+      "extractionState" : "stale",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ auf Drinko: %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ en Drinko: %2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ sur Drinko : %2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ su Drinko: %2$@"
+          }
+        }
+      }
+    },
     "%@ peels" : {
       "localizations" : {
         "de" : {
@@ -719,74 +720,6 @@
         }
       }
     },
-    "Cocktail Unavailable" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cocktail nicht verfügbar"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cocktail Unavailable"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cóctel no disponible"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cocktail indisponible"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cocktail non disponibile"
-          }
-        }
-      }
-    },
-    "Get Drinko to browse every recipe." : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hol dir Drinko, um alle Rezepte zu entdecken."
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Get Drinko to browse every recipe."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Descarga Drinko para explorar todas las recetas."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Téléchargez Drinko pour parcourir toutes les recettes."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Scarica Drinko per sfogliare tutte le ricette."
-          }
-        }
-      }
-    },
     "•" : {
 
     },
@@ -823,9 +756,6 @@
           }
         }
       }
-    },
-    "a" : {
-
     },
     "A > Z" : {
       "localizations" : {
@@ -3098,9 +3028,6 @@
         }
       }
     },
-    "Cocktail" : {
-
-    },
     "Cocktail List" : {
       "localizations" : {
         "de" : {
@@ -3158,7 +3085,38 @@
       }
     },
     "Cocktail of the Day" : {
-
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail des Tages"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail of the Day"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cóctel del día"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail du jour"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail del giorno"
+          }
+        }
+      }
     },
     "Cocktail photo" : {
       "extractionState" : "manual",
@@ -3226,6 +3184,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sticker del cocktail"
+          }
+        }
+      }
+    },
+    "Cocktail Unavailable" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail nicht verfügbar"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail Unavailable"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cóctel no disponible"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail indisponible"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail non disponibile"
           }
         }
       }
@@ -3895,9 +3887,6 @@
 
     },
     "Customize it" : {
-
-    },
-    "D" : {
 
     },
     "Delete" : {
@@ -5073,6 +5062,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guarnizione"
+          }
+        }
+      }
+    },
+    "Get Drinko to browse every recipe." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hol dir Drinko, um alle Rezepte zu entdecken."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Get Drinko to browse every recipe."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descarga Drinko para explorar todas las recetas."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Téléchargez Drinko pour parcourir toutes les recettes."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scarica Drinko per sfogliare tutte le ricette."
           }
         }
       }
@@ -6828,9 +6851,6 @@
         }
       }
     },
-    "of" : {
-
-    },
     "OK" : {
       "localizations" : {
         "de" : {
@@ -8333,9 +8353,6 @@
         }
       }
     },
-    "see more..." : {
-
-    },
     "Select a Cocktail" : {
 
     },
@@ -8685,6 +8702,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Condividi l'app"
+          }
+        }
+      }
+    },
+    "Shot of the Day" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shot des Tages"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shot of the Day"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chupito del día"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shot du jour"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shot del giorno"
           }
         }
       }
@@ -9477,9 +9528,6 @@
     "Thanks for your support — you won't see these cross-promo ads again." : {
 
     },
-    "the" : {
-
-    },
     "These occasional promos are for my other apps. Remove them for good with a small one-time purchase." : {
 
     },
@@ -9611,6 +9659,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Per iniziare, premi \"Aggiungi una categoria\" qua sotto o il + in alto a destra"
+          }
+        }
+      }
+    },
+    "Tonight's pour: %@ 🍸\nHere's how to make it:\n%@" : {
+      "comment" : "Share text for a built-in cocktail. The link opens the recipe in the Drinko App Clip.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Tonight's pour: %1$@ 🍸\nHere's how to make it:\n%2$@"
           }
         }
       }
@@ -10233,9 +10292,6 @@
           }
         }
       }
-    },
-    "y" : {
-
     },
     "You may also like" : {
       "localizations" : {

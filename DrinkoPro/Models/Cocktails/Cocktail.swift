@@ -139,3 +139,11 @@ public struct IngredientDraft {
     var quantity = ""
     var unit: String
 }
+
+extension MainSpirit {
+    /// The main spirit of a drink, ranked from its ingredients' names and poured amounts.
+    @MainActor
+    init?(ingredients: [Ingredient]) {
+        self.init(pours: ingredients.map { (name: $0.name, milliliters: $0.mlQuantity) })
+    }
+}

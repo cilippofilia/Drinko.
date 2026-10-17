@@ -9,89 +9,123 @@ import SwiftUI
 import WidgetKit
 
 struct DrinkoWidgetMediumView: View {
-    let cocktail: WidgetCocktail
-    let imageData: Data?
-    let showsIngredients: Bool
-
-    let visibleIngredientCount = 6
+    let entry: DrinkoWidgetEntry
 
     var body: some View {
-        HStack(spacing: 0) {
-            ZStack {
-                DrinkoWidgetMediumTitleArtView(hiddenTopRow: false, hiddenMiddleRow: false, hiddenBottomRow: true)
+        HStack(spacing: 16) {
+            // Claims its width first, so the sticker keeps the full height and the text
+            // takes whatever is left.
+            WidgetStickerImage(stickerData: entry.stickerData)
+                .frame(maxHeight: .infinity)
+                .layoutPriority(1)
 
-                WidgetRenderedImage(imageData: imageData)
-                    .frame(maxHeight: .infinity, alignment: .bottom)
-
-                DrinkoWidgetMediumTitleArtView(hiddenTopRow: true, hiddenMiddleRow: true, hiddenBottomRow: false)
-            }
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(cocktail.name)
-                    .font(.headline)
-                    .foregroundStyle(Color.primary.gradient)
-                    .widgetAccentable()
-                    .lineLimit(3)
-
-                if showsIngredients {
-                    ForEach(cocktail.ingredients.prefix(visibleIngredientCount)) { ingredient in
-                        Text(ingredient.name.capitalized)
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-
-                    if cocktail.ingredients.count > visibleIngredientCount {
-                        Text("see more...")
-                            .foregroundStyle(.tertiary)
-                            .font(.caption)
-                            .padding(.top, 2)
+            Group {
+                if entry.showsIngredients {
+                    // Adds the method, glass and garnish under the ingredients when they fit,
+                    // and drops them for long names or ingredient lists.
+                    ViewThatFits(in: .vertical) {
+                        DrinkoWidgetMediumColumn(entry: entry, showsIngredients: true, showsDetails: true)
+                        DrinkoWidgetMediumColumn(entry: entry, showsIngredients: true, showsDetails: false)
                     }
                 } else {
-                    DrinkoWidgetDetailRow(label: "Method", value: cocktail.method)
-                    DrinkoWidgetDetailRow(label: "Glass", value: cocktail.glass)
-                    DrinkoWidgetDetailRow(label: "Garnish", value: cocktail.garnish)
+                    DrinkoWidgetMediumColumn(entry: entry, showsIngredients: false, showsDetails: true)
                 }
             }
-            .minimumScaleFactor(0.8)
-            .padding(.leading, 8)
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }
     }
 }
 
-// A simple "label: value" caption row, used to fill the medium widget's
-// detail column when ingredients are hidden.
+// The text column beside the sticker: the header, the drink's name, and whichever of the
+// ingredients and details the widget has room for.
+private struct DrinkoWidgetMediumColumn: View {
+    @Environment(\.widgetRenderingMode) private var renderingMode
+
+    let entry: DrinkoWidgetEntry
+    let showsIngredients: Bool
+    let showsDetails: Bool
+
+    var body: some View {
+        let ink = WidgetInk(renderingMode: renderingMode)
+
+        VStack(alignment: .leading, spacing: 6) {
+            Text(entry.cocktail.isShot ? "Shot of the Day" : "Cocktail of the Day")
+                .font(.caption2)
+                .bold()
+                .textCase(.uppercase)
+                .foregroundStyle(ink.secondary)
+                .lineLimit(1)
+
+            Text(entry.cocktail.name)
+                .font(.system(.title2, design: .serif))
+                .fontWeight(.heavy)
+                .foregroundStyle(ink.primary)
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                .widgetAccentable()
+                .lineLimit(2)
+                .minimumScaleFactor(0.6)
+
+            if showsIngredients {
+                Text(entry.cocktail.ingredientList)
+                    .font(.caption)
+                    .foregroundStyle(ink.secondary)
+                    .lineLimit(3)
+            }
+
+            if showsDetails {
+                VStack(alignment: .leading, spacing: 2) {
+                    DrinkoWidgetDetailRow(label: "Method", value: entry.cocktail.method)
+                    DrinkoWidgetDetailRow(label: "Glass", value: entry.cocktail.glass)
+                    DrinkoWidgetDetailRow(label: "Garnish", value: entry.cocktail.garnish)
+                }
+            }
+        }
+    }
+}
+
+// A simple "label: value" caption row for the medium widget's method, glass and garnish.
 private struct DrinkoWidgetDetailRow: View {
+    @Environment(\.widgetRenderingMode) private var renderingMode
+
     let label: LocalizedStringKey
     let value: String
 
     var body: some View {
+        let ink = WidgetInk(renderingMode: renderingMode)
+
         HStack(spacing: 4) {
             Text(label)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(ink.secondary)
             Text(value.capitalized)
-                .foregroundStyle(.primary)
+                .foregroundStyle(ink.primary)
         }
         .font(.caption)
+        .lineLimit(1)
     }
 }
 
-struct DrinkoWidgetMediumView_Previews: PreviewProvider {
-    static var previews: some View {
-        DrinkoWidgetMediumView(
-            cocktail: DrinkoWidgetCatalog.nullCocktail,
-            imageData: nil,
-            showsIngredients: true
-        )
-        .containerBackground(.background, for: .widget)
-        .previewContext(WidgetPreviewContext(family: .systemMedium))
-
-        DrinkoWidgetMediumView(
-            cocktail: DrinkoWidgetCatalog.nullCocktail,
-            imageData: nil,
-            showsIngredients: false
-        )
-        .containerBackground(.background, for: .widget)
-        .previewContext(WidgetPreviewContext(family: .systemMedium))
-    }
+#if DEBUG
+#Preview("Ingredients", as: .systemMedium) {
+    DrinkoWidget()
+} timeline: {
+    DrinkoWidgetEntry.preview()
 }
+
+#Preview("Details", as: .systemMedium) {
+    DrinkoWidget()
+} timeline: {
+    DrinkoWidgetEntry.preview(showsIngredients: false)
+}
+
+#Preview("Long name", as: .systemMedium) {
+    DrinkoWidget()
+} timeline: {
+    DrinkoWidgetEntry.longNamePreview
+}
+
+#Preview("Shot", as: .systemMedium) {
+    DrinkoWidget()
+} timeline: {
+    DrinkoWidgetEntry.shotPreview
+}
+#endif
