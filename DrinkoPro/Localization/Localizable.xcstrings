@@ -36,6 +36,7 @@
       }
     },
     "%@ on Drinko: %@" : {
+      "comment" : "Share message sent with a cocktail's recipe card. First argument: cocktail name. Second: link to the recipe.",
       "localizations" : {
         "de" : {
           "stringUnit" : {
