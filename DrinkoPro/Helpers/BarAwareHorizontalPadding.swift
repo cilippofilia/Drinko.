@@ -13,7 +13,7 @@ extension View {
     /// the content around it.
     @ViewBuilder
     func barAwareHorizontalPadding() -> some View {
-        #if os(iOS)
+        #if os(iOS) && canImport(SwiftUICore, _version: 8.0.85)
         if #available(iOS 27.1, *) {
             modifier(BarAwareHorizontalPadding())
         } else {
@@ -28,7 +28,7 @@ extension View {
     /// whenever it changes, or with `nil` where there is none (including before iOS 27.1).
     @ViewBuilder
     func onToolbarVerticalEdgeChange(_ action: @escaping (HorizontalEdge?) -> Void) -> some View {
-        #if os(iOS)
+        #if os(iOS) && canImport(SwiftUICore, _version: 8.0.85)
         if #available(iOS 27.1, *) {
             modifier(ToolbarVerticalEdgeReader(action: action))
         } else {
@@ -40,7 +40,9 @@ extension View {
     }
 }
 
-#if os(iOS)
+// `toolbarVerticalEdge` ships in the iOS 27.1 SDK (SwiftUICore 8.0.85). Xcode Cloud archives with
+// the latest release Xcode, which may predate it, so this code compiles only against SDKs that have it.
+#if os(iOS) && canImport(SwiftUICore, _version: 8.0.85)
 @available(iOS 27.1, *)
 private struct BarAwareHorizontalPadding: ViewModifier {
     @Environment(\.toolbarVerticalEdge) private var toolbarVerticalEdge
