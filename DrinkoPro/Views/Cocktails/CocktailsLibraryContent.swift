@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-/// The Cocktails library column's content: the library, or an empty state when the filter or
-/// search leaves nothing to show.
 struct CocktailsLibraryContent: View {
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(Favorites.self) private var favorites
@@ -14,7 +12,6 @@ struct CocktailsLibraryContent: View {
     let title: String
     let recents: [Cocktail]
     let sections: [LibrarySection<Cocktail>]
-    /// The cocktail currently shown, highlighted in the library.
     let selection: Cocktail?
     /// A fixed filter for the page (a sidebar row). `nil` lets the user pick one.
     let presetFilter: CocktailsViewModel.FilterOption?
@@ -23,7 +20,6 @@ struct CocktailsLibraryContent: View {
     @Binding var collapsedSections: CollapsedSections
     let layout: LibraryLayout
     let onSelect: @MainActor (Cocktail) -> Void
-    /// Asks the page to confirm deleting a user-created cocktail.
     let onRequestDelete: @MainActor (Cocktail) -> Void
 
     private var showsOnlyUserCocktails: Bool {

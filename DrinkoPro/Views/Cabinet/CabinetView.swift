@@ -80,11 +80,8 @@ struct CabinetView: View {
         .onChange(of: appNavigationModel.pendingCreation, initial: true) { _, _ in
             presentPendingCreationIfNeeded()
         }
-        // On iPad, this page and another live Cabinet page (the main one, or another
-        // category's) can both be showing a product or category pushed from the now-stale
-        // selection below. Catches a deletion made on the other page. Watches the category
-        // IDs and the product count rather than every product ID, which would be rebuilt on
-        // each render.
+        // Catches a deletion made on another live Cabinet page (iPad). Watches the category IDs
+        // and the product count rather than every product ID, which would be rebuilt on each render.
         .onChange(of: categories.map(\.id)) {
             pruneSelection()
         }
@@ -151,28 +148,23 @@ extension CabinetView {
         showAddCategorySheet = true
     }
 
-    /// Pushes `product` onto the stack.
     func select(_ product: Item) {
         selectedProduct = product
         selectedCategory = nil
     }
 
-    /// Pushes `category` onto the stack for editing.
     func edit(_ category: Category) {
         selectedCategory = category
         selectedProduct = nil
     }
 
-    /// Pops `product` once it's been deleted, so the stack doesn't keep showing a model
-    /// that's gone.
     func clearSelection(after product: Item) {
         if selectedProduct == product {
             selectedProduct = nil
         }
     }
 
-    /// Pops `category` once it's been deleted, so the stack doesn't keep showing a model
-    /// that's gone. Also drops a selected product that belonged to the deleted category.
+    /// Also drops a selected product that belonged to the deleted category.
     func clearSelection(after category: Category) {
         if selectedCategory == category {
             selectedCategory = nil
@@ -182,9 +174,7 @@ extension CabinetView {
         }
     }
 
-    /// Drops `selectedCategory`/`selectedProduct` if either is no longer something this page
-    /// can show — deleted directly, or (for a product) orphaned by its category being deleted
-    /// — regardless of which page did the deleting (see `CabinetSelectionValidity`).
+    /// Drops a selection that was deleted or orphaned, whichever page did the deleting.
     func pruneSelection() {
         let categoryIDs = Set(categories.map(\.id))
         if let selectedCategory,

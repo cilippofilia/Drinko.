@@ -144,10 +144,8 @@ final class RemoteImageLoaderTests: XCTestCase {
     }
 }
 
-/// A `URLProtocol` stub that serves pre-registered responses without touching the network.
-///
-/// All mutable state lives behind an actor (`Registry`) so the stub is safe to drive from
-/// concurrent test tasks under Swift 6 strict concurrency checking.
+/// Serves pre-registered responses without touching the network. State lives in an actor so
+/// concurrent tests can drive it.
 private final class StubURLProtocol: URLProtocol {
     private actor Registry {
         static let shared = Registry()

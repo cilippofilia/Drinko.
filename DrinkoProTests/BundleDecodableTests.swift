@@ -8,13 +8,8 @@
 import XCTest
 @testable import DrinkoPro
 
-/// Verifies that every localized copy of the Learn JSON files bundled with the app decodes to a
-/// non-empty array, guarding against `Bundle.decode` silently swallowing a decoding failure and
-/// returning `[]` for a locale.
-///
-/// `DrinkoProTests` runs hosted by the `DrinkoPro` app (see the test target's `TEST_HOST` build
-/// setting), so `Bundle.main` here resolves to the app's bundle and its real localized
-/// resources — not the loose JSON copies also present in `DrinkoProTests/` for other tests.
+/// Guards against `Bundle.decode` silently returning `[]` for a locale. Hosted by the app, so
+/// `Bundle.main` is the app's bundle, not the JSON copies in `DrinkoProTests/`.
 final class BundleDecodableTests: XCTestCase {
     private let lessonResourceFiles = [
         "basic-lessons.json",

@@ -69,26 +69,21 @@ struct SplashScreenView: View {
         }
         .opacity(showHomeView ? 0 : 1)
         .task {
-            // Logo slides in
             withAnimation(.spring(response: 0.6, dampingFraction: 0.7)) {
                 imgOffset = 0
             }
 
-            // Text rotates in after a brief delay
             try? await Task.sleep(for: .milliseconds(400))
             withAnimation(.spring(response: 0.6, dampingFraction: 0.7)) {
                 angle = 0
             }
 
-            // Hold the animation for a moment
             try? await Task.sleep(for: .milliseconds(1000))
 
-            // Fade out smoothly
             withAnimation(.easeOut(duration: 0.4)) {
                 opacity = 0
             }
 
-            // Transition to home view after fade completes
             try? await Task.sleep(for: .milliseconds(400))
             showHomeView = true
         }

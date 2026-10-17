@@ -142,7 +142,6 @@ final class CocktailsViewModelTests: XCTestCase {
 
     // MARK: - List source
 
-    /// Keeps the in-memory store alive for the duration of a test.
     private var container: ModelContainer?
 
     override func tearDown() async throws {
@@ -150,7 +149,6 @@ final class CocktailsViewModelTests: XCTestCase {
         try await super.tearDown()
     }
 
-    /// A view model backed by an in-memory store holding one user cocktail.
     private func makeViewModelWithUserCocktail() throws -> CocktailsViewModel {
         let container = try ModelContainer(
             for: UserCreatedCocktail.self,
@@ -277,7 +275,6 @@ final class CocktailsViewModelTests: XCTestCase {
 
     // MARK: - Recents cache
 
-    /// Adds a second user cocktail to an already-configured view model.
     private func addSecondUserCocktail(to viewModel: CocktailsViewModel, name: String) {
         viewModel.addUserCocktail(UserCocktailDetails(
             name: name,

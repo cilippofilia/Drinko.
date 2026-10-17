@@ -5,13 +5,11 @@
 
 import SwiftUI
 
-/// One item in a library section's list layout.
 struct LibraryRowView: View {
     @ScaledMetric private var thumbnailSize: CGFloat = 56
 
     let model: LibraryCardModel
-    /// `false` drops the padding, for rows inside a container that already insets and spaces
-    /// them, like the cocktail detail cards.
+    /// `false` for rows in a container that already insets them, like the cocktail detail cards.
     var padsEdges = true
 
     var body: some View {
@@ -51,7 +49,6 @@ struct LibraryRowView: View {
                 LibraryFavoriteBadge()
             }
 
-            // Every row opens its item, so it gets the standard disclosure chevron.
             Image(systemName: "chevron.right")
                 .bold()
                 .imageScale(.small)
@@ -62,8 +59,7 @@ struct LibraryRowView: View {
         .contentShape(.rect)
     }
 
-    /// Stickers aren't rounded: they fill the thumbnail edge to edge, so rounding would
-    /// clip their die-cut outline. Everything else sits on a backdrop that needs the corners.
+    /// Stickers fill the thumbnail edge to edge, so rounding would clip their die-cut outline.
     private var thumbnailCornerRadius: CGFloat {
         switch model.image {
         case .sticker, .userSticker: 0

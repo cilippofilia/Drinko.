@@ -5,24 +5,11 @@
 
 import SwiftUI
 
-/// The "Last Read" / "Last Viewed" band at the top of a library: a small label, the centred
-/// item's name in huge type, and a row of three items (the centred one large, its neighbours
-/// smaller) in front of the name, over a backdrop that takes its color or photo from the items.
-/// The band keeps one height whatever the name's length. With the `.caption` title style, the
-/// name is a plain caption under the row instead, for artwork that would hide the huge type.
-///
-/// The band runs edge to edge (the caller must not pad it). Its backdrop extends upwards
-/// behind the navigation bar, large title and search field, and past the top when the list is
-/// pulled down, so the whole header area is tinted rather than just a card. Because that area
-/// sits behind system chrome, the label and hero text pick white or near-black from the
-/// backdrop's luminance.
+/// The "Last Read" / "Last Viewed" band at the top of a library. It runs edge to edge, so the
+/// caller must not pad it.
 ///
 /// The name, backdrop and text color follow the item the carousel settles on, not every item
 /// that passes the centre, so a fast swipe only moves and scales the items.
-///
-/// The scroll view does the carousel work: each swipe snaps to an item, and with three or more
-/// items the row loops endlessly in both directions. Tapping the centred item opens it; tapping a
-/// neighbour brings it to the centre first.
 struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @Environment(\.colorScheme) private var colorScheme
@@ -33,30 +20,21 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
     let cardModel: @MainActor (Item) -> LibraryCardModel
     let onOpen: @MainActor (Item) -> Void
 
-    /// The centred slot, kept in sync with the scroll view's position. When the carousel loops
-    /// it lays out many copies of the items, so a slot is a position in that row, not an item
-    /// (see `RecentsHeroLayout.itemIndex(forSlot:count:)`).
+    /// A position in the looping row, not an item (see `RecentsHeroLayout.itemIndex(forSlot:count:)`).
     @State private var currentSlot: Int?
-    /// The carousel's width, which sizes the items and the margins that centre them.
     @State private var containerWidth = 0.0
-    /// The slot the carousel last came to rest on, or will once the current swipe ends, which
-    /// the name, backdrop and text color follow. It ignores the items a swipe passes over.
+    /// The slot the carousel last came to rest on, or will once the current swipe ends.
     @State private var settledSlot: Int?
-    /// Whether the carousel is at rest, so a programmatic jump can settle straight away.
+    /// Lets a programmatic jump settle straight away.
     @State private var isScrollIdle = true
-    /// Each item's card model and backdrop, worked out when the items change rather than on
-    /// every frame. Built in `refreshEntries()`, not `init`: the parent re-runs `init` on every
-    /// update and `State` would throw the result away.
+    /// Built in `refreshEntries()`, not `init`: the parent re-runs `init` on every update and
+    /// `State` would throw the result away.
     @State private var entries: [RecentsHeroEntry] = []
-    /// The horizontal safe-area insets around the band, as measured.
     @State private var measuredSideInsets = EdgeInsets()
-    /// The edge holding a vertical toolbar (iPhone Duo), if any.
     @State private var toolbarVerticalEdge: HorizontalEdge?
 
-    /// The inset on the vertical toolbar's side only. The band reaches out over it so the
-    /// carousel centres on the whole width, bar included, while its text is inset by it to stay
-    /// clear of the bar. Other insets, such as a sidebar overlaying the content while iPhone Duo
-    /// is partly folded, are left alone, so the band stays beside them.
+    /// The inset on the vertical toolbar's side only, which the band reaches out over. Other
+    /// insets, such as a sidebar overlaying the content, are left alone.
     private var sideInsets: EdgeInsets {
         EdgeInsets(
             top: 0,
@@ -66,8 +44,7 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         )
     }
 
-    /// The hero text's size. A scaled metric keeps it following Dynamic Type while being far
-    /// larger than any text style.
+    /// Far larger than any text style, while still following Dynamic Type.
     @ScaledMetric(relativeTo: .largeTitle) private var heroFontSize = 56.0
 
     init(
@@ -88,12 +65,10 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         RecentsHeroLayout.slotCount(count: items.count)
     }
 
-    /// Where the carousel starts: the first item, in the middle copy when it loops.
     private var homeSlot: Int {
         RecentsHeroLayout.homeSlot(forIndex: 0, count: items.count)
     }
 
-    /// The centred item's position, falling back to the first item before the scroll view reports one.
     private var currentIndex: Int {
         RecentsHeroLayout.itemIndex(forSlot: currentSlot ?? homeSlot, count: items.count)
     }
@@ -102,22 +77,18 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         items.indices.contains(currentIndex) ? items[currentIndex] : nil
     }
 
-    /// The centred item's name, empty when there is none.
     private var currentTitle: String {
         entries.indices.contains(currentIndex) ? entries[currentIndex].model.title : ""
     }
 
-    /// The settled item's position, which the name and backdrop show.
     private var settledIndex: Int {
         RecentsHeroLayout.itemIndex(forSlot: settledSlot ?? currentSlot ?? homeSlot, count: items.count)
     }
 
-    /// The settled item's name, empty when there is none.
     private var settledTitle: String {
         entries.indices.contains(settledIndex) ? entries[settledIndex].model.title : ""
     }
 
-    /// The settled item's backdrop, or the neutral tone when there is none.
     private var settledBackdrop: RecentsHeroLayout.Backdrop {
         entries.indices.contains(settledIndex) ? entries[settledIndex].backdrop : .neutral
     }
@@ -135,7 +106,6 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         }
     }
 
-    /// Rebuilds the per-item data after the items change.
     private func refreshEntries() {
         entries = items.map { RecentsHeroEntry(model: cardModel($0)) }
     }
@@ -152,10 +122,9 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
                     // The items start about a line into the name, so they overlap its lower part
                     // and any further lines.
                     .padding(.top, heroFontSize)
-                    // The name is drawn twice, outside the layout so a long name never changes the
-                    // band's height: once behind the items, and once in front of them with the
-                    // centre slot cut out. The centred item covers the name; its neighbours sit
-                    // behind it.
+                    // Drawn twice, outside the layout so a long name never changes the band's height: once
+                    // behind the items, and once in front with the centre slot cut out, so the centred item
+                    // covers the name while its neighbours sit behind it.
                     .background(alignment: .topLeading) {
                         RecentsHeroName(
                             text: settledTitle,
@@ -195,9 +164,8 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         .background {
             RecentsHeroSettledBackground(backdrop: settledBackdrop, fadeAboveBottom: titleStyle.fadeAboveBottom)
         }
-        // Reaches out over the side insets without affecting layout, so the carousel and the
-        // backdrop (with its curve) centre on the full width, bar included, and items slide
-        // under the bar.
+        // Reaches out over the side insets without affecting layout, so the carousel centres on
+        // the full width, bar included.
         .padding(.leading, -sideInsets.leading)
         .padding(.trailing, -sideInsets.trailing)
         .background {
@@ -243,7 +211,6 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         }
     }
 
-    /// The carousel as one adjustable element: swipe up or down to move, double tap to open.
     private var accessibleCarousel: some View {
         carousel
             .accessibilityElement(children: .ignore)
@@ -300,17 +267,13 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         }
         // Margins half a width less an item put the first and last slots in the centre.
         .contentMargins(.horizontal, max((containerWidth - itemWidth) / 2, 0), for: .scrollContent)
-        // Settle on the item a swipe will end on as soon as the finger lifts, rather than
-        // waiting for the deceleration to finish.
         .scrollTargetBehavior(RecentsHeroSnapBehavior(itemWidth: itemWidth) { slot in
             if (0..<slotCount).contains(slot), slot != settledSlot {
                 settledSlot = slot
             }
         })
         .scrollPosition(id: $currentSlot)
-        // Once a swipe comes to rest, settle on the centred item. Near either end of the
-        // copies, also jump back to the same item in the middle copy. The copies look
-        // identical, so without animation it can't be seen.
+        // Near either end of the copies, jump back to the same item in the middle copy.
         .onScrollPhaseChange { _, newPhase in
             isScrollIdle = newPhase == .idle
             guard isScrollIdle, let currentSlot else { return }
@@ -343,8 +306,8 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
         return label + Text(verbatim: ", ") + Text("Favorite")
     }
 
-    /// Opens the tapped item if it's the centred one; otherwise centres it, so a tap on a
-    /// smaller neighbour never opens something other than what the hero text names.
+    /// Centres a tapped neighbour rather than opening it, so a tap never opens something other
+    /// than what the hero text names.
     private func select(slot: Int, index: Int) {
         guard items.indices.contains(index) else { return }
         if slot == currentSlot {
@@ -363,7 +326,6 @@ struct RecentsHeroView<Item: Identifiable & Hashable>: View {
 }
 
 #if DEBUG
-/// A minimal `Identifiable` item for previews, carrying its artwork.
 private struct PreviewItem: Identifiable, Hashable {
     let id: String
     let image: LibraryImage
@@ -373,8 +335,7 @@ private func stickerURL(_ name: String) -> URL? {
     URL(string: "https://raw.githubusercontent.com/cilippofilia/Drinko-stickers/main/drinko-\(name).png")
 }
 
-/// Shows the band through `LibraryView`, inside a navigation stack, so the previews also show
-/// the navigation bar's title and search field adapting to the backdrop.
+/// Inside a navigation stack, so the previews show the bar adapting to the backdrop.
 private struct PreviewHero: View {
     let items: [PreviewItem]
     @State private var collapsed = CollapsedSections()

@@ -31,7 +31,6 @@ struct CocktailDetailView: View {
         viewModel.cocktail(withID: cocktail.id, fallback: cocktail)
     }
 
-    /// The recipe card the Share button exports, rendered only when the share sheet asks.
     private var shareItem: CocktailShareItem {
         var item = CocktailShareItem(
             cocktail: activeCocktail,

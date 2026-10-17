@@ -28,9 +28,8 @@ struct MacHomeView: View {
     var body: some View {
         MacHomePageView(tab: appNavigationModel.selectedTab)
             .environment(\.macColumnVisibility, $columnVisibility)
-            // Restore the last-used row from the previous session. Only applies while
-            // `selectedTab` is still at its untouched default, so it never clobbers a deep link
-            // that already selected a tab before this view first appeared.
+            // Only restores while `selectedTab` is untouched, so it never clobbers a deep link
+            // that selected a tab before this view appeared.
             .onAppear {
                 if appNavigationModel.selectedTab == .learn, let selectedView,
                    let tab = AppTab(rawValue: selectedView) {
@@ -41,7 +40,6 @@ struct MacHomeView: View {
             .onChange(of: appNavigationModel.selectedTab) { _, newValue in
                 selectedView = newValue.rawValue
             }
-            // A selected Cabinet category row disappears when the category is deleted.
             .onChange(of: categories.map(\.id)) {
                 fitSelection()
             }

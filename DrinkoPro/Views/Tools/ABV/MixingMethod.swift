@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// How a cocktail is mixed, which affects how much dilution it picks up.
 enum MixingMethod: CaseIterable, Identifiable {
     case built
     case shake

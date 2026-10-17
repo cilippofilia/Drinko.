@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// The detail column content for a Tools selection.
 struct ToolsDetailView: View {
     let selection: ToolsView.Selection
 

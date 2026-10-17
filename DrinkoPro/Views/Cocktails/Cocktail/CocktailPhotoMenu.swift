@@ -6,9 +6,7 @@
 import PhotosUI
 import SwiftUI
 
-/// A menu for adding a photo to a cocktail: take one with the camera (iOS, when there is one)
-/// or choose one from the library. Hands back the photo already shrunk for storage, shows a
-/// spinner while it loads, and shows an alert if it can't be read.
+/// Hands back the photo already shrunk for storage.
 struct CocktailPhotoMenu<Label: View>: View {
     let onPick: (Data) -> Void
     @ViewBuilder let label: Label
@@ -17,7 +15,7 @@ struct CocktailPhotoMenu<Label: View>: View {
     @State private var showsCamera = false
     @State private var pickerItem: PhotosPickerItem?
     @State private var showsError = false
-    /// True while a picked photo downloads (it may only be in iCloud) and is shrunk.
+    /// A picked photo may have to download from iCloud first.
     @State private var isLoading = false
 
     init(onPick: @escaping (Data) -> Void, @ViewBuilder label: () -> Label) {
@@ -65,8 +63,6 @@ struct CocktailPhotoMenu<Label: View>: View {
         }
     }
 
-    /// Fetches the photo's data, shrinks it for storage and hands it back, showing the spinner
-    /// meanwhile. `nil` data or any failure shows the alert instead.
     private func load(_ fetch: @escaping () async throws -> Data?) {
         isLoading = true
         Task {

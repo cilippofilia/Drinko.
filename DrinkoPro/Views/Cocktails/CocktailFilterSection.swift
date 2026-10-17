@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-/// The "Filter" section of the Cocktails options menu. Only lists filters
-/// that can return results for the current list source.
+/// Only lists filters that can return results for the current list source.
 struct CocktailFilterSection: View {
     @Binding var filterOption: CocktailsViewModel.FilterOption
     let availableOptions: [CocktailsViewModel.FilterOption]

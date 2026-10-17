@@ -1,8 +1,7 @@
 import SwiftUI
 
 extension View {
-    /// Shows toolbar button titles before iOS 26, where icon-bearing toolbar labels would
-    /// otherwise drop their text; iOS 26+ (including iPhone Duo's vertical bar) keeps the icons.
+    /// Before iOS 26, toolbar labels show only their icon, so this shows the title instead.
     @ViewBuilder
     func titleOnlyBeforeGlassToolbars() -> some View {
         if #available(iOS 26, macOS 26, *) {

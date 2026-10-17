@@ -8,12 +8,11 @@
 import Foundation
 
 extension LearnView {
-    /// The item shown in the detail column of the Learn split view.
     enum Selection: Hashable, Identifiable {
         case lesson(Lesson)
         case book(Book)
 
-        /// A stable string identity, used for recents and persistence.
+        /// Persisted in recents, so keep it stable.
         var id: String {
             switch self {
             case .lesson(let lesson): "lesson:\(lesson.id)"

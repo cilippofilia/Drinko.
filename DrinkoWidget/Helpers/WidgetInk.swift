@@ -6,10 +6,9 @@
 import SwiftUI
 import WidgetKit
 
-/// The text colors for a rendering mode. In full color the widget always sits on the
-/// pale sticker backdrop, so it uses dark ink in both appearances. Tinted and clear home screens
-/// drop the backdrop and flatten colors to their alpha, so there it falls back to the
-/// hierarchical styles, which the system recolors.
+/// In full color the widget always sits on the pale backdrop, so it uses dark ink in both
+/// appearances. Tinted and clear home screens drop the backdrop and flatten colors to their
+/// alpha, so there it uses hierarchical styles the system recolors.
 struct WidgetInk {
     let renderingMode: WidgetRenderingMode
 

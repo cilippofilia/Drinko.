@@ -6,7 +6,6 @@
 import Foundation
 import Observation
 
-/// Remembers the most recently opened library items for each library screen.
 @MainActor
 @Observable
 final class RecentsStore {
@@ -15,12 +14,10 @@ final class RecentsStore {
         case cocktails
     }
 
-    /// How many recent items each namespace keeps.
     static let capacity = 9
 
     /// How long a selection must stay put before it's recorded, so quickly moving through
-    /// selections (e.g. arrow keys in the macOS sidebar, or tapping through several items)
-    /// doesn't record each one.
+    /// selections doesn't record each one.
     static let recordDelay: Duration = .seconds(1)
 
     @ObservationIgnored private let defaults: UserDefaults
@@ -31,7 +28,7 @@ final class RecentsStore {
         reload()
     }
 
-    /// Re-reads every namespace from `defaults`, e.g. after iCloud brought changes from another device.
+    /// For changes from iCloud.
     func reload() {
         for namespace in Namespace.allCases {
             let stored = defaults.stringArray(forKey: Self.storageKey(for: namespace)) ?? []
@@ -39,12 +36,11 @@ final class RecentsStore {
         }
     }
 
-    /// Recent IDs for `namespace`, newest first.
+    /// Newest first.
     func ids(in namespace: Namespace) -> [String] {
         idsByNamespace[namespace] ?? []
     }
 
-    /// Moves `id` to the front of `namespace`, removing duplicates and trimming to `capacity`.
     func record(_ id: String, in namespace: Namespace) {
         var ids = ids(in: namespace)
         ids.removeAll { $0 == id }
@@ -54,7 +50,6 @@ final class RecentsStore {
         defaults.set(ids, forKey: Self.storageKey(for: namespace))
     }
 
-    /// Removes `id` from `namespace`, if present. Used e.g. when a user-created item is deleted.
     func remove(_ id: String, in namespace: Namespace) {
         var ids = ids(in: namespace)
         ids.removeAll { $0 == id }
@@ -62,7 +57,7 @@ final class RecentsStore {
         defaults.set(ids, forKey: Self.storageKey(for: namespace))
     }
 
-    /// The `UserDefaults` key holding `namespace`'s recents. Also synced to iCloud by `CloudSync`.
+    /// Also synced to iCloud by `CloudSync`.
     nonisolated static func storageKey(for namespace: Namespace) -> String {
         "recents.\(namespace.rawValue)"
     }

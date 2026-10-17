@@ -5,8 +5,8 @@
 
 import Foundation
 
-/// An ingredient as it's displayed: converted to the user's unit, or left in the units it was
-/// written in (the user's own cocktails), with a capitalized name.
+/// An ingredient converted to the user's unit, except in the user's own cocktails, which keep
+/// the units they were written in.
 struct IngredientLine: Identifiable, Equatable {
     let id: String
     let quantity: Double

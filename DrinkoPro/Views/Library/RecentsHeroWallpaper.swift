@@ -5,12 +5,8 @@
 
 import SwiftUI
 
-/// A photo backdrop's wallpaper: the item's photo, blurred once ahead of time by
-/// `RecentsHeroWallpaperCache`, filling the space it is given.
-///
-/// Showing a pre-blurred picture instead of blurring the live photo keeps the band cheap to
-/// redraw while it scrolls and cross-fades. Until the picture is ready it draws nothing, so the
-/// band's neutral base shows through, and it fades in when it arrives.
+/// The item's photo, blurred ahead of time by `RecentsHeroWallpaperCache` so the band stays
+/// cheap to redraw while it scrolls and cross-fades.
 struct RecentsHeroWallpaper: View {
     let url: URL
 

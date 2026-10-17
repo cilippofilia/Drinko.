@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// EXTENSION ON BUNDLE
-// load JSON from a BUNDLE; FIND > OPEN > DECODE > RETURN
 extension Bundle {
     func decode<T: Decodable>(
         _ type: T.Type,
@@ -19,7 +17,6 @@ extension Bundle {
 
         guard let url = self.url(forResource: file, withExtension: nil) else {
             print("Error: Failed to locate \(file) in bundle.")
-            // Return empty array/default value based on type
             if let emptyArray = [Any]() as? T {
                 return emptyArray
             }

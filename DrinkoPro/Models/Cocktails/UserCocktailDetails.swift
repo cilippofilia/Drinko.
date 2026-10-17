@@ -15,7 +15,6 @@ struct UserCocktailDetails {
         case unchanged
         /// Store this already-processed image data.
         case set(Data)
-        /// Delete what's stored.
         case remove
 
         /// What saving should do to go from the `original` draft to the `current` one: nothing

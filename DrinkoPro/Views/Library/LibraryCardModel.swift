@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// Display data for one item shown by `LibraryView`, independent of the model it came from.
 struct LibraryCardModel: Hashable {
     var title: String
     var subtitle: String?
@@ -13,10 +12,8 @@ struct LibraryCardModel: Hashable {
     var imageContentMode: ContentMode
     /// Completion between 0 and 1. `nil` hides the completion bar.
     var progress: Double?
-    /// Shows a heart badge on the item.
     var isFavorite: Bool
-    /// `false` leaves the grid card's artwork bare, for artwork that already shows the title,
-    /// like book covers. Rows and the recents deck still show it.
+    /// `false` for artwork that already shows the title, like book covers. Only grid cards hide it.
     var showsCardTitle: Bool
 
     init(

@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// Shown when a search matches no cocktails.
 struct CocktailsSearchEmptyState: View {
     @Environment(CocktailsViewModel.self) private var viewModel
 

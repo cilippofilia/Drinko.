@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// The detail column content for a Learn selection.
 struct LearnDetailView: View {
     let selection: LearnView.Selection
 

@@ -5,8 +5,7 @@
 
 import SwiftUI
 
-/// White washed with a pale tint of the named color asset — the backdrop the stickers sit on.
-/// `nil` leaves it plain white.
+/// The backdrop stickers sit on. A `nil` color leaves it plain white.
 struct TintWash: View {
     let tint: String?
 

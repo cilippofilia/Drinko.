@@ -6,11 +6,8 @@
 import SwiftUI
 
 extension View {
-    /// Pads the leading and trailing edges, except one next to a vertical toolbar (iPhone Duo).
-    ///
-    /// The system already spaces content away from a vertical bar, and lists and forms add no
-    /// margin of their own on that side. Padding it again would push this view off-centre from
-    /// the content around it.
+    /// Pads the leading and trailing edges, except one next to a vertical toolbar (iPhone Duo),
+    /// which the system already spaces content away from.
     @ViewBuilder
     func barAwareHorizontalPadding() -> some View {
         #if os(iOS) && canImport(SwiftUICore, _version: 8.0.85)

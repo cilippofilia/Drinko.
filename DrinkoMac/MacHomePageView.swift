@@ -7,11 +7,9 @@ import SwiftUI
 
 /// The page for the sidebar row selected in `MacHomeView`, sidebar included.
 ///
-/// Each page is one split view with `MacSidebarView` as its first column: Learn, Cocktails
-/// and Tools add their library and detail columns (see `LibraryNavigationContainer`), and
-/// the other pages fill a single detail column. A split view nested in another one's detail
-/// column gets the outer sidebar's width added to its leading safe area twice on macOS,
-/// which pushes the detail content to the trailing edge, so the window never nests them.
+/// Each page is one split view with `MacSidebarView` as its first column. They're never
+/// nested: on macOS a split view in another one's detail column gets the outer sidebar's width
+/// added to its leading safe area twice, pushing the content to the trailing edge.
 struct MacHomePageView: View {
     let tab: AppTab
 

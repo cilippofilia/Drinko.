@@ -19,9 +19,8 @@ struct ProductRowView: View {
     var isSelected: Bool = false
     var onSelect: () -> Void = {}
 
-    /// Only highlight the selection while the detail column is on screen beside the sidebar.
-    /// On compact widths the detail is pushed over the sidebar and the selection is never
-    /// cleared on the way back, so a highlight there would stick to the last item opened.
+    /// On compact widths the selection is never cleared on the way back, so a highlight there
+    /// would stick to the last item opened.
     private var showsSelection: Bool {
         #if os(iOS)
         isSelected && horizontalSizeClass == .regular

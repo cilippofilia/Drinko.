@@ -8,20 +8,14 @@
 import SwiftUI
 
 /// An adaptive grid of color swatches, one of which can be selected.
-///
-/// Each entry in `colors` is the name of a color asset. Tapping a swatch selects it and
-/// shows a checkmark over it; a `nil` selection shows no checkmark.
 struct ColorSwatchPicker: View {
-    /// The names of the color assets to offer.
     let colors: [String]
 
-    /// The corner radius of each swatch.
     var cornerRadius: CGFloat = 11
 
     /// What VoiceOver reads after each swatch's name, such as "Selects this color for the category."
     let accessibilityHint: LocalizedStringKey
 
-    /// The name of the selected color, or `nil` when none is selected.
     @Binding var selection: String?
 
     /// Flips on every tap, so tapping the already-selected swatch still bounces its checkmark.

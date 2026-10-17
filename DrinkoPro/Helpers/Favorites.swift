@@ -13,21 +13,17 @@ import WidgetKit
 @MainActor
 @Observable
 class Favorites {
-    // What the user has favourited
     private var cocktails: Set<String>
 
-    // The key we're using to read/write in UserDefaults
     private let saveKey: String = AppGroup.favoritesKey
 
-    // Where favorites are written, and read from first. Defaults to the App
-    // Group suite so the widget extension can see them too.
+    // Defaults to the App Group suite so the widget can read favorites too.
     private let store: UserDefaults
 
-    // The pre-App Group location, kept as a one-time migration source and
-    // safety net.
+    // The pre-App Group location, kept as a migration source and safety net.
     private let legacy: UserDefaults
 
-    // Variable that comes in handy for animations
+    // Drives the heart animation.
     public var hasEffect: Bool = false
 
     init(store: UserDefaults = AppGroup.defaults, legacy: UserDefaults = .standard) {
@@ -53,28 +49,24 @@ class Favorites {
         self.cocktails = []
     }
 
-    // Returns true if our set contains this cocktail
     func contains(_ cocktail: Cocktail) -> Bool {
         cocktails.contains(cocktail.id)
     }
 
-    // Add cocktail to our set, updates all views, and saves the change
     func add(_ cocktail: Cocktail) {
         cocktails.insert(cocktail.id)
         hasEffect.toggle()
         save()
     }
 
-    // Remove cocktail from our set, updates all views, and saves the change
     func remove(_ cocktail: Cocktail) {
         cocktails.remove(cocktail.id)
         hasEffect.toggle()
         save()
     }
 
-    // Re-reads favorites from the store, e.g. after iCloud brought changes from
-    // another device. Unreadable data keeps the current favorites. Doesn't toggle
-    // `hasEffect`, so remote changes don't animate the heart.
+    // For changes from iCloud. Unreadable data keeps the current favorites, and `hasEffect` is
+    // left alone so remote changes don't animate the heart.
     func reload() {
         guard let data = store.data(forKey: saveKey),
               let loaded = try? JSONDecoder().decode(Set<String>.self, from: data),
@@ -84,7 +76,6 @@ class Favorites {
     }
 
     private func save() {
-        // Write out our favorite cocktails data
         guard let data = try? JSONEncoder().encode(cocktails.sorted()) else {
             print("Warning: Unable to save favorite cocktails")
             return
@@ -94,8 +85,6 @@ class Favorites {
         reloadWidget()
     }
 
-    // Let the widget know favorites changed so a "Favorites Only" widget can
-    // pick up the new pool.
     private func reloadWidget() {
         #if os(iOS)
         WidgetCenter.shared.reloadTimelines(ofKind: AppGroup.widgetKind)

@@ -57,7 +57,6 @@ struct MacSettingsInfoView: View {
         }
     }
 
-    // Get current Version of the App function
     func getCurrentAppVersion() -> String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }

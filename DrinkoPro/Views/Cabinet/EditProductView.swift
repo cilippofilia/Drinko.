@@ -17,9 +17,8 @@ struct EditProductView: View {
 
     var offImage: Image?
     var onImage = Image(systemName: "star.fill")
-    /// Called after the product has been deleted from the model context, so the caller
-    /// can clear its selection instead of relying on `dismiss()`, which does nothing once
-    /// this view is pushed on iOS or shown as a `NavigationSplitView` detail on macOS.
+    /// Lets the caller clear its selection, since `dismiss()` does nothing for a pushed view or a
+    /// split view detail.
     var onDelete: () -> Void = {}
 
     var body: some View {

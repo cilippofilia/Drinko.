@@ -9,13 +9,11 @@ import WidgetKit
 import SwiftUI
 
 struct DrinkoWidget: Widget {
-    // `kind` is the internal identifier WidgetKit uses to distinguish widgets.
     let kind = "DrinkoWidget"
 
     var body: some WidgetConfiguration {
-        // Lets users pick a content source and toggle ingredients via "Edit Widget".
-        // Reusing the same `kind` means already-placed widgets migrate in place
-        // with the configuration's default values.
+        // Reusing the same `kind` migrates already-placed widgets in place, with the
+        // configuration's default values.
         AppIntentConfiguration(
             kind: kind,
             intent: CocktailWidgetConfigurationIntent.self,

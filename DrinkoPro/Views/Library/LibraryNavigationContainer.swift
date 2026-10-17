@@ -5,13 +5,8 @@
 
 import SwiftUI
 
-/// The navigation shell shared by the Learn, Cocktails and Tools pages: a `NavigationStack`
-/// on iOS, and on macOS the window's whole split view: the app sidebar (`MacSidebarView`),
-/// the library, then the detail column. (Nesting this page's split view inside the window's
-/// one would misplace the detail content; see `MacHomePageView`.)
-///
-/// The screen owns the selection state (the pushed `path` on iOS, the `selection` and
-/// `preferredCompactColumn` on macOS); this view only hosts the library and its detail.
+/// A `NavigationStack` on iOS. On macOS, the window's whole split view, app sidebar included,
+/// since nesting split views misplaces the detail (see `MacHomePageView`).
 struct LibraryNavigationContainer<Item: Hashable, Library: View, Detail: View, Placeholder: View>: View {
     private let navigation: LibraryNavigationBindings<Item>
     private let library: Library
@@ -22,9 +17,6 @@ struct LibraryNavigationContainer<Item: Hashable, Library: View, Detail: View, P
     #endif
 
     /// - Parameters:
-    ///   - navigation: The screen's selection state.
-    ///   - library: The library column's content, including its navigation title and toolbar.
-    ///   - detail: The page for an item, used for the first page and any pushed after it.
     ///   - placeholder: The detail column's content while nothing is selected (macOS only).
     init(
         navigation: LibraryNavigationBindings<Item>,

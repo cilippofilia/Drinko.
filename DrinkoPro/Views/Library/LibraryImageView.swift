@@ -5,14 +5,12 @@
 
 import SwiftUI
 
-/// Renders a `LibraryImage`. Remote photos sit on white (cocktail photos have white backgrounds),
-/// stickers on a pale wash of their tint; fitted assets and symbols sit on a tinted fill.
+/// Remote photos sit on white, since cocktail photos have white backgrounds.
 struct LibraryImageView: View {
     let image: LibraryImage
     let contentMode: ContentMode
-    /// Insets a fitted remote photo within its white backdrop so it sits smaller in the frame.
     var insetsFittedPhoto = false
-    /// Sits stickers on white. Without it, a sticker fills the frame on its own.
+    /// Without it, a sticker fills the frame on its own.
     var showsStickerBackdrop = true
 
     var body: some View {

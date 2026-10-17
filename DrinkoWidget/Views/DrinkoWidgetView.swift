@@ -9,8 +9,6 @@ import SwiftUI
 import WidgetKit
 
 struct DrinkoWidgetView: View {
-    // WidgetKit tells us which family is being rendered so we can add detail
-    // as the widget gets more space.
     @Environment(\.widgetFamily) private var family
 
     let entry: DrinkoWidgetEntry
@@ -27,7 +25,6 @@ struct DrinkoWidgetView: View {
         .containerBackground(for: .widget) {
             WidgetStickerBackdrop(tint: entry.mainSpirit?.colorName)
         }
-        // The entire widget opens the matching cocktail detail when tapped.
         .widgetURL(entry.deepLinkURL)
     }
 }

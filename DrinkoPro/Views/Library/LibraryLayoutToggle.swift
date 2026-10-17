@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// Toolbar button that switches a library between list and grid layouts.
 struct LibraryLayoutToggle: View {
     @Binding var layout: LibraryLayout
 
@@ -21,8 +20,7 @@ struct LibraryLayoutToggle: View {
         Button(title, systemImage: systemImage, action: toggleLayout)
     }
 
-    /// Switches the layout. The caller (`LibraryView`) owns the animation, so Reduce Motion
-    /// is honored and the switch isn't animated twice.
+    /// Not animated here: `LibraryView` owns the animation, so it isn't applied twice.
     private func toggleLayout() {
         layout = layout.toggled
     }

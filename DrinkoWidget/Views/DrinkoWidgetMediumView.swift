@@ -36,8 +36,6 @@ struct DrinkoWidgetMediumView: View {
     }
 }
 
-// The text column beside the sticker: the header, the drink's name, and whichever of the
-// ingredients and details the widget has room for.
 private struct DrinkoWidgetMediumColumn: View {
     @Environment(\.widgetRenderingMode) private var renderingMode
 
@@ -83,7 +81,6 @@ private struct DrinkoWidgetMediumColumn: View {
     }
 }
 
-// A simple "label: value" caption row for the medium widget's method, glass and garnish.
 private struct DrinkoWidgetDetailRow: View {
     @Environment(\.widgetRenderingMode) private var renderingMode
 

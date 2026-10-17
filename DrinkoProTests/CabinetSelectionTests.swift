@@ -58,9 +58,7 @@ struct CabinetSelectionValidityTests {
     }
 
     @Test func productWhoseCategoryWasCascadeDeletedIsInvalid() {
-        // The category was deleted (cascading to its products), but the product's own
-        // `isDeleted` flag may not have flipped yet in memory — the category check still
-        // catches it.
+        // The product's own `isDeleted` may not have flipped yet after the cascade.
         #expect(!CabinetSelectionValidity.productIsValid(
             selectedProductID: UUID(),
             isDeleted: false,

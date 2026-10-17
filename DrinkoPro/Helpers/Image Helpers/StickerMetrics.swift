@@ -5,9 +5,8 @@
 
 import Foundation
 
-/// Sizing and tint constants shared by `StickerImageView`, `UserStickerView` and the backdrops
-/// that match them. Kept out of the generic `StickerImageView` so they can be read without
-/// naming its placeholder type.
+/// Shared by the sticker views and their backdrops. Kept out of the generic `StickerImageView`
+/// so they can be read without naming its placeholder type.
 enum StickerMetrics {
     /// How much of the frame the sticker fills when it sits on its backdrop.
     static let insetScale = 0.82

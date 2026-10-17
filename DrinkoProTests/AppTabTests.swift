@@ -45,9 +45,7 @@ struct AppTabTests {
     }
 
     @Test func nonSidebarFiltersDecodeToCocktailsTab() {
-        // "cocktailsOnly" is a real `FilterOption` raw value, but it has no sidebar `Tab`, so
-        // it must fall back to the main Cocktails tab rather than decoding to a
-        // `.cocktailFilter` with nowhere to go.
+        // "cocktailsOnly" is a real `FilterOption` but has no sidebar `Tab`.
         #expect(AppTab(rawValue: "Cocktails/cocktailsOnly") == .cocktails)
     }
 

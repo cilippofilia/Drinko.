@@ -8,9 +8,8 @@
 import AppIntents
 import WidgetKit
 
-// The content source a user can pick when configuring the widget via
-// "Edit Widget". Maps 1:1 to `WidgetDrinkSource`, which carries the actual
-// pool/pick logic so it can be unit tested without AppIntents.
+// Maps 1:1 to `WidgetDrinkSource`, which holds the pool logic so it can be tested
+// without AppIntents.
 enum DrinkSource: String, AppEnum {
     case allDrinks
     case cocktailsOnly
@@ -36,8 +35,6 @@ enum DrinkSource: String, AppEnum {
     }
 }
 
-// User-configurable settings for "Cocktail of the Day", surfaced through the
-// widget gallery's "Edit Widget" sheet.
 struct CocktailWidgetConfigurationIntent: WidgetConfigurationIntent {
     static let title: LocalizedStringResource = "Cocktail of the Day"
     static let description = IntentDescription("Choose what kind of drink to feature and whether to show its ingredients.")

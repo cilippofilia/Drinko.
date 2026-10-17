@@ -5,9 +5,7 @@
 
 import SwiftUI
 
-/// The user's cocktail sticker, fitted and inset on a tint wash like the bundled stickers in
-/// `StickerImageView`. Asks the view model for a thumbnail sized to the space on offer, so a row
-/// never decodes the full sticker.
+/// Asks for a thumbnail sized to the space on offer, so a row never decodes the full sticker.
 struct UserStickerView: View {
     @Environment(\.stickerBackdropCornerRadius) private var backdropCornerRadius
     @Environment(CocktailsViewModel.self) private var viewModel
@@ -15,9 +13,9 @@ struct UserStickerView: View {
 
     let id: String
     let revision: Int
-    /// A color asset name to wash the backdrop with. `nil` leaves it plain white.
+    /// A color asset name. `nil` leaves the backdrop plain white.
     var tint: String?
-    /// Sits the sticker inset on its backdrop. Without it, the sticker fills the frame on its own.
+    /// Without it, the sticker fills the frame on its own.
     var showsBackdrop = true
 
     @State private var viewSize = CGSize.zero

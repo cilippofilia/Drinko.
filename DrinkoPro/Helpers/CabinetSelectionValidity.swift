@@ -5,13 +5,9 @@
 
 import Foundation
 
-/// Whether a `CabinetView` selection is still something that can be shown. On iPad, `CabinetView()`
-/// and `CabinetView(categoryID:)` can both be alive at once (every visited `Tab` stays alive in
-/// `TabView`), each owning its own `selectedProduct`/`selectedCategory`. Deleting a product or
-/// category on one page must not leave the other page's `navigationDestination(item:)` showing
-/// a model that's gone.
-///
-/// Takes plain IDs rather than the SwiftData models themselves, so it's pure and testable
+/// Whether a `CabinetView` selection can still be shown. On iPad, `CabinetView()` and
+/// `CabinetView(categoryID:)` can be alive at once with their own selections, so a delete on one
+/// page must not leave the other showing a model that's gone. Takes plain IDs so it's testable
 /// without a `ModelContext`.
 enum CabinetSelectionValidity {
     /// Whether a selected category still exists. `nil` (nothing selected) is always valid.
@@ -21,8 +17,7 @@ enum CabinetSelectionValidity {
     }
 
     /// Whether a selected product still exists and belongs to a category that still exists.
-    /// `nil` (nothing selected) is always valid; a deleted product (directly, or via its
-    /// category's cascade delete) or one with no surviving category is not.
+    /// `nil` (nothing selected) is always valid.
     static func productIsValid(
         selectedProductID: UUID?,
         isDeleted: Bool,

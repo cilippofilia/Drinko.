@@ -19,7 +19,6 @@ nonisolated enum UserPhotoProcessor {
     /// The longest side, in pixels, of a stored photo. Plenty for a full-width header on any
     /// device while keeping CloudKit sync and memory reasonable.
     static let maxStoredPixelSize = 1600
-    /// JPEG quality for stored photos.
     private static let jpegQuality = 0.8
 
     /// Downscales any image data to an upright JPEG no larger than `maxPixelSize`.

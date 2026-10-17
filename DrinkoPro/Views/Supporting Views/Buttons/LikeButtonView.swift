@@ -18,7 +18,6 @@ struct LikeButtonView: View {
             } else {
                 favorites.add(cocktail)
                 #if os(iOS)
-                // haptic feedback
                 UINotificationFeedbackGenerator()
                     .notificationOccurred(.success)
                 #endif

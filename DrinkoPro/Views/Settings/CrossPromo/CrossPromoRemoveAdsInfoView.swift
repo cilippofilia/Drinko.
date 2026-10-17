@@ -6,11 +6,8 @@
 import StoreKit
 import SwiftUI
 
-/// PrivateAds's interstitial always offers a "Remove Ads" button that opens a paywall. This is
-/// that paywall: a one-time, non-consumable purchase that silences the cross-promo ads for good.
-/// `ProductView`'s `.compact` style supplies the purchase button sized for exactly one product;
-/// Restore Purchase and the legal links are pinned in a bottom safe-area inset, mirroring the
-/// paywall pattern used across Filippo Cilia's other apps.
+/// The paywall behind PrivateAds's "Remove Ads" button: a one-time purchase that silences the
+/// cross-promo ads for good.
 struct CrossPromoRemoveAdsInfoView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(RemoveAdsStore.self) private var removeAdsStore
@@ -39,8 +36,8 @@ struct CrossPromoRemoveAdsInfoView: View {
                 Text("Thanks for your support — you won't see these cross-promo ads again.")
             }
         } else {
-            // Scrollable so the description wraps to its full height inside the `.medium`
-            // detent (and at large Dynamic Type sizes) instead of being truncated to one line.
+            // Scrollable so the description wraps to its full height in the `.medium` detent instead of
+            // being truncated.
             ScrollView {
                 VStack(spacing: 24) {
                     VStack(spacing: 12) {

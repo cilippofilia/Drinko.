@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-// The widget only needs a lightweight read-only model, so it decodes a small
-// subset of the cocktail JSON instead of pulling in the full app view model.
+// The subset of the cocktail JSON the widget needs, so it doesn't pull in the app's model.
 struct WidgetCocktail: Codable, Equatable, Identifiable, Hashable {
     let id: String
     let name: String
@@ -26,18 +25,16 @@ struct WidgetCocktail: Codable, Equatable, Identifiable, Hashable {
         return URL(string: "https://raw.githubusercontent.com/cilippofilia/Drinko-stickers/main/drinko-\(name).png")
     }
 
-    /// The family the drink is built on, whose color washes the sticker's backdrop as on the
-    /// app's library cards. `nil` for drinks without one, such as wine-based ones.
+    /// Tints the sticker's backdrop. `nil` for drinks without one, such as wine-based ones.
     var mainSpirit: MainSpirit? {
         MainSpirit(pours: ingredients.map { (name: $0.name, milliliters: $0.milliliters) })
     }
 
-    /// Whether this is one of the bundled shots, which are all served in a shot glass.
+    /// Every bundled shot is served in a shot glass.
     var isShot: Bool {
         glass == "shot"
     }
 
-    /// The ingredient names in pouring order, as one line the widget can wrap.
     var ingredientList: String {
         ingredients.map(\.name.capitalized).joined(separator: " · ")
     }

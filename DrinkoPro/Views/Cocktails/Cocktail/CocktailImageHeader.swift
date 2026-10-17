@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-/// The cocktail's artwork as a polaroid, with its name and actions written on the strip below,
-/// like the library cards.
 struct CocktailImageHeader: View {
     /// The system appearance, read outside the polaroid (which is always light), so the History
     /// sheet still follows it.

@@ -9,30 +9,17 @@ import CoreGraphics
 import Foundation
 import ImageIO
 
-/// Downloads, decodes and caches small remote thumbnails (currently the Learn feature's book and
-/// lesson images) so that scrolling a list, or rebuilding a detail pane, does not repeatedly
-/// re-fetch and re-decode the same full-size JPEG.
+/// Downloads, downsamples and caches the app's remote images, so scrolling or rebuilding a view
+/// doesn't re-fetch and re-decode them. Uses its own `URLSession` and `URLCache`, keeps decoded
+/// images in memory by URL and pixel size, and de-duplicates in-flight requests.
 ///
-/// The loader owns a dedicated `URLSession` with its own `URLCache` (so on-disk HTTP caching does
-/// not compete with, or get evicted by, other requests the app makes) and keeps a small in-memory
-/// dictionary of already-decoded, already-downsampled `CGImage`s keyed by URL and target pixel
-/// size. In-flight requests for the same key are de-duplicated so that, for example, a fast
-/// scroll that re-appears the same row multiple times only triggers one download.
-///
-/// - Important: Trade-off — because entries are cached by URL (and requested pixel size) alone,
-///   if an image is replaced on GitHub under the *same* filename, the previously cached copy will
-///   keep being served until the in-memory cache is evicted (e.g. under memory pressure or after
-///   the app relaunches) or the on-disk `URLCache` entry expires/is purged. For this app's static
-///   learning images that trade-off is acceptable in exchange for not re-fetching on every scroll.
+/// - Important: Entries are keyed by URL, so an image replaced on GitHub under the same file name
+///   keeps being served until the caches drop it.
 actor RemoteImageLoader {
-    /// Shared loader backed by a dedicated `URLSession`/`URLCache` pair.
     static let shared = RemoteImageLoader(session: RemoteImageLoader.makeDefaultSession())
 
-    /// Errors thrown while fetching or decoding a remote image.
     enum LoaderError: Error {
-        /// The server did not respond with a successful (2xx) HTTP status.
         case invalidResponse
-        /// The downloaded data could not be decoded as an image.
         case decodingFailed
     }
 
@@ -47,8 +34,7 @@ actor RemoteImageLoader {
     private var cacheOrder: [CacheKey] = []
     private var inFlightTasks: [CacheKey: Task<CGImage, Error>] = [:]
 
-    /// A simple count-based eviction limit for the in-memory cache; oldest entries are evicted
-    /// first once this many distinct (url, pixel size) combinations are cached.
+    /// The oldest entries are evicted beyond this many.
     private let maxCachedImages = 60
 
     /// Creates a loader backed by the given session. Tests can inject a session configured with
@@ -72,18 +58,10 @@ actor RemoteImageLoader {
         return URLSession(configuration: configuration)
     }
 
-    /// Returns a downsampled, decoded image for `url`, serving it from the in-memory cache when
-    /// available and de-duplicating concurrent requests for the same URL/size.
-    ///
     /// - Parameters:
-    ///   - url: The remote image's URL.
-    ///   - maxPixelSize: The maximum width/height, in pixels, to decode the image at. Passing the
-    ///     view's actual rendered size (in pixels) avoids decoding a full-size image for a small
-    ///     thumbnail.
-    ///   - filling: Whether the image will fill (and be cropped by) a `maxPixelSize` frame rather
-    ///     than fit inside it. Filling needs the *shorter* side to reach `maxPixelSize`, so a wide
-    ///     photo is decoded larger than that; otherwise its centre would be stretched up and blur.
-    /// - Returns: The decoded, downsampled `CGImage`.
+    ///   - maxPixelSize: The frame size, in pixels, to decode the image for.
+    ///   - filling: Whether the image fills (and is cropped by) that frame rather than fitting
+    ///     inside it, so its shorter side must reach `maxPixelSize`.
     func image(for url: URL, maxPixelSize: Int, filling: Bool = false) async throws -> CGImage {
         let key = CacheKey(url: url, maxPixelSize: maxPixelSize, filling: filling)
 

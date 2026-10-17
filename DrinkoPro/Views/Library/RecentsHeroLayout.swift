@@ -5,19 +5,13 @@
 
 import SwiftUI
 
-/// The pure logic behind the recents hero band: looping and slot stepping, how scroll progress maps onto
-/// the two items being blended, which backdrop each item gets, and whether text over a backdrop
-/// should be light or dark.
-///
-/// Keeping this out of the views means the accessibility actions, the backdrop blending and the
-/// legibility rule can all be tested without a view hierarchy.
+/// The recents band's logic, kept out of the views so it can be tested without a view hierarchy.
 enum RecentsHeroLayout {
     // MARK: - Looping
 
-    /// How many copies of the items the carousel lays out when it loops. It starts in the
-    /// middle copy, so there are hundreds of swipes either way before it nears an end, and it
-    /// quietly re-centres before it gets there (see `recenteredSlot`). The row is lazy, so
-    /// the copies cost nothing until they scroll into view.
+    /// How many copies of the items a looping carousel lays out. It starts in the middle copy and
+    /// re-centres near either end (see `recenteredSlot`). The row is lazy, so copies cost nothing
+    /// until they scroll into view.
     static let loopCopies = 50
 
     /// Whether the carousel loops. With three items showing at once, looping fewer than three
@@ -26,43 +20,34 @@ enum RecentsHeroLayout {
         count >= 3
     }
 
-    /// How many slots the carousel lays out: every copy of every item when it loops,
-    /// otherwise just the items.
     static func slotCount(count: Int) -> Int {
         isLooping(count: count) ? count * loopCopies : max(count, 0)
     }
 
-    /// The item shown in `slot`.
     static func itemIndex(forSlot slot: Int, count: Int) -> Int {
         guard count > 0 else { return 0 }
         return ((slot % count) + count) % count
     }
 
-    /// The slot for the item at `index` in the middle copy, where the carousel starts.
     static func homeSlot(forIndex index: Int, count: Int) -> Int {
         guard isLooping(count: count) else { return index }
         return count * (loopCopies / 2) + itemIndex(forSlot: index, count: count)
     }
 
-    /// Where to jump, without animation, once the carousel comes to rest in `slot`: the same
-    /// item in the middle copy when `slot` is within a copy of either end, otherwise `slot`
-    /// itself. Every copy looks the same, so the jump is invisible.
+    /// Where to jump once the carousel rests in `slot`: the same item in the middle copy when
+    /// `slot` is within a copy of either end. Every copy looks the same, so the jump is invisible.
     static func recenteredSlot(_ slot: Int, count: Int) -> Int {
         guard isLooping(count: count) else { return slot }
         let isNearEnd = slot < count || slot >= slotCount(count: count) - count
         return isNearEnd ? homeSlot(forIndex: slot, count: count) : slot
     }
 
-    /// The slot after moving to the next item (the one on the right). Stays on the last slot
-    /// rather than running off the end, which only a non-looping carousel ever reaches.
     static func nextSlot(_ slot: Int, count: Int) -> Int {
         let slots = slotCount(count: count)
         guard slots > 0 else { return 0 }
         return min(max(slot, 0) + 1, slots - 1)
     }
 
-    /// The slot after moving to the previous item (the one on the left). Stays on the first
-    /// slot rather than running off the start.
     static func previousSlot(_ slot: Int, count: Int) -> Int {
         let slots = slotCount(count: count)
         guard slots > 0 else { return 0 }
@@ -71,52 +56,38 @@ enum RecentsHeroLayout {
 
     // MARK: - Sizing
 
-    /// How much of the band's width the centred item takes. A third of the width would leave
-    /// the shrunken neighbours with wide gaps; a little more keeps three items reading as one row.
+    /// A little over a third, so the shrunken neighbours don't leave wide gaps.
     static let itemWidthFraction = 0.36
 
-    /// The widest an item gets, so the row doesn't balloon on iPad and Mac.
     static let maximumItemWidth = 280.0
 
-    /// How far below the band's bottom edge the fade runs, into the gap before the list, so
-    /// the band takes no extra room for it. It ends before the first section header, which
-    /// then sits on the plain page background.
+    /// How far the fade runs below the band, into the gap before the list. It ends before the
+    /// first section header.
     nonisolated static let fadeBelowBottom = 16.0
 
-    /// How much higher the fade sits at the band's left and right edges than in the middle, so
-    /// it curves up around the centred item like a smile.
     nonisolated static let fadeCurveDepth = 24.0
 
-    /// How much higher the fade curve sits `distance` points from the middle of a band `width`
-    /// wide: nothing in the middle, `fadeCurveDepth` at either edge, along a parabola. The
-    /// shader in `RecentsHeroFade.metal` draws the same curve.
+    /// A parabola from nothing in the middle to `fadeCurveDepth` at either edge. Keep in sync
+    /// with the shader in `RecentsHeroFade.metal`.
     nonisolated static func fadeCurveLift(atDistance distance: Double, fromCentreOfWidth width: Double) -> Double {
         guard width > 0 else { return 0 }
         let across = distance / (width / 2)
         return fadeCurveDepth * across * across
     }
 
-    /// The width of one item (and the distance between neighbours' centres) in a band
-    /// `containerWidth` wide.
+    /// Also the distance between neighbours' centres.
     static func itemWidth(forContainerWidth containerWidth: Double) -> Double {
         min(max(containerWidth, 0) * itemWidthFraction, maximumItemWidth)
     }
 
     // MARK: - Backdrops
 
-    /// What fills the band behind an item.
     enum Backdrop: Hashable {
-        /// A solid color from the named color asset.
         case color(String)
-        /// A blurred copy of the item's photo.
         case photo(URL)
-        /// Nothing worth drawing from: a quiet, system-adaptive tone.
         case neutral
     }
 
-    /// The backdrop for an item's artwork. Stickers (bundled or the user's) and tinted glass take
-    /// that tint's color, photos are blurred into a wallpaper, and everything else (untinted
-    /// stickers or glass, assets, symbols, photos without a URL) gets the neutral tone.
     static func backdrop(for image: LibraryImage) -> Backdrop {
         switch image {
         case .sticker(_, let tint?), .userSticker(_, _, let tint?), .glass(_, let tint?):
@@ -130,36 +101,28 @@ enum RecentsHeroLayout {
 
     // MARK: - Legibility
 
-    /// Which text color reads well on a backdrop.
     enum TextStyle: Equatable {
-        /// White text, for dark backdrops.
         case light
-        /// Near-black text, for light backdrops.
         case dark
     }
 
-    /// The luminance above which a backdrop is light enough to need dark text. Sits a little
-    /// above the midpoint because white text stays readable on mid-tones a touch longer than
-    /// black does, especially in bold, large type.
+    /// A little above the midpoint, because white text stays readable on mid-tones a touch longer
+    /// than black does, especially in bold, large type.
     static let darkTextThreshold = 0.6
 
-    /// A color's perceived brightness from 0 (black) to 1 (white), from its gamma-encoded
-    /// sRGB components, using the Rec. 601 weights.
+    /// Perceived brightness from gamma-encoded sRGB components, using the Rec. 601 weights.
     static func luminance(red: Double, green: Double, blue: Double) -> Double {
         0.299 * red + 0.587 * green + 0.114 * blue
     }
 
-    /// The text style for a backdrop with the given luminance.
     static func textStyle(forLuminance luminance: Double) -> TextStyle {
         luminance > darkTextThreshold ? .dark : .light
     }
 
     // MARK: - Navigation bar
 
-    /// Whether the content has scrolled more than `threshold` under the navigation bar.
-    ///
-    /// `barBottom` is where the bar's bottom edge falls in content coordinates (the scroll
-    /// view's vertical offset plus its top inset): 0 at rest, negative when pulled down.
+    /// `barBottom` is where the bar's bottom edge falls in content coordinates: 0 at rest,
+    /// negative when pulled down.
     static func hasScrolledUnderBar(barBottom: Double, threshold: Double) -> Bool {
         barBottom > threshold
     }

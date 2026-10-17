@@ -7,22 +7,17 @@
 
 import Foundation
 
-// Shared identifiers for the App Group that lets DrinkoWidget read data
-// (such as favorites) written by the main app.
+// Lets DrinkoWidget read data the app writes, such as favorites.
 enum AppGroup {
-    // The App Group identifier registered for both the app and widget targets.
     static let identifier = "group.me.cilia.filippo.DrinkoPro"
 
-    // The UserDefaults key used to store favorite cocktail IDs.
+    // Holds the favorite cocktail IDs.
     static let favoritesKey = "Cocktails"
 
-    // The widget kind used when requesting timeline reloads.
     static let widgetKind = "DrinkoWidget"
 
-    // The shared UserDefaults suite. On iOS this is the App Group container so the
-    // widget extension can read favorites; on macOS there is no widget extension to
-    // share with, so we fall back to `.standard`. UserDefaults access is thread-safe,
-    // so this is explicitly non-isolated for use as a default argument value.
+    // `.standard` on macOS, which has no widget to share with. Non-isolated so it can be a
+    // default argument value; UserDefaults is thread-safe.
     nonisolated static var defaults: UserDefaults {
         #if os(iOS)
         UserDefaults(suiteName: identifier) ?? .standard

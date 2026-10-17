@@ -5,16 +5,11 @@
 
 import SwiftUI
 
-/// Attaches the persistent cross-promo ad banner to the bottom of a view.
+/// Uses `.safeAreaInset(edge:)` rather than `.safeAreaBar(edge:)`, which would extend the scroll
+/// edge effect up to the banner and dim the content behind it.
 ///
-/// Uses `.safeAreaInset(edge:)` rather than `.safeAreaBar(edge:)`: a safe-area bar counts as a
-/// bar, so the system extends the scroll edge effect up to the banner's top edge and dims the
-/// content behind it. As an inset, the banner floats as its own card over the content and only
-/// the tab bar casts the edge effect, matching pages without a banner.
-///
-/// The content is stretched to fill the available space first: an inset sits at the bottom of
-/// the view it's attached to, so on content that sizes itself (such as a `ContentUnavailableView`
-/// empty state) the banner would otherwise hang just below it instead of at the page's bottom.
+/// The content is stretched to fill the space first, or on content that sizes itself (such as
+/// a `ContentUnavailableView`) the banner would hang just below it instead of at the bottom.
 private struct CrossPromoBannerModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -26,7 +21,6 @@ private struct CrossPromoBannerModifier: ViewModifier {
 }
 
 extension View {
-    /// Pins a `CrossPromoBannerView` to the bottom of this view's safe area.
     func crossPromoBanner() -> some View {
         modifier(CrossPromoBannerModifier())
     }

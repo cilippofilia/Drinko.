@@ -27,7 +27,6 @@ struct FavoritesTests {
         ingredients: []
     )
 
-    // A pair of throwaway UserDefaults suites so each test starts from a clean slate.
     private struct TestSuites {
         let suite: UserDefaults
         let legacy: UserDefaults

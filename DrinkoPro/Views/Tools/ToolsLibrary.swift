@@ -7,22 +7,18 @@
 
 import Foundation
 
-/// The content of the Tools library: its sections and the card shown for each tool.
 enum ToolsLibrary {
     static let calculatorsSectionID = "calculators"
     private nonisolated static let superjuiceTypes = ["lime", "lemon"]
 
-    /// The calculator entries shown in the Calculators section, in display order.
     nonisolated static var calculatorItems: [ToolsView.Selection] {
         [.abvCalculator] + superjuiceTypes.map { .superjuice($0) }
     }
 
-    /// Every section the Tools library shows, in display order.
     static var sections: [LibrarySection<ToolsView.Selection>] {
         [LibrarySection(id: calculatorsSectionID, title: String(localized: "Calculators"), items: calculatorItems)]
     }
 
-    /// Display data for one tool.
     static func cardModel(for item: ToolsView.Selection) -> LibraryCardModel {
         switch item {
         case .abvCalculator:
@@ -40,7 +36,7 @@ enum ToolsLibrary {
         }
     }
 
-    /// The SF Symbol for a tool's sidebar row (`Tab` takes a symbol, not the card's artwork).
+    /// `Tab` takes a symbol, not the card's artwork.
     static func sidebarSymbol(for item: ToolsView.Selection) -> String {
         switch item {
         case .abvCalculator: "percent"
@@ -48,8 +44,7 @@ enum ToolsLibrary {
         }
     }
 
-    /// A fully-translated title for one superjuice tool, keyed on the whole phrase rather
-    /// than interpolating the raw (English-only) juice type.
+    /// Keyed on the whole phrase, since the raw juice type is English-only.
     private static func superjuiceTitle(for juiceType: String) -> String {
         switch juiceType {
         case "lime":

@@ -5,11 +5,10 @@
 
 import SwiftUI
 
-/// Draws a `ShareCardArtwork` filling its container.
 struct ShareCardArtworkView: View {
     let artwork: ShareCardArtwork
 
-    /// How much of the banner a sticker fills, matching `StickerImageView`.
+    /// Matches `StickerMetrics.insetScale`.
     private let stickerInsetScale = 0.82
 
     var body: some View {

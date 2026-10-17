@@ -6,14 +6,12 @@
 import Foundation
 import OSLog
 
-/// Mirrors favorites, recents and settings between `UserDefaults` and iCloud's key-value store,
-/// so they match across the user's devices and come back after reinstalling.
+/// Mirrors favorites, recents and settings between `UserDefaults` and iCloud's key-value store.
 ///
-/// `UserDefaults` stays the place the app reads from. Local changes to the keys in
-/// `CloudSyncedKey.all` are uploaded; changes from other devices are written back into
-/// `UserDefaults`, where `@AppStorage` views pick them up, and `onRemoteChange` lets the stores
-/// reload. A device's first sync merges local and iCloud values (see `CloudSyncMerge`); after
-/// that the latest change wins. Signed out of iCloud, uploads go nowhere and nothing arrives.
+/// The app keeps reading `UserDefaults`. Changes from other devices are written back into it,
+/// where `@AppStorage` views pick them up, and `onRemoteChange` lets the stores reload. A
+/// device's first sync merges local and iCloud values (see `CloudSyncMerge`); after that the
+/// latest change wins.
 @MainActor
 final class CloudSync {
     /// Local-only flag recording that this device has merged with iCloud. Never synced.
@@ -77,7 +75,6 @@ final class CloudSync {
         }
     }
 
-    /// Applies a change notification from iCloud.
     func handleCloudChange(reason: Int, changedKeys: [String]) {
         switch reason {
         case NSUbiquitousKeyValueStoreAccountChange:

@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-/// The artwork behind the cocktail detail header: the drink's sticker, the user's sticker or photo
-/// when it has one, or a prompt to add a photo for cocktails without a picture.
 struct CocktailHeaderImage: View {
     @Environment(CocktailsViewModel.self) private var viewModel
 

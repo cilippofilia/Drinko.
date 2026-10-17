@@ -5,9 +5,8 @@
 
 import Foundation
 
-/// Builds the link shared alongside a cocktail's recipe card, and reads a cocktail ID back out
-/// of every link format Drinko understands. The App Clip and the full app both parse through
-/// here, so moving to a custom domain later only changes this file.
+/// Builds the link shared with a cocktail's recipe card, and reads a cocktail ID back out of
+/// every link format Drinko understands, for both the App Clip and the full app.
 enum CocktailClipLink {
     /// The App Clip's bundle ID, which Apple's default App Clip link names in its `p` parameter.
     static let appClipBundleID = "me.cilia.filippo.DrinkoPro.Clip"

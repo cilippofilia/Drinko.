@@ -77,7 +77,6 @@ struct SettingsInfoView: View {
         .foregroundStyle(.primary)
     }
 
-    // Get current Version of the App function
     func getCurrentAppVersion() -> String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }

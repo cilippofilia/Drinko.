@@ -5,9 +5,7 @@
 
 import SwiftUI
 
-/// The Tools library column: the calculators as a grid of cards.
 struct ToolsLibraryPage: View {
-    /// The tool currently shown, highlighted in the library.
     let selection: ToolsView.Selection?
     let onSelect: @MainActor (ToolsView.Selection) -> Void
 

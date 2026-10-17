@@ -13,8 +13,7 @@ class LessonsViewModel {
     private(set) var lessonsByTopic: [String: [Lesson]]
     var books: [Book] = Bundle.main.decode([Book].self, from: "books.json")
 
-    /// Cached id → item lookup, built lazily since lessons and books are bundled and don't
-    /// change after init. See `LessonsViewModel+Library.recentItems(from:)`.
+    /// Built on first use; lessons and books are bundled and never change.
     @ObservationIgnored var itemsByIDCache: [String: LearnView.Selection]?
 
     init(topics: [LearnTopic] = LearnTopic.all) {
@@ -35,10 +34,8 @@ class LessonsViewModel {
         lessonsByTopic[topicID] ?? []
     }
 
-    /// Returns the lessons for `topicID` whose title or description match `query`.
-    ///
-    /// Whitespace is trimmed from `query`; an empty (or whitespace-only) query returns every
-    /// lesson for that topic unfiltered.
+    /// The lessons for `topicID` whose title or description match `query`, or all of them for a
+    /// blank query.
     func filteredLessons(for topicID: String, matching query: String) -> [Lesson] {
         let lessons = lessons(for: topicID)
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -50,10 +47,7 @@ class LessonsViewModel {
         }
     }
 
-    /// Returns the books whose title, description or author match `query`.
-    ///
-    /// Whitespace is trimmed from `query`; an empty (or whitespace-only) query returns every book
-    /// unfiltered.
+    /// The books whose title, description or author match `query`, or all of them for a blank query.
     func filteredBooks(matching query: String) -> [Book] {
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedQuery.isEmpty else { return books }
@@ -65,9 +59,7 @@ class LessonsViewModel {
         }
     }
 
-    /// Whether any lesson (across all topics) or book matches `query`.
-    ///
-    /// An empty (or whitespace-only) query always returns `true`.
+    /// Whether any lesson or book matches `query`. Always `true` for a blank query.
     func hasResults(matching query: String) -> Bool {
         let trimmedQuery = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedQuery.isEmpty else { return true }

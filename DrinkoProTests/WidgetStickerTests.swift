@@ -3,8 +3,7 @@ import SwiftUI
 import Testing
 @testable import DrinkoPro
 
-/// The widget decodes its own lightweight copy of the drinks, so these check it shows the same
-/// sticker and backdrop color as the app's library cards.
+/// The widget decodes its own copy of the drinks, so these check it matches the app's cards.
 @Suite("Widget stickers")
 @MainActor
 struct WidgetStickerTests {

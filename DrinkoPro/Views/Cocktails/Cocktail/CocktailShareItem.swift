@@ -8,8 +8,7 @@ import ImageIO
 import SwiftUI
 import UniformTypeIdentifiers
 
-/// What the detail screen's Share button shares: a PNG of `CocktailShareCard`. The card is only
-/// rendered when the share sheet asks for the data, so opening a cocktail costs nothing.
+/// A PNG of `CocktailShareCard`, rendered only when the share sheet asks for the data.
 nonisolated struct CocktailShareItem: Transferable {
     enum RenderError: Error {
         case renderFailed
@@ -21,7 +20,7 @@ nonisolated struct CocktailShareItem: Transferable {
     let tint: String?
     let selectedUnit: String
     let showsOriginalUnits: Bool
-    /// Downloads remote artwork. Replaced in tests.
+    /// Replaced in tests.
     var loadImage: @Sendable (URL) async throws -> CGImage = { url in
         try await RemoteImageLoader.shared.image(
             for: url,
@@ -32,15 +31,11 @@ nonisolated struct CocktailShareItem: Transferable {
     /// How long to wait for remote artwork before sharing with the glass art instead.
     var loadTimeout: Duration = .seconds(3)
 
-    /// Decodes the user's photo for user cocktails that have one. Only called when the card is
-    /// rendered, so opening a cocktail never decodes it.
+    /// Only called when the card is rendered, so opening a cocktail never decodes the photo.
     var loadUserPhoto: (@MainActor @Sendable () -> CGImage?)?
 
-    /// Decodes the user's sticker for user cocktails that have one. Only called when the card is
-    /// rendered, like `loadUserPhoto`.
     var loadUserSticker: (@MainActor @Sendable () -> CGImage?)?
 
-    /// The pixel scale the card is rendered at.
     static let renderScale: CGFloat = 3
 
     static var transferRepresentation: some TransferRepresentation {
@@ -50,11 +45,9 @@ nonisolated struct CocktailShareItem: Transferable {
         .suggestedFileName { "\($0.cocktail.name).png" }
     }
 
-    /// Downloads `url`, giving up after `loadTimeout` so a flaky network can't stall the share sheet.
-    ///
-    /// A task group would wait for the download to finish even after the timeout wins, and
-    /// `RemoteImageLoader` keeps downloading when cancelled. So the download and the timer race
-    /// as separate tasks, and whichever reports first through the stream decides the result.
+    /// Gives up after `loadTimeout` so a flaky network can't stall the share sheet. A task group
+    /// would wait for the download even after the timeout wins, since `RemoteImageLoader` keeps
+    /// downloading when cancelled, so the two race as separate tasks.
     private func downloadedImage(from url: URL) async -> CGImage? {
         let load = loadImage
         let timeout = loadTimeout
@@ -88,8 +81,7 @@ nonisolated struct CocktailShareItem: Transferable {
         }
     }
 
-    /// Loads the artwork the card shows. Falls back to the glass art when a download fails or
-    /// times out, so sharing works offline.
+    /// Falls back to the glass art when a download fails or times out, so sharing works offline.
     @MainActor
     func resolvedArtwork() async -> ShareCardArtwork {
         switch artwork {
@@ -113,7 +105,6 @@ nonisolated struct CocktailShareItem: Transferable {
         return .glass(cocktail.glassArtwork, tint: tint)
     }
 
-    /// Renders the card and encodes it as PNG.
     @MainActor
     func pngData() async throws -> Data {
         let card = CocktailShareCard(

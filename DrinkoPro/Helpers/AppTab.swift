@@ -16,10 +16,8 @@ enum AppTab: Hashable {
     /// A Cabinet page showing one category (`Category.id`).
     case cabinetCategory(UUID)
     case cocktails
-    /// A Cocktails page with a fixed filter.
     case cocktailFilter(CocktailsViewModel.FilterOption)
     case tools
-    /// One tool, opened directly.
     case tool(ToolsView.Selection)
     case settings
 
@@ -52,20 +50,18 @@ enum AppTab: Hashable {
         return self
     }
 
-    /// Whether the layout has a sidebar for the sidebar-only rows. Only a regular width gets
-    /// one; compact, or no size class yet, keeps the bottom/vertical tab bar.
+    /// Only a regular width gets a sidebar; compact, or no size class yet, keeps the tab bar.
     static func sidebarRowsAvailable(horizontalSizeClass: UserInterfaceSizeClass?) -> Bool {
         horizontalSizeClass == .regular
     }
 }
 
 extension AppTab {
-    /// A string encoding for scene storage (not a `RawRepresentable` conformance —
-    /// that would make the standard library pick its raw-value-based `==`/`hash(into:)`
-    /// over the synthesized case-based ones, silently breaking equality here).
+    /// A string encoding for scene storage. Not a `RawRepresentable` conformance: that would make
+    /// the standard library pick its raw-value-based `==`/`hash(into:)` over the synthesized ones.
     ///
-    /// Main tabs keep the strings the old `String?` tab tags used, so a tab saved by an
-    /// earlier version still restores. Sidebar rows append `/<detail>`.
+    /// Main tabs keep the strings older versions saved, so they still restore. Sidebar rows
+    /// append `/<detail>`.
     private enum Name: String {
         case learn = "Learn"
         case cabinet = "Cabinet"

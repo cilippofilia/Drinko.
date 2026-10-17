@@ -52,7 +52,6 @@ struct CocktailsView: View {
         presetFilter?.pageTitle ?? String(localized: "Cocktails")
     }
 
-    /// The tab that shows this page: its sidebar filter row, or the main Cocktails tab.
     private var pageTab: AppTab {
         presetFilter.map(AppTab.cocktailFilter) ?? .cocktails
     }
@@ -63,9 +62,8 @@ struct CocktailsView: View {
         }
     }
 
-    /// The "Last Viewed" band's cocktails, limited to the list source. Like Learn's section
-    /// pages, a sidebar filter page (other than All) shows no band, since unfiltered recents
-    /// would sit above a filtered list.
+    /// Limited to the list source. A sidebar filter page (other than All) shows no band, since
+    /// unfiltered recents would sit above a filtered list.
     private var recentCocktails: [Cocktail] {
         guard presetFilter == nil || presetFilter == .all else { return [] }
         return viewModel.recentCocktailsWithPictures(from: recentsStore.ids(in: .cocktails))
@@ -248,8 +246,7 @@ private extension CocktailsView {
         showCreateCocktailSheet = true
     }
 
-    /// Opens `cocktail`: pushes it on iOS, shows it in the detail column on macOS. It's
-    /// recorded as recent once the selection settles (see the `.task(id:)` in `body`).
+    /// Recorded as recent once the selection settles (see the `.task(id:)` in `body`).
     func select(_ cocktail: Cocktail) {
         #if os(iOS)
         path = [cocktail]
@@ -259,8 +256,7 @@ private extension CocktailsView {
         #endif
     }
 
-    /// Stops showing `cocktail` once it's gone (deleted, or hidden by the list source):
-    /// pops it and anything pushed after it on iOS, clears the detail column on macOS.
+    /// Stops showing `cocktail` once it's deleted or hidden by the list source.
     func clearSelection(after cocktail: Cocktail) {
         #if os(iOS)
         if let index = path.firstIndex(of: cocktail) {
@@ -275,8 +271,7 @@ private extension CocktailsView {
     }
 
     #if os(iOS)
-    /// Pops the first pushed cocktail no longer in `viewModel.listOfAllDrinks` (deleted
-    /// elsewhere) and every page pushed after it, like `clearSelection(after:)`.
+    /// Pops the first pushed cocktail deleted elsewhere, and every page pushed after it.
     func pruneStalePathEntries() {
         let validIDs = Set(viewModel.listOfAllDrinks.map(\.id))
         if let index = path.firstIndex(where: { !validIDs.contains($0.id) }) {

@@ -7,9 +7,6 @@
 
 import WidgetKit
 
-// Each entry represents the widget's content for one point in time.
-// Besides the required date, we include the chosen cocktail so all widget sizes
-// can render the same "daily pick" consistently.
 struct DrinkoWidgetEntry: TimelineEntry {
     let date: Date
     let cocktail: WidgetCocktail

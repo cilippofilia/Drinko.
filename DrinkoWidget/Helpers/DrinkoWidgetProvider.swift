@@ -10,8 +10,6 @@ import WidgetKit
 struct DrinkoWidgetProvider: AppIntentTimelineProvider {
     typealias Configuration = CocktailWidgetConfigurationIntent
 
-    // The placeholder is what users see in the gallery before real data loads.
-    // It should be instant and use a representative sample model.
     func placeholder(in context: Context) -> DrinkoWidgetEntry {
         DrinkoWidgetEntry(
             date: .now,
@@ -22,14 +20,12 @@ struct DrinkoWidgetProvider: AppIntentTimelineProvider {
         )
     }
 
-    // Snapshot is the fast path WidgetKit uses for previews and transient loads.
-    // We compute the same daily cocktail here so previews match the real widget.
+    // Uses the same daily pick as the timeline so the gallery matches the real widget.
     func snapshot(for configuration: Configuration, in context: Context) async -> DrinkoWidgetEntry {
         await makeEntry(for: .now, configuration: configuration)
     }
 
-    // The real timeline rotates once per day. Every size uses the same entry,
-    // then WidgetKit asks again at the next day boundary.
+    // One entry per day; WidgetKit asks again at the next day boundary.
     func timeline(for configuration: Configuration, in context: Context) async -> Timeline<DrinkoWidgetEntry> {
         let currentDate = Date.now
         let entry = await makeEntry(for: currentDate, configuration: configuration)
