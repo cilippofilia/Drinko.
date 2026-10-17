@@ -103,6 +103,19 @@ struct FavoritesTests {
         #expect(decoded.contains("negroni"))
     }
 
+    @Test("Saved favorites encode the same set to the same bytes")
+    func savedFavoritesAreSorted() throws {
+        let suites = makeSuites()
+        defer { suites.tearDown() }
+
+        let favorites = Favorites(store: suites.suite, legacy: suites.legacy)
+        favorites.add(otherCocktail)
+        favorites.add(cocktail)
+
+        let data = try #require(suites.suite.data(forKey: "Cocktails"))
+        #expect(try JSONDecoder().decode([String].self, from: data) == ["daiquiri", "negroni"])
+    }
+
     @Test("Removing a cocktail persists to the injected store")
     func removingCocktailPersistsToStore() throws {
         let suites = makeSuites()

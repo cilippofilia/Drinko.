@@ -72,6 +72,7 @@ struct CloudSyncTests {
         #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni", "daiquiri"])
         #expect(harness.standard.bool(forKey: CloudSync.didInitialMergeKey))
         #expect(log.changes.last?.contains(favoritesKey) == true)
+        #expect(harness.cloud.writes == [favoritesKey])
     }
 
     @Test func firstStartAdoptsCloudSettingsAndUploadsLocalOnes() throws {
@@ -101,14 +102,16 @@ struct CloudSyncTests {
         #expect(harness.cloud.values[recentsKey] as? [String] == ["a", "b", "c"])
     }
 
-    @Test func theFirstSyncFlagStaysLocal() throws {
+    @Test func theFlagsStayLocal() throws {
         let harness = try makeHarness()
         defer { harness.tearDown() }
+        harness.standard.set(true, forKey: CloudSync.awaitingFirstDownloadKey)
 
         let sync = makeSync(harness)
         sync.start()
 
         #expect(harness.cloud.values[CloudSync.didInitialMergeKey] == nil)
+        #expect(harness.cloud.values[CloudSync.awaitingFirstDownloadKey] == nil)
     }
 
     // MARK: Later launches
@@ -149,19 +152,23 @@ struct CloudSyncTests {
     @Test func localWritesOfSyncedKeysAreUploaded() throws {
         let harness = try makeHarness()
         defer { harness.tearDown() }
+        harness.standard.set(true, forKey: CloudSync.didInitialMergeKey)
         let sync = makeSync(harness)
         sync.start()
+        harness.cloud.writes.removeAll()
 
         harness.standard.set("grid", forKey: layoutKey)
         harness.standard.set("whatever", forKey: "someUnsyncedKey")
 
         #expect(harness.cloud.values[layoutKey] as? String == "grid")
         #expect(harness.cloud.values["someUnsyncedKey"] == nil)
+        #expect(harness.cloud.writes == [layoutKey])
     }
 
     @Test func pushLocalChangesOnlyUploadsWhatChanged() throws {
         let harness = try makeHarness()
         defer { harness.tearDown() }
+        harness.standard.set(true, forKey: CloudSync.didInitialMergeKey)
         let sync = makeSync(harness)
         sync.start()
         harness.standard.set("grid", forKey: layoutKey)
@@ -224,7 +231,6 @@ struct CloudSyncTests {
         defer { harness.tearDown() }
         let sync = makeSync(harness)
         sync.start()
-        harness.standard.removeObject(forKey: CloudSync.didInitialMergeKey)
         harness.appGroup.set(try encoded(["negroni"]), forKey: favoritesKey)
         harness.cloud.values[favoritesKey] = try encoded(["daiquiri"])
 
@@ -261,6 +267,62 @@ struct CloudSyncTests {
         sync.handleCloudChange(reason: NSUbiquitousKeyValueStoreAccountChange, changedKeys: [favoritesKey])
 
         #expect(try decoded(harness.appGroup.object(forKey: favoritesKey)) == ["negroni", "daiquiri"])
+        #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni", "daiquiri"])
+        #expect(harness.standard.bool(forKey: CloudSync.didInitialMergeKey))
+    }
+
+    // MARK: Waiting for iCloud's first download
+
+    @Test func firstStartWithEmptyCloudWaitsForTheDownload() throws {
+        let harness = try makeHarness()
+        defer { harness.tearDown() }
+        harness.appGroup.set(try encoded(["negroni"]), forKey: favoritesKey)
+
+        let sync = makeSync(harness)
+        sync.start()
+
+        #expect(harness.cloud.writes.isEmpty)
+        #expect(!harness.standard.bool(forKey: CloudSync.didInitialMergeKey))
+        #expect(harness.standard.bool(forKey: CloudSync.awaitingFirstDownloadKey))
+    }
+
+    @Test func localWritesWaitUntilTheFirstMerge() throws {
+        let harness = try makeHarness()
+        defer { harness.tearDown() }
+        let sync = makeSync(harness)
+        sync.start()
+
+        harness.standard.set("grid", forKey: layoutKey)
+
+        #expect(harness.cloud.writes.isEmpty)
+    }
+
+    @Test func aLaterLaunchWithEmptyCloudActsAsTheFirstDevice() throws {
+        let harness = try makeHarness()
+        defer { harness.tearDown() }
+        harness.standard.set(true, forKey: CloudSync.awaitingFirstDownloadKey)
+        harness.appGroup.set(try encoded(["negroni"]), forKey: favoritesKey)
+
+        let sync = makeSync(harness)
+        sync.start()
+
+        #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni"])
+        #expect(harness.standard.bool(forKey: CloudSync.didInitialMergeKey))
+        #expect(!harness.standard.bool(forKey: CloudSync.awaitingFirstDownloadKey))
+    }
+
+    @Test func theFirstDownloadMergesWhateverItsReason() throws {
+        let harness = try makeHarness()
+        defer { harness.tearDown() }
+        harness.appGroup.set(try encoded(["negroni"]), forKey: favoritesKey)
+        let sync = makeSync(harness)
+        sync.start()
+        harness.cloud.values[favoritesKey] = try encoded(["daiquiri"])
+
+        sync.handleCloudChange(reason: NSUbiquitousKeyValueStoreServerChange, changedKeys: [favoritesKey])
+
+        #expect(try decoded(harness.appGroup.object(forKey: favoritesKey)) == ["negroni", "daiquiri"])
+        #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni", "daiquiri"])
         #expect(harness.standard.bool(forKey: CloudSync.didInitialMergeKey))
     }
 }

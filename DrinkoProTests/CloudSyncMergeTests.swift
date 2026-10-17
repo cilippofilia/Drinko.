@@ -15,7 +15,10 @@ struct CloudSyncMergeTests {
     // MARK: Favorites
 
     @Test func favoritesAreUnioned() throws {
-        let merged = CloudSyncMerge.favorites(local: try encoded(["negroni"]), cloud: try encoded(["daiquiri", "negroni"]))
+        let merged = CloudSyncMerge.favorites(
+            local: try encoded(["negroni"]),
+            cloud: try encoded(["daiquiri", "negroni"])
+        )
         #expect(try decoded(merged) == ["negroni", "daiquiri"])
     }
 
@@ -35,7 +38,10 @@ struct CloudSyncMergeTests {
     }
 
     @Test func unknownFavoriteIDsAreKept() throws {
-        let merged = CloudSyncMerge.favorites(local: try encoded(["user-cocktail-not-synced-yet"]), cloud: try encoded(["negroni"]))
+        let merged = CloudSyncMerge.favorites(
+            local: try encoded(["user-cocktail-not-synced-yet"]),
+            cloud: try encoded(["negroni"])
+        )
         #expect(try decoded(merged).contains("user-cocktail-not-synced-yet"))
     }
 
@@ -80,7 +86,12 @@ struct CloudSyncMergeTests {
     }
 
     @Test func firstSyncSkipsInvalidCloudValues() throws {
-        #expect(CloudSyncMerge.firstSync(local: try encoded(["negroni"]), cloud: Data("junk".utf8), rule: .favorites, recentsCapacity: 9) == nil)
+        #expect(CloudSyncMerge.firstSync(
+            local: try encoded(["negroni"]),
+            cloud: Data("junk".utf8),
+            rule: .favorites,
+            recentsCapacity: 9
+        ) == nil)
         #expect(CloudSyncMerge.firstSync(local: ["a"], cloud: "a", rule: .recents, recentsCapacity: 9) == nil)
         #expect(CloudSyncMerge.firstSync(local: "list", cloud: 5, rule: .setting, recentsCapacity: 9) == nil)
     }
@@ -92,7 +103,12 @@ struct CloudSyncMergeTests {
     }
 
     @Test func firstSyncAppliesEachRule() throws {
-        let favorites = CloudSyncMerge.firstSync(local: try encoded(["negroni"]), cloud: try encoded(["daiquiri"]), rule: .favorites, recentsCapacity: 9)
+        let favorites = CloudSyncMerge.firstSync(
+            local: try encoded(["negroni"]),
+            cloud: try encoded(["daiquiri"]),
+            rule: .favorites,
+            recentsCapacity: 9
+        )
         #expect(try decoded(favorites) == ["negroni", "daiquiri"])
 
         let recents = CloudSyncMerge.firstSync(local: ["b"], cloud: ["a"], rule: .recents, recentsCapacity: 9)

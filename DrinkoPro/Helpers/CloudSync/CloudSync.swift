@@ -19,6 +19,10 @@ final class CloudSync {
     /// Local-only flag recording that this device has merged with iCloud. Never synced.
     static let didInitialMergeKey = "cloudSync.didInitialMerge"
 
+    /// Local-only flag recording that a launch found iCloud empty and waited for its first
+    /// download. If iCloud is still empty on a later launch, this device is the first one.
+    static let awaitingFirstDownloadKey = "cloudSync.awaitingFirstDownload"
+
     private let cloud: CloudKeyValueStore
     private let standard: UserDefaults
     private let appGroup: UserDefaults
@@ -68,7 +72,8 @@ final class CloudSync {
         if standard.bool(forKey: Self.didInitialMergeKey) {
             pull(keys)
         } else {
-            mergeAll()
+            // Wait for iCloud's first download unless an earlier launch already waited.
+            mergeAll(evenIfCloudIsEmpty: standard.bool(forKey: Self.awaitingFirstDownloadKey))
         }
     }
 
@@ -78,24 +83,30 @@ final class CloudSync {
         case NSUbiquitousKeyValueStoreAccountChange:
             // A different iCloud account: combine its data with this device's, like a new device.
             standard.removeObject(forKey: Self.didInitialMergeKey)
-            mergeAll()
+            standard.removeObject(forKey: Self.awaitingFirstDownloadKey)
+            mergeAll(evenIfCloudIsEmpty: false)
         case NSUbiquitousKeyValueStoreInitialSyncChange:
             // iCloud discards writes made before a device's first download, so the launch merge
-            // may never have reached it. Merge again with what arrived.
-            mergeAll()
+            // may never have reached it. Merge again with what arrived. The download happened,
+            // so an empty iCloud really is empty.
+            mergeAll(evenIfCloudIsEmpty: true)
         case NSUbiquitousKeyValueStoreQuotaViolationChange:
             logger.error("iCloud key-value storage is over its quota")
         default:
             if standard.bool(forKey: Self.didInitialMergeKey) {
                 pull(keys.filter { changedKeys.contains($0.name) })
             } else {
-                mergeAll()
+                // iCloud just delivered data, so this is the first download.
+                mergeAll(evenIfCloudIsEmpty: true)
             }
         }
     }
 
-    /// Uploads synced values that changed locally since they were last seen.
+    /// Uploads synced values that changed locally since they were last seen. Does nothing until
+    /// this device has merged with iCloud, so an unmerged value can't replace another device's.
     func pushLocalChanges() {
+        guard standard.bool(forKey: Self.didInitialMergeKey) else { return }
+        var uploaded = false
         for key in keys {
             let value = defaults(for: key).object(forKey: key.name)
             guard !Self.isEqual(value, snapshot[key.name]) else { continue }
@@ -103,14 +114,28 @@ final class CloudSync {
             // Removed values aren't removed from iCloud, so a reset can't wipe other devices.
             if let value {
                 cloud.set(value, forKey: key.name)
+                uploaded = true
             }
+        }
+        if uploaded {
+            cloud.synchronize()
         }
     }
 
     // MARK: - Syncing
 
     /// Combines local and iCloud values by each key's rule and writes the result to both.
-    private func mergeAll() {
+    /// While iCloud has no valid value for any key and `evenIfCloudIsEmpty` is false, it only
+    /// records that it is waiting: iCloud's first download may not have arrived yet.
+    private func mergeAll(evenIfCloudIsEmpty: Bool) {
+        let cloudHasData = keys.contains { key in
+            cloud.object(forKey: key.name).map { CloudSyncMerge.isValid($0, for: key.rule) } ?? false
+        }
+        guard cloudHasData || evenIfCloudIsEmpty else {
+            standard.set(true, forKey: Self.awaitingFirstDownloadKey)
+            return
+        }
+
         var changed: Set<String> = []
         for key in keys {
             let defaults = defaults(for: key)
@@ -123,9 +148,10 @@ final class CloudSync {
                 recentsCapacity: RecentsStore.capacity
             ) else { continue }
 
+            // Snapshot first, so the change notification doesn't upload it again, and so values
+            // changed locally while waiting aren't uploaded again by the next notification.
+            snapshot[key.name] = merged
             if !Self.isEqual(merged, local) {
-                // Snapshot first, so the change notification doesn't upload it again.
-                snapshot[key.name] = merged
                 defaults.set(merged, forKey: key.name)
                 changed.insert(key.name)
             }
@@ -134,6 +160,7 @@ final class CloudSync {
             }
         }
         standard.set(true, forKey: Self.didInitialMergeKey)
+        standard.removeObject(forKey: Self.awaitingFirstDownloadKey)
         if !changed.isEmpty {
             onRemoteChange(changed)
         }
@@ -184,7 +211,7 @@ final class CloudSync {
     private func observeCloudChanges() {
         let observer = NotificationCenter.default.addObserver(
             forName: NSUbiquitousKeyValueStore.didChangeExternallyNotification,
-            object: nil,
+            object: cloud,
             queue: nil
         ) { [weak self] notification in
             guard let self else { return }

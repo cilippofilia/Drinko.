@@ -85,7 +85,7 @@ class Favorites {
 
     private func save() {
         // Write out our favorite cocktails data
-        guard let data = try? JSONEncoder().encode(cocktails) else {
+        guard let data = try? JSONEncoder().encode(cocktails.sorted()) else {
             print("Warning: Unable to save favorite cocktails")
             return
         }
