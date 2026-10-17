@@ -136,21 +136,12 @@ struct CocktailDetailView: View {
         #endif
         .toolbar {
             ToolbarItem(placement: toolbarPlacement) {
-                if let message = CocktailShareMessage.text(for: activeCocktail) {
-                    ShareLink(
-                        item: shareItem,
-                        message: Text(message),
-                        preview: SharePreview(activeCocktail.name, image: Image("logo"))
-                    ) {
-                        Label("Share Recipe Card", systemImage: "square.and.arrow.up")
-                    }
-                } else {
-                    ShareLink(
-                        item: shareItem,
-                        preview: SharePreview(activeCocktail.name, image: Image("logo"))
-                    ) {
-                        Label("Share Recipe Card", systemImage: "square.and.arrow.up")
-                    }
+                ShareLink(
+                    item: shareItem,
+                    message: CocktailShareMessage.text(for: activeCocktail).map { Text($0) },
+                    preview: SharePreview(activeCocktail.name, image: Image("logo"))
+                ) {
+                    Label("Share Recipe Card", systemImage: "square.and.arrow.up")
                 }
             }
             if viewModel.isUserCreated(activeCocktail) {
