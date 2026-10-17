@@ -129,4 +129,33 @@ struct FavoritesTests {
         #expect(!favorites.contains(cocktail))
         #expect(!favorites.contains(otherCocktail))
     }
+
+    @Test("reload picks up favorites written directly to the store")
+    func reloadPicksUpFavoritesWrittenToTheStore() throws {
+        let suites = makeSuites()
+        defer { suites.tearDown() }
+
+        let favorites = Favorites(store: suites.suite, legacy: suites.legacy)
+        #expect(!favorites.contains(cocktail))
+
+        suites.suite.set(try JSONEncoder().encode(Set(["negroni"])), forKey: "Cocktails")
+        favorites.reload()
+
+        #expect(favorites.contains(cocktail))
+        #expect(!favorites.contains(otherCocktail))
+    }
+
+    @Test("reload keeps the current favorites when the stored data is unreadable")
+    func reloadIgnoresUnreadableData() {
+        let suites = makeSuites()
+        defer { suites.tearDown() }
+
+        let favorites = Favorites(store: suites.suite, legacy: suites.legacy)
+        favorites.add(cocktail)
+
+        suites.suite.set(Data("not json".utf8), forKey: "Cocktails")
+        favorites.reload()
+
+        #expect(favorites.contains(cocktail))
+    }
 }

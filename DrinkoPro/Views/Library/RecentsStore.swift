@@ -28,8 +28,13 @@ final class RecentsStore {
 
     init(defaults: UserDefaults = .standard) {
         self.defaults = defaults
+        reload()
+    }
+
+    /// Re-reads every namespace from `defaults`, e.g. after iCloud brought changes from another device.
+    func reload() {
         for namespace in Namespace.allCases {
-            let stored = defaults.stringArray(forKey: Self.key(for: namespace)) ?? []
+            let stored = defaults.stringArray(forKey: Self.storageKey(for: namespace)) ?? []
             idsByNamespace[namespace] = Array(stored.prefix(Self.capacity))
         }
     }
@@ -46,7 +51,7 @@ final class RecentsStore {
         ids.insert(id, at: 0)
         ids = Array(ids.prefix(Self.capacity))
         idsByNamespace[namespace] = ids
-        defaults.set(ids, forKey: Self.key(for: namespace))
+        defaults.set(ids, forKey: Self.storageKey(for: namespace))
     }
 
     /// Removes `id` from `namespace`, if present. Used e.g. when a user-created item is deleted.
@@ -54,10 +59,11 @@ final class RecentsStore {
         var ids = ids(in: namespace)
         ids.removeAll { $0 == id }
         idsByNamespace[namespace] = ids
-        defaults.set(ids, forKey: Self.key(for: namespace))
+        defaults.set(ids, forKey: Self.storageKey(for: namespace))
     }
 
-    private static func key(for namespace: Namespace) -> String {
+    /// The `UserDefaults` key holding `namespace`'s recents. Also synced to iCloud by `CloudSync`.
+    nonisolated static func storageKey(for namespace: Namespace) -> String {
         "recents.\(namespace.rawValue)"
     }
 }

@@ -72,6 +72,17 @@ class Favorites {
         save()
     }
 
+    // Re-reads favorites from the store, e.g. after iCloud brought changes from
+    // another device. Unreadable data keeps the current favorites. Doesn't toggle
+    // `hasEffect`, so remote changes don't animate the heart.
+    func reload() {
+        guard let data = store.data(forKey: saveKey),
+              let loaded = try? JSONDecoder().decode(Set<String>.self, from: data),
+              loaded != cocktails else { return }
+        cocktails = loaded
+        reloadWidget()
+    }
+
     private func save() {
         // Write out our favorite cocktails data
         guard let data = try? JSONEncoder().encode(cocktails) else {
@@ -80,8 +91,12 @@ class Favorites {
         }
         store.set(data, forKey: saveKey)
 
-        // Let the widget know favorites changed so a "Favorites Only" widget
-        // can pick up the new pool. This only fires on user add/remove.
+        reloadWidget()
+    }
+
+    // Let the widget know favorites changed so a "Favorites Only" widget can
+    // pick up the new pool.
+    private func reloadWidget() {
         #if os(iOS)
         WidgetCenter.shared.reloadTimelines(ofKind: AppGroup.widgetKind)
         #endif

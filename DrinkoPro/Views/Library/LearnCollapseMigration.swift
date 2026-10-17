@@ -24,7 +24,7 @@ enum LearnCollapseMigration {
     /// still removed, but not migrated.
     private static let retiredKeys = ["calculatorsCollapsed"]
 
-    private static let newKey = "learnCollapsedSections"
+    private static let newKey = CollapsedSections.learnStorageKey
 
     /// Builds the migrated `CollapsedSections`, or `nil` if there is nothing to migrate
     /// (the new key already exists, or none of the old keys were ever set to `true`).
