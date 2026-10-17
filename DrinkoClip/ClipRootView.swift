@@ -31,6 +31,11 @@ struct ClipRootView: View {
         .appStoreOverlay(isPresented: $showsInstallPrompt) {
             SKOverlay.AppClipConfiguration(position: .bottom)
         }
+        .task {
+            // Give the invocation URL a moment to arrive before giving up on it.
+            try? await Task.sleep(for: .seconds(1))
+            model.showMissingIfStillWaiting()
+        }
         .task(id: model.content) {
             guard model.content != .waiting else { return }
             try? await Task.sleep(for: .seconds(2))

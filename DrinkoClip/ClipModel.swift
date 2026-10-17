@@ -28,4 +28,12 @@ final class ClipModel {
             content = .missing
         }
     }
+
+    /// Falls back to the missing state when no link arrived, so a bare launch never waits forever.
+    /// Does nothing once a link has been opened.
+    func showMissingIfStillWaiting() {
+        if content == .waiting {
+            content = .missing
+        }
+    }
 }

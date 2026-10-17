@@ -14,7 +14,7 @@ struct ClipCocktailView: View {
     let cocktail: Cocktail
     let history: History?
     let procedure: Procedure?
-    /// Called when the reader scrolls to the end of the recipe.
+    /// Called when the reader scrolls to the bottom of a recipe long enough to scroll.
     let onReachEnd: () -> Void
 
     var body: some View {
@@ -64,10 +64,6 @@ struct ClipCocktailView: View {
                         }
                     )
                 }
-
-                Color.clear
-                    .frame(height: 1)
-                    .onAppear(perform: onReachEnd)
             }
             .padding(.horizontal)
             .frame(maxWidth: 700)
@@ -76,6 +72,12 @@ struct ClipCocktailView: View {
         .navigationTitle(cocktail.name)
         .navigationBarTitleDisplayMode(.inline)
         .scrollIndicators(.hidden, axes: .vertical)
+        .onScrollGeometryChange(for: Bool.self) { geometry in
+            geometry.contentSize.height > geometry.containerSize.height
+                && geometry.visibleRect.maxY >= geometry.contentSize.height - 1
+        } action: { _, reachedEnd in
+            if reachedEnd { onReachEnd() }
+        }
     }
 
     private func toggle(_ section: String) {
