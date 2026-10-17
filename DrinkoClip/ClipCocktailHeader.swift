@@ -10,12 +10,16 @@ import SwiftUI
 struct ClipCocktailHeader: View {
     let cocktail: Cocktail
 
+    private var tint: String? {
+        MainSpirit(ingredients: cocktail.ingredients)?.colorName
+    }
+
     var body: some View {
         PolaroidFrame {
-            StickerImageView(
-                url: cocktail.stickerURL,
-                tint: MainSpirit(ingredients: cocktail.ingredients)?.colorName
-            )
+            StickerImageView(url: cocktail.stickerURL, tint: tint) {
+                // Offline, show the glass on the same tinted wash instead of an error.
+                TintedGlassArtwork(artwork: cocktail.glassArtwork, tint: tint)
+            }
             .frame(height: imageFrameHeight)
             .frame(maxWidth: .infinity)
             .accessibilityHidden(true)

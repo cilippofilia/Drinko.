@@ -353,6 +353,7 @@
 				"Image Helpers/ImageFailedToLoad.swift",
 				"Image Helpers/ImageSuccesful.swift",
 				"Image Helpers/StickerImageView.swift",
+				"Image Helpers/StickerMetrics.swift",
 				"Image Helpers/CachedRemoteImage.swift",
 				"Image Helpers/RemoteImageLoader.swift",
 			);
@@ -377,6 +378,8 @@
 				IngredientLine.swift,
 				IngredientsView.swift,
 				ProcedureView.swift,
+				TintedGlassArtwork.swift,
+				TintWash.swift,
 			);
 			target = 18ABAC03308370A600761368 /* DrinkoClip */;
 		};
