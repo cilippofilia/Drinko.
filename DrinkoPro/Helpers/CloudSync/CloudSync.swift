@@ -137,6 +137,7 @@ final class CloudSync {
         }
 
         var changed: Set<String> = []
+        var uploaded = false
         for key in keys {
             let defaults = defaults(for: key)
             let local = defaults.object(forKey: key.name)
@@ -157,7 +158,11 @@ final class CloudSync {
             }
             if !Self.isEqual(merged, remote) {
                 cloud.set(merged, forKey: key.name)
+                uploaded = true
             }
+        }
+        if uploaded {
+            cloud.synchronize()
         }
         standard.set(true, forKey: Self.didInitialMergeKey)
         standard.removeObject(forKey: Self.awaitingFirstDownloadKey)
