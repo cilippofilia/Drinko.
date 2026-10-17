@@ -1339,7 +1339,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrinkoClip/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = DrinkoPro;
+				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1380,7 +1380,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DrinkoClip/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = DrinkoPro;
+				INFOPLIST_KEY_CFBundleDisplayName = Drinko.;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

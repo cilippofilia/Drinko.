@@ -2,16 +2,20 @@
 //  DrinkoClipApp.swift
 //  DrinkoClip
 //
-//  Created by Filippo Cilia on 10/17/26.
-//
 
 import SwiftUI
 
 @main
 struct DrinkoClipApp: App {
+    @State private var model = ClipModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ClipRootView(model: model)
+                .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+                    guard let url = activity.webpageURL else { return }
+                    model.open(url)
+                }
         }
     }
 }
