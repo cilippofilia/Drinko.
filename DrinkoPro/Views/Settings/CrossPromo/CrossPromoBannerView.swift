@@ -6,11 +6,8 @@
 import PrivateAds
 import SwiftUI
 
-/// A persistent ambient banner ad for Filippo Cilia's other apps, refreshed each time this view
-/// appears. Pinned to the bottom of the Learn, Cabinet, Cocktails, Tools, and Settings tabs via
-/// `.crossPromoBanner()`.
+/// A banner ad for Filippo Cilia's other apps, refreshed each time it appears.
 struct CrossPromoBannerView: View {
-    /// The width in points of the widest iPhone screen (Pro Max).
     static let maxWidth: CGFloat = 440
 
     @Environment(RemoveAdsStore.self) private var removeAdsStore
@@ -31,8 +28,7 @@ struct CrossPromoBannerView: View {
                 )
                 .padding(.vertical)
                 .barAwareHorizontalPadding()
-                // Capped (padding included) at the widest iPhone screen, so the banner is the
-                // same size on iPad and Mac as on iPhone instead of stretching across the window.
+                // Capped at the widest iPhone screen, so it doesn't stretch across iPad and Mac windows.
                 .frame(maxWidth: Self.maxWidth)
             }
         }

@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// The Tools tab: calculators and other bar utilities.
 struct ToolsView: View {
     #if os(iOS)
     @State private var path: [Selection] = []
@@ -47,7 +46,6 @@ struct ToolsView: View {
         #endif
     }
 
-    /// Opens `item`: pushes it on iOS, shows it in the detail column on macOS.
     private func select(_ item: Selection) {
         #if os(iOS)
         path = [item]

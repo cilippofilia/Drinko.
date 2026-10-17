@@ -8,9 +8,7 @@ import SwiftUI
 
 extension CocktailsViewModel {
     /// The current cocktail list as library sections, using the active sort, search, filter and source.
-    ///
-    /// Groups the cocktails once, then only sorts the resulting keys, instead of grouping twice
-    /// (once directly, once again inside `sortedSectionKeys`).
+    /// Groups the cocktails once, then only sorts the keys.
     func librarySections(
         filterOption: FilterOption,
         source: CocktailListSource = .userAndApp,
@@ -23,17 +21,13 @@ extension CocktailsViewModel {
         }
     }
 
-    /// Display data for a cocktail: title only, a sticker for app cocktails (or a photo for the
-    /// few without one), glass artwork for the user's own, and a heart when it's a favorite.
+    /// A sticker for app cocktails (or a photo for the few without one), and glass artwork for
+    /// the user's own.
     func cardModel(for cocktail: Cocktail, isFavorite: Bool = false) -> LibraryCardModel {
         LibraryCardModel(title: cocktail.name, image: libraryImage(for: cocktail), imageContentMode: .fit, isFavorite: isFavorite)
     }
 
     /// Maps stored recent IDs back to cocktails, keeping order and dropping deleted ones.
-    ///
-    /// Looks up bundled drinks in the cached id → cocktail dictionary first (bundled cocktails
-    /// never change, so that dictionary is built once), then falls back to `userCocktails`, which
-    /// can change as the user edits or deletes their own cocktails.
     func recentItems(from ids: [String]) -> [Cocktail] {
         let bundledDrinksByID = bundledDrinksByID
         return ids.compactMap { id in
@@ -47,8 +41,7 @@ extension CocktailsViewModel {
         recentItems(from: ids).filter { hasPicture($0) }
     }
 
-    /// Sorts already-grouped keys by `sortOption`, keeping "#" last for A→Z/Z→A. Shared by
-    /// `sortedSectionKeys` and `librarySections` so grouping only happens once per call.
+    /// Sorts already-grouped keys by `sortOption`, keeping "#" last for A→Z/Z→A.
     func sortSectionKeys(_ keys: [String]) -> [String] {
         let sortedKeys: [String]
         switch sortOption {
@@ -81,8 +74,7 @@ extension CocktailsViewModel {
     }
 
     /// The card tint for `cocktail`: its main spirit's color, or for the user's own cocktails
-    /// without one, the color they picked. The spirit lookup is cached per id since bundled
-    /// cocktails never change and it folds over ~40 ingredient-name fragments.
+    /// without one, the color they picked. The spirit lookup is cached per id.
     func stickerTint(for cocktail: Cocktail) -> String? {
         let spirit: MainSpirit?
         if let cached = stickerTintCache[cocktail.id] {

@@ -5,8 +5,7 @@
 
 import SwiftUI
 
-/// The small uppercase label at the top of the recents band, naming the screen and the list
-/// ("Cocktails · Last Viewed").
+/// "Cocktails · Last Viewed".
 struct RecentsHeroHeader: View {
     let title: String
     let textColor: Color

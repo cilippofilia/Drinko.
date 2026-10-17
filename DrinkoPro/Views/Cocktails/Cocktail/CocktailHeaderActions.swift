@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-/// The icons in line with the cocktail name in the header: History (only when the cocktail
-/// has some) and Favorite.
 struct CocktailHeaderActions: View {
     let cocktail: Cocktail
     let history: History?
@@ -37,8 +35,6 @@ struct CocktailHeaderActions: View {
     }
 }
 
-/// Bare icons in line with the cocktail name, with a full-size tap target and a dimmed
-/// pressed state.
 private struct HeaderIconButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

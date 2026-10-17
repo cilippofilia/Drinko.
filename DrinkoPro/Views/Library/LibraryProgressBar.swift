@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// The optional completion bar shown under library thumbnails and cards.
 struct LibraryProgressBar: View {
     let progress: Double
 

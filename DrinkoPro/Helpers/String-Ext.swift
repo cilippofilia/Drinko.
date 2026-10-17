@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// String extension that capitalizes the first letter of a word
 extension String {
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()

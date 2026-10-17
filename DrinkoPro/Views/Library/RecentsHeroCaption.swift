@@ -5,17 +5,13 @@
 
 import SwiftUI
 
-/// The centred item's name as a plain caption under the recents carousel.
-///
-/// It stays on one line, shrinking a long name to fit, so the band keeps one height whatever
-/// the name's length.
-/// When the centred item changes, the text rolls into the new name; with Reduce Motion it
-/// cross-fades.
+/// The centred item's name under the recents carousel. It stays on one line, so the band keeps
+/// one height.
 struct RecentsHeroCaption<HeroID: Hashable>: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     let text: String
-    /// Identifies the item the text names, so a change animates the text into the new name.
+    /// A change animates the text into the new name.
     let heroID: HeroID?
     let textColor: Color
 

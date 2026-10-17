@@ -26,8 +26,7 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
         }
     }
 
-    /// The cocktail's sticker: the drink cut out with a white border on a transparent
-    /// background. `nil` for the user's own cocktails.
+    /// `nil` for the user's own cocktails.
     var stickerURL: URL? {
         guard !isUserCreated else { return nil }
         let name = Self.stickerNames[id] ?? id
@@ -53,13 +52,10 @@ struct Cocktail: Codable, Equatable, Identifiable, Hashable {
         }
     }
 
-    /// Whether this cocktail was created by the user, as opposed to being one of the app's
-    /// bundled drinks.
     var isUserCreated: Bool {
         id.hasPrefix("user-")
     }
 
-    /// Whether the cocktail's name or any of its ingredients contains the query.
     func matches(_ query: String) -> Bool {
         name.localizedStandardContains(query)
             || ingredients.contains { $0.name.localizedStandardContains(query) }
@@ -78,7 +74,6 @@ enum SortOption: CaseIterable {
     case byGlass
     case byIce
 
-    /// The localized title shown for this option in the sort picker.
     var title: LocalizedStringKey {
         switch self {
         case .fromAtoZ:
@@ -138,4 +133,11 @@ public struct IngredientDraft {
     var name = ""
     var quantity = ""
     var unit: String
+}
+
+extension MainSpirit {
+    @MainActor
+    init?(ingredients: [Ingredient]) {
+        self.init(pours: ingredients.map { (name: $0.name, milliliters: $0.mlQuantity) })
+    }
 }

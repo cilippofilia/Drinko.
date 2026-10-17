@@ -14,7 +14,6 @@ enum CocktailListSource: String, CaseIterable, Identifiable {
     case appOnly
     case userOnly
 
-    /// The `@AppStorage` key the preference is saved under.
     static let storageKey = "cocktailListSource"
 
     var id: Self { self }

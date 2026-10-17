@@ -13,7 +13,6 @@ struct HomeView: View {
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     @Environment(RemoveAdsStore.self) private var removeAdsStore
-    // SceneStorage is used to keep track of what tab was last used before closing the app
     @SceneStorage("selectedView") var selectedView: String?
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
@@ -50,9 +49,8 @@ struct HomeView: View {
                 SettingsView()
             }
 
-            // The sidebar-only groups below only make sense once there's a sidebar to put them
-            // in. In a compact (bottom tab bar) layout they'd otherwise all count toward the
-            // tab bar, pushing the real tabs into an unwanted "More" overflow page.
+            // In the compact tab bar these groups would count as tabs and push the real ones into
+            // a "More" page.
             if AppTab.sidebarRowsAvailable(horizontalSizeClass: horizontalSizeClass) {
                 // `.sidebarOnly` on the rows alone doesn't hide a section: it would still show up in
                 // the floating tab bar as an extra item after Settings.
@@ -136,10 +134,8 @@ struct HomeView: View {
             CrossPromoRemoveAdsInfoView()
                 .presentationDetents([.medium])
         }
-        // Restore the last-used tab from the previous session. Only applies while
-        // `selectedTab` is still at its untouched default, so it never clobbers a deep link
-        // (`AppNavigationModel.handle(url:)`) that already selected a tab before this view
-        // first appeared.
+        // Only restores while `selectedTab` is untouched, so it never clobbers a deep link
+        // that selected a tab before this view appeared.
         .onAppear {
             if appNavigationModel.selectedTab == .learn, let selectedView, let tab = AppTab(rawValue: selectedView) {
                 appNavigationModel.selectedTab = tab
@@ -155,16 +151,12 @@ struct HomeView: View {
         .onChange(of: horizontalSizeClass) {
             fitSelection()
         }
-        // A selected Cabinet category row disappears when the category is deleted.
         .onChange(of: categories.map(\.id)) {
             fitSelection()
         }
-        // A PrivateAds cross-promo ad every 5th interaction bump (favoriting a cocktail or
-        // product, creating a user cocktail, or adding a cabinet category — see
-        // `CrossPromoSignal`). Lives here rather than on any one tab since the triggering
-        // action can happen from Cocktails or Cabinet; `.fullScreenCover` presents over the
-        // whole window regardless of which tab is active. Fetched directly (rather than via
-        // PrivateAds's own `.showAd(when:)`) so a failed fetch can't get the trigger stuck.
+        // Lives here so the ad covers whichever tab triggered it (see `CrossPromoSignal`). Fetched
+        // directly rather than via PrivateAds's `.showAd(when:)` so a failed fetch can't get the
+        // trigger stuck.
         .fullScreenCover(item: $interstitialAd) { ad in
             AdView(advert: ad, config: .crossPromo) {
                 CrossPromoRemoveAdsInfoView()
@@ -210,7 +202,6 @@ struct HomeView: View {
         }
     }
 
-    // Get current Version of the App
     func getCurrentAppVersion() -> String {
         guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
             return "Unknown"

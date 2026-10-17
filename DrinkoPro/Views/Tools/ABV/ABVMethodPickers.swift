@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// Lets the person choose the mixing method and serving used for an ABV calculation.
 struct ABVMethodPickers: View {
     @Binding var method: MixingMethod
     @Binding var serving: Serving

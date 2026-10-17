@@ -33,7 +33,6 @@ enum MainSpirit: CaseIterable {
         }
     }
 
-    /// The family's name as shown to the user.
     var displayName: String {
         switch self {
         case .vodka: String(localized: "Vodka")
@@ -48,7 +47,6 @@ enum MainSpirit: CaseIterable {
         }
     }
 
-    /// Spirits beat liqueurs, which beat juices, which beat syrups.
     private var rank: Int {
         switch self {
         case .vodka, .gin, .whiskey, .rum, .tequila, .cognac: 0
@@ -58,16 +56,15 @@ enum MainSpirit: CaseIterable {
         }
     }
 
-    /// The main spirit of a drink: the best-ranked family among its ingredients, and within that
-    /// rank the one poured in the largest amount (the first listed on a tie). `nil` when no
-    /// ingredient belongs to a family, such as a wine-based drink.
-    @MainActor
-    init?(ingredients: [Ingredient]) {
+    /// The best-ranked family among the pours, and within that rank the one poured in the largest
+    /// amount (the first listed on a tie). `nil` when no pour belongs to a family, such as a
+    /// wine-based drink. Takes plain pours so the widget, which has no `Ingredient`, can share it.
+    init?(pours: [(name: String, milliliters: Double)]) {
         var best: (spirit: MainSpirit, amount: Double)?
 
-        for ingredient in ingredients {
-            guard let spirit = MainSpirit(ingredientName: ingredient.name) else { continue }
-            let amount = ingredient.mlQuantity
+        for pour in pours {
+            guard let spirit = MainSpirit(ingredientName: pour.name) else { continue }
+            let amount = pour.milliliters
 
             if let current = best {
                 let outranks = spirit.rank < current.spirit.rank

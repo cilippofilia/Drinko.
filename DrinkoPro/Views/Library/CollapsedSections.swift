@@ -5,12 +5,9 @@
 
 import Foundation
 
-/// The IDs of collapsed library sections, storable in `@AppStorage`.
 struct CollapsedSections: RawRepresentable, Equatable {
-    /// `@AppStorage` key for the Learn library's collapsed sections.
     static let learnStorageKey = "learnCollapsedSections"
 
-    /// `@AppStorage` key for the Cocktails library's collapsed sections.
     static let cocktailsStorageKey = "cocktailsCollapsedSections"
 
     private var ids: Set<String>
@@ -19,7 +16,7 @@ struct CollapsedSections: RawRepresentable, Equatable {
         ids = []
     }
 
-    /// Decodes a JSON array of IDs. Invalid data yields an empty set rather than failing.
+    /// Invalid data yields an empty set rather than failing.
     init?(rawValue: String) {
         let decoded = try? JSONDecoder().decode(Set<String>.self, from: Data(rawValue.utf8))
         ids = decoded ?? []
@@ -34,7 +31,7 @@ struct CollapsedSections: RawRepresentable, Equatable {
         ids.contains(id)
     }
 
-    /// Whether a section should render collapsed. Searching always shows every section expanded.
+    /// Searching always shows every section expanded.
     func isCollapsed(_ id: String, whileSearching isSearching: Bool) -> Bool {
         !isSearching && contains(id)
     }

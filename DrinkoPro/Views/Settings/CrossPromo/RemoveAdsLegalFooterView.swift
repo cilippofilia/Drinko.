@@ -5,9 +5,6 @@
 
 import SwiftUI
 
-/// The Restore Purchase / Terms of Use / Privacy Policy row, pinned to the bottom of
-/// `CrossPromoRemoveAdsInfoView` via `.safeAreaInset(edge: .bottom)` so it stays on screen
-/// rather than scrolling away with the rest of the paywall.
 struct RemoveAdsLegalFooterView: View {
     @Environment(\.openURL) private var openURL
 

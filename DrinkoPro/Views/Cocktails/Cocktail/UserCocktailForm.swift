@@ -304,7 +304,6 @@ extension UserCocktailForm {
         .between(originalPhotoData, photoData)
     }
 
-    /// What saving should do with the sticker, the same way.
     private var stickerChange: UserCocktailDetails.PhotoChange {
         .between(originalStickerData, stickerData)
     }

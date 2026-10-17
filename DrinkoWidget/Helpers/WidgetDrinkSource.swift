@@ -7,9 +7,7 @@
 
 import Foundation
 
-// AppIntents-free representation of the widget's content source, so the pure
-// pool/pick logic below can be unit tested from the app target without
-// linking AppIntents.
+// Free of AppIntents so the pool and pick logic can be unit tested from the app target.
 enum WidgetDrinkSource: String, CaseIterable, Sendable {
     case allDrinks
     case cocktailsOnly
@@ -18,9 +16,8 @@ enum WidgetDrinkSource: String, CaseIterable, Sendable {
 }
 
 extension DrinkoWidgetCatalog {
-    // Builds the pool of drinks the widget can pick from for a given source.
-    // "Favorites Only" with no favorites (or no matching IDs) falls back to
-    // every cocktail and shot, so the widget never renders blank.
+    // "Favorites Only" with no matching favorites falls back to every cocktail and shot,
+    // so the widget never renders blank.
     static func pool(
         for source: WidgetDrinkSource,
         cocktails: [WidgetCocktail],
@@ -43,9 +40,8 @@ extension DrinkoWidgetCatalog {
         }
     }
 
-    // Deterministically picks "today's" drink from a pool, using the day's
-    // ordinal position in the calendar era so the same pool always yields the
-    // same drink on a given day, and consecutive days advance through it.
+    // Indexes by the day's ordinal in the era, so a given day always yields the same drink
+    // and consecutive days step through the pool.
     static func dailyPick(
         from pool: [WidgetCocktail],
         on date: Date,

@@ -7,8 +7,7 @@
 import SwiftUI
 import UIKit
 
-/// The system camera, for taking a photo of a cocktail. SwiftUI has no camera view, so this
-/// wraps `UIImagePickerController`; it's the only UIKit in the photo feature.
+/// SwiftUI has no camera view, so this wraps `UIImagePickerController`.
 struct CameraPicker: UIViewControllerRepresentable {
     @Environment(\.dismiss) private var dismiss
 

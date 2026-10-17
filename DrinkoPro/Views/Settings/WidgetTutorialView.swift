@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// A short, step-by-step guide that walks users through adding the
-// "Cocktail of the Day" widget to their Home Screen and customizing it.
 struct WidgetTutorialView: View {
     var body: some View {
         ScrollView {
@@ -61,7 +59,6 @@ struct WidgetTutorialView: View {
     }
 }
 
-// The header art and one-line pitch shown above the numbered steps.
 private struct WidgetTutorialHeaderView: View {
     var body: some View {
         VStack {
@@ -79,7 +76,6 @@ private struct WidgetTutorialHeaderView: View {
     }
 }
 
-// A single numbered step, paired with an SF Symbol illustrating the action.
 private struct TutorialStepRow: View {
     let number: Int
     let icon: String

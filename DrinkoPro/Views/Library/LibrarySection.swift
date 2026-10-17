@@ -5,9 +5,8 @@
 
 import Foundation
 
-/// A titled group of items shown by `LibraryView`.
 struct LibrarySection<Item: Identifiable & Hashable>: Identifiable, Hashable {
-    /// Stable identifier, also used to persist the collapsed state.
+    /// Persists the collapsed state, so keep it stable.
     let id: String
     var title: String
     var items: [Item]

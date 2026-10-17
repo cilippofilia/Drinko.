@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// How a cocktail is served, which affects how much dilution it picks up.
 enum Serving: CaseIterable, Identifiable {
     case up
     case rocks

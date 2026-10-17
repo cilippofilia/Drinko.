@@ -7,7 +7,6 @@
 
 import Foundation
 
-/// A single ingredient contributing volume and alcohol content to an ABV calculation.
 struct Bottle: Identifiable {
     let id = UUID()
     var name: String = ""

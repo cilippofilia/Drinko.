@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-/// A single ingredient row for the ABV calculator: its name, amount and alcohol by volume.
 struct ABVIngredientRow: View {
     @Binding var bottle: Bottle
     var isFocused: FocusState<Bool>.Binding

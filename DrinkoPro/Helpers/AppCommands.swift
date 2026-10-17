@@ -5,10 +5,9 @@
 
 import SwiftUI
 
-/// The iPadOS and macOS menu bar (and the iPadOS hold-⌘ shortcut list): File › New… and
-/// View › section shortcuts. On macOS ⌘N already opens a new window, so New Cocktail uses ⌥⌘N
-/// there. Everything routes through `AppNavigationModel`, so a command behaves like tapping
-/// the matching tab or toolbar button.
+/// The iPadOS and macOS menu bar. On macOS ⌘N already opens a new window, so New Cocktail uses
+/// ⌥⌘N there. Commands go through `AppNavigationModel`, so they behave like tapping the
+/// matching tab or toolbar button.
 struct AppCommands: Commands {
     let appNavigationModel: AppNavigationModel
 

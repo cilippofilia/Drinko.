@@ -10,8 +10,7 @@ import SwiftUI
 struct LearnView: View {
     @Environment(RecentsStore.self) private var recentsStore
 
-    /// When set, the page shows only this library section (a sidebar row) and hides the
-    /// recents deck. `nil` shows the whole library.
+    /// When set, the page shows only this library section and hides the recents deck.
     private let sectionID: String?
 
     #if os(iOS)
@@ -66,8 +65,7 @@ struct LearnView: View {
             }
     }
 
-    /// Opens `item`: pushes it on iOS, shows it in the detail column on macOS. It's recorded
-    /// as recent once the selection settles (see the `.task(id:)` in `body`).
+    /// Recorded as recent once the selection settles (see the `.task(id:)` in `body`).
     private func select(_ item: Selection) {
         #if os(iOS)
         path = [item]

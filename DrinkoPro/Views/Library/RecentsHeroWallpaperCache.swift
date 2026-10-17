@@ -6,19 +6,14 @@
 import CoreImage
 import Foundation
 
-/// Makes and remembers the blurred photos behind the recents band.
-///
-/// The photo is fetched at a tiny size and blurred once with Core Image, off the main actor,
-/// so the band never runs a live Gaussian blur over a full-height view while it scrolls. The
-/// results are cached per URL, and concurrent requests for the same URL share one task.
+/// Blurs the recents band's photos once, at a tiny size, so the band never runs a live blur
+/// while it scrolls.
 actor RecentsHeroWallpaperCache {
     static let shared = RecentsHeroWallpaperCache()
 
-    /// The longest side, in pixels, the photo is decoded at. The blur throws the detail away
-    /// anyway, and a small image is cheap to blur and to keep.
+    /// The blur throws the detail away anyway, and a small image is cheap to blur and keep.
     private let sourcePixelSize = 48
-    /// The blur radius, in pixels of the small image. It dissolves the photo into a wash of
-    /// its colors.
+    /// In pixels of the small image.
     private let blurRadius = 3.0
     /// Evicts the oldest wallpaper beyond this many.
     private let maxCachedWallpapers = 20
@@ -28,7 +23,6 @@ actor RecentsHeroWallpaperCache {
     private var cacheOrder: [URL] = []
     private var inFlight: [URL: Task<CGImage?, Never>] = [:]
 
-    /// The blurred wallpaper for the photo at `url`, or `nil` if it couldn't be loaded.
     func wallpaper(for url: URL) async -> CGImage? {
         if let cached = cache[url] { return cached }
         if let task = inFlight[url] { return await task.value }
@@ -54,8 +48,7 @@ actor RecentsHeroWallpaperCache {
         }
     }
 
-    /// Blurs `image`, clamping its edges first so the blur doesn't fade to transparent at the
-    /// borders, then crops back to the original size.
+    /// Clamps the edges first so the blur doesn't fade to transparent at the borders.
     private func blurred(_ image: CGImage) -> CGImage? {
         let input = CIImage(cgImage: image)
         let output = input

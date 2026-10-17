@@ -5,17 +5,15 @@
 
 import SwiftUI
 
-/// Glass artwork (an asset or SF Symbol) on the stickers' tint wash, for cocktails without a
-/// sticker or photo, like the user's own.
+/// For cocktails without a sticker or photo, like the user's own.
 struct TintedGlassArtwork: View {
     let artwork: LibraryImage
     let tint: String?
 
-    /// How much of the frame the glass fills, leaving room for the name below it.
+    /// Leaves room for the name below the glass.
     private let insetScale = 0.6
 
-    /// The artwork to draw: when handed already tinted `.glass`, the glass inside it, so the
-    /// wash isn't nested.
+    /// Unwraps already-tinted `.glass`, so the wash isn't nested.
     private var glassArtwork: LibraryImage {
         if case .glass(let inner, _) = artwork { inner } else { artwork }
     }

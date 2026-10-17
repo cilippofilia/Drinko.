@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-/// A single row inside a cocktail's detail list (its method, glass, garnish, ice, or extra),
-/// showing a localized label and the matching value pulled from a `Cocktail`.
 struct CocktailDetailSectionView: View {
     enum Kind {
         case method
@@ -17,7 +15,6 @@ struct CocktailDetailSectionView: View {
         case ice
         case extra
 
-        /// The localized label shown before the value.
         var title: LocalizedStringKey {
             switch self {
             case .method:
@@ -33,7 +30,6 @@ struct CocktailDetailSectionView: View {
             }
         }
 
-        /// The raw value pulled from `cocktail` for this detail kind.
         func value(for cocktail: Cocktail) -> String {
             switch self {
             case .method:

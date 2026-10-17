@@ -5,8 +5,7 @@
 
 import SwiftUI
 
-/// The heart on a favorite in the recents carousel: red on a white circle, so it reads on any
-/// artwork or band color behind it.
+/// On a white circle, so it reads on any artwork or band color.
 struct RecentsHeroFavoriteBadge: View {
     var body: some View {
         Image(systemName: "heart.fill")

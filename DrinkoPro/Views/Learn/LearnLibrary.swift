@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// The Learn library column: searchable lessons and books, with the layout toggle in the toolbar.
 struct LearnLibrary: View {
     @Environment(LessonsViewModel.self) private var viewModel
     @Environment(RecentsStore.self) private var recentsStore
@@ -16,7 +15,6 @@ struct LearnLibrary: View {
 
     /// When set, the page shows only this library section and hides the recents deck.
     let sectionID: String?
-    /// The item currently shown, highlighted in the library.
     let selection: LearnView.Selection?
     let onSelect: @MainActor (LearnView.Selection) -> Void
 

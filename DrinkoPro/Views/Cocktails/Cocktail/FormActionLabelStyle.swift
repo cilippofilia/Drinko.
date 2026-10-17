@@ -5,9 +5,8 @@
 
 import SwiftUI
 
-/// An action row in a form: the title in the primary text color, so the rows read like the rest
-/// of the form, with only the icon colored to mark it as tappable. Destructive rows keep the
-/// system style, all in red.
+/// A form action row with a primary-colored title, so it reads like the rest of the form, and
+/// only the icon tinted. Destructive rows keep the system style.
 struct FormActionLabelStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
         Label {
@@ -25,7 +24,6 @@ struct FormActionLabelStyle: LabelStyle {
 }
 
 extension LabelStyle where Self == FormActionLabelStyle {
-    /// A form action row with a tinted icon and primary-colored title.
     static var formAction: FormActionLabelStyle {
         FormActionLabelStyle()
     }

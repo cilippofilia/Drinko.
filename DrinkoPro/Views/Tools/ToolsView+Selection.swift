@@ -8,12 +8,11 @@
 import Foundation
 
 extension ToolsView {
-    /// The item shown in the detail column of the Tools split view.
     nonisolated enum Selection: Hashable, Identifiable {
         case abvCalculator
         case superjuice(String)
 
-        /// A stable string identity, used for persistence.
+        /// Persisted, so keep it stable.
         var id: String {
             switch self {
             case .abvCalculator: "abv"
@@ -21,7 +20,6 @@ extension ToolsView {
             }
         }
 
-        /// The tool whose `id` is `id`, or `nil` when no current tool has that ID.
         init?(id: String) {
             guard let match = ToolsLibrary.calculatorItems.first(where: { $0.id == id }) else { return nil }
             self = match

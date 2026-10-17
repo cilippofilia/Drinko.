@@ -11,7 +11,6 @@ struct CloudSyncedKey: Equatable {
     enum Suite {
         /// `AppGroup.defaults`, shared with the widget.
         case appGroup
-        /// `UserDefaults.standard`.
         case standard
     }
 
@@ -29,7 +28,6 @@ struct CloudSyncedKey: Equatable {
     let suite: Suite
     let rule: Rule
 
-    /// Every value that syncs.
     static let all: [CloudSyncedKey] = [
         CloudSyncedKey(name: AppGroup.favoritesKey, suite: .appGroup, rule: .favorites),
         CloudSyncedKey(name: RecentsStore.storageKey(for: .learn), suite: .standard, rule: .recents),

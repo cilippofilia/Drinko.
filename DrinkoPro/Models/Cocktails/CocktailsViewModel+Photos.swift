@@ -7,12 +7,10 @@ import CoreGraphics
 import Foundation
 
 extension CocktailsViewModel {
-    /// Whether the user has added a photo to this cocktail.
     func hasPhoto(_ cocktail: Cocktail) -> Bool {
         cocktailIDsWithPhotos.contains(cocktail.id)
     }
 
-    /// Whether the user has turned this cocktail's photo into a sticker.
     func hasSticker(_ cocktail: Cocktail) -> Bool {
         cocktailIDsWithStickers.contains(cocktail.id)
     }
@@ -28,12 +26,10 @@ extension CocktailsViewModel {
         photoRevisions[id, default: 0]
     }
 
-    /// The stored photo, for prefilling the edit form.
     func photoData(for cocktail: Cocktail) -> Data? {
         userCreatedCocktails.first { $0.id == cocktail.id }?.photoData
     }
 
-    /// The stored sticker, for prefilling the edit form.
     func stickerData(for cocktail: Cocktail) -> Data? {
         userCreatedCocktails.first { $0.id == cocktail.id }?.stickerData
     }

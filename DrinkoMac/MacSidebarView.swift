@@ -6,10 +6,8 @@
 import SwiftData
 import SwiftUI
 
-/// The Mac window's sidebar: the main sections, then the cocktail filters, tools, Learn
-/// sections and Cabinet categories as their own rows, like the iPad sidebar.
-///
-/// Every page puts this in the first column of its own split view (see `MacHomePageView`).
+/// The Mac window's sidebar. Every page puts it in the first column of its own split view
+/// (see `MacHomePageView`).
 struct MacSidebarView: View {
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(RemoveAdsStore.self) private var removeAdsStore

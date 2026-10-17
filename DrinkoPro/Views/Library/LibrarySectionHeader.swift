@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// A tappable section title with a chevron that collapses or expands the section.
 struct LibrarySectionHeader: View {
     let title: String
     let isCollapsed: Bool
@@ -34,7 +33,6 @@ struct LibrarySectionHeader: View {
         .accessibilityHint(hint)
     }
 
-    /// The expanded/collapsed state, read out after the title.
     private var value: LocalizedStringKey {
         isEnabled ? CollapsibleSectionAccessibility.value(isCollapsed: isCollapsed) : ""
     }

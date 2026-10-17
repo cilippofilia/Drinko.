@@ -5,11 +5,8 @@
 
 import StoreKit
 
-/// Tracks entitlement for the one-time "Remove Ads" non-consumable purchase that silences the
-/// PrivateAds cross-promo ads (see `CrossPromoBannerView`). The purchase button itself is
-/// StoreKit's `ProductView` in `CrossPromoRemoveAdsInfoView` — this store only needs to know
-/// whether the entitlement is held, and to drive the restore flow that `ProductView` doesn't
-/// provide on its own.
+/// Tracks the "Remove Ads" entitlement and drives restoring it. `ProductView` handles the
+/// purchase itself.
 @MainActor
 @Observable
 final class RemoveAdsStore {
@@ -25,8 +22,8 @@ final class RemoveAdsStore {
     }
 
     init() {
-        // Held for the app's lifetime so Ask-to-Buy approvals, restores, and purchases made on
-        // another device are picked up even when no paywall is on screen.
+        // Held for the app's lifetime so Ask to Buy approvals and purchases on other devices are
+        // picked up when no paywall is on screen.
         transactionListenerTask = Task { [weak self] in
             await self?.listenForTransactionUpdates()
         }

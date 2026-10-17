@@ -12,7 +12,6 @@ enum CocktailUnitPreference: String, CaseIterable, Identifiable {
     case milliliters
     case ounces
 
-    /// The `@AppStorage` key the preference is saved under.
     static let storageKey = "cocktailUnitPreference"
 
     var id: Self { self }

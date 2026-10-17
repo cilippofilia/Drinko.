@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// The Cocktails toolbar menu: filter (unless the page has a preset filter) and sort.
 struct CocktailsOptionsMenu: View {
     @Environment(CocktailsViewModel.self) private var viewModel
 

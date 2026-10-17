@@ -19,7 +19,7 @@ struct StickerMakerTests {
         return (photo, mask)
     }
 
-    /// Every pixel of `image` as RGBA8 premultiplied, row 0 at the top.
+    /// RGBA8 premultiplied, row 0 at the top.
     private func pixels(of image: CGImage) throws -> [UInt8] {
         var pixels = [UInt8](repeating: 0, count: image.width * image.height * 4)
         let context = try #require(CGContext(

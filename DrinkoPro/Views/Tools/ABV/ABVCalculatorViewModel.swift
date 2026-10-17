@@ -7,8 +7,6 @@
 
 import Foundation
 
-/// Drives the ABV calculator: holds the ingredients, the chosen mixing method and serving,
-/// and exposes the resulting alcohol-by-volume percentage live as those inputs change.
 @MainActor
 @Observable
 final class ABVCalculatorViewModel {
@@ -16,21 +14,12 @@ final class ABVCalculatorViewModel {
     var method: MixingMethod = .built
     var serving: Serving = .up
 
-    /// Whether there is more than one ingredient, so the last one can never be removed.
+    /// The last ingredient can never be removed.
     var canRemoveIngredients: Bool {
         bottles.count > 1
     }
 
-    /// The dilution added by the chosen serving and mixing method combination.
-    ///
-    /// Built in the glass and served up adds no dilution, since there is no extra water from
-    /// shaking, stirring or ice. Every other combination dilutes the drink by a fixed amount:
-    /// - Up + Stirred: 25%
-    /// - Up + Shaken: 30%
-    /// - On the rocks + Stirred: 30%
-    /// - On the rocks + Shaken: 35%
-    /// - Crushed Ice + Shaken: 40%
-    /// - Everything else: no additional dilution
+    /// The water mixing adds, as a fraction of the drink's volume.
     var dilutionFactor: Double {
         switch (serving, method) {
         case (.up, .stir):
@@ -48,9 +37,7 @@ final class ABVCalculatorViewModel {
         }
     }
 
-    /// The overall ABV of the batch, as a percentage (for example `12.5` means 12.5%).
-    ///
-    /// Returns `0` when the total volume is zero, rather than dividing by zero.
+    /// A percentage, so `12.5` means 12.5%.
     var result: Double {
         let totalVolume = bottles.reduce(0) { $0 + $1.amount }
         guard totalVolume > 0 else { return 0 }
@@ -62,18 +49,16 @@ final class ABVCalculatorViewModel {
         return totalAlcohol / dilutedVolume * 100
     }
 
-    /// Adds a new, empty ingredient row.
     func addIngredient() {
         bottles.append(Bottle())
     }
 
-    /// Removes the ingredient with the given id, unless it is the only one left.
     func removeIngredient(id: Bottle.ID) {
         guard canRemoveIngredients else { return }
         bottles.removeAll { $0.id == id }
     }
 
-    /// The 1-based position of the ingredient with the given id, for accessibility values.
+    /// 1-based, for accessibility values.
     func ingredientNumber(for id: Bottle.ID) -> Int {
         (bottles.firstIndex { $0.id == id } ?? 0) + 1
     }

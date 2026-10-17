@@ -5,12 +5,10 @@
 
 import SwiftUI
 
-/// Snaps the recents carousel to an item, like `.viewAligned`, and reports the slot it will come
-/// to rest on as soon as the finger lifts, so the band can update before the deceleration ends.
+/// Like `.viewAligned`, but reports the slot it will rest on as soon as the finger lifts, so the
+/// band can update before the deceleration ends.
 struct RecentsHeroSnapBehavior: ScrollTargetBehavior {
-    /// The width of one slot.
     let itemWidth: Double
-    /// Called with the slot the scroll will end on.
     let onTarget: @MainActor (Int) -> Void
 
     func updateTarget(_ target: inout ScrollTarget, context: TargetContext) {

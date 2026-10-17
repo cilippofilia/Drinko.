@@ -5,7 +5,6 @@
 
 import SwiftUI
 
-/// A collapsible section showing its items as a list or a grid.
 struct LibrarySectionView<Item: Identifiable & Hashable, MenuContent: View>: View {
     @ScaledMetric private var gridMinimumWidth: CGFloat = 140
 
@@ -75,7 +74,6 @@ struct LibrarySectionView<Item: Identifiable & Hashable, MenuContent: View>: Vie
 }
 
 #if DEBUG
-/// A minimal `Identifiable` item for previews.
 private struct PreviewItem: Identifiable, Hashable {
     let id: String
 }

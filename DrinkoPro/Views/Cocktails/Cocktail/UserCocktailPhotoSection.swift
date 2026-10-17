@@ -5,8 +5,6 @@
 
 import SwiftUI
 
-/// The Photo section of the create/edit cocktail forms: a preview of the photo, a menu to
-/// take or choose one, a way to remove it, and a toggle that turns it into a sticker.
 /// Edits drafts; the form saves them.
 struct UserCocktailPhotoSection: View {
     @Binding var photoData: Data?
@@ -22,7 +20,6 @@ struct UserCocktailPhotoSection: View {
     @State private var stickerError: LocalizedStringResource?
     @State private var confirmsRemovingPhoto = false
 
-    /// The preview's height in the form.
     @ScaledMetric private var previewHeight: CGFloat = 180
 
     init(photoData: Binding<Data?>, stickerData: Binding<Data?>, isMakingSticker: Binding<Bool>) {
@@ -129,7 +126,6 @@ struct UserCocktailPhotoSection: View {
         }
     }
 
-    /// Clears the photo and everything made from it.
     private func removePhoto() {
         photoData = nil
         stickerData = nil
@@ -141,10 +137,9 @@ struct UserCocktailPhotoSection: View {
         isMakingSticker = false
     }
 
-    /// Makes the sticker when the toggle is on and there isn't one for this photo yet, or drops
-    /// it when the toggle is off. Runs again whenever the photo or toggle changes, which cancels
-    /// a sticker still being made for the old one. SwiftUI cancels the old run only on the next
-    /// view update, so a late result is also dropped if the photo or toggle changed meanwhile.
+    /// Runs again whenever the photo or toggle changes, cancelling a sticker still being made for
+    /// the old one. SwiftUI cancels the old run only on the next view update, so a late result is
+    /// also dropped if the photo or toggle changed meanwhile.
     private func updateSticker() async {
         guard makesSticker, let photoData else {
             stickerData = nil

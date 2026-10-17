@@ -7,15 +7,9 @@
 
 import SwiftUI
 
-/// Displays a remote image using `RemoteImageLoader`, keeping the decoded image in `@State` so
-/// re-appearing rows (or a detail pane rebuilt via `.id(selection)`) do not flash a `ProgressView`
-/// or re-download an image already held by the loader's in-memory cache.
-///
-/// The image is requested at a pixel size derived from the space the view is given (read via
-/// `onGeometryChange`, not `GeometryReader`) multiplied by the display scale, so a 45pt row
-/// thumbnail never decodes a full-size source image. With `.fill`, the image's shorter side is
-/// sized to cover that space, so cropping a wide photo doesn't stretch it. The view always fills
-/// that space, so give it a frame.
+/// Displays a remote image through `RemoteImageLoader`, requested at the pixel size of the space
+/// it's given so a small thumbnail never decodes a full-size source. The view always fills that
+/// space, so give it a frame.
 struct CachedRemoteImage<Failure: View>: View {
     private enum LoadState {
         case loading

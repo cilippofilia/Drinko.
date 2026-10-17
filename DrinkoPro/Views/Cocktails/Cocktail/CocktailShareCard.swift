@@ -5,14 +5,12 @@
 
 import SwiftUI
 
-/// The recipe card image people share: banner, ingredients, method, glass and a Drinko mark.
 /// Rendered off-screen by `CocktailShareItem`, always light and at a fixed size.
 struct CocktailShareCard: View {
     let cocktail: Cocktail
     let artwork: ShareCardArtwork
     let lines: [IngredientLine]
 
-    /// The card's width in points; the rendered PNG is 3× this.
     static let width: CGFloat = 360
 
     var body: some View {

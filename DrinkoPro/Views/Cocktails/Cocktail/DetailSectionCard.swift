@@ -5,22 +5,18 @@
 
 import SwiftUI
 
-/// A rounded card on the cocktail detail screen: a title with a chevron button in the
-/// trailing corner that collapses or expands the content below it.
 struct DetailSectionCard<Content: View>: View {
     let title: LocalizedStringKey
     let isCollapsed: Bool
     let toggle: () -> Void
     @ViewBuilder let content: Content
 
-    /// The size of the round badge behind the chevron.
     @ScaledMetric private var badgeSize: CGFloat = 30
 
-    /// Keeps the whole header a comfortable tap target.
     private let headerMinHeight: CGFloat = 44
 
-    /// The header is taller than the chevron badge to stay easy to tap, so trim the top inset by
-    /// the extra space. That way the badge sits as far from the top edge as from the trailing one.
+    /// Trimmed by how much taller the header is than the badge, so the badge sits as far from the
+    /// top edge as from the trailing one.
     private var topInset: CGFloat {
         max(0, detailCardInset - max(0, headerMinHeight - badgeSize) / 2)
     }

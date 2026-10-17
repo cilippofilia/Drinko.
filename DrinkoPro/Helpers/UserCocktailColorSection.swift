@@ -16,7 +16,6 @@ struct UserCocktailColorSection: View {
     /// The picked color. Kept even while a spirit overrides it, so it returns if the spirit is removed.
     @Binding var tintColor: String?
 
-    /// The size of the small swatch beside the automatic color's name.
     @ScaledMetric private var swatchSize: CGFloat = 24
 
     var body: some View {

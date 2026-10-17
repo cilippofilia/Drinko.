@@ -5,10 +5,8 @@
 
 import Foundation
 
-/// One-time migration from the old per-topic `*Collapsed` bools to the single
-/// `learnCollapsedSections` `CollapsedSections` value used by the shared `LibraryView`.
+/// One-time migration from the old per-topic `*Collapsed` bools to `learnCollapsedSections`.
 enum LearnCollapseMigration {
-    /// Old storage key -> new library section ID.
     private static let keyMapping: [String: String] = [
         "basicLessonsCollapsed": "basic-lessons",
         "barPrepsCollapsed": "bar-preps",
@@ -20,14 +18,12 @@ enum LearnCollapseMigration {
         "booksCollapsed": "books"
     ]
 
-    /// Old keys with no Learn section left to map to (Calculators moved to Tools). They're
-    /// still removed, but not migrated.
+    /// Old keys with no Learn section left (Calculators moved to Tools): removed, not migrated.
     private static let retiredKeys = ["calculatorsCollapsed"]
 
     private static let newKey = CollapsedSections.learnStorageKey
 
-    /// Builds the migrated `CollapsedSections`, or `nil` if there is nothing to migrate
-    /// (the new key already exists, or none of the old keys were ever set to `true`).
+    /// `nil` when the new key already exists or no old key was ever `true`.
     static func migrated(from defaults: UserDefaults) -> CollapsedSections? {
         guard defaults.object(forKey: newKey) == nil else { return nil }
 
@@ -41,7 +37,6 @@ enum LearnCollapseMigration {
         return foundAny ? collapsedSections : nil
     }
 
-    /// Runs the migration once: if needed, writes the new key and removes the old ones.
     static func runIfNeeded(using defaults: UserDefaults = .standard) {
         guard let migrated = migrated(from: defaults) else { return }
 

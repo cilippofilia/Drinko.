@@ -128,9 +128,8 @@ class CocktailsViewModel {
         sortedSectionKeys(filterOption: .all) { _ in false }
     }
 
-    /// The filters that can return results for the given source. For example,
-    /// user-created cocktails are never shots, so "Shots Only" is hidden when
-    /// the list only shows the user's cocktails.
+    /// The filters that can return results for the given source: user-created cocktails are never
+    /// shots, so "Shots Only" is hidden when the list only shows the user's cocktails.
     func availableFilterOptions(for source: CocktailListSource) -> [FilterOption] {
         switch source {
         case .userAndApp:
@@ -419,7 +418,6 @@ extension CocktailsViewModel.FilterOption {
         }
     }
 
-    /// The SF Symbol for this filter's sidebar row.
     var sidebarSymbol: String {
         switch self {
         case .all, .cocktailsOnly: "wineglass"

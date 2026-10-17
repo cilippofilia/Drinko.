@@ -20,7 +20,6 @@ final class ClipModel {
     private(set) var content: Content = .waiting
     let catalog = BundledCocktailCatalog.load()
 
-    /// Shows the cocktail the invocation URL names, or the missing state for anything else.
     func open(_ url: URL) {
         if let id = CocktailClipLink.cocktailID(from: url), let cocktail = catalog.cocktail(withID: id) {
             content = .cocktail(cocktail)
@@ -30,7 +29,6 @@ final class ClipModel {
     }
 
     /// Falls back to the missing state when no link arrived, so a bare launch never waits forever.
-    /// Does nothing once a link has been opened.
     func showMissingIfStillWaiting() {
         if content == .waiting {
             content = .missing
