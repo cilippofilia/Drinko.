@@ -1223,7 +1223,7 @@
 		18A929C72F12C13E00B70219 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoDebug;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DebugDrinkoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				AUTOMATION_APPLE_EVENTS = NO;
 				CODE_SIGN_ENTITLEMENTS = DrinkoMac/DrinkoMac.entitlements;
@@ -1344,7 +1344,7 @@
 		18ABAC12308370A700761368 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoDebug;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DebugDrinkoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DrinkoClip/DrinkoClip.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -1556,7 +1556,7 @@
 		18F49E6F2A27B28F00862CE3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = DrinkoDebug;
+				ASSETCATALOG_COMPILER_APPICON_NAME = DebugDrinkoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = DrinkoPro/DrinkoPro.entitlements;
