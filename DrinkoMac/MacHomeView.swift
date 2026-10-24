@@ -47,6 +47,10 @@ struct MacHomeView: View {
             .onChange(of: categories.map(\.id)) {
                 fitSelection()
             }
+            // A refresh can drop the topic that is showing.
+            .onChange(of: lessonsViewModel.librarySectionIDs) { _, ids in
+                appNavigationModel.selectedTab = appNavigationModel.selectedTab.validatedLearnSelection(sectionIDs: ids)
+            }
             .sheet(item: $interstitialAd) { ad in
                 AdView(advert: ad, config: .crossPromo) {
                     CrossPromoRemoveAdsInfoView()

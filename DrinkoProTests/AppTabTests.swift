@@ -129,4 +129,14 @@ struct AppTabTests {
         #expect(shots.fitted(isCompact: folded, categoryIDs: []) == .cocktails)
         #expect(shots.fitted(isCompact: unfolded, categoryIDs: []) == shots)
     }
+
+    @Test func removedLearnSectionFallsBackToLearn() {
+        #expect(AppTab.learnSection("gone").validatedLearnSelection(sectionIDs: ["bar-preps"]) == .learn)
+    }
+
+    @Test func existingLearnSectionIsKept() {
+        let tab = AppTab.learnSection("bar-preps")
+        #expect(tab.validatedLearnSelection(sectionIDs: ["bar-preps"]) == tab)
+        #expect(AppTab.cabinet.validatedLearnSelection(sectionIDs: []) == .cabinet)
+    }
 }

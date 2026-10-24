@@ -50,6 +50,15 @@ enum AppTab: Hashable {
         return self
     }
 
+    /// This destination, or `.learn` when it is a Learn section that a content refresh removed
+    /// from `sectionIDs`. Any other destination is returned unchanged.
+    func validatedLearnSelection(sectionIDs: [String]) -> AppTab {
+        if case .learnSection(let id) = self, !sectionIDs.contains(id) {
+            return .learn
+        }
+        return self
+    }
+
     /// Only a regular width gets a sidebar; compact, or no size class yet, keeps the tab bar.
     static func sidebarRowsAvailable(horizontalSizeClass: UserInterfaceSizeClass?) -> Bool {
         horizontalSizeClass == .regular

@@ -155,6 +155,10 @@ struct HomeView: View {
         .onChange(of: horizontalSizeClass) {
             fitSelection()
         }
+        // A refresh can drop the topic that is showing.
+        .onChange(of: lessonsViewModel.librarySectionIDs) { _, ids in
+            appNavigationModel.selectedTab = appNavigationModel.selectedTab.validatedLearnSelection(sectionIDs: ids)
+        }
         .onChange(of: categories.map(\.id)) {
             fitSelection()
         }
