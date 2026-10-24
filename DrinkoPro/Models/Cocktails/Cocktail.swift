@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Cocktail: Codable, Equatable, Identifiable, Hashable {
+struct Cocktail: Codable, Equatable, Identifiable, Hashable, Sendable {
     let id: String
     let name: String
     let method: String
@@ -88,7 +88,7 @@ enum SortOption: CaseIterable {
     }
 }
 
-struct Ingredient: Codable, Equatable, Identifiable, Hashable {
+struct Ingredient: Codable, Equatable, Identifiable, Hashable, Sendable {
     var id: String { name }
     let name: String
     let quantity: Double
@@ -113,16 +113,16 @@ struct Ingredient: Codable, Equatable, Identifiable, Hashable {
     }
 }
 
-struct History: Codable, Equatable, Identifiable {
+struct History: Codable, Equatable, Identifiable, Sendable {
     let id: String
     let text: String    
 }
 
-struct Procedure: Codable, Equatable, Identifiable {
+struct Procedure: Codable, Equatable, Identifiable, Sendable {
     let id: String
     let procedure: [Steps]
     
-    struct Steps: Codable, Equatable, Identifiable {
+    struct Steps: Codable, Equatable, Identifiable, Sendable {
         var id: String { "\(step)-\(text)" }
         let step: String
         let text: String
