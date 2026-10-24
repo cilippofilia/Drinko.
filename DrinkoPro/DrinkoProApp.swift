@@ -24,7 +24,7 @@ struct DrinkoProApp: App {
     // Mirrors favorites, recents and settings to iCloud. Kept for the app's lifetime.
     private let cloudSync: CloudSync
     // Loads cached content at launch and refreshes it from GitHub in the background.
-    private let contentStore: ContentStore
+    @State private var contentStore: ContentStore
 
     init() {
         LearnCollapseMigration.runIfNeeded()
@@ -33,7 +33,7 @@ struct DrinkoProApp: App {
         let recentsStore = RecentsStore()
         let contentStore = ContentStore()
         let snapshot = contentStore.initialSnapshot()
-        self.contentStore = contentStore
+        _contentStore = State(initialValue: contentStore)
         _cocktailsViewModel = State(initialValue: CocktailsViewModel(snapshot: snapshot))
         _lessonsViewModel = State(initialValue: LessonsViewModel(snapshot: snapshot))
         _favorites = State(initialValue: favorites)
@@ -87,6 +87,7 @@ struct DrinkoProApp: App {
         .environment(favorites)
         .environment(cocktailsViewModel)
         .environment(lessonsViewModel)
+        .environment(contentStore)
         .environment(appNavigationModel)
         .environment(recentsStore)
         #if os(iOS) || os(macOS)

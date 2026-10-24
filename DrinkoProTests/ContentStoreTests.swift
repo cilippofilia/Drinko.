@@ -90,6 +90,57 @@ struct ContentStoreTests {
         #expect(await store.refreshIfNeeded() == nil)
     }
 
+    @Test func sourceIsBundledWithoutCache() {
+        let cache = ContentCache(root: URL.temporaryDirectory.appending(path: "ContentStoreTests-\(UUID().uuidString)"))
+        let store = ContentStore(cache: cache, fetcher: FakeContentFetcher(), language: language)
+
+        _ = store.initialSnapshot()
+
+        #expect(store.source == .bundled)
+    }
+
+    @Test func sourceIsCachedWithLastCheckDate() throws {
+        let cache = try seededCache(age: 60)
+        let checkedAt = try #require(cache.metadata().lastSuccessfulCheck[language])
+        let store = ContentStore(cache: cache, fetcher: FakeContentFetcher(), language: language)
+
+        _ = store.initialSnapshot()
+
+        #expect(store.source == .cached(checkedAt: checkedAt))
+    }
+
+    @Test func sourceIsFetchedAfterUpdate() async throws {
+        let fetcher = FakeContentFetcher()
+        scriptNotModified(fetcher)
+        fetcher.script(
+            ContentFile.cocktails.remotePath(language: language),
+            .success(.modified(support.payload(for: .cocktails, tag: "new"), etag: "\"c2\""))
+        )
+        let store = ContentStore(cache: try seededCache(age: eightDays), fetcher: fetcher, language: language)
+        _ = store.initialSnapshot()
+
+        _ = await store.refreshIfNeeded()
+
+        guard case .fetched = store.source else {
+            Issue.record("Expected .fetched, got \(store.source)")
+            return
+        }
+    }
+
+    @Test func sourceStaysCachedWithNewCheckDateAfterUnchangedRefresh() async throws {
+        let fetcher = FakeContentFetcher()
+        scriptNotModified(fetcher)
+        let cache = try seededCache(age: eightDays)
+        let store = ContentStore(cache: cache, fetcher: fetcher, language: language)
+        _ = store.initialSnapshot()
+
+        _ = await store.refreshIfNeeded()
+
+        let checkedAt = try #require(cache.metadata().lastSuccessfulCheck[language])
+        #expect(store.source == .cached(checkedAt: checkedAt))
+        #expect(Date().timeIntervalSince(checkedAt) < 60)
+    }
+
     @Test func concurrentRefreshesShareOneRun() async throws {
         let fetcher = GatedFetcher()
         scriptNotModified(fetcher.inner)

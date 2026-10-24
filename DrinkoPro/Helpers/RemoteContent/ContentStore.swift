@@ -4,16 +4,21 @@
 //
 
 import Foundation
+import Observation
 
 /// Loads content at launch and refreshes it from the remote repository when the cache is stale.
 @MainActor
+@Observable
 final class ContentStore {
-    private let cache: ContentCache
-    private let refresher: ContentRefresher
-    private let language: String
-    private let bundle: Bundle
+    /// Where the content currently on screen came from.
+    private(set) var source: ContentSource = .bundled
+
+    @ObservationIgnored private let cache: ContentCache
+    @ObservationIgnored private let refresher: ContentRefresher
+    @ObservationIgnored private let language: String
+    @ObservationIgnored private let bundle: Bundle
     /// The run in progress, shared by any caller that arrives while it is still going.
-    private var inFlight: Task<ContentSnapshot?, Never>?
+    @ObservationIgnored private var inFlight: Task<ContentSnapshot?, Never>?
 
     init(
         cache: ContentCache = .standard,
@@ -29,7 +34,9 @@ final class ContentStore {
 
     /// The content to start with: the cache where valid, the bundle otherwise. Reads synchronously.
     func initialSnapshot() -> ContentSnapshot {
-        ContentSnapshot.load(cache: cache, language: language, bundle: bundle)
+        let snapshot = ContentSnapshot.load(cache: cache, language: language, bundle: bundle)
+        source = cachedSource()
+        return snapshot
     }
 
     /// Refreshes the cache when it is stale and returns the new snapshot, or `nil` when nothing
@@ -50,6 +57,18 @@ final class ContentStore {
         inFlight = task
         let snapshot = await task.value
         inFlight = nil
+        if snapshot != nil {
+            source = .fetched(at: .now)
+        } else if case .fetched = source {
+            // Already downloaded this launch; a later no-op run doesn't change that.
+        } else {
+            source = cachedSource()
+        }
         return snapshot
+    }
+
+    /// `.cached` with the last successful check for this language, or `.bundled` if there is none.
+    private func cachedSource() -> ContentSource {
+        cache.metadata().lastSuccessfulCheck[language].map { .cached(checkedAt: $0) } ?? .bundled
     }
 }
