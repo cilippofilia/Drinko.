@@ -11,11 +11,12 @@ import Observation
 class LessonsViewModel {
     private(set) var topics: [LearnTopic]
     private(set) var lessonsByTopic: [String: [Lesson]]
-    var books: [Book] = Bundle.main.decode([Book].self, from: "books.json")
+    private(set) var books: [Book]
 
-    /// Built on first use; lessons and books are bundled and never change.
+    /// Built on first use and dropped whenever new content is applied.
     @ObservationIgnored var itemsByIDCache: [String: LearnView.Selection]?
 
+    /// Starts from the lessons and books bundled in the app for `topics`.
     init(topics: [LearnTopic] = LearnTopic.bundled) {
         self.topics = topics
         var lessons: [String: [Lesson]] = [:]
@@ -23,6 +24,22 @@ class LessonsViewModel {
             lessons[topic.id] = Bundle.main.decode([Lesson].self, from: "\(topic.id).json")
         }
         lessonsByTopic = lessons
+        books = Bundle.main.decode([Book].self, from: "books.json")
+    }
+
+    /// Starts from `snapshot`, without decoding the bundle.
+    init(snapshot: ContentSnapshot) {
+        topics = snapshot.topics
+        lessonsByTopic = snapshot.lessonsByTopic
+        books = snapshot.books
+    }
+
+    /// Swaps in newly downloaded content, assigning only what changed.
+    func apply(_ snapshot: ContentSnapshot) {
+        if topics != snapshot.topics { topics = snapshot.topics }
+        if lessonsByTopic != snapshot.lessonsByTopic { lessonsByTopic = snapshot.lessonsByTopic }
+        if books != snapshot.books { books = snapshot.books }
+        itemsByIDCache = nil
     }
 
     /// Every lesson, in topic manifest order.

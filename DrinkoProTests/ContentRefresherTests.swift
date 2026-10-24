@@ -12,13 +12,13 @@ struct ContentRefresherTests {
     private let now = Date(timeIntervalSince1970: 2_000_000_000)
     private let day: TimeInterval = 24 * 60 * 60
 
-    private let topic = LearnTopic(id: "alpha", title: "Alpha", symbol: "book")
+    let topic = LearnTopic(id: "alpha", title: "Alpha", symbol: "book")
 
     private func makeCache() -> ContentCache {
         ContentCache(root: URL.temporaryDirectory.appending(path: "ContentRefresherTests-\(UUID().uuidString)"))
     }
 
-    private func json<T: Encodable>(_ value: T) -> Data {
+    func json<T: Encodable>(_ value: T) -> Data {
         // Sorted keys keep the bytes identical between calls, so payloads can be compared.
         let encoder = JSONEncoder()
         encoder.outputFormatting = .sortedKeys
@@ -26,7 +26,7 @@ struct ContentRefresherTests {
     }
 
     /// Small valid payloads, distinguished by `tag` so old and new content can be told apart.
-    private func payload(for file: ContentFile, tag: String = "old") -> Data {
+    func payload(for file: ContentFile, tag: String = "old") -> Data {
         switch file {
         case .cocktails, .shots:
             json([Cocktail(id: tag, name: "Name", method: "stir", glass: "coupe", garnish: "none", ice: "none",

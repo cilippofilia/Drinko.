@@ -10,12 +10,12 @@ import SwiftUI
 @MainActor
 @Observable
 class CocktailsViewModel {
-    var listOfCocktails: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "cocktails.json")
-    var listOfShots: [Cocktail] = Bundle.main.decode([Cocktail].self, from: "shots.json")
+    var listOfCocktails: [Cocktail]
+    var listOfShots: [Cocktail]
     private(set) var userCreatedCocktails: [UserCreatedCocktail] = []
     private(set) var userCocktails: [Cocktail] = []
-    var histories: [History] = Bundle.main.decode([History].self, from: "history.json")
-    var procedures: [Procedure] = Bundle.main.decode([Procedure].self, from: "procedure.json")
+    var histories: [History]
+    var procedures: [Procedure]
     var userProcedures: [Procedure] = []
     private var modelContext: ModelContext?
 
@@ -41,6 +41,31 @@ class CocktailsViewModel {
 
     /// Cached id → cocktail lookup for the bundled drinks. See `CocktailsViewModel+Library`.
     @ObservationIgnored var bundledDrinksByIDCache: [String: Cocktail]?
+
+    /// Starts from the content bundled in the app.
+    convenience init() {
+        self.init(snapshot: .bundled())
+    }
+
+    /// Starts from `snapshot`, without decoding the bundle.
+    init(snapshot: ContentSnapshot) {
+        listOfCocktails = snapshot.cocktails
+        listOfShots = snapshot.shots
+        histories = snapshot.histories
+        procedures = snapshot.procedures
+    }
+
+    /// Swaps in newly downloaded content. Only arrays that changed are assigned, so unchanged
+    /// screens aren't invalidated.
+    func apply(_ snapshot: ContentSnapshot) {
+        if listOfCocktails != snapshot.cocktails { listOfCocktails = snapshot.cocktails }
+        if listOfShots != snapshot.shots { listOfShots = snapshot.shots }
+        if histories != snapshot.histories { histories = snapshot.histories }
+        if procedures != snapshot.procedures { procedures = snapshot.procedures }
+        // Both caches are derived from the drink lists and cheap to rebuild.
+        bundledDrinksByIDCache = nil
+        stickerTintCache = [:]
+    }
 
     var listOfAllDrinks: [Cocktail] {
         listOfCocktails + listOfShots + userCocktails

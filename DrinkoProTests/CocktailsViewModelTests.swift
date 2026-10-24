@@ -22,6 +22,24 @@ final class CocktailsViewModelTests: XCTestCase {
         )
     }
 
+    func testApplyReplacesContentAndClearsCaches() {
+        let viewModel = CocktailsViewModel()
+        viewModel.bundledDrinksByIDCache = [:]
+        viewModel.stickerTintCache["x"] = .some(nil)
+        XCTAssertNotNil(viewModel.bundledDrinksByIDCache)
+
+        var snapshot = ContentSnapshot.bundled()
+        let replacement = Cocktail(id: "new", name: "New", method: "stir", glass: "coupe", garnish: "none", ice: "none",
+                                   extra: "", ingredients: [Ingredient(name: "Gin", quantity: 2, unit: "oz.")])
+        snapshot.cocktails = [replacement]
+        viewModel.apply(snapshot)
+
+        XCTAssertEqual(viewModel.listOfCocktails, [replacement])
+        XCTAssertEqual(viewModel.listOfShots, snapshot.shots)
+        XCTAssertNil(viewModel.bundledDrinksByIDCache)
+        XCTAssertTrue(viewModel.stickerTintCache.isEmpty)
+    }
+
     func testSortedCocktailsFromAtoZ() {
         let viewModel = CocktailsViewModel()
         viewModel.sortOption = .fromAtoZ
