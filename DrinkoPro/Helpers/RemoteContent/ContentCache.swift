@@ -1,0 +1,68 @@
+//
+//  ContentCache.swift
+//  DrinkoPro
+//
+
+import Foundation
+
+/// A durable on-disk copy of the downloaded content, laid out like the remote repository.
+struct ContentCache: Sendable {
+    let root: URL
+
+    init(root: URL) {
+        self.root = root
+    }
+
+    /// The cache used by the app, inside Application Support.
+    static var standard: ContentCache {
+        ContentCache(root: URL.applicationSupportDirectory.appending(path: "RemoteContent"))
+    }
+
+    private var metadataURL: URL { root.appending(path: "metadata.json") }
+
+    private func url(for file: ContentFile, language: String) -> URL {
+        root.appending(path: file.remotePath(language: language))
+    }
+
+    /// The cached bytes, or `nil` when the file hasn't been cached.
+    func data(for file: ContentFile, language: String) -> Data? {
+        try? Data(contentsOf: url(for: file, language: language))
+    }
+
+    /// Deletes a cached file, for example when it turns out to be undecodable.
+    func remove(_ file: ContentFile, language: String) {
+        try? FileManager.default.removeItem(at: url(for: file, language: language))
+    }
+
+    /// The stored metadata, or an empty value when it is missing or unreadable.
+    func metadata() -> ContentCacheMetadata {
+        guard let data = try? Data(contentsOf: metadataURL),
+              let metadata = try? JSONDecoder().decode(ContentCacheMetadata.self, from: data) else {
+            return ContentCacheMetadata()
+        }
+        return metadata
+    }
+
+    /// Writes every file first and the metadata last, so a crash midway keeps the old metadata.
+    func commit(files: [ContentFile: Data], etags: [String: String], language: String, checkedAt: Date) throws {
+        let fileManager = FileManager.default
+        try fileManager.createDirectory(at: root, withIntermediateDirectories: true)
+
+        var rootURL = root
+        var values = URLResourceValues()
+        values.isExcludedFromBackup = true
+        try rootURL.setResourceValues(values)
+
+        for (file, data) in files {
+            let destination = url(for: file, language: language)
+            try fileManager.createDirectory(
+                at: destination.deletingLastPathComponent(), withIntermediateDirectories: true)
+            try data.write(to: destination, options: .atomic)
+        }
+
+        var updated = metadata()
+        updated.etags.merge(etags) { _, new in new }
+        updated.lastSuccessfulCheck[language] = checkedAt
+        try JSONEncoder().encode(updated).write(to: metadataURL, options: .atomic)
+    }
+}

@@ -1,0 +1,61 @@
+//
+//  ContentFile.swift
+//  DrinkoPro
+//
+
+import Foundation
+
+/// A JSON content file that is bundled with the app and mirrored in the remote repository.
+struct ContentFile: Hashable, Sendable {
+    /// The file name without extension, which is also its folder name in the remote repository.
+    let name: String
+    /// Whether the file has one copy per language.
+    let isLocalized: Bool
+
+    static let cocktails = ContentFile(name: "cocktails", isLocalized: false)
+    static let shots = ContentFile(name: "shots", isLocalized: true)
+    static let history = ContentFile(name: "history", isLocalized: true)
+    static let procedure = ContentFile(name: "procedure", isLocalized: true)
+    static let books = ContentFile(name: "books", isLocalized: true)
+    static let topics = ContentFile(name: "topics", isLocalized: true)
+
+    /// Every file that is always fetched, as opposed to the per-topic files listed in `topics`.
+    static let fixedFiles: [ContentFile] = [.cocktails, .shots, .history, .procedure, .books, .topics]
+
+    /// The file for a single Learn topic.
+    static func topic(_ id: String) -> ContentFile {
+        ContentFile(name: id, isLocalized: true)
+    }
+
+    /// The name of the copy inside the app bundle.
+    var bundleFileName: String { "\(name).json" }
+
+    /// The path relative to the repository root. The cocktail files live under `cocktails/`.
+    func remotePath(language: String) -> String {
+        if !isLocalized {
+            return "\(name)/\(bundleFileName)"
+        }
+        let isCocktailFile = self == .shots || self == .history || self == .procedure
+        let prefix = isCocktailFile ? "cocktails/" : ""
+        return "\(prefix)\(name)/\(language)/\(bundleFileName)"
+    }
+
+    /// The key used for ETags, equal to the remote path so each path is tracked separately.
+    func cacheKey(language: String) -> String {
+        remotePath(language: language)
+    }
+}
+
+/// Maps the user's preferred languages onto the languages the remote content is available in.
+enum ContentLanguage {
+    static let supported: Set<String> = ["en", "de", "es", "fr", "it"]
+
+    /// Uses the first preferred language without its region, or `"en"` when it isn't supported.
+    static func resolve(_ preferred: [String]) -> String {
+        guard let first = preferred.first else { return "en" }
+        let code = first.lowercased()
+            .prefix { $0 != "-" && $0 != "_" }
+        let language = String(code)
+        return supported.contains(language) ? language : "en"
+    }
+}
