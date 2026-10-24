@@ -25,7 +25,7 @@ struct ContentRefresher: Sendable {
     let cache: ContentCache
     let now: @Sendable () -> Date
 
-    init(fetcher: any ContentFetching, cache: ContentCache, now: @escaping @Sendable () -> Date = Date.init) {
+    init(fetcher: any ContentFetching, cache: ContentCache, now: @escaping @Sendable () -> Date = { Date() }) {
         self.fetcher = fetcher
         self.cache = cache
         self.now = now
