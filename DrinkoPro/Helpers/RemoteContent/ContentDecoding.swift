@@ -9,7 +9,7 @@ import Foundation
 enum ContentDecodingError: Error, Equatable {
     /// The file decoded to an empty array.
     case empty
-    /// A topic id is not a lowercase, hyphen-separated slug, or is used twice.
+    /// A topic id is not a lowercase, hyphen-separated slug, is used twice, or is the name of a fixed file.
     case invalidTopicID(String)
     /// A topic has no title.
     case emptyTopicTitle(String)
@@ -34,8 +34,11 @@ enum ContentDecoding {
     static func decodeTopics(from data: Data) throws -> [LearnTopic] {
         let topics = try decodeNonEmpty(LearnTopic.self, from: data)
         var seen = Set<String>()
+        let reserved = Set(ContentFile.fixedFiles.map(\.name))
         for topic in topics {
-            guard topic.id.wholeMatch(of: /[a-z0-9]+(-[a-z0-9]+)*/) != nil, seen.insert(topic.id).inserted else {
+            guard topic.id.wholeMatch(of: /[a-z0-9]+(-[a-z0-9]+)*/) != nil,
+                  !reserved.contains(topic.id),
+                  seen.insert(topic.id).inserted else {
                 throw ContentDecodingError.invalidTopicID(topic.id)
             }
             guard !topic.title.isEmpty else { throw ContentDecodingError.emptyTopicTitle(topic.id) }
@@ -44,7 +47,7 @@ enum ContentDecoding {
     }
 
     private static func decode(_ data: Data, as file: ContentFile) throws -> Any {
-        switch file {
+        switch file.kind {
         case .cocktails, .shots:
             try decodeNonEmpty(Cocktail.self, from: data)
         case .history:
@@ -55,7 +58,7 @@ enum ContentDecoding {
             try decodeNonEmpty(Book.self, from: data)
         case .topics:
             try decodeTopics(from: data)
-        default:
+        case .lessons:
             try decodeNonEmpty(Lesson.self, from: data)
         }
     }

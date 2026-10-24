@@ -36,4 +36,11 @@ struct ContentFileTests {
         #expect(ContentLanguage.resolve(["de-AT"]) == "de")
         #expect(ContentLanguage.resolve(["FR_ca"]) == "fr")
     }
+
+    @Test func topicFileNeverEqualsFixedFile() {
+        for file in ContentFile.fixedFiles {
+            #expect(ContentFile.topic(file.name) != file)
+        }
+        #expect(ContentFile.topic("books") != .books)
+    }
 }

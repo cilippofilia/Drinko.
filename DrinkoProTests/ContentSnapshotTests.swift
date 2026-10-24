@@ -139,4 +139,26 @@ struct ContentSnapshotTests {
             try ContentDecoding.validate(data, as: .topics)
         }
     }
+
+    @Test func validateRejectsReservedTopicIDs() throws {
+        for id in ["cocktails", "shots", "history", "procedure", "books", "topics"] {
+            let data = try JSONEncoder().encode([LearnTopic(id: id, title: "T", symbol: "book")])
+            #expect(throws: ContentDecodingError.self) {
+                try ContentDecoding.validate(data, as: .topics)
+            }
+        }
+    }
+
+    @Test func reservedIDManifestKeepsFixedCache() throws {
+        let cache = makeCache()
+        let books = [Book(id: "cached-book", title: "Cached", description: "D", summary: "S", author: "A")]
+        try store(books, as: .books, in: cache)
+        try store([LearnTopic(id: "books", title: "Books", symbol: "book")], as: .topics, in: cache)
+
+        let snapshot = ContentSnapshot.load(cache: cache, language: "en")
+
+        #expect(cache.data(for: .books, language: "en") != nil)
+        #expect(snapshot.books.map(\.id) == ["cached-book"])
+        #expect(snapshot.topics == ContentSnapshot.bundled().topics)
+    }
 }
