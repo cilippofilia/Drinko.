@@ -11,6 +11,7 @@ import SwiftUI
 struct MacSidebarView: View {
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(RemoveAdsStore.self) private var removeAdsStore
+    @Environment(LessonsViewModel.self) private var lessonsViewModel
 
     // Cabinet categories for the Cabinet group (same order as the Cabinet page).
     @Query(sort: [
@@ -61,10 +62,10 @@ struct MacSidebarView: View {
                 }
             }
             Section("Learn") {
-                ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
+                ForEach(lessonsViewModel.librarySectionIDs, id: \.self) { id in
                     Label(
-                        LessonsViewModel.sectionTitle(for: id) ?? "",
-                        systemImage: LessonsViewModel.sidebarSymbol(for: id)
+                        lessonsViewModel.sectionTitle(for: id) ?? "",
+                        systemImage: lessonsViewModel.sidebarSymbol(for: id)
                     )
                     .tag(AppTab.learnSection(id))
                 }

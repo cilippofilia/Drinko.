@@ -79,10 +79,16 @@ struct AppTabTests {
     }
 
     @Test func learnSectionTitles() {
-        #expect(LessonsViewModel.sectionTitle(for: "bar-preps") == String(localized: "Bar Preps"))
-        #expect(LessonsViewModel.sectionTitle(for: LessonsViewModel.booksSectionID) == String(localized: "Books"))
-        #expect(LessonsViewModel.sectionTitle(for: "nope") == nil)
-        #expect(LessonsViewModel.librarySectionIDs == LearnTopic.all.map(\.id) + [LessonsViewModel.booksSectionID])
+        let viewModel = LessonsViewModel()
+        #expect(viewModel.sectionTitle(for: "bar-preps") == viewModel.topics.first { $0.id == "bar-preps" }?.title)
+        #expect(viewModel.sectionTitle(for: LessonsViewModel.booksSectionID) == String(localized: "Books"))
+        #expect(viewModel.sectionTitle(for: "nope") == nil)
+        #expect(viewModel.librarySectionIDs == LearnTopic.bundled.map(\.id) + [LessonsViewModel.booksSectionID])
+    }
+
+    @Test func learnDetailValidatedAgainstGivenIDs() {
+        #expect(AppTab(rawValue: "Learn/new-topic", learnSectionIDs: ["new-topic"]) == .learnSection("new-topic"))
+        #expect(AppTab(rawValue: "Learn/new-topic", learnSectionIDs: []) == .learn)
     }
 
     @Test func fittedUsesParentWhenCompact() {

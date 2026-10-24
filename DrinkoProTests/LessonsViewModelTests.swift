@@ -5,7 +5,7 @@ import XCTest
 final class LessonsViewModelTests: XCTestCase {
     func testTopicManifestOrder() {
         XCTAssertEqual(
-            LearnTopic.all.map(\.id),
+            LearnTopic.bundled.map(\.id),
             [
                 "basic-lessons",
                 "bar-preps",
@@ -16,7 +16,7 @@ final class LessonsViewModelTests: XCTestCase {
                 "syrups"
             ]
         )
-        XCTAssertEqual(LessonsViewModel().topics, LearnTopic.all)
+        XCTAssertEqual(LessonsViewModel().topics, LearnTopic.bundled)
     }
 
     func testEveryTopicLoadsLessonsFromBundle() {

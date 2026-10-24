@@ -13,6 +13,7 @@ struct HomeView: View {
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     @Environment(RemoveAdsStore.self) private var removeAdsStore
+    @Environment(LessonsViewModel.self) private var lessonsViewModel
     @SceneStorage("selectedView") var selectedView: String?
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
@@ -80,10 +81,10 @@ struct HomeView: View {
                 }
                 .tabPlacement(.sidebarOnly)
                 TabSection("Learn") {
-                    ForEach(LessonsViewModel.librarySectionIDs, id: \.self) { id in
+                    ForEach(lessonsViewModel.librarySectionIDs, id: \.self) { id in
                         Tab(
-                            LessonsViewModel.sectionTitle(for: id) ?? "",
-                            systemImage: LessonsViewModel.sidebarSymbol(for: id),
+                            lessonsViewModel.sectionTitle(for: id) ?? "",
+                            systemImage: lessonsViewModel.sidebarSymbol(for: id),
                             value: AppTab.learnSection(id)
                         ) {
                             LearnView(sectionID: id)
@@ -137,7 +138,10 @@ struct HomeView: View {
         // Only restores while `selectedTab` is untouched, so it never clobbers a deep link
         // that selected a tab before this view appeared.
         .onAppear {
-            if appNavigationModel.selectedTab == .learn, let selectedView, let tab = AppTab(rawValue: selectedView) {
+            if appNavigationModel.selectedTab == .learn, let selectedView, let tab = AppTab(
+                rawValue: selectedView,
+                learnSectionIDs: Set(lessonsViewModel.librarySectionIDs)
+            ) {
                 appNavigationModel.selectedTab = tab
             }
             fitSelection()

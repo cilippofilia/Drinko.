@@ -10,29 +10,37 @@ extension LessonsViewModel {
     nonisolated static let booksSectionID = "books"
 
     /// Every library section ID in display order: the topics, then Books.
-    nonisolated static var librarySectionIDs: [String] {
-        LearnTopic.all.map(\.id) + [booksSectionID]
+    var librarySectionIDs: [String] {
+        topics.map(\.id) + [Self.booksSectionID]
     }
 
-    nonisolated static func sectionTitle(for id: String) -> String? {
-        if id == booksSectionID {
+    func sectionTitle(for id: String) -> String? {
+        if id == Self.booksSectionID {
             return String(localized: "Books")
         }
-        return LearnTopic.all.first { $0.id == id }?.title
+        return topics.first { $0.id == id }?.title
     }
 
-    nonisolated static func sidebarSymbol(for id: String) -> String {
-        switch id {
-        case "basic-lessons": "graduationcap"
-        case "bar-preps": "list.bullet.clipboard"
-        case "basic-spirits": "waterbottle"
-        case "advanced-spirits": "star"
-        case "liqueurs": "drop.halffull"
-        case "advanced-lessons": "brain.head.profile"
-        case "syrups": "flask"
-        case booksSectionID: "books.vertical"
-        default: "book"
+    /// The sidebar symbol for a section. A topic whose symbol doesn't exist on the running OS
+    /// gets `LearnTopic.fallbackSymbol`.
+    func sidebarSymbol(for id: String) -> String {
+        if id == Self.booksSectionID {
+            return "books.vertical"
         }
+        guard let symbol = topics.first(where: { $0.id == id })?.symbol,
+              Self.symbolExists(symbol) else {
+            return LearnTopic.fallbackSymbol
+        }
+        return symbol
+    }
+
+    /// SwiftUI has no availability query for SF Symbols, so this asks the platform image class.
+    private static func symbolExists(_ name: String) -> Bool {
+        #if canImport(UIKit)
+        UIImage(systemName: name) != nil
+        #else
+        NSImage(systemSymbolName: name, accessibilityDescription: nil) != nil
+        #endif
     }
 
     var allItems: [LearnView.Selection] {

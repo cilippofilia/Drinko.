@@ -73,13 +73,21 @@ extension AppTab {
     /// Decodes a saved tab. A detail that no longer exists (a deleted topic, an unknown
     /// tool or filter, a malformed category ID) decodes to the main tab instead.
     init?(rawValue: String) {
+        self.init(
+            rawValue: rawValue,
+            learnSectionIDs: Set(LearnTopic.bundled.map(\.id) + [LessonsViewModel.booksSectionID])
+        )
+    }
+
+    /// Like `init?(rawValue:)`, but checks a Learn detail against `learnSectionIDs`.
+    init?(rawValue: String, learnSectionIDs: Set<String>) {
         let parts = rawValue.split(separator: "/", maxSplits: 1).map(String.init)
         guard let first = parts.first, let name = Name(rawValue: first) else { return nil }
         let detail = parts.count > 1 ? parts[1] : nil
 
         switch name {
         case .learn:
-            if let detail, LessonsViewModel.sectionTitle(for: detail) != nil {
+            if let detail, learnSectionIDs.contains(detail) {
                 self = .learnSection(detail)
             } else {
                 self = .learn

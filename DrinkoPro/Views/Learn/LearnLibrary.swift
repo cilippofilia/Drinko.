@@ -27,7 +27,7 @@ struct LearnLibrary: View {
     }
 
     private var title: String {
-        sectionID.flatMap(LessonsViewModel.sectionTitle(for:)) ?? String(localized: "Learn")
+        sectionID.flatMap(viewModel.sectionTitle(for:)) ?? String(localized: "Learn")
     }
 
     private var layoutTogglePlacement: ToolbarItemPlacement {

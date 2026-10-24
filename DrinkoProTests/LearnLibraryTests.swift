@@ -20,7 +20,7 @@ struct LearnLibraryTests {
 
     @Test func emptyQueryReturnsManifestThenBooks() {
         let sections = viewModel.librarySections(matching: "")
-        #expect(sections.map(\.id) == LearnTopic.all.map(\.id) + ["books"])
+        #expect(sections.map(\.id) == LearnTopic.bundled.map(\.id) + ["books"])
         #expect(sections.allSatisfy { !$0.items.isEmpty })
     }
 
@@ -64,7 +64,7 @@ struct LearnLibraryTests {
     }
 
     @Test func everySidebarSectionHasItsOwnSymbol() {
-        let symbols = LessonsViewModel.librarySectionIDs.map(LessonsViewModel.sidebarSymbol(for:))
+        let symbols = viewModel.librarySectionIDs.map(viewModel.sidebarSymbol(for:))
         #expect(!symbols.contains("book"))
         #expect(Set(symbols).count == symbols.count)
     }

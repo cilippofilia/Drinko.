@@ -9,14 +9,14 @@ import Observation
 @MainActor
 @Observable
 class LessonsViewModel {
-    let topics: [LearnTopic]
+    private(set) var topics: [LearnTopic]
     private(set) var lessonsByTopic: [String: [Lesson]]
     var books: [Book] = Bundle.main.decode([Book].self, from: "books.json")
 
     /// Built on first use; lessons and books are bundled and never change.
     @ObservationIgnored var itemsByIDCache: [String: LearnView.Selection]?
 
-    init(topics: [LearnTopic] = LearnTopic.all) {
+    init(topics: [LearnTopic] = LearnTopic.bundled) {
         self.topics = topics
         var lessons: [String: [Lesson]] = [:]
         for topic in topics {

@@ -13,6 +13,7 @@ struct MacHomeView: View {
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     @Environment(RemoveAdsStore.self) private var removeAdsStore
+    @Environment(LessonsViewModel.self) private var lessonsViewModel
     // Same key as the iOS HomeView: remembers the last-used sidebar row between launches.
     @SceneStorage("selectedView") private var selectedView: String?
 
@@ -32,7 +33,10 @@ struct MacHomeView: View {
             // that selected a tab before this view appeared.
             .onAppear {
                 if appNavigationModel.selectedTab == .learn, let selectedView,
-                   let tab = AppTab(rawValue: selectedView) {
+                   let tab = AppTab(
+                       rawValue: selectedView,
+                       learnSectionIDs: Set(lessonsViewModel.librarySectionIDs)
+                   ) {
                     appNavigationModel.selectedTab = tab
                 }
                 fitSelection()
