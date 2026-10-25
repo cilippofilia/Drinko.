@@ -5,6 +5,9 @@
 
 import Foundation
 import Observation
+#if os(iOS)
+import WidgetKit
+#endif
 
 /// Loads content at launch and refreshes it from the remote repository when the cache is stale.
 @MainActor
@@ -18,18 +21,28 @@ final class ContentStore {
     @ObservationIgnored private let language: String
     @ObservationIgnored private let bundle: Bundle
     /// The run in progress, shared by any caller that arrives while it is still going.
+    @ObservationIgnored private let onContentUpdated: @MainActor () -> Void
     @ObservationIgnored private var inFlight: Task<ContentSnapshot?, Never>?
 
     init(
         cache: ContentCache = .standard,
         fetcher: any ContentFetching = URLSessionContentFetcher(),
         language: String = ContentLanguage.resolve(Bundle.main.preferredLocalizations),
-        bundle: Bundle = .main
+        bundle: Bundle = .main,
+        onContentUpdated: @escaping @MainActor () -> Void = ContentStore.reloadWidgets
     ) {
         self.cache = cache
         self.refresher = ContentRefresher(fetcher: fetcher, cache: cache)
         self.language = language
         self.bundle = bundle
+        self.onContentUpdated = onContentUpdated
+    }
+
+    /// Asks WidgetKit to rebuild the widget so it reads the newly downloaded content.
+    static func reloadWidgets() {
+        #if os(iOS)
+        WidgetCenter.shared.reloadTimelines(ofKind: AppGroup.widgetKind)
+        #endif
     }
 
     /// The content to start with: the cache where valid, the bundle otherwise. Reads synchronously.
@@ -59,6 +72,7 @@ final class ContentStore {
         inFlight = nil
         if snapshot != nil {
             source = .fetched(at: .now)
+            onContentUpdated()
         } else if case .fetched = source {
             // Already downloaded this launch; a later no-op run doesn't change that.
         } else {

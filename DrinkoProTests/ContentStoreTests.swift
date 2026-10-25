@@ -166,4 +166,57 @@ struct ContentStoreTests {
         #expect(firstResult != nil)
         #expect(firstResult == secondResult)
     }
+
+    /// Counts `onContentUpdated` calls.
+    private final class ReloadCounter {
+        var count = 0
+    }
+
+    @Test func updateReloadsWidgetsOnce() async throws {
+        let fetcher = FakeContentFetcher()
+        scriptNotModified(fetcher)
+        fetcher.script(
+            ContentFile.cocktails.remotePath(language: language),
+            .success(.modified(support.payload(for: .cocktails, tag: "new"), etag: "\"c2\""))
+        )
+        let counter = ReloadCounter()
+        let store = ContentStore(
+            cache: try seededCache(age: eightDays),
+            fetcher: fetcher,
+            language: language,
+            onContentUpdated: { counter.count += 1 }
+        )
+
+        _ = await store.refreshIfNeeded()
+
+        #expect(counter.count == 1)
+    }
+
+    @Test func unchangedRefreshDoesNotReloadWidgets() async throws {
+        let counter = ReloadCounter()
+        let store = ContentStore(
+            cache: try seededCache(age: 0),
+            fetcher: FakeContentFetcher(),
+            language: language,
+            onContentUpdated: { counter.count += 1 }
+        )
+
+        _ = await store.refreshIfNeeded()
+
+        #expect(counter.count == 0)
+    }
+
+    @Test func failedRefreshDoesNotReloadWidgets() async throws {
+        let counter = ReloadCounter()
+        // Unscripted paths answer 404.
+        let store = ContentStore(
+            cache: try seededCache(age: eightDays),
+            fetcher: FakeContentFetcher(),
+            language: language,
+            onContentUpdated: { counter.count += 1 }
+        )
+
+        #expect(await store.refreshIfNeeded() == nil)
+        #expect(counter.count == 0)
+    }
 }
