@@ -24,15 +24,15 @@ A prioritized list of enhancements for Drinko. Items move from **Next** to **Now
 
 - [ ] **TipKit adoption** — contextual tips for under-discovered features (oz/ml converter, favorites swipe, Cabinet)
 - [ ] **Tags & spirit-base filtering** — filter cocktails by base spirit (gin, whiskey, rum…) and add a "surprise me" random pick
-- [ ] **Shareable cocktail cards** — render a recipe card with `ImageRenderer` and share it
-- [ ] **Photos for user-created cocktails**
+- [x] **Shareable cocktail cards** — render a recipe card with `ImageRenderer` and share it
+- [x] **Photos for user-created cocktails** — plus stickers and tint colours
 - [ ] **iCloud sync status indicator** for Cabinet and custom cocktails
 
 ## Technical health
 
 - [ ] **Async widget image loading** — `DrinkoWidgetImageStore` uses blocking `Data(contentsOf:)`; migrate to `URLSession` now that the provider is async
 - [ ] **macOS feature parity audit** — close gaps between DrinkoMac and the iOS app
-- [ ] **iPad layout** — adopt `NavigationSplitView` at regular width
-- [ ] **Expand unit tests** — Favorites persistence, deep-link parsing in `AppNavigationModel`, widget catalog pool/pick logic
+- [x] **iPad layout** — adopt `NavigationSplitView` at regular width
+- [x] **Expand unit tests** — Favorites persistence, deep-link parsing in `AppNavigationModel`, widget catalog pool/pick logic
 - [ ] **Accessibility audit** — Dynamic Type at the largest sizes, VoiceOver on custom rows and widget content
-- [ ] **Monetization decision** — no IAP exists today; evaluate tip jar vs. one-time unlock for premium content
+- [x] **Monetization decision** — shipped a Remove Ads in-app purchase that hides the cross-promo banner

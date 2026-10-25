@@ -4,81 +4,119 @@
 
 Drinko is a SwiftUI app for learning bartending, browsing classic cocktails, and keeping track of the ingredients you already have at home.
 
-The app combines three core workflows in one project:
+It ships as one project with four products:
 
-- Learn bartending techniques, spirits, syrups, and prep fundamentals.
-- Browse a built-in cocktail library with search, sorting, favorites, and detailed drink pages.
-- Manage a personal cabinet with SwiftData-backed categories and products that can sync through CloudKit.
+- **Drinko for iPhone and iPad**, with five tabs: Learn, Cabinet, Cocktails, Tools, and Settings.
+- **Drinko for Mac**, which has its own sidebar-driven layout.
+- **A home screen widget** that shows a daily cocktail pick.
+- **An App Clip** that opens a shared cocktail recipe without installing the app.
 
-Drinko also supports custom cocktails, built-in oz/ml conversion, and a macOS target for selected app flows.
+The lessons and the cocktail library are downloaded from GitHub and cached on the device. A bundled copy covers the first launch and offline use.
 
 ## Features
 
 ### Learn
 
-- Topic-based lessons for bartending basics, bar prep, spirits, liqueurs, advanced lessons, and syrups.
-- Reference books section.
-- Built-in calculators for ABV and super juice.
+- Topic-based lessons for bartending basics, bar prep, spirits, liqueurs, advanced techniques, and syrups.
+- A reference books section.
 - Search across lessons and books.
+- A Recents hero that brings back what you viewed last, plus a grid/list layout toggle.
 
 ### Cocktails
 
-- Built-in library of cocktails and shots loaded from bundled JSON data.
+- About 150 cocktails and 40 shots, each with ingredients, method, history, procedure, and related cocktails.
 - Search using localized matching.
 - Sorting by name, glass, or ice style.
-- Filters for all drinks, cocktails only, shots only, favorites, and user-created drinks.
-- Detailed cocktail pages with ingredients, method, history, procedure, and related cocktails.
-- Create and delete custom cocktails.
-- Save favorite cocktails locally.
-- Convert ingredient measurements between ounces and milliliters.
+- Filters for all drinks, cocktails only, shots only, favorites, and drinks you created.
+- Custom cocktails with your own photo. The photo can be turned into a sticker and given a tint colour.
+- Ingredient amounts in ounces or millilitres.
+- Share a cocktail as a rendered recipe card. The card carries an App Clip link, and the share message varies and is localized.
 
 ### Cabinet
 
-- Create ingredient categories and add products to each category.
-- Mark products as favorites.
-- Persist cabinet data with SwiftData.
-- CloudKit-backed model configuration for syncing supported data across devices.
+- Ingredient categories with products in each, and favourite products.
+- Stored with SwiftData and synced through CloudKit.
+
+### Tools
+
+- ABV calculator.
+- Super juice calculator.
 
 ### Settings
 
 - Contact flows for bug reports, feature requests, and general feedback.
-- In-app rating shortcut.
-- Localized app copy and built-in README/about screen.
+- An in-app rating shortcut.
+- A widget tutorial, shown once automatically after a few launches.
+- An in-app README/about screen.
+- A Remove Ads in-app purchase that hides the cross-promo banner.
+
+### Widget
+
+- Small and medium sizes.
+- Configurable through Edit Widget: choose all drinks, cocktails only, shots only, or favorites, and whether the medium size shows ingredients.
+- Uses the cocktail stickers. Content comes from the shared cache first, then GitHub, then the bundle.
+
+### App Clip
+
+- Opens `https://drinko.app/c/<id>` and `drinko://cocktail/<id>` links, plus Apple's default App Clip links.
+- Cocktails it doesn't bundle are fetched from the remote catalog.
+
+### Across devices
+
+- Favorites, recents, and preferences sync through iCloud key-value storage.
+- Localized in English, French, German, Italian, and Spanish.
+- On regular-width iPad and iPhone layouts, the tab bar becomes a sidebar with rows for sections, categories, filters, and tools.
 
 ## Tech Stack
 
-- SwiftUI for the UI
-- SwiftData for local persistence
-- CloudKit for sync-backed model storage
-- StoreKit for review prompts
-- MessageUI for email-based feedback on iOS
-- Swift Testing and XCTest for unit coverage
+- SwiftUI for the UI.
+- SwiftData with CloudKit for the Cabinet and custom cocktails.
+- `NSUbiquitousKeyValueStore` for favorites, recents, and preferences.
+- WidgetKit and App Intents for the configurable widget.
+- App Clips.
+- StoreKit for review prompts and the Remove Ads purchase. `Drinko.storekit` provides local testing.
+- [PrivateAds](https://github.com/cilippofilia/PrivateAds) (Swift Package) for the cross-promo banner.
+- Swift Testing for unit tests, with a few older XCTest suites.
+- SwiftLint, configured in `.swiftlint.yml`.
+
+## Remote Content
+
+Learn and Cocktails content is fetched from [`cilippofilia/drinko-learn`](https://github.com/cilippofilia/drinko-learn), which is the source of truth for that content:
+
+- The app sends conditional GETs and applies a refresh only if every file downloads.
+- Downloaded files are cached for 7 days in the shared App Group container, so the widget and App Clip read the same cache.
+- If no cache exists, the app falls back to the JSON in `DrinkoPro/Localization`.
+- Debug builds show a Settings footer saying whether content came from the bundle, the cache, or a fresh download.
+
+Images are served from separate repositories: `drinko-learn-pics`, `drinko-cocktail-pics`, and `Drinko-stickers`.
 
 ## Project Structure
 
 ```text
 Drinko/
-├── DrinkoPro/          # Main app target and shared source
+├── DrinkoPro/            # iOS app and shared source
 │   ├── Assets/
-│   ├── Helpers/
-│   ├── Localization/
-│   ├── Models/
-│   └── Views/
-├── DrinkoMac/          # macOS-specific views and flows
-├── DrinkoProTests/     # Unit tests
-├── docs/               # App Store and product documentation
+│   ├── Helpers/          # Navigation, sharing, stickers, CloudSync/, RemoteContent/
+│   ├── Localization/     # String catalogs and bundled JSON content
+│   ├── Models/           # Cabinet, Cocktails, Learn
+│   └── Views/            # Cabinet, Cocktails, Learn, Library, Settings, Tools
+├── DrinkoMac/            # macOS-specific views and flows
+├── DrinkoWidget/         # Cocktail-of-the-day widget extension
+├── DrinkoClip/           # App Clip for shared cocktail links
+├── DrinkoProTests/       # Unit tests and JSON fixtures
+├── metadata/             # Canonical App Store metadata per version and locale
+├── app-store-assets/     # App Store artwork sources
+├── drinko-press-kit/     # Press kit
+├── docs/                 # ASO notes
+├── Drinko.storekit       # StoreKit configuration for local testing
 └── DrinkoPro.xcodeproj
 ```
 
-The main app surface is organized around four tabs: `Learn`, `Cocktails`, `Cabinet`, and `Settings`.
-
 ## Requirements
 
-- Xcode with iOS 18 and macOS 15 SDK support
-- iOS 18+
-- macOS 15+
-
-The checked-in Xcode project currently uses iOS 18 deployment settings for the app target and macOS 15 deployment settings for the Mac target.
+- Xcode with the iOS 18 and macOS 15 SDKs or newer.
+- iOS 18.0+ for the app, widget, and App Clip.
+- macOS 15.6+ for the Mac app.
 
 ## Getting Started
 
@@ -95,30 +133,43 @@ cd Drinko
 open DrinkoPro.xcodeproj
 ```
 
-3. Select the `DrinkoPro` scheme for iOS, or the Mac target if you want to run the desktop build.
+3. Pick a scheme:
+   - `DrinkoPro`: iOS app
+   - `DrinkoDesktop`: Mac app
+   - `DrinkoWidget`: widget extension
+   - `DrinkoClip`: App Clip
+   - `DrinkoProTests`: unit tests
 
-4. Build and run from Xcode.
+4. Build and run.
 
-## Development Notes
+### Signing
 
-- The cocktail library, histories, procedures, lessons, books, and other reference content are bundled as JSON resources.
-- User-created cocktails are stored through SwiftData models.
-- Favorites are stored locally in `UserDefaults`.
-- CloudKit capability is enabled in the project entitlements, so running sync features on your own team may require your own signing setup.
+The project uses capabilities that are tied to the original team. To run it on your own team, set up your own equivalents of:
+
+- iCloud with CloudKit and key-value storage
+- the App Group shared by the app, widget, and App Clip
+- associated App Clip identifiers
 
 ## Tests
 
-Unit tests live in `DrinkoProTests` and currently cover:
+Unit tests live in `DrinkoProTests`. Most use Swift Testing, and a few older suites still use XCTest. They cover:
 
-- cocktail data loading, filtering, grouping, and linking behavior
-- lesson loading and topic organization
-- unit conversion logic for oz/ml ingredient amounts
+- remote content: fetching, caching, cache migration, the refresher, snapshots, and the widget/App Clip loaders
+- iCloud key-value sync and merging
+- navigation, tab restoration, and Cabinet selection
+- cocktail and lesson loading, filtering, and linking
+- App Clip links, share messages, and share items
+- stickers, user photos, and tint colours
+- widget catalog and sticker selection
+- the ABV calculator and oz/ml conversion
 
-Run them from Xcode’s test action for the active scheme.
+Run them with the `DrinkoProTests` scheme or Xcode's test action.
 
 ## Documentation
 
-App Store metadata, localized copy, and screenshot messaging live in [`docs/app-store-aso-sheet.md`](docs/app-store-aso-sheet.md).
+- [`ROADMAP.md`](ROADMAP.md): planned and shipped enhancements.
+- [`metadata/`](metadata): the App Store listing (name, subtitle, description, keywords, What's New) for each version and locale.
+- [`docs/app-store-aso-sheet.md`](docs/app-store-aso-sheet.md): keyword notes and the screenshot storyboard.
 
 ## Author
 

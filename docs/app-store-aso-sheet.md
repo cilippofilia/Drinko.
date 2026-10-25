@@ -4,6 +4,8 @@ Updated: 2026-03-22
 
 This sheet contains validated App Store metadata for Drinko across supported locales, plus screenshot copy and keyword notes.
 
+> **Note:** This sheet is a snapshot from version 2.5. The current App Store listing lives in [`metadata/`](../metadata), with `app-info/` for the name and subtitle and `version/<version>/` for the description, keywords, promotional text and What's New. Treat those JSON files as the source of truth. The copy below is kept for keyword history and the screenshot storyboard.
+
 ## Locales
 
 ### English (US/UK)
