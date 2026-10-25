@@ -21,6 +21,10 @@ final class CloudSync {
     /// download. If iCloud is still empty on a later launch, this device is the first one.
     static let awaitingFirstDownloadKey = "cloudSync.awaitingFirstDownload"
 
+    /// Local-only copy of `snapshot`, so a launch can tell which values another process (the
+    /// widget) changed while the app was closed. A property-list dictionary. Never synced.
+    static let lastSyncedKey = "cloudSync.lastSynced"
+
     private let cloud: CloudKeyValueStore
     private let standard: UserDefaults
     private let appGroup: UserDefaults
@@ -30,7 +34,13 @@ final class CloudSync {
 
     /// The last local value seen for each key, so a change notification only uploads what
     /// changed, and values written from iCloud aren't sent back.
+    /// Persisted under `lastSyncedKey` at the end of each operation that changes it.
     private var snapshot: [String: Any] = [:]
+
+    /// Keys uploaded since the app last became active. A push triggered by any in-process write
+    /// can upload a widget change before the app is active, so `appDidBecomeActive` reports
+    /// these too, and the stores reload what the widget wrote.
+    private var pushedSinceActive: Set<String> = []
 
     // Only mutated in `start()` on the main actor; read in `deinit` to remove the observers.
     nonisolated(unsafe) private var observers: [NSObjectProtocol] = []
@@ -60,15 +70,29 @@ final class CloudSync {
     func start() {
         guard observers.isEmpty else { return }
 
-        for key in keys {
-            snapshot[key.name] = defaults(for: key).object(forKey: key.name)
+        let didInitialMerge = standard.bool(forKey: Self.didInitialMergeKey)
+        // On a merged device, start from what was last synced, so values changed in another
+        // process since then are uploaded below instead of overwritten by iCloud's older ones.
+        if didInitialMerge, let lastSynced = standard.object(forKey: Self.lastSyncedKey) as? [String: Any] {
+            for key in keys {
+                snapshot[key.name] = lastSynced[key.name]
+            }
+        } else {
+            for key in keys {
+                snapshot[key.name] = defaults(for: key).object(forKey: key.name)
+            }
         }
         observeLocalChanges()
         observeCloudChanges()
 
         cloud.synchronize()
-        if standard.bool(forKey: Self.didInitialMergeKey) {
+        if didInitialMerge {
+            // Local changes made while closed win over iCloud: latest change wins.
+            pushLocalChanges()
             pull(keys)
+            // Saved even when nothing changed, so a device that has never saved one has a
+            // copy to compare against on its next launch.
+            persistSnapshot()
         } else {
             // Wait for iCloud's first download unless an earlier launch already waited.
             mergeAll(evenIfCloudIsEmpty: standard.bool(forKey: Self.awaitingFirstDownloadKey))
@@ -103,19 +127,38 @@ final class CloudSync {
     /// this device has merged with iCloud, so an unmerged value can't replace another device's.
     func pushLocalChanges() {
         guard standard.bool(forKey: Self.didInitialMergeKey) else { return }
+        var snapshotChanged = false
         var uploaded = false
         for key in keys {
             let value = defaults(for: key).object(forKey: key.name)
             guard !Self.isEqual(value, snapshot[key.name]) else { continue }
             snapshot[key.name] = value
+            snapshotChanged = true
             // Removed values aren't removed from iCloud, so a reset can't wipe other devices.
             if let value {
                 cloud.set(value, forKey: key.name)
+                pushedSinceActive.insert(key.name)
                 uploaded = true
             }
         }
         if uploaded {
             cloud.synchronize()
+        }
+        if snapshotChanged {
+            // Re-enters this method through the change notification; the snapshot already
+            // matches, so that call does nothing.
+            persistSnapshot()
+        }
+    }
+
+    /// Uploads values another process (the widget) changed while the app was in the
+    /// background, where no change notification reaches it, and reloads the stores.
+    func appDidBecomeActive() {
+        pushLocalChanges()
+        let pushed = pushedSinceActive
+        pushedSinceActive.removeAll()
+        if !pushed.isEmpty {
+            onRemoteChange(pushed)
         }
     }
 
@@ -163,6 +206,7 @@ final class CloudSync {
         }
         standard.set(true, forKey: Self.didInitialMergeKey)
         standard.removeObject(forKey: Self.awaitingFirstDownloadKey)
+        persistSnapshot()
         if !changed.isEmpty {
             onRemoteChange(changed)
         }
@@ -186,6 +230,7 @@ final class CloudSync {
             changed.insert(key.name)
         }
         if !changed.isEmpty {
+            persistSnapshot()
             onRemoteChange(changed)
         }
     }
@@ -229,6 +274,12 @@ final class CloudSync {
     }
 
     // MARK: - Helpers
+
+    /// Saves `snapshot` locally under `lastSyncedKey`. Missing values are left out, so they read
+    /// back as `nil`. Writing posts a change notification that re-enters `pushLocalChanges`.
+    private func persistSnapshot() {
+        standard.set(snapshot, forKey: Self.lastSyncedKey)
+    }
 
     private func defaults(for key: CloudSyncedKey) -> UserDefaults {
         switch key.suite {

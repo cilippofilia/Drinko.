@@ -11,6 +11,7 @@ import SwiftUI
 
 @main
 struct DrinkoProApp: App {
+    @Environment(\.scenePhase) private var scenePhase
     @State private var favorites: Favorites
     @State private var cocktailsViewModel: CocktailsViewModel
     @State private var lessonsViewModel: LessonsViewModel
@@ -107,6 +108,12 @@ struct DrinkoProApp: App {
             .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                 guard let url = activity.webpageURL else { return }
                 appNavigationModel.handle(url: url)
+            }
+            .onChange(of: scenePhase) { _, newPhase in
+                // The widget may have changed favorites while the app was in the background.
+                if newPhase == .active {
+                    cloudSync.appDidBecomeActive()
+                }
             }
         }
         .environment(favorites)
