@@ -20,8 +20,9 @@ final class ContentStore {
     @ObservationIgnored private let refresher: ContentRefresher
     @ObservationIgnored private let language: String
     @ObservationIgnored private let bundle: Bundle
-    /// The run in progress, shared by any caller that arrives while it is still going.
+    /// Called on the main actor each time a refresh delivers new content.
     @ObservationIgnored private let onContentUpdated: @MainActor () -> Void
+    /// The run in progress, shared by any caller that arrives while it is still going.
     @ObservationIgnored private var inFlight: Task<ContentSnapshot?, Never>?
 
     init(

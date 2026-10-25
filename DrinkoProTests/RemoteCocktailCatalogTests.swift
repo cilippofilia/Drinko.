@@ -35,10 +35,18 @@ struct RemoteCocktailCatalogTests {
         return await RemoteCocktailCatalog.load(loader: loader)
     }
 
-    @Test func nilWhenShotsFail() async throws {
+    @Test func nilWhenCocktailsFail() async throws {
+        let fetcher = FakeContentFetcher()
+        script(fetcher, .shots, try json([cocktail("remote-shot")]))
+        #expect(await load(fetcher) == nil)
+    }
+
+    @Test func usesBundledShotsWhenShotsFail() async throws {
         let fetcher = FakeContentFetcher()
         script(fetcher, .cocktails, try json([cocktail("remote-only")]))
-        #expect(await load(fetcher) == nil)
+        let catalog = try #require(await load(fetcher))
+        #expect(catalog.cocktail(withID: "remote-only") != nil)
+        #expect(catalog.cocktail(withID: "b-52") != nil)
     }
 
     @Test func usesRemoteCocktailsAndBundledHistoryWhenHistoryFails() async throws {
