@@ -1,6 +1,6 @@
 import AppIntents
 
-/// The phrases Siri and Shortcuts recognise. Later tasks add their shortcuts here.
+/// The phrases Siri and Shortcuts recognise.
 struct DrinkoShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
@@ -18,7 +18,8 @@ struct DrinkoShortcuts: AppShortcutsProvider {
             intent: OpenCocktailIntent(),
             phrases: [
                 "Show me a \(\.$target) in \(.applicationName)",
-                "Open \(\.$target) in \(.applicationName)"
+                "Open \(\.$target) in \(.applicationName)",
+                "Open a cocktail in \(.applicationName)"
             ],
             shortTitle: "Open Cocktail",
             systemImageName: "magnifyingglass"
@@ -44,7 +45,8 @@ struct DrinkoShortcuts: AppShortcutsProvider {
         AppShortcut(
             intent: AddFavoriteIntent(),
             phrases: [
-                "Add \(\.$cocktail) to my favourites in \(.applicationName)"
+                "Add \(\.$cocktail) to my favourites in \(.applicationName)",
+                "Add to my favourites in \(.applicationName)"
             ],
             shortTitle: "Add to Favourites",
             systemImageName: "heart"
@@ -52,7 +54,8 @@ struct DrinkoShortcuts: AppShortcutsProvider {
         AppShortcut(
             intent: RemoveFavoriteIntent(),
             phrases: [
-                "Remove \(\.$cocktail) from my favourites in \(.applicationName)"
+                "Remove \(\.$cocktail) from my favourites in \(.applicationName)",
+                "Remove from my favourites in \(.applicationName)"
             ],
             shortTitle: "Remove from Favourites",
             systemImageName: "heart.slash"

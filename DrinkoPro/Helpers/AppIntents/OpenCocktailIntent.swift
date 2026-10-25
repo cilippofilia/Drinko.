@@ -5,7 +5,7 @@ struct OpenCocktailIntent: OpenIntent {
     static let title: LocalizedStringResource = "Open Cocktail"
     static let description = IntentDescription("Opens a cocktail in Drinko.")
 
-    @Parameter(title: "Cocktail")
+    @Parameter(title: "Cocktail", requestValueDialog: "Which cocktail?")
     var target: CocktailEntity
 
     @Dependency private var navigation: AppNavigationModel
