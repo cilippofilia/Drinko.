@@ -11592,142 +11592,6 @@
         }
       }
     },
-  "Set Favourite" : {
-    "localizations" : {
-      "en" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Set Favourite"
-        }
-      },
-      "fr" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Définir comme favori"
-        }
-      },
-      "de" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Als Favorit festlegen"
-        }
-      },
-      "it" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Imposta come preferito"
-        }
-      },
-      "es" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Establecer como favorito"
-        }
-      }
-    }
-  },
-  "Adds a cocktail to your favourites or removes it." : {
-    "localizations" : {
-      "en" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Adds a cocktail to your favourites or removes it."
-        }
-      },
-      "fr" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Ajoute un cocktail à tes favoris ou l'en retire."
-        }
-      },
-      "de" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Fügt einen Cocktail zu deinen Favoriten hinzu oder entfernt ihn."
-        }
-      },
-      "it" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Aggiunge un cocktail ai tuoi preferiti o lo rimuove."
-        }
-      },
-      "es" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Añade un cóctel a tus favoritos o lo quita."
-        }
-      }
-    }
-  },
-  "Favourite" : {
-    "localizations" : {
-      "en" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Favourite"
-        }
-      },
-      "fr" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Favori"
-        }
-      },
-      "de" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Favorit"
-        }
-      },
-      "it" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Preferito"
-        }
-      },
-      "es" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Favorito"
-        }
-      }
-    }
-  },
-  "Set ${cocktail} as favourite: ${isFavorite}" : {
-    "localizations" : {
-      "en" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Set ${cocktail} as favourite: ${isFavorite}"
-        }
-      },
-      "fr" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Définir ${cocktail} comme favori : ${isFavorite}"
-        }
-      },
-      "de" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "${cocktail} als Favorit festlegen: ${isFavorite}"
-        }
-      },
-      "it" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Imposta ${cocktail} come preferito: ${isFavorite}"
-        }
-      },
-      "es" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Establecer ${cocktail} como favorito: ${isFavorite}"
-        }
-      }
-    }
-  },
   "Added %@ to your favourites." : {
     "localizations" : {
       "en" : {
@@ -12370,6 +12234,142 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Añadir ${bottle} a ${category}"
+          }
+        }
+      }
+    },
+    "Adds a cocktail to your favourites." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adds a cocktail to your favourites."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoute un cocktail à tes favoris."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fügt einen Cocktail zu deinen Favoriten hinzu."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiunge un cocktail ai tuoi preferiti."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade un cóctel a tus favoritos."
+          }
+        }
+      }
+    },
+    "Removes a cocktail from your favourites." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Removes a cocktail from your favourites."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retire un cocktail de tes favoris."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entfernt einen Cocktail aus deinen Favoriten."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rimuove un cocktail dai tuoi preferiti."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quita un cóctel de tus favoritos."
+          }
+        }
+      }
+    },
+    "Add ${cocktail} to favourites" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add ${cocktail} to favourites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter ${cocktail} aux favoris"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${cocktail} zu Favoriten hinzufügen"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi ${cocktail} ai preferiti"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir ${cocktail} a favoritos"
+          }
+        }
+      }
+    },
+    "Remove ${cocktail} from favourites" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove ${cocktail} from favourites"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer ${cocktail} des favoris"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${cocktail} aus Favoriten entfernen"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rimuovi ${cocktail} dai preferiti"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar ${cocktail} de favoritos"
           }
         }
       }

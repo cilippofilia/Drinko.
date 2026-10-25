@@ -42,7 +42,7 @@ struct DrinkoShortcuts: AppShortcutsProvider {
             systemImageName: "dice"
         )
         AppShortcut(
-            intent: SetFavoriteIntent(),
+            intent: AddFavoriteIntent(),
             phrases: [
                 "Add \(\.$cocktail) to my favourites in \(.applicationName)"
             ],
@@ -50,7 +50,7 @@ struct DrinkoShortcuts: AppShortcutsProvider {
             systemImageName: "heart"
         )
         AppShortcut(
-            intent: SetFavoriteIntent(isFavorite: false),
+            intent: RemoveFavoriteIntent(),
             phrases: [
                 "Remove \(\.$cocktail) from my favourites in \(.applicationName)"
             ],
