@@ -14,7 +14,7 @@ struct DrinkoClipApp: App {
             ClipRootView(model: model)
                 .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                     guard let url = activity.webpageURL else { return }
-                    model.open(url)
+                    Task { await model.open(url) }
                 }
         }
     }

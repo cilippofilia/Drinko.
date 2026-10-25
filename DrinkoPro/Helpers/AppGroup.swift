@@ -9,7 +9,7 @@ import Foundation
 
 // Lets DrinkoWidget read data the app writes, such as favorites.
 enum AppGroup {
-    static let identifier = "group.me.cilia.filippo.DrinkoPro"
+    nonisolated static let identifier = "group.me.cilia.filippo.DrinkoPro"
 
     // Holds the favorite cocktail IDs.
     static let favoritesKey = "Cocktails"

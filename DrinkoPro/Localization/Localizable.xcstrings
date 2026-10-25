@@ -1440,62 +1440,6 @@
     "Ads Removed" : {
 
     },
-    "Advanced Lessons" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fortgeschrittene Lektionen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lecciones avanzadas"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leçons avancées"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lezioni avanzate"
-          }
-        }
-      }
-    },
-    "Advanced Spirits" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fortgeschrittene Spirituosen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Licores avanzados"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spiritueux avancés"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liquori avanzati"
-          }
-        }
-      }
-    },
     "Alcohol by volume" : {
       "localizations" : {
         "de" : {
@@ -1851,90 +1795,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Automatico, da %@"
-          }
-        }
-      }
-    },
-    "Bar Preps" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bar-Vorbereitungen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preparaciones de bar"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Préparations de bar"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preparazioni da bar"
-          }
-        }
-      }
-    },
-    "Basic Lessons" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grundlagen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lecciones básicas"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leçons de base"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lezioni di base"
-          }
-        }
-      }
-    },
-    "Basic Spirits" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grundlegende Spirituosen"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Licores básicos"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Spiritueux de base"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liquori di base"
           }
         }
       }
@@ -2642,6 +2502,41 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nome Categoria"
+          }
+        }
+      }
+    },
+    "Cheers! In my glass: %@ 🥃\nSee how it's made:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prost! In meinem Glas: %1$@ 🥃\nSo wird er gemacht:\n%2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cheers! In my glass: %1$@ 🥃\nSee how it's made:\n%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¡Salud! En mi copa: %1$@ 🥃\nMira cómo se hace:\n%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Santé ! Dans mon verre : %1$@ 🥃\nDécouvre comment le faire :\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cin cin! Nel mio bicchiere: %1$@ 🥃\nGuarda come si prepara:\n%2$@"
           }
         }
       }
@@ -5266,6 +5161,41 @@
         }
       }
     },
+    "Happy hour pick: %@ 🍸\nTry it yourself:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mein Happy-Hour-Tipp: %1$@ 🍸\nProbier ihn selbst:\n%2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Happy hour pick: %1$@ 🍸\nTry it yourself:\n%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mi elección para el happy hour: %1$@ 🍸\nPruébalo tú mismo:\n%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mon choix pour l'apéro : %1$@ 🍸\nEssaie-le toi-même :\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La scelta dell'aperitivo: %1$@ 🍸\nProvalo anche tu:\n%2$@"
+          }
+        }
+      }
+    },
     "Have you tried it yet?" : {
       "localizations" : {
         "de" : {
@@ -5951,34 +5881,6 @@
         }
       }
     },
-    "Liqueurs" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liköre"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Licores"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liqueurs"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Liquori"
-          }
-        }
-      }
-    },
     "List View" : {
       "localizations" : {
         "de" : {
@@ -6303,6 +6205,41 @@
         }
       }
     },
+    "My next round: %@ 🍸\nMake one with me:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meine nächste Runde: %1$@ 🍸\nMix dir auch einen:\n%2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My next round: %1$@ 🍸\nMake one with me:\n%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mi próxima ronda: %1$@ 🍸\nPrepárate uno conmigo:\n%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ma prochaine tournée : %1$@ 🍸\nPrépare-en un avec moi :\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il mio prossimo giro: %1$@ 🍸\nPreparane uno con me:\n%2$@"
+          }
+        }
+      }
+    },
     "Name" : {
       "localizations" : {
         "de" : {
@@ -6464,6 +6401,41 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuovo cocktail"
+          }
+        }
+      }
+    },
+    "New favourite unlocked: %@ 🍋\nThe recipe's all here:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neuer Favorit: %1$@ 🍋\nDas ganze Rezept gibt's hier:\n%2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New favourite unlocked: %1$@ 🍋\nThe recipe's all here:\n%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo favorito desbloqueado: %1$@ 🍋\nAquí tienes toda la receta:\n%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau coup de cœur : %1$@ 🍋\nToute la recette est ici :\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuovo preferito sbloccato: %1$@ 🍋\nTrovi tutta la ricetta qui:\n%2$@"
           }
         }
       }
@@ -6881,6 +6853,41 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        }
+      }
+    },
+    "On the bar tonight: %@ 🧊\nWant the recipe?\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heute an der Bar: %1$@ 🧊\nWillst du das Rezept?\n%2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On the bar tonight: %1$@ 🧊\nWant the recipe?\n%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta noche en la barra: %1$@ 🧊\n¿Quieres la receta?\n%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce soir au bar : %1$@ 🧊\nTu veux la recette ?\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stasera al bancone: %1$@ 🧊\nVuoi la ricetta?\n%2$@"
           }
         }
       }
@@ -8644,6 +8651,41 @@
     "Shaken" : {
 
     },
+    "Shaking things up: %@ 🍹\nGrab the recipe:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zeit zum Shaken: %1$@ 🍹\nHol dir das Rezept:\n%2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Shaking things up: %1$@ 🍹\nGrab the recipe:\n%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoy toca agitar: %1$@ 🍹\nAquí tienes la receta:\n%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "On passe au shaker : %1$@ 🍹\nRécupère la recette :\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si shakera: %1$@ 🍹\nEcco la ricetta:\n%2$@"
+          }
+        }
+      }
+    },
     "Share Recipe Card" : {
       "localizations" : {
         "de" : {
@@ -9351,34 +9393,6 @@
         }
       }
     },
-    "Syrups" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sirupe"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jarabes"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sirops"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sciroppi"
-          }
-        }
-      }
-    },
     "Take Photo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -9664,12 +9678,36 @@
       }
     },
     "Tonight's pour: %@ 🍸\nHere's how to make it:\n%@" : {
-      "comment" : "Share text for a built-in cocktail. The link opens the recipe in the Drinko App Clip.",
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
       "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heute Abend im Glas: %1$@ 🍸\nSo geht's:\n%2$@"
+          }
+        },
         "en" : {
           "stringUnit" : {
-            "state" : "new",
+            "state" : "translated",
             "value" : "Tonight's pour: %1$@ 🍸\nHere's how to make it:\n%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La copa de esta noche: %1$@ 🍸\nAsí se prepara:\n%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Au menu ce soir : %1$@ 🍸\nVoici comment le préparer :\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il drink di stasera: %1$@ 🍸\nEcco come prepararlo:\n%2$@"
           }
         }
       }
@@ -10323,6 +10361,41 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Potrebbe piacerti anche..."
+          }
+        }
+      }
+    },
+    "You need to try this one: %@ 🥂\nHere's the recipe:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Den musst du probieren: %1$@ 🥂\nHier ist das Rezept:\n%2$@"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You need to try this one: %1$@ 🥂\nHere's the recipe:\n%2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tienes que probar este: %1$@ 🥂\nAquí está la receta:\n%2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu dois goûter celui-ci : %1$@ 🥂\nVoici la recette :\n%2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devi assolutamente provarlo: %1$@ 🥂\nEcco la ricetta:\n%2$@"
           }
         }
       }

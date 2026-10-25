@@ -50,6 +50,11 @@ struct MacSettingsInfoView: View {
         } header: {
             Text("Info")
                 .foregroundStyle(.secondary)
+        } footer: {
+            #if DEBUG
+            ContentSourceFooter()
+                .foregroundStyle(.secondary)
+            #endif
         }
         .foregroundStyle(.primary)
         .sheet(isPresented: $showReadMeView) {

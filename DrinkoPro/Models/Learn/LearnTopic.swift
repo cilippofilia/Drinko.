@@ -5,19 +5,24 @@
 
 import Foundation
 
-/// One Learn topic. `id` is also the name of the bundled JSON file holding its lessons.
-struct LearnTopic: Identifiable, Hashable {
+/// One Learn topic. `id` is also the name of the JSON file holding its lessons.
+nonisolated struct LearnTopic: Codable, Identifiable, Hashable, Sendable {
     let id: String
     let title: String
+    /// An SF Symbol name. May not exist on the running OS; see `LessonsViewModel.sidebarSymbol(for:)`.
+    let symbol: String
 
-    /// Every topic, in display order. Add a topic by adding an entry here and a `<id>.json` file.
-    nonisolated static let all: [LearnTopic] = [
-        LearnTopic(id: "basic-lessons", title: String(localized: "Basic Lessons")),
-        LearnTopic(id: "bar-preps", title: String(localized: "Bar Preps")),
-        LearnTopic(id: "basic-spirits", title: String(localized: "Basic Spirits")),
-        LearnTopic(id: "advanced-spirits", title: String(localized: "Advanced Spirits")),
-        LearnTopic(id: "liqueurs", title: String(localized: "Liqueurs")),
-        LearnTopic(id: "advanced-lessons", title: String(localized: "Advanced Lessons")),
-        LearnTopic(id: "syrups", title: String(localized: "Syrups"))
-    ]
+    /// Shown when a topic's symbol isn't available on the running OS.
+    nonisolated static let fallbackSymbol = "book"
+
+    /// The topics shipped in the app, in display order, from the localized `topics.json`.
+    /// Empty if the file is missing or malformed.
+    nonisolated static var bundled: [LearnTopic] {
+        guard let url = Bundle.main.url(forResource: "topics", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let topics = try? JSONDecoder().decode([LearnTopic].self, from: data) else {
+            return []
+        }
+        return topics
+    }
 }

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "basic-lessons",
+    "title": "Grundlagen",
+    "symbol": "graduationcap"
+  },
+  {
+    "id": "bar-preps",
+    "title": "Bar-Vorbereitungen",
+    "symbol": "list.bullet.clipboard"
+  },
+  {
+    "id": "basic-spirits",
+    "title": "Grundlegende Spirituosen",
+    "symbol": "waterbottle"
+  },
+  {
+    "id": "advanced-spirits",
+    "title": "Fortgeschrittene Spirituosen",
+    "symbol": "star"
+  },
+  {
+    "id": "liqueurs",
+    "title": "Liköre",
+    "symbol": "drop.halffull"
+  },
+  {
+    "id": "advanced-lessons",
+    "title": "Fortgeschrittene Lektionen",
+    "symbol": "brain.head.profile"
+  },
+  {
+    "id": "syrups",
+    "title": "Sirupe",
+    "symbol": "flask"
+  }
+]

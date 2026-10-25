@@ -5,7 +5,7 @@ import XCTest
 final class LessonsViewModelTests: XCTestCase {
     func testTopicManifestOrder() {
         XCTAssertEqual(
-            LearnTopic.all.map(\.id),
+            LearnTopic.bundled.map(\.id),
             [
                 "basic-lessons",
                 "bar-preps",
@@ -16,7 +16,23 @@ final class LessonsViewModelTests: XCTestCase {
                 "syrups"
             ]
         )
-        XCTAssertEqual(LessonsViewModel().topics, LearnTopic.all)
+        XCTAssertEqual(LessonsViewModel().topics, LearnTopic.bundled)
+    }
+
+    func testApplyReplacesTopicsAndClearsCache() {
+        let viewModel = LessonsViewModel()
+        viewModel.itemsByIDCache = [:]
+
+        let topic = LearnTopic(id: "alpha", title: "Alpha", symbol: "book")
+        let lesson = Lesson(id: "l1", title: "T", description: "D", body: [LessonContent(heading: "H", content: "C")])
+        var snapshot = ContentSnapshot.bundled()
+        snapshot.topics = [topic]
+        snapshot.lessonsByTopic = [topic.id: [lesson]]
+        viewModel.apply(snapshot)
+
+        XCTAssertEqual(viewModel.topics, [topic])
+        XCTAssertEqual(viewModel.lessons(for: topic.id), [lesson])
+        XCTAssertNil(viewModel.itemsByIDCache)
     }
 
     func testEveryTopicLoadsLessonsFromBundle() {

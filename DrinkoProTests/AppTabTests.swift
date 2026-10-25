@@ -79,10 +79,16 @@ struct AppTabTests {
     }
 
     @Test func learnSectionTitles() {
-        #expect(LessonsViewModel.sectionTitle(for: "bar-preps") == String(localized: "Bar Preps"))
-        #expect(LessonsViewModel.sectionTitle(for: LessonsViewModel.booksSectionID) == String(localized: "Books"))
-        #expect(LessonsViewModel.sectionTitle(for: "nope") == nil)
-        #expect(LessonsViewModel.librarySectionIDs == LearnTopic.all.map(\.id) + [LessonsViewModel.booksSectionID])
+        let viewModel = LessonsViewModel()
+        #expect(viewModel.sectionTitle(for: "bar-preps") == viewModel.topics.first { $0.id == "bar-preps" }?.title)
+        #expect(viewModel.sectionTitle(for: LessonsViewModel.booksSectionID) == String(localized: "Books"))
+        #expect(viewModel.sectionTitle(for: "nope") == nil)
+        #expect(viewModel.librarySectionIDs == LearnTopic.bundled.map(\.id) + [LessonsViewModel.booksSectionID])
+    }
+
+    @Test func learnDetailValidatedAgainstGivenIDs() {
+        #expect(AppTab(rawValue: "Learn/new-topic", learnSectionIDs: ["new-topic"]) == .learnSection("new-topic"))
+        #expect(AppTab(rawValue: "Learn/new-topic", learnSectionIDs: []) == .learn)
     }
 
     @Test func fittedUsesParentWhenCompact() {
@@ -122,5 +128,15 @@ struct AppTabTests {
         let unfolded = !AppTab.sidebarRowsAvailable(horizontalSizeClass: .regular)
         #expect(shots.fitted(isCompact: folded, categoryIDs: []) == .cocktails)
         #expect(shots.fitted(isCompact: unfolded, categoryIDs: []) == shots)
+    }
+
+    @Test func removedLearnSectionFallsBackToLearn() {
+        #expect(AppTab.learnSection("gone").validatedLearnSelection(sectionIDs: ["bar-preps"]) == .learn)
+    }
+
+    @Test func existingLearnSectionIsKept() {
+        let tab = AppTab.learnSection("bar-preps")
+        #expect(tab.validatedLearnSelection(sectionIDs: ["bar-preps"]) == tab)
+        #expect(AppTab.cabinet.validatedLearnSelection(sectionIDs: []) == .cabinet)
     }
 }

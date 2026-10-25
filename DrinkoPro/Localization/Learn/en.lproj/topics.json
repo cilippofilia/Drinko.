@@ -1,0 +1,37 @@
+[
+  {
+    "id": "basic-lessons",
+    "title": "Basic Lessons",
+    "symbol": "graduationcap"
+  },
+  {
+    "id": "bar-preps",
+    "title": "Bar Preps",
+    "symbol": "list.bullet.clipboard"
+  },
+  {
+    "id": "basic-spirits",
+    "title": "Basic Spirits",
+    "symbol": "waterbottle"
+  },
+  {
+    "id": "advanced-spirits",
+    "title": "Advanced Spirits",
+    "symbol": "star"
+  },
+  {
+    "id": "liqueurs",
+    "title": "Liqueurs",
+    "symbol": "drop.halffull"
+  },
+  {
+    "id": "advanced-lessons",
+    "title": "Advanced Lessons",
+    "symbol": "brain.head.profile"
+  },
+  {
+    "id": "syrups",
+    "title": "Syrups",
+    "symbol": "flask"
+  }
+]

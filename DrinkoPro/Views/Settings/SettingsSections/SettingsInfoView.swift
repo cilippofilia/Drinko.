@@ -15,9 +15,7 @@ struct SettingsInfoView: View {
     #endif
 
     var body: some View {
-        Section(
-            header: Text("Info").foregroundStyle(.secondary)
-        ) {
+        Section {
             NavigationLink(destination: ReadMeView()) {
                 SettingsRowView(
                     icon: "r.circle",
@@ -73,6 +71,13 @@ struct SettingsInfoView: View {
             .accessibilityElement(children: .ignore)
             .accessibilityLabel("Version")
             .accessibilityValue(getCurrentAppVersion())
+        } header: {
+            Text("Info")
+                .foregroundStyle(.secondary)
+        } footer: {
+            #if DEBUG
+            ContentSourceFooter()
+            #endif
         }
         .foregroundStyle(.primary)
     }

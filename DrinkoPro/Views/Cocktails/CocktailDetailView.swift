@@ -16,6 +16,8 @@ struct CocktailDetailView: View {
     @AppStorage(DetailSection.storageKey) private var collapsedSections = CollapsedSections()
     @State private var showDeleteConfirmation = false
     @State private var showEditSheet = false
+    /// Picked once per visit so the share text doesn't change while the share sheet is open.
+    @State private var shareMessageVariant = CocktailShareMessage.randomVariant()
 
     let cocktail: Cocktail
 
@@ -137,7 +139,8 @@ struct CocktailDetailView: View {
             ToolbarItem(placement: toolbarPlacement) {
                 ShareLink(
                     item: shareItem,
-                    message: CocktailShareMessage.text(for: activeCocktail).map { Text($0) },
+                    message: CocktailShareMessage.text(for: activeCocktail, variant: shareMessageVariant)
+                        .map { Text($0) },
                     preview: SharePreview(activeCocktail.name, image: Image("logo"))
                 ) {
                     Label("Share Recipe Card", systemImage: "square.and.arrow.up")
