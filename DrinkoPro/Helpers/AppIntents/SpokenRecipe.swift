@@ -78,11 +78,20 @@ struct SpokenRecipe {
     // MARK: - Ingredients
 
     private func ingredientLine(_ ingredient: Ingredient) -> String {
-        guard ingredient.quantity > 0 else { return ingredient.name }
         let quantity = ingredient.convertedQuantity(to: unit)
-        let amount = Self.spokenAmount(quantity, unit: ingredient.convertedUnit(to: unit), locale: locale)
+        let spokenUnit = ingredient.convertedUnit(to: unit)
+        // Anything that rounds to nothing, like "top up" or 0.001 oz, is spoken by name only.
+        let rounded = spokenUnit == "ml" ? quantity.rounded() : (quantity * 100).rounded() / 100
+        guard rounded > 0 else { return ingredient.name }
+
+        let amount = Self.spokenAmount(quantity, unit: spokenUnit, locale: locale)
+        // Only measures take the localized connector ("un'oncia di gin"); "2 lime" and
+        // "2 leaves mint" are joined plainly.
+        guard Self.measureUnits.contains(spokenUnit) else { return "\(amount) \(ingredient.name)" }
         return text("\(amount) \(ingredient.name)")
     }
+
+    private static let measureUnits: Set<String> = ["oz.", "ml", "dash", "dashes"]
 
     private var spokenGlass: String? {
         guard let glass = Self.meaningful(cocktail.glass) else { return nil }

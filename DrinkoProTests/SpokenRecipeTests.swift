@@ -90,4 +90,26 @@ struct SpokenRecipeTests {
         #expect(speech.contains("e mezza"))
         #expect(speech.contains(" di gin"))
     }
+
+    @Test
+    func italianPlainUnitsHaveNoConnector() {
+        let italian = Locale(identifier: "it_IT")
+        let limes = make(ingredients: [Ingredient(name: "lime", quantity: 2, unit: "-")])
+        let limeSpeech = SpokenRecipe(cocktail: limes, steps: [], unit: "oz.", locale: italian).ingredientsSpeech
+        #expect(limeSpeech.contains("2 lime"))
+        #expect(!limeSpeech.contains("di"))
+
+        let mint = make(ingredients: [Ingredient(name: "mint", quantity: 8, unit: "leaves")])
+        let mintSpeech = SpokenRecipe(cocktail: mint, steps: [], unit: "oz.", locale: italian).ingredientsSpeech
+        #expect(mintSpeech.contains("8 leaves mint"))
+        #expect(!mintSpeech.contains("di"))
+    }
+
+    @Test
+    func tinyQuantitiesAreSpokenByNameOnly() {
+        let cocktail = make(ingredients: [Ingredient(name: "salt", quantity: 0.001, unit: "oz.")])
+        let speech = SpokenRecipe(cocktail: cocktail, steps: [], unit: "oz.", locale: english).ingredientsSpeech
+        #expect(speech.hasSuffix("salt."))
+        #expect(!speech.contains("0"))
+    }
 }
