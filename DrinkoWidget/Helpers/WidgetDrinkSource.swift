@@ -47,9 +47,7 @@ extension DrinkoWidgetCatalog {
         on date: Date,
         calendar: Calendar = .autoupdatingCurrent
     ) -> WidgetCocktail? {
-        guard !pool.isEmpty else { return nil }
-
-        let dayIndex = calendar.ordinality(of: .day, in: .era, for: date) ?? 0
-        return pool[dayIndex % pool.count]
+        guard let index = DailyPick.index(count: pool.count, on: date, calendar: calendar) else { return nil }
+        return pool[index]
     }
 }

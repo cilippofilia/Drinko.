@@ -137,6 +137,40 @@
         }
       }
     },
+    "Drinko has no cocktails yet." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko has no cocktails yet."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko n'a pas encore de cocktails."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko hat noch keine Cocktails."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko non ha ancora cocktail."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Drinko todavía no tiene cócteles."
+          }
+        }
+      }
+    },
     "%lld and a half ounces" : {
       "localizations" : {
         "de" : {
@@ -1300,6 +1334,74 @@
         }
       }
     },
+    "Picks a random cocktail and reads it aloud." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Picks a random cocktail and reads it aloud."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisit un cocktail au hasard et le lit à voix haute."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählt einen zufälligen Cocktail und liest ihn vor."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sceglie un cocktail a caso e lo legge ad alta voce."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige un cóctel al azar y lo lee en voz alta."
+          }
+        }
+      }
+    },
+    "Reads today's cocktail aloud, ingredients first and then the method." : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reads today's cocktail aloud, ingredients first and then the method."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lit à voix haute le cocktail du jour, d'abord les ingrédients puis la méthode."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liest den Cocktail des Tages vor, zuerst die Zutaten und dann die Zubereitung."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legge ad alta voce il cocktail del giorno, prima gli ingredienti e poi il procedimento."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lee en voz alta el cóctel del día, primero los ingredientes y luego el método."
+          }
+        }
+      }
+    },
     "Step %lld:" : {
       "localizations" : {
         "de" : {
@@ -1330,6 +1432,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Passaggio %lld:"
+          }
+        }
+      }
+    },
+    "Surprise Me" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surprise Me"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surprends-moi"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Überrasch mich"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorprendimi"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sorpréndeme"
           }
         }
       }
@@ -10321,6 +10457,40 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Per iniziare, premi \"Aggiungi una categoria\" qua sotto o il + in alto a destra"
+          }
+        }
+      }
+    },
+    "Today's Cocktail" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today's Cocktail"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail du jour"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail des Tages"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail del giorno"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cóctel del día"
           }
         }
       }

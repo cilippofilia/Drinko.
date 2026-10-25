@@ -23,5 +23,23 @@ struct DrinkoShortcuts: AppShortcutsProvider {
             shortTitle: "Open Cocktail",
             systemImageName: "magnifyingglass"
         )
+        AppShortcut(
+            intent: TodaysCocktailIntent(),
+            phrases: [
+                "What's today's cocktail in \(.applicationName)",
+                "Cocktail of the day in \(.applicationName)"
+            ],
+            shortTitle: "Today's Cocktail",
+            systemImageName: "calendar"
+        )
+        AppShortcut(
+            intent: SurpriseMeIntent(),
+            phrases: [
+                "Surprise me in \(.applicationName)",
+                "Pick a random cocktail in \(.applicationName)"
+            ],
+            shortTitle: "Surprise Me",
+            systemImageName: "dice"
+        )
     }
 }
