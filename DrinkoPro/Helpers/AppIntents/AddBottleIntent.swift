@@ -48,14 +48,7 @@ struct AddBottleIntent: AppIntent {
             if CabinetCategoryGuesser.isDuplicate(current, in: existing) {
                 summary = String(localized: "\(current) is already in \(target.name).")
             } else {
-                let item = Item(name: current)
-                item.category = model
-                if model.products == nil {
-                    model.products = [item]
-                } else {
-                    model.products?.append(item)
-                }
-                try context.save()
+                try CabinetBottleAdder.add(current, to: model, in: context)
                 summary = String(localized: "Added \(current) to \(target.name).")
             }
 
