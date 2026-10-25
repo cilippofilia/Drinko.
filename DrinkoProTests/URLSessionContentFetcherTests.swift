@@ -12,12 +12,13 @@ struct URLSessionContentFetcherTests {
 
     /// Builds a fetcher on a unique host and registers `handler` for it.
     private func makeFetcher(
+        timeout: TimeInterval = 15,
         handler: @escaping HostStubURLProtocol.Handler
     ) -> URLSessionContentFetcher {
         let host = "\(UUID().uuidString.lowercased()).test"
         HostStubURLProtocol.register(host: host, handler: handler)
         let baseURL = URL(string: "https://\(host)/repo/main/")!
-        return URLSessionContentFetcher(baseURL: baseURL, session: HostStubURLProtocol.makeSession())
+        return URLSessionContentFetcher(baseURL: baseURL, session: HostStubURLProtocol.makeSession(), timeout: timeout)
     }
 
     private static func response(
@@ -75,5 +76,13 @@ struct URLSessionContentFetcherTests {
         await #expect(throws: ContentFetchError.badStatus(status)) {
             try await fetcher.fetch(path: path, etag: nil)
         }
+    }
+
+    @Test func usesConfiguredTimeout() async throws {
+        let fetcher = makeFetcher(timeout: URLSessionContentFetcher.extensionTimeout) { request in
+            #expect(request.timeoutInterval == 5)
+            return (Self.response(for: request, status: 200), Data())
+        }
+        _ = try await fetcher.fetch(path: path, etag: nil)
     }
 }

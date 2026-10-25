@@ -10,19 +10,24 @@ struct URLSessionContentFetcher: ContentFetching {
     /// The repository root that fetch paths are appended to.
     static let defaultBaseURL = URL(string: "https://raw.githubusercontent.com/cilippofilia/drinko-learn/main/")!
 
+    /// The shorter timeout for the widget and App Clip, which have little time to run.
+    static let extensionTimeout: TimeInterval = 5
+
     let baseURL: URL
     let session: URLSession
+    let timeout: TimeInterval
 
-    init(baseURL: URL = Self.defaultBaseURL, session: URLSession = .shared) {
+    init(baseURL: URL = Self.defaultBaseURL, session: URLSession = .shared, timeout: TimeInterval = 15) {
         self.baseURL = baseURL
         self.session = session
+        self.timeout = timeout
     }
 
     func fetch(path: String, etag: String?) async throws -> ContentFetchResult {
         var request = URLRequest(url: baseURL.appending(path: path))
         // The app's ETag logic is the only cache in play.
         request.cachePolicy = .reloadIgnoringLocalCacheData
-        request.timeoutInterval = 15
+        request.timeoutInterval = timeout
         if let etag {
             request.setValue(etag, forHTTPHeaderField: "If-None-Match")
         }
