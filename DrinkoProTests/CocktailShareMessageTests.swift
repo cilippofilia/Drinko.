@@ -19,8 +19,10 @@ struct CocktailShareMessageTests {
         #expect(text == "Tonight's pour: White Lady 🍸\nHere's how to make it:\n\(link)")
     }
 
-    @Test func remoteOnlyCocktailHasNoClipLink() {
-        #expect(CocktailShareMessage.text(for: cocktail(id: "remote-only-drink", name: "Remote")) == nil)
+    @Test func downloadedCocktailIncludesLink() {
+        let text = CocktailShareMessage.text(for: cocktail(id: "brand-new-sour", name: "Brand New Sour"))
+        let link = CocktailClipLink.url(for: "brand-new-sour").absoluteString
+        #expect(text?.contains(link) == true)
     }
 
     @Test func userCocktailHasNoMessage() {

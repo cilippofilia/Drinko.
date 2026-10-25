@@ -5,16 +5,12 @@
 
 import Foundation
 
-/// The text sent alongside a cocktail's recipe card. Cocktails that ship in the app get the App
-/// Clip link, so receivers can open the full recipe. The user's own cocktails don't: the App Clip
-/// can't see their private recipes. Neither do cocktails that only exist in downloaded content:
-/// the App Clip resolves ids from the bundled catalog alone.
+/// The text sent alongside a cocktail's recipe card. Built-in cocktails, including ones that arrive
+/// through downloaded content, get the App Clip link, because the App Clip fetches cocktails it
+/// doesn't bundle. The user's own cocktails don't: the App Clip can't see their private recipes.
 enum CocktailShareMessage {
-    /// Loaded once, because the catalog decodes several JSON files.
-    private static let bundledCatalog = BundledCocktailCatalog.load()
-
-    static func text(for cocktail: Cocktail, catalog: BundledCocktailCatalog = bundledCatalog) -> String? {
-        guard !cocktail.isUserCreated, catalog.cocktail(withID: cocktail.id) != nil else { return nil }
+    static func text(for cocktail: Cocktail) -> String? {
+        guard !cocktail.isUserCreated else { return nil }
         let link = CocktailClipLink.url(for: cocktail.id).absoluteString
         return String(localized: """
             Tonight's pour: \(cocktail.name) 🍸
