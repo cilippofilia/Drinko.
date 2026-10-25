@@ -51,6 +51,12 @@ struct SpokenRecipeTests {
     }
 
     @Test
+    func displayQuantityMatchesWhatIsSpoken() {
+        #expect(SpokenRecipe.displayQuantity(22.5, unit: "ml") == 23)
+        #expect(SpokenRecipe.displayQuantity(0.75, unit: "oz.") == 0.75)
+    }
+
+    @Test
     func millilitresAreWholeNumbers() {
         #expect(SpokenRecipe.spokenAmount(45, unit: "ml", locale: english) == "45 millilitres")
     }

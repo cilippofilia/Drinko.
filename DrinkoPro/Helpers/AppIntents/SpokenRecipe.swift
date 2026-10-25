@@ -46,6 +46,11 @@ struct SpokenRecipe {
         return parts.joined(separator: " ")
     }
 
+    /// The number shown and spoken for a quantity: whole millilitres, otherwise two decimals.
+    static func displayQuantity(_ quantity: Double, unit: String) -> Double {
+        unit == "ml" ? quantity.rounded() : (quantity * 100).rounded() / 100
+    }
+
     /// The quantity as it is said, for example "1 and a half ounces" or "3 dashes".
     static func spokenAmount(_ quantity: Double, unit: String, locale: Locale) -> String {
         let quantity = (quantity * 100).rounded() / 100
@@ -81,7 +86,7 @@ struct SpokenRecipe {
         let quantity = ingredient.convertedQuantity(to: unit)
         let spokenUnit = ingredient.convertedUnit(to: unit)
         // Anything that rounds to nothing, like "top up" or 0.001 oz, is spoken by name only.
-        let rounded = spokenUnit == "ml" ? quantity.rounded() : (quantity * 100).rounded() / 100
+        let rounded = Self.displayQuantity(quantity, unit: spokenUnit)
         guard rounded > 0 else { return ingredient.name }
 
         let amount = Self.spokenAmount(quantity, unit: spokenUnit, locale: locale)

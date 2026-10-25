@@ -20,16 +20,11 @@ enum RecipeReader {
         let view = RecipeSnippetView(cocktail: cocktail, unit: unit)
 
         let prompt = String(localized: "Want the method?")
-        let question = LocalizedStringResource(stringLiteral: spoken.ingredientsSpeech + " " + prompt)
+        let question = IntentDialog(stringLiteral: spoken.ingredientsSpeech + " " + prompt)
 
-        do {
-            try await intent.requestConfirmation(
-                actionName: .continue,
-                dialog: IntentDialog(full: question, supporting: question)
-            )
-        } catch where isUserDeclined(error) {
-            let name = CocktailNameMatcher.spokenName(cocktail.name)
-            return .result(dialog: IntentDialog(stringLiteral: String(localized: "Enjoy your \(name).")), view: view)
+        // A "no" ends the intent; any error from the confirmation propagates unchanged.
+        try await intent.requestConfirmation(actionName: .continue, dialog: question) {
+            view
         }
         return .result(dialog: IntentDialog(stringLiteral: spoken.methodSpeech), view: view)
     }
@@ -38,11 +33,5 @@ enum RecipeReader {
     static func currentUnit() -> String {
         let stored = UserDefaults.standard.string(forKey: CocktailUnitPreference.storageKey) ?? ""
         return (CocktailUnitPreference(rawValue: stored) ?? .automatic).unit(for: .current)
-    }
-
-    /// A "no" to a confirmation surfaces as an `AppIntentError`; everything else propagates.
-    private static func isUserDeclined(_ error: Error) -> Bool {
-        if error is CancellationError { return true }
-        return (error as NSError).domain.hasPrefix("AppIntents")
     }
 }

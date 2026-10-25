@@ -22,7 +22,7 @@ struct RecipeSnippetView: View {
         ingredients = cocktail.ingredients.enumerated().map { index, ingredient in
             let quantity = ingredient.convertedQuantity(to: unit)
             let unitLabel = ingredient.convertedUnit(to: unit)
-            let rounded = (quantity * 100).rounded() / 100
+            let rounded = SpokenRecipe.displayQuantity(quantity, unit: unitLabel)
             let amount = rounded > 0
                 ? "\(rounded.formatted(.number.precision(.fractionLength(0...2)))) \(unitLabel == "-" ? "" : unitLabel)"
                     .trimmingCharacters(in: .whitespaces)

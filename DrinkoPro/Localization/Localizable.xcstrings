@@ -11252,40 +11252,6 @@
         }
       }
     },
-    "Enjoy your %@." : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enjoy your %@."
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bonne dégustation : %@."
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Viel Spaß mit deinem %@."
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Goditi il tuo %@."
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disfruta de tu %@."
-          }
-        }
-      }
-    },
     "Get Cocktail Recipe" : {
       "localizations" : {
         "en" : {
