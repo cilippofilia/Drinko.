@@ -12,6 +12,15 @@ struct ContentCacheTests {
         ContentCache(root: URL.temporaryDirectory.appending(path: "ContentCacheTests-\(UUID().uuidString)"))
     }
 
+    @Test func rootUsesSharedContainerWhenAvailable() {
+        let container = URL.temporaryDirectory.appending(path: "group")
+        #expect(ContentCache.root(sharedContainer: container) == container.appending(path: "RemoteContent"))
+    }
+
+    @Test func rootFallsBackToApplicationSupport() {
+        #expect(ContentCache.root(sharedContainer: nil) == ContentCache.legacyRoot)
+    }
+
     @Test func missingFileReturnsNil() {
         let cache = makeCache()
         #expect(cache.data(for: .books, language: "en") == nil)

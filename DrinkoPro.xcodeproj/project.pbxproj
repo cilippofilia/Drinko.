@@ -284,6 +284,10 @@
 				AppGroup.swift,
 				"Bundle-Decodable.swift",
 				"Image Helpers/StickerMetrics.swift",
+				RemoteContent/ContentCache.swift,
+				RemoteContent/ContentCacheMetadata.swift,
+				RemoteContent/ContentFile.swift,
+				RemoteContent/ContentLanguage.swift,
 				"String-Ext.swift",
 			);
 			target = 1A1000093A4F000100000001 /* DrinkoWidget */;

@@ -13,9 +13,25 @@ struct ContentCache: Sendable {
         self.root = root
     }
 
-    /// The cache used by the app, inside Application Support.
+    /// The private location the cache used before it moved into the app group container.
+    static var legacyRoot: URL {
+        URL.applicationSupportDirectory.appending(path: "RemoteContent")
+    }
+
+    /// The cache folder inside the shared container, or the private legacy location without one.
+    static func root(sharedContainer: URL?) -> URL {
+        sharedContainer?.appending(path: "RemoteContent") ?? legacyRoot
+    }
+
+    /// The cache used by the app. On iOS it lives in the app group container so the widget can read it.
     static var standard: ContentCache {
-        ContentCache(root: URL.applicationSupportDirectory.appending(path: "RemoteContent"))
+        #if os(iOS)
+        let container = FileManager.default.containerURL(
+            forSecurityApplicationGroupIdentifier: AppGroup.identifier)
+        return ContentCache(root: root(sharedContainer: container))
+        #else
+        return ContentCache(root: legacyRoot)
+        #endif
     }
 
     private var metadataURL: URL { root.appending(path: "metadata.json") }

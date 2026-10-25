@@ -28,6 +28,7 @@ struct DrinkoProApp: App {
 
     init() {
         LearnCollapseMigration.runIfNeeded()
+        ContentCacheMigration.runIfNeeded()
 
         let favorites = Favorites()
         let recentsStore = RecentsStore()
