@@ -6,6 +6,9 @@ import Foundation
 enum FavoriteUpdater {
     /// Makes `cocktail` a favourite or not, and returns what Siri says about it.
     static func set(_ cocktail: Cocktail, favorite: Bool, in favorites: Favorites) -> String {
+        // The widget heart writes the shared store directly, and this copy may be stale when
+        // Siri runs in the background. Reading first keeps that change from being overwritten.
+        favorites.reload()
         let name = CocktailNameMatcher.spokenName(cocktail.name)
         // Only change what differs, so repeating a request doesn't flip the heart animation.
         if favorite {

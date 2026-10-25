@@ -56,4 +56,16 @@ struct FavoriteUpdaterTests {
             #expect(dialog == "Added Zombie to your favourites.")
         }
     }
+
+    @Test
+    func keepsAFavoriteTheWidgetSavedMeanwhile() throws {
+        try withFavorites { favorites, store in
+            // The widget writes straight to the store; the app's copy hasn't seen it yet.
+            FavoriteIDs.save(["negroni"], to: store)
+            _ = FavoriteUpdater.set(zombie, favorite: true, in: favorites)
+            #expect(favorites.contains(negroni))
+            #expect(favorites.contains(zombie))
+            #expect(FavoriteIDs.load(from: store) == ["negroni", "zombie"])
+        }
+    }
 }
