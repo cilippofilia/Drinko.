@@ -6,7 +6,7 @@
 import Foundation
 
 /// A durable on-disk copy of the downloaded content, laid out like the remote repository.
-struct ContentCache: Sendable {
+nonisolated struct ContentCache: Sendable {
     let root: URL
 
     init(root: URL) {

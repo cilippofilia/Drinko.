@@ -6,7 +6,7 @@
 import Foundation
 
 /// One Learn topic. `id` is also the name of the JSON file holding its lessons.
-struct LearnTopic: Codable, Identifiable, Hashable, Sendable {
+nonisolated struct LearnTopic: Codable, Identifiable, Hashable, Sendable {
     let id: String
     let title: String
     /// An SF Symbol name. May not exist on the running OS; see `LessonsViewModel.sidebarSymbol(for:)`.

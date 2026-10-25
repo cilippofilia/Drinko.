@@ -16,7 +16,7 @@ enum ContentDecodingError: Error, Equatable {
 }
 
 /// The single definition of what counts as valid content, shared by loading and downloading.
-enum ContentDecoding {
+nonisolated enum ContentDecoding {
     /// Throws unless `data` decodes into the file's model type, is non-empty and, for the topic
     /// manifest, only contains unique, path-safe ids and non-empty titles.
     static func validate(_ data: Data, as file: ContentFile) throws {

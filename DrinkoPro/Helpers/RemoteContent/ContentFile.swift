@@ -6,7 +6,7 @@
 import Foundation
 
 /// A JSON content file that is bundled with the app and mirrored in the remote repository.
-struct ContentFile: Hashable, Sendable {
+nonisolated struct ContentFile: Hashable, Sendable {
     /// What a file contains, which decides how it is decoded and where it lives. Part of the
     /// identity, so a topic whose id equals a fixed file's name is never equal to that file.
     enum Kind: Sendable {

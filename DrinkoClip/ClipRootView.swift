@@ -15,13 +15,13 @@ struct ClipRootView: View {
     var body: some View {
         NavigationStack {
             switch model.content {
-            case .waiting:
+            case .waiting, .loading:
                 ProgressView()
-            case .cocktail(let cocktail):
+            case .cocktail(let clipCocktail):
                 ClipCocktailView(
-                    cocktail: cocktail,
-                    history: model.catalog.history(for: cocktail),
-                    procedure: model.catalog.procedure(for: cocktail),
+                    cocktail: clipCocktail.cocktail,
+                    history: clipCocktail.history,
+                    procedure: clipCocktail.procedure,
                     onReachEnd: { showsInstallPrompt = true }
                 )
             case .missing:
@@ -37,7 +37,7 @@ struct ClipRootView: View {
             model.showMissingIfStillWaiting()
         }
         .task(id: model.content) {
-            guard model.content != .waiting else { return }
+            guard model.content != .waiting, model.content != .loading else { return }
             try? await Task.sleep(for: .seconds(2))
             showsInstallPrompt = true
         }
