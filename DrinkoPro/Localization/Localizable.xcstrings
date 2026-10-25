@@ -2506,6 +2506,17 @@
         }
       }
     },
+    "Cheers! In my glass: %@ 🥃\nSee how it's made:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Cheers! In my glass: %1$@ 🥃\nSee how it's made:\n%2$@"
+          }
+        }
+      }
+    },
     "Choose a calculator to get started." : {
       "localizations" : {
         "de" : {
@@ -5126,6 +5137,17 @@
         }
       }
     },
+    "Happy hour pick: %@ 🍸\nTry it yourself:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Happy hour pick: %1$@ 🍸\nTry it yourself:\n%2$@"
+          }
+        }
+      }
+    },
     "Have you tried it yet?" : {
       "localizations" : {
         "de" : {
@@ -6135,6 +6157,17 @@
         }
       }
     },
+    "My next round: %@ 🍸\nMake one with me:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "My next round: %1$@ 🍸\nMake one with me:\n%2$@"
+          }
+        }
+      }
+    },
     "Name" : {
       "localizations" : {
         "de" : {
@@ -6296,6 +6329,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nuovo cocktail"
+          }
+        }
+      }
+    },
+    "New favourite unlocked: %@ 🍋\nThe recipe's all here:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "New favourite unlocked: %1$@ 🍋\nThe recipe's all here:\n%2$@"
           }
         }
       }
@@ -6713,6 +6757,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "OK"
+          }
+        }
+      }
+    },
+    "On the bar tonight: %@ 🧊\nWant the recipe?\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "On the bar tonight: %1$@ 🧊\nWant the recipe?\n%2$@"
           }
         }
       }
@@ -8476,6 +8531,17 @@
     "Shaken" : {
 
     },
+    "Shaking things up: %@ 🍹\nGrab the recipe:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Shaking things up: %1$@ 🍹\nGrab the recipe:\n%2$@"
+          }
+        }
+      }
+    },
     "Share Recipe Card" : {
       "localizations" : {
         "de" : {
@@ -9468,7 +9534,7 @@
       }
     },
     "Tonight's pour: %@ 🍸\nHere's how to make it:\n%@" : {
-      "comment" : "Share text for a built-in cocktail. The link opens the recipe in the Drinko App Clip.",
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -10127,6 +10193,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Potrebbe piacerti anche..."
+          }
+        }
+      }
+    },
+    "You need to try this one: %@ 🥂\nHere's the recipe:\n%@" : {
+      "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "You need to try this one: %1$@ 🥂\nHere's the recipe:\n%2$@"
           }
         }
       }
