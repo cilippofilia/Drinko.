@@ -57,5 +57,14 @@ struct DrinkoShortcuts: AppShortcutsProvider {
             shortTitle: "Remove from Favourites",
             systemImageName: "heart.slash"
         )
+        AppShortcut(
+            intent: AddBottleIntent(),
+            phrases: [
+                "Add to my cabinet in \(.applicationName)",
+                "Restock my cabinet in \(.applicationName)"
+            ],
+            shortTitle: "Restock Cabinet",
+            systemImageName: "plus.circle"
+        )
     }
 }
