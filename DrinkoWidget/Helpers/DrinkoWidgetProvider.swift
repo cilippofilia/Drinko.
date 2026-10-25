@@ -22,22 +22,22 @@ struct DrinkoWidgetProvider: AppIntentTimelineProvider {
 
     // Uses the same daily pick as the timeline so the gallery matches the real widget.
     func snapshot(for configuration: Configuration, in context: Context) async -> DrinkoWidgetEntry {
-        await makeEntry(for: .now, configuration: configuration)
+        await makeEntry(for: .now, configuration: configuration, isPreview: context.isPreview)
     }
 
     // One entry per day; WidgetKit asks again at the next day boundary.
     func timeline(for configuration: Configuration, in context: Context) async -> Timeline<DrinkoWidgetEntry> {
         let currentDate = Date.now
-        let entry = await makeEntry(for: currentDate, configuration: configuration)
+        let entry = await makeEntry(for: currentDate, configuration: configuration, isPreview: false)
         return Timeline(
             entries: [entry],
             policy: .after(DrinkoWidgetCatalog.nextRefreshDate(after: currentDate))
         )
     }
 
-    private func makeEntry(for date: Date, configuration: Configuration) async -> DrinkoWidgetEntry {
-        let cocktails = Bundle.main.decode([WidgetCocktail].self, from: "cocktails.json")
-        let shots = Bundle.main.decode([WidgetCocktail].self, from: "shots.json")
+    private func makeEntry(for date: Date, configuration: Configuration, isPreview: Bool) async -> DrinkoWidgetEntry {
+        // The gallery preview never touches the network; real timelines may fetch with a short timeout.
+        let (cocktails, shots) = await WidgetContentLoader.live(allowsNetwork: !isPreview).drinks()
 
         let favoriteIDs = loadFavoriteIDs()
         let pool = DrinkoWidgetCatalog.pool(

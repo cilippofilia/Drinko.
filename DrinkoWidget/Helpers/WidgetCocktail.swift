@@ -8,7 +8,7 @@
 import SwiftUI
 
 // The subset of the cocktail JSON the widget needs, so it doesn't pull in the app's model.
-struct WidgetCocktail: Codable, Equatable, Identifiable, Hashable {
+nonisolated struct WidgetCocktail: Codable, Equatable, Identifiable, Hashable, Sendable {
     let id: String
     let name: String
     let method: String
@@ -46,7 +46,7 @@ struct WidgetCocktail: Codable, Equatable, Identifiable, Hashable {
     ]
 }
 
-struct WidgetIngredient: Codable, Equatable, Identifiable, Hashable {
+nonisolated struct WidgetIngredient: Codable, Equatable, Identifiable, Hashable, Sendable {
     var id: String { name }
     let name: String
     let quantity: Double
@@ -55,5 +55,27 @@ struct WidgetIngredient: Codable, Equatable, Identifiable, Hashable {
     /// The poured amount in milliliters, converting ounces the same way the app does.
     var milliliters: Double {
         unit == "oz." ? quantity * 30 : quantity
+    }
+}
+
+extension WidgetCocktail {
+    /// Copies the fields the widget needs from a full cocktail.
+    init(_ cocktail: Cocktail) {
+        self.init(
+            id: cocktail.id,
+            name: cocktail.name,
+            method: cocktail.method,
+            glass: cocktail.glass,
+            garnish: cocktail.garnish,
+            ice: cocktail.ice,
+            extra: cocktail.extra,
+            ingredients: cocktail.ingredients.map(WidgetIngredient.init)
+        )
+    }
+}
+
+extension WidgetIngredient {
+    init(_ ingredient: Ingredient) {
+        self.init(name: ingredient.name, quantity: ingredient.quantity, unit: ingredient.unit)
     }
 }
