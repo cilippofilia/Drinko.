@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 31/05/2023.
 //
 
+import AppIntents
 import SwiftData
 import SwiftUI
 
@@ -13,7 +14,7 @@ struct DrinkoProApp: App {
     @State private var favorites: Favorites
     @State private var cocktailsViewModel: CocktailsViewModel
     @State private var lessonsViewModel: LessonsViewModel
-    @State private var appNavigationModel = AppNavigationModel()
+    @State private var appNavigationModel: AppNavigationModel
     @State private var recentsStore: RecentsStore
     #if os(iOS) || os(macOS)
     @State private var removeAdsStore = RemoveAdsStore()
@@ -35,7 +36,10 @@ struct DrinkoProApp: App {
         let contentStore = ContentStore()
         let snapshot = contentStore.initialSnapshot()
         _contentStore = State(initialValue: contentStore)
-        _cocktailsViewModel = State(initialValue: CocktailsViewModel(snapshot: snapshot))
+        let cocktailsViewModel = CocktailsViewModel(snapshot: snapshot)
+        let appNavigationModel = AppNavigationModel()
+        _cocktailsViewModel = State(initialValue: cocktailsViewModel)
+        _appNavigationModel = State(initialValue: appNavigationModel)
         _lessonsViewModel = State(initialValue: LessonsViewModel(snapshot: snapshot))
         _favorites = State(initialValue: favorites)
         _recentsStore = State(initialValue: recentsStore)
@@ -60,6 +64,16 @@ struct DrinkoProApp: App {
         } catch {
             fatalError("Failed to create ModelContainer: \(error)")
         }
+
+        // Loads user cocktails so Siri can find them without the Cocktails tab appearing.
+        cocktailsViewModel.configure(modelContext: modelContainer.mainContext)
+
+        // The same instances the UI uses, for App Intents to resolve with @Dependency.
+        let registeredContainer = modelContainer
+        AppDependencyManager.shared.add { cocktailsViewModel }
+        AppDependencyManager.shared.add { favorites }
+        AppDependencyManager.shared.add { appNavigationModel }
+        AppDependencyManager.shared.add { registeredContainer }
     }
     
     var body: some Scene {

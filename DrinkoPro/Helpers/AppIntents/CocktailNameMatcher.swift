@@ -20,6 +20,13 @@ nonisolated enum CocktailNameMatcher {
         return words.joined(separator: " ")
     }
 
+    /// The name with punctuation replaced by spaces and the words kept, e.g. "Corpse Reviver 2".
+    static func punctuationStripped(_ name: String) -> String {
+        String(name.map { $0.isLetter || $0.isNumber ? $0 : " " })
+            .split(separator: " ")
+            .joined(separator: " ")
+    }
+
     /// Exact normalized matches first; otherwise cocktails whose name contains the query.
     /// Spaces are ignored on both sides, so "oldfashioned" finds "Old Fashioned".
     static func matches(_ query: String, in cocktails: [Cocktail]) -> [Cocktail] {
