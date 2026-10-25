@@ -5,15 +5,15 @@ import Testing
 @MainActor
 @Suite("CloudSync")
 struct CloudSyncTests {
-    private let favoritesKey = AppGroup.favoritesKey
-    private let layoutKey = LibraryLayout.learnStorageKey
-    private let otherLayoutKey = LibraryLayout.cocktailsStorageKey
-    private let recentsKey = RecentsStore.storageKey(for: .cocktails)
+    let favoritesKey = AppGroup.favoritesKey
+    let layoutKey = LibraryLayout.learnStorageKey
+    let otherLayoutKey = LibraryLayout.cocktailsStorageKey
+    let recentsKey = RecentsStore.storageKey(for: .cocktails)
 
     /// A fake iCloud store plus two throwaway `UserDefaults` suites standing in for
     /// `.standard` and the App Group.
     @MainActor
-    private struct Harness {
+    struct Harness {
         let cloud = InMemoryCloudKeyValueStore()
         let standard: UserDefaults
         let appGroup: UserDefaults
@@ -28,11 +28,11 @@ struct CloudSyncTests {
 
     /// Records what `onRemoteChange` reports.
     @MainActor
-    private final class ChangeLog {
+    final class ChangeLog {
         var changes: [Set<String>] = []
     }
 
-    private func makeHarness() throws -> Harness {
+    func makeHarness() throws -> Harness {
         let standardName = "CloudSyncTests.standard.\(UUID().uuidString)"
         let appGroupName = "CloudSyncTests.appGroup.\(UUID().uuidString)"
         return Harness(
@@ -42,33 +42,18 @@ struct CloudSyncTests {
         )
     }
 
-    private func makeSync(_ harness: Harness, log: ChangeLog? = nil) -> CloudSync {
+    func makeSync(_ harness: Harness, log: ChangeLog? = nil) -> CloudSync {
         CloudSync(cloud: harness.cloud, standard: harness.standard, appGroup: harness.appGroup) { changed in
             log?.changes.append(changed)
         }
     }
 
-    private func encoded(_ ids: Set<String>) throws -> Data {
+    func encoded(_ ids: Set<String>) throws -> Data {
         try JSONEncoder().encode(ids)
     }
 
-    private func decoded(_ value: Any?) throws -> Set<String> {
+    func decoded(_ value: Any?) throws -> Set<String> {
         try JSONDecoder().decode(Set<String>.self, from: try #require(value as? Data))
-    }
-
-    /// Writes an App Group value the way another process (the widget) would: without posting
-    /// `UserDefaults.didChangeNotification` in this process.
-    private func writeFromAnotherProcess(_ value: Any, forKey key: String, in harness: Harness) {
-        CFPreferencesSetAppValue(key as CFString, value as CFPropertyList, harness.suiteNames[1] as CFString)
-    }
-
-    /// Runs a merged sync once with `favorites`, then releases it, like a launch that ends.
-    private func runOnce(_ harness: Harness, favorites: Set<String>) throws {
-        harness.standard.set(true, forKey: CloudSync.didInitialMergeKey)
-        harness.appGroup.set(try encoded(favorites), forKey: favoritesKey)
-        harness.cloud.values[favoritesKey] = try encoded(favorites)
-        let sync = makeSync(harness)
-        sync.start()
     }
 
     // MARK: First sync
@@ -339,109 +324,5 @@ struct CloudSyncTests {
         #expect(try decoded(harness.appGroup.object(forKey: favoritesKey)) == ["negroni", "daiquiri"])
         #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni", "daiquiri"])
         #expect(harness.standard.bool(forKey: CloudSync.didInitialMergeKey))
-    }
-
-    // MARK: Changes made outside the app
-
-    @Test func widgetChangeWhileClosedIsUploadedOnLaunch() throws {
-        let harness = try makeHarness()
-        defer { harness.tearDown() }
-        try runOnce(harness, favorites: ["zombie"])
-        harness.appGroup.set(try encoded(["negroni"]), forKey: favoritesKey)
-        harness.cloud.writes.removeAll()
-
-        let sync = makeSync(harness)
-        sync.start()
-
-        #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni"])
-        #expect(try decoded(harness.appGroup.object(forKey: favoritesKey)) == ["negroni"])
-        #expect(harness.cloud.writes == [favoritesKey])
-    }
-
-    @Test func remoteChangeStillWinsWhenLocalUntouched() throws {
-        let harness = try makeHarness()
-        defer { harness.tearDown() }
-        try runOnce(harness, favorites: ["zombie"])
-        harness.cloud.values[favoritesKey] = try encoded(["daiquiri"])
-        harness.cloud.writes.removeAll()
-        let log = ChangeLog()
-
-        let sync = makeSync(harness, log: log)
-        sync.start()
-
-        #expect(try decoded(harness.appGroup.object(forKey: favoritesKey)) == ["daiquiri"])
-        #expect(harness.cloud.writes.isEmpty)
-        #expect(log.changes == [[favoritesKey]])
-    }
-
-    @Test func becomingActivePushesOutOfProcessWrite() throws {
-        let harness = try makeHarness()
-        defer { harness.tearDown() }
-        harness.standard.set(true, forKey: CloudSync.didInitialMergeKey)
-        harness.appGroup.set(try encoded(["zombie"]), forKey: favoritesKey)
-        harness.cloud.values[favoritesKey] = try encoded(["zombie"])
-        let log = ChangeLog()
-        let sync = makeSync(harness, log: log)
-        sync.start()
-
-        writeFromAnotherProcess(try encoded(["negroni"]), forKey: favoritesKey, in: harness)
-        // Nothing in this process noticed the write.
-        #expect(try decoded(harness.cloud.values[favoritesKey]) == ["zombie"])
-
-        sync.appDidBecomeActive()
-
-        #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni"])
-        #expect(log.changes.last?.contains(favoritesKey) == true)
-    }
-
-    @Test func becomingActiveReloadsAWidgetChangeAnotherWriteAlreadyUploaded() throws {
-        let harness = try makeHarness()
-        defer { harness.tearDown() }
-        harness.standard.set(true, forKey: CloudSync.didInitialMergeKey)
-        harness.appGroup.set(try encoded(["zombie"]), forKey: favoritesKey)
-        let log = ChangeLog()
-        let sync = makeSync(harness, log: log)
-        sync.start()
-
-        writeFromAnotherProcess(try encoded(["negroni"]), forKey: favoritesKey, in: harness)
-        // An unrelated in-process write pushes the widget's change before the app is active.
-        harness.standard.set("whatever", forKey: "someUnsyncedKey")
-        #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni"])
-
-        sync.appDidBecomeActive()
-
-        #expect(log.changes.last?.contains(favoritesKey) == true)
-    }
-
-    @Test func lastSyncedStaysLocal() throws {
-        let harness = try makeHarness()
-        defer { harness.tearDown() }
-        harness.standard.set(true, forKey: CloudSync.didInitialMergeKey)
-        harness.appGroup.set(try encoded(["negroni"]), forKey: favoritesKey)
-        harness.cloud.values[layoutKey] = "grid"
-
-        let sync = makeSync(harness)
-        sync.start()
-        harness.standard.set("list", forKey: otherLayoutKey)
-        sync.appDidBecomeActive()
-
-        #expect(harness.standard.object(forKey: CloudSync.lastSyncedKey) != nil)
-        #expect(harness.cloud.values[CloudSync.lastSyncedKey] == nil)
-        #expect(!harness.cloud.writes.contains(CloudSync.lastSyncedKey))
-        #expect(!CloudSyncedKey.all.map(\.name).contains(CloudSync.lastSyncedKey))
-    }
-
-    @Test func unreadableLastSyncedFallsBackToLocalValues() throws {
-        let harness = try makeHarness()
-        defer { harness.tearDown() }
-        harness.standard.set(true, forKey: CloudSync.didInitialMergeKey)
-        harness.standard.set("junk", forKey: CloudSync.lastSyncedKey)
-        harness.appGroup.set(try encoded(["negroni"]), forKey: favoritesKey)
-        harness.cloud.values[favoritesKey] = try encoded(["daiquiri"])
-
-        let sync = makeSync(harness)
-        sync.start()
-
-        #expect(try decoded(harness.appGroup.object(forKey: favoritesKey)) == ["daiquiri"])
     }
 }

@@ -22,8 +22,11 @@ final class CloudSync {
     static let awaitingFirstDownloadKey = "cloudSync.awaitingFirstDownload"
 
     /// Local-only copy of `snapshot`, so a launch can tell which values another process (the
-    /// widget) changed while the app was closed. A property-list dictionary. Never synced.
+    /// widget) changed while the app was closed. Never synced. A property-list dictionary:
+    /// `keys` names the keys it covers, and `values` holds their non-nil values.
     static let lastSyncedKey = "cloudSync.lastSynced"
+    private static let lastSyncedKeysField = "keys"
+    private static let lastSyncedValuesField = "values"
 
     private let cloud: CloudKeyValueStore
     private let standard: UserDefaults
@@ -45,7 +48,9 @@ final class CloudSync {
     // Only mutated in `start()` on the main actor; read in `deinit` to remove the observers.
     nonisolated(unsafe) private var observers: [NSObjectProtocol] = []
 
-    /// - Parameter onRemoteChange: Called with the names of the keys written locally from iCloud.
+    /// - Parameter onRemoteChange: Called with the names of the keys written locally from iCloud,
+    ///   and, from `appDidBecomeActive()`, of the keys uploaded since the app was last active, so
+    ///   the stores reload values another process wrote.
     init(
         cloud: CloudKeyValueStore = NSUbiquitousKeyValueStore.default,
         standard: UserDefaults = .standard,
@@ -73,12 +78,12 @@ final class CloudSync {
         let didInitialMerge = standard.bool(forKey: Self.didInitialMergeKey)
         // On a merged device, start from what was last synced, so values changed in another
         // process since then are uploaded below instead of overwritten by iCloud's older ones.
-        if didInitialMerge, let lastSynced = standard.object(forKey: Self.lastSyncedKey) as? [String: Any] {
-            for key in keys {
-                snapshot[key.name] = lastSynced[key.name]
-            }
-        } else {
-            for key in keys {
+        // Keys the saved copy doesn't cover start from their local value, so iCloud's wins.
+        let lastSynced = didInitialMerge ? loadLastSynced() : nil
+        for key in keys {
+            if let lastSynced, lastSynced.keys.contains(key.name) {
+                snapshot[key.name] = lastSynced.values[key.name]
+            } else {
                 snapshot[key.name] = defaults(for: key).object(forKey: key.name)
             }
         }
@@ -115,6 +120,9 @@ final class CloudSync {
             logger.error("iCloud key-value storage is over its quota")
         default:
             if standard.bool(forKey: Self.didInitialMergeKey) {
+                // Upload values another process changed first, as `start()` does, so a pull
+                // while resuming can't overwrite them before `appDidBecomeActive` runs.
+                pushLocalChanges()
                 pull(keys.filter { changedKeys.contains($0.name) })
             } else {
                 // iCloud just delivered data, so this is the first download.
@@ -275,10 +283,25 @@ final class CloudSync {
 
     // MARK: - Helpers
 
-    /// Saves `snapshot` locally under `lastSyncedKey`. Missing values are left out, so they read
-    /// back as `nil`. Writing posts a change notification that re-enters `pushLocalChanges`.
+    /// Saves `snapshot` locally under `lastSyncedKey`, with the keys it covers, so a covered key
+    /// with no value reads back as `nil`. Writing posts a change notification that re-enters
+    /// `pushLocalChanges`.
     private func persistSnapshot() {
-        standard.set(snapshot, forKey: Self.lastSyncedKey)
+        let lastSynced: [String: Any] = [
+            Self.lastSyncedKeysField: keys.map(\.name),
+            Self.lastSyncedValuesField: snapshot
+        ]
+        standard.set(lastSynced, forKey: Self.lastSyncedKey)
+    }
+
+    /// Reads what `persistSnapshot()` saved, or `nil` if there is none or it can't be read.
+    private func loadLastSynced() -> (keys: Set<String>, values: [String: Any])? {
+        guard
+            let lastSynced = standard.dictionary(forKey: Self.lastSyncedKey),
+            let names = lastSynced[Self.lastSyncedKeysField] as? [String],
+            let values = lastSynced[Self.lastSyncedValuesField] as? [String: Any]
+        else { return nil }
+        return (Set(names), values)
     }
 
     private func defaults(for key: CloudSyncedKey) -> UserDefaults {
