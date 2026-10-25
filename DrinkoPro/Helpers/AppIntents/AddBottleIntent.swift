@@ -36,7 +36,7 @@ struct AddBottleIntent: AppIntent {
             .sorted { $0.creationDate < $1.creationDate }
             .map { CategoryCandidate(id: $0.id, name: $0.name, color: $0.color) }
 
-        var current = bottle
+        var current = try await nonEmpty(bottle)
         while true {
             let target = try await chooseCategory(for: current, among: candidates)
             guard let model = allCategories.first(where: { $0.id == target.id }) else {
@@ -48,35 +48,59 @@ struct AddBottleIntent: AppIntent {
             if CabinetCategoryGuesser.isDuplicate(current, in: existing) {
                 summary = String(localized: "\(current) is already in \(target.name).")
             } else {
-                let name = current.trimmingCharacters(in: .whitespacesAndNewlines)
-                model.products?.append(Item(name: name))
+                let item = Item(name: current)
+                item.category = model
+                if model.products == nil {
+                    model.products = [item]
+                } else {
+                    model.products?.append(item)
+                }
                 try context.save()
-                summary = String(localized: "Added \(name) to \(target.name).")
+                summary = String(localized: "Added \(current) to \(target.name).")
             }
 
             // A "no" ends the intent through the thrown error, as in `RecipeReader`. Each bottle
             // is already saved, so nothing is lost.
             let question = summary + " " + String(localized: "Anything else?")
             try await requestConfirmation(actionName: .continue, dialog: IntentDialog(stringLiteral: question))
-            current = try await $bottle.requestValue(IntentDialog(stringLiteral: String(localized: "Which bottle?")))
+            current = try await nonEmpty(nil)
         }
     }
 
-    /// The category chosen in Shortcuts, else a keyword guess, else the model's guess, else a question.
+    /// The trimmed bottle name, asking again while it is blank. `nil` asks first.
+    @MainActor
+    private func nonEmpty(_ name: String?) async throws -> String {
+        var value = name
+        while true {
+            if let trimmed = value?.trimmingCharacters(in: .whitespacesAndNewlines), !trimmed.isEmpty {
+                return trimmed
+            }
+            value = try await $bottle.requestValue(IntentDialog(stringLiteral: String(localized: "Which bottle?")))
+        }
+    }
+
+    /// The category chosen in Shortcuts, else the keyword guess. A tie goes to the model and then
+    /// the user, among the tied categories only; an unknown bottle among all of them.
     @MainActor
     private func chooseCategory(
         for name: String,
         among candidates: [CategoryCandidate]
     ) async throws -> CategoryCandidate {
         if let chosen = category, let match = candidates.first(where: { $0.id == chosen.id }) { return match }
-        if let guess = CabinetCategoryGuesser.guess(bottle: name, among: candidates) { return guess }
-        if let guess = await ModelCategoryGuesser.guess(bottle: name, among: candidates) { return guess }
 
-        let options = candidates.map { CabinetCategoryEntity(id: $0.id, name: $0.name) }
+        let options: [CategoryCandidate]
+        switch CabinetCategoryGuesser.guess(bottle: name, among: candidates) {
+        case .match(let match): return match
+        case .ambiguous(let tied): options = tied
+        case .unknown: options = candidates
+        }
+        if let guess = await ModelCategoryGuesser.guess(bottle: name, among: options) { return guess }
+
+        let entities = options.map { CabinetCategoryEntity(id: $0.id, name: $0.name) }
         let picked = try await $category.requestDisambiguation(
-            among: options,
+            among: entities,
             dialog: IntentDialog(stringLiteral: String(localized: "Which category?"))
         )
-        return candidates.first { $0.id == picked.id } ?? candidates[0]
+        return options.first { $0.id == picked.id } ?? options[0]
     }
 }

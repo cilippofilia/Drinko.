@@ -2,12 +2,20 @@ import Foundation
 
 /// Picks the Cabinet category a bottle belongs in without asking, when exactly one fits.
 enum CabinetCategoryGuesser {
-    static func guess(bottle: String, among categories: [CategoryCandidate]) -> CategoryCandidate? {
-        guard let bottleSpirit = MainSpirit(ingredientName: bottle) else { return nil }
+    static func guess(bottle: String, among categories: [CategoryCandidate]) -> CategoryGuess {
+        guard let bottleSpirit = MainSpirit(ingredientName: bottle) else { return .unknown }
+        // A category's name decides first; its color counts only when the name gives no spirit.
         let matches = categories.filter { category in
-            category.color == bottleSpirit.colorName || spirit(forCategoryNamed: category.name) == bottleSpirit
+            if let nameSpirit = spirit(forCategoryNamed: category.name) {
+                return nameSpirit == bottleSpirit
+            }
+            return category.color == bottleSpirit.colorName
         }
-        return matches.count == 1 ? matches.first : nil
+        switch matches.count {
+        case 0: return .unknown
+        case 1: return .match(matches[0])
+        default: return .ambiguous(matches)
+        }
     }
 
     /// Whether `bottle` is already among `existingNames`, ignoring case, accents and edge spaces.

@@ -22,37 +22,45 @@ struct CabinetCategoryGuesserTests {
 
     @Test
     func nameKeywordPicksCategory() {
-        #expect(CabinetCategoryGuesser.guess(bottle: "Tanqueray gin", among: suggested) == gins)
-        #expect(CabinetCategoryGuesser.guess(bottle: "Havana Club rum", among: suggested) == rums)
+        #expect(CabinetCategoryGuesser.guess(bottle: "Tanqueray gin", among: suggested) == .match(gins))
+        #expect(CabinetCategoryGuesser.guess(bottle: "Havana Club rum", among: suggested) == .match(rums))
     }
 
     @Test
     func brandKeywordPicksCategory() {
-        #expect(CabinetCategoryGuesser.guess(bottle: "Campari", among: suggested) == liqueurs)
+        #expect(CabinetCategoryGuesser.guess(bottle: "Campari", among: suggested) == .match(liqueurs))
     }
 
     @Test
     func twoCandidatesMeansUnsure() {
         let amari = CategoryCandidate(id: UUID(), name: "Amari", color: MainSpirit.liqueur.colorName)
-        #expect(CabinetCategoryGuesser.guess(bottle: "Campari", among: suggested + [amari]) == nil)
+        let guess = CabinetCategoryGuesser.guess(bottle: "Campari", among: suggested + [amari])
+        #expect(guess == .ambiguous([liqueurs, amari]))
+    }
+
+    @Test
+    func colorDoesNotOverrideAnotherSpiritsName() {
+        let skyVodkas = CategoryCandidate(id: UUID(), name: "Vodkas", color: MainSpirit.liqueur.colorName)
+        let others = [gins, whiskeys, rums]
+        #expect(CabinetCategoryGuesser.guess(bottle: "Campari", among: others + [skyVodkas]) == .unknown)
     }
 
     @Test
     func unknownBrandIsUnsure() {
-        #expect(CabinetCategoryGuesser.guess(bottle: "Hendrick's", among: suggested) == nil)
+        #expect(CabinetCategoryGuesser.guess(bottle: "Hendrick's", among: suggested) == .unknown)
     }
 
     @Test
     func renamedCategoryMatchesByColor() {
         let mine = CategoryCandidate(id: UUID(), name: "Il mio gin", color: MainSpirit.gin.colorName)
         let others = [vodkas, whiskeys, rums]
-        #expect(CabinetCategoryGuesser.guess(bottle: "Tanqueray gin", among: others + [mine]) == mine)
+        #expect(CabinetCategoryGuesser.guess(bottle: "Tanqueray gin", among: others + [mine]) == .match(mine))
     }
 
     @Test
     func nonEnglishCategoryName() {
         let liquori = CategoryCandidate(id: UUID(), name: "Liquori", color: MainSpirit.liqueur.colorName)
-        #expect(CabinetCategoryGuesser.guess(bottle: "Aperol", among: [vodkas, gins, liquori]) == liquori)
+        #expect(CabinetCategoryGuesser.guess(bottle: "Aperol", among: [vodkas, gins, liquori]) == .match(liquori))
     }
 
     @Test
