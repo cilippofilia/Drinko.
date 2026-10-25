@@ -16,7 +16,7 @@ A prioritized list of enhancements for Drinko. Items move from **Next** to **Now
 - [ ] **"What can I make?"** — cross-reference Cabinet inventory with cocktail recipes to suggest drinks the user can make right now, plus a shopping list of missing ingredients. The Cabinet and Cocktails tabs don't talk to each other today; this is the app's biggest differentiation opportunity.
 - [ ] **Lock Screen / StandBy widgets** — add `.accessoryRectangular` and `.accessoryCircular` families showing the daily pick
 - [ ] **Large widget** (`.systemLarge`) — full recipe: ingredients, method, glass, and garnish at a glance
-- [ ] **Spotlight & Siri via App Intents** — expose cocktails as `AppEntity` so users can search "Negroni" in Spotlight or ask Siri; builds directly on the widget intent work
+- [x] **Spotlight & Siri via App Intents** — expose cocktails as `AppEntity` so users can search "Negroni" in Spotlight or ask Siri; builds directly on the widget intent work
 - [ ] **Photos for Cabinet products** — PhotosPicker + SwiftData external storage so users can photograph their bottles
 - [ ] **Daily cocktail notification** — optional local notification deep-linking to the cocktail of the day (reuses the widget's deterministic daily pick)
 
