@@ -16,6 +16,7 @@ struct DrinkoWidgetProvider: AppIntentTimelineProvider {
             cocktail: DrinkoWidgetCatalog.nullCocktail,
             stickerData: nil,
             showsIngredients: true,
+            isFavorite: false,
             mainSpirit: DrinkoWidgetCatalog.nullCocktail.mainSpirit
         )
     }
@@ -39,7 +40,7 @@ struct DrinkoWidgetProvider: AppIntentTimelineProvider {
         // The gallery preview never touches the network; real timelines may fetch with a short timeout.
         let (cocktails, shots) = await WidgetContentLoader.live(allowsNetwork: !isPreview).drinks()
 
-        let favoriteIDs = loadFavoriteIDs()
+        let favoriteIDs = FavoriteIDs.load(from: AppGroup.defaults)
         let pool = DrinkoWidgetCatalog.pool(
             for: configuration.source.widgetDrinkSource,
             cocktails: cocktails,
@@ -55,15 +56,8 @@ struct DrinkoWidgetProvider: AppIntentTimelineProvider {
             cocktail: cocktail,
             stickerData: stickerData,
             showsIngredients: configuration.showsIngredients,
+            isFavorite: favoriteIDs.contains(cocktail.id),
             mainSpirit: cocktail.mainSpirit
         )
-    }
-
-    private func loadFavoriteIDs() -> Set<String> {
-        guard let data = AppGroup.defaults.data(forKey: AppGroup.favoritesKey),
-              let ids = try? JSONDecoder().decode(Set<String>.self, from: data) else {
-            return []
-        }
-        return ids
     }
 }

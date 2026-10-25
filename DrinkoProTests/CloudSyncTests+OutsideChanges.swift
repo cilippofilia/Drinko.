@@ -204,4 +204,23 @@ extension CloudSyncTests {
         #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni"])
         #expect(try decoded(harness.appGroup.object(forKey: favoritesKey)) == ["negroni"])
     }
+
+    @Test func remoteChangeReportsAWidgetWriteItUploaded() throws {
+        let harness = try makeHarness()
+        defer { harness.tearDown() }
+        harness.standard.set(true, forKey: CloudSync.didInitialMergeKey)
+        harness.appGroup.set(try encoded(["zombie"]), forKey: favoritesKey)
+        harness.cloud.values[favoritesKey] = try encoded(["zombie"])
+        let log = ChangeLog()
+        let sync = makeSync(harness, log: log)
+        sync.start()
+        log.changes.removeAll()
+        writeFromAnotherProcess(try encoded(["negroni"]), forKey: favoritesKey, in: harness)
+
+        // An unrelated key changed in iCloud while the app stayed active.
+        sync.handleCloudChange(reason: NSUbiquitousKeyValueStoreServerChange, changedKeys: [layoutKey])
+
+        #expect(try decoded(harness.cloud.values[favoritesKey]) == ["negroni"])
+        #expect(log.changes.contains { $0.contains(favoritesKey) })
+    }
 }

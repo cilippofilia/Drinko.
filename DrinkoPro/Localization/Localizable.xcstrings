@@ -11591,7 +11591,381 @@
           }
         }
       }
+    },
+  "Set Favourite" : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Set Favourite"
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Définir comme favori"
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Als Favorit festlegen"
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Imposta come preferito"
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Establecer como favorito"
+        }
+      }
     }
+  },
+  "Adds a cocktail to your favourites or removes it." : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Adds a cocktail to your favourites or removes it."
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Ajoute un cocktail à tes favoris ou l'en retire."
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Fügt einen Cocktail zu deinen Favoriten hinzu oder entfernt ihn."
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Aggiunge un cocktail ai tuoi preferiti o lo rimuove."
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Añade un cóctel a tus favoritos o lo quita."
+        }
+      }
+    }
+  },
+  "Favourite" : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Favourite"
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Favori"
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Favorit"
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Preferito"
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Favorito"
+        }
+      }
+    }
+  },
+  "Set ${cocktail} as favourite: ${isFavorite}" : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Set ${cocktail} as favourite: ${isFavorite}"
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Définir ${cocktail} comme favori : ${isFavorite}"
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "${cocktail} als Favorit festlegen: ${isFavorite}"
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Imposta ${cocktail} come preferito: ${isFavorite}"
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Establecer ${cocktail} como favorito: ${isFavorite}"
+        }
+      }
+    }
+  },
+  "Added %@ to your favourites." : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Added %@ to your favourites."
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "%@ a été ajouté à tes favoris."
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "%@ wurde zu deinen Favoriten hinzugefügt."
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "%@ è stato aggiunto ai tuoi preferiti."
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "%@ se ha añadido a tus favoritos."
+        }
+      }
+    }
+  },
+  "Removed %@ from your favourites." : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Removed %@ from your favourites."
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "%@ a été retiré de tes favoris."
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "%@ wurde aus deinen Favoriten entfernt."
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "%@ è stato rimosso dai tuoi preferiti."
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "%@ se ha quitado de tus favoritos."
+        }
+      }
+    }
+  },
+  "Add to Favourites" : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Add to Favourites"
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Ajouter aux favoris"
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Zu Favoriten hinzufügen"
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Aggiungi ai preferiti"
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Añadir a favoritos"
+        }
+      }
+    }
+  },
+  "Remove from Favourites" : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Remove from Favourites"
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Retirer des favoris"
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Aus Favoriten entfernen"
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Rimuovi dai preferiti"
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Quitar de favoritos"
+        }
+      }
+    }
+  },
+  "Add to favourites" : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Add to favourites"
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Ajouter aux favoris"
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Zu Favoriten hinzufügen"
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Aggiungi ai preferiti"
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Añadir a favoritos"
+        }
+      }
+    }
+  },
+  "Remove from favourites" : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Remove from favourites"
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Retirer des favoris"
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Aus Favoriten entfernen"
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Rimuovi dai preferiti"
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Quitar de favoritos"
+        }
+      }
+    }
+  },
+  "Toggle Favourite" : {
+    "localizations" : {
+      "en" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Toggle Favourite"
+        }
+      },
+      "fr" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Basculer le favori"
+        }
+      },
+      "de" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Favorit umschalten"
+        }
+      },
+      "it" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Attiva/disattiva preferito"
+        }
+      },
+      "es" : {
+        "stringUnit" : {
+          "state" : "translated",
+          "value" : "Alternar favorito"
+        }
+      }
+    }
+  }
   },
   "version" : "1.1"
 }

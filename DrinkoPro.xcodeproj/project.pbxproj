@@ -285,6 +285,7 @@
 				AppGroup.swift,
 				"Bundle-Decodable.swift",
 				DailyPick.swift,
+				FavoriteIDs.swift,
 				"Image Helpers/StickerMetrics.swift",
 				RemoteContent/ContentCache.swift,
 				RemoteContent/ContentCacheMetadata.swift,

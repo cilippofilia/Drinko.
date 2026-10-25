@@ -47,12 +47,18 @@ private struct DrinkoWidgetMediumColumn: View {
         let ink = WidgetInk(renderingMode: renderingMode)
 
         VStack(alignment: .leading, spacing: 6) {
-            Text(entry.cocktail.isShot ? "Shot of the Day" : "Cocktail of the Day")
-                .font(.caption2)
-                .bold()
-                .textCase(.uppercase)
-                .foregroundStyle(ink.secondary)
-                .lineLimit(1)
+            HStack {
+                Text(entry.cocktail.isShot ? "Shot of the Day" : "Cocktail of the Day")
+                    .font(.caption2)
+                    .bold()
+                    .textCase(.uppercase)
+                    .foregroundStyle(ink.secondary)
+                    .lineLimit(1)
+                Spacer(minLength: 0)
+                if entry.canFavorite {
+                    DrinkoWidgetFavoriteButton(entry: entry)
+                }
+            }
 
             Text(entry.cocktail.name)
                 .font(.system(.title2, design: .serif))
@@ -112,6 +118,12 @@ private struct DrinkoWidgetDetailRow: View {
     DrinkoWidget()
 } timeline: {
     DrinkoWidgetEntry.preview(showsIngredients: false)
+}
+
+#Preview("Favorite", as: .systemMedium) {
+    DrinkoWidget()
+} timeline: {
+    DrinkoWidgetEntry.preview(isFavorite: true)
 }
 
 #Preview("Long name", as: .systemMedium) {

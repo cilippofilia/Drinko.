@@ -122,8 +122,14 @@ final class CloudSync {
             if standard.bool(forKey: Self.didInitialMergeKey) {
                 // Upload values another process changed first, as `start()` does, so a pull
                 // while resuming can't overwrite them before `appDidBecomeActive` runs.
-                pushLocalChanges()
-                pull(keys.filter { changedKeys.contains($0.name) })
+                // Report the pushed keys too: nothing else tells the app they changed, so an
+                // active app would keep stale in-memory values and write them back.
+                let pushed = pushLocalChanges()
+                let pulled = pullChanges(keys.filter { changedKeys.contains($0.name) })
+                let changed = pushed.union(pulled)
+                if !changed.isEmpty {
+                    onRemoteChange(changed)
+                }
             } else {
                 // iCloud just delivered data, so this is the first download.
                 mergeAll(evenIfCloudIsEmpty: true)
@@ -133,10 +139,12 @@ final class CloudSync {
 
     /// Uploads synced values that changed locally since they were last seen. Does nothing until
     /// this device has merged with iCloud, so an unmerged value can't replace another device's.
-    func pushLocalChanges() {
-        guard standard.bool(forKey: Self.didInitialMergeKey) else { return }
+    /// Returns the names of the keys it uploaded.
+    @discardableResult
+    func pushLocalChanges() -> Set<String> {
+        guard standard.bool(forKey: Self.didInitialMergeKey) else { return [] }
         var snapshotChanged = false
-        var uploaded = false
+        var uploaded: Set<String> = []
         for key in keys {
             let value = defaults(for: key).object(forKey: key.name)
             guard !Self.isEqual(value, snapshot[key.name]) else { continue }
@@ -146,10 +154,10 @@ final class CloudSync {
             if let value {
                 cloud.set(value, forKey: key.name)
                 pushedSinceActive.insert(key.name)
-                uploaded = true
+                uploaded.insert(key.name)
             }
         }
-        if uploaded {
+        if !uploaded.isEmpty {
             cloud.synchronize()
         }
         if snapshotChanged {
@@ -157,6 +165,7 @@ final class CloudSync {
             // matches, so that call does nothing.
             persistSnapshot()
         }
+        return uploaded
     }
 
     /// Uploads values another process (the widget) changed while the app was in the
@@ -222,6 +231,15 @@ final class CloudSync {
 
     /// Writes iCloud's values for `keysToPull` locally, skipping missing and invalid ones.
     private func pull(_ keysToPull: [CloudSyncedKey]) {
+        let changed = pullChanges(keysToPull)
+        if !changed.isEmpty {
+            onRemoteChange(changed)
+        }
+    }
+
+    /// Copies newer iCloud values into the local stores and returns the keys that changed,
+    /// without reporting them.
+    private func pullChanges(_ keysToPull: [CloudSyncedKey]) -> Set<String> {
         var changed: Set<String> = []
         for key in keysToPull {
             guard let value = cloud.object(forKey: key.name) else { continue }
@@ -239,8 +257,8 @@ final class CloudSync {
         }
         if !changed.isEmpty {
             persistSnapshot()
-            onRemoteChange(changed)
         }
+        return changed
     }
 
     // MARK: - Observing
