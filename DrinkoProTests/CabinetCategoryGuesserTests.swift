@@ -64,6 +64,41 @@ struct CabinetCategoryGuesserTests {
     }
 
     @Test
+    func categoryNameWordPicksCategory() {
+        let vermouth = CategoryCandidate(id: UUID(), name: "Vermouth", color: "gray")
+        let guess = CabinetCategoryGuesser.guess(bottle: "Carpano Vermouth", among: suggested + [vermouth])
+        #expect(guess == .match(vermouth))
+    }
+
+    @Test
+    func pluralCategoryNameWordPicksCategory() {
+        let bitters = CategoryCandidate(id: UUID(), name: "Bitters", color: "gray")
+        let guess = CabinetCategoryGuesser.guess(bottle: "Angostura Bitters", among: suggested + [bitters])
+        #expect(guess == .match(bitters))
+    }
+
+    @Test
+    func spiritKeywordStillPicksCategoryAlongsideOtherNames() {
+        let bitters = CategoryCandidate(id: UUID(), name: "Bitters", color: "gray")
+        #expect(CabinetCategoryGuesser.guess(bottle: "Tanqueray gin", among: suggested + [bitters]) == .match(gins))
+    }
+
+    @Test
+    func twoCategoryNameWordsMeanUnsure() {
+        let vermouth = CategoryCandidate(id: UUID(), name: "Vermouth", color: "gray")
+        let bitters = CategoryCandidate(id: UUID(), name: "Bitters", color: "gray")
+        let guess = CabinetCategoryGuesser.guess(bottle: "Vermouth bitters", among: [vermouth, gins, bitters])
+        #expect(guess == .ambiguous([vermouth, bitters]))
+    }
+
+    @Test
+    func shortWordsInCategoryNamesAreIgnored() {
+        let mine = CategoryCandidate(id: UUID(), name: "My Rums", color: "gray")
+        // "My" is too short to count, so "My Tai" doesn't land in "My Rums" by name.
+        #expect(CabinetCategoryGuesser.guess(bottle: "My Tai", among: [mine]) == .unknown)
+    }
+
+    @Test
     func duplicateIgnoresCaseAndAccents() {
         #expect(CabinetCategoryGuesser.isDuplicate("campari ", in: ["Campari"]))
         #expect(CabinetCategoryGuesser.isDuplicate("Chartreuse", in: ["chartreuse"]))
