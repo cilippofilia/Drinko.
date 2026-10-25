@@ -27,31 +27,40 @@ nonisolated enum CocktailNameMatcher {
             .joined(separator: " ")
     }
 
-    /// Exact normalized matches first; otherwise cocktails whose name contains the query.
-    /// Spaces are ignored on both sides, so "oldfashioned" finds "Old Fashioned".
+    /// Exact normalized matches first; otherwise cocktails whose name contains the query, once
+    /// the query is long enough to mean something. Spaces are ignored on both sides, so
+    /// "oldfashioned" finds "Old Fashioned".
     static func matches(_ query: String, in cocktails: [Cocktail]) -> [Cocktail] {
         let target = compact(normalized(query))
         guard !target.isEmpty else { return [] }
         let exact = cocktails.filter { compact(normalized($0.name)) == target }
         if !exact.isEmpty { return exact }
+        guard target.count >= minimumContainsLength else { return [] }
         return cocktails.filter { compact(normalized($0.name)).contains(target) }
     }
 
-    /// The cocktail with the smallest edit distance, if close enough to be a plausible typo.
-    static func closestMatch(to query: String, in cocktails: [Cocktail]) -> Cocktail? {
+    /// Every cocktail tied at the smallest edit distance, if close enough to be a plausible typo.
+    /// Ties are all returned so Siri can ask which one was meant.
+    static func closestMatches(to query: String, in cocktails: [Cocktail]) -> [Cocktail] {
         let target = Array(normalized(query))
-        guard !target.isEmpty else { return nil }
+        guard !target.isEmpty else { return [] }
         let limit = max(2, target.count / 4)
-        var best: (cocktail: Cocktail, distance: Int)?
+        var best: [Cocktail] = []
+        var bestDistance = Int.max
         for cocktail in cocktails {
             let distance = editDistance(target, Array(normalized(cocktail.name)))
-            if best == nil || distance < best?.distance ?? .max {
-                best = (cocktail, distance)
+            if distance < bestDistance {
+                bestDistance = distance
+                best = [cocktail]
+            } else if distance == bestDistance {
+                best.append(cocktail)
             }
         }
-        guard let best, best.distance <= limit else { return nil }
-        return best.cocktail
+        return bestDistance <= limit ? best : []
     }
+
+    /// Shorter queries, like "ol", would match by `contains` almost at random.
+    private static let minimumContainsLength = 3
 
     private static func compact(_ text: String) -> String {
         text.replacing(" ", with: "")

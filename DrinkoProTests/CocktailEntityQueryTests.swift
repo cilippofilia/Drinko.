@@ -22,6 +22,13 @@ struct CocktailEntityQueryTests {
     }
 
     @Test
+    func matchingReturnsEveryClosestTie() {
+        let library = cocktails + [Self.make("sling", "Sling"), Self.make("fling", "Fling")]
+        let ids = CocktailEntityQuery.results(matching: "kling", in: library).map(\.id)
+        #expect(Set(ids) == ["sling", "fling"])
+    }
+
+    @Test
     func matchingNothingIsEmpty() {
         #expect(CocktailEntityQuery.results(matching: "spaghetti", in: cocktails).isEmpty)
     }

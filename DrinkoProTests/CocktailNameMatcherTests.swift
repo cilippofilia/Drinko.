@@ -40,11 +40,29 @@ struct CocktailNameMatcherTests {
 
     @Test
     func closestMatchCatchesTypos() {
-        #expect(CocktailNameMatcher.closestMatch(to: "zombi", in: cocktails)?.id == "zombie")
+        #expect(CocktailNameMatcher.closestMatches(to: "zombi", in: cocktails).map(\.id) == ["zombie"])
     }
 
     @Test
     func closestMatchRejectsNonsense() {
-        #expect(CocktailNameMatcher.closestMatch(to: "spaghetti", in: cocktails) == nil)
+        #expect(CocktailNameMatcher.closestMatches(to: "spaghetti", in: cocktails).isEmpty)
+    }
+
+    @Test
+    func closestMatchesReturnsEveryTie() {
+        let library = cocktails + [Self.make("sling", "Sling"), Self.make("fling", "Fling")]
+        let ids = CocktailNameMatcher.closestMatches(to: "kling", in: library).map(\.id)
+        #expect(Set(ids) == ["sling", "fling"])
+    }
+
+    @Test
+    func shortQueryDoesNotMatchByContains() {
+        #expect(CocktailNameMatcher.matches("ol", in: cocktails).isEmpty)
+    }
+
+    @Test
+    func shortQueryStillMatchesExactly() {
+        let library = cocktails + [Self.make("g-and-t", "G&T")]
+        #expect(CocktailNameMatcher.matches("g&t", in: library).map(\.id) == ["g-and-t"])
     }
 }

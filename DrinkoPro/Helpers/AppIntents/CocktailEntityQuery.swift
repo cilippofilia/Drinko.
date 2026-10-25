@@ -20,12 +20,11 @@ struct CocktailEntityQuery: EntityStringQuery {
         await allDrinks().map(CocktailEntity.init)
     }
 
-    /// Exact and partial matches, or the single closest one when nothing matches.
+    /// Exact and partial matches, or every closest one when nothing matches, so Siri asks which.
     static func results(matching string: String, in library: [Cocktail]) -> [CocktailEntity] {
         let found = CocktailNameMatcher.matches(string, in: library)
         if !found.isEmpty { return found.map(CocktailEntity.init) }
-        guard let closest = CocktailNameMatcher.closestMatch(to: string, in: library) else { return [] }
-        return [CocktailEntity(closest)]
+        return CocktailNameMatcher.closestMatches(to: string, in: library).map(CocktailEntity.init)
     }
 
     @MainActor
