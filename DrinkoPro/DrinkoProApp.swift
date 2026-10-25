@@ -24,6 +24,8 @@ struct DrinkoProApp: App {
     private let modelContainer: ModelContainer
     // Mirrors favorites, recents and settings to iCloud. Kept for the app's lifetime.
     private let cloudSync: CloudSync
+    // Keeps Spotlight and Siri's cocktail list current. Kept for the app's lifetime.
+    private let intentIndexer = CocktailIntentIndexer()
     // Loads cached content at launch and refreshes it from GitHub in the background.
     @State private var contentStore: ContentStore
 
@@ -67,6 +69,14 @@ struct DrinkoProApp: App {
 
         // Loads user cocktails so Siri can find them without the Cocktails tab appearing.
         cocktailsViewModel.configure(modelContext: modelContainer.mainContext)
+
+        // Re-index whenever the drink lists change, and once now for the launch list.
+        let indexer = intentIndexer
+        cocktailsViewModel.onDrinksChanged = { drinks in
+            Task { await indexer.update(with: drinks) }
+        }
+        let launchDrinks = cocktailsViewModel.listOfAllDrinks
+        Task { await indexer.update(with: launchDrinks) }
 
         // The same instances the UI uses, for App Intents to resolve with @Dependency.
         let registeredContainer = modelContainer

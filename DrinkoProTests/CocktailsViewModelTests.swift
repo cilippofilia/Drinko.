@@ -40,6 +40,17 @@ final class CocktailsViewModelTests: XCTestCase {
         XCTAssertTrue(viewModel.stickerTintCache.isEmpty)
     }
 
+    func testApplyReportsAllDrinksToTheHook() {
+        let viewModel = CocktailsViewModel()
+        var reported: [Cocktail] = []
+        viewModel.onDrinksChanged = { reported = $0 }
+
+        viewModel.apply(ContentSnapshot.bundled())
+
+        XCTAssertEqual(reported, viewModel.listOfAllDrinks)
+        XCTAssertFalse(reported.isEmpty)
+    }
+
     func testSortedCocktailsFromAtoZ() {
         let viewModel = CocktailsViewModel()
         viewModel.sortOption = .fromAtoZ

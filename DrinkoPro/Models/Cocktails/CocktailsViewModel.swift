@@ -19,6 +19,10 @@ class CocktailsViewModel {
     var userProcedures: [Procedure] = []
     private var modelContext: ModelContext?
 
+    /// Called with every drink after the drink lists change (new content, or a user cocktail
+    /// added, edited or deleted). The app uses it to keep Spotlight and Siri current.
+    @ObservationIgnored var onDrinksChanged: (([Cocktail]) -> Void)?
+
     /// Cached sticker tint per cocktail id. See `CocktailsViewModel+Library`.
     @ObservationIgnored var stickerTintCache: [String: MainSpirit?] = [:]
 
@@ -65,6 +69,7 @@ class CocktailsViewModel {
         // Both caches are derived from the drink lists and cheap to rebuild.
         bundledDrinksByIDCache = nil
         stickerTintCache = [:]
+        onDrinksChanged?(listOfAllDrinks)
     }
 
     var listOfAllDrinks: [Cocktail] {
@@ -387,6 +392,7 @@ class CocktailsViewModel {
             guard !mappedSteps.isEmpty else { return nil }
             return Procedure(id: userCocktail.id, procedure: mappedSteps)
         }
+        onDrinksChanged?(listOfAllDrinks)
     }
 
     private func makeUserProcedure(from steps: [String]) -> UserProcedure? {

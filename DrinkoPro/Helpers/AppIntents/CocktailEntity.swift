@@ -3,7 +3,7 @@ import Foundation
 
 /// A cocktail or shot exposed to Siri, Shortcuts and Spotlight.
 /// Built from the app's `Cocktail` model rather than conforming the model itself.
-struct CocktailEntity: AppEntity {
+struct CocktailEntity: AppEntity, IndexedEntity {
     static let typeDisplayRepresentation: TypeDisplayRepresentation = "Cocktail"
     static let defaultQuery = CocktailEntityQuery()
 

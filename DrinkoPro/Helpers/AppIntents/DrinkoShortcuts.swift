@@ -14,5 +14,14 @@ struct DrinkoShortcuts: AppShortcutsProvider {
             shortTitle: "Get Cocktail Recipe",
             systemImageName: "wineglass"
         )
+        AppShortcut(
+            intent: OpenCocktailIntent(),
+            phrases: [
+                "Show me a \(\.$target) in \(.applicationName)",
+                "Open \(\.$target) in \(.applicationName)"
+            ],
+            shortTitle: "Open Cocktail",
+            systemImageName: "magnifyingglass"
+        )
     }
 }
