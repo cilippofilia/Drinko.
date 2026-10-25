@@ -22,16 +22,19 @@ struct SpokenRecipe {
 
     /// "Zombie. Tiki glass, crushed ice. 1 and a half ounces aged jamaican rum, …".
     var ingredientsSpeech: String {
-        var speech = "\(CocktailNameMatcher.spokenName(cocktail.name)). "
+        var sentences = [CocktailNameMatcher.spokenName(cocktail.name)]
 
         let serving = [spokenGlass, Self.meaningful(cocktail.ice)].compactMap(\.self)
         if !serving.isEmpty {
-            speech += serving.joined(separator: ", ") + ". "
+            sentences.append(serving.joined(separator: ", "))
         }
 
+        // An empty list adds no sentence, so the speech never ends in ". .".
         let lines = cocktail.ingredients.map(ingredientLine)
-        speech += lines.joined(separator: ", ") + "."
-        return speech
+        if !lines.isEmpty {
+            sentences.append(lines.joined(separator: ", "))
+        }
+        return sentences.map { $0 + "." }.joined(separator: " ")
     }
 
     /// "Step 1: … Step 2: … Garnish: …".
@@ -93,7 +96,14 @@ struct SpokenRecipe {
         // Only measures take the localized connector ("un'oncia di gin"); "2 lime" and
         // "2 leaves mint" are joined plainly.
         guard Self.measureUnits.contains(spokenUnit) else { return "\(amount) \(ingredient.name)" }
-        return text("\(amount) \(ingredient.name)")
+        let line = LocalizedStringResource(
+            "spoken.ingredientLine",
+            defaultValue: "\(amount) \(ingredient.name)",
+            locale: locale,
+            bundle: .main,
+            comment: "A spoken measure, then an ingredient. Add the connector your language needs."
+        )
+        return String(localized: line)
     }
 
     private static let measureUnits: Set<String> = ["oz.", "ml", "dash", "dashes"]

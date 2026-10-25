@@ -118,4 +118,20 @@ struct SpokenRecipeTests {
         #expect(speech.hasSuffix("salt."))
         #expect(!speech.contains("0"))
     }
+
+    @Test
+    func noIngredientsEndsWithOneFullStop() {
+        let recipe = SpokenRecipe(cocktail: make(ingredients: []), steps: [], unit: "oz.", locale: english)
+        #expect(recipe.ingredientsSpeech == "X. Coupe glass.")
+    }
+
+    @Test
+    func frenchAndSpanishLinesUseDe() {
+        let cocktail = make(ingredients: [Ingredient(name: "gin", quantity: 1, unit: "oz.")])
+        for identifier in ["fr_FR", "es_ES"] {
+            let locale = Locale(identifier: identifier)
+            let speech = SpokenRecipe(cocktail: cocktail, steps: [], unit: "oz.", locale: locale).ingredientsSpeech
+            #expect(speech.contains(" de gin"))
+        }
+    }
 }

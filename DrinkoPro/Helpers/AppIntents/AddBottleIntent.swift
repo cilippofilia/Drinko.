@@ -36,9 +36,12 @@ struct AddBottleIntent: AppIntent {
             .sorted { $0.creationDate < $1.creationDate }
             .map { CategoryCandidate(id: $0.id, name: $0.name, color: $0.color) }
 
+        // Read the category chosen in Shortcuts once, so a category asked for one bottle never
+        // carries over to the next.
+        let preset = category
         var current = try await nonEmpty(bottle)
         while true {
-            let target = try await chooseCategory(for: current, among: candidates)
+            let target = try await chooseCategory(for: current, preset: preset, among: candidates)
             guard let model = allCategories.first(where: { $0.id == target.id }) else {
                 return .result(dialog: Self.noCategoryDialog)
             }
@@ -77,9 +80,10 @@ struct AddBottleIntent: AppIntent {
     @MainActor
     private func chooseCategory(
         for name: String,
+        preset: CabinetCategoryEntity?,
         among candidates: [CategoryCandidate]
     ) async throws -> CategoryCandidate {
-        if let chosen = category, let match = candidates.first(where: { $0.id == chosen.id }) { return match }
+        if let chosen = preset, let match = candidates.first(where: { $0.id == chosen.id }) { return match }
 
         let options: [CategoryCandidate]
         switch CabinetCategoryGuesser.guess(bottle: name, among: candidates) {

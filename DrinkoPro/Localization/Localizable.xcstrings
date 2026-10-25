@@ -35,40 +35,6 @@
         }
       }
     },
-    "%@ %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ %2$@"
-          }
-        },
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ %2$@"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ de %2$@"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ de %2$@"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ di %2$@"
-          }
-        }
-      }
-    },
     "%@ dashes" : {
       "localizations" : {
         "de" : {
@@ -11728,74 +11694,6 @@
       }
     }
   },
-  "Add to favourites" : {
-    "localizations" : {
-      "en" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Add to favourites"
-        }
-      },
-      "fr" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Ajouter aux favoris"
-        }
-      },
-      "de" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Zu Favoriten hinzufügen"
-        }
-      },
-      "it" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Aggiungi ai preferiti"
-        }
-      },
-      "es" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Añadir a favoritos"
-        }
-      }
-    }
-  },
-  "Remove from favourites" : {
-    "localizations" : {
-      "en" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Remove from favourites"
-        }
-      },
-      "fr" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Retirer des favoris"
-        }
-      },
-      "de" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Aus Favoriten entfernen"
-        }
-      },
-      "it" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Rimuovi dai preferiti"
-        }
-      },
-      "es" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Quitar de favoritos"
-        }
-      }
-    }
-  },
   "Toggle Favourite" : {
     "localizations" : {
       "en" : {
@@ -12370,6 +12268,41 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quitar ${cocktail} de favoritos"
+          }
+        }
+      }
+    },
+    "spoken.ingredientLine" : {
+      "comment" : "A spoken measure, then an ingredient. Add the connector your language needs.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ de %2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ de %2$@"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ di %2$@"
           }
         }
       }

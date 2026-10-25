@@ -16,7 +16,7 @@ struct DrinkoWidgetFavoriteButton: View {
 
     var body: some View {
         let ink = WidgetInk(renderingMode: renderingMode)
-        let title: LocalizedStringKey = entry.isFavorite ? "Remove from favourites" : "Add to favourites"
+        let title: LocalizedStringKey = entry.isFavorite ? "Remove from favorites" : "Add to favorites"
 
         Button(intent: ToggleWidgetFavoriteIntent(cocktailID: entry.cocktail.id)) {
             Label(title, systemImage: entry.isFavorite ? "heart.fill" : "heart")

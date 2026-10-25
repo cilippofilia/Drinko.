@@ -28,7 +28,7 @@ enum ModelCategoryGuesser {
 #if canImport(FoundationModels)
 @available(iOS 26, macOS 26, *)
 @Generable
-private struct CategoryAnswer {
+private nonisolated struct CategoryAnswer {
     @Guide(description: "Exactly one of the given category names, or the word unsure")
     let category: String
 }

@@ -3,21 +3,23 @@ import Foundation
 import SwiftData
 
 /// A Cabinet category exposed to Siri and Shortcuts, built from the `Category` model.
+/// Its members are `nonisolated` one by one: marking the whole type would also mark the
+/// `@Property` storage, which Swift 6 rejects.
 struct CabinetCategoryEntity: AppEntity {
-    static let typeDisplayRepresentation: TypeDisplayRepresentation = "Category"
-    static let defaultQuery = CabinetCategoryEntityQuery()
+    nonisolated static let typeDisplayRepresentation: TypeDisplayRepresentation = "Category"
+    nonisolated static let defaultQuery = CabinetCategoryEntityQuery()
 
-    let id: UUID
+    nonisolated let id: UUID
 
     @Property(title: "Name")
     var name: String
 
-    init(id: UUID, name: String) {
+    nonisolated init(id: UUID, name: String) {
         self.id = id
         self.name = name
     }
 
-    var displayRepresentation: DisplayRepresentation {
+    nonisolated var displayRepresentation: DisplayRepresentation {
         DisplayRepresentation(title: "\(name)")
     }
 }
