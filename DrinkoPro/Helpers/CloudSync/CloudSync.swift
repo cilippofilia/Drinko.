@@ -273,7 +273,7 @@ final class CloudSync {
         ) { [weak self] _ in
             guard let self else { return }
             if Thread.isMainThread {
-                MainActor.assumeIsolated { self.pushLocalChanges() }
+                MainActor.assumeIsolated { _ = self.pushLocalChanges() }
             } else {
                 Task { @MainActor in self.pushLocalChanges() }
             }
