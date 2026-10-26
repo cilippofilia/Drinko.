@@ -26,6 +26,9 @@ class Favorites {
     // Drives the heart animation.
     public var hasEffect: Bool = false
 
+    /// Called after favourites change, so Siri's suggested cocktails can be refreshed.
+    @ObservationIgnored var onChange: (() -> Void)?
+
     init(store: UserDefaults = AppGroup.defaults, legacy: UserDefaults = .standard) {
         self.store = store
         self.legacy = legacy
@@ -73,12 +76,14 @@ class Favorites {
               loaded != cocktails else { return }
         cocktails = loaded
         reloadWidget()
+        onChange?()
     }
 
     private func save() {
         FavoriteIDs.save(cocktails, to: store)
 
         reloadWidget()
+        onChange?()
     }
 
     private func reloadWidget() {

@@ -15,9 +15,10 @@ struct CocktailEntityQuery: EntityStringQuery {
         Self.results(matching: string, in: await allDrinks())
     }
 
-    /// Every drink, which registers the names for Siri phrases.
+    /// A short list Siri registers for one-sentence phrases; the Shortcuts app shows one tile
+    /// per entry, so returning the whole library would flood it.
     func suggestedEntities() async throws -> [CocktailEntity] {
-        await allDrinks().map(CocktailEntity.init)
+        SuggestedCocktails.pick(from: await allDrinks()).map(CocktailEntity.init)
     }
 
     /// Exact and partial matches, or every closest one when nothing matches, so Siri asks which.

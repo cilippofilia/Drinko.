@@ -79,6 +79,9 @@ struct DrinkoProApp: App {
         let launchDrinks = cocktailsViewModel.listOfAllDrinks
         Task { await indexer.update(with: launchDrinks) }
 
+        // Siri's suggested cocktails come from favourites, so refresh them when those change.
+        favorites.onChange = { DrinkoShortcuts.updateAppShortcutParameters() }
+
         // The same instances the UI uses, for App Intents to resolve with @Dependency.
         let registeredContainer = modelContainer
         AppDependencyManager.shared.add { cocktailsViewModel }
@@ -113,6 +116,8 @@ struct DrinkoProApp: App {
                 // The widget may have changed favorites while the app was in the background.
                 if newPhase == .active {
                     cloudSync.appDidBecomeActive()
+                    // Recents and widget-heart favourites also feed Siri's suggested cocktails.
+                    DrinkoShortcuts.updateAppShortcutParameters()
                 }
             }
         }
