@@ -12,9 +12,15 @@ struct DrinkoWidgetEntry: TimelineEntry {
     let cocktail: WidgetCocktail
     let stickerData: Data?
     let showsIngredients: Bool
+    let isFavorite: Bool
 
     /// Worked out once per entry so the views don't rank ingredients on every render.
     let mainSpirit: MainSpirit?
+
+    /// The placeholder has no real cocktail to favourite.
+    var canFavorite: Bool {
+        cocktail.id != DrinkoWidgetCatalog.nullCocktail.id
+    }
 
     var deepLinkURL: URL? {
         URL(string: "drinko://cocktail/\(cocktail.id)")
@@ -24,7 +30,7 @@ struct DrinkoWidgetEntry: TimelineEntry {
 #if DEBUG
 extension DrinkoWidgetEntry {
     /// An Aperol Spritz for previews, with its real sticker when it can be downloaded.
-    static func preview(showsIngredients: Bool = true) -> DrinkoWidgetEntry {
+    static func preview(showsIngredients: Bool = true, isFavorite: Bool = false) -> DrinkoWidgetEntry {
         preview(
             WidgetCocktail(
                 id: "aperol-spritz", name: "Aperol Spritz", method: "build", glass: "wine",
@@ -35,7 +41,8 @@ extension DrinkoWidgetEntry {
                     .init(name: "Soda water", quantity: 1, unit: "oz.")
                 ]
             ),
-            showsIngredients: showsIngredients
+            showsIngredients: showsIngredients,
+            isFavorite: isFavorite
         )
     }
 
@@ -70,12 +77,17 @@ extension DrinkoWidgetEntry {
         showsIngredients: true
     )
 
-    private static func preview(_ cocktail: WidgetCocktail, showsIngredients: Bool) -> DrinkoWidgetEntry {
+    private static func preview(
+        _ cocktail: WidgetCocktail,
+        showsIngredients: Bool,
+        isFavorite: Bool = false
+    ) -> DrinkoWidgetEntry {
         DrinkoWidgetEntry(
             date: .now,
             cocktail: cocktail,
             stickerData: DrinkoWidgetImageStore.stickerData(for: cocktail),
             showsIngredients: showsIngredients,
+            isFavorite: isFavorite,
             mainSpirit: cocktail.mainSpirit
         )
     }

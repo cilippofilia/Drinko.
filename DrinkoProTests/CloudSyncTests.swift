@@ -5,15 +5,15 @@ import Testing
 @MainActor
 @Suite("CloudSync")
 struct CloudSyncTests {
-    private let favoritesKey = AppGroup.favoritesKey
-    private let layoutKey = LibraryLayout.learnStorageKey
-    private let otherLayoutKey = LibraryLayout.cocktailsStorageKey
-    private let recentsKey = RecentsStore.storageKey(for: .cocktails)
+    let favoritesKey = AppGroup.favoritesKey
+    let layoutKey = LibraryLayout.learnStorageKey
+    let otherLayoutKey = LibraryLayout.cocktailsStorageKey
+    let recentsKey = RecentsStore.storageKey(for: .cocktails)
 
     /// A fake iCloud store plus two throwaway `UserDefaults` suites standing in for
     /// `.standard` and the App Group.
     @MainActor
-    private struct Harness {
+    struct Harness {
         let cloud = InMemoryCloudKeyValueStore()
         let standard: UserDefaults
         let appGroup: UserDefaults
@@ -28,11 +28,11 @@ struct CloudSyncTests {
 
     /// Records what `onRemoteChange` reports.
     @MainActor
-    private final class ChangeLog {
+    final class ChangeLog {
         var changes: [Set<String>] = []
     }
 
-    private func makeHarness() throws -> Harness {
+    func makeHarness() throws -> Harness {
         let standardName = "CloudSyncTests.standard.\(UUID().uuidString)"
         let appGroupName = "CloudSyncTests.appGroup.\(UUID().uuidString)"
         return Harness(
@@ -42,17 +42,17 @@ struct CloudSyncTests {
         )
     }
 
-    private func makeSync(_ harness: Harness, log: ChangeLog? = nil) -> CloudSync {
+    func makeSync(_ harness: Harness, log: ChangeLog? = nil) -> CloudSync {
         CloudSync(cloud: harness.cloud, standard: harness.standard, appGroup: harness.appGroup) { changed in
             log?.changes.append(changed)
         }
     }
 
-    private func encoded(_ ids: Set<String>) throws -> Data {
+    func encoded(_ ids: Set<String>) throws -> Data {
         try JSONEncoder().encode(ids)
     }
 
-    private func decoded(_ value: Any?) throws -> Set<String> {
+    func decoded(_ value: Any?) throws -> Set<String> {
         try JSONDecoder().decode(Set<String>.self, from: try #require(value as? Data))
     }
 

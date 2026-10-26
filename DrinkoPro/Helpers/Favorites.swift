@@ -26,13 +26,16 @@ class Favorites {
     // Drives the heart animation.
     public var hasEffect: Bool = false
 
+    /// Called after favourites change, so Siri's suggested cocktails can be refreshed.
+    @ObservationIgnored var onChange: (() -> Void)?
+
     init(store: UserDefaults = AppGroup.defaults, legacy: UserDefaults = .standard) {
         self.store = store
         self.legacy = legacy
 
         // Prefer favorites already migrated into the shared suite.
         if let encodedCocktailsData = store.data(forKey: saveKey),
-           let data = try? JSONDecoder().decode(Set<String>.self, from: encodedCocktailsData) {
+           let data = FavoriteIDs.decode(encodedCocktailsData) {
             cocktails = data
             return
         }
@@ -40,7 +43,7 @@ class Favorites {
         // Otherwise, migrate any favorites saved before the App Group existed.
         // We leave the legacy copy in place as a safety net.
         if let encodedCocktailsData = legacy.data(forKey: saveKey),
-           let data = try? JSONDecoder().decode(Set<String>.self, from: encodedCocktailsData) {
+           let data = FavoriteIDs.decode(encodedCocktailsData) {
             cocktails = data
             store.set(encodedCocktailsData, forKey: saveKey)
             return
@@ -69,20 +72,18 @@ class Favorites {
     // left alone so remote changes don't animate the heart.
     func reload() {
         guard let data = store.data(forKey: saveKey),
-              let loaded = try? JSONDecoder().decode(Set<String>.self, from: data),
+              let loaded = FavoriteIDs.decode(data),
               loaded != cocktails else { return }
         cocktails = loaded
         reloadWidget()
+        onChange?()
     }
 
     private func save() {
-        guard let data = try? JSONEncoder().encode(cocktails.sorted()) else {
-            print("Warning: Unable to save favorite cocktails")
-            return
-        }
-        store.set(data, forKey: saveKey)
+        FavoriteIDs.save(cocktails, to: store)
 
         reloadWidget()
+        onChange?()
     }
 
     private func reloadWidget() {

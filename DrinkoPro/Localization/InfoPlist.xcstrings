@@ -25,6 +25,9 @@
         }
       }
     },
+    "Drinko" : {
+
+    },
     "NSCameraUsageDescription" : {
       "comment" : "Privacy - Camera Usage Description",
       "localizations" : {

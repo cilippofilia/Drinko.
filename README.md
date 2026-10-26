@@ -61,6 +61,13 @@ The lessons and the cocktail library are downloaded from GitHub and cached on th
 - Opens `https://drinko.app/c/<id>` and `drinko://cocktail/<id>` links, plus Apple's default App Clip links.
 - Cocktails it doesn't bundle are fetched from the remote catalog.
 
+### Siri & Shortcuts
+
+- Ask Siri for a recipe, open a cocktail, get today's pick, or get a random drink. See [Siri & Shortcuts](#siri--shortcuts) below for the phrases.
+- Add or remove favourites by voice, and tap a heart on the medium widget to favourite its cocktail.
+- Restock the Cabinet by voice, with a category guess for each bottle.
+- Cocktails show up in Spotlight.
+
 ### Across devices
 
 - Favorites, recents, and preferences sync through iCloud key-value storage.
@@ -72,12 +79,80 @@ The lessons and the cocktail library are downloaded from GitHub and cached on th
 - SwiftUI for the UI.
 - SwiftData with CloudKit for the Cabinet and custom cocktails.
 - `NSUbiquitousKeyValueStore` for favorites, recents, and preferences.
-- WidgetKit and App Intents for the configurable widget.
+- WidgetKit and App Intents for the configurable widget, its heart button, and Siri and Shortcuts.
+- CoreSpotlight for indexing cocktails.
+- FoundationModels for the on-device Cabinet category guess (iOS 26 with Apple Intelligence).
 - App Clips.
 - StoreKit for review prompts and the Remove Ads purchase. `Drinko.storekit` provides local testing.
 - [PrivateAds](https://github.com/cilippofilia/PrivateAds) (Swift Package) for the cross-promo banner.
 - Swift Testing for unit tests, with a few older XCTest suites.
 - SwiftLint, configured in `.swiftlint.yml`.
+
+## Siri & Shortcuts
+
+Phrases are available in English, French, German, Italian, and Spanish. The English phrases are below. Every phrase must include the app name, shown here as Drinko.
+
+### Recipes
+
+- "How do I make a *cocktail* in Drinko"
+- "*Cocktail* recipe in Drinko"
+- "Get a recipe in Drinko"
+
+Siri reads the ingredients, asks "Want the method?", and reads the steps and garnish if you say yes. Saying no ends the answer, and the recipe card stays on screen while Siri asks.
+
+### Open a cocktail
+
+- "Open *cocktail* in Drinko"
+- "Open a cocktail in Drinko"
+
+Cocktails are also indexed in Spotlight, and tapping a result opens its page.
+
+### Today's cocktail
+
+- "What's today's cocktail in Drinko"
+- "Cocktail of the day in Drinko"
+
+This is the same pick as the widget's All Drinks source.
+
+### Surprise me
+
+- "Surprise me in Drinko"
+- "Pick a random cocktail in Drinko"
+
+### Favourites
+
+- "Add *cocktail* to my favourites in Drinko"
+- "Remove *cocktail* from my favourites in Drinko"
+- "Add to my favourites in Drinko"
+- "Remove from my favourites in Drinko"
+
+When a phrase doesn't name a cocktail, Siri asks "Which cocktail?".
+
+A favourite changed from the widget heart is saved on the device, then uploaded to iCloud the next time the app opens. That upload needs the iCloud key-value storage capability.
+
+### Cabinet
+
+- "Add to my cabinet in Drinko"
+- "Restock my cabinet in Drinko"
+
+Siri asks "Which bottle?", guesses the category from keywords or, where available, an on-device model, and asks you if it is unsure. Then it asks "Anything else?". The on-device guess needs iOS 26 with Apple Intelligence. Without it, keyword matching and a follow-up question are used.
+
+### Not yet verified on device
+
+Prerequisite: enable the iCloud key-value storage capability for the iCloud favourites check.
+
+1. Cold launch: invoke an intent from Siri right after a cold launch and confirm the dependencies resolve (no crash or "something went wrong").
+2. Shortcuts recipe flow: run "Get Cocktail Recipe" in Shortcuts and by voice. Siri reads the ingredients and asks "Want the method?", with the recipe card on screen. "Yes" reads the steps and garnish; "no" ends the answer with no extra reply.
+3. Spotlight: search "Zombie", confirm the result appears, and tap it to open the cocktail page.
+4. Voice open: "Open Zombie in Drinko" opens the Zombie page.
+5. Widget heart: tap the heart on the medium widget, open the app, and confirm the shown drink is a favourite.
+6. iCloud favourites: confirm the widget-heart favourite appears on a second device.
+7. Voice favourites: "Add Zombie to my favourites in Drinko" and "Remove Zombie from my favourites in Drinko".
+8. Cabinet restock in Shortcuts, "Add to my cabinet": "Campari" goes to Liqueurs; answer "yes" to "Anything else?"; "Tanqueray gin" goes to Gins; adding Campari again reports the duplicate; "no" ends the flow.
+9. On-device model guess (iOS 26 with Apple Intelligence): add a bottle such as "Hendrick's" and confirm a sensible category guess or a question.
+10. Real Siri voice for every phrase in this section.
+11. Today's cocktail matches the widget's All Drinks pick, and Surprise me returns a cocktail.
+12. All one-sentence cocktail phrases register (Siri caps phrase expansions).
 
 ## Remote Content
 
@@ -162,6 +237,7 @@ Unit tests live in `DrinkoProTests`. Most use Swift Testing, and a few older sui
 - stickers, user photos, and tint colours
 - widget catalog and sticker selection
 - the ABV calculator and oz/ml conversion
+- App Intents: recipe reading, Spotlight entities, today's pick, favourites, and Cabinet category guessing
 
 Run them with the `DrinkoProTests` scheme or Xcode's test action.
 

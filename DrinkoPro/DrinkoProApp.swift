@@ -5,15 +5,17 @@
 //  Created by Filippo Cilia on 31/05/2023.
 //
 
+import AppIntents
 import SwiftData
 import SwiftUI
 
 @main
 struct DrinkoProApp: App {
+    @Environment(\.scenePhase) private var scenePhase
     @State private var favorites: Favorites
     @State private var cocktailsViewModel: CocktailsViewModel
     @State private var lessonsViewModel: LessonsViewModel
-    @State private var appNavigationModel = AppNavigationModel()
+    @State private var appNavigationModel: AppNavigationModel
     @State private var recentsStore: RecentsStore
     #if os(iOS) || os(macOS)
     @State private var removeAdsStore = RemoveAdsStore()
@@ -23,6 +25,8 @@ struct DrinkoProApp: App {
     private let modelContainer: ModelContainer
     // Mirrors favorites, recents and settings to iCloud. Kept for the app's lifetime.
     private let cloudSync: CloudSync
+    // Keeps Spotlight and Siri's cocktail list current. Kept for the app's lifetime.
+    private let intentIndexer = CocktailIntentIndexer()
     // Loads cached content at launch and refreshes it from GitHub in the background.
     @State private var contentStore: ContentStore
 
@@ -35,7 +39,10 @@ struct DrinkoProApp: App {
         let contentStore = ContentStore()
         let snapshot = contentStore.initialSnapshot()
         _contentStore = State(initialValue: contentStore)
-        _cocktailsViewModel = State(initialValue: CocktailsViewModel(snapshot: snapshot))
+        let cocktailsViewModel = CocktailsViewModel(snapshot: snapshot)
+        let appNavigationModel = AppNavigationModel()
+        _cocktailsViewModel = State(initialValue: cocktailsViewModel)
+        _appNavigationModel = State(initialValue: appNavigationModel)
         _lessonsViewModel = State(initialValue: LessonsViewModel(snapshot: snapshot))
         _favorites = State(initialValue: favorites)
         _recentsStore = State(initialValue: recentsStore)
@@ -60,6 +67,27 @@ struct DrinkoProApp: App {
         } catch {
             fatalError("Failed to create ModelContainer: \(error)")
         }
+
+        // Loads user cocktails so Siri can find them without the Cocktails tab appearing.
+        cocktailsViewModel.configure(modelContext: modelContainer.mainContext)
+
+        // Re-index whenever the drink lists change, and once now for the launch list.
+        let indexer = intentIndexer
+        cocktailsViewModel.onDrinksChanged = { drinks in
+            Task { await indexer.update(with: drinks) }
+        }
+        let launchDrinks = cocktailsViewModel.listOfAllDrinks
+        Task { await indexer.update(with: launchDrinks) }
+
+        // Siri's suggested cocktails come from favourites, so refresh them when those change.
+        favorites.onChange = { DrinkoShortcuts.updateAppShortcutParameters() }
+
+        // The same instances the UI uses, for App Intents to resolve with @Dependency.
+        let registeredContainer = modelContainer
+        AppDependencyManager.shared.add { cocktailsViewModel }
+        AppDependencyManager.shared.add { favorites }
+        AppDependencyManager.shared.add { appNavigationModel }
+        AppDependencyManager.shared.add { registeredContainer }
     }
     
     var body: some Scene {
@@ -83,6 +111,14 @@ struct DrinkoProApp: App {
             .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                 guard let url = activity.webpageURL else { return }
                 appNavigationModel.handle(url: url)
+            }
+            .onChange(of: scenePhase) { _, newPhase in
+                // The widget may have changed favorites while the app was in the background.
+                if newPhase == .active {
+                    cloudSync.appDidBecomeActive()
+                    // Recents and widget-heart favourites also feed Siri's suggested cocktails.
+                    DrinkoShortcuts.updateAppShortcutParameters()
+                }
             }
         }
         .environment(favorites)
