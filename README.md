@@ -96,14 +96,12 @@ Phrases are available in English, French, German, Italian, and Spanish. The Engl
 
 - "How do I make a *cocktail* in Drinko"
 - "*Cocktail* recipe in Drinko"
-- "How to make *cocktail* with Drinko"
 - "Get a recipe in Drinko"
 
 Siri reads the ingredients, asks "Want the method?", and reads the steps and garnish if you say yes. Saying no ends the answer, and the recipe card stays on screen while Siri asks.
 
 ### Open a cocktail
 
-- "Show me a *cocktail* in Drinko"
 - "Open *cocktail* in Drinko"
 - "Open a cocktail in Drinko"
 
@@ -146,7 +144,7 @@ Prerequisite: enable the iCloud key-value storage capability for the iCloud favo
 1. Cold launch: invoke an intent from Siri right after a cold launch and confirm the dependencies resolve (no crash or "something went wrong").
 2. Shortcuts recipe flow: run "Get Cocktail Recipe" in Shortcuts and by voice. Siri reads the ingredients and asks "Want the method?", with the recipe card on screen. "Yes" reads the steps and garnish; "no" ends the answer with no extra reply.
 3. Spotlight: search "Zombie", confirm the result appears, and tap it to open the cocktail page.
-4. Voice open: "Show me a Zombie in Drinko" opens the Zombie page.
+4. Voice open: "Open Zombie in Drinko" opens the Zombie page.
 5. Widget heart: tap the heart on the medium widget, open the app, and confirm the shown drink is a favourite.
 6. iCloud favourites: confirm the widget-heart favourite appears on a second device.
 7. Voice favourites: "Add Zombie to my favourites in Drinko" and "Remove Zombie from my favourites in Drinko".

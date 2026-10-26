@@ -1,6 +1,7 @@
 import AppIntents
 
-/// The phrases Siri and Shortcuts recognise.
+/// The phrases Siri and Shortcuts recognise. Each phrase that names a cocktail is registered
+/// once per suggested cocktail, and Siri caps the total, so keep those phrases few.
 struct DrinkoShortcuts: AppShortcutsProvider {
     static var appShortcuts: [AppShortcut] {
         AppShortcut(
@@ -8,7 +9,6 @@ struct DrinkoShortcuts: AppShortcutsProvider {
             phrases: [
                 "How do I make a \(\.$cocktail) in \(.applicationName)",
                 "\(\.$cocktail) recipe in \(.applicationName)",
-                "How to make \(\.$cocktail) with \(.applicationName)",
                 "Get a recipe in \(.applicationName)"
             ],
             shortTitle: "Get Cocktail Recipe",
@@ -17,7 +17,6 @@ struct DrinkoShortcuts: AppShortcutsProvider {
         AppShortcut(
             intent: OpenCocktailIntent(),
             phrases: [
-                "Show me a \(\.$target) in \(.applicationName)",
                 "Open \(\.$target) in \(.applicationName)",
                 "Open a cocktail in \(.applicationName)"
             ],

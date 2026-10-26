@@ -103,40 +103,6 @@
         }
       }
     },
-    "How to make ${cocktail} with ${applicationName}" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "How to make ${cocktail} with ${applicationName}"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Comment faire ${cocktail} avec ${applicationName}"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wie macht man ${cocktail} mit ${applicationName}"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Come si prepara ${cocktail} con ${applicationName}"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cómo hacer ${cocktail} con ${applicationName}"
-          }
-        }
-      }
-    },
     "Pick a random cocktail in ${applicationName}" : {
       "localizations" : {
         "en" : {
@@ -167,40 +133,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elige un cóctel al azar en ${applicationName}"
-          }
-        }
-      }
-    },
-    "Show me a ${target} in ${applicationName}" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show me a ${target} in ${applicationName}"
-          }
-        },
-        "fr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Montre-moi un ${target} dans ${applicationName}"
-          }
-        },
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zeig mir einen ${target} in ${applicationName}"
-          }
-        },
-        "it" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mostrami un ${target} in ${applicationName}"
-          }
-        },
-        "es" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Muéstrame un ${target} en ${applicationName}"
           }
         }
       }
@@ -341,74 +273,74 @@
         }
       }
     },
-  "Add ${cocktail} to my favourites in ${applicationName}" : {
-    "localizations" : {
-      "en" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Add ${cocktail} to my favourites in ${applicationName}"
-        }
-      },
-      "fr" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Ajoute ${cocktail} à mes favoris dans ${applicationName}"
-        }
-      },
-      "de" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Füge ${cocktail} in ${applicationName} zu meinen Favoriten hinzu"
-        }
-      },
-      "it" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Aggiungi ${cocktail} ai miei preferiti in ${applicationName}"
-        }
-      },
-      "es" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Añade ${cocktail} a mis favoritos en ${applicationName}"
-        }
-      }
-    }
-  },
-  "Remove ${cocktail} from my favourites in ${applicationName}" : {
-    "localizations" : {
-      "en" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Remove ${cocktail} from my favourites in ${applicationName}"
-        }
-      },
-      "fr" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Retire ${cocktail} de mes favoris dans ${applicationName}"
-        }
-      },
-      "de" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Entferne ${cocktail} in ${applicationName} aus meinen Favoriten"
-        }
-      },
-      "it" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Rimuovi ${cocktail} dai miei preferiti in ${applicationName}"
-        }
-      },
-      "es" : {
-        "stringUnit" : {
-          "state" : "translated",
-          "value" : "Quita ${cocktail} de mis favoritos en ${applicationName}"
+    "Add ${cocktail} to my favourites in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add ${cocktail} to my favourites in ${applicationName}"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoute ${cocktail} à mes favoris dans ${applicationName}"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge ${cocktail} in ${applicationName} zu meinen Favoriten hinzu"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi ${cocktail} ai miei preferiti in ${applicationName}"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade ${cocktail} a mis favoritos en ${applicationName}"
+          }
         }
       }
-    }
-  },
+    },
+    "Remove ${cocktail} from my favourites in ${applicationName}" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remove ${cocktail} from my favourites in ${applicationName}"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retire ${cocktail} de mes favoris dans ${applicationName}"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entferne ${cocktail} in ${applicationName} aus meinen Favoriten"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rimuovi ${cocktail} dai miei preferiti in ${applicationName}"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quita ${cocktail} de mis favoritos en ${applicationName}"
+          }
+        }
+      }
+    },
     "Add to my cabinet in ${applicationName}" : {
       "localizations" : {
         "en" : {
