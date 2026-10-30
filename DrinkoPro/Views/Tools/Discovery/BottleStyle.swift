@@ -23,13 +23,17 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
     /// Recognizes a bottle from its name in any of the app's languages, ignoring case and accents.
     /// Bare brands shared by several styles (such as "Martini" or "Lillet") resolve to `nil`.
     init?(name: String) {
-        // Padded so a fragment can ask for a whole word (" porto ") or the whole name ("^ port $").
+        // Padded so a fragment can ask for a whole word (" porto ") or the end of the name (" port $").
         let folded = "^ " + name.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil) + " $"
+        // Maraschino cherries are a garnish, not the liqueur.
+        let isCherry = Self.cherryWords.contains { folded.contains($0) }
         guard let style = Self.allCases.first(where: { style in
-            style.fragments.contains { folded.contains($0) }
+            !(style == .maraschino && isCherry) && style.fragments.contains { folded.contains($0) }
         }) else { return nil }
         self = style
     }
+
+    private static let cherryWords = ["cherr", "ciliegi", "cereza", "cerise", "kirsche"]
 
     /// Folded generic names (en, it, es, fr, de) and brands that identify the style.
     private var fragments: [String] {
@@ -128,8 +132,8 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
         ]
         case .amontilladoSherry: ["amontillado"]
         case .port: [
-            "^ port $", "port wine", "ruby port", "tawny port", "white port", " porto ", "oporto", "portwein",
-            "vin de porto"
+            " port $", "port wine", "ruby port", "tawny port", "white port", "vintage port", " lbv ",
+            "late bottled vintage", " porto ", "oporto", "portwein", "vin de porto"
         ]
         case .sparklingWine: [
             "champagne $", "champagne or ", "prosecco", "sparkling wine", "spumante", " cava ", " sekt ",

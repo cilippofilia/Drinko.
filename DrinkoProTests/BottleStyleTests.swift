@@ -17,11 +17,14 @@ import Testing
         ("Weißer Wermut", .blancVermouth), ("maraschino liqueur", .maraschino),
         ("creme de cassis", .cremeDeCassis), ("dark creme de cacao", .cremeDeCacao),
         ("creme de violette", .cremeDeViolette), ("champagne", .sparklingWine), ("port", .port),
+        ("Taylor's Port", .port), ("Sandeman Founders Reserve Port", .port),
+        ("Late Bottled Vintage", .port),
         ("pinot noir or similar", .redWine), ("amaro nonino", .amaroNonino)
     ])
     func resolves(_ name: String, _ style: BottleStyle) { #expect(BottleStyle(name: name) == style) }
 
-    @Test(arguments: ["Martini", "Absolut", "lime juice", "London dry gin", "maraschino cherry", "violet syrup",
+    @Test(arguments: ["Martini", "Absolut", "lime juice", "London dry gin", "maraschino cherry",
+                         "Luxardo Maraschino Cherries", "Maraschino Luxardo Cherries", "violet syrup",
                          "cacao nibs", "cassis syrup", "Port Ellen", "manzanilla olives", "Nonino grappa",
                          "red wine vinegar", "champagne vinegar", "cavalry"])
     func doesNotResolve(_ name: String) { #expect(BottleStyle(name: name) == nil) }
