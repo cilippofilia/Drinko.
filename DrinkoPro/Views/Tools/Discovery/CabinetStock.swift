@@ -9,7 +9,7 @@ import Foundation
 nonisolated struct CabinetStock: Sendable {
     let spirits: Set<MainSpirit>
     private let styles: Set<BottleStyle>
-    /// Folded name of every bottle, for ingredients the app can't classify.
+    /// Every item's name as space-padded words, for staples and ingredients the app can't classify.
     private let names: [String]
 
     init(bottles: [(name: String, category: String?)]) {
@@ -26,19 +26,20 @@ nonisolated struct CabinetStock: Sendable {
                 // Style first, as for recipes: "Apricot Brandy" is a liqueur, not a cognac.
                 if let style = BottleStyle(name: variant) {
                     styles.insert(style)
-                } else if let spirit = MainSpirit(ingredientName: variant), spirit.isBaseSpirit {
+                } else if !RecipeBottle.isStaple(variant), let spirit = MainSpirit(ingredientName: variant),
+                          spirit.isBaseSpirit {
                     spirits.insert(spirit)
                 }
             }
             // The name only: a "Bitters" category must not stand in for any bitters.
-            names.append(RecipeBottle.fold(bottle.name))
+            names.append(" \(RecipeBottle.words(bottle.name)) ")
         }
         self.spirits = spirits
         self.styles = styles
         self.names = names
     }
 
-    /// Whether any alternative of the ingredient is a staple, a stocked spirit or style, or a stocked bottle name.
+    /// Whether any alternative of the ingredient is a stocked spirit or style, or whole words of an item's name.
     func covers(_ ingredientName: String) -> Bool {
         covers(RecipeBottle.alternatives(in: ingredientName).map { RecipeBottle(name: $0) })
     }
@@ -47,10 +48,10 @@ nonisolated struct CabinetStock: Sendable {
     func covers(_ alternatives: [RecipeBottle]) -> Bool {
         alternatives.contains { alternative in
             switch alternative {
-            case .staple: true
             case .spirit(let spirit): spirits.contains(spirit)
             case .style(let style): styles.contains(style)
-            case .other(let name): !name.isEmpty && names.contains { $0.contains(name) }
+            // Whole words, so "Peppermint Schnapps" doesn't cover "mint".
+            case .other(let name): !name.isEmpty && names.contains { $0.contains(" \(name) ") }
             }
         }
     }

@@ -12,8 +12,8 @@ struct CabinetDiscoveryView: View {
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Query private var items: [Item]
 
-    private static let staplesNote: LocalizedStringKey =
-        "Assumes you have juices, syrups, mixers and fresh ingredients. Only bottles in your Cabinet are checked."
+    private static let cabinetOnlyNote: LocalizedStringKey =
+        "Every ingredient has to be in your Cabinet, including juices, syrups and mixers."
 
     var body: some View {
         let stock = CabinetStock(bottles: items.map { ($0.name, $0.category?.name) })
@@ -33,13 +33,13 @@ struct CabinetDiscoveryView: View {
                     Label("No Matches Yet", systemImage: "wineglass")
                 } description: {
                     Text("Add a few more bottles to your Cabinet to unlock cocktails.")
-                    Text(Self.staplesNote)
+                    Text(Self.cabinetOnlyNote)
                 }
             } else {
                 List {
                     Section {
                     } header: {
-                        Text(Self.staplesNote)
+                        Text(Self.cabinetOnlyNote)
                             .textCase(nil)
                     }
 

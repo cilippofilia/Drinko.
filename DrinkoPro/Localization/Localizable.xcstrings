@@ -12650,36 +12650,36 @@
         }
       }
     },
-    "Assumes you have juices, syrups, mixers and fresh ingredients. Only bottles in your Cabinet are checked." : {
+    "Every ingredient has to be in your Cabinet, including juices, syrups and mixers." : {
       "localizations" : {
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Es wird vorausgesetzt, dass Sie Säfte, Sirups, Mixer und frische Zutaten haben. Nur die Flaschen in Ihrem Schrank werden geprüft."
+            "value" : "Jede Zutat muss in Ihrem Schrank sein, auch Säfte, Sirups und Mixer."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Assumes you have juices, syrups, mixers and fresh ingredients. Only bottles in your Cabinet are checked."
+            "value" : "Every ingredient has to be in your Cabinet, including juices, syrups and mixers."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se asume que tienes zumos, siropes, mezcladores e ingredientes frescos. Solo se comprueban las botellas de tu Armario."
+            "value" : "Todos los ingredientes tienen que estar en tu Armario, incluidos zumos, siropes y mezcladores."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suppose que vous avez des jus, des sirops, des mixers et des ingrédients frais. Seules les bouteilles de votre Meuble sont vérifiées."
+            "value" : "Chaque ingrédient doit être dans votre Meuble, y compris les jus, les sirops et les mixers."
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Presuppone che tu abbia succhi, sciroppi, mixer e ingredienti freschi. Vengono controllate solo le bottiglie nel tuo Mobiletto."
+            "value" : "Ogni ingrediente deve essere nel tuo Mobiletto, compresi succhi, sciroppi e mixer."
           }
         }
       }

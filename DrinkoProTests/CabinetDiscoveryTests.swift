@@ -28,6 +28,17 @@ import Testing
         #expect(result.makeNow.first?.swap == nil)
     }
 
+    @Test func juicesAndMixersMustBeInTheCabinet() {
+        let rumOnly = CabinetStock(bottles: [("Bacardi", "Rums")])
+        #expect(CabinetDiscovery.discover(in: [Self.daiquiri], stock: rumOnly).makeNow.isEmpty)
+
+        let stocked = CabinetStock(bottles: [
+            ("Bacardi", "Rums"), ("Lime Juice", "Juices"), ("Simple Syrup", "Syrups"), ("Soda Water", "Mixers")
+        ])
+        let result = CabinetDiscovery.discover(in: [Self.daiquiri, Self.virgin], stock: stocked)
+        #expect(result.makeNow.map(\.cocktail.id) == ["daiquiri", "virgin"])
+    }
+
     @Test func twistSwapsOnlySensiblePairs() {
         let stock = CabinetStock(bottles: [
             ("Olmeca", "Tequilas & Mezcals"), ("Absolut", "Vodkas"), ("Campari", nil), ("Carpano Antica", nil)
@@ -54,12 +65,12 @@ import Testing
     }
 
     @Test func noTwistForUnpairedSpirit() {
-        let stock = CabinetStock(bottles: [("Absolut", "Vodkas")])
+        let stock = CabinetStock(bottles: [("Absolut", "Vodkas"), ("Lime Juice", nil), ("Simple Syrup", nil)])
         #expect(CabinetDiscovery.discover(in: [Self.daiquiri], stock: stock).twists.isEmpty)
     }
 
     @Test func noTwistForFlavouredSpirit() {
-        let stock = CabinetStock(bottles: [("Jameson", "Whiskeys")])
+        let stock = CabinetStock(bottles: [("Jameson", "Whiskeys"), ("Lime Juice", "Juices")])
         let coconut = Self.cocktail("painkiller", ["coconut rum", "lime juice"])
         let plain = Self.cocktail("plain", ["white rum", "lime juice"])
         let result = CabinetDiscovery.discover(in: [coconut, plain], stock: stock)

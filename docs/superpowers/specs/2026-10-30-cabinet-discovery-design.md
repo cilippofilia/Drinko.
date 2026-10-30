@@ -17,7 +17,7 @@ user can't make.
    sensible substitute that is in the Cabinet (e.g. Negroni → use tequila instead of gin).
 3. Tapping either kind of result opens the existing `CocktailDetailView`, with the swap shown at
    the top when it's a twist.
-4. The screen says plainly that pantry staples are assumed and only bottles are checked.
+4. The screen says plainly that every ingredient, juices and mixers included, must be in the Cabinet.
 
 ## Non-goals
 
@@ -33,13 +33,17 @@ user can't make.
 - A drink in "Make now" that the user can't actually make because we matched too loosely
   (e.g. "Martini Rosso" covering "dry vermouth"). Wrong positives are worse than misses.
 - Twists that a bartender would wince at (vodka in an Old Fashioned).
-- Hiding the assumption about staples.
+- Hiding that juices and mixers have to be in the Cabinet too.
 
 ## What counts as a bottle
 
-**Assumed (never checked), the staples:** juices, syrups (including grenadine and orgeat), sugar/sugar cubes, honey, fresh fruit, herbs and spices, eggs, cream/milk,
-coffee/espresso, tea, water, salt, pepper, sauces/brines, purées, and all mixers (soda water, tonic,
-ginger beer, cola).
+**Nothing is assumed (changed 2026-10-30).** Every ingredient must be in the Cabinet. The staples
+(juices, syrups including grenadine and orgeat, sugar, honey, fresh fruit, herbs and spices, eggs,
+cream/milk, coffee, tea, water, salt, pepper, sauces/brines, purées, and mixers such as soda water,
+tonic, ginger beer and cola) are covered only by a Cabinet item whose name contains the ingredient's
+words as whole words ("Fresh Lime Juice" covers "lime juice"; "Limes" doesn't; "Peppermint
+Schnapps" doesn't cover "mint"). Recognising a staple still matters: it is never read as a spirit
+("ginger beer" is not a gin), on either side.
 
 **Checked against the Cabinet:** every spirit, liqueur, vermouth, wine/sparkling/fortified wine,
 amaro, and bitters.
@@ -123,8 +127,8 @@ the plan handles it.
 - One screen with two sections: **Make now** and **Twists**, each a list of cocktails using the
   app's existing cocktail row/card style. A twist row also shows its swap ("Use tequila instead
   of gin").
-- A short, always-visible note: "Assumes you have juices, syrups, mixers and fresh ingredients.
-  Only bottles in your Cabinet are checked."
+- A short, always-visible note: "Every ingredient has to be in your Cabinet, including juices,
+  syrups and mixers."
 - Empty states: empty Cabinet (point to the Cabinet tab), and a Cabinet that matches nothing.
 - Tapping opens `CocktailDetailView`. For a twist, a banner at the top of the detail shows the
   swap. The detail view takes this as an optional input, so it's unchanged for every other entry

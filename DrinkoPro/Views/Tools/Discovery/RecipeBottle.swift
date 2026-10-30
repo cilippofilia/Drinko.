@@ -5,24 +5,21 @@
 
 import Foundation
 
-/// What a recipe ingredient asks of the cabinet: nothing (a pantry staple), a base spirit,
-/// a specific bottle style, or a bottle the app can't classify.
+/// What a recipe ingredient asks of the cabinet: a base spirit, a specific bottle style, or an
+/// item matched by its name (a kitchen staple, or a bottle the app can't classify).
 nonisolated enum RecipeBottle: Hashable, Sendable {
-    case staple
     case spirit(MainSpirit)
     case style(BottleStyle)
     case other(String)
 
-    /// Style first, then staple, then base spirit. A liqueur family without a style stays `other`.
+    /// Style first, then base spirit. Staples are checked before spirits so "ginger beer" isn't a gin.
     init(name: String) {
         if let style = BottleStyle(name: name) {
             self = .style(style)
-        } else if Self.isStaple(name) {
-            self = .staple
-        } else if let spirit = MainSpirit(ingredientName: name), spirit.isBaseSpirit {
+        } else if !Self.isStaple(name), let spirit = MainSpirit(ingredientName: name), spirit.isBaseSpirit {
             self = .spirit(spirit)
         } else {
-            self = .other(Self.fold(name).trimmingCharacters(in: .whitespaces))
+            self = .other(Self.words(name))
         }
     }
 
@@ -48,22 +45,27 @@ nonisolated enum RecipeBottle: Hashable, Sendable {
             .filter { !$0.isEmpty && $0.lowercased() != "similar" }
     }
 
-    /// Whether the ingredient comes from the kitchen rather than the bar, so it never counts against a cabinet.
+    /// Whether the ingredient comes from the kitchen rather than the bar, so it is matched by name, never as a spirit.
     static func isStaple(_ name: String) -> Bool {
         // Juices and syrups are staples; any other spirit family (rum, liqueur) is a bottle.
         if let spirit = MainSpirit(ingredientName: name) {
             return !spirit.isBaseSpirit && spirit != .liqueur
         }
         // Whole words only, so "chocolate bitters" doesn't hit "cola".
-        let words = " " + fold(name).split { !$0.isLetter }.joined(separator: " ") + " "
-        guard !bottleWords.contains(where: { words.contains(" \($0) ") }) else { return false }
-        return stapleFragments.contains { words.contains(" \($0) ") }
+        let padded = " \(words(name)) "
+        guard !bottleWords.contains(where: { padded.contains(" \($0) ") }) else { return false }
+        return stapleFragments.contains { padded.contains(" \($0) ") }
     }
 
     static func fold(_ name: String) -> String {
         // Apostrophes go too, so a recipe's "Bailey's" matches a Cabinet "Baileys".
         name.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
             .replacing("'", with: "").replacing("’", with: "")
+    }
+
+    /// The folded name as single-spaced words, for whole-word matching: "Lime-Juice" → "lime juice".
+    static func words(_ name: String) -> String {
+        fold(name).split { !$0.isLetter && !$0.isNumber }.joined(separator: " ")
     }
 
     /// Words that make a name a bottle even when it also names a kitchen item ("lemon bitters", "cream sherry").

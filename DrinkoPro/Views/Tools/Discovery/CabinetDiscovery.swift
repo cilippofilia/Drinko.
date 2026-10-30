@@ -16,9 +16,6 @@ nonisolated enum CabinetDiscovery {
             let bottles = cocktail.ingredients.map { ingredient in
                 RecipeBottle.alternatives(in: ingredient.name).map { RecipeBottle(name: $0) }
             }
-            // A drink made only of pantry staples is not a cabinet suggestion.
-            guard bottles.contains(where: { options in options.contains { $0 != .staple } }) else { continue }
-
             let uncovered = bottles.indices.filter { !stock.covers(bottles[$0]) }
             if uncovered.isEmpty {
                 makeNow.append(DiscoveryMatch(cocktail: cocktail, swap: nil))

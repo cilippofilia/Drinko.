@@ -30,10 +30,21 @@ import Testing
         #expect(!stock.covers("rare whisky liqueur"))
     }
 
-    @Test func alternativesAndStaples() {
+    @Test func alternatives() {
         let stock = CabinetStock(bottles: [("Rittenhouse Rye", "Whiskeys")])
         #expect(stock.covers("bourbon or rye whiskey"))
-        #expect(CabinetStock(bottles: []).covers("lime juice"))
+    }
+
+    @Test func staplesMustBeInTheCabinet() {
+        #expect(!CabinetStock(bottles: []).covers("lime juice"))
+        #expect(CabinetStock(bottles: [("Fresh Lime Juice", "Juices")]).covers("lime juice"))
+        #expect(CabinetStock(bottles: [("Fresh Mint", "Garnishes")]).covers("mint"))
+        #expect(!CabinetStock(bottles: [("Peppermint Schnapps", "Liqueurs")]).covers("mint"))
+        #expect(!CabinetStock(bottles: [("Limes", "Fruit")]).covers("lime juice"))
+    }
+
+    @Test func mixersInTheCabinetAreNotSpirits() {
+        #expect(CabinetStock(bottles: [("Fever-Tree Ginger Beer", "Mixers")]).spirits.isEmpty)
     }
 
     @Test(arguments: [

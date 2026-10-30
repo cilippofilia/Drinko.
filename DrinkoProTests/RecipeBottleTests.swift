@@ -6,23 +6,28 @@ import Testing
     @Test(arguments: ["lime juice", "simple syrup", "egg white", "mint leaves", "ginger beer", "soda water",
                       "orange blossom water", "heavy cream", "espresso", "sugar cube", "hot sauce",
                       "orgeat (almond syrup)"])
-    func staples(_ name: String) { #expect(RecipeBottle(name: name) == .staple) }
+    func staples(_ name: String) { #expect(RecipeBottle.isStaple(name)) }
+
+    @Test func staplesAreMatchedByNameNeverAsASpirit() {
+        #expect(RecipeBottle(name: "ginger beer") == .other("ginger beer"))
+        #expect(RecipeBottle(name: "Honey-Syrup") == .other("honey syrup"))
+    }
 
     @Test func bottles() {
         #expect(RecipeBottle(name: "london dry gin") == .spirit(.gin))
         #expect(RecipeBottle(name: "falernum") == .style(.falernum))
         #expect(RecipeBottle(name: "maraschino liqueur") == .style(.maraschino))
-        #expect(RecipeBottle(name: "onion brine") == .staple)
+        #expect(RecipeBottle.isStaple("onion brine"))
         #expect(RecipeBottle(name: "ginger liqueur") != .spirit(.gin))
-        #expect(RecipeBottle(name: "chocolate bitters") != .staple)
-        #expect(RecipeBottle(name: "irish cream liqueur") != .staple)
+        #expect(!RecipeBottle.isStaple("chocolate bitters"))
+        #expect(!RecipeBottle.isStaple("irish cream liqueur"))
         #expect(RecipeBottle(name: "Some Rare Amaro") == .other("some rare amaro"))
     }
 
     @Test(arguments: ["cream sherry", "lemon bitters", "ginger liqueur", "coconut rum", "lemon vodka", "orange wine",
                       "eau de vie de poire", "poire williams eau-de-vie", "Kirsch Wasser"])
     func kitchenWordsInsideABottleStayBottles(_ name: String) {
-        #expect(RecipeBottle(name: name) != .staple)
+        #expect(!RecipeBottle.isStaple(name))
     }
 
     @Test func newStyles() {
@@ -45,7 +50,7 @@ import Testing
         for ingredient in cocktails.flatMap(\.ingredients) {
             for alternative in RecipeBottle.alternatives(in: ingredient.name) {
                 var isOther = false
-                if case .other = RecipeBottle(name: alternative) { isOther = true }
+                if case .other = RecipeBottle(name: alternative) { isOther = !RecipeBottle.isStaple(alternative) }
                 #expect(!isOther, "Unclassified ingredient: \(alternative)")
             }
         }
@@ -63,7 +68,7 @@ import Testing
             for ingredient in shots.flatMap(\.ingredients) {
                 for alternative in RecipeBottle.alternatives(in: ingredient.name) {
                     var isOther = false
-                    if case .other = RecipeBottle(name: alternative) { isOther = true }
+                    if case .other = RecipeBottle(name: alternative) { isOther = !RecipeBottle.isStaple(alternative) }
                     isOther = isOther && MainSpirit(ingredientName: alternative) != .liqueur
                     #expect(!isOther, "Unclassified shot ingredient (\(language)): \(alternative)")
                 }
@@ -72,7 +77,7 @@ import Testing
     }
 
     @Test(arguments: ["Schlagsahne", "Crème fleurette", "Nata para montar", "Filterkaffee (heiß)", "Cordial de lima"])
-    func shotStaples(_ name: String) { #expect(RecipeBottle(name: name) == .staple) }
+    func shotStaples(_ name: String) { #expect(RecipeBottle.isStaple(name)) }
 
     @Test(arguments: [
         ("Maraschino-Likör", BottleStyle.maraschino), ("Liquore maraschino", .maraschino),
@@ -87,6 +92,6 @@ import Testing
 
     @Test func cherryBrandyIsNotACognac() {
         #expect(RecipeBottle(name: "cherry brandy") != .spirit(.cognac))
-        #expect(RecipeBottle(name: "Bailey's Irish Cream") != .staple)
+        #expect(!RecipeBottle.isStaple("Bailey's Irish Cream"))
     }
 }
