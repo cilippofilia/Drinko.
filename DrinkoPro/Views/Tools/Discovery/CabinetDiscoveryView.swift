@@ -12,6 +12,9 @@ struct CabinetDiscoveryView: View {
     @Environment(AppNavigationModel.self) private var appNavigationModel
     @Query private var items: [Item]
 
+    private static let staplesNote: LocalizedStringKey =
+        "Assumes you have juices, syrups, mixers and fresh ingredients. Only bottles in your Cabinet are checked."
+
     var body: some View {
         let stock = CabinetStock(bottles: items.map { ($0.name, $0.category?.name) })
         let result = CabinetDiscovery.discover(in: viewModel.listOfAllDrinks, stock: stock)
@@ -30,15 +33,13 @@ struct CabinetDiscoveryView: View {
                     Label("No Matches Yet", systemImage: "wineglass")
                 } description: {
                     Text("Add a few more bottles to your Cabinet to unlock cocktails.")
-                    // swiftlint:disable:next line_length
-                    Text("Assumes you have juices, syrups, mixers and fresh ingredients. Only bottles in your Cabinet are checked.")
+                    Text(Self.staplesNote)
                 }
             } else {
                 List {
                     Section {
                     } header: {
-                        // swiftlint:disable:next line_length
-                        Text("Assumes you have juices, syrups, mixers and fresh ingredients. Only bottles in your Cabinet are checked.")
+                        Text(Self.staplesNote)
                             .textCase(nil)
                     }
 

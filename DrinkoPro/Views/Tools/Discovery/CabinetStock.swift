@@ -40,8 +40,13 @@ nonisolated struct CabinetStock: Sendable {
 
     /// Whether any alternative of the ingredient is a staple, a stocked spirit or style, or a stocked bottle name.
     func covers(_ ingredientName: String) -> Bool {
-        RecipeBottle.alternatives(in: ingredientName).contains { alternative in
-            switch RecipeBottle(name: alternative) {
+        covers(RecipeBottle.alternatives(in: ingredientName).map { RecipeBottle(name: $0) })
+    }
+
+    /// Whether any of an ingredient's already-classified alternatives is covered.
+    func covers(_ alternatives: [RecipeBottle]) -> Bool {
+        alternatives.contains { alternative in
+            switch alternative {
             case .staple: true
             case .spirit(let spirit): spirits.contains(spirit)
             case .style(let style): styles.contains(style)

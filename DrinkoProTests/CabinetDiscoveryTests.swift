@@ -41,6 +41,18 @@ import Testing
         #expect(CabinetDiscovery.discover(in: [Self.vieuxCarre], stock: stock).twists.isEmpty)
     }
 
+    @Test func noTwistWhenTwoBottlesAreMissing() {
+        let stock = CabinetStock(bottles: [("Olmeca", "Tequilas"), ("Campari", nil)])
+        let result = CabinetDiscovery.discover(in: [Self.negroni], stock: stock)
+        #expect(result.makeNow.isEmpty && result.twists.isEmpty)
+    }
+
+    @Test func noTwistWhenTheMissingBottleIsNotASpirit() {
+        let stock = CabinetStock(bottles: [("Tanqueray", "Gins"), ("Olmeca", "Tequilas"), ("Carpano Antica", nil)])
+        let result = CabinetDiscovery.discover(in: [Self.negroni], stock: stock)
+        #expect(result.makeNow.isEmpty && result.twists.isEmpty)
+    }
+
     @Test func noTwistForUnpairedSpirit() {
         let stock = CabinetStock(bottles: [("Absolut", "Vodkas")])
         #expect(CabinetDiscovery.discover(in: [Self.daiquiri], stock: stock).twists.isEmpty)

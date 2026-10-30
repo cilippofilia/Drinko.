@@ -15,6 +15,7 @@ import Testing
         ("Carpano Bianco", .blancVermouth), ("Carpano Dry", .dryVermouth), ("Combier Creme de Peche", .peachLiqueur),
         ("Combier Liqueur d'Orange", .orangeLiqueur), ("Süßer Wermut", .sweetVermouth),
         ("Weißer Wermut", .blancVermouth), ("maraschino liqueur", .maraschino),
+        ("Liqueur d’orange", .orangeLiqueur), ("Liquore all’arancia", .orangeLiqueur),
         ("creme de cassis", .cremeDeCassis), ("dark creme de cacao", .cremeDeCacao),
         ("creme de violette", .cremeDeViolette), ("champagne", .sparklingWine), ("port", .port),
         ("Taylor's Port", .port), ("Sandeman Founders Reserve Port", .port),

@@ -24,16 +24,21 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
     /// Bare brands shared by several styles (such as "Martini" or "Lillet") resolve to `nil`.
     init?(name: String) {
         // Padded so a fragment can ask for a whole word (" porto ") or the end of the name (" port $").
-        let folded = "^ " + name.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil) + " $"
+        // The iPhone keyboard types a curly apostrophe, the fragments use a straight one.
+        let folded = "^ " + name.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
+            .replacing("’", with: "'") + " $"
         // Maraschino cherries are a garnish, not the liqueur.
         let isCherry = Self.cherryWords.contains { folded.contains($0) }
-        guard let style = Self.allCases.first(where: { style in
-            !(style == .maraschino && isCherry) && style.fragments.contains { folded.contains($0) }
-        }) else { return nil }
+        guard let style = Self.table.first(where: { style, fragments in
+            !(style == .maraschino && isCherry) && fragments.contains { folded.contains($0) }
+        })?.style else { return nil }
         self = style
     }
 
     private static let cherryWords = ["cherr", "ciliegi", "cereza", "cerise", "kirsche"]
+
+    /// Every style with its fragments, in precedence order, built once.
+    private static let table = allCases.map { (style: $0, fragments: $0.fragments) }
 
     /// Folded generic names (en, it, es, fr, de) and brands that identify the style.
     private var fragments: [String] {

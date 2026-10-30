@@ -47,6 +47,9 @@ struct MacHomePageView: View {
                 NavigationStack {
                     ToolsDetailView(selection: item)
                         .crossPromoBanner()
+                        .navigationDestination(for: ToolsView.Selection.self) {
+                            ToolsDetailView(selection: $0)
+                        }
                 }
             }
         case .settings:
