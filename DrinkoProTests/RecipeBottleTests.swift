@@ -19,7 +19,8 @@ import Testing
         #expect(RecipeBottle(name: "Some Rare Amaro") == .other("some rare amaro"))
     }
 
-    @Test(arguments: ["cream sherry", "lemon bitters", "ginger liqueur", "coconut rum", "lemon vodka", "orange wine"])
+    @Test(arguments: ["cream sherry", "lemon bitters", "ginger liqueur", "coconut rum", "lemon vodka", "orange wine",
+                      "eau de vie de poire", "poire williams eau-de-vie", "Kirsch Wasser"])
     func kitchenWordsInsideABottleStayBottles(_ name: String) {
         #expect(RecipeBottle(name: name) != .staple)
     }
@@ -48,5 +49,44 @@ import Testing
                 #expect(!isOther, "Unclassified ingredient: \(alternative)")
             }
         }
+    }
+
+    /// Same check over the bundled shots in every language. A liqueur without a style stays `.other`
+    /// on purpose: the Cabinet matches it by name.
+    @Test @MainActor func everyShotIngredientIsClassified() throws {
+        for language in ["en", "de", "es", "fr", "it"] {
+            let url = try #require(
+                Bundle.main.url(forResource: "shots", withExtension: "json", subdirectory: nil, localization: language)
+            )
+            let shots = try JSONDecoder().decode([Cocktail].self, from: Data(contentsOf: url))
+            #expect(!shots.isEmpty)
+            for ingredient in shots.flatMap(\.ingredients) {
+                for alternative in RecipeBottle.alternatives(in: ingredient.name) {
+                    var isOther = false
+                    if case .other = RecipeBottle(name: alternative) { isOther = true }
+                    isOther = isOther && MainSpirit(ingredientName: alternative) != .liqueur
+                    #expect(!isOther, "Unclassified shot ingredient (\(language)): \(alternative)")
+                }
+            }
+        }
+    }
+
+    @Test(arguments: ["Schlagsahne", "Crème fleurette", "Nata para montar", "Filterkaffee (heiß)", "Cordial de lima"])
+    func shotStaples(_ name: String) { #expect(RecipeBottle(name: name) == .staple) }
+
+    @Test(arguments: [
+        ("Maraschino-Likör", BottleStyle.maraschino), ("Liquore maraschino", .maraschino),
+        ("Licor de marrasquino", .maraschino), ("Liqueur de marasquin", .maraschino),
+        ("Kirschlikör", .cherryHeering), ("Licor de cereza", .cherryHeering),
+        ("Liqueur de cerise", .cherryHeering), ("Liquore alla ciliegia", .cherryHeering),
+        ("Espressolikör", .coffeeLiqueur)
+    ])
+    func shotLiqueurTranslations(name: String, style: BottleStyle) {
+        #expect(RecipeBottle(name: name) == .style(style))
+    }
+
+    @Test func cherryBrandyIsNotACognac() {
+        #expect(RecipeBottle(name: "cherry brandy") != .spirit(.cognac))
+        #expect(RecipeBottle(name: "Bailey's Irish Cream") != .staple)
     }
 }

@@ -35,4 +35,40 @@ import Testing
         #expect(stock.covers("bourbon or rye whiskey"))
         #expect(CabinetStock(bottles: []).covers("lime juice"))
     }
+
+    @Test(arguments: [
+        ("Marie Brizard Apricot Brandy", "Brandy", "apricot brandy"),
+        ("De Kuyper Cherry Brandy", "Brandy", "cherry brandy"),
+        ("Plymouth Sloe Gin", "Gin", "sloe gin"),
+        ("Marie Brizard Apricot Brandy", nil, "apricot brandy"),
+        ("De Kuyper Cherry Brandy", nil, "cherry brandy"),
+        ("Plymouth Sloe Gin", nil, "sloe gin")
+    ] as [(String, String?, String)])
+    func liqueursAreNotBaseSpirits(name: String, category: String?, recipe: String) {
+        let stock = CabinetStock(bottles: [(name, category)])
+        #expect(stock.spirits.isEmpty)
+        #expect(stock.covers(recipe))
+        #expect(!stock.covers("gin"))
+        #expect(!stock.covers("cognac"))
+    }
+
+    @Test func gingerBrandyIsNotACognac() {
+        #expect(CabinetStock(bottles: [("Canton Ginger Brandy", "Brandy")]).spirits.isEmpty)
+        #expect(RecipeBottle(name: "ginger brandy") != .spirit(.cognac))
+    }
+
+    @Test func fallbackSearchesTheNameOnly() {
+        #expect(!CabinetStock(bottles: [("Campari", "Bitters")]).covers("bitters"))
+        #expect(!CabinetStock(bottles: [("Baileys", "Liqueurs")]).covers("liqueur"))
+    }
+
+    @Test func baileysCoversBaileysRecipeSpelling() {
+        #expect(CabinetStock(bottles: [("Baileys", "Liqueurs")]).covers("Bailey's"))
+    }
+
+    @Test func pluralsSingularise() {
+        #expect(CabinetStock(bottles: [("House Pour", "Gins")]).spirits == [.gin])
+        #expect(CabinetStock(bottles: [("Angostura", "Bitters")]).spirits.isEmpty)
+        #expect(CabinetStock(bottles: [("Peychaud's", "Bitters")]).spirits.isEmpty)
+    }
 }

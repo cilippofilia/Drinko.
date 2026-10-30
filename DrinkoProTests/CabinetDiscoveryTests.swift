@@ -46,6 +46,14 @@ import Testing
         #expect(CabinetDiscovery.discover(in: [Self.daiquiri], stock: stock).twists.isEmpty)
     }
 
+    @Test func noTwistForFlavouredSpirit() {
+        let stock = CabinetStock(bottles: [("Jameson", "Whiskeys")])
+        let coconut = Self.cocktail("painkiller", ["coconut rum", "lime juice"])
+        let plain = Self.cocktail("plain", ["white rum", "lime juice"])
+        let result = CabinetDiscovery.discover(in: [coconut, plain], stock: stock)
+        #expect(result.twists.map(\.cocktail.id) == ["plain"])
+    }
+
     @Test func emptyCabinetFindsNothing() {
         let result = CabinetDiscovery.discover(
             in: [Self.negroni, Self.daiquiri, Self.virgin], stock: CabinetStock(bottles: [])

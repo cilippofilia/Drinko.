@@ -26,11 +26,13 @@ struct CabinetDiscoveryView: View {
                     Button("Go to Cabinet") { appNavigationModel.selectedTab = .cabinet }
                 }
             } else if result.makeNow.isEmpty && result.twists.isEmpty {
-                ContentUnavailableView(
-                    "No Matches Yet",
-                    systemImage: "wineglass",
-                    description: Text("Add a few more bottles to your Cabinet to unlock cocktails.")
-                )
+                ContentUnavailableView {
+                    Label("No Matches Yet", systemImage: "wineglass")
+                } description: {
+                    Text("Add a few more bottles to your Cabinet to unlock cocktails.")
+                    // swiftlint:disable:next line_length
+                    Text("Assumes you have juices, syrups, mixers and fresh ingredients. Only bottles in your Cabinet are checked.")
+                }
             } else {
                 List {
                     Section {

@@ -61,12 +61,16 @@ nonisolated enum RecipeBottle: Hashable, Sendable {
     }
 
     static func fold(_ name: String) -> String {
+        // Apostrophes go too, so a recipe's "Bailey's" matches a Cabinet "Baileys".
         name.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
+            .replacing("'", with: "").replacing("’", with: "")
     }
 
     /// Words that make a name a bottle even when it also names a kitchen item ("lemon bitters", "cream sherry").
     private static let bottleWords = [
-        "bitters", "bitter", "wine", "sherry", "vermouth", "vino", "vin", "wein", "wermut", "amaro", "liqueur"
+        "bitters", "bitter", "wine", "sherry", "vermouth", "vino", "vin", "wein", "wermut", "amaro", "liqueur",
+        // "eau" and "wasser" are water words, but eau de vie and kirsch(wasser) are spirits.
+        "vie", "kirsch", "kirschwasser", "grappa", "aquavit", "akvavit", "acquavite"
     ]
 
     /// Folded kitchen words and phrases (en, it, es, fr, de), matched as whole words.
@@ -95,6 +99,7 @@ nonisolated enum RecipeBottle: Hashable, Sendable {
         "worcestershire", "worchestershire", "vinegar", "aceto", "vinagre", "vinaigre", "essig", "butter",
         // mixers
         "soda", "tonic", "ginger beer", "ginger ale", "cola", "lemonade", "limonata", "limonada", "limonade",
-        "cranberry"
+        "cranberry",
+        "schlagsahne", "creme fleurette", "nata para montar", "filterkaffee", "cordial de lima"
     ]
 }

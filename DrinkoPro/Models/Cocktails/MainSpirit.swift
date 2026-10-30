@@ -120,6 +120,6 @@ enum MainSpirit: CaseIterable {
         "absinth", "absenta", "assenzio", "amaretto", "amaro", "aperol", "bailey", "benedictine",
         "campari", "chartreuse", "cointreau", "couintreau", "curacao", "cynar", "disaronno",
         "drambuie", "fernet", "galliano", "grand marnier", "heering", "jagermeister", "kahlua",
-        "maraschino", "sambuca", "triple sec"
+        "maraschino", "sambuca", "sloe", "ginger brandy", "triple sec"
     ]
 }

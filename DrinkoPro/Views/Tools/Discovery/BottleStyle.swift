@@ -61,7 +61,8 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
         case .benedictine: ["benedictine", "benedettino"]
         case .maraschino: [
             "maraschino liqueur", "luxardo maraschino", "maraschino luxardo", "liquore di maraschino",
-            "licor de maraschino", "maraschinolikor", "maraschino likor"
+            "licor de maraschino", "maraschinolikor", "maraschino likor", "maraschino-likor", "liquore maraschino",
+            "licor de marrasquino", "liqueur de marasquin"
         ]
         case .orangeLiqueur: [
             "cointreau", "couintreau", "triple sec", "curacao", "grand marnier", "combier liqueur d'orange",
@@ -89,7 +90,7 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
         ]
         case .coffeeLiqueur: [
             "kahlua", "coffee liqueur", "tia maria", "mr black", "liquore al caffe", "licor de cafe",
-            "liqueur de cafe", "kaffeelikor"
+            "liqueur de cafe", "kaffeelikor", "espressolikor"
         ]
         case .drambuie: ["drambuie"]
         case .apricotLiqueur: [
@@ -149,7 +150,10 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
             "pinot noir", "cabernet", "merlot"
         ]
         case .pimms: ["pimm"]
-        case .cherryHeering: ["heering", "cherry liqueur"]
+        case .cherryHeering: [
+            "heering", "cherry liqueur", "cherry brandy", "kirschlikor", "licor de cereza", "liqueur de cerise",
+            "liquore alla ciliegia"
+        ]
         case .allspiceDram: ["allspice dram", "pimento dram", "elizabeth allspice"]
         case .falernum: ["falernum"]
         }
