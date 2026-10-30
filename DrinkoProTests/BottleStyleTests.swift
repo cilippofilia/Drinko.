@@ -10,10 +10,19 @@ import Testing
         ("green chartreuse", .greenChartreuse), ("Chartreuse verde", .greenChartreuse),
         ("yellow chartreuse", .yellowChartreuse), ("Kahlúa", .coffeeLiqueur), ("Luxardo Maraschino", .maraschino),
         ("Cointreau", .orangeLiqueur), ("couintreau", .orangeLiqueur), ("Angostura", .aromaticBitters),
-        ("peach schnapps", .peachLiqueur), ("Disaronno", .amaretto), ("prosecco", .sparklingWine)
+        ("peach schnapps", .peachLiqueur), ("Disaronno", .amaretto), ("prosecco", .sparklingWine),
+        ("Angostura Orange Bitters", .orangeBitters), ("Noilly Prat Rouge", .sweetVermouth),
+        ("Carpano Bianco", .blancVermouth), ("Carpano Dry", .dryVermouth), ("Combier Creme de Peche", .peachLiqueur),
+        ("Combier Liqueur d'Orange", .orangeLiqueur), ("Süßer Wermut", .sweetVermouth),
+        ("Weißer Wermut", .blancVermouth), ("maraschino liqueur", .maraschino),
+        ("creme de cassis", .cremeDeCassis), ("dark creme de cacao", .cremeDeCacao),
+        ("creme de violette", .cremeDeViolette), ("champagne", .sparklingWine), ("port", .port),
+        ("pinot noir or similar", .redWine), ("amaro nonino", .amaroNonino)
     ])
     func resolves(_ name: String, _ style: BottleStyle) { #expect(BottleStyle(name: name) == style) }
 
-    @Test(arguments: ["Martini", "Absolut", "lime juice", "London dry gin"])
+    @Test(arguments: ["Martini", "Absolut", "lime juice", "London dry gin", "maraschino cherry", "violet syrup",
+                         "cacao nibs", "cassis syrup", "Port Ellen", "manzanilla olives", "Nonino grappa",
+                         "red wine vinegar", "champagne vinegar", "cavalry"])
     func doesNotResolve(_ name: String) { #expect(BottleStyle(name: name) == nil) }
 }
