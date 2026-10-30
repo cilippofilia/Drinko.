@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D1C5B2002F00000000000002 /* BottleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2002F00000000000001 /* BottleStyle.swift */; };
+		D1C5B2002F00000000000003 /* BottleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2002F00000000000001 /* BottleStyle.swift */; };
 		1598D6301D139D306F684B84 /* LearnDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690D2E636390583CBD52BA /* LearnDetailView.swift */; };
 		180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
 		182157692F3E7DC5002C1046 /* UserCreatedCocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182157682F3E7DC5002C1046 /* UserCreatedCocktail.swift */; };
@@ -188,6 +190,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D1C5B2002F00000000000001 /* BottleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery/BottleStyle.swift; sourceTree = "<group>"; };
 		180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCocktailButtonView.swift; sourceTree = "<group>"; };
 		182157682F3E7DC5002C1046 /* UserCreatedCocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreatedCocktail.swift; sourceTree = "<group>"; };
 		182159062F3EA2CC002C1046 /* UserIngredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIngredient.swift; sourceTree = "<group>"; };
@@ -828,6 +831,7 @@
 				D1C5B0F12F00000000000001 /* ToolsView.swift */,
 				D1C5B0F12F00000000000002 /* ToolsView+Selection.swift */,
 				D1C5B1052F00000000000001 /* ToolsLibraryPage.swift */,
+				D1C5B2002F00000000000001 /* BottleStyle.swift */,
 				D1C5B0F12F00000000000003 /* ToolsLibrary.swift */,
 				D1C5B0F12F00000000000004 /* ToolsDetailView.swift */,
 				18883A842ACC718200FC78C7 /* Calculators */,
@@ -1081,6 +1085,7 @@
 				D1C5B0F32F00000000000001 /* ToolsView.swift in Sources */,
 				D1C5B0F32F00000000000002 /* ToolsView+Selection.swift in Sources */,
 				D1C5B1052F00000000000002 /* ToolsLibraryPage.swift in Sources */,
+				D1C5B2002F00000000000002 /* BottleStyle.swift in Sources */,
 				D1C5B0F32F00000000000003 /* ToolsLibrary.swift in Sources */,
 				D1C5B0F32F00000000000004 /* ToolsDetailView.swift in Sources */,
 				18A929FF2F12CB4100B70219 /* SettingsRowView.swift in Sources */,
@@ -1153,6 +1158,7 @@
 				D1C5B0F22F00000000000001 /* ToolsView.swift in Sources */,
 				D1C5B0F22F00000000000002 /* ToolsView+Selection.swift in Sources */,
 				D1C5B1052F00000000000003 /* ToolsLibraryPage.swift in Sources */,
+				D1C5B2002F00000000000003 /* BottleStyle.swift in Sources */,
 				D1C5B0F22F00000000000003 /* ToolsLibrary.swift in Sources */,
 				D1C5B0F22F00000000000004 /* ToolsDetailView.swift in Sources */,
 				18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */,
