@@ -6,6 +6,7 @@
 //
 
 import PrivateAds
+import StoreKit
 import SwiftData
 import SwiftUI
 
@@ -16,6 +17,7 @@ struct HomeView: View {
     @Environment(LessonsViewModel.self) private var lessonsViewModel
     @SceneStorage("selectedView") var selectedView: String?
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(\.requestReview) private var requestReview
 
     // Cabinet categories, for the sidebar's Cabinet group (same order as CabinetView).
     @Query(sort: [
@@ -171,6 +173,9 @@ struct HomeView: View {
             }
         }
         .onChange(of: crossPromoSignal.count) { _, newValue in
+            if CrossPromoSignal.shouldRequestReview(at: newValue) {
+                requestReview()
+            }
             guard removeAdsStore.isAdsRemoved == false,
                   CrossPromoSignal.shouldShowInterstitial(at: newValue) else { return }
             Task { await refreshInterstitialAd() }

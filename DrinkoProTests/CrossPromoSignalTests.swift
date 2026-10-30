@@ -13,4 +13,9 @@ struct CrossPromoSignalTests {
         let shown = (0...15).filter(CrossPromoSignal.shouldShowInterstitial(at:))
         #expect(shown == [5, 10, 15])
     }
+
+    @Test func reviewRequestedOnceBeforeFirstInterstitial() {
+        let requested = (0...15).filter(CrossPromoSignal.shouldRequestReview(at:))
+        #expect(requested == [3])
+    }
 }
