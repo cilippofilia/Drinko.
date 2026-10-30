@@ -9,6 +9,7 @@ import SwiftUI
 /// Cocktails the Cabinet can make now, and ones it can make with one spirit swapped.
 struct CabinetDiscoveryView: View {
     @Environment(CocktailsViewModel.self) private var viewModel
+    @Environment(AppNavigationModel.self) private var appNavigationModel
     @Query private var items: [Item]
 
     var body: some View {
@@ -17,11 +18,13 @@ struct CabinetDiscoveryView: View {
 
         Group {
             if items.isEmpty {
-                ContentUnavailableView(
-                    "Your Cabinet Is Empty",
-                    systemImage: "cabinet",
-                    description: Text("Add the bottles you own to see what you can make.")
-                )
+                ContentUnavailableView {
+                    Label("Your Cabinet Is Empty", systemImage: "cabinet")
+                } description: {
+                    Text("Add the bottles you own to see what you can make.")
+                } actions: {
+                    Button("Go to Cabinet") { appNavigationModel.selectedTab = .cabinet }
+                }
             } else if result.makeNow.isEmpty && result.twists.isEmpty {
                 ContentUnavailableView(
                     "No Matches Yet",

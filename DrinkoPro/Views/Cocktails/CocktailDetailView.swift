@@ -22,6 +22,8 @@ struct CocktailDetailView: View {
     let cocktail: Cocktail
     /// Set only when opened from cabinet discovery as a twist.
     var swap: SpiritSwap?
+    /// Off where the "You may also like" links can't navigate, like the Tools stacks.
+    var showsLinkedCocktails = true
 
     var toolbarPlacement: ToolbarItemPlacement {
         #if os(iOS)
@@ -106,7 +108,7 @@ struct CocktailDetailView: View {
                     )
                 }
 
-                if !linkedCocktails.isEmpty {
+                if showsLinkedCocktails, !linkedCocktails.isEmpty {
                     DetailSectionCard(
                         title: "You may also like",
                         isCollapsed: isCollapsed(.suggested),

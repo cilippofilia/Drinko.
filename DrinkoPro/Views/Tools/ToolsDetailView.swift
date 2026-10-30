@@ -19,7 +19,7 @@ struct ToolsDetailView: View {
         case .cabinetDiscovery:
             CabinetDiscoveryView()
         case .discoveredCocktail(let match):
-            CocktailDetailView(cocktail: match.cocktail, swap: match.swap)
+            CocktailDetailView(cocktail: match.cocktail, swap: match.swap, showsLinkedCocktails: false)
         }
     }
 }
