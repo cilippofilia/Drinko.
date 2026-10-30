@@ -47,6 +47,9 @@ enum MainSpirit: CaseIterable {
         }
     }
 
+    /// The six spirits a cocktail is built on, as opposed to a liqueur, juice or syrup.
+    var isBaseSpirit: Bool { rank == 0 }
+
     private var rank: Int {
         switch self {
         case .vodka, .gin, .whiskey, .rum, .tequila, .cognac: 0

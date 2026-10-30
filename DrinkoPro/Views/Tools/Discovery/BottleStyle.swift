@@ -12,10 +12,10 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
     // fragment ("extra dry") must belong to an earlier case than a broader one ("martini rosso").
     case sweetVermouth, blancVermouth, dryVermouth
     case campari, aperol, benedictine, maraschino
-    case orangeBitters, aromaticBitters, peychauds, absinthe
+    case orangeBitters, chocolateBitters, aromaticBitters, peychauds, absinthe
     case greenChartreuse, yellowChartreuse, coffeeLiqueur, drambuie
     case apricotLiqueur, peachLiqueur
-    case cremeDeCassis, cremeDeViolette, cremeDeCacao, cremeDeMenthe, cremeDeMure
+    case cremeDeCassis, cremeDeViolette, cremeDeCacao, cremeDeMenthe, cremeDeMure, cremeDeFramboise
     case orangeLiqueur, amaretto, cynar, fernet, amaroNonino
     case lilletBlanc, lilletRouge, finoSherry, amontilladoSherry, port
     case sparklingWine, redWine, pimms, cherryHeering, allspiceDram, falernum
@@ -72,6 +72,7 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
             "orange bitters", "bitter all'arancia", "bitter d'arancia", "amargo de naranja",
             "bitter a l'orange", "bitter d'orange", "orangenbitter"
         ]
+        case .chocolateBitters: ["chocolate bitters", "mole bitters", "cacao bitters"]
         case .aromaticBitters: [
             "angostura", "aromatic bitters", "bitter aromatico", "amargo aromatico", "bitter aromatique",
             "aromatische bitter"
@@ -119,6 +120,10 @@ nonisolated enum BottleStyle: String, CaseIterable, Sendable {
         case .cremeDeMure: [
             "creme de mure", "crema di more", "crema di mora", "crema de mora", "brombeerlikor",
             "blackberry liqueur"
+        ]
+        case .cremeDeFramboise: [
+            "framboise", "raspberry liqueur", "chambord", "liquore al lampone", "licor de frambuesa",
+            "himbeerlikor"
         ]
         case .amaretto: ["amaretto", "disaronno"]
         case .cynar: ["cynar"]
