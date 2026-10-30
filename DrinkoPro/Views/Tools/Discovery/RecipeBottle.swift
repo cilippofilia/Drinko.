@@ -60,7 +60,7 @@ nonisolated enum RecipeBottle: Hashable, Sendable {
         return stapleFragments.contains { words.contains(" \($0) ") }
     }
 
-    private static func fold(_ name: String) -> String {
+    static func fold(_ name: String) -> String {
         name.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: nil)
     }
 
