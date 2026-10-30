@@ -16,6 +16,10 @@ struct ToolsDetailView: View {
             ABVCalculator()
         case .superjuice(let juiceType):
             SuperJuiceView(typeOfJuice: juiceType)
+        case .cabinetDiscovery:
+            CabinetDiscoveryView()
+        case .discoveredCocktail(let match):
+            CocktailDetailView(cocktail: match.cocktail, swap: match.swap)
         }
     }
 }

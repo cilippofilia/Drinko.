@@ -20,6 +20,8 @@ struct CocktailDetailView: View {
     @State private var shareMessageVariant = CocktailShareMessage.randomVariant()
 
     let cocktail: Cocktail
+    /// Set only when opened from cabinet discovery as a twist.
+    var swap: SpiritSwap?
 
     var toolbarPlacement: ToolbarItemPlacement {
         #if os(iOS)
@@ -71,6 +73,10 @@ struct CocktailDetailView: View {
 
         ScrollView {
             VStack(spacing: detailCardInset) {
+                if let swap {
+                    CocktailSwapBanner(swap: swap)
+                }
+
                 CocktailImageHeader(
                     cocktail: activeCocktail,
                     history: viewModel.getCocktailHistory(for: activeCocktail)

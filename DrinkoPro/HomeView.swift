@@ -65,7 +65,7 @@ struct HomeView: View {
                 }
                 .tabPlacement(.sidebarOnly)
                 TabSection("Tools") {
-                    ForEach(ToolsLibrary.calculatorItems) { item in
+                    ForEach(ToolsLibrary.discoverItems + ToolsLibrary.calculatorItems) { item in
                         Tab(
                             ToolsLibrary.cardModel(for: item).title,
                             systemImage: ToolsLibrary.sidebarSymbol(for: item),
@@ -74,6 +74,9 @@ struct HomeView: View {
                             NavigationStack {
                                 ToolsDetailView(selection: item)
                                     .crossPromoBanner()
+                                    .navigationDestination(for: ToolsView.Selection.self) {
+                                        ToolsDetailView(selection: $0)
+                                    }
                             }
                         }
                         .tabPlacement(.sidebarOnly)
