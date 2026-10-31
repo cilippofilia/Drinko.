@@ -24,7 +24,7 @@ struct ToolsLibraryTests {
         #expect(ToolsLibrary.cardModel(for: .abvCalculator).image == .asset("abv"))
         #expect(ToolsLibrary.cardModel(for: .abvCalculator).imageContentMode == .fill)
         #expect(ToolsLibrary.cardModel(for: .superjuice("lemon")).image == .asset("lemon"))
-        #expect(ToolsLibrary.cardModel(for: .cabinetDiscovery).image == .symbol("cabinet"))
+        #expect(ToolsLibrary.cardModel(for: .cabinetDiscovery).image == .asset("cabinet-discovery"))
     }
 
     @Test func sidebarSymbols() {

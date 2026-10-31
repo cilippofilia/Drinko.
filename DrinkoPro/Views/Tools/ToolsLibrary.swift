@@ -34,7 +34,7 @@ enum ToolsLibrary {
             LibraryCardModel(
                 title: String(localized: "What Can I Make?"),
                 subtitle: String(localized: "Cocktails you can mix with the bottles in your Cabinet."),
-                image: .symbol("cabinet")
+                image: .asset("cabinet-discovery")
             )
         case .superjuice(let juiceType):
             LibraryCardModel(
