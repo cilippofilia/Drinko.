@@ -94,12 +94,9 @@ nonisolated struct Ingredient: Codable, Equatable, Identifiable, Hashable, Senda
     let quantity: Double
     let unit: String
 
-    @MainActor
+    /// The exact poured amount, unrounded so main-spirit ties match the widget's conversion.
     var mlQuantity: Double {
-        if unit == "oz." {
-            return UnitConverter.convert(quantity, from: "oz.", to: "ml")
-        }
-        return quantity
+        unit == "oz." ? quantity * 30 : quantity
     }
 
     @MainActor

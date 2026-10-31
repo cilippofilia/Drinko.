@@ -21,9 +21,11 @@ struct UnitConverter {
         return quantity
     }
     
-    /// Bartenders round an ounce to 30 ml.
+    /// Bartenders round an ounce to 30 ml, and jiggers measure in 5 ml steps, so the result is
+    /// rounded to the nearest 5 ml (halves round up). Any pour rounds to at least 5 ml.
     private static func convertOzToMl(_ quantity: Double) -> Double {
-        quantity * 30.0
+        guard quantity > 0 else { return quantity }
+        return max(5, (quantity * 30.0 / 5).rounded() * 5)
     }
 
     private static func convertMlToOz(_ quantity: Double) -> Double {

@@ -8,7 +8,21 @@ struct UnitConverterTests {
     @Test("oz. to ml uses 30 ml per oz.")
     func convertOzToMlUsesBartendingMappings() {
         #expect(UnitConverter.convert(1.0, from: "oz.", to: "ml") == 30.0)
-        #expect(UnitConverter.convert(1.75, from: "oz.", to: "ml") == 52.5)
+        #expect(UnitConverter.convert(1.5, from: "oz.", to: "ml") == 45.0)
+    }
+
+    @Test("oz. to ml rounds to the nearest 5 ml", arguments: [
+        (0.75, 25.0), (0.25, 10.0), (1.25, 40.0), (1.75, 55.0), (2.25, 70.0), (0.35, 10.0), (1.15, 35.0)
+    ])
+    func convertOzToMlRoundsToFiveMl(ounces: Double, milliliters: Double) {
+        #expect(UnitConverter.convert(ounces, from: "oz.", to: "ml") == milliliters)
+    }
+
+    @Test("small pours never round to zero")
+    func convertOzToMlKeepsSmallPours() {
+        #expect(UnitConverter.convert(0.05, from: "oz.", to: "ml") == 5.0)
+        #expect(UnitConverter.convert(0.15, from: "oz.", to: "ml") == 5.0)
+        #expect(UnitConverter.convert(0, from: "oz.", to: "ml") == 0)
     }
 
     @Test("ml to oz. uses 30 ml per oz.")
@@ -36,7 +50,7 @@ struct UnitConverterTests {
         #expect(ingredient.convertedUnit(to: "oz.") == "oz.")
 
         let second = Ingredient(name: "Vermouth", quantity: 1.75, unit: "oz.")
-        #expect(second.convertedQuantity(to: "ml") == 1.75 * 30.0)
+        #expect(second.convertedQuantity(to: "ml") == 55.0)
         #expect(second.convertedUnit(to: "ml") == "ml")
     }
 }
