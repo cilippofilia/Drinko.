@@ -19,7 +19,6 @@ nonisolated struct CocktailShareItem: Transferable {
     let artwork: LibraryImage
     let tint: String?
     let selectedUnit: String
-    let showsOriginalUnits: Bool
     /// Replaced in tests.
     var loadImage: @Sendable (URL) async throws -> CGImage = { url in
         try await RemoteImageLoader.shared.image(
@@ -111,7 +110,7 @@ nonisolated struct CocktailShareItem: Transferable {
             cocktail: cocktail,
             artwork: await resolvedArtwork(),
             lines: cocktail.ingredients.map {
-                IngredientLine(ingredient: $0, selectedUnit: selectedUnit, showsOriginalUnits: showsOriginalUnits)
+                IngredientLine(ingredient: $0, selectedUnit: selectedUnit)
             }
         )
 

@@ -5,8 +5,7 @@
 
 import Foundation
 
-/// An ingredient converted to the user's unit, except in the user's own cocktails, which keep
-/// the units they were written in.
+/// An ingredient converted to the user's unit.
 struct IngredientLine: Identifiable, Equatable {
     let id: String
     let quantity: Double
@@ -14,10 +13,10 @@ struct IngredientLine: Identifiable, Equatable {
     let name: String
 
     @MainActor
-    init(ingredient: Ingredient, selectedUnit: String, showsOriginalUnits: Bool) {
+    init(ingredient: Ingredient, selectedUnit: String) {
         id = ingredient.id
-        quantity = showsOriginalUnits ? ingredient.quantity : ingredient.convertedQuantity(to: selectedUnit)
-        unit = showsOriginalUnits ? ingredient.unit : ingredient.convertedUnit(to: selectedUnit)
+        quantity = ingredient.convertedQuantity(to: selectedUnit)
+        unit = ingredient.convertedUnit(to: selectedUnit)
         name = ingredient.name.capitalized
     }
 }

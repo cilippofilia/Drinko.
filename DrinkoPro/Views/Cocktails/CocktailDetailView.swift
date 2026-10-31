@@ -42,8 +42,7 @@ struct CocktailDetailView: View {
             cocktail: activeCocktail,
             artwork: viewModel.cardModel(for: activeCocktail).image,
             tint: viewModel.stickerTint(for: activeCocktail),
-            selectedUnit: unitPreference.unit(for: locale),
-            showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
+            selectedUnit: unitPreference.unit(for: locale)
         )
         if case .userPhoto(let id, let revision) = item.artwork {
             let viewModel = viewModel
@@ -91,8 +90,7 @@ struct CocktailDetailView: View {
                     content: {
                         CocktailDetailsSection(
                             cocktail: activeCocktail,
-                            selectedUnit: unitPreference.unit(for: locale),
-                            showsOriginalUnits: viewModel.isUserCreated(activeCocktail)
+                            selectedUnit: unitPreference.unit(for: locale)
                         )
                     }
                 )

@@ -10,15 +10,13 @@ import SwiftUI
 struct CocktailDetailsSection: View {
     let cocktail: Cocktail
     let selectedUnit: String
-    let showsOriginalUnits: Bool
     
     var body: some View {
         // The ingredients and the details are separate groups, so they get the wider group gap.
         VStack(alignment: .leading, spacing: detailCardInset) {
             IngredientsView(
                 ingredients: cocktail.ingredients,
-                selectedUnit: selectedUnit,
-                showsOriginalUnits: showsOriginalUnits
+                selectedUnit: selectedUnit
             )
 
             VStack(alignment: .leading, spacing: detailCardRowSpacing) {
@@ -34,6 +32,6 @@ struct CocktailDetailsSection: View {
 
 #if DEBUG && !APPCLIP
 #Preview {
-    CocktailDetailsSection(cocktail: .example, selectedUnit: "ml", showsOriginalUnits: false)
+    CocktailDetailsSection(cocktail: .example, selectedUnit: "ml")
 }
 #endif

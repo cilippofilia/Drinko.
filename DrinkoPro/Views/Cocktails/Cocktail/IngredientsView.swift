@@ -10,15 +10,13 @@ import SwiftUI
 struct IngredientsView: View {
     let ingredients: [Ingredient]
     let selectedUnit: String
-    let showsOriginalUnits: Bool
 
     var body: some View {
         VStack(alignment: .leading, spacing: detailCardRowSpacing) {
             ForEach(ingredients) { ingredient in
                 let line = IngredientLine(
                     ingredient: ingredient,
-                    selectedUnit: selectedUnit,
-                    showsOriginalUnits: showsOriginalUnits
+                    selectedUnit: selectedUnit
                 )
 
                 HStack {
@@ -41,6 +39,6 @@ struct IngredientsView: View {
 
 #if DEBUG
 #Preview {
-    IngredientsView(ingredients: [], selectedUnit: "ml", showsOriginalUnits: false)
+    IngredientsView(ingredients: [], selectedUnit: "ml")
 }
 #endif

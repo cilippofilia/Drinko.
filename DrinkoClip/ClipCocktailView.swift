@@ -39,8 +39,7 @@ struct ClipCocktailView: View {
                     content: {
                         CocktailDetailsSection(
                             cocktail: cocktail,
-                            selectedUnit: unitPreference.unit(for: locale),
-                            showsOriginalUnits: false
+                            selectedUnit: unitPreference.unit(for: locale)
                         )
                     }
                 )

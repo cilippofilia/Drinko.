@@ -60,7 +60,7 @@ struct CocktailShareCard: View {
         cocktail: .example,
         artwork: .glass(Cocktail.example.glassArtwork, tint: MainSpirit.gin.colorName),
         lines: Cocktail.example.ingredients.map {
-            IngredientLine(ingredient: $0, selectedUnit: "ml", showsOriginalUnits: false)
+            IngredientLine(ingredient: $0, selectedUnit: "ml")
         }
     )
 }

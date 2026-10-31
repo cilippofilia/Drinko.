@@ -101,12 +101,23 @@ nonisolated struct Ingredient: Codable, Equatable, Identifiable, Hashable, Senda
 
     @MainActor
     func convertedQuantity(to targetUnit: String) -> Double {
-        UnitConverter.convert(quantity, from: unit, to: targetUnit)
+        keepsOriginalUnit(convertingTo: targetUnit)
+            ? quantity
+            : UnitConverter.convert(quantity, from: unit, to: targetUnit)
     }
 
     @MainActor
     func convertedUnit(to targetUnit: String) -> String {
-        UnitConverter.unitLabel(for: unit, convertingTo: targetUnit)
+        keepsOriginalUnit(convertingTo: targetUnit)
+            ? unit
+            : UnitConverter.unitLabel(for: unit, convertingTo: targetUnit)
+    }
+
+    /// A pour smaller than the target unit's rounding step, like 2 ml in ounces, stays as written
+    /// instead of showing 0 or being inflated to the smallest step.
+    @MainActor
+    private func keepsOriginalUnit(convertingTo targetUnit: String) -> Bool {
+        quantity > 0 && UnitConverter.convert(quantity, from: unit, to: targetUnit) == 0
     }
 }
 

@@ -31,8 +31,7 @@ struct CocktailShareItemTests {
             cocktail: cocktail,
             artwork: artwork,
             tint: nil,
-            selectedUnit: "ml",
-            showsOriginalUnits: cocktail.isUserCreated
+            selectedUnit: "ml"
         )
         item.loadImage = loadImage
         return item
