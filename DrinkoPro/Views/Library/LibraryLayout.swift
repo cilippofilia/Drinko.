@@ -13,6 +13,8 @@ enum LibraryLayout: String, CaseIterable {
 
     static let cocktailsStorageKey = "cocktailsLibraryLayout"
 
+    static let discoveryStorageKey = "discoveryLibraryLayout"
+
     /// The key Learn and Cocktails shared before each got its own layout.
     static let legacyStorageKey = "libraryLayout"
 

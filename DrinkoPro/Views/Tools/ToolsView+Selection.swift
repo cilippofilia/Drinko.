@@ -12,7 +12,6 @@ extension ToolsView {
         case abvCalculator
         case superjuice(String)
         case cabinetDiscovery
-        case discoveredCocktail(DiscoveryMatch)
 
         /// Persisted, so keep it stable.
         var id: String {
@@ -20,8 +19,6 @@ extension ToolsView {
             case .abvCalculator: "abv"
             case .superjuice(let juiceType): "superjuice:\(juiceType)"
             case .cabinetDiscovery: "discovery"
-            // Never restored after relaunch, since `init(id:)` only looks through the library.
-            case .discoveredCocktail(let match): "discovered:\(match.id)"
             }
         }
 

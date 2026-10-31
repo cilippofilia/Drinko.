@@ -18,8 +18,6 @@ struct ToolsDetailView: View {
             SuperJuiceView(typeOfJuice: juiceType)
         case .cabinetDiscovery:
             CabinetDiscoveryView()
-        case .discoveredCocktail(let match):
-            CocktailDetailView(cocktail: match.cocktail, swap: match.swap, showsLinkedCocktails: false)
         }
     }
 }

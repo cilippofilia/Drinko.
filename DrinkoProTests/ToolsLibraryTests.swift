@@ -14,11 +14,10 @@ struct ToolsLibraryTests {
         #expect(Set(ids).count == ids.count)
     }
 
-    @Test func sectionsListTheCalculatorsInOrder() {
+    @Test func sectionsListEveryToolInOrder() {
         let sections = ToolsLibrary.sections
-        #expect(sections.map(\.id) == ["discover", "calculators"])
-        #expect(sections.first?.items == [.cabinetDiscovery])
-        #expect(sections.last?.items == [.abvCalculator, .superjuice("lime"), .superjuice("lemon")])
+        #expect(sections.map(\.id) == ["tools"])
+        #expect(sections.first?.items == [.cabinetDiscovery, .abvCalculator, .superjuice("lime"), .superjuice("lemon")])
     }
 
     @Test func cardModels() {

@@ -74,9 +74,6 @@ struct HomeView: View {
                             NavigationStack {
                                 ToolsDetailView(selection: item)
                                     .crossPromoBanner()
-                                    .navigationDestination(for: ToolsView.Selection.self) {
-                                        ToolsDetailView(selection: $0)
-                                    }
                             }
                         }
                         .tabPlacement(.sidebarOnly)

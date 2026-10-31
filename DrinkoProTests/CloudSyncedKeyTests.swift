@@ -13,6 +13,7 @@ struct CloudSyncedKeyTests {
             "cocktailUnitPreference",
             "learnLibraryLayout",
             "cocktailsLibraryLayout",
+            "discoveryLibraryLayout",
             "learnCollapsedSections",
             "cocktailsCollapsedSections",
             "detailCollapsedSections"
@@ -29,6 +30,6 @@ struct CloudSyncedKeyTests {
         #expect(rules["Cocktails"] == .favorites)
         #expect(rules["recents.learn"] == .recents)
         #expect(rules["recents.cocktails"] == .recents)
-        #expect(CloudSyncedKey.all.filter { $0.rule == .setting }.count == 7)
+        #expect(CloudSyncedKey.all.filter { $0.rule == .setting }.count == 8)
     }
 }

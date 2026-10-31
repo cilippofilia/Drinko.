@@ -8,8 +8,7 @@
 import Foundation
 
 enum ToolsLibrary {
-    static let discoverSectionID = "discover"
-    static let calculatorsSectionID = "calculators"
+    static let toolsSectionID = "tools"
     private nonisolated static let superjuiceTypes = ["lime", "lemon"]
 
     nonisolated static var discoverItems: [ToolsView.Selection] { [.cabinetDiscovery] }
@@ -19,10 +18,8 @@ enum ToolsLibrary {
     }
 
     static var sections: [LibrarySection<ToolsView.Selection>] {
-        [
-            LibrarySection(id: discoverSectionID, title: String(localized: "Discover"), items: discoverItems),
-            LibrarySection(id: calculatorsSectionID, title: String(localized: "Calculators"), items: calculatorItems)
-        ]
+        // One section: the Tools page hides section headers, so a second one would only show as a gap.
+        [LibrarySection(id: toolsSectionID, title: String(localized: "Tools"), items: discoverItems + calculatorItems)]
     }
 
     static func cardModel(for item: ToolsView.Selection) -> LibraryCardModel {
@@ -39,9 +36,6 @@ enum ToolsLibrary {
                 subtitle: String(localized: "Cocktails you can mix with the bottles in your Cabinet."),
                 image: .symbol("cabinet")
             )
-        // Unreachable: a discovered cocktail is pushed from the discovery page, never listed.
-        case .discoveredCocktail(let match):
-            LibraryCardModel(title: match.cocktail.name, image: .symbol("wineglass"))
         case .superjuice(let juiceType):
             LibraryCardModel(
                 title: superjuiceTitle(for: juiceType),
@@ -57,8 +51,6 @@ enum ToolsLibrary {
         case .abvCalculator: "percent"
         case .superjuice: "drop"
         case .cabinetDiscovery: "cabinet"
-        // Unreachable: never listed in the sidebar.
-        case .discoveredCocktail: "wineglass"
         }
     }
 

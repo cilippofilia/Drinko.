@@ -10,7 +10,11 @@ import SwiftUI
 struct CabinetDiscoveryView: View {
     @Environment(CocktailsViewModel.self) private var viewModel
     @Environment(AppNavigationModel.self) private var appNavigationModel
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @AppStorage(LibraryLayout.discoveryStorageKey) private var layout: LibraryLayout = .list
     @Query private var items: [Item]
+    /// Pushed here rather than as a `ToolsView.Selection`, so it works in every stack hosting this page.
+    @State private var openedMatch: DiscoveryMatch?
 
     private static let cabinetOnlyNote: LocalizedStringKey =
         "Every ingredient has to be in your Cabinet, including juices, syrups and mixers."
@@ -36,35 +40,67 @@ struct CabinetDiscoveryView: View {
                     Text(Self.cabinetOnlyNote)
                 }
             } else {
-                List {
-                    Section {
-                    } header: {
+                ScrollView {
+                    LazyVStack(alignment: .leading) {
                         Text(Self.cabinetOnlyNote)
-                            .textCase(nil)
-                    }
+                            .foregroundStyle(.secondary)
 
-                    DiscoverySection(title: "Make Now", matches: result.makeNow)
-                    DiscoverySection(title: "Twists", matches: result.twists)
+                        DiscoverySection(id: "makeNow", title: String(localized: "Make Now"),
+                                         matches: result.makeNow, layout: layout, onSelect: open)
+                        DiscoverySection(id: "twists", title: String(localized: "Twists"),
+                                         matches: result.twists, layout: layout, onSelect: open)
+                    }
+                    .padding([.horizontal, .bottom])
+                    .animation(reduceMotion ? nil : .snappy, value: layout)
+                }
+                .toolbar {
+                    ToolbarItem {
+                        LibraryLayoutToggle(layout: $layout)
+                    }
                 }
             }
         }
         .navigationTitle("What Can I Make?")
+        .navigationDestination(item: $openedMatch) { match in
+            CocktailDetailView(cocktail: match.cocktail, swap: match.swap, showsLinkedCocktails: false)
+        }
+    }
+
+    private func open(_ match: DiscoveryMatch) {
+        openedMatch = match
     }
 }
 
+/// One group of matches, drawn like a Cocktails library section in the chosen layout.
 private struct DiscoverySection: View {
-    let title: LocalizedStringKey
+    @Environment(CocktailsViewModel.self) private var viewModel
+
+    let id: String
+    let title: String
     let matches: [DiscoveryMatch]
+    let layout: LibraryLayout
+    let onSelect: @MainActor (DiscoveryMatch) -> Void
 
     var body: some View {
         if !matches.isEmpty {
-            Section(title) {
-                ForEach(matches) { match in
-                    NavigationLink(value: ToolsView.Selection.discoveredCocktail(match)) {
-                        DiscoveryMatchRow(match: match)
-                    }
-                }
-            }
+            LibrarySectionView(
+                section: LibrarySection(id: id, title: title, items: matches),
+                layout: layout,
+                isCollapsed: false,
+                isCollapsible: false,
+                selection: nil,
+                onToggleCollapsed: {},
+                onSelect: onSelect,
+                cardModel: cardModel,
+                contextMenu: { _ in EmptyView() }
+            )
         }
+    }
+
+    /// The cocktail's usual card, with the swap as its subtitle (shown in list rows).
+    private func cardModel(for match: DiscoveryMatch) -> LibraryCardModel {
+        var model = viewModel.cardModel(for: match.cocktail)
+        model.subtitle = match.swap?.message
+        return model
     }
 }

@@ -90,6 +90,6 @@ import Testing
 
     @MainActor @Test func discoverySelectionRoundTripsItsID() {
         #expect(ToolsView.Selection(id: "discovery") == .cabinetDiscovery)
-        #expect(ToolsLibrary.sections.first?.id == ToolsLibrary.discoverSectionID)
+        #expect(ToolsLibrary.sections.first?.items.first == .cabinetDiscovery)
     }
 }

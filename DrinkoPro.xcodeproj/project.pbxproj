@@ -13,7 +13,6 @@
 		D1C5B2032F00000000000002 /* SpiritSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2032F00000000000001 /* SpiritSwap.swift */; };
 		D1C5B2042F00000000000002 /* DiscoveryMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2042F00000000000001 /* DiscoveryMatch.swift */; };
 		D1C5B2062F00000000000002 /* CabinetDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2062F00000000000001 /* CabinetDiscoveryView.swift */; };
-		D1C5B2072F00000000000002 /* DiscoveryMatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2072F00000000000001 /* DiscoveryMatchRow.swift */; };
 		D1C5B2052F00000000000002 /* CabinetDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2052F00000000000001 /* CabinetDiscovery.swift */; };
 		D1C5B2002F00000000000003 /* BottleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2002F00000000000001 /* BottleStyle.swift */; };
 		D1C5B2012F00000000000003 /* RecipeBottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2012F00000000000001 /* RecipeBottle.swift */; };
@@ -21,7 +20,6 @@
 		D1C5B2032F00000000000003 /* SpiritSwap.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2032F00000000000001 /* SpiritSwap.swift */; };
 		D1C5B2042F00000000000003 /* DiscoveryMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2042F00000000000001 /* DiscoveryMatch.swift */; };
 		D1C5B2062F00000000000003 /* CabinetDiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2062F00000000000001 /* CabinetDiscoveryView.swift */; };
-		D1C5B2072F00000000000003 /* DiscoveryMatchRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2072F00000000000001 /* DiscoveryMatchRow.swift */; };
 		D1C5B2052F00000000000003 /* CabinetDiscovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2052F00000000000001 /* CabinetDiscovery.swift */; };
 		1598D6301D139D306F684B84 /* LearnDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1690D2E636390583CBD52BA /* LearnDetailView.swift */; };
 		180640182B5C88F30057F470 /* FavoriteCocktailButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */; };
@@ -210,7 +208,6 @@
 		D1C5B2032F00000000000001 /* SpiritSwap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery/SpiritSwap.swift; sourceTree = "<group>"; };
 		D1C5B2042F00000000000001 /* DiscoveryMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery/DiscoveryMatch.swift; sourceTree = "<group>"; };
 		D1C5B2062F00000000000001 /* CabinetDiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery/CabinetDiscoveryView.swift; sourceTree = "<group>"; };
-		D1C5B2072F00000000000001 /* DiscoveryMatchRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery/DiscoveryMatchRow.swift; sourceTree = "<group>"; };
 		D1C5B2052F00000000000001 /* CabinetDiscovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery/CabinetDiscovery.swift; sourceTree = "<group>"; };
 		180640172B5C88F30057F470 /* FavoriteCocktailButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCocktailButtonView.swift; sourceTree = "<group>"; };
 		182157682F3E7DC5002C1046 /* UserCreatedCocktail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCreatedCocktail.swift; sourceTree = "<group>"; };
@@ -860,7 +857,6 @@
 				D1C5B2032F00000000000001 /* SpiritSwap.swift */,
 				D1C5B2042F00000000000001 /* DiscoveryMatch.swift */,
 				D1C5B2052F00000000000001 /* CabinetDiscovery.swift */,
-				D1C5B2072F00000000000001 /* DiscoveryMatchRow.swift */,
 				D1C5B2062F00000000000001 /* CabinetDiscoveryView.swift */,
 				D1C5B0F12F00000000000003 /* ToolsLibrary.swift */,
 				D1C5B0F12F00000000000004 /* ToolsDetailView.swift */,
@@ -1121,7 +1117,6 @@
 				D1C5B2032F00000000000002 /* SpiritSwap.swift in Sources */,
 				D1C5B2042F00000000000002 /* DiscoveryMatch.swift in Sources */,
 				D1C5B2052F00000000000002 /* CabinetDiscovery.swift in Sources */,
-				D1C5B2072F00000000000002 /* DiscoveryMatchRow.swift in Sources */,
 				D1C5B2062F00000000000002 /* CabinetDiscoveryView.swift in Sources */,
 				D1C5B0F32F00000000000003 /* ToolsLibrary.swift in Sources */,
 				D1C5B0F32F00000000000004 /* ToolsDetailView.swift in Sources */,
@@ -1201,7 +1196,6 @@
 				D1C5B2032F00000000000003 /* SpiritSwap.swift in Sources */,
 				D1C5B2042F00000000000003 /* DiscoveryMatch.swift in Sources */,
 				D1C5B2052F00000000000003 /* CabinetDiscovery.swift in Sources */,
-				D1C5B2072F00000000000003 /* DiscoveryMatchRow.swift in Sources */,
 				D1C5B2062F00000000000003 /* CabinetDiscoveryView.swift in Sources */,
 				D1C5B0F22F00000000000003 /* ToolsLibrary.swift in Sources */,
 				D1C5B0F22F00000000000004 /* ToolsDetailView.swift in Sources */,
