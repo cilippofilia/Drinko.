@@ -57,19 +57,19 @@ struct WidgetCatalogTests {
     }
 
     @Test("Picks wrap around once the pool is exhausted")
-    func dailyPickWrapsAtPoolCount() {
+    func dailyPickWrapsAtPoolCount() throws {
         let calendar = Calendar(identifier: .gregorian)
         let referenceDate = Date(timeIntervalSince1970: 1_700_000_000)
         let pool = cocktails
 
-        let dayIndex = calendar.ordinality(of: .day, in: .era, for: referenceDate) ?? 0
+        let index = try #require(DailyPick.index(count: pool.count, on: referenceDate, calendar: calendar))
         let wrappedDate = calendar.date(byAdding: .day, value: pool.count, to: referenceDate)!
 
         let originalPick = DrinkoWidgetCatalog.dailyPick(from: pool, on: referenceDate, calendar: calendar)
         let wrappedPick = DrinkoWidgetCatalog.dailyPick(from: pool, on: wrappedDate, calendar: calendar)
 
         #expect(originalPick == wrappedPick)
-        #expect(pool[dayIndex % pool.count] == originalPick)
+        #expect(pool[index] == originalPick)
     }
 
     @Test("An empty pool has no pick")

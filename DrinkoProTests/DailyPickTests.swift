@@ -39,14 +39,23 @@ struct DailyPickTests {
         }
     }
 
-    @Test func consecutiveDaysStep() throws {
-        let count = 7
-        for day in 0..<5 {
-            let todayDate = date(offsetDays: day)
-            let tomorrowDate = date(offsetDays: day + 1)
-            let today = try #require(DailyPick.index(count: count, on: todayDate, calendar: calendar))
-            let tomorrow = try #require(DailyPick.index(count: count, on: tomorrowDate, calendar: calendar))
-            #expect(tomorrow == (today + 1) % count)
+    @Test(arguments: [1, 2, 7, 180, 189, 198])
+    func everyDrinkComesUpOncePerCycle(count: Int) throws {
+        let indices = try (0..<count).map {
+            try #require(DailyPick.index(count: count, on: date(offsetDays: $0), calendar: calendar))
+        }
+        #expect(Set(indices) == Set(0..<count))
+    }
+
+    /// The pool lists all cocktails before all shots, so stepping by one showed weeks of shots.
+    @Test func shotsAreSpreadOut() throws {
+        let cocktailCount = 148
+        let count = cocktailCount + 41
+        var run = 0
+        for day in 0..<count {
+            let index = try #require(DailyPick.index(count: count, on: date(offsetDays: day), calendar: calendar))
+            run = index >= cocktailCount ? run + 1 : 0
+            #expect(run < 2)
         }
     }
 
