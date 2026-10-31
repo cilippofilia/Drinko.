@@ -32,7 +32,7 @@ struct ToolsView: View {
                 ContentUnavailableView(
                     "Select a Tool",
                     systemImage: "wrench.and.screwdriver",
-                    description: Text("Choose a calculator to get started.")
+                    description: Text("Choose a tool to get started.")
                 )
             }
         )

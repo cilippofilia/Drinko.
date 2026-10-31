@@ -53,7 +53,7 @@ struct MacSidebarView: View {
                 }
             }
             Section("Tools") {
-                ForEach(ToolsLibrary.calculatorItems) { item in
+                ForEach(ToolsLibrary.discoverItems + ToolsLibrary.calculatorItems) { item in
                     Label(
                         ToolsLibrary.cardModel(for: item).title,
                         systemImage: ToolsLibrary.sidebarSymbol(for: item)

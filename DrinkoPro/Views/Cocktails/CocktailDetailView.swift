@@ -20,6 +20,10 @@ struct CocktailDetailView: View {
     @State private var shareMessageVariant = CocktailShareMessage.randomVariant()
 
     let cocktail: Cocktail
+    /// Set only when opened from cabinet discovery as a twist.
+    var swap: SpiritSwap?
+    /// Off where the "You may also like" links can't navigate, like the Tools stacks.
+    var showsLinkedCocktails = true
 
     var toolbarPlacement: ToolbarItemPlacement {
         #if os(iOS)
@@ -71,6 +75,10 @@ struct CocktailDetailView: View {
 
         ScrollView {
             VStack(spacing: detailCardInset) {
+                if let swap {
+                    CocktailSwapBanner(swap: swap)
+                }
+
                 CocktailImageHeader(
                     cocktail: activeCocktail,
                     history: viewModel.getCocktailHistory(for: activeCocktail)
@@ -100,7 +108,7 @@ struct CocktailDetailView: View {
                     )
                 }
 
-                if !linkedCocktails.isEmpty {
+                if showsLinkedCocktails, !linkedCocktails.isEmpty {
                     DetailSectionCard(
                         title: "You may also like",
                         isCollapsed: isCollapsed(.suggested),

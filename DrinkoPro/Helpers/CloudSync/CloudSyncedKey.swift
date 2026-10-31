@@ -36,6 +36,7 @@ struct CloudSyncedKey: Equatable {
         CloudSyncedKey(name: CocktailUnitPreference.storageKey, suite: .standard, rule: .setting),
         CloudSyncedKey(name: LibraryLayout.learnStorageKey, suite: .standard, rule: .setting),
         CloudSyncedKey(name: LibraryLayout.cocktailsStorageKey, suite: .standard, rule: .setting),
+        CloudSyncedKey(name: LibraryLayout.discoveryStorageKey, suite: .standard, rule: .setting),
         CloudSyncedKey(name: CollapsedSections.learnStorageKey, suite: .standard, rule: .setting),
         CloudSyncedKey(name: CollapsedSections.cocktailsStorageKey, suite: .standard, rule: .setting),
         CloudSyncedKey(name: DetailSection.storageKey, suite: .standard, rule: .setting)

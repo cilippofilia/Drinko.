@@ -8,15 +8,18 @@
 import Foundation
 
 enum ToolsLibrary {
-    static let calculatorsSectionID = "calculators"
+    static let toolsSectionID = "tools"
     private nonisolated static let superjuiceTypes = ["lime", "lemon"]
+
+    nonisolated static var discoverItems: [ToolsView.Selection] { [.cabinetDiscovery] }
 
     nonisolated static var calculatorItems: [ToolsView.Selection] {
         [.abvCalculator] + superjuiceTypes.map { .superjuice($0) }
     }
 
     static var sections: [LibrarySection<ToolsView.Selection>] {
-        [LibrarySection(id: calculatorsSectionID, title: String(localized: "Calculators"), items: calculatorItems)]
+        // One section: the Tools page hides section headers, so a second one would only show as a gap.
+        [LibrarySection(id: toolsSectionID, title: String(localized: "Tools"), items: discoverItems + calculatorItems)]
     }
 
     static func cardModel(for item: ToolsView.Selection) -> LibraryCardModel {
@@ -26,6 +29,12 @@ enum ToolsLibrary {
                 title: String(localized: "ABV Calculator"),
                 subtitle: String(localized: "Work out the alcohol by volume of any drink."),
                 image: .asset("abv")
+            )
+        case .cabinetDiscovery:
+            LibraryCardModel(
+                title: String(localized: "What Can I Make?"),
+                subtitle: String(localized: "Cocktails you can mix with the bottles in your Cabinet."),
+                image: .symbol("cabinet")
             )
         case .superjuice(let juiceType):
             LibraryCardModel(
@@ -41,6 +50,7 @@ enum ToolsLibrary {
         switch item {
         case .abvCalculator: "percent"
         case .superjuice: "drop"
+        case .cabinetDiscovery: "cabinet"
         }
     }
 

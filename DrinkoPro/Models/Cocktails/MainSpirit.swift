@@ -47,6 +47,9 @@ enum MainSpirit: CaseIterable {
         }
     }
 
+    /// The six spirits a cocktail is built on, as opposed to a liqueur, juice or syrup.
+    var isBaseSpirit: Bool { rank == 0 }
+
     private var rank: Int {
         switch self {
         case .vodka, .gin, .whiskey, .rum, .tequila, .cognac: 0
@@ -117,6 +120,6 @@ enum MainSpirit: CaseIterable {
         "absinth", "absenta", "assenzio", "amaretto", "amaro", "aperol", "bailey", "benedictine",
         "campari", "chartreuse", "cointreau", "couintreau", "curacao", "cynar", "disaronno",
         "drambuie", "fernet", "galliano", "grand marnier", "heering", "jagermeister", "kahlua",
-        "maraschino", "sambuca", "triple sec"
+        "maraschino", "sambuca", "sloe", "ginger brandy", "triple sec"
     ]
 }

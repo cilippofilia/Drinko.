@@ -1,0 +1,58 @@
+//
+//  CabinetStock.swift
+//  DrinkoPro
+//
+
+import Foundation
+
+/// The user's Cabinet bottles, reduced to what a recipe ingredient can be checked against.
+nonisolated struct CabinetStock: Sendable {
+    let spirits: Set<MainSpirit>
+    private let styles: Set<BottleStyle>
+    /// Every item's name as space-padded words, for staples and ingredients the app can't classify.
+    private let names: [String]
+
+    init(bottles: [(name: String, category: String?)]) {
+        var spirits: Set<MainSpirit> = []
+        var styles: Set<BottleStyle> = []
+        var names: [String] = []
+        for bottle in bottles {
+            let text = "\(bottle.name) \(bottle.category ?? "")"
+            // Cabinet side only: "Gins" should resolve to gin, so also try each word without a trailing "s".
+            let singular = text.split(separator: " ")
+                .map { $0.hasSuffix("s") || $0.hasSuffix("S") ? String($0.dropLast()) : String($0) }
+                .joined(separator: " ")
+            for variant in [text, singular] {
+                // Style first, as for recipes: "Apricot Brandy" is a liqueur, not a cognac.
+                if let style = BottleStyle(name: variant) {
+                    styles.insert(style)
+                } else if !RecipeBottle.isStaple(variant), let spirit = MainSpirit(ingredientName: variant),
+                          spirit.isBaseSpirit {
+                    spirits.insert(spirit)
+                }
+            }
+            // The name only: a "Bitters" category must not stand in for any bitters.
+            names.append(" \(RecipeBottle.words(bottle.name)) ")
+        }
+        self.spirits = spirits
+        self.styles = styles
+        self.names = names
+    }
+
+    /// Whether any alternative of the ingredient is a stocked spirit or style, or whole words of an item's name.
+    func covers(_ ingredientName: String) -> Bool {
+        covers(RecipeBottle.alternatives(in: ingredientName).map { RecipeBottle(name: $0) })
+    }
+
+    /// Whether any of an ingredient's already-classified alternatives is covered.
+    func covers(_ alternatives: [RecipeBottle]) -> Bool {
+        alternatives.contains { alternative in
+            switch alternative {
+            case .spirit(let spirit): spirits.contains(spirit)
+            case .style(let style): styles.contains(style)
+            // Whole words, so "Peppermint Schnapps" doesn't cover "mint".
+            case .other(let name): !name.isEmpty && names.contains { $0.contains(" \(name) ") }
+            }
+        }
+    }
+}
