@@ -1,6 +1,15 @@
 {
-  "originHash" : "769f601cb17740f8821cf31b4397d16c17c4cfda5ea770d8d1cd8dfdcc31b9fc",
+  "originHash" : "e1109cdca5d9f6ff584e7770e310d5dc813672e472357c1a6c4df70a269ff116",
   "pins" : [
+    {
+      "identity" : "appessentials",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/cilippofilia/AppEssentials.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1723599d80fc1f1248b39c5eea65f9ce7af2f75c"
+      }
+    },
     {
       "identity" : "privateads",
       "kind" : "remoteSourceControl",

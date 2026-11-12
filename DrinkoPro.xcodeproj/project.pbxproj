@@ -1056,7 +1056,7 @@
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
 				0135DADFEF620B720582BCAA /* XCRemoteSwiftPackageReference "PrivateAds" */,
-				AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */,
+				AE0000000000000000000001 /* XCRemoteSwiftPackageReference "AppEssentials" */,
 			);
 			productRefGroup = 18F49E612A27B28D00862CE3 /* Products */;
 			projectDirPath = "";
@@ -1879,17 +1879,18 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../Packages/AppEssentials;
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		0135DADFEF620B720582BCAA /* XCRemoteSwiftPackageReference "PrivateAds" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cilippofilia/PrivateAds.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		AE0000000000000000000001 /* XCRemoteSwiftPackageReference "AppEssentials" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cilippofilia/AppEssentials.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -1910,22 +1911,22 @@
 		};
 		AE0000000000000000000011 /* AboutSection */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */;
+			package = AE0000000000000000000001 /* XCRemoteSwiftPackageReference "AppEssentials" */;
 			productName = AboutSection;
 		};
 		AE0000000000000000000012 /* WhatsNew */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */;
+			package = AE0000000000000000000001 /* XCRemoteSwiftPackageReference "AppEssentials" */;
 			productName = WhatsNew;
 		};
 		AE0000000000000000000013 /* AboutSection */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */;
+			package = AE0000000000000000000001 /* XCRemoteSwiftPackageReference "AppEssentials" */;
 			productName = AboutSection;
 		};
 		AE0000000000000000000014 /* WhatsNew */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */;
+			package = AE0000000000000000000001 /* XCRemoteSwiftPackageReference "AppEssentials" */;
 			productName = WhatsNew;
 		};
 /* End XCSwiftPackageProductDependency section */
