@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DeleteButtonView: View {
-    let label: String
+    let label: LocalizedStringKey
     let action: () -> Void
 
     var body: some View {
