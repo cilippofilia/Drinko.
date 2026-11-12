@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0000000000000000000021 /* AboutSection in Frameworks */ = {isa = PBXBuildFile; productRef = AE0000000000000000000011 /* AboutSection */; };
+		AE0000000000000000000022 /* WhatsNew in Frameworks */ = {isa = PBXBuildFile; productRef = AE0000000000000000000012 /* WhatsNew */; };
+		AE0000000000000000000023 /* AboutSection in Frameworks */ = {isa = PBXBuildFile; productRef = AE0000000000000000000013 /* AboutSection */; };
+		AE0000000000000000000024 /* WhatsNew in Frameworks */ = {isa = PBXBuildFile; productRef = AE0000000000000000000014 /* WhatsNew */; };
 		D1C5B2002F00000000000002 /* BottleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2002F00000000000001 /* BottleStyle.swift */; };
 		D1C5B2012F00000000000002 /* RecipeBottle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2012F00000000000001 /* RecipeBottle.swift */; };
 		D1C5B2022F00000000000002 /* CabinetStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C5B2022F00000000000001 /* CabinetStock.swift */; };
@@ -43,6 +47,8 @@
 		183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 183AE95A2A94AAC000AC156F /* CloudKit.framework */; };
 		183E47E42B17548F0095A6E4 /* ABVCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E47E32B17548F0095A6E4 /* ABVCalculator.swift */; };
 		183F935F2F253BC7005CF96A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA52A286D2E00862CE3 /* SettingsView.swift */; };
+		AE0000000000000000000033 /* WidgetGuideArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0000000000000000000031 /* WidgetGuideArtwork.swift */; };
+		AE0000000000000000000032 /* WidgetGuideArtwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0000000000000000000031 /* WidgetGuideArtwork.swift */; };
 		183F93602F253BDC005CF96A /* ReadMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EA72A286D2E00862CE3 /* ReadMeView.swift */; };
 		183F93612F253BE5005CF96A /* SettingsPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16372ABB60B7006BBB89 /* SettingsPreferenceView.swift */; };
 		183F93622F253BE5005CF96A /* SettingsContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AF16392ABB6128006BBB89 /* SettingsContactsView.swift */; };
@@ -108,7 +114,6 @@
 		18F49EC92A286D2E00862CE3 /* CocktailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EB72A286D2E00862CE3 /* CocktailsView.swift */; };
 		18F49ECD2A286D2E00862CE3 /* CocktailDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */; };
 		1A1000013A4F000100000001 /* DrinkoWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1A1000023A4F000100000001 /* DrinkoWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1000163A4F000100000001 /* WidgetTutorialView.swift */; };
 		1A10001A3A4F000100000001 /* Cocktail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB4E0A2EEECEDC00691DC2 /* Cocktail.swift */; };
 		707CAC9A8FC301251AA712CD /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 46A63D3F09AE9C5D83692BEA /* PrivateAds */; };
 		83B280FAABED409EB5308FD3 /* PrivateAds in Frameworks */ = {isa = PBXBuildFile; productRef = 0C77A31298F24D9982F446D7 /* PrivateAds */; };
@@ -255,6 +260,7 @@
 		18F49E632A27B28D00862CE3 /* DrinkoProApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkoProApp.swift; sourceTree = "<group>"; };
 		18F49E6A2A27B28F00862CE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18F49E712A286CDD00862CE3 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AE0000000000000000000031 /* WidgetGuideArtwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetGuideArtwork.swift; sourceTree = "<group>"; };
 		18F49EA52A286D2E00862CE3 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		18F49EA72A286D2E00862CE3 /* ReadMeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadMeView.swift; sourceTree = "<group>"; };
@@ -263,7 +269,6 @@
 		18F49EB72A286D2E00862CE3 /* CocktailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailsView.swift; sourceTree = "<group>"; };
 		18F49EBB2A286D2E00862CE3 /* CocktailDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocktailDetailView.swift; sourceTree = "<group>"; };
 		1A1000023A4F000100000001 /* DrinkoWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DrinkoWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A1000163A4F000100000001 /* WidgetTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetTutorialView.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000001 /* CocktailListSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailListSource.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000002 /* CocktailFilterSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailFilterSection.swift; sourceTree = "<group>"; };
 		D1C5B0012F00000000000004 /* UserCocktailDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCocktailDetails.swift; sourceTree = "<group>"; };
@@ -569,6 +574,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				83B280FAABED409EB5308FD3 /* PrivateAds in Frameworks */,
+				AE0000000000000000000023 /* AboutSection in Frameworks */,
+				AE0000000000000000000024 /* WhatsNew in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +592,8 @@
 			files = (
 				183AE95B2A94AAC000AC156F /* CloudKit.framework in Frameworks */,
 				707CAC9A8FC301251AA712CD /* PrivateAds in Frameworks */,
+				AE0000000000000000000021 /* AboutSection in Frameworks */,
+				AE0000000000000000000022 /* WhatsNew in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,7 +820,7 @@
 				18F49EA62A286D2E00862CE3 /* SettingsRowView.swift */,
 				189EEA1F2ABBA59900D67806 /* SettingsSections */,
 				18F49EA72A286D2E00862CE3 /* ReadMeView.swift */,
-				1A1000163A4F000100000001 /* WidgetTutorialView.swift */,
+				AE0000000000000000000031 /* WidgetGuideArtwork.swift */,
 				555AEC541E168772A096ACA1 /* CrossPromo */,
 			);
 			path = Settings;
@@ -914,6 +923,8 @@
 			name = DrinkoDesktop;
 			packageProductDependencies = (
 				0C77A31298F24D9982F446D7 /* PrivateAds */,
+				AE0000000000000000000013 /* AboutSection */,
+				AE0000000000000000000014 /* WhatsNew */,
 			);
 			productName = DrinkoMac;
 			productReference = 18A929A82F12C13D00B70219 /* DrinkoDesktop.app */;
@@ -971,6 +982,8 @@
 			name = DrinkoPro;
 			packageProductDependencies = (
 				46A63D3F09AE9C5D83692BEA /* PrivateAds */,
+				AE0000000000000000000011 /* AboutSection */,
+				AE0000000000000000000012 /* WhatsNew */,
 			);
 			productName = DrinkoPro;
 			productReference = 18F49E602A27B28D00862CE3 /* DrinkoPro.app */;
@@ -1043,6 +1056,7 @@
 			mainGroup = 18F49E572A27B28D00862CE3;
 			packageReferences = (
 				0135DADFEF620B720582BCAA /* XCRemoteSwiftPackageReference "PrivateAds" */,
+				AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */,
 			);
 			productRefGroup = 18F49E612A27B28D00862CE3 /* Products */;
 			projectDirPath = "";
@@ -1133,6 +1147,7 @@
 				18A929F42F12CA1C00B70219 /* LikeButtonView.swift in Sources */,
 				18A92A052F12CC6200B70219 /* LessonDetailView.swift in Sources */,
 				183F935F2F253BC7005CF96A /* SettingsView.swift in Sources */,
+				AE0000000000000000000033 /* WidgetGuideArtwork.swift in Sources */,
 				1821576A2F3E7DC5002C1046 /* UserCreatedCocktail.swift in Sources */,
 				18A929D32F12C33F00B70219 /* Item.swift in Sources */,
 				18A929DB2F12C71500B70219 /* CocktailsView.swift in Sources */,
@@ -1201,6 +1216,7 @@
 				D1C5B0F22F00000000000004 /* ToolsDetailView.swift in Sources */,
 				18F49EC52A286D2E00862CE3 /* LessonDetailView.swift in Sources */,
 				18F49EBC2A286D2E00862CE3 /* SettingsView.swift in Sources */,
+				AE0000000000000000000032 /* WidgetGuideArtwork.swift in Sources */,
 				182157692F3E7DC5002C1046 /* UserCreatedCocktail.swift in Sources */,
 				18F49EC32A286D2E00862CE3 /* LearnView.swift in Sources */,
 				18A0C5E32F77A00100D1E0A1 /* LearnView+Selection.swift in Sources */,
@@ -1208,7 +1224,6 @@
 				18B307742B6F99DD00CB94AB /* EditProductView.swift in Sources */,
 				18AF163C2ABB6216006BBB89 /* SettingsInfoView.swift in Sources */,
 				1858F96F306870360016B2DD /* MixingMethod.swift in Sources */,
-				1A1000173A4F000100000001 /* WidgetTutorialView.swift in Sources */,
 				1827138C2B6576AB000D3343 /* CategoryHeaderView.swift in Sources */,
 				182E43372A2B1221001675FD /* CreditsCardView.swift in Sources */,
 				18EB4EC52EEED46E00691DC2 /* LikeButtonView.swift in Sources */,
@@ -1396,7 +1411,6 @@
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -1456,7 +1470,6 @@
 				SDKROOT = macosx;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -1866,6 +1879,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../Packages/AppEssentials;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		0135DADFEF620B720582BCAA /* XCRemoteSwiftPackageReference "PrivateAds" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -1887,6 +1907,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0135DADFEF620B720582BCAA /* XCRemoteSwiftPackageReference "PrivateAds" */;
 			productName = PrivateAds;
+		};
+		AE0000000000000000000011 /* AboutSection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */;
+			productName = AboutSection;
+		};
+		AE0000000000000000000012 /* WhatsNew */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */;
+			productName = WhatsNew;
+		};
+		AE0000000000000000000013 /* AboutSection */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */;
+			productName = AboutSection;
+		};
+		AE0000000000000000000014 /* WhatsNew */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE0000000000000000000001 /* XCLocalSwiftPackageReference "../../Packages/AppEssentials" */;
+			productName = WhatsNew;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

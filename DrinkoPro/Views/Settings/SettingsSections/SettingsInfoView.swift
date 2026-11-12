@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 20/09/2023.
 //
 
+import AboutSection
 import SwiftUI
 
 struct SettingsInfoView: View {
@@ -24,14 +25,10 @@ struct SettingsInfoView: View {
                 )
             }
 
+            ChangelogRow()
+
             #if os(iOS)
-            NavigationLink(destination: WidgetTutorialView()) {
-                SettingsRowView(
-                    icon: "widget.small.badge.plus",
-                    color: .secondary,
-                    itemName: "Add a Widget"
-                )
-            }
+            WidgetGuideRow()
 
             Button {
                 showRemoveAdsPaywall = true
@@ -49,41 +46,20 @@ struct SettingsInfoView: View {
             }
             #endif
 
-            ShareLink(item: drinkoURL!) {
-                SettingsRowView(
-                    icon: "square.and.arrow.up",
-                    color: .secondary,
-                    itemName: "Share the app"
-                )
-            }
-
-            HStack {
-                SettingsRowView(
-                    icon: "v.circle",
-                    color: .secondary,
-                    itemName: "Version"
-                )
-                Spacer()
-
-                Text("\(getCurrentAppVersion())")
-                    .foregroundStyle(.secondary)
-            }
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Version")
-            .accessibilityValue(getCurrentAppVersion())
+            ShareRow(info: drinkoAppInfo)
         } header: {
             Text("Info")
                 .foregroundStyle(.secondary)
         } footer: {
-            #if DEBUG
-            ContentSourceFooter()
-            #endif
+            VStack(alignment: .leading) {
+                VersionFooter(info: drinkoAppInfo)
+                #if DEBUG
+                ContentSourceFooter()
+                #endif
+            }
+            .foregroundStyle(.secondary)
         }
         .foregroundStyle(.primary)
-    }
-
-    func getCurrentAppVersion() -> String {
-        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }
 }
 

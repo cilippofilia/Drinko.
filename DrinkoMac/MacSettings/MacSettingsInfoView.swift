@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 20/09/2023.
 //
 
+import AboutSection
 import SwiftUI
 
 struct MacSettingsInfoView: View {
@@ -24,46 +25,25 @@ struct MacSettingsInfoView: View {
             .buttonStyle(.plain)
             .accessibilityHint("Opens the app guide.")
 
-            ShareLink(item: drinkoURL!) {
-                MacSettingsRowView(
-                    icon: "square.and.arrow.up",
-                    color: .secondary,
-                    itemName: "Share the app"
-                )
-            }
-            .buttonStyle(.plain)
+            ChangelogRow()
 
-            LabeledContent {
-                Text("\(getCurrentAppVersion())")
-                    .foregroundColor(.secondary)
-                    .padding(.trailing)
-            } label: {
-                MacSettingsRowView(
-                    icon: "v.circle",
-                    color: .secondary,
-                    itemName: "Version"
-                )
-            }
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Version")
-            .accessibilityValue(getCurrentAppVersion())
+            ShareRow(info: drinkoAppInfo)
         } header: {
             Text("Info")
                 .foregroundStyle(.secondary)
         } footer: {
-            #if DEBUG
-            ContentSourceFooter()
-                .foregroundStyle(.secondary)
-            #endif
+            VStack {
+                VersionFooter(info: drinkoAppInfo)
+                #if DEBUG
+                ContentSourceFooter()
+                #endif
+            }
+            .foregroundStyle(.secondary)
         }
         .foregroundStyle(.primary)
         .sheet(isPresented: $showReadMeView) {
             MacReadMeView()
         }
-    }
-
-    func getCurrentAppVersion() -> String {
-        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
     }
 }
 

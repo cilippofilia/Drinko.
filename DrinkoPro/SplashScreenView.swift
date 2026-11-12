@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WhatsNew
 
 struct SplashScreenView: View {
     @Environment(\.horizontalSizeClass) var sizeClass
@@ -21,8 +22,10 @@ struct SplashScreenView: View {
             if showHomeView {
                 #if os(macOS)
                 MacHomeView()
+                    .whatsNewSheet(releases: drinkoReleases)
                 #elseif os(iOS)
                 HomeView()
+                    .whatsNewSheet(releases: drinkoReleases)
                 #endif
             } else {
                 animatedLogo

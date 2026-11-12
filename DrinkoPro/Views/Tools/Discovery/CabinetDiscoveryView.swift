@@ -90,7 +90,7 @@ private struct DiscoverySection: View {
                 isCollapsible: false,
                 selection: nil,
                 onToggleCollapsed: {},
-                onSelect: onSelect,
+                onSelect: { onSelect($0) },
                 cardModel: cardModel,
                 contextMenu: { _ in EmptyView() }
             )

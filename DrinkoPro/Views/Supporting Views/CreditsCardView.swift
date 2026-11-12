@@ -20,7 +20,7 @@ struct CreditsCardView: View {
         } label: {
             HStack {
                 Image(systemName: "heart.fill")
-                    .foregroundStyle(.red)
+                    .foregroundStyle(.red.gradient)
                     .imageScale(.large)
                     .accessibilityHidden(true)
 

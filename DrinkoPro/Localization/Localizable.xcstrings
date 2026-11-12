@@ -103,6 +103,34 @@
         }
       }
     },
+    "\"How do I make a Negroni in Drinko?\" Siri reads the ingredients, then the method when you're ready" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„Wie mache ich einen Negroni in Drinko?“ Siri liest die Zutaten vor und danach die Zubereitung, sobald Sie bereit sind"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«¿Cómo hago un Negroni en Drinko?» Siri lee los ingredientes y después la preparación cuando esté listo"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Comment faire un Negroni dans Drinko ? » Siri lit les ingrédients, puis la préparation quand vous êtes prêt"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Come preparo un Negroni in Drinko?» Siri legge gli ingredienti e poi il procedimento, quando è pronto"
+          }
+        }
+      }
+    },
     "%" : {
       "localizations" : {
         "de" : {
@@ -1235,6 +1263,34 @@
         }
       }
     },
+    "36 new shots, including the Ferrari Shot, plus Campari classics like the Milano-Torino and Garibaldi" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "36 neue Shots, darunter der Ferrari Shot, sowie Campari-Klassiker wie Milano-Torino und Garibaldi"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "36 chupitos nuevos, como el Ferrari Shot, y clásicos con Campari como el Milano-Torino y el Garibaldi"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "36 nouveaux shots, dont le Ferrari Shot, et des classiques au Campari comme le Milano-Torino et le Garibaldi"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "36 nuovi shot, tra cui il Ferrari Shot, e i classici con Campari come Milano-Torino e Garibaldi"
+          }
+        }
+      }
+    },
     "A > Z" : {
       "localizations" : {
         "de" : {
@@ -1269,8 +1325,33 @@
         }
       }
     },
-    "A button appears in the top corner of the screen while the apps are jiggling." : {
-
+    "A new Tools tab brings the calculators together, including a live ABV calculator" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der neue Tab „Werkzeuge“ bündelt alle Rechner, darunter einen ABV-Rechner mit Live-Ergebnis"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La nueva pestaña Herramientas reúne las calculadoras, incluida una calculadora de ABV con resultados al instante"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le nouvel onglet Outils regroupe les calculateurs, dont un calculateur d'ABV aux résultats instantanés"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La nuova scheda Strumenti riunisce i calcolatori, incluso un calcolatore di ABV con risultati in tempo reale"
+          }
+        }
+      }
     },
     "a quarter of an ounce" : {
       "localizations" : {
@@ -1302,6 +1383,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "un quarto di oncia"
+          }
+        }
+      }
+    },
+    "A single sidebar, library and detail view, with Remove Ads always one click away" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seitenleiste, Bibliothek und Details in einer einzigen Ansicht – „Remove Ads“ ist immer nur einen Klick entfernt"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barra lateral, biblioteca y detalle en una sola vista, con «Remove Ads» siempre a un clic"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barre latérale, bibliothèque et détail réunis dans une seule vue, avec « Remove Ads » toujours à un clic"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Barra laterale, libreria e dettaglio in un'unica vista, con «Remove Ads» sempre a un clic"
           }
         }
       }
@@ -1607,8 +1716,33 @@
         }
       }
     },
-    "Add a Widget" : {
-
+    "Add a photo to your own cocktails, turn it into a sticker, or pick a card colour" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fügen Sie Ihren eigenen Cocktails ein Foto hinzu, machen Sie daraus einen Sticker oder wählen Sie eine Kartenfarbe"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añada una foto a sus propios cócteles, conviértala en pegatina o elija un color de tarjeta"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez une photo à vos propres cocktails, transformez-la en sticker ou choisissez une couleur de carte"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiunga una foto ai Suoi cocktail, la trasformi in uno sticker o scelga un colore per la scheda"
+          }
+        }
+      }
     },
     "Add Bottle to Cabinet" : {
       "localizations" : {
@@ -1746,8 +1880,33 @@
         }
       }
     },
-    "Add Drinko's \"Cocktail of the Day\" widget to your Home Screen for daily inspiration, right at a glance." : {
-
+    "Add Drinko's “Cocktail of the Day” widget to your Home Screen for daily inspiration, right at a glance." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Füge Drinkos Widget „Cocktail des Tages“ zu deinem Home-Bildschirm hinzu – tägliche Inspiration auf einen Blick."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade el widget «Cóctel del día» de Drinko a tu pantalla de inicio para inspirarte cada día de un vistazo."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez le widget « Cocktail du jour » de Drinko à votre écran d'accueil pour une inspiration quotidienne en un coup d'œil."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiungi il widget “Cocktail del giorno” di Drinko alla schermata Home per trovare ispirazione ogni giorno, a colpo d'occhio."
+          }
+        }
+      }
     },
     "Add Favorite" : {
       "localizations" : {
@@ -1835,6 +1994,62 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aggiungi ingrediente"
+          }
+        }
+      }
+    },
+    "Add or remove favourites and restock your Cabinet by voice" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verwalten Sie Favoriten und füllen Sie Ihre Hausbar per Sprache auf"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gestione sus favoritos y reponga su bar de casa con la voz"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gérez vos favoris et réapprovisionnez votre bar à la voix"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiunga o rimuova i preferiti e rifornisca il Suo Bar di casa con la voce"
+          }
+        }
+      }
+    },
+    "Add or remove favourites by voice, or tap the new heart right on the widget" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fügen Sie Favoriten per Sprache hinzu oder entfernen Sie sie – oder tippen Sie direkt im Widget auf das neue Herz"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añada o quite favoritos con la voz, o toque el nuevo corazón directamente en el widget"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez ou retirez des favoris à la voix, ou touchez le nouveau cœur directement sur le widget"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aggiunga o rimuova i preferiti con la voce, o tocchi il nuovo cuore direttamente nel widget"
           }
         }
       }
@@ -2618,6 +2833,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sei sicuro di voler eliminare l'account? Questa azione è irreversibile."
+          }
+        }
+      }
+    },
+    "Ask for today's cocktail, or say \"Surprise me in Drinko\"" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fragen Sie nach dem Cocktail des Tages oder sagen Sie „Überrasch mich in Drinko“"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pregunte por el cóctel del día o diga «Sorpréndeme en Drinko»"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Demandez le cocktail du jour, ou dites « Surprends-moi dans Drinko »"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chieda il cocktail del giorno, oppure dica «Sorprendimi in Drinko»"
           }
         }
       }
@@ -3698,6 +3941,62 @@
     "Choose what kind of drink to feature and whether to show its ingredients." : {
 
     },
+    "Choose your recipe units in Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie Ihre Rezepteinheiten in den Einstellungen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elija las unidades de las recetas en Ajustes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez les unités des recettes dans Réglages"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scelga le unità delle ricette nelle Impostazioni"
+          }
+        }
+      }
+    },
+    "Choose your recipe units in Settings; they start out matching your region" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie Ihre Rezepteinheiten in den Einstellungen – standardmäßig passend zu Ihrer Region"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elija las unidades de las recetas en Ajustes; de forma predeterminada se adaptan a su región"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez les unités des recettes dans Réglages ; par défaut, elles correspondent à votre région"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scelga le unità delle ricette nelle Impostazioni; di default seguono la Sua regione"
+          }
+        }
+      }
+    },
     "Chooses whether cocktail recipes show milliliters or ounces." : {
       "localizations" : {
         "de" : {
@@ -4001,6 +4300,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cocktail del giorno"
+          }
+        }
+      }
+    },
+    "Cocktail pages are now tidy, collapsible cards for history, ingredients and method" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktailseiten bestehen jetzt aus übersichtlichen, einklappbaren Karten für Geschichte, Zutaten und Zubereitung"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las fichas de cada cóctel ahora son tarjetas plegables y ordenadas con historia, ingredientes y preparación"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les pages de cocktail sont désormais organisées en cartes repliables pour l'histoire, les ingrédients et la préparation"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le pagine dei cocktail ora sono schede ordinate e comprimibili per storia, ingredienti e preparazione"
           }
         }
       }
@@ -4407,6 +4734,7 @@
       }
     },
     "Contact the developer" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5960,6 +6288,118 @@
         }
       }
     },
+    "Favourites, recently viewed drinks and settings now sync across your iPhone, iPad and Mac with iCloud" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoriten, zuletzt angesehene Drinks und Einstellungen werden jetzt per iCloud zwischen iPhone, iPad und Mac synchronisiert"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sus favoritos, los cócteles vistos recientemente y los ajustes se sincronizan entre iPhone, iPad y Mac con iCloud"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos favoris, vos cocktails récemment consultés et vos réglages se synchronisent entre iPhone, iPad et Mac avec iCloud"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferiti, cocktail visti di recente e impostazioni si sincronizzano tra iPhone, iPad e Mac con iCloud"
+          }
+        }
+      }
+    },
+    "Favourites, recently viewed drinks and settings sync with your iPhone and iPad through iCloud" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Favoriten, zuletzt angesehene Drinks und Einstellungen werden per iCloud mit Ihrem iPhone und iPad synchronisiert"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sus favoritos, los cócteles vistos recientemente y los ajustes se sincronizan con su iPhone y iPad mediante iCloud"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos favoris, vos cocktails récemment consultés et vos réglages se synchronisent avec votre iPhone et votre iPad via iCloud"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preferiti, cocktail visti di recente e impostazioni si sincronizzano con iPhone e iPad tramite iCloud"
+          }
+        }
+      }
+    },
+    "Fewer interruptions: promotions appear less often" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weniger Unterbrechungen: Werbung erscheint seltener"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Menos interrupciones: las promociones aparecen con menos frecuencia"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moins d'interruptions : les promotions s'affichent moins souvent"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Meno interruzioni: le promozioni compaiono meno spesso"
+          }
+        }
+      }
+    },
+    "File › New and View shortcuts to create cocktails and switch sections from the keyboard" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kurzbefehle unter „Ablage › Neu“ und „Darstellung“, um Cocktails zu erstellen und Bereiche per Tastatur zu wechseln"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atajos en Archivo › Nuevo y Visualización para crear cócteles y cambiar de sección desde el teclado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Raccourcis Fichier › Nouveau et Présentation pour créer des cocktails et changer de section au clavier"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scorciatoie in File › Nuovo e Vista per creare cocktail e cambiare sezione dalla tastiera"
+          }
+        }
+      }
+    },
     "Filter" : {
       "localizations" : {
         "de" : {
@@ -6051,6 +6491,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Filtra cocktail"
+          }
+        }
+      }
+    },
+    "Find cocktails from Spotlight and use every action in the Shortcuts app" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finden Sie Cocktails über Spotlight und nutzen Sie alle Aktionen in der Kurzbefehle-App"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Encuentre cócteles desde Spotlight y use todas las acciones en la app Atajos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trouvez des cocktails depuis Spotlight et utilisez toutes les actions dans l'app Raccourcis"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trovi i cocktail da Spotlight e usi tutte le azioni nell'app Comandi"
           }
         }
       }
@@ -7807,6 +8275,34 @@
         }
       }
     },
+    "New recipes and lessons arrive without waiting for an app update, and stay available offline" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neue Rezepte und Lektionen kommen ohne App-Update und bleiben offline verfügbar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las nuevas recetas y lecciones llegan sin esperar a una actualización y siguen disponibles sin conexión"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les nouvelles recettes et leçons arrivent sans attendre une mise à jour et restent disponibles hors ligne"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuove ricette e lezioni arrivano senza aspettare un aggiornamento dell'app e restano disponibili offline"
+          }
+        }
+      }
+    },
     "No cocktails found" : {
       "localizations" : {
         "de" : {
@@ -8223,6 +8719,34 @@
         }
       }
     },
+    "On iPad: a new sidebar, plus keyboard shortcuts for creating cocktails and switching tabs" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf dem iPad: eine neue Seitenleiste sowie Tastaturkurzbefehle zum Erstellen von Cocktails und Wechseln der Tabs"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En iPad: una nueva barra lateral y atajos de teclado para crear cócteles y cambiar de pestaña"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur iPad : une nouvelle barre latérale et des raccourcis clavier pour créer des cocktails et changer d'onglet"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Su iPad: una nuova barra laterale e scorciatoie da tastiera per creare cocktail e cambiare scheda"
+          }
+        }
+      }
+    },
     "On the bar tonight: %@ 🧊\nWant the recipe?\n%@" : {
       "comment" : "Cocktail share text. Values: cocktail name, then a Drinko App Clip recipe link.",
       "localizations" : {
@@ -8528,6 +9052,7 @@
       }
     },
     "Opens the App Store rating page." : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8585,6 +9110,7 @@
       }
     },
     "Other Enquiry" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8785,9 +9311,6 @@
         }
       }
     },
-    "Pick a size and add it" : {
-
-    },
     "Pick the method" : {
       "localizations" : {
         "de" : {
@@ -8923,9 +9446,6 @@
           }
         }
       }
-    },
-    "Press and hold an empty area until the apps start to jiggle." : {
-
     },
     "Privacy Policy" : {
 
@@ -9124,6 +9644,7 @@
       }
     },
     "Rate the app" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9293,6 +9814,34 @@
         }
       }
     },
+    "Ready for iPhone Duo, and for multitasking alongside your other apps" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bereit für das iPhone Duo und für Multitasking neben Ihren anderen Apps"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparada para iPhone Duo y para la multitarea junto a sus otras apps"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prêt pour l'iPhone Duo et pour le multitâche aux côtés de vos autres apps"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pronta per iPhone Duo e per il multitasking insieme alle Sue altre app"
+          }
+        }
+      }
+    },
     "Ready to Mix?" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -9324,6 +9873,62 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pronto da miscelare?"
+          }
+        }
+      }
+    },
+    "Redesigned Cocktails and Learn: switch between cards and list, and jump back in from your recently viewed drinks" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neu gestaltete Bereiche „Cocktails“ und „Lernen“: Wechseln Sie zwischen Karten und Liste, und machen Sie direkt bei Ihren zuletzt angesehenen Drinks weiter"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cócteles y Aprender rediseñados: alterne entre tarjetas y lista, y retome lo que vio recientemente"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktails et Apprendre repensés : passez des cartes à la liste et reprenez là où vous en étiez grâce à vos consultations récentes"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cocktail e Impara ridisegnati: passi dalle schede all'elenco e riprenda da dove aveva lasciato con i drink visti di recente"
+          }
+        }
+      }
+    },
+    "Redesigned library cards and cocktail pages" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Neu gestaltete Bibliothekskarten und Cocktailseiten"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tarjetas de la biblioteca y fichas de cóctel rediseñadas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cartes de la bibliothèque et pages de cocktail repensées"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schede della libreria e pagine dei cocktail ridisegnate"
           }
         }
       }
@@ -9787,6 +10392,7 @@
       }
     },
     "Report a bug" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9821,6 +10427,7 @@
       }
     },
     "Request a Feature" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9994,6 +10601,34 @@
         }
       }
     },
+    "Search by ingredient: type \"gin\" to find every drink that uses it" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suche nach Zutaten: Geben Sie „Gin“ ein, um jeden Drink damit zu finden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Busque por ingrediente: escriba «gin» y encuentre todos los cócteles que lo llevan"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recherche par ingrédient : tapez « gin » pour trouver tous les cocktails qui en contiennent"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ricerca per ingrediente: scriva «gin» per trovare tutti i drink che lo contengono"
+          }
+        }
+      }
+    },
     "Search Cocktails" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -10028,9 +10663,6 @@
           }
         }
       }
-    },
-    "Search for Drinko" : {
-
     },
     "Search lessons and books" : {
       "localizations" : {
@@ -10126,6 +10758,7 @@
       }
     },
     "Select an option" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10392,6 +11025,34 @@
         }
       }
     },
+    "Share any recipe as a beautiful card — friends can open it instantly with an App Clip, no download needed" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teilen Sie jedes Rezept als schöne Rezeptkarte – Freunde öffnen sie sofort per App Clip, ganz ohne Download"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comparta cualquier receta como una tarjeta preciosa: sus amigos pueden abrirla al instante con un App Clip, sin descargar nada"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partagez n'importe quelle recette sous forme de jolie fiche : vos amis l'ouvrent instantanément avec un App Clip, sans rien télécharger"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condivida qualsiasi ricetta come una bella scheda: i Suoi amici la aprono all'istante con un App Clip, senza scaricare nulla"
+          }
+        }
+      }
+    },
     "Share Recipe Card" : {
       "localizations" : {
         "de" : {
@@ -10421,6 +11082,7 @@
       }
     },
     "Share the app" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10450,6 +11112,62 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Condividi l'app"
+          }
+        }
+      }
+    },
+    "Shared recipe cards now open every built-in cocktail in the App Clip" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geteilte Rezeptkarten öffnen jetzt jeden integrierten Cocktail im App Clip"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las fichas de recetas compartidas ahora abren cualquier cóctel incluido en el App Clip"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les fiches recettes partagées ouvrent désormais chaque cocktail intégré dans l'App Clip"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le schede ricetta condivise ora aprono ogni cocktail incluso nell'App Clip"
+          }
+        }
+      }
+    },
+    "Sharing a drink comes with a fresh message each time" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim Teilen eines Drinks gibt es jedes Mal eine neue Nachricht"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir una bebida incluye un mensaje distinto cada vez"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partager un cocktail s'accompagne d'un message différent à chaque fois"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condividere un drink ora include ogni volta un messaggio diverso"
           }
         }
       }
@@ -11136,9 +11854,6 @@
         }
       }
     },
-    "Swipe between the small and medium widgets, then tap Add Widget." : {
-
-    },
     "Swipe up or down to browse. Double tap to open." : {
       "localizations" : {
         "de" : {
@@ -11237,8 +11952,33 @@
         }
       }
     },
-    "Tap the Edit button, then Add Widget" : {
-
+    "Tell Siri which bottles you just bought and they land in your Cabinet" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sagen Sie Siri, welche Flaschen Sie gerade gekauft haben, und sie landen in Ihrer Hausbar"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diga a Siri qué botellas acaba de comprar y aparecerán en su bar de casa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Indiquez à Siri les bouteilles que vous venez d'acheter et elles rejoignent votre bar"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dica a Siri quali bottiglie ha appena comprato e finiranno nel Suo Bar di casa"
+          }
+        }
+      }
     },
     "Tequila" : {
       "extractionState" : "manual",
@@ -11658,9 +12398,6 @@
         }
       }
     },
-    "Touch and hold the Home Screen" : {
-
-    },
     "Touch and hold the widget, then choose Edit Widget to change the drink source or show and hide ingredients." : {
 
     },
@@ -11797,9 +12534,6 @@
           }
         }
       }
-    },
-    "Type \"Drinko\" in the search field to find the widget." : {
-
     },
     "Unit" : {
       "localizations" : {
@@ -11985,6 +12719,7 @@
       }
     },
     "Version" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

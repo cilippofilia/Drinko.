@@ -5,6 +5,7 @@
 //  Created by Filippo Cilia on 22/04/2023.
 //
 
+import AboutSection
 import SwiftUI
 
 struct SettingsView: View {
@@ -18,6 +19,9 @@ struct SettingsView: View {
                 SettingsInfoView()
             }
             .navigationTitle("Settings")
+            .aboutDestinations(info: drinkoAppInfo, releases: drinkoReleases, widgetGuide: drinkoWidgetGuide) {
+                WidgetGuideArtwork()
+            }
             .scrollBounceBehavior(.basedOnSize)
             #if os(iOS)
             .crossPromoBanner()
