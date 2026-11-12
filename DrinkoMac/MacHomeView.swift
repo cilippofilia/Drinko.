@@ -6,6 +6,7 @@
 //
 
 import PrivateAds
+import StoreKit
 import SwiftData
 import SwiftUI
 
@@ -14,6 +15,7 @@ struct MacHomeView: View {
     @Environment(CrossPromoSignal.self) private var crossPromoSignal
     @Environment(RemoveAdsStore.self) private var removeAdsStore
     @Environment(LessonsViewModel.self) private var lessonsViewModel
+    @Environment(\.requestReview) private var requestReview
     // Same key as the iOS HomeView: remembers the last-used sidebar row between launches.
     @SceneStorage("selectedView") private var selectedView: String?
 
@@ -57,6 +59,9 @@ struct MacHomeView: View {
                 }
             }
             .onChange(of: crossPromoSignal.count) { _, newValue in
+                if CrossPromoSignal.shouldRequestReview(at: newValue) {
+                    requestReview()
+                }
                 guard removeAdsStore.isAdsRemoved == false,
                       CrossPromoSignal.shouldShowInterstitial(at: newValue) else { return }
                 Task { await refreshInterstitialAd() }
