@@ -11,6 +11,28 @@ import Foundation
 let drinkoReleases: [Release] = {
     #if os(macOS)
     [
+        Release(version: "3.2", isMajor: true, features: [
+            Feature(
+                title: "What Can I Make? shows every cocktail your Cabinet can make right now",
+                detail: "Find it in Tools. Every ingredient counts, down to the juices, syrups and mixers.",
+                systemImage: "cabinet"
+            ),
+            Feature(
+                title: "Twists: cocktails you can make by swapping in a spirit you already own",
+                detail: "Missing the base spirit? Drinko suggests one from your Cabinet that works instead.",
+                systemImage: "arrow.triangle.swap"
+            ),
+            Feature(
+                title: "Your own cocktails now switch units too, and ounces convert to the nearest 5 ml",
+                detail: "Pick millilitres or ounces in Settings.",
+                systemImage: "ruler"
+            ),
+            Feature(title: "Switch What Can I Make? between a list and a grid"),
+            Feature(title: "A changelog in Settings shows what's new in every update"),
+            Feature(title: "Request a feature right from Settings"),
+            Feature(title: "Today's cocktail from Siri now includes shots"),
+            Feature(title: "Delete buttons now appear in your language")
+        ]),
         Release(version: "3.1", features: [
             Feature(title: "\"How do I make a Negroni in Drinko?\" Siri reads the ingredients, then the method when you're ready"),
             Feature(title: "Ask for today's cocktail, or say \"Surprise me in Drinko\""),
@@ -32,6 +54,29 @@ let drinkoReleases: [Release] = {
     ]
     #else
     [
+        Release(version: "3.2", isMajor: true, features: [
+            Feature(
+                title: "What Can I Make? shows every cocktail your Cabinet can make right now",
+                detail: "Find it in Tools. Every ingredient counts, down to the juices, syrups and mixers.",
+                systemImage: "cabinet"
+            ),
+            Feature(
+                title: "Twists: cocktails you can make by swapping in a spirit you already own",
+                detail: "Missing the base spirit? Drinko suggests one from your Cabinet that works instead.",
+                systemImage: "arrow.triangle.swap"
+            ),
+            Feature(
+                title: "Your own cocktails now switch units too, and ounces convert to the nearest 5 ml",
+                detail: "Pick millilitres or ounces in Settings.",
+                systemImage: "ruler"
+            ),
+            Feature(title: "Switch What Can I Make? between a list and a grid"),
+            Feature(title: "A step-by-step guide to adding the Drinko widget, in Settings"),
+            Feature(title: "A changelog in Settings shows what's new in every update"),
+            Feature(title: "Request a feature right from Settings"),
+            Feature(title: "The cocktail of the day, on the widget and from Siri, now includes shots"),
+            Feature(title: "Delete buttons now appear in your language")
+        ]),
         Release(version: "3.1", features: [
             Feature(title: "\"How do I make a Negroni in Drinko?\" Siri reads the ingredients, then the method when you're ready"),
             Feature(title: "Ask for today's cocktail, or say \"Surprise me in Drinko\""),

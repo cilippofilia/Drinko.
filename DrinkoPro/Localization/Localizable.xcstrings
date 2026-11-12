@@ -1231,6 +1231,34 @@
         }
       }
     },
+    "A changelog in Settings shows what's new in every update" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein Änderungsprotokoll in den Einstellungen zeigt die Neuerungen jedes Updates"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un historial de cambios en Ajustes muestra las novedades de cada actualización"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un historique des changements dans Réglages présente les nouveautés de chaque mise à jour"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un registro delle modifiche nelle Impostazioni mostra le novità di ogni aggiornamento"
+          }
+        }
+      }
+    },
     "A new Tools tab brings the calculators together, including a live ABV calculator" : {
       "localizations" : {
         "de" : {
@@ -1317,6 +1345,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Barra laterale, libreria e dettaglio in un'unica vista, con «Remove Ads» sempre a un clic"
+          }
+        }
+      }
+    },
+    "A step-by-step guide to adding the Drinko widget, in Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine Schritt-für-Schritt-Anleitung zum Hinzufügen des Drinko-Widgets in den Einstellungen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una guía paso a paso para añadir el widget de Drinko, en Ajustes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un guide pas à pas pour ajouter le widget Drinko, dans Réglages"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una guida passo passo per aggiungere il widget di Drinko, nelle Impostazioni"
           }
         }
       }
@@ -5076,6 +5132,34 @@
         }
       }
     },
+    "Delete buttons now appear in your language" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Löschen-Tasten erscheinen jetzt in Ihrer Sprache"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los botones de eliminar ahora aparecen en su idioma"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les boutons de suppression s'affichent désormais dans votre langue"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I pulsanti di eliminazione ora appaiono nella Sua lingua"
+          }
+        }
+      }
+    },
     "Delete Category" : {
       "localizations" : {
         "de" : {
@@ -6174,6 +6258,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trovi i cocktail da Spotlight e usi tutte le azioni nell'app Comandi"
+          }
+        }
+      }
+    },
+    "Find it in Tools. Every ingredient counts, down to the juices, syrups and mixers." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zu finden unter Werkzeuge. Jede Zutat zählt, auch Säfte, Sirupe und Softdrinks."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Está en Herramientas. Cuenta cada ingrediente, hasta los zumos, siropes y refrescos."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dans Outils. Chaque ingrédient compte, jusqu'aux jus, sirops et boissons gazeuses."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lo trova in Strumenti. Conta ogni ingrediente, fino a succhi, sciroppi e bibite."
           }
         }
       }
@@ -7592,6 +7704,34 @@
         }
       }
     },
+    "Missing the base spirit? Drinko suggests one from your Cabinet that works instead." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fehlt die Basisspirituose? Drinko schlägt eine passende aus Ihrer Hausbar vor."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Le falta el destilado base? Drinko le sugiere uno de su bar de casa que funcione."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il vous manque l'alcool de base ? Drinko en propose un de votre bar qui convient."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le manca il distillato base? Drinko ne suggerisce uno adatto dal Suo Bar di casa."
+          }
+        }
+      }
+    },
     "ml" : {
       "localizations" : {
         "de" : {
@@ -8786,6 +8926,34 @@
         }
       }
     },
+    "Pick millilitres or ounces in Settings." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wählen Sie Milliliter oder Unzen in den Einstellungen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elija mililitros u onzas en Ajustes."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez millilitres ou onces dans Réglages."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scelga millilitri o once nelle Impostazioni."
+          }
+        }
+      }
+    },
     "Pick the method" : {
       "localizations" : {
         "de" : {
@@ -9792,6 +9960,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sostituisci foto"
+          }
+        }
+      }
+    },
+    "Request a feature right from Settings" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wünschen Sie sich neue Funktionen direkt in den Einstellungen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proponga nuevas funciones directamente desde Ajustes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suggérez de nouvelles fonctionnalités directement depuis Réglages"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proponga nuove funzionalità direttamente dalle Impostazioni"
           }
         }
       }
@@ -11048,6 +11244,34 @@
         }
       }
     },
+    "Switch What Can I Make? between a list and a grid" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„Was kann ich mixen?“ als Liste oder Raster anzeigen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vea «¿Qué puedo preparar?» como lista o cuadrícula"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affichez « Que puis-je préparer ? » en liste ou en grille"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Visualizzi «Cosa posso preparare?» come elenco o griglia"
+          }
+        }
+      }
+    },
     "Syrup" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11257,6 +11481,34 @@
     "Thanks for your support — you won't see these cross-promo ads again." : {
 
     },
+    "The cocktail of the day, on the widget and from Siri, now includes shots" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Cocktail des Tages im Widget und bei Siri kann jetzt auch ein Shot sein"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El cóctel del día, en el widget y con Siri, ahora también incluye chupitos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le cocktail du jour, dans le widget et avec Siri, inclut désormais les shots"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il cocktail del giorno, nel widget e con Siri, ora include anche gli shot"
+          }
+        }
+      }
+    },
     "These occasional promos are for my other apps. Remove them for good with a small one-time purchase." : {
 
     },
@@ -11456,6 +11708,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cocktail del giorno"
+          }
+        }
+      }
+    },
+    "Today's cocktail from Siri now includes shots" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Der Cocktail des Tages von Siri kann jetzt auch ein Shot sein"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El cóctel del día de Siri ahora también incluye chupitos"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le cocktail du jour de Siri inclut désormais les shots"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il cocktail del giorno di Siri ora include anche gli shot"
           }
         }
       }
@@ -11697,6 +11977,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Varianti"
+          }
+        }
+      }
+    },
+    "Twists: cocktails you can make by swapping in a spirit you already own" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varianten: Cocktails, die Sie mit einer anderen Spirituose aus Ihrer Hausbar mixen können"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variantes: cócteles que puede preparar cambiando el destilado por uno que ya tiene"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Variantes : des cocktails à préparer en remplaçant l'alcool de base par un que vous avez déjà"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Varianti: cocktail che può preparare sostituendo il distillato con uno che ha già"
           }
         }
       }
@@ -12112,6 +12420,34 @@
         }
       }
     },
+    "What Can I Make? shows every cocktail your Cabinet can make right now" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„Was kann ich mixen?“ zeigt alle Cocktails, die Sie mit Ihrer Hausbar jetzt mixen können"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«¿Qué puedo preparar?» muestra todos los cócteles que puede preparar ahora con su bar de casa"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "« Que puis-je préparer ? » affiche tous les cocktails que vous pouvez préparer maintenant avec votre bar"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "«Cosa posso preparare?» mostra tutti i cocktail che può preparare subito con il Suo Bar di casa"
+          }
+        }
+      }
+    },
     "What is the ingredient?" : {
       "localizations" : {
         "de" : {
@@ -12513,6 +12849,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "I tuoi appunti su %@..."
+          }
+        }
+      }
+    },
+    "Your own cocktails now switch units too, and ounces convert to the nearest 5 ml" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auch Ihre eigenen Cocktails wechseln jetzt die Einheit, und Unzen werden auf 5 ml gerundet"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sus propios cócteles ahora también cambian de unidad, y las onzas se redondean a 5 ml"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos propres cocktails changent aussi d'unité, et les onces sont arrondies à 5 ml près"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anche i Suoi cocktail ora cambiano unità, e le once vengono arrotondate ai 5 ml"
           }
         }
       }
